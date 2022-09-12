@@ -1,0 +1,10 @@
+{
+  "mode": "&{IG_RUN_MODE|development}",
+  "prefix": "openig",
+  "connectors": [
+    {
+      "port": 8080
+    }
+  ],
+  "heap": []
+}

@@ -1,0 +1,48 @@
+{
+  "prefix": "openig",
+  "connectors": [
+    {
+      "port": 8443,
+      "tls": "ServerTlsOptions-1"
+    }
+  ],
+  "heap": [
+    {
+      "name": "ServerTlsOptions-1",
+      "type": "ServerTlsOptions",
+      "config": {
+        "keyManager": {
+          "type": "SecretsKeyManager",
+          "config": {
+            "signingSecretId": "key.manager.secret.id",
+            "secretsProvider": "ServerIdentityStore"
+          }
+        }
+      }
+    },
+    {
+      "type": "SystemAndEnvSecretStore",
+      "name": "SecretsPasswords",
+      "config": {
+        "format": "PLAIN"
+      }
+    },
+    {
+      "type": "KeyStoreSecretStore",
+      "name": "ServerIdentityStore",
+      "config": {
+        "file": "&{IG_KEYSTORE_LOCATION|/var/run/secrets/ig/keystore.jks}",
+        "storePassword": "ig.keystore.password",
+        "secretsProvider": "SecretsPasswords",
+        "mappings": [
+          {
+            "secretId": "key.manager.secret.id",
+            "aliases": [
+              "&{IG_KEYSTORE_ALIAS|localhost}"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

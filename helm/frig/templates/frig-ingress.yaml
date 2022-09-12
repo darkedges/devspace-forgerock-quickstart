@@ -1,0 +1,36 @@
+{{- if .Values.frig.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "forgerock.fullname". }}-ingress
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frig
+    {{- with .Values.frig.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations: 
+    cert-manager.io/cluster-issuer: "vault-issuer"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - hosts:
+    {{- toYaml .Values.frig.ingress.hosts | nindent 4 }}
+    secretName: {{ template "forgerock.fullname". }}-tls
+  rules:
+  {{- $root := . }}
+  {{- range .Values.frig.ingress.hosts }}
+  - host: {{ . }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ template "forgerock.fullname" $root }}-lb
+            port:
+              number: 443
+  {{- end }}
+  ingressClassName: nginx
+{{- end }}
