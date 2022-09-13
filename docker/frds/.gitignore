@@ -1,0 +1,5 @@
+**/instance/*
+**/*.zip
+/K8s/*
+6.5.3/rootscripts/docker-entrypoin.orig
+LICENSE

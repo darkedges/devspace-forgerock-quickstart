@@ -1,0 +1,29 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ template "forgerock.frds.fullname" . }}-keystore
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.frds.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  secretName: {{ template "forgerock.frds.fullname" . }}-keystore
+  issuerRef:
+    name: vault-issuer
+    kind: ClusterIssuer
+  commonName: localhost
+  dnsNames:
+  - "*.{{ .Release.Name }}-frds-{{ .Values.frds.instance.type }}"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.frds.instance.type }}.{{ .Release.Namespace }}"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.frds.instance.type }}.{{ .Release.Namespace }}.svc"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.frds.instance.type }}.{{ .Release.Namespace }}.svc.cluster.local"
+  keystores:
+    jks:
+      create: true
+      passwordSecretRef: # Password used to encrypt the keystore
+        key: jksPassword
+        name: {{ template "forgerock.frds.fullname". }}-secrets

@@ -12,7 +12,7 @@ It uses
 
 1. checkout these repositories
 
-   ```bash
+   ```console
    git clone https://github.com/darkedges/devspace-forgerock-quickstart
    ```
 
@@ -30,14 +30,14 @@ It uses
 
 1. Init DevSpace
 
-   ```bash
+   ```console
    cd devspace-forgerock-quickstart/devspace/frig
    devspace use namespace devspace-forgerock-quickstart
    ```
 
 2. Start Developing
 
-   ```bash
+   ```console
    devspace dev
    ```
 
@@ -51,7 +51,7 @@ It uses
 
 5. wait for the following to show up in the console
 
-    ```bash
+    ```console
     dev:ports-0 sync  Upstream - Upload File 'scripts/groovy/hello.groovy'
     dev:ports-0 sync  Upstream - Upload 1 create change(s) (Uncompressed ~0.13 KB)
     dev:ports-0 sync  Upstream - Successfully processed 1 change(s)
@@ -59,17 +59,24 @@ It uses
 
    and reload [http://ig.7f000001.nip.io:8080/hello](http://ig.7f000001.nip.io:8080/hello) which should return `hello ` and the pod hostname
 
+6. clean up
+
+   ```console
+   devspace purge
+   ```
+
+
 ### Remote file change
 
 1. Start Developing
 
-   ```bash
+   ```console
    devspace dev
    ```
 
 2. in a second console enter
 
-   ```bash
+   ```console
    cd devspace-forgerock-quickstart/devspace/frig
    devspace enter
    ```
@@ -82,7 +89,7 @@ It uses
 
 4. wait for the following to show up in the console
 
-   ```bash
+   ```console
    dev:ports-0 sync  Downstream - Download file './scripts/groovy/hello.groovy', uncompressed: ~0.13 KB
    dev:ports-0 sync  Downstream - Successfully processed 1 change(s)
    ```

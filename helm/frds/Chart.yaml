@@ -1,0 +1,18 @@
+apiVersion: v2
+name: frds
+version: 1.0.0
+appVersion: 1.0.0
+home: https://github.com/darkedges/devspace-forgerock-quickstart
+icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg
+description: A Helm chart for ForgeRock Directory Services
+keywords:
+  - directory services
+  - forgerock
+sources:
+  - https://github.com/darkedges/devspace-forgerock-quickstart/helm/frds
+maintainers:
+  - name: darkedges
+engine: gotpl
+kubeVersion: ">=1.20.0-0"
+annotations:
+  artifacthub.io/prerelease: "false"

@@ -5,12 +5,12 @@ This is a collection of Helm Charts and Devspace Configurations to deploy the Fo
 Currently it is supporting only the following services
 
 - ForgeRock Identity Gateway
+  ForgeRock Directory Services
 
 the following will follow shortly
 
 - ForgeRock Identity Manager
 - ForgeRock Access Manager
-- ForgeRock Directory Services
 
 ## Repository Folder Layout
 

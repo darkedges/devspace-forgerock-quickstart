@@ -6,7 +6,7 @@ This is a ForgeRock Identity Gateway container, based on eclipse-temurin:11.0.14
 
 It is necessary to have the FRIG `zip` archive downloaded from backstage and placed in the `docker/frig` folder as `IG-x.x.x.zip`.
 
-It is possible to override the default `build-arg` value of `FRIG_ARCHIVE` to a version required. 
+It is possible to override the default `build-arg` value of `FRIG_ARCHIVE` to a version required.
 
 It can also be retrieved from a web server by override the default `build-arg` value of `FRIG_ARCHIVE_REPOSITORY_URL` to a web address i.e `https://files.internal.darkedges.com`
 
@@ -14,7 +14,7 @@ It can also be retrieved from a web server by override the default `build-arg` v
 
 To build the container:
 
-```bash
+```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/frig
 
@@ -22,9 +22,9 @@ cd docker/frig
 docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
 ```
 
-## Run 
+## Run
 
-```bash
+```console
 docker run --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
 ```
 
@@ -67,7 +67,7 @@ Contains the standard configuration folder structure for FRIG.
 
 ## Enabling SSL
 
-To enable SSL you need to create a keystore as per the guide [https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager](https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager) and either include it n the image or mount it as a volume. 
+To enable SSL you need to create a keystore as per the guide [https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager](https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager) and either include it n the image or mount it as a volume.
 
 Next you need to replace [`config/admin.json`](instance/config/admin.json) with [`config/admin.ssl.json`](instance/config/admin.ssl.json) and define the following environmental variables
 
@@ -78,3 +78,13 @@ Next you need to replace [`config/admin.json`](instance/config/admin.json) with 
 | `IG_KEYSTORE_ALIAS`    | `https-connector-key`                 | alias used when the PKCS12 keystore was created    |
 
 Consider using the `genjks` container to help with the generation of SSL using HashiCorp Vault and cert-manager.
+
+## docker-entrypoint.sh
+
+| Command              | Description                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| `start`              | Start an FRDS Instance.                                                                         |
+| `stop`               | Stop an FRDS Instance.                                                                          |
+| `init_deploymentkey` | Generate a Deployment Key, based on the supplied environment variable `DEPLOYMENT_KEY_PASSWORD` |
+| `init`               | Perform an initilization operation.                                                             |
+| `upgrade`            | Ugrade an instance.                                                                             |

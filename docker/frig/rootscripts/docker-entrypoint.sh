@@ -17,27 +17,28 @@ start() {
     # Start the FRIG instance.
     # using tini to start the instance and keeps it alive.
     set -ex
-    exec tini -v -- ${JAVA_HOME}/bin/java -classpath "classes:lib/*:${INSTANCE_DIR}/extra/*" ${JAVA_OPTS} org.forgerock.openig.launcher.Main ${INSTANCE_DIR}
+    CMD_RUN=
+    if [[ "${CMD}" = "start" ]]; then
+      CMD_RUN="exec tini -v -- "
+    fi
+    ${CMD_RUN}${JAVA_HOME}/bin/java -classpath "classes:lib/*:${INSTANCE_DIR}/extra/*" ${JAVA_OPTS} org.forgerock.openig.launcher.Main ${INSTANCE_DIR}
 }
 
-devspace() {
-    echo "Starting devspace FRIG"
-    # Starts the FRIG instance for use with devspace.
-    # devspace wll inject its own binary to manage the lifecycle of the aplication
-    set -ex
-    ${JAVA_HOME}/bin/java -classpath "classes:lib/*:${INSTANCE_DIR}/extra/*" ${JAVA_OPTS} org.forgerock.openig.launcher.Main ${INSTANCE_DIR}
+stop() {
+    echo "Stopping FRIG"
 }
 
 CMD="${1:-start}"
 
-echo "Command is $CMD"
-
 case "$CMD" in
 devspace)
-    devspace
+    start
     ;;
 start)
     start
+    ;;
+stop)
+    stop
     ;;
 init)
     init
