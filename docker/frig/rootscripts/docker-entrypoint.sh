@@ -30,8 +30,6 @@ devspace() {
 
 CMD="${1:-start}"
 
-echo "Command is $CMD"
-
 case "$CMD" in
 devspace)
     devspace
