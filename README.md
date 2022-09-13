@@ -5,7 +5,7 @@ This is a collection of Helm Charts and Devspace Configurations to deploy the Fo
 Currently it is supporting only the following services
 
 - ForgeRock Identity Gateway
-  ForgeRock Directory Services
+- ForgeRock Directory Services
 
 the following will follow shortly
 
