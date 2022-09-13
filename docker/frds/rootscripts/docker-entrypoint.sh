@@ -30,6 +30,7 @@ init() {
     if [ -d "/opt/frds/instance/config" ]; then
         ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
     else
+        rm -rf instance.loc
         ./default-scripts/${INIT_INSTANCE_PROFILE}/setup.sh
     fi
 }

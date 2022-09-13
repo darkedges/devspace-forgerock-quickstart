@@ -1,5 +1,5 @@
 {{ template "chart.header" . }}
-[forgerock-identity-gateway](https://github.com/darkedges/devspace-forgerock-quickstart) ForgeRock Identity Gateway Helm Chart for Kubernetes.
+[forgerock-directory-services](https://github.com/darkedges/devspace-forgerock-quickstart) ForgeRock Directory Services Helm Chart for Kubernetes.
 
 {{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
 
@@ -10,8 +10,8 @@
 
     ```console
     git clone https://github.com/darkedges/devspace-forgerock-quickstart
-    cd devspace-forgerock-quickstart/docker/frig
-    docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
+    cd devspace-forgerock-quickstart/docker/frds
+    docker build -t devspace-forgerock-quickstart/ds:7.2.0 .
     ```
 
 ## Install Chart
@@ -21,7 +21,7 @@
 ```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart
 cd devspace-forgerock-quickstart
-helm install --namespace=devspace-forgerock-quickstart --create-namespace -f values/environments/localdev/frig.yaml localdev-frig helm/frig 
+helm install --namespace=devspace-forgerock-quickstart --create-namespace -f values/environments/localdev/frds.yaml localdev-frds helm/frds 
 ```
 
 _See [configuration](#configuration) below._
@@ -34,7 +34,7 @@ _See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documen
 
 ```console
 cd devspace-forgerock-quickstart
-helm upgrade -f values/environments/localdev/frig.yaml localdev-frig helm/frig 
+helm upgrade -f values/environments/localdev/frds.yaml localdev-frds helm/frds 
 ```
 
 ## Uninstall Chart
@@ -45,7 +45,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 
 ```console
 cd devspace-forgerock-quickstart
-helm uninstall localdev-frig
+helm uninstall localdev-frds
 ```
 
 ## Configuration
@@ -53,7 +53,7 @@ helm uninstall localdev-frig
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
 
 ```console
-helm show values helm/frig
+helm show values helm/frds
 ```
 
 {{ template "chart.sourcesSection" . }}

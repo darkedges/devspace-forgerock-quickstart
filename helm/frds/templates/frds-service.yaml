@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "forgerock.frds.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.frds.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  clusterIP: None
+  selector:
+    {{- include "forgerock.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: {{ template "forgerock.frds.fullname". }}
+  ports:
+    - name: tcp-admin
+      port: 4444
+  {{- if eq .Values.frds.instance.type "replication" }}
+    - name: tcp-replication
+      port: 8989
+  {{- else }}
+    - name: tcp-ldap
+      port: 1389
+    - name: tcp-ldaps
+      port: 1636
+    - name: tcp-https
+      port: 8443
+  {{- end }}   

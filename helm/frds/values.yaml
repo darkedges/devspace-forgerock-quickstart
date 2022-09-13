@@ -13,43 +13,119 @@ revisionHistoryLimit: 10
 podSecurityPolicy:
   enabled: false
 
-frig:
+frds:
   image:
-    repository:  devspace-forgerock-quickstart/ig
+    repository:  devspace-forgerock-quickstart/ds
     tag: 7.2.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
-  
-  # Ingress
-  ingress:
-    # frig.ingress.enabled -- Wether to expose the service to ingress
-    enabled: false
-    # frig.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
-  
-  # certificates
-  certificate:
-    # frig.certificate.enabled -- Wether to attach a certificate to ingress
-    enabled: false
-  
-  # Keystore
-  keystore:
-    # frig.keystore.password --  Password for the keystore
-    password: changeit
 
-  # frig.replicaCount -- number of replicas
+  # Defines what is being deployed.
+  # This chart can only deploy one instance type at a time
+  instance:
+    #  frds.instance.type -- should be one of cts, amconfig, development, identity, replication
+    type: development
+    name:
+    keystore:
+      # frds.instance.keystore.password --  Password for the keystore
+      password: changeit
+
+  # frds.replicaCount -- number of replicas
   replicaCount: 1
 
-  # Environment Variables
+  # define what the default values are for a Volume Claim Template
+  volumeClaimTemplates:
+    data:
+      # frds.volumeClaimTemplates.data.storageClassName -- what storage class to use
+      storageClassName:
+      # frds.volumeClaimTemplates.data.storageSize -- size to be requested.
+      storageSize: 100Mi
+
+  # define what the default values are for a Schema Persistant volume
+  persistentVolume:
+    schema:
+      # frds.persistentVolume.schema.storageClassName -- what storage class to use
+      storageClassName:
+      # frds.persistentVolume.schema.storageSize -- size to be requested.
+      storageSize: 100Mi
+
+  # These secrets should be in a vault and refenced from there
+  secrets:
+      directorymanager:
+        # frds.secrets.directorymanager.password -- uid=admin password
+        password: Passw0rd
+      monitor:
+        # frds.secrets.monitor.password -- uid=minotir password
+        password: Passw0rd
+      deploymentkey:
+        # frds.secrets.deploymentkey.value -- Deployment Key value
+        value: AKtnvIyweZddXIA2jL4hq6F5Bn7C1Q5CBVN1bkVDfvPByQLPrt_1mJw
+        # frds.secrets.deploymentkey.password -- Deployment Key password
+        password: Passw0rd
+      amconfig: 
+        # frds.secrets.amconfig.password -- amconfig admin user password
+        password: Passw0rd
+      identity: 
+        # frds.secrets.identity.password -- ideneity admin user password
+        password: Passw0rd
+      cts: 
+        # frds.secrets.cts.password -- cts admin user password
+        password: Passw0rd
+
+  # frds.useKeystore -- has a keystore been generated and provided
+  useKeystore: false
+
+  # Is this a proxy?
+  proxy:
+    # frds.proxy.enabled -- is this a proxy server
+    enabled: false
+
+  init:
+    # frds.init.env -- defaults value to add to the init config map
+    env:
+
   env:
-    # frig.env -- this is added by default and can be overwritten to set Environment Variables
-    IG_RUN_MODE: development
+    # frds.env -- defaults value to add to the main config map
+    DS_GROUP_ID: DE
+
+  # frds.profile -- Profile details
+  # these are the core values to be used for generating an instance
+  profiles:
+    amconfig:
+      # frds.profiles.amconfig.baseDn -- base dn used for amconfig profile
+      baseDn:  dc=amconfig
+      # frds.profiles.amconfig.backendName -- backend name used for amconfig profile
+      backendName: cfgStore
+    identity:
+      # frds.profiles.identity.baseDn -- base dn used for identity profile
+      baseDn:  ou=identities
+      # frds.profiles.identity.backendName -- backend name used for identity profile
+      backendName: amIdentityStore
+    cts:
+      # frds.profiles.cts.baseDn -- base dn used for cts profile
+      baseDn:  ou=tokens
+      # frds.profiles.cts.backendName -- backend name used for cts profile
+      backendName: amCts
+      # frds.profiles.cts.tokenExpirationPolicy -- https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-cts-6.5.0
+      tokenExpirationPolicy: ds
+
+  # frds.terminationGracePeriodSeconds -- used by the statefulset to see how many seconds should be allowed for a graceful termination
+  terminationGracePeriodSeconds: 300
+
+  # frds.services -- list of services that this instance will wait for.
+  ## Useful for when you need to wait for a replication server to become available
+  services: {}
+  #  replication:
+  #    waitfor: service
+  #    name: frds-development
+  #    releaseNameOverride: darkedges-frds
+  #    port: 636
+  #    ssl: true
 
   # -- Use an existing PSP instead of creating one
   existingPsp: ""
-  
   # -- Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels
   ##
   labels: {}
@@ -132,33 +208,24 @@ frig:
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   ##
   ## startupProbe:
-  ##   httpGet:
-  ##     # should match container.healthCheckPath
-  ##     path: "/openig/ping"
-  ##     port: 8443
-  ##     scheme: HTTP
+  ##   tcpSocket:
+  ##     port: 1636
   ##   initialDelaySeconds: 5
   ##   periodSeconds: 5
   ##   timeoutSeconds: 2
   ##   successThreshold: 1
   ##   failureThreshold: 5
   livenessProbe:
-    httpGet:
-      # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
+    tcpSocket:
+      port: 1636
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
   readinessProbe:
-    httpGet:
-      # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
+    tcpSocket:
+      port: 1636
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
@@ -187,7 +254,7 @@ frig:
     preStop:
       exec:
         command:
-          - /opt/frig/docker-entrypoint.sh stop
+          - /opt/frds/docker-entrypoint.sh stop
 
   minAvailable: 1
   # Mutually exclusive with keda autoscaling

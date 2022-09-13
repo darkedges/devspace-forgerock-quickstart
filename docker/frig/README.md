@@ -78,3 +78,13 @@ Next you need to replace [`config/admin.json`](instance/config/admin.json) with 
 | `IG_KEYSTORE_ALIAS`    | `https-connector-key`                 | alias used when the PKCS12 keystore was created    |
 
 Consider using the `genjks` container to help with the generation of SSL using HashiCorp Vault and cert-manager.
+
+## docker-entrypoint.sh
+
+| Command              | Description                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| `start`              | Start an FRDS Instance.                                                                         |
+| `stop`               | Stop an FRDS Instance.                                                                          |
+| `init_deploymentkey` | Generate a Deployment Key, based on the supplied environment variable `DEPLOYMENT_KEY_PASSWORD` |
+| `init`               | Perform an initilization operation.                                                             |
+| `upgrade`            | Ugrade an instance.                                                                             |

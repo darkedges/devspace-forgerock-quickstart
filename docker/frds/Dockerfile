@@ -28,6 +28,7 @@ RUN apk add --no-cache tini bash && \
     chmod g+s /opt/frds/instance 
 
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
+COPY --chown=forgerock:forgerock installedfiles/ /opt/frds/
 COPY --chown=forgerock:forgerock instance/ /opt/frds/instance/init
 
 RUN chown -R forgerock:forgerock /opt/frds && \

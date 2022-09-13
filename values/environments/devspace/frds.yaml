@@ -1,0 +1,7 @@
+frds:
+  image:
+    repository: image(frds)
+    tag: tag(frds)
+  instance:
+    type: development
+  useKeystore: true
