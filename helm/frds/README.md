@@ -11,8 +11,8 @@
 
     ```console
     git clone https://github.com/darkedges/devspace-forgerock-quickstart
-    cd devspace-forgerock-quickstart/docker/frig
-    docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
+    cd devspace-forgerock-quickstart/docker/frds
+    docker build -t devspace-forgerock-quickstart/ds:7.2.0 .
     ```
 
 ## Install Chart
@@ -22,7 +22,7 @@
 ```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart
 cd devspace-forgerock-quickstart
-helm install --namespace=devspace-forgerock-quickstart --create-namespace -f values/environments/localdev/frig.yaml localdev-frig helm/frig
+helm install --namespace=devspace-forgerock-quickstart --create-namespace -f values/environments/localdev/frds.yaml localdev-frds helm/frds
 ```
 
 _See [configuration](#configuration) below._
@@ -35,7 +35,7 @@ _See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documen
 
 ```console
 cd devspace-forgerock-quickstart
-helm upgrade -f values/environments/localdev/frig.yaml localdev-frig helm/frig
+helm upgrade -f values/environments/localdev/frds.yaml localdev-frds helm/frds
 ```
 
 ## Uninstall Chart
@@ -46,7 +46,7 @@ _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command doc
 
 ```console
 cd devspace-forgerock-quickstart
-helm uninstall localdev-frig
+helm uninstall localdev-frds
 ```
 
 ## Configuration
@@ -54,7 +54,7 @@ helm uninstall localdev-frig
 See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
 
 ```console
-helm show values helm/frig
+helm show values helm/frds
 ```
 
 ## Source Code
@@ -73,7 +73,6 @@ Kubernetes: `>=1.20.0-0`
 | frds.affinity | object | `{}` |  |
 | frds.autoscaling.behavior | object | `{}` |  |
 | frds.autoscaling.enabled | bool | `false` |  |
-| frds.autoscaling.enabled | bool | `false` |  |
 | frds.autoscaling.maxReplicas | int | `11` |  |
 | frds.autoscaling.minReplicas | int | `1` |  |
 | frds.autoscaling.targetCPUUtilizationPercentage | int | `50` |  |
@@ -89,7 +88,7 @@ Kubernetes: `>=1.20.0-0`
 | frds.image.allowPrivilegeEscalation | bool | `true` |  |
 | frds.image.chroot | bool | `false` |  |
 | frds.image.imagePullPolicy | string | `"IfNotPresent"` |  |
-| frds.image.repository | string | `"darkedges-devspace-forgerock"` |  |
+| frds.image.repository | string | `"devspace-forgerock-quickstart/ds"` |  |
 | frds.image.runAsUser | int | `11111` |  |
 | frds.image.tag | string | `"7.2.0"` |  |
 | frds.init.env | string | `nil` | defaults value to add to the init config map |

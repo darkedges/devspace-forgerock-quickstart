@@ -14,7 +14,7 @@ It can also be retrieved from a web server by override the default `build-arg` v
 
 To build the container:
 
-```bash
+```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/frds
 

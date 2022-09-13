@@ -14,7 +14,7 @@ It can also be retrieved from a web server by override the default `build-arg` v
 
 To build the container:
 
-```bash
+```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/frig
 
@@ -24,7 +24,7 @@ docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
 
 ## Run
 
-```bash
+```console
 docker run --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
 ```
 

@@ -4,4 +4,4 @@ frds:
     tag: tag(frds)
   instance:
     type: development
-  useKeystore: true
+  useKeystore: false

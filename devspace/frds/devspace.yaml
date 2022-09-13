@@ -1,0 +1,53 @@
+version: v1beta11
+
+images:
+  frds:
+    image: devspace-forgerock-quickstart/ds
+    build:
+      docker:
+        skipPush: false  
+    entrypoint:
+    - /opt/frds/docker-entrypoint.sh
+    cmd:
+    - devspace
+    dockerfile: ../../docker/frds/Dockerfile
+    context: ../../docker/frds
+    injectRestartHelper: false  
+
+deployments:
+- name: darkedges-frds
+  helm:
+    chart:
+      name: ../../helm/frds
+    valuesFiles:
+    - ../../values/environments/devspace/frds.yaml
+    displayOutput: false
+    recreate: true  
+
+dev:
+  logs:
+    sync: true
+    selectors:
+    - imageSelector: image(frds):tag(frds)
+  ports:
+  - imageSelector: image(frds):tag(frds)
+    forward:
+    - port: 1389
+    - port: 1636
+    - port: 4444
+    - port: 8443
+
+  sync:
+  - imageSelector: image(frds):tag(frds)
+    localSubPath: ../../docker/frds/instance/init
+    containerPath: /opt/frds/instance/init 
+    excludePaths:
+    - .git/
+    - tmp/
+    - data/
+    - logs/
+  autoReload:
+    images:
+    - frds
+    deployments:
+    - darkedges-frds
