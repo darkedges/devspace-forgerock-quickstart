@@ -1,0 +1,4 @@
+myAM=System.getenv("AMSTER_URL")
+connect --private-key /opt/fram/instance/data/security/keys/amster/amster_rsa myAM
+export-config --path /tmp/fram
+:exit

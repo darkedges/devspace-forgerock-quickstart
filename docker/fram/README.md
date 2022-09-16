@@ -1,14 +1,14 @@
-# Docker: ForgeRock Identity Gateway
+# Docker: ForgeRock fIdentity Gateway
 
-This is a ForgeRock Identity Gateway container, based on eclipse-temurin:11.0.14_9-jre-alpine
+This is a ForgeRock Access Manager container, based on eclipse-temurin:11.0.14_9-jre-alpine
 
 ## Pre-Requisite
 
-It is necessary to have the FRIG `zip` archive downloaded from backstage and placed in the `docker/frig` folder as `IG-x.x.x.zip`.
+It is necessary to have the FRAM `zip` archive downloaded from backstage and placed in the `docker/fram` folder as `IG-x.x.x.zip`.
 
-It is possible to override the default `build-arg` value of `FRIG_ARCHIVE` to a version required.
+It is possible to override the default `build-arg` value of `FRAM_WAR_ARCHIVE` and `FRAM_AMSTER_ARCHIVE` to a version required.
 
-It can also be retrieved from a web server by override the default `build-arg` value of `FRIG_ARCHIVE_REPOSITORY_URL` to a web address i.e `https://files.internal.darkedges.com`
+It can also be retrieved from a web server by override the default `build-arg` value of `FRAM_ARCHIVE_REPOSITORY_URL` to a web address i.e `https://files.internal.darkedges.com`
 
 ## Build
 
@@ -16,19 +16,20 @@ To build the container:
 
 ```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
-cd docker/frig
+cd docker/fram
 
 # To build
-docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
+docker build -t devspace-forgerock-quickstart/am:7.2.0 .
 ```
 
 ## Run
 
 ```console
-docker run -it --rm --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
+docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.2.0 init_start
+docker run -it --rm --name dfq-am --link dfq-ds:dfq-ds --publish 8080:8080  devspace-forgerock-quickstart/am:7.2.0
 ```
 
-open a web browser to <http://ig.7f000001.nip.io:8080/hello> and it should return the hostname of the container running.
+open a web browser to <http://am.7f000001.nip.io:8080/openam/> and it should return the hostname of the container running.
 
 ## Build Arguments
 
@@ -43,19 +44,19 @@ open a web browser to <http://ig.7f000001.nip.io:8080/hello> and it should retur
 
 ### rootscripts
 
-Contains the [`docker-entrypoint.sh`](rootscripts/docker-entrypoint.sh) file that is used to start the FRIG instance.
+Contains the [`docker-entrypoint.sh`](rootscripts/docker-entrypoint.sh) file that is used to start the FRAM instance.
 
 #### environmental variables
 
 | build-arg      | Default Value         | Description                                                       |
 | -------------- | --------------------- | ----------------------------------------------------------------- |
-| `INSTANCE_DIR` | `/opt/frig/instance/` | define where the FRIG Configuration instance directory is located |
+| `INSTANCE_DIR` | `/opt/fram/instance/` | define where the FRAM Configuration instance directory is located |
 | `JAVA_HOME`    | `/opt/java/openjdk`   | should be set by the JRE container deployed                       |
 | `JAVA_OPTS`    |                       | pass any jvm arguments needed to be added                         |
 
 ### instance
 
-Contains the standard configuration folder structure for FRIG.
+Contains the standard configuration folder structure for FRAM.
 
 | folder                                      | description                                                                                                                                                                                         |
 | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -73,7 +74,7 @@ Next you need to replace [`config/admin.json`](instance/config/admin.json) with 
 
 | Environmental Variable | Example                               | Description                                        |
 | ---------------------- | ------------------------------------- | -------------------------------------------------- |
-| `IG_KEYSTORE_LOCATION` | `/var/frig/instance/ssl/keystore.jks` | location of the PKCS12 keystore created            |
+| `IG_KEYSTORE_LOCATION` | `/var/fram/instance/ssl/keystore.jks` | location of the PKCS12 keystore created            |
 | `IG_KEYSTORE_PASSWORD` | `changeit`                            | password used when the PKCS12 keystore was created |
 | `IG_KEYSTORE_ALIAS`    | `https-connector-key`                 | alias used when the PKCS12 keystore was created    |
 
