@@ -14,7 +14,7 @@ metadata:
     {{- if .Values.fram.useKeystore }}
     cert-manager.io/cluster-issuer: "vault-issuer"
     {{- end }}
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ .Values.fram.ingress.backend.protocol }}"
 spec:
   {{- if .Values.fram.useKeystore }}
   tls:
@@ -34,7 +34,7 @@ spec:
           service:
             name: {{ template "forgerock.fullname" $root }}-lb
             port:
-              number: 443
+              number: {{ .Values.fram.ingress.backend.port }}
   {{- end }}
   ingressClassName: nginx
 {{- end }}
