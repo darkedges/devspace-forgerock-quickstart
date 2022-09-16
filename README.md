@@ -6,11 +6,11 @@ Currently it is supporting only the following services
 
 - ForgeRock Identity Gateway
 - ForgeRock Directory Services
+- ForgeRock Access Manager
 
 the following will follow shortly
 
 - ForgeRock Identity Manager
-- ForgeRock Access Manager
 
 ## Repository Folder Layout
 
