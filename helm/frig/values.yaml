@@ -15,7 +15,7 @@ podSecurityPolicy:
 
 frig:
   image:
-    repository:  devspace-forgerock-quickstart/ig
+    repository: devspace-forgerock-quickstart/ig
     tag: 7.2.0
     imagePullPolicy: IfNotPresent
     chroot: false

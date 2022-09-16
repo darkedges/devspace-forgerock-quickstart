@@ -14,9 +14,9 @@ spec:
   selector:
     {{ include "forgerock.selectorLabels" . | nindent 6 }}
   ports:
-    - name: tcp-{{ lower .Values.fram.ingress.backend.protocol }}
-      port: {{ .Values.fram.ingress.backend.port}}
-      targetPort: {{ .Values.fram.ingress.backend.port}}
+    - name: tcp-{{ lower .Values.frig.ingress.backend.protocol }}
+      port: {{ .Values.frig.ingress.backend.port}}
+      targetPort: {{ .Values.frig.ingress.backend.port}}
 {{- if .Values.isStatefulSet }}
 ---
 apiVersion: v1
@@ -34,6 +34,6 @@ spec:
   selector:
     app: {{ template "forgerock.fullname". }}
   ports:
-    - name: tcp-{{ lower .Values.fram.ingress.backend.protocol }}
-      port: {{ .Values.fram.ingress.backend.port}}
+    - name: tcp-{{ lower .Values.frig.ingress.backend.protocol }}
+      port: {{ .Values.frig.ingress.backend.port}}
 {{- end }}

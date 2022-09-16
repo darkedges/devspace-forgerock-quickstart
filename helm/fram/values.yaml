@@ -15,7 +15,7 @@ podSecurityPolicy:
 
 fram: 
   image:
-    repository:  devspace-forgerock-quickstart/am
+    repository: devspace-forgerock-quickstart/am
     tag: 7.2.0
     imagePullPolicy: IfNotPresent
     chroot: false

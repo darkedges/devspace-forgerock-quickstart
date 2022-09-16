@@ -11,12 +11,12 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
   annotations: 
-    {{- if .Values.fram.useKeystore }}
+    {{- if .Values.frig.useKeystore }}
     cert-manager.io/cluster-issuer: "vault-issuer"
     {{- end }}
-    nginx.ingress.kubernetes.io/backend-protocol: "{{ .Values.fram.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ .Values.frig.ingress.backend.protocol }}"
 spec:
-  {{- if .Values.fram.useKeystore }}
+  {{- if .Values.frig.useKeystore }}
   tls:
   - hosts:
     {{- toYaml .Values.frig.ingress.hosts | nindent 4 }}
@@ -34,7 +34,7 @@ spec:
           service:
             name: {{ template "forgerock.fullname" $root }}-lb
             port:
-              number: {{ .Values.fram.ingress.backend.port }}
+              number: {{ $root.Values.frig.ingress.backend.port }}
   {{- end }}
   ingressClassName: nginx
 {{- end }}
