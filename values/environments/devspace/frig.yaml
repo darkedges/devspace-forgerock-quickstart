@@ -1,17 +1,11 @@
-env:
-  IG_RUN_MODE: DEVELOPMENT
-  INSTANCE_DIR: /opt/frig/instance
-
-ingress:
-  enabled: true
-  fqdn: 
-  - ig.7f000001.nip.io
-
 frig:
   replicaCount: 1
   image:
     repository: image(frig)
     tag: tag(frig)
+  env:
+    IG_RUN_MODE: DEVELOPMENT
+    INSTANCE_DIR: /opt/frig/instance
   livenessProbe:
     httpGet:
       path: "/openig/ping"
@@ -22,3 +16,10 @@ frig:
       path: "/openig/ping"
       port: 8080
       scheme: HTTP
+  ingress:
+    enabled: true
+    backend:
+      protocol: HTTP
+      port: 8080
+    hosts: 
+      - ig.7f000001.nip.io

@@ -5,3 +5,9 @@ frds:
   instance:
     type: development
   useKeystore: false
+  livenessProbe:
+    tcpSocket:
+      port: 1389
+  readinessProbe:
+    tcpSocket:
+      port: 1389

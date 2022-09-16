@@ -25,7 +25,7 @@ docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
 ## Run
 
 ```console
-docker run --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
+docker run -it --rm --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
 ```
 
 open a web browser to <http://ig.7f000001.nip.io:8080/hello> and it should return the hostname of the container running.

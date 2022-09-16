@@ -1,0 +1,76 @@
+version: v1beta11
+
+images:
+  fram:
+    image: devspace-forgerock-quickstart/am
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /usr/local/tomcat/docker-entrypoint.sh
+    cmd:
+    - catalina.sh
+    - run
+    dockerfile: ../../docker/fram/Dockerfile
+    context: ../../docker/fram
+    injectRestartHelper: false  
+  frds:
+    image: devspace-forgerock-quickstart/ds
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /opt/frds/docker-entrypoint.sh
+    cmd:
+    - devspace
+    dockerfile: ../../docker/frds/Dockerfile
+    context: ../../docker/frds
+    injectRestartHelper: false  
+
+deployments:
+- name: darkedges-fram
+  helm:
+    chart:
+      name: ../../helm/fram
+    valuesFiles:
+    - ../../values/environments/devspace/fram.yaml
+    displayOutput: true
+    recreate: true
+- name: darkedges-frds
+  helm:
+    chart:
+      name: ../../helm/frds
+    valuesFiles:
+    - ../../values/environments/devspace/frds.yaml
+    displayOutput: true
+    recreate: true  
+
+dev:
+  logs:
+    sync: true
+    selectors:
+    - imageSelector: image(fram):tag(fram)
+    - imageSelector: image(frds):tag(frds)
+  ports:
+  - imageSelector: image(fram):tag(fram)
+    forward:
+    - port: 8080
+  - imageSelector: image(frds):tag(frds)
+    forward:
+    - port: 1389
+    - port: 1636
+    - port: 4444
+  sync:
+  - imageSelector: image(fram):tag(fram)
+    localSubPath: ../../docker/fram/amster
+    containerPath: /opt/amster/config
+    excludePaths:
+    - .git/
+    - tmp/
+    - data/
+    - logs/
+  autoReload:
+    images:
+    - fram
+    deployments:
+    - darkedges-fram
