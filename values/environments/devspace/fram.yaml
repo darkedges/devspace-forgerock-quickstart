@@ -1,7 +1,7 @@
-image:
-  repository: image(fram)
-  tag: tag(fram)
 fram:
+  image:
+    repository: image(fram)
+    tag: tag(fram)
   services:
     identity:
       waitfor: service
