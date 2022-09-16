@@ -27,7 +27,7 @@ init_deploymentkey() {
 
 init() {
     echo "Initializing with profile: ${INIT_INSTANCE_PROFILE}"
-    if [ -d "/opt/frds/instance/config" ]; then
+    if [ -d "/opt/frds/instance/data/config" ]; then
         ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
     else
         rm -rf instance.loc

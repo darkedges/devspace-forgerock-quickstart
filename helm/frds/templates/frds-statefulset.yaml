@@ -113,6 +113,7 @@ spec:
         {{- if .Values.frds.useKeystore }}
           - mountPath: /var/run/secrets/frds
             name: {{ template "forgerock.frds.fullname". }}-keystore
+            readOnly: true 
         {{- end }}
       containers:
       - name: frds
@@ -155,6 +156,7 @@ spec:
           {{- if .Values.frds.useKeystore }}
           - mountPath: /var/run/secrets/frds
             name: {{ template "forgerock.frds.fullname". }}-keystore
+            readOnly: true
           {{- end }}
         {{- if .Values.frds.startupProbe }}
         startupProbe: {{ toYaml .Values.frds.startupProbe | nindent 12 }}

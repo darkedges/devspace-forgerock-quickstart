@@ -13,48 +13,129 @@ revisionHistoryLimit: 10
 podSecurityPolicy:
   enabled: false
 
-frig:
+fram: 
   image:
-    repository: devspace-forgerock-quickstart/ig
+    repository: devspace-forgerock-quickstart/am
     tag: 7.2.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
+
+  # Secrets
+  secrets:
+    admin:  
+      # fram.secrets.admin.password -- see docker FRAM_ADMIN_PASSWORD
+      password: Passw0rd
+    cfgStore:
+      # fram.secrets.cfgStore.uid -- see docker FRAM_CFG_STORE_DIR_MGR
+      uid: uid=am-config,ou=admins,dc=amconfig
+      # fram.secrets.cfgStore.password -- see docker FRAM_CFG_STORE_DIR_MGR_PWD
+      password: Passw0rd
+    userStore:
+      # fram.secrets.userStore.uid -- see docker FRAM_USER_STORE_DIR_MGR
+      uid: uid=am-identity-bind-account,ou=admins,ou=identities
+      # fram.secrets.userStore.password -- see docker FRAM_USER_STORE_DIR_MGR_PWD
+      password: Passw0rd
+    ctsStore:
+      # fram.secrets.ctsStore.uid -- uid for CTS Store
+      uid: uid=openam_cts,ou=admins,ou=famrecords,ou=openam-session,ou=tokens
+      # fram.secrets.ctsStore.password -- password for CTS Store
+      password: Passw0rd
   
-  # Ingress
-  ingress:
-    # frig.ingress.enabled -- Wether to expose the service to ingress
-    enabled: false
-    # frig.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
-    backend:
-      # frig.ingress.backend.protocol -- scheme being used by the backend application
-      protocol: HTTP
-      # frig.ingress.backend.port -- port being used by the backend application
-      port: 8080
+  # stores
+  stores:
+    cfgStore:
+      # fram.stores.cfgStore.enabled --  config store enabled
+      enabled: true
+      # fram.stores.cfgStore.enabled --  config store root uffix
+      rootSuffix: dc=amconfig
+      # fram.stores.cfgStore.enabled --  config store type
+      instance: development
+    userStore:
+      # fram.stores.userStore.enabled --  userStore store enabled
+      enabled: true
+      # fram.stores.userStore.rootSuffix --  userStore store root uffix
+      rootSuffix: ou=identities
+      # fram.stores.userStore.instance --  userStore store type
+      instance: development
+    ctsStore:
+      # fram.stores.ctsStore.enabled --  ctsStore store enabled
+      enabled: true
+      # fram.stores.ctsStore.rootSuffix --  ctsStore store root uffix
+      rootSuffix: dc=cts,ou=identities
+      # fram.stores.ctsStore.instance --  ctsStore store type
+      instance: development
   
+  # define what the default values are for a Volume Claim Template
+  volumeClaimTemplates:
+    data:
+      # fram.volumeClaimTemplates.data.storageClassName -- what storage class to use
+      storageClassName:
+      # fram.volumeClaimTemplates.data.storageSize -- size to be requested.
+      storageSize: 100Mi
+  
+  init:
+    ## fram.init.env -- list of variables to be added for the init container config map
+    env: []
+  
+  # rbac
+  rbac:
+    # fram.rbac.enabled -- whether to create roles and bindings
+    enabled: true
+  
+  # service account
+  serviceAccount:
+    # fram.serviceAccount.enabled -- whether to create services accounts
+    enabled: true
+    automountServiceAccountToken: true
+    # fram.serviceAccount.annotations -- list of annotations to attach to a service account
+    annotations:
+      helm.sh/hook: "pre-install"
+      helm.sh/hook-delete-policy: "before-hook-creation"
+      helm.sh/hook-weight: "-10"
+    name:
+  
+  # fram.services --  map of multiple service details that can be connected to
+  services: {}
+  #  identity:
+  #    waitfor: service
+  #    name: fram-development
+  #    releaseNameOverride: localdev-fram
+  #    port: 1389
+  #    ssl: false
+
   # certificates
   certificate:
-    # frig.certificate.enabled -- Wether to attach a certificate to ingress
+    # fram.certificate.enabled -- Wether to attach a certificate to ingress
     enabled: false
-  
-  # Keystore
+
+  # Ingress
+  ingress:
+    # fram.ingress.enabled -- Wether to expose the service to ingress
+    enabled: false
+    # fram.ingress.hosts -- List of hostname to use for ingress
+    hosts: []
+    backend:
+      # fram.ingress.backend.protocol -- scheme being used by the backend application
+      protocol: HTTP
+      # fram.ingress.backend.port -- port being used by the backend application
+      port: 8080
+  # fram.useKeystore -- has a keystore been generated and provided
+  useKeystore: false
+
   keystore:
-    # frig.keystore.password --  Password for the keystore
+    # fram.keystore.password --  Password for the keystore
     password: changeit
 
-  # frig.replicaCount -- number of replicas
+  # fram.replicaCount -- number of replicas
   replicaCount: 1
 
-  # Environment Variables
-  env:
-    # frig.env -- this is added by default and can be overwritten to set Environment Variables
-    IG_RUN_MODE: development
+  terminationGracePeriodSeconds: 300
 
   # -- Use an existing PSP instead of creating one
   existingPsp: ""
-  
+
   # -- Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels
   ##
   labels: {}
@@ -120,7 +201,7 @@ frig:
     #   whenUnsatisfiable: DoNotSchedule
     #   labelSelector:
     #     matchLabels:
-    #       app.kubernetes.io/instance: frig-internal
+    #       app.kubernetes.io/instance: fram-internal
 
   resources:
   ##  limits:
@@ -129,16 +210,13 @@ frig:
     requests:
       cpu: 100m
       memory: 90Mi
- 
+
   ## Liveness and readiness probe values
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   ##
   ## startupProbe:
-  ##   httpGet:
-  ##     # should match container.healthCheckPath
-  ##     path: "/openig/ping"
-  ##     port: 8443
-  ##     scheme: HTTP
+  ##   tcpSocket:
+  ##     port: 1636
   ##   initialDelaySeconds: 5
   ##   periodSeconds: 5
   ##   timeoutSeconds: 2
@@ -146,8 +224,7 @@ frig:
   ##   failureThreshold: 5
   livenessProbe:
     httpGet:
-      # should match container.healthCheckPath
-      path: "/openig/ping"
+      path: "openam/json/health/live"
       port: 8443
       scheme: HTTPS
     initialDelaySeconds: 10
@@ -157,15 +234,14 @@ frig:
     failureThreshold: 5
   readinessProbe:
     httpGet:
-      # should match container.healthCheckPath
-      path: "/openig/ping"
+      path: "openam/json/health/live"
       port: 8443
       scheme: HTTPS
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
     successThreshold: 1
-    failureThreshold: 3
+    failureThreshold: 5
 
   # -- Optionally customize the pod dnsConfig.
   dnsConfig: {}
@@ -189,7 +265,7 @@ frig:
     preStop:
       exec:
         command:
-          - /opt/frig/docker-entrypoint.sh stop
+          - /opt/fram/docker-entrypoint.sh stop
 
   minAvailable: 1
   # Mutually exclusive with keda autoscaling
@@ -242,40 +318,28 @@ frig:
       #  annotations:
       # key: value
     triggers: []
- #     - type: prometheus
- #       metadata:
- #         serverAddress: http://<prometheus-host>:9090
- #         metricName: http_requests_total
- #         threshold: '100'
- #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
+  #     - type: prometheus
+  #       metadata:
+  #         serverAddress: http://<prometheus-host>:9090
+  #         metricName: http_requests_total
+  #         threshold: '100'
+  #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
 
     behavior: {}
- #     scaleDown:
- #       stabilizationWindowSeconds: 300
- #       policies:
- #       - type: Pods
- #         value: 1
- #         periodSeconds: 180
- #     scaleUp:
- #       stabilizationWindowSeconds: 300
- #       policies:
- #       - type: Pods
- #         value: 2
- #         periodSeconds: 60
+  #     scaleDown:
+  #       stabilizationWindowSeconds: 300
+  #       policies:
+  #       - type: Pods
+  #         value: 1
+  #         periodSeconds: 180
+  #     scaleUp:
+  #       stabilizationWindowSeconds: 300
+  #       policies:
+  #       - type: Pods
+  #         value: 2
+  #         periodSeconds: 60
 
-# -- Optional array of imagePullSecrets containing private registry credentials
-## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-imagePullSecrets: []
-# - name: secretName
-
-## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
-rbac:
-  create: true
-  scope: false
-
-serviceAccount:
-  create: true
-  name: ""
-  automountServiceAccountToken: true
-  # -- Annotations for the controller service account
-  annotations: {}
+  # -- Optional array of imagePullSecrets containing private registry credentials
+  ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  imagePullSecrets: []
+  # - name: secretName

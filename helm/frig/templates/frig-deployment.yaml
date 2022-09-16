@@ -136,7 +136,7 @@ spec:
         {{- if .Values.frig.certificate.enabled }}
         - containerPort: 8443
         {{- else }}
-        - containerPort: 8080
+        - containerPort: {{ .Values.frig.ingress.backend.port }}
         {{- end }}
         {{- if .Values.frig.startupProbe }}
         startupProbe: {{ toYaml .Values.frig.startupProbe | nindent 12 }}
