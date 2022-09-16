@@ -92,6 +92,8 @@ Kubernetes: `>=1.20.0-0`
 | frig.image.repository | string | `"devspace-forgerock-quickstart/ig"` |  |
 | frig.image.runAsUser | int | `11111` |  |
 | frig.image.tag | string | `"7.2.0"` |  |
+| frig.ingress.backend.port | int | `8080` | port being used by the backend application |
+| frig.ingress.backend.protocol | string | `"HTTP"` | scheme being used by the backend application |
 | frig.ingress.enabled | bool | `false` | Wether to expose the service to ingress |
 | frig.ingress.hosts | list | `[]` | List of hostname to use for ingress |
 | frig.keda.apiVersion | string | `"keda.sh/v1alpha1"` |  |
