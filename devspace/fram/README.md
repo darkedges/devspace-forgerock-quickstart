@@ -42,7 +42,7 @@ It uses
    devspace dev
    ```
 
-3. Open [http://ig.7f000001.nip.io:8080/](http://ig.7f000001.nip.io:8080/) and it should return show the FRAM Login page.
+3. Open [http://am.7f000001.nip.io:8080/](http://am.7f000001.nip.io:8080/) and it should return show the FRAM Login page.
 
 4. clean up
 
@@ -58,30 +58,140 @@ It uses
    devspace dev
    ```
 
-2. in a second console enter
+1. in a second console enter
 
    ```console
    cd devspace-forgerock-quickstart/devspace/fram
    devspace enter
    ```
 
-3. Edit `/opt/amster/config/test` and change line 2 back to
-   
-   ```java
-   response.entity = "hello " + java.net.InetAddress.getLocalHost().getHostName();` and save
+1. Open a browser to <http://fram.7f000001.nip.io:8080/> and it should redirect you to `http://am.7f000001.nip.io:8080/openam/XUI/#login/`
+
+1. Edit `/opt/amster/config/config/global/Realms` and add `"fram.7f000001.nip.io"` to the list of values in `data/aliases`
+
+   ```json
+   {
+      "metadata": {
+         "realm": null,
+         "amsterVersion": "7.2.0",
+         "entityType": "Realms",
+         "entityId": "Lw",
+         "pathParams": {}
+      },
+      "data": {
+         "_id": "Lw",
+         "parentPath": null,
+         "active": true,
+         "name": "/",
+         "aliases": [
+            "localhost",
+            "am.7f000001.nip.io",
+            "fram.7f000001.nip.io",
+            "amconfig"
+         ]
+      }
+   }
    ```
 
-4. wait for the following to show up in the console
+1. wait for the following to show up in the console
 
    ```console
-   dev:ports-0 sync  Downstream - Download file './scripts/groovy/hello.groovy', uncompressed: ~0.13 KB
+   dev:ports-0 sync  Downstream - Download file './config/global/Realms/root.json', uncompressed: ~0.35 KB
    dev:ports-0 sync  Downstream - Successfully processed 1 change(s)
    ```
 
-   and reload [http://ig.7f000001.nip.io:8080/hello](http://ig.7f000001.nip.io:8080/hello) which should return the hostname.
+1. view [docker/fram/instance/amster/config/global/Realms/root.json](../../docker/fram/instance/amster/config/global/Realms/root.json) and check line it has been updated.
 
-5. view [docker/fram/instance/scripts/groovy/hello.groovy](../../docker/fram/instance/scripts/groovy/hello.groovy) and check line 2 is 
-   
-   ```java
-   response.entity = "hello " + java.net.InetAddress.getLocalHost().getHostName();` and save
+   ```json
+   {
+      "metadata": {
+         "realm": null,
+         "amsterVersion": "7.2.0",
+         "entityType": "Realms",
+         "entityId": "Lw",
+         "pathParams": {}
+      },
+      "data": {
+         "_id": "Lw",
+         "parentPath": null,
+         "active": true,
+         "name": "/",
+         "aliases": [
+            "localhost",
+            "am.7f000001.nip.io",
+            "fram.7f000001.nip.io",
+            "amconfig"
+         ]
+      }
+   }
+   ```
+
+1. Deploy teh configuration change using the following commands
+
+   ```console
+   cd /opt/amster/config
+   ./importConfig.sh
+   ```
+
+   should return
+
+   ```console
+   + export SERVER_PORT=8080
+   + SERVER_PORT=8080
+   + export SERVER_URL=am.7f000001.nip.io
+   + SERVER_URL=am.7f000001.nip.io
+   + export SERVER_SCHEME=http
+   + SERVER_SCHEME=http
+   + '[' -z am.7f000001.nip.io ']'
+   + export AMSTER_URL=http://am.7f000001.nip.io:8080/openam
+   + AMSTER_URL=http://am.7f000001.nip.io:8080/openam
+   + /opt/amster/amster /opt/amster/config/importConfig.amster
+   Amster OpenAM Shell (7.2.0 build 64ef7ebc01ed3df1a1264d7b0400351bc101361f, JVM: 11.0.14)
+   Type ':help' or ':h' for help.
+   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   am> :load /opt/amster/config/importConfig.amster
+   ===> http://am.7f000001.nip.io:8080/openam
+   Imported /opt/amster/config/config/global/Realms/root.json
+   Imported /opt/amster/config/config/DefaultCtsDataStoreProperties.json
+   ```
+
+1. Open a browser to <http://fram.7f000001.nip.io:8080/> and it should redirect you to `http://fram.7f000001.nip.io:8080/openam/XUI/#login/`
+
+1. delete the line from the local file and confirm this appears in the console
+
+   ```console
+   dev:ports-0 sync  Upstream - Upload File 'config/global/Realms/root.json'
+   dev:ports-0 sync  Upstream - Upload 1 create change(s) (Uncompressed ~0.32 KB)
+   dev:ports-0 sync  Upstream - Successfully processed 1 change(s)
+   ```
+
+1. confirm it has changed on the FRAM instance
+
+   ```console
+   more /opt/amster/config/config/global/Realms/root.json
+   ```
+
+   returns
+
+   ```console
+   {
+      "metadata": {
+         "realm": null,
+         "amsterVersion": "7.2.0",
+         "entityType": "Realms",
+         "entityId": "Lw",
+         "pathParams": {}
+      },
+      "data": {
+         "_id": "Lw",
+         "parentPath": null,
+         "active": true,
+         "name": "/",
+         "aliases": [
+            "localhost",
+            "am.7f000001.nip.io",
+            "amconfig"
+         ]
+      }
+   }
    ```
