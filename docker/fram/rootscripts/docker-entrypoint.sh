@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TOMCAT_HOME=/usr/local/tomcat
-LISTENER_PORT=${LISTENER_PORT:-8080}
+SERVER_PORT=${SERVER_PORT:-8080}
 SERVER_URL=${SERVER_URL:-am.7f000001.nip.io}
 SERVER_SCHEME=${SERVER_SCHEME:-http}
 HOSTNAME=$(hostname)
@@ -9,9 +9,9 @@ HOSTNAME=$(hostname)
 if [ -z "$SERVER_URL" ]; then
     NAMESPACE="$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)"
     SERVICE_DOMAIN=${HOSTNAME%-*}
-    SERVER_URL="${SERVER_SCHEME}://${HOSTNAME}.${SERVICE_DOMAIN}.${NAMESPACE}.svc.cluster.local:${LISTENER_PORT}/openam"
+    SERVER_URL="${SERVER_SCHEME}://${HOSTNAME}.${SERVICE_DOMAIN}.${NAMESPACE}.svc.cluster.local:${SERVER_PORT}/openam"
 else 
-    SERVER_URL="${SERVER_SCHEME}://${SERVER_URL}:${LISTENER_PORT}/openam"
+    SERVER_URL="${SERVER_SCHEME}://${SERVER_URL}:${SERVER_PORT}/openam"
 fi
 
 init() {
@@ -22,7 +22,7 @@ init() {
         echo "Starting configuration"
         echo "-> Starting Tomcat"
         ${TOMCAT_HOME}/bin/catalina.sh start
-        until $(curl --output /dev/null --silent --head --fail ${SERVER_SCHEME}://localhost:${LISTENER_PORT});
+        until $(curl --output /dev/null --silent --head --fail ${SERVER_SCHEME}://localhost:${SERVER_PORT});
         do
             echo "-->Waiting for OpenAM to be available"
             sleep 10

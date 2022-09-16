@@ -33,12 +33,13 @@ open a web browser to <http://am.7f000001.nip.io:8080/openam/> and it should ret
 
 ## Build Arguments
 
-| build-arg                     | Default Value          | Description                                             |
-| ----------------------------- | ---------------------- | ------------------------------------------------------- |
-| `JRE_IMAGE`                   | `eclipse-temurin`      | image name                                              |
-| `JRE_TAG`                     | `11.0.14_9-jre-alpine` | tag value                                               |
-| `FRIG_ARCHIVE`                | `IG-7.2.0.zip`         | name of archive to deploy                               |
-| `FRIG_ARCHIVE_REPOSITORY_URL` |                        | URL of Web Server / Nexus Repository / Cloud Bucket URL |
+| build-arg                     | Default Value             | Description                                             |
+| ----------------------------- | ------------------------- | ------------------------------------------------------- |
+| `TOMCAT_IMAGE`                | `darkedges/tomcat`        | image name                                              |
+| `TOMCAT_TAG`                  | `9.0.65-11.0.14_9-alpine` | tag value                                               |
+| `FRAM_WAR_ARCHIVE`            | `AM-7.2.0.zip`            | name of archive to deploy                               |
+| `FRAM_AMSTER_ARCHIVE`         | `Amster-7.2.0.zip`        | name of amster archive to deploy                        |
+| `FRAM_ARCHIVE_REPOSITORY_URL` |                           | URL of Web Server / Nexus Repository / Cloud Bucket URL |
 
 ## Folder Structure
 
@@ -48,44 +49,50 @@ Contains the [`docker-entrypoint.sh`](rootscripts/docker-entrypoint.sh) file tha
 
 #### environmental variables
 
-| build-arg      | Default Value         | Description                                                       |
-| -------------- | --------------------- | ----------------------------------------------------------------- |
-| `INSTANCE_DIR` | `/opt/fram/instance/` | define where the FRAM Configuration instance directory is located |
-| `JAVA_HOME`    | `/opt/java/openjdk`   | should be set by the JRE container deployed                       |
-| `JAVA_OPTS`    |                       | pass any jvm arguments needed to be added                         |
+| Name                          | Default Value                                          | Description                             |
+| ----------------------------- | ------------------------------------------------------ | --------------------------------------- |
+| `FRAM_ADMIN_PASSWORD`         | `Passw0rd`                                             | `amadmin` password                      |
+| `FRAM_CFG_STORE_DIR_MGR_PWD`  | `Passw0rd`                                             | Config Store Password                   |
+| `FRAM_CFG_STORE_DIR_MGR`      | `uid=am-config,ou=admins,dc=amconfig`                  | Config Store UID                        |
+| `FRAM_CFG_STORE_HOST`         | `dfq-ds`                                               | Config Store Hostname                   |
+| `FRAM_CFG_STORE_PORT`         | `1389`                                                 | Config Store Port                       |
+| `FRAM_CFG_STORE_ROOT_SUFFIX`  | `dc=amconfig`                                          | Config Store Root Suffix                |
+| `FRAM_CFG_STORE_SSL`          | `false`                                                | Config Store using SSL                  |
+| `FRAM_USER_STORE_DIR_MGR_PWD` | `Passw0rd`                                             | Identity Store Password                 |
+| `FRAM_USER_STORE_DIR_MGR`     | `uid=am-identity-bind-account,ou=admins,ou=identities` | Identity Store UID                      |
+| `FRAM_USER_STORE_HOST`        | `dfq-ds`                                               | Identity Store Hostname                 |
+| `FRAM_USER_STORE_PORT`        | `1389`                                                 | Identity Store Port                     |
+| `FRAM_USER_STORE_ROOT_SUFFIX` | `ou=identities`                                        | Identity Store Root Suffix              |
+| `FRAM_USER_STORE_SSL`         | `false`                                                | Identity Store using SSL                |
+| `SERVER_PORT`                 | `8080`                                                 | Port the Tomcat instance listens on     |
+| `SERVER_SCHEME`               | `http`                                                 | Scheme for the `SERVERURL`              |
+| `SERVER_URL`                  | `am.7f000001.nip.io`                                   | Server FQDN that is used to access FRAM |
 
 ### instance
 
 Contains the standard configuration folder structure for FRAM.
 
-| folder                                      | description                                                                                                                                                                                         |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`config`](instance/config)                 | contains <ul><li>[`config/admin.json`](instance/config/admin.json)</li><li>[`config/admin.json`](instance/config/admin.json)</li> <li>[`config/logback.xml`](instance/config/logback.xml)</li></ul> |
-| [`config/routes`](instance/config/routes)   | contains <ul><li>[`config/routes/hello.json`](instance/config/routes/hello.json)</li></ul>                                                                                                          |
-| [`extras`](instance/extras)                 | place any dependency jars here                                                                                                                                                                      |
-| [`scripts`](instance/scripts)               | the core scripts directory                                                                                                                                                                          |
-| [`scripts/groovy`](instance/scripts/groovy) | contains <ul><li>[`scripts/groovy/hello.groovy`](instance/scripts/groovy/hello.groovy)</li></ul>                                                                                                    |
+| folder                                             | description                                                                 |
+| -------------------------------------------------- | --------------------------------------------------------------------------- |
+| [`patches`](patches)                               | Place any required patches here                                             |
+| [`instance/amster`](instance/amster)               | This contains the core scripts to import and export FRAM Configuration.     |
+| [`instance/amster/config`](instance/amster/config) | Place the files needed to be configured using Amster here.                  |
+| [`webapps`](webapps)                               | Place any content that needs to be deployed to the Tomcat webapps directory |
 
-## Enabling SSL
+#### `instance/amster` scripts
 
-To enable SSL you need to create a keystore as per the guide [https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager](https://backstage.forgerock.com/docs/ig/7.2/installation-guide/install-standalone.html#standalone-https-keyManager) and either include it n the image or mount it as a volume.
+| name                  | description                                                                                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| `exportConfig.sh`     | This configures the correct URL to use with Amster and calls the export script `exportConfig.amster` |
+| `exportConfig.amster` | This will execute an export of the FRAM configuration into the `/tmp/fram` directory.                |
+| `importConfig.sh`     | This configures the correct URL to use with Amster and calls the import script `importConfig.amster` |
+| `importConfig.amster` | This will execute an import of the FRAM configuration into the `instance/amster/config` directory.   |
 
-Next you need to replace [`config/admin.json`](instance/config/admin.json) with [`config/admin.ssl.json`](instance/config/admin.ssl.json) and define the following environmental variables
-
-| Environmental Variable | Example                               | Description                                        |
-| ---------------------- | ------------------------------------- | -------------------------------------------------- |
-| `IG_KEYSTORE_LOCATION` | `/var/fram/instance/ssl/keystore.jks` | location of the PKCS12 keystore created            |
-| `IG_KEYSTORE_PASSWORD` | `changeit`                            | password used when the PKCS12 keystore was created |
-| `IG_KEYSTORE_ALIAS`    | `https-connector-key`                 | alias used when the PKCS12 keystore was created    |
-
-Consider using the `genjks` container to help with the generation of SSL using HashiCorp Vault and cert-manager.
+Note: to keep this pure and to be able to import into Identity Cloud, no variable subsituition is being used.
 
 ## docker-entrypoint.sh
 
-| Command              | Description                                                                                     |
-| -------------------- | ----------------------------------------------------------------------------------------------- |
-| `start`              | Start an FRDS Instance.                                                                         |
-| `stop`               | Stop an FRDS Instance.                                                                          |
-| `init_deploymentkey` | Generate a Deployment Key, based on the supplied environment variable `DEPLOYMENT_KEY_PASSWORD` |
-| `init`               | Perform an initilization operation.                                                             |
-| `upgrade`            | Ugrade an instance.                                                                             |
+| Command        | Description                                 |
+| -------------- | ------------------------------------------- |
+| `init`         | Perform an initilization operation.         |
+| `docker_start` | Start to be used for docker to also do init |
