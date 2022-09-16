@@ -6,29 +6,29 @@ fram:
     identity:
       waitfor: service
       name: frds-development
-      releaseNameOverride: localdev-frds
+      releaseNameOverride: darkedges-frds
       port: 1389
       ssl: false
     amconfig:
       waitfor: service 
       name: frds-development
-      releaseNameOverride: localdev-frds
+      releaseNameOverride: darkedges-frds
       port: 1389
       ssl: false
     cts:
       waitfor: service
       name: frds-development
-      releaseNameOverride: localdev-frds
+      releaseNameOverride: darkedges-frds
       port: 1389
       ssl: false
   livenessProbe:
     httpGet:
-      path: "am/json/health/live"
+      path: "openam/json/health/live"
       port: 8080
       scheme: HTTP
   readinessProbe:
     httpGet:
-      path: "am/json/health/ready"
+      path: "openam/json/health/ready"
       port: 8080
       scheme: HTTP
   ingress:
