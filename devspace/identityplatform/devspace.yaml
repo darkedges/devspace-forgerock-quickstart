@@ -1,6 +1,19 @@
 version: v1beta11
 
 images:
+  fram:
+    image: devspace-forgerock-quickstart/am
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /usr/local/tomcat/docker-entrypoint.sh
+    cmd:
+    - catalina.sh
+    - run
+    dockerfile: ../../docker/fram/Dockerfile
+    context: ../../docker/fram
+    injectRestartHelper: false  
   frim:
     image: devspace-forgerock-quickstart/idm
     build:
@@ -34,6 +47,14 @@ images:
     context: ../../docker/idmschema
 
 deployments:
+  - name: darkedges-fram
+    helm:
+      chart:
+        name: ../../helm/fram
+      valuesFiles:
+      - ../../values/environments/devspace/fram.yaml
+      displayOutput: true
+      recreate: true
   - name: darkedges-frim
     helm:
       chart:
@@ -75,6 +96,7 @@ dev:
     selectors:
     - imageSelector: image(frds):tag(frds)
     - imageSelector: image(frim):tag(frim)
+    - imageSelector: image(fram):tag(fram)
   ports:
   - imageSelector: docker.io/bitnami/mysql:8.0.30-debian-11-r15
     forward:
@@ -87,8 +109,32 @@ dev:
     - port: 4444
   - imageSelector: image(frim):tag(frim)
     forward:
+    - port: 8082
+      remotePort: 8080
+  - imageSelector: image(fram):tag(fram)
+    forward:
+    - port: 8081
+      remotePort: 8080
+  - imageSelector: image(frig):tag(frig)
+    forward:
     - port: 8080
+      remotePort: 8080
   sync:
+  - imageSelector: image(frim):tag(frim)
+    localSubPath: ../../docker/frim/instance
+    containerPath: /opt/frim/instance/data
+    excludePaths:
+    - .git/
+    - audit/
+    - logs/
+  - imageSelector: image(fram):tag(fram)
+    localSubPath: ../../docker/fram/instance/amster
+    containerPath: /opt/amster/config
+    excludePaths:
+    - .git/
+    - tmp/
+    - data/
+    - logs/
   - imageSelector: image(frds):tag(frds)
     localSubPath: ../../docker/frds/instance/init
     containerPath: /opt/frds/instance/init 
@@ -97,17 +143,14 @@ dev:
     - tmp/
     - data/
     - logs/
-  - imageSelector: image(frim):tag(frim)
-    localSubPath: ../../docker/frim/instance
-    containerPath: /opt/frim/instance/data
-    excludePaths:
-    - .git/
-    - audit/
-    - logs/
   autoReload:
     images:
     - frim
+    - fram
+    - frig
     - frds
     deployments:
     - darkedges-frim
+    - darkedges-fram
+    - darkedges-frig
     - darkedges-frds
