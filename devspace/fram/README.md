@@ -44,6 +44,8 @@ It uses
 
 3. Open [http://am.7f000001.nip.io:8080/](http://am.7f000001.nip.io:8080/) and it should return show the FRAM Login page.
 
+   The default credentials are `amadmin`:`Passw0rd`
+
 4. clean up
 
    ```console

@@ -93,6 +93,10 @@ start() {
     ${TOMCAT_HOME}/bin/catalina.sh run
 }
 
+stop() {
+    ${TOMCAT_HOME}/bin/catalina.sh stop -force
+}
+
 CMD="${1:-run}"
 
 case "$CMD" in
@@ -103,6 +107,9 @@ docker_start)
     export CATALINA_PID=${TOMCAT_HOME}/bin/pid.txt
     init
     start
+    ;;
+stop)
+    stop
     ;;
 *)
     exec "$@"

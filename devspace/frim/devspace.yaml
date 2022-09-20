@@ -1,0 +1,103 @@
+version: v1beta11
+
+images:
+  frim:
+    image: devspace-forgerock-quickstart/idm
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /opt/frim/docker-entrypoint.sh
+    cmd:
+    - devspace
+    dockerfile: ../../docker/frim/Dockerfile
+    context: ../../docker/frim
+    injectRestartHelper: false  
+  frds:
+    image: devspace-forgerock-quickstart/ds
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /opt/frds/docker-entrypoint.sh
+    cmd:
+    - devspace
+    dockerfile: ../../docker/frds/Dockerfile
+    context: ../../docker/frds
+    injectRestartHelper: false  
+  idmschema:
+    image: devspace-forgerock-quickstart/idmschema
+    build:
+      docker:
+        skipPush: true  
+    dockerfile: ../../docker/idmschema/Dockerfile
+    context: ../../docker/idmschema
+
+deployments:
+  - name: darkedges-frim
+    helm:
+      chart:
+        name: ../../helm/frim
+      valuesFiles:
+      - ../../values/environments/devspace/frim.yaml
+      displayOutput: true
+      recreate: true
+  - name: darkedges-frds
+    helm:
+      chart:
+        name: ../../helm/frds
+      valuesFiles:
+      - ../../values/environments/devspace/frds.yaml
+      displayOutput: true
+      recreate: true  
+  - name: darkedges-idmschema
+    helm:
+      chart:
+        name: ../../helm/idmschema
+      valuesFiles:
+      - ../../values/environments/devspace/idmschema.yaml
+      displayOutput: true
+      recreate: true  
+  - name: darkedges-mysqldb
+    helm:
+      chart:
+        name: mysql
+        version: 9.3.3
+        repo: https://charts.bitnami.com/bitnami
+      valuesFiles:
+      - ../../values/environments/devspace/mysqldb.yaml
+      displayOutput: true
+      recreate: true 
+
+dev:
+  logs:
+    sync: true
+    selectors:
+    - imageSelector: image(frds):tag(frds)
+    - imageSelector: image(frim):tag(frim)
+  ports:
+  - imageSelector: docker.io/bitnami/mysql:8.0.30-debian-11-r15
+    forward:
+    - port: 3306
+  - imageSelector: image(frds):tag(frds)
+    forward:
+    - port: 1389
+    - port: 1636
+    - port: 8443
+    - port: 4444
+  - imageSelector: image(frim):tag(frim)
+    forward:
+    - port: 8080
+  sync:
+  - imageSelector: image(frim):tag(frim)
+    localSubPath: ../../docker/frim/instance
+    containerPath: /opt/frim/instance/data
+    excludePaths:
+    - .git/
+    - audit/
+    - logs/
+  autoReload:
+    images:
+    - frim
+    deployments:
+    - devspace-frim

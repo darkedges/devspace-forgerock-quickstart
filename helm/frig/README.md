@@ -108,7 +108,7 @@ Kubernetes: `>=1.20.0-0`
 | frig.keda.triggers | list | `[]` |  |
 | frig.keystore.password | string | `"changeit"` | Password for the keystore |
 | frig.labels | object | `{}` | Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels # |
-| frig.lifecycle | object | `{"preStop":{"exec":{"command":["/opt/frig/docker-entrypoint.sh stop"]}}}` | Improve connection draining when ingress controller pod is deleted using a lifecycle hook: With this new hook, we increased the default terminationGracePeriodSeconds from 30 seconds to 300, allowing the draining of connections up to five minutes. If the active connections end before that, the pod will terminate gracefully at that time. To effectively take advantage of this feature, the Configmap feature worker-shutdown-timeout new value is 240s instead of 10s. # |
+| frig.lifecycle | object | `{"preStop":{"exec":{"command":["/opt/frig/docker-entrypoint.sh","stop"]}}}` | Improve connection draining when ingress controller pod is deleted using a lifecycle hook: With this new hook, we increased the default terminationGracePeriodSeconds from 30 seconds to 300, allowing the draining of connections up to five minutes. If the active connections end before that, the pod will terminate gracefully at that time. To effectively take advantage of this feature, the Configmap feature worker-shutdown-timeout new value is 240s instead of 10s. # |
 | frig.livenessProbe.failureThreshold | int | `5` |  |
 | frig.livenessProbe.httpGet.path | string | `"/openig/ping"` |  |
 | frig.livenessProbe.httpGet.port | int | `8443` |  |

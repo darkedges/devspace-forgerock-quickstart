@@ -251,7 +251,8 @@ frds:
     preStop:
       exec:
         command:
-          - /opt/frds/docker-entrypoint.sh stop
+          - /opt/frds/docker-entrypoint.sh 
+          - stop
 
   minAvailable: 1
   # Mutually exclusive with keda autoscaling

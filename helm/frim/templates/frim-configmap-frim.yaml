@@ -1,0 +1,30 @@
+{{- if .Values.frim.env }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "forgerock.fullname". }}-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: frim
+    chart: {{ template "forgerock.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  {{- if .Values.frim.services.db }}
+  DARKEDGES_DATASOURCE_JDBC_HOST: "{{ template "forgerock.serviceName" (list "db" .) }}"
+  DARKEDGES_DATASOURCE_JDBC_PORT: "{{ template "forgerock.serviceDetail" (list "db" "port" .) }}"
+  DARKEDGES_DATASOURCE_JDBC_DATABASENAME: "{{ template "forgerock.serviceDetail" (list "db" "databasename" .) }}"
+  DARKEDGES_DATASOURCE_JDBC_USERNAME: "{{ template "forgerock.serviceDetail" (list "db" "username" .) }}"
+  DARKEDGES_DATASOURCE_JDBC_PASSWORD: "{{ template "forgerock.serviceDetail" (list "db" "password" .) }}"
+  {{- end }}
+  {{- if .Values.frim.services.identity }}
+  DARKEDGES_PROVISIONERS_IDENTITY_HOST: "{{ template "forgerock.frdsHost" (list "identity" .) }}"
+  DARKEDGES_PROVISIONERS_IDENTITY_PORT: "{{ template "forgerock.serviceDetail" (list "identity" "port" .) }}"
+  DARKEDGES_PROVISIONERS_IDENTITY_SSL: "{{ template "forgerock.serviceDetail" (list "identity" "ssl" .) }}"
+  DARKEDGES_PROVISIONERS_IDENTITY_USERNAME: "{{ template "forgerock.serviceDetail" (list "identity" "username" .) }}"
+  DARKEDGES_PROVISIONERS_IDENTITY_PASSWORD: "{{ template "forgerock.serviceDetail" (list "identity" "password" .) }}"
+  {{- end }} 
+  {{- with .Values.frim.env.frim }}
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
+{{- end }}

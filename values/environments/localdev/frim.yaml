@@ -1,0 +1,37 @@
+frim:
+  services:
+    db:
+      waitfor: service
+      name: mysqldb
+      releaseNameOverride: darkedges
+      details:
+        port: "3306"
+        databasename: "frim"
+        username: "frim"
+        password: "Passw0rd"
+    identity:
+      waitfor: service
+      name: frds-development
+      releaseNameOverride: localdev-frds
+      details:
+        port: "1389"
+        ssl: "false"
+        username: "uid=am-identity-bind-account,ou=admins,ou=identities"
+        password: "Passw0rd"
+  livenessProbe: 
+    httpGet:
+      path: /openidm/info/ping
+      port: 8080
+      scheme: HTTP
+  readinessProbe: 
+    httpGet:
+      path: /openidm/info/ping
+      port: 8080
+      scheme: HTTP
+  ingress:
+    enabled: true
+    backend:
+      protocol: HTTP
+      port: 8080
+    hosts: 
+      - idm.7f000001.nip.io

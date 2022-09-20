@@ -1,0 +1,24 @@
+{{- if and (.Values.frim.rbac.enabled) (.Values.frim.useKeystore) -}}
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "forgerock.serviceAccountName" . }}-genjks-role-binding
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frim
+    {{- with .Values.frim.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.frim.serviceAccount.annotations }}
+  annotations:
+  {{ toYaml .Values.frim.serviceAccount.annotations | indent 4 }}
+  {{- end }}
+subjects:
+- kind: ServiceAccount
+  name:  {{ template "forgerock.serviceAccountName" . }}-genjks
+roleRef:
+  kind: Role
+  name: {{ template "forgerock.serviceAccountName" . }}-genjks-role
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

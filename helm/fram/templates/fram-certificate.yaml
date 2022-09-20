@@ -20,6 +20,9 @@ spec:
     name: vault-issuer
     kind: ClusterIssuer
   commonName: localhost
+  usages:
+    - any
+  encodeUsagesInRequest: true
   dnsNames:
   - localhost
   - "*.{{ template "forgerock.fullname". }}-lb"

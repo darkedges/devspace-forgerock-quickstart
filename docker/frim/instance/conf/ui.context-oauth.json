@@ -1,0 +1,7 @@
+{
+    "enabled": true,
+    "cacheEnabled": true,
+    "urlContextRoot": "/oauthReturn",
+    "defaultDir": "&{idm.install.dir}/ui/oauth/default",
+    "extensionDir": "&{idm.install.dir}/ui/oauth/extension"
+}

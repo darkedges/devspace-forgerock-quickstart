@@ -1,0 +1,32 @@
+{{- if .Values.frim.certificate.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ template "forgerock.fullname" . }}-internal-tls
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frim
+    {{- with .Values.frim.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations:
+    helm.sh/hook: "pre-install"
+    helm.sh/hook-delete-policy: "before-hook-creation"
+    helm.sh/hook-weight: "-15"
+spec:
+  secretName: {{ template "forgerock.fullname" . }}-internal-tls
+  issuerRef:
+    name: vault-issuer
+    kind: ClusterIssuer
+  commonName: localhost
+  usages:
+    - any
+  encodeUsagesInRequest: true
+  dnsNames:
+    - localhost
+    - {{ template "forgerock.fullname". }}-lb
+    - {{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}
+    - {{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}.svc
+    - {{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}.svc.cluster.local
+{{- end}}

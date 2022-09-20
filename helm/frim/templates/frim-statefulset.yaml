@@ -1,0 +1,186 @@
+{{- if .Values.frim.isStatefulSet -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ template "forgerock.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frim
+    {{- with .Values.frim.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  podManagementPolicy: Parallel 
+  selector:
+    matchLabels:
+      {{- include "forgerock.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: frim
+  {{- if not .Values.frim.autoscaling.enabled }}
+  replicas: {{ .Values.frim.replicaCount }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.frim.revisionHistoryLimit }}
+  {{- if .Values.frim.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.frim.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.frim.minReadySeconds }}
+  serviceName: {{ template "forgerock.fullname". }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: frim
+        {{- with .Values.frim.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.frim.podLabels }}
+        {{- toYaml .Values.frim.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/frim-configmap-frim.yaml") . | sha256sum }}
+       {{- if .Values.frim.podAnnotations }}
+      {{- range $key, $value := .Values.frim.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.frim.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.frim.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.hostname }}
+      hostname: {{ toYaml .Values.frim.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.frim.dnsPolicy }}
+      {{- if .Values.frim.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.frim.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.priorityClassName }}
+      priorityClassName: {{ .Values.frim.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.frim.hostNetwork }}
+      hostNetwork: {{ .Values.frim.hostNetwork }}
+      {{- end }}
+      {{- if .Values.frim.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.frim.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.tolerations }}
+      tolerations: {{ toYaml .Values.frim.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.affinity }}
+      affinity: {{ toYaml .Values.frim.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.frim.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.frim.podSecurityContext .Values.frim.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.frim.podSecurityContext }}
+        {{- toYaml .Values.frim.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.frim.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.frim.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.frim.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.frim.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.frim.terminationGracePeriodSeconds }}
+      initContainers:
+        {{- if .Values.frim.services }}
+        - name: wait-for-first
+          image: opsfleet/depends-on
+          imagePullPolicy: {{ .Values.frim.image.imagePullPolicy }}
+          {{ template "forgerock.waitfor" . }}
+        {{- end }}
+        - name: init
+          image: {{ .Values.frim.image.repository }}:{{ .Values.frim.image.tag }}
+          imagePullPolicy: {{ .Values.frim.image.imagePullPolicy }}
+          command:
+            - ./docker-entrypoint.sh
+            - init_k8s_identitymanager
+          volumeMounts:
+          {{- if .Values.frim.useKeystore }}
+          - mountPath: /var/run/secrets/frim
+            name:  {{ template "forgerock.fullname". }}-keystore
+            readOnly: true  
+          {{- end }}
+      containers:
+      - name: frim
+        image: {{ .Values.frim.image.repository }}:{{ .Values.frim.image.tag }}
+        imagePullPolicy: {{ .Values.frim.image.imagePullPolicy }}
+        {{- if .Values.frim.lifecycle }}
+        lifecycle: {{ toYaml .Values.frim.lifecycle | nindent 10 }}
+        {{- end }}
+        securityContext: {{ include "frim.containerSecurityContext" . | nindent 10 }}
+        envFrom:
+        - secretRef:
+            name: {{ template "forgerock.fullname". }}-secrets
+        - configMapRef:
+            name: {{ template "forgerock.fullname". }}-config 
+        env:
+          {{- if .Values.frim.useKeystore }}
+          - name: "OPENIDM_KEYSTORE_LOCATION"
+            value: /var/run/secrets/frim/keystore.jceks
+          - name: "OPENIDM_TRUSTSTORE_LOCATION"
+            value: /var/run/secrets/frim/truststore.jks
+          - name: "OPENIDM_TRUSTSTORE_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "forgerock.fullname". }}-keystore
+                key: truststore.storepass
+          - name: "OPENIDM_KEYSTORE_PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "forgerock.fullname". }}-keystore
+                key: keystore.storepass
+          {{- end }}
+        ports:
+        - containerPort: {{ .Values.frim.ingress.backend.port}}
+        volumeMounts:
+          - mountPath: /opt/frim/instance/data
+            name: {{ template "forgerock.fullname". }}-data-volume
+          {{- if .Values.frim.useKeystore }}
+          - mountPath: /var/run/secrets/frim
+            name:  {{ template "forgerock.fullname". }}-keystore
+            readOnly: true
+          {{- end }}
+        {{- if .Values.frim.startupProbe }}  
+        startupProbe: {{ toYaml .Values.frim.startupProbe | nindent 10 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.frim.livenessProbe | nindent 10 }}
+        readinessProbe: {{ toYaml .Values.frim.readinessProbe | nindent 10 }}
+        {{- if .Values.frim.resources }}
+        resources: {{ toYaml .Values.frim.resources | nindent 10 }}
+        {{- end }}
+      volumes:
+        {{- if .Values.frim.useKeystore }}
+        - name: {{ template "forgerock.fullname". }}-keystore
+          projected:
+            sources:
+            - secret:
+                name: {{ template "forgerock.fullname". }}-keystore
+                items:
+                - key: truststore.jks
+                  path: truststore.jks
+                - key: keystore.jceks
+                  path: keystore.jceks
+        {{- end }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ template "forgerock.fullname". }}-data-volume
+    spec:
+      {{- if .Values.frim.volumeClaimTemplates.data.storageClassName }}
+      storageClassName: {{ .Values.frim.volumeClaimTemplates.data.storageClassName }}
+      {{- end }}
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.frim.volumeClaimTemplates.data.storageSize }}
+{{- end -}}
