@@ -38,6 +38,18 @@ images:
     dockerfile: ../../docker/frds/Dockerfile
     context: ../../docker/frds
     injectRestartHelper: false  
+  frig:
+    image: devspace-forgerock-quickstart/ig
+    build:
+      docker:
+        skipPush: true  
+    entrypoint:
+    - /opt/frig/docker-entrypoint.sh
+    cmd:
+    - devspace
+    dockerfile: ../../docker/frig/Dockerfile
+    context: ../../docker/frig
+    injectRestartHelper: false 
   idmschema:
     image: devspace-forgerock-quickstart/idmschema
     build:
@@ -70,6 +82,14 @@ deployments:
       valuesFiles:
       - ../../values/environments/devspace/frds.yaml
       displayOutput: true
+      recreate: true  
+  - name: darkedges-frig
+    helm:
+      chart:
+        name: ../../helm/frig
+      valuesFiles:
+      - ../../values/environments/devspace/frig.yaml
+      displayOutput: false
       recreate: true  
   - name: darkedges-idmschema
     helm:
