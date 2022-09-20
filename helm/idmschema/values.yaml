@@ -1,0 +1,19 @@
+image:
+  repository: devspace-forgerock-quickstart/idmschema
+  tag: 7.2.0
+  imagePullPolicy: IfNotPresent
+
+dbService:
+  name: mysqldb
+  releaseNameOverride:
+
+serviceAccount:
+  create: true
+  name:
+
+annotations: false
+
+# -- Optional array of imagePullSecrets containing private registry credentials
+## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+imagePullSecrets: []
+# - name: secretName

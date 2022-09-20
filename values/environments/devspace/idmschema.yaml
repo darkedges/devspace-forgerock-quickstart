@@ -1,0 +1,9 @@
+image:
+  repository: image(idmschema)
+  tag: tag(idmschema)
+
+services:
+  mysqldb:
+    waitfor: service
+    name: mysqldb
+    releaseNameOverride: darkedges

@@ -1,0 +1,59 @@
+{
+    "bundle":{
+        "containers":[
+            {
+                "location" : "bundle",
+                "includes" : ["*.jar"],
+                "start-level":1,
+                "action" : "install"
+            },
+            {
+                "location":"bundle",
+                "includes" : [
+                    "**/openidm-system-*.jar",
+                    "**/org.apache.felix.log*.jar",
+                    "**/org.apache.aries.spifly.dynamic.bundle*.jar"
+                ],
+                "start-level":2,
+                "action":"start"
+            },
+            {
+                "location":"bundle",
+                "includes":[
+                    "**/opendj-core-*.jar",
+                    "**/opendj-grizzly-*.jar",
+                    "**/openidm-infoservice-*.jar",
+                    "**/openidm-datasource*.jar",
+                    "**/openidm-scr-starter-*.jar"
+                ],
+                "start-level":3,
+                "action":"start"
+            },
+            {
+                "location":"bundle",
+                "includes":["*.jar"],
+                "excludes" : [
+                    "**/org.apache.felix.scr-*.jar",
+                    "**/openidm-scheduler-*.jar"
+                ]
+            },
+            {
+                "location":"bundle",
+                "includes":["**/openidm-scheduler-*.jar"],
+                "start-level":11,
+                "action": "start"
+            },
+            {
+                "location":"&{idm.instance.dir}/bundle",
+                "includes":["*.jar"],
+                "action" : "install"
+            }
+        ],
+        "default":{
+            "start-level":10,
+            "action":"start"
+        }
+    },
+    "config.properties":"conf/config.properties",
+    "system.properties":"conf/system.properties"
+}

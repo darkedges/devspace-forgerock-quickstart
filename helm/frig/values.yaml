@@ -189,7 +189,8 @@ frig:
     preStop:
       exec:
         command:
-          - /opt/frig/docker-entrypoint.sh stop
+          - /opt/frig/docker-entrypoint.sh 
+          - stop
 
   minAvailable: 1
   # Mutually exclusive with keda autoscaling

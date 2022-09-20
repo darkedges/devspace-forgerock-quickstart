@@ -1,0 +1,11 @@
+enabled: true
+image:
+  debug: true
+auth:
+  rootPassword: Passw0rd
+  username: frim
+  password: Passw0rd
+  database: frim
+primary:
+  persistence:
+    enabled: false

@@ -62,7 +62,7 @@ dev:
     - port: 4444
   sync:
   - imageSelector: image(fram):tag(fram)
-    localSubPath: ../../docker/fram/amster
+    localSubPath: ../../docker/fram/instance/amster
     containerPath: /opt/amster/config
     excludePaths:
     - .git/

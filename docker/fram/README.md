@@ -1,4 +1,4 @@
-# Docker: ForgeRock fIdentity Gateway
+# Docker: ForgeRock Access Manager
 
 This is a ForgeRock Access Manager container, based on eclipse-temurin:11.0.14_9-jre-alpine
 

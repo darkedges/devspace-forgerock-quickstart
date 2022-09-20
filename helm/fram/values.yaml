@@ -265,7 +265,8 @@ fram:
     preStop:
       exec:
         command:
-          - /opt/fram/docker-entrypoint.sh stop
+          - /opt/fram/docker-entrypoint.sh 
+          - stop
 
   minAvailable: 1
   # Mutually exclusive with keda autoscaling

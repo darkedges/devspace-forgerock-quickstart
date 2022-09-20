@@ -37,7 +37,7 @@ spec:
         {{- toYaml .Values.fram.podLabels | nindent 8 }}
       {{- end }}
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/fram-configmap-container.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/fram-configmap-fram.yaml") . | sha256sum }}
        {{- if .Values.fram.podAnnotations }}
       {{- range $key, $value := .Values.fram.podAnnotations }}
         {{ $key }}: {{ $value | quote }}
@@ -91,10 +91,12 @@ spec:
       serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
       terminationGracePeriodSeconds: {{ .Values.fram.terminationGracePeriodSeconds }}
       initContainers:
+        {{- if .Values.fram.services }}
         - name: wait-for-first
           image: opsfleet/depends-on
           imagePullPolicy: {{ .Values.fram.image.imagePullPolicy }}
           {{ template "forgerock.waitfor". }}
+        {{- end }}
         - name: init
           image: {{ .Values.fram.image.repository }}:{{ .Values.fram.image.tag }}
           imagePullPolicy: {{ .Values.fram.image.imagePullPolicy }}

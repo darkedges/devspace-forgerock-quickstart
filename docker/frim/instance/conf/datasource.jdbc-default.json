@@ -1,0 +1,13 @@
+{
+    "driverClass" : "com.mysql.cj.jdbc.Driver",
+    "jdbcUrl" : "jdbc:mysql://&{darkedges.datasource.jdbc.host|dfq-db}:&{darkedges.datasource.jdbc.port|3306}/&{darkedges.datasource.jdbc.databasename|frim}?autoReconnect=true&useSSL=false&allowMultiQueries=true&characterEncoding=utf8&serverTimezone=UTC",
+    "databaseName" : "&{darkedges.datasource.jdbc.databasename|frim}",
+    "username" : "&{darkedges.datasource.jdbc.username|frim}",
+    "password" : "&{darkedges.datasource.jdbc.password|Passw0rd}",
+    "connectionTimeout" : 30000,
+    "connectionPool" : {
+        "type" : "hikari",
+        "minimumIdle" : 20,
+        "maximumPoolSize" : 50
+    }
+}

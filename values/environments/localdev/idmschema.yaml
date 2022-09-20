@@ -1,0 +1,5 @@
+services:
+  mysqldb:
+    waitfor: service
+    name: mysqldb
+    releaseNameOverride: localdev

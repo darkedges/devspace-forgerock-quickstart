@@ -1,6 +1,6 @@
-# Docker: ForgeRock Identity Gateway
+# Docker: ForgeRock Directory Services
 
-This is a ForgeRock Identity Gateway container, based on eclipse-temurin:11.0.14_9-jre-alpine
+This is a ForgeRock Directory Services container, based on eclipse-temurin:11.0.14_9-jre-alpine
 
 ## Pre-Requisite
 

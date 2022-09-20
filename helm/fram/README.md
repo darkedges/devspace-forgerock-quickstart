@@ -73,7 +73,6 @@ Kubernetes: `>=1.20.0-0`
 | fram.affinity | object | `{}` |  |
 | fram.autoscaling.behavior | object | `{}` |  |
 | fram.autoscaling.enabled | bool | `false` |  |
-| fram.autoscaling.enabled | bool | `false` |  |
 | fram.autoscaling.maxReplicas | int | `11` |  |
 | fram.autoscaling.minReplicas | int | `1` |  |
 | fram.autoscaling.targetCPUUtilizationPercentage | int | `50` |  |
@@ -110,9 +109,9 @@ Kubernetes: `>=1.20.0-0`
 | fram.keda.triggers | list | `[]` |  |
 | fram.keystore.password | string | `"changeit"` | Password for the keystore |
 | fram.labels | object | `{}` | Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels # |
-| fram.lifecycle | object | `{"preStop":{"exec":{"command":["/opt/fram/docker-entrypoint.sh stop"]}}}` | Improve connection draining when ingress controller pod is deleted using a lifecycle hook: With this new hook, we increased the default terminationGracePeriodSeconds from 30 seconds to 300, allowing the draining of connections up to five minutes. If the active connections end before that, the pod will terminate gracefully at that time. To effectively take advantage of this feature, the Configmap feature worker-shutdown-timeout new value is 240s instead of 10s. # |
+| fram.lifecycle | object | `{"preStop":{"exec":{"command":["/opt/fram/docker-entrypoint.sh","stop"]}}}` | Improve connection draining when ingress controller pod is deleted using a lifecycle hook: With this new hook, we increased the default terminationGracePeriodSeconds from 30 seconds to 300, allowing the draining of connections up to five minutes. If the active connections end before that, the pod will terminate gracefully at that time. To effectively take advantage of this feature, the Configmap feature worker-shutdown-timeout new value is 240s instead of 10s. # |
 | fram.livenessProbe.failureThreshold | int | `5` |  |
-| fram.livenessProbe.httpGet.path | string | `"am/json/health/live"` |  |
+| fram.livenessProbe.httpGet.path | string | `"openam/json/health/live"` |  |
 | fram.livenessProbe.httpGet.port | int | `8443` |  |
 | fram.livenessProbe.httpGet.scheme | string | `"HTTPS"` |  |
 | fram.livenessProbe.initialDelaySeconds | int | `10` |  |
@@ -123,11 +122,9 @@ Kubernetes: `>=1.20.0-0`
 | fram.minReadySeconds | int | `0` | `minReadySeconds` to avoid killing pods before we are ready # |
 | fram.nodeSelector | object | `{"kubernetes.io/os":"linux"}` | Node labels for controller pod assignment # Ref: https://kubernetes.io/docs/user-guide/node-selection/ # |
 | fram.podSecurityContext | object | `{}` | Security Context policies for controller pods See https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/ for notes on enabling and using sysctls # |
-| fram.rbac.create | bool | `true` |  |
 | fram.rbac.enabled | bool | `true` | whether to create roles and bindings |
-| fram.rbac.scope | bool | `false` |  |
 | fram.readinessProbe.failureThreshold | int | `5` |  |
-| fram.readinessProbe.httpGet.path | string | `"am/json/health/live"` |  |
+| fram.readinessProbe.httpGet.path | string | `"openam/json/health/live"` |  |
 | fram.readinessProbe.httpGet.port | int | `8443` |  |
 | fram.readinessProbe.httpGet.scheme | string | `"HTTPS"` |  |
 | fram.readinessProbe.initialDelaySeconds | int | `10` |  |
@@ -144,13 +141,10 @@ Kubernetes: `>=1.20.0-0`
 | fram.secrets.ctsStore.uid | string | `"uid=openam_cts,ou=admins,ou=famrecords,ou=openam-session,ou=tokens"` | uid for CTS Store |
 | fram.secrets.userStore.password | string | `"Passw0rd"` | see docker FRAM_USER_STORE_DIR_MGR_PWD |
 | fram.secrets.userStore.uid | string | `"uid=am-identity-bind-account,ou=admins,ou=identities"` | see docker FRAM_USER_STORE_DIR_MGR |
-| fram.serviceAccount.annotations | object | `{}` | list of annotations to attach to a service account |
 | fram.serviceAccount.annotations | object | `{"helm.sh/hook":"pre-install","helm.sh/hook-delete-policy":"before-hook-creation","helm.sh/hook-weight":"-10"}` | list of annotations to attach to a service account |
 | fram.serviceAccount.automountServiceAccountToken | bool | `true` |  |
-| fram.serviceAccount.create | bool | `true` |  |
 | fram.serviceAccount.enabled | bool | `true` | whether to create services accounts |
 | fram.serviceAccount.name | string | `nil` |  |
-| fram.serviceAccount.name | string | `""` |  |
 | fram.services | object | `{}` | map of multiple service details that can be connected to |
 | fram.stores.cfgStore.enabled | bool | `true` | config store type |
 | fram.stores.cfgStore.instance | string | `"development"` |  |
