@@ -91,3 +91,10 @@ Note: to keep this pure and to be able to import into Identity Cloud, no variabl
 | `start`    | Start command     as a `tini` process     |
 | `stop`     | Stop command                              |
 | `devspace` | Start command     as a `DevSpace` process |
+
+
+## Build older version
+
+```console
+docker build . -t devspace-forgerock-quickstart/frim:5.5.0 --build-arg FRIM_ARCHIVE=IDM-5.5.0 --build-arg JRE_TAG=8-jre-alpine
+```
