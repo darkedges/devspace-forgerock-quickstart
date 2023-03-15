@@ -1,0 +1,1853 @@
+[
+	{
+		"operation": "transform",
+		"field": "/objects",
+		"value": {
+			"script": {
+				"type": "text/javascript",
+				"source": "require('managedPatchHelper').remove(content, 'user', 'schema.order')"
+			}
+		}
+	},
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'schema.order', order)",
+                "globals": {
+                    "order" : [
+                        "_id",
+                        "userName",
+                        "password",
+                        "givenName",
+                        "sn",
+                        "mail",
+                        "description",
+                        "accountStatus",
+                        "telephoneNumber",
+                        "postalAddress",
+                        "address2",
+                        "city",
+                        "postalCode",
+                        "country",
+                        "stateProvince",
+                        "roles",
+                        "manager",
+                        "authzRoles",
+                        "reports",
+                        "effectiveRoles",
+                        "effectiveAssignments",
+                        "lastSync",
+                        "kbaInfo",
+                        "preferences",
+                        "termsAccepted",
+                        "lastChanged",
+                        "consentedMappings"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'schema.properties.description', managed_description)",
+                "globals": {
+                    "managed_description" : {
+                        "title" : "Description",
+                        "viewable" : true,
+                        "type" : "string",
+                        "searchable" : true,
+                        "userEditable" : true
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onUpdate', { \"type\" : \"text/javascript\", \"source\": \"require('ui/onUpdateUser').preserveLastSync(object, oldObject, request);require('ui/onUpdateUser').updateIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onUpdateUser').createNotification(object, oldObject);require('ui/lastChanged').updateLastChanged(object);\"})"
+            }
+        }
+    },
+	{
+		"operation": "transform",
+		"field": "/objects",
+		"value": {
+			"script": {
+				"type": "text/javascript",
+				"source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'actions', { \"resetPassword\": {\"type\": \"text/javascript\", \"source\": \"require('ui/resetPassword').sendMail(object);\"}} );content;"
+			}
+		}
+	},
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'user', 'schema.icon', \"fa-user\")"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'role', 'schema.icon', \"fa-check-square-o\")"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'role', 'schema.required', [\"name\"])"
+            }
+        }
+    },
+    {
+        "operation": "transform",
+        "field": "/objects",
+        "value": {
+            "script": {
+                "type": "text/javascript",
+                "source": "require('managedPatchHelper').add(content, 'assignment', 'schema.icon', \"fa-key\")"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "var managedPatchHelper = require('managedPatchHelper'); content = managedPatchHelper.add(content, 'user', 'onCreate', { \"type\" : \"text/javascript\", \"source\": \"require('ui/onCreateUser').setDefaultFields(object);require('ui/onCreateUser').createIdpRelationships(object);require('roles/conditionalRoles').updateConditionalGrantsForUser(object, 'roles');require('ui/onCreateUser').emailUser(object);require('ui/lastChanged').updateLastChanged(object);\"})"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.termsAccepted', termsAccepted)",
+                "globals" : {
+                    "termsAccepted" : {
+                        "title" : "Terms Accepted",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : true,
+                        "properties" : {
+                            "termsVersion" : {
+                                "title" : "",
+                                "description" : "Terms & Conditions Version",
+                                "type" : "string",
+                                "viewable" : true,
+                                "userEditable" : false
+                            },
+                            "iso8601date" : {
+                                "title" : "",
+                                "description" : "ISO 8601 Date and time format",
+                                "type" : "string",
+                                "viewable" : true,
+                                "userEditable" : false
+                            }
+                        },
+                        "order" : [
+                            "termsVersion",
+                            "iso8601date"
+                        ],
+                        "description" : "",
+                        "returnByDefault" : true,
+                        "isVirtual" : false,
+                        "required" : [ ]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastChanged', lastChanged)",
+                "globals" : {
+                    "lastChanged" : {
+                        "title" : "Last Changed",
+                        "type" : "object",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : false,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "properties" : {
+                            "date" : {
+                                "title" : "",
+                                "description" : "Last changed date",
+                                "type" : "string",
+                                "viewable" : true,
+                                "searchable" : true,
+                                "userEditable" : true
+                            }
+                        },
+                        "order" : [
+                            "date"
+                        ],
+                        "description" : "Last Changed",
+                        "returnByDefault" : true,
+                        "isVirtual" : false,
+                        "required" : [
+                            "date"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.consentedMappings', consentedMappings)",
+                "globals" : {
+                    "consentedMappings" : {
+                        "title" : "Consented Mappings",
+                        "description" : "Consented Mappings",
+                        "type" : "array",
+                        "viewable" : false,
+                        "searchable" : false,
+                        "userEditable" : true,
+                        "usageDescription" : "",
+                        "isPersonal" : false,
+                        "items" : {
+                            "type" : "array",
+                            "title" : "Consented Mappings Items",
+                            "items" : {
+                                "type" : "object",
+                                "title" : "Consented Mappings Item",
+                                "properties" : {
+                                    "mapping" : {
+                                        "title" : "Mapping",
+                                        "description" : "Mapping",
+                                        "type" : "string",
+                                        "viewable" : true,
+                                        "searchable" : true,
+                                        "userEditable" : true
+                                    },
+                                    "consentDate" : {
+                                        "title" : "Consent Date",
+                                        "description" : "Consent Date",
+                                        "type" : "string",
+                                        "viewable" : true,
+                                        "searchable" : true,
+                                        "userEditable" : true
+                                    }
+                                },
+                                "order" : [
+                                    "mapping",
+                                    "consentDate"
+                                ],
+                                "required" : [
+                                    "mapping",
+                                    "consentDate"
+                                ]
+                            }
+                        },
+                        "returnByDefault" : false,
+                        "isVirtual" : false
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._id.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._id.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.password.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.password.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.preferences.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.preferences.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.mail.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.mail.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._id.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._id.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.sn.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.sn.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.description.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.description.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.address2.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.address2.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.givenName.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.givenName.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.city.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.city.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.country.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.country.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalCode.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalCode.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.accountStatus.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.accountStatus.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveRoles.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveRoles.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveAssignments.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveAssignments.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.telephoneNumber.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.telephoneNumber.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.stateProvince.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.stateProvince.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalAddress.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalAddress.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.userName.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.userName.isPersonal', true)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.termsAccepted.usageDescription', '')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.termsAccepted.isPersonal', false)"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties._id.description', 'User ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.description', 'KBA Info')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.items.title', 'KBA Info Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.properties._refProperties.title', 'Provisioning Roles Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.properties._refProperties.properties._grantType.description', 'Grant Type')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.properties._refProperties.title', 'Authorization Roles Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.title', 'Authorization Roles Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.title', 'Direct Reports Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.properties.effectiveAssignments.description', 'Effective Assignments')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.properties.effectiveAssignments.title', 'Effective Assignments')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.properties.effectiveAssignments.items.title', 'Effective Assignments Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.properties.timestamp.description', 'Timestamp')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.properties._refProperties.title', 'Role Members Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.properties._refProperties.properties._grantType.description', 'Grant Type')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.title', 'Role Members Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Role:authzMembers:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.properties._refProperties.title', 'Authorization Role Members Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.authzMembers.items.title', 'Authorization Role Members Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.assignments.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.assignments.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Role:assignments:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.assignments.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.assignments.items.properties._refProperties.title', 'Managed Assignments Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.assignments.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.temporalConstraints.items.properties.duration.description', 'Duration')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.temporalConstraints.items.title', 'Temporal Constraints Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Assignment')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.attributes.items.properties.assignmentOperation.description', 'Assignment operation')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.attributes.items.properties.unassignmentOperation.description', 'Unassignment operation')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.attributes.items.properties.name.description', 'Name')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.attributes.items.properties.value.description', 'Value')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.attributes.items.title', 'Assignment Attributes Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.properties._ref.description', 'References a relationship from a managed object')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.properties._refProperties.description', 'Supports metadata within the relationship')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.properties._refProperties.title', 'Managed Roles Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.properties._refProperties.properties._id.description', '_refProperties object ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.title', 'Managed Roles Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.sn.description', 'Last Name')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.description.description', 'Description')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.address2.description', 'Address 2')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.givenName.description', 'First Name')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.city.description', 'City')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.country.description', 'Country')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.password.description', 'Password')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.preferences.description', 'Preferences')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.mail.description', 'Email Address')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalCode.description', 'Postal Code')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.accountStatus.description', 'Status')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveRoles.description', 'Effective Roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveRoles.items.title', 'Effective Roles Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveAssignments.description', 'Effective Assignments')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.effectiveAssignments.items.title', 'Effective Assignments Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.telephoneNumber.description', 'Mobile Phone')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.stateProvince.description', 'State/Province')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.postalAddress.description', 'Address 1')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.userName.description', 'Username')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.description', 'Last Sync timestamp')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.lastSync.title', 'Last Sync timestamp')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.authzRoles.description'); content = helper.add(content, 'user', 'schema.properties.authzRoles.description', 'Authorization Roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'assignment', 'schema.properties.roles.description'); content = helper.add(content, 'assignment', 'schema.properties.roles.description', 'Managed Roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.description', 'Provisioning Roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.roles.title'); content = helper.add(content, 'user', 'schema.properties.roles.title', 'Provisioning Roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.roles.items.title'); content = helper.add(content, 'user', 'schema.properties.roles.items.title', 'Provisioning Roles Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.reports.description'); content = helper.add(content, 'user', 'schema.properties.reports.description', 'Direct Reports')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.manager.description'); content = helper.add(content, 'user', 'schema.properties.manager.description', 'Manager')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.properties.termsAccepted.description'); content = helper.add(content, 'user', 'schema.properties.termsAccepted.description', 'Terms Accepted')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'role', 'schema.properties._id.description'); content = helper.add(content, 'role', 'schema.properties._id.description', 'Role ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'role', 'schema.properties.members.description'); content = helper.add(content, 'role', 'schema.properties.members.description', 'Role Members')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'role', 'schema.properties.authzMembers.description'); content = helper.add(content, 'role', 'schema.properties.authzMembers.description', 'Authorization Role Members')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'role', 'schema.properties.assignments.description'); content = helper.add(content, 'role', 'schema.properties.assignments.description', 'Managed Assignments')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "require('managedPatchHelper').add(content, 'role', 'schema.properties.assignments.title', 'Managed Assignments')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'role', 'schema.properties.assignments.items.title'); content = helper.add(content, 'role', 'schema.properties.assignments.items.title', 'Managed Assignments Items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.linkQualifiers.items.title', 'Link Qualifiers Items')"
+            }
+        }
+    },
+	{
+	    "operation": "transform",
+	    "field": "objects",
+	    "value": {
+	        "script": {
+	            "type": "text/javascript",
+	            "source": "var removeSortKeys = function(r) { if (r.query.sortKeys) { delete r.query.sortKeys; } return r; }; content = content.map(function(managedObject) {for (var key in managedObject.schema.properties) {var property = managedObject.schema.properties[key]; if (property.type === 'relationship') {property.resourceCollection = property.resourceCollection.map(removeSortKeys)} else if (property.type === 'array' && property.items.type === 'relationship') {property.items.resourceCollection = property.items.resourceCollection.map(removeSortKeys);}} return managedObject;});"
+	        }
+	    }
+	},
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.remove(content, 'user', 'schema.id'); content = helper.add(content, 'user', 'schema.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.items.properties.answer.description', 'Answer')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.items.properties.customQuestion.description', 'Custom question')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.kbaInfo.items.properties.questionId.description', 'Question ID')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User:roles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.roles.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User:roles:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.authzRoles.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User:authzRoles:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:User:reports:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.reports.items.properties._refProperties.title', 'Direct Reports Items _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'user', 'schema.properties.manager.properties._refProperties.title', 'Manager _refProperties')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Role')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'role', 'schema.properties.members.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Role:members:items')"
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "objects",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Assignment:roles:items')"
+            }
+        }
+    }
+]

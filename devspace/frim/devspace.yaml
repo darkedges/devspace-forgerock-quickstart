@@ -13,18 +13,6 @@ images:
     dockerfile: ../../docker/frim/Dockerfile
     context: ../../docker/frim
     injectRestartHelper: false  
-  frds:
-    image: devspace-forgerock-quickstart/ds
-    build:
-      docker:
-        skipPush: true  
-    entrypoint:
-    - /opt/frds/docker-entrypoint.sh
-    cmd:
-    - devspace
-    dockerfile: ../../docker/frds/Dockerfile
-    context: ../../docker/frds
-    injectRestartHelper: false  
   idmschema:
     image: devspace-forgerock-quickstart/idmschema
     build:
@@ -42,14 +30,6 @@ deployments:
       - ../../values/environments/devspace/frim.yaml
       displayOutput: true
       recreate: true
-  - name: darkedges-frds
-    helm:
-      chart:
-        name: ../../helm/frds
-      valuesFiles:
-      - ../../values/environments/devspace/frds.yaml
-      displayOutput: true
-      recreate: true  
   - name: darkedges-idmschema
     helm:
       chart:
@@ -58,45 +38,38 @@ deployments:
       - ../../values/environments/devspace/idmschema.yaml
       displayOutput: true
       recreate: true  
-  - name: darkedges-mysqldb
+  - name: darkedges-oracledb
     helm:
       chart:
-        name: mysql
-        version: 9.3.3
-        repo: https://charts.bitnami.com/bitnami
+        name: ../../helm/oracledb
       valuesFiles:
-      - ../../values/environments/devspace/mysqldb.yaml
+      - ../../values/environments/devspace/oracledb.yaml
       displayOutput: true
       recreate: true 
+  # - name: darkedges-mysqldb
+  #   helm:
+  #     chart:
+  #       name: mysql
+  #       version: 9.3.3
+  #       repo: https://charts.bitnami.com/bitnami
+  #     valuesFiles:
+  #     - ../../values/environments/devspace/mysqldb.yaml
+  #     displayOutput: true
+  #     recreate: true 
 
 dev:
   logs:
     sync: true
     selectors:
-    - imageSelector: image(frds):tag(frds)
     - imageSelector: image(frim):tag(frim)
   ports:
-  - imageSelector: docker.io/bitnami/mysql:8.0.30-debian-11-r15
+  - imageSelector: darkedges/oracledb:18.4.0-xe-i
     forward:
-    - port: 3306
-  - imageSelector: image(frds):tag(frds)
-    forward:
-    - port: 1389
-    - port: 1636
-    - port: 8443
-    - port: 4444
+    - port: 1521
   - imageSelector: image(frim):tag(frim)
     forward:
     - port: 8080
   sync:
-  - imageSelector: image(frds):tag(frds)
-    localSubPath: ../../docker/frds/instance/init
-    containerPath: /opt/frds/instance/init 
-    excludePaths:
-    - .git/
-    - tmp/
-    - data/
-    - logs/
   - imageSelector: image(frim):tag(frim)
     localSubPath: ../../docker/frim/instance
     containerPath: /opt/frim/instance/data
@@ -107,7 +80,5 @@ dev:
   autoReload:
     images:
     - frim
-    - frds
     deployments:
     - darkedges-frim
-    - darkedges-frds

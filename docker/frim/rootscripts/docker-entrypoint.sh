@@ -4,7 +4,6 @@ CMD="${1:-run}"
 OPENIDM_HOME="/opt/frim"
 PROJECT_HOME="${PROJECT_HOME:-/opt/frim}"
 LOGGING_CONFIG="${LOGGING_CONFIG:=}"
-IDM_ENVCONFIG_DIRS="${IDM_ENVCONFIG_DIRS:=}"
 LAUNCHER_CONFIG="${LAUNCHER_CONFIG:=}"
 IDM_CLASSPATH="${IDM_CLASSPATH:=}"
 JAVA_OPTS="${JAVA_OPTS:=}"
@@ -21,14 +20,6 @@ if [ -z "$LOGGING_CONFIG" ]; then
   fi
 fi
 
-if [ -z "$IDM_ENVCONFIG_DIRS" ]; then
-  if [ -n "${PROJECT_HOME}" -a -r "$PROJECT_HOME/resolver/boot.properties" ]; then
-    IDM_ENVCONFIG_DIRS="$PROJECT_HOME/resolver"
-  else
-    IDM_ENVCONFIG_DIRS="$OPENIDM_HOME/resolver"
-  fi
-fi
-
 if [ -z "$LAUNCHER_CONFIG" ]; then
   if [ -n "${PROJECT_HOME}" -a -r "$PROJECT_HOME"/bin/launcher.json ]; then
     LAUNCHER_CONFIG="$PROJECT_HOME/bin/launcher.json"
@@ -37,7 +28,6 @@ if [ -z "$LAUNCHER_CONFIG" ]; then
   fi
 fi
 
-export IDM_ENVCONFIG_DIRS="${IDM_ENVCONFIG_DIRS}"
 hostname=$(hostname)
 NODE_ID=${hostname}
 
@@ -45,7 +35,6 @@ echo "Command is $CMD"
 echo "PROJECT_HOME:       ${PROJECT_HOME}"
 echo "LOGGING_CONFIG:     ${LOGGING_CONFIG}"
 echo "LAUNCHER_CONFIG:    ${LAUNCHER_CONFIG}"
-echo "IDM_ENVCONFIG_DIRS: ${IDM_ENVCONFIG_DIRS}"
 
 # Find any file in the bundle directory based on a wildcard
 find_bundle_file () {
@@ -89,7 +78,6 @@ start() {
         -Djava.awt.headless=true \
         -Djava.security.properties="$PROJECT_HOME/conf/java.security" \
         -Dopenidm.node.id="${NODE_ID}" \
-        -Didm.envconfig.dirs="${IDM_ENVCONFIG_DIRS}" \
         org.forgerock.openidm.launcher.Main \
         -c "$LAUNCHER_CONFIG" \
         -p "$PROJECT_HOME"

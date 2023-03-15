@@ -1,6 +1,7 @@
 enabled: true
 image:
   debug: true
+  tag: 5.7.41-debian-11-r16
 auth:
   rootPassword: Passw0rd
   username: frim

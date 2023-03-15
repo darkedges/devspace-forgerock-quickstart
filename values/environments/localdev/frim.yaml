@@ -1,31 +1,20 @@
-frim:
+ frim:
   services:
     db:
       waitfor: service
-      name: mysqldb
+      name: oracledb-oracledb
       releaseNameOverride: darkedges
       details:
-        port: "3306"
-        databasename: "frim"
+        port: "1521"
+        databasename: "XEPDB1"
         username: "frim"
-        password: "Passw0rd"
-    identity:
-      waitfor: service
-      name: frds-development
-      releaseNameOverride: localdev-frds
-      details:
-        port: "1389"
-        ssl: "false"
-        username: "uid=am-identity-bind-account,ou=admins,ou=identities"
         password: "Passw0rd"
   livenessProbe: 
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
   readinessProbe: 
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
   ingress:

@@ -1,0 +1,65 @@
+{{ template "chart.header" . }}
+[forgerock-identity-manager](https://github.com/darkedges/devspace-forgerock-quickstart) ForgeRock Identity Manager Helm Chart for Kubernetes.
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+## Prerequisites
+
+- Chart version 1.x.x and above: Kubernetes v1.19+
+- For Local Development / Deployment a oracledb image is required
+
+    ```console
+    git clone https://github.com/darkedges/devspace-forgerock-quickstart
+    cd devspace-forgerock-quickstart/docker/oracledb
+    docker build -t devspace-forgerock-quickstart/idm:5.5.0 .
+    ```
+
+## Install Chart
+
+**Important:** only helm3 is supported
+
+```console
+git clone https://github.com/darkedges/devspace-forgerock-quickstart
+cd devspace-forgerock-quickstart
+helm install --namespace=devspace-forgerock-quickstart --create-namespace -f values/environments/localdev/oracledb.yaml localdev-oracledb helm/oracledb 
+```
+
+_See [configuration](#configuration) below._
+
+_See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
+
+## Upgrade Chart
+
+_See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documentation._
+
+```console
+cd devspace-forgerock-quickstart
+helm upgrade -f values/environments/localdev/oracledb.yaml localdev-oracledb helm/oracledb 
+```
+
+## Uninstall Chart
+
+This removes all the Kubernetes components associated with the chart and deletes the release.
+
+_See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command documentation._
+
+```console
+cd devspace-forgerock-quickstart
+helm uninstall localdev-oracledb
+```
+
+## Configuration
+
+See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
+
+```console
+helm show values helm/oracledb
+```
+
+{{ template "chart.sourcesSection" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}

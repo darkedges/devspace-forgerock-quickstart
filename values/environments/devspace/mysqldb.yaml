@@ -1,5 +1,6 @@
 enabled: true
 image:
+  tag: 5.7.41-debian-11-r16
   debug: true
 auth:
   rootPassword: Passw0rd

@@ -1,0 +1,26 @@
+[
+    {
+        "operation" : "add",
+        "field" : "/allInOneRegistration",
+        "value" : true
+    },
+    {
+        "operation" : "transform",
+        "field" : "/stageConfigs",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "content.map(function (stage) { if (stage.name === 'socialUserDetails') { stage.name='idmUserDetails'; stage.socialRegistrationEnabled=true; } if (stage.name === 'idmUserDetails') { stage.registrationProperties = registrationProperties; stage.registrationPreferences = registrationPreferences; } return stage; });",
+                "globals" : {
+                    "registrationProperties" : [
+                        "userName",
+                        "givenName",
+                        "sn",
+                        "mail"
+                    ],
+                    "registrationPreferences": ["marketing", "updates"]
+                }
+            }
+        }
+    }
+]

@@ -1,9 +1,9 @@
 {
-    "driverClass" : "com.mysql.cj.jdbc.Driver",
-    "jdbcUrl" : "jdbc:mysql://&{darkedges.datasource.jdbc.host|dfq-db}:&{darkedges.datasource.jdbc.port|3306}/&{darkedges.datasource.jdbc.databasename|frim}?autoReconnect=true&useSSL=false&allowMultiQueries=true&characterEncoding=utf8&serverTimezone=UTC",
-    "databaseName" : "&{darkedges.datasource.jdbc.databasename|frim}",
-    "username" : "&{darkedges.datasource.jdbc.username|frim}",
-    "password" : "&{darkedges.datasource.jdbc.password|Passw0rd}",
+    "driverClass" : "oracle.jdbc.OracleDriver",
+    "jdbcUrl" : "jdbc:oracle:thin:@&{darkedges.datasource.jdbc.host}:&{darkedges.datasource.jdbc.port}/&{darkedges.datasource.jdbc.databasename}",
+    "databaseName" : "&{darkedges.datasource.jdbc.username}",
+    "username" : "&{darkedges.datasource.jdbc.username}",
+    "password" : "&{darkedges.datasource.jdbc.password}",
     "connectionTimeout" : 30000,
     "connectionPool" : {
         "type" : "hikari",

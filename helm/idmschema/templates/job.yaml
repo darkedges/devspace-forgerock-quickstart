@@ -32,15 +32,15 @@ spec:
         imagePullPolicy: {{ .Values.image.imagePullPolicy }}
         env:
         - name: DRIVER
-          value: "com.mysql.cj.jdbc.Driver"
+          value: "oracle.jdbc.OracleDriver"
         - name: URL
-          value: "jdbc:mysql://{{ template "forgerock.serviceName" (list "mysqldb" .) }}:3306/frim"
+          value: "jdbc:oracle:thin:@{{ template "forgerock.serviceName" (list "oracledb" .) }}:1521/XEPDB1"
         - name: USERNAME
           value: "frim"
         - name: PASSWORD
           value: "Passw0rd"
         - name: CHANGELOG_FILE
-          value: "changelog/frim/install_7.2.0-changelog.xml"
+          value: "changelog/frim/oracle/5.5.0/install-changelog.xml"
         - name: LOG_LEVEL
           value: "FINE"
         - name: CMD

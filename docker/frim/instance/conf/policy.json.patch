@@ -1,0 +1,24 @@
+[
+    {
+        "operation" : "add",
+        "field" : "/resources/-",
+        "value" : {
+            "resource" : "selfservice/registration",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getRegistrationProperties()"
+            }
+        }
+    },
+    {
+        "operation" : "add",
+        "field" : "/resources/-",
+        "value" : {
+            "resource" : "selfservice/reset",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getResetProperties()"
+            }
+        }
+    }
+]

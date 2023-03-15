@@ -1,32 +1,32 @@
 {
-    "type": "text/javascript",
-    "file": "policy.js",
-    "additionalFiles": [],
-    "resources": [
+    "type" : "text/javascript",
+    "file" : "policy.js",
+    "additionalFiles" : [ ],
+    "resources" : [
         {
-            "resource": "selfservice/registration",
-            "calculatedProperties": {
-                "type": "text/javascript",
-                "source": "require('selfServicePolicies').getRegistrationProperties()"
+            "resource" : "selfservice/registration",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getRegistrationProperties()"
             }
         },
         {
-            "resource": "selfservice/reset",
-            "calculatedProperties": {
-                "type": "text/javascript",
-                "source": "require('selfServicePolicies').getResetProperties()"
+            "resource" : "selfservice/reset",
+            "calculatedProperties" : {
+                "type" : "text/javascript",
+                "source" : "require('selfServicePolicies').getResetProperties()"
             }
         },
         {
-            "resource": "internal/user/*",
-            "properties": [
+            "resource" : "repo/internal/user/*",
+            "properties" : [
                 {
-                    "name": "_id",
-                    "policies": [
+                    "name" : "_id",
+                    "policies" : [
                         {
-                            "policyId": "cannot-contain-characters",
-                            "params": {
-                                "forbiddenChars": [
+                            "policyId" : "cannot-contain-characters",
+                            "params" : {
+                                "forbiddenChars" : [
                                     "/"
                                 ]
                             }
@@ -34,212 +34,31 @@
                     ]
                 },
                 {
-                    "name": "password",
-                    "policies": [
+                    "name" : "password",
+                    "policies" : [
                         {
-                            "policyId": "minimum-length",
-                            "params": {
-                                "minLength": 8
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "resource": "internal/role/*",
-            "properties": [
-                {
-                    "name": "name",
-                    "policies": [
-                        {
-                            "policyId": "required"
+                            "policyId" : "required"
                         },
                         {
-                            "policyId": "not-empty"
+                            "policyId" : "not-empty"
                         },
                         {
-                            "policyId": "cannot-contain-characters",
-                            "params": {
-                                "forbiddenChars": [
-                                    "/*"
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "temporalConstraints",
-                    "policies": [
-                        {
-                            "policyId": "valid-temporal-constraints"
-                        }
-                    ]
-                },
-                {
-                    "name": "condition",
-                    "policies": [
-                        {
-                            "policyId": "valid-query-filter"
-                        }
-                    ]
-                },
-                {
-                    "name": "privileges",
-                    "policies": [
-                        {
-                            "policyId": "valid-type",
-                            "params": {
-                                "types": [
-                                    "array"
-                                ]
+                            "policyId" : "at-least-X-capitals",
+                            "params" : {
+                                "numCaps" : 1
                             }
                         },
                         {
-                            "policyId": "valid-array-items",
-                            "params": {
-                                "properties": [
-                                    {
-                                        "name": "name",
-                                        "policies": [
-                                            {
-                                                "policyId": "required"
-                                            },
-                                            {
-                                                "policyId": "not-empty"
-                                            },
-                                            {
-                                                "policyId": "valid-type",
-                                                "params": {
-                                                    "types": [
-                                                        "string"
-                                                    ]
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "path",
-                                        "policies": [
-                                            {
-                                                "policyId": "required"
-                                            },
-                                            {
-                                                "policyId": "not-empty"
-                                            },
-                                            {
-                                                "policyId": "cannot-contain-characters",
-                                                "params": {
-                                                    "forbiddenChars": [
-                                                        "/*"
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "policyId": "valid-privilege-path"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "accessFlags",
-                                        "policies": [
-                                            {
-                                                "policyId": "required"
-                                            },
-                                            {
-                                                "policyId": "not-empty"
-                                            },
-                                            {
-                                                "policyId": "valid-type",
-                                                "params": {
-                                                    "types": [
-                                                        "array"
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "policyId": "valid-accessFlags-object"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "actions",
-                                        "policies": [
-                                            {
-                                                "policyId": "required"
-                                            },
-                                            {
-                                                "policyId": "valid-type",
-                                                "params": {
-                                                    "types": [
-                                                        "array"
-                                                    ]
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "permissions",
-                                        "policies": [
-                                            {
-                                                "policyId": "required"
-                                            },
-                                            {
-                                                "policyId": "not-empty"
-                                            },
-                                            {
-                                                "policyId": "valid-type",
-                                                "params": {
-                                                    "types": [
-                                                        "array"
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "policyId": "valid-permissions"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "name": "filter",
-                                        "policies": [
-                                            {
-                                                "policyId": "valid-type",
-                                                "params": {
-                                                    "types": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            {
-                                                "policyId": "valid-query-filter"
-                                            }
-                                        ]
-                                    }
-                                ]
+                            "policyId" : "at-least-X-numbers",
+                            "params" : {
+                                "numNums" : 1
                             }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "resource": "managed/role/*",
-            "properties": [
-                {
-                    "name": "temporalConstraints",
-                    "policies": [
+                        },
                         {
-                            "policyId": "valid-temporal-constraints"
-                        }
-                    ]
-                },
-                {
-                    "name": "condition",
-                    "policies": [
-                        {
-                            "policyId": "valid-query-filter"
+                            "policyId" : "minimum-length",
+                            "params" : {
+                                "minLength" : 8
+                            }
                         }
                     ]
                 }

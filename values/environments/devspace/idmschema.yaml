@@ -3,7 +3,7 @@ image:
   tag: tag(idmschema)
 
 services:
-  mysqldb:
+  oracledb:
     waitfor: service
-    name: mysqldb
+    name: oracledb-oracledb
     releaseNameOverride: darkedges

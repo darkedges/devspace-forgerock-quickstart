@@ -1,0 +1,3 @@
+imagePullPolicy: IfNotPresent
+preStopHook: true
+persistence:

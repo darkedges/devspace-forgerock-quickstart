@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro" 
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+    http://www.liquibase.org/xml/ns/pro 
+    http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <include file="changelog/frim/oracle/7.0.4/update/00-relationshipresources_1.sql"/>
+    <include file="changelog/frim/oracle/7.0.4/update/00-relationshipresources_2.sql"/>
+    <include file="changelog/frim/oracle/7.0.4/update/00-relationshipresources_3.sql"/>
+    <include file="changelog/frim/oracle/7.0.4/update/01-syncqueue.sql"/>
+    <include file="changelog/frim/oracle/7.0.4/update/02-importobjects.sql"/>
+    <include file="changelog/frim/oracle/7.0.4/update/03-reconassoc.sql"/>
+</databaseChangeLog>

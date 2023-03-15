@@ -1,60 +1,43 @@
 {
-    "auditServiceConfig": {
-        "handlerForQueries": "json",
-        "availableAuditEventHandlers": [
+    "auditServiceConfig" : {
+        "handlerForQueries" : "json",
+        "availableAuditEventHandlers" : [
             "org.forgerock.audit.handlers.csv.CsvAuditEventHandler",
             "org.forgerock.audit.handlers.elasticsearch.ElasticsearchAuditEventHandler",
             "org.forgerock.audit.handlers.jms.JmsAuditEventHandler",
             "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
-            "org.forgerock.audit.handlers.json.stdout.JsonStdoutAuditEventHandler",
             "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
             "org.forgerock.openidm.audit.impl.RouterAuditEventHandler",
             "org.forgerock.audit.handlers.splunk.SplunkAuditEventHandler",
             "org.forgerock.audit.handlers.syslog.SyslogAuditEventHandler"
         ],
-        "filterPolicies": {
-            "field": {
-                "excludeIf": [],
-                "includeIf": []
+        "filterPolicies" : {
+            "value" : {
+                "excludeIf" : [
+                    "/access/http/request/headers/Authorization",
+                    "/access/http/request/headers/X-OpenIDM-Password",
+                    "/access/http/request/cookies/session-jwt",
+                    "/access/http/response/headers/Authorization",
+                    "/access/http/response/headers/X-OpenIDM-Password"
+                ],
+                "includeIf" : [ ]
             }
-        },
-        "caseInsensitiveFields": [
-            "/access/http/request/headers",
-            "/access/http/response/headers"
-        ]
+        }
     },
-    "eventHandlers": [
+    "eventHandlers" : [
         {
-            "class": "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
-            "config": {
-                "name": "json",
-                "enabled": {
-                    "$bool": "&{openidm.audit.handler.json.enabled|true}"
+            "class" : "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+            "config" : {
+                "name" : "json",
+                "logDirectory" : "&{launcher.working.location}/audit",
+                "buffering" : {
+                    "maxSize" : 100000,
+                    "writeInterval" : "100 millis"
                 },
-                "logDirectory": "&{idm.data.dir}/audit",
-                "buffering": {
-                    "maxSize": 100000,
-                    "writeInterval": "100 millis"
-                },
-                "topics": [
+                "topics" : [
                     "access",
                     "activity",
-                    "sync",
-                    "authentication",
-                    "config"
-                ]
-            }
-        },
-        {
-            "class": "org.forgerock.audit.handlers.json.stdout.JsonStdoutAuditEventHandler",
-            "config": {
-                "name": "stdout",
-                "enabled": {
-                    "$bool": "&{openidm.audit.handler.stdout.enabled|false}"
-                },
-                "topics": [
-                    "access",
-                    "activity",
+                    "recon",
                     "sync",
                     "authentication",
                     "config"
@@ -65,12 +48,11 @@
             "class": "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
             "config": {
                 "name": "repo",
-                "enabled": {
-                    "$bool": "&{openidm.audit.handler.repo.enabled|false}"
-                },
+                "enabled": false,
                 "topics": [
                     "access",
                     "activity",
+                    "recon",
                     "sync",
                     "authentication",
                     "config"
@@ -78,10 +60,10 @@
             }
         }
     ],
-    "eventTopics": {
-        "config": {
-            "filter": {
-                "actions": [
+    "eventTopics" : {
+        "config" : {
+            "filter" : {
+                "actions" : [
                     "create",
                     "update",
                     "delete",
@@ -90,9 +72,9 @@
                 ]
             }
         },
-        "activity": {
-            "filter": {
-                "actions": [
+        "activity" : {
+            "filter" : {
+                "actions" : [
                     "create",
                     "update",
                     "delete",
@@ -100,14 +82,14 @@
                     "action"
                 ]
             },
-            "watchedFields": [],
-            "passwordFields": [
+            "watchedFields" : [ ],
+            "passwordFields" : [
                 "password"
             ]
         }
     },
-    "exceptionFormatter": {
-        "type": "text/javascript",
-        "file": "bin/defaults/script/audit/stacktraceFormatter.js"
+    "exceptionFormatter" : {
+        "type" : "text/javascript",
+        "file" : "bin/defaults/script/audit/stacktraceFormatter.js"
     }
 }

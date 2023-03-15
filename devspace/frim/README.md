@@ -22,7 +22,7 @@ It uses
    - [Docker](https://docs.docker.com/get-docker/)
    - [DevSpace](https://devspace.sh/cli/docs/getting-started/installation)
 
-1. Download [IDM-7.2.0.zip](https://backstage.forgerock.com/downloads/get/familyId:am/productId:idm/minorVersion:7.2/version:7.2.0/releaseType:full/distribution:zip) to `docker/frim/IDM-7.2.0.zip`
+1. Download [IDM-5.5.0.zip](https://backstage.forgerock.com/downloads/get/familyId:am/productId:idm/minorVersion:7.2/version:5.5.0/releaseType:full/distribution:zip) to `docker/frim/IDM-5.5.0.zip`
 
 ## Develop
 

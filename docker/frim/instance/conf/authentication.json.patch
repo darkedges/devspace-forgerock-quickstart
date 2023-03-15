@@ -1,0 +1,56 @@
+[
+    {
+        "operation" : "transform",
+        "field" : "/serverAuthContext/authModules",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source" : "if (!content.filter(function (m) {return m.name === 'SOCIAL_PROVIDERS';}).length) { content.push(social_providers); } content;",
+                "globals" : {
+                    "social_providers" : {
+                        "name" : "SOCIAL_PROVIDERS",
+                        "properties" : {
+                            "defaultUserRoles" : [
+                                "openidm-authorized"
+                            ],
+                            "augmentSecurityContext" : {
+                                "type" : "text/javascript",
+                                "globals" : { },
+                                "file" : "auth/populateAsManagedUserFromRelationship.js"
+                            },
+                            "propertyMapping" : {
+                                "userRoles" : "authzRoles"
+                            }
+                        },
+                        "enabled" : true
+                    }
+                }
+            }
+        }
+    },
+    {
+        "operation" : "transform",
+        "field" : "/serverAuthContext/authModules",
+        "value" : {
+            "script" : {
+                "type" : "text/javascript",
+                "source": "content.map(function (authModule) { if (authModule.name === \"OPENID_CONNECT\") { authModule.properties.idpConfig = authModule.properties.resolvers[0]; Object.keys(toAdd).forEach(function(key) {authModule.properties.idpConfig[key] = toAdd[key];}); Object.keys(toRename).forEach(function(key) { authModule.properties.idpConfig[toRename[key]] = authModule.properties.idpConfig[key]; delete authModule.properties.idpConfig[key]; }); delete authModule.properties.openIdConnectHeader;  delete authModule.properties.resolvers; authModule.name = 'OAUTH_CLIENT'; } return authModule;  })",
+                "globals" : {
+                    "toRename" : {
+                        "name": "provider",
+                        "authorization_endpoint": "authorizationEndpoint",
+                        "token_endpoint": "tokenEndpoint",
+                        "well-known": "wellKnownEndpoint",
+                        "client_id": "clientId",
+                        "client_secret": "clientSecret"
+                    },
+                    "toAdd": {
+                        "redirectUri": "https://localhost:8443/oauthReturn/",
+                        "configClass": "org.forgerock.oauth.clients.oidc.OpenIDConnectClientConfiguration",
+                        "authenticationIdKey": "sub"
+                    }
+                }
+            }
+        }
+    }
+]

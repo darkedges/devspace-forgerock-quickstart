@@ -1,36 +1,36 @@
 {
-    "filters": [
+    "filters" : [
         {
-            "condition": {
-                "type": "text/javascript",
-                "source": "context.caller.external === true || context.current.name === 'selfservice'"
+            "condition" : {
+                "type" : "text/javascript",
+                "source" : "context.caller.external === true || context.current.name === 'selfservice'"
             },
-            "onRequest": {
-                "type": "text/javascript",
-                "source": "require('router-authz').testAccess()"
+            "onRequest" : {
+                "type" : "text/javascript",
+                "file" : "router-authz.js"
             }
         },
         {
-            "pattern": "^(managed|internal)($|(/.+))",
-            "onRequest": {
-                "type": "text/javascript",
-                "file": "policyFilter.js"
+            "pattern" : "^(managed|system|repo/internal)($|(/.+))",
+            "onRequest" : {
+                "type" : "text/javascript",
+                "file" : "policyFilter.js"
             },
-            "methods": [
+            "methods" : [
                 "create",
                 "update"
             ]
         },
         {
-            "pattern": "^(managed|internal)($|(/.+))",
-            "condition": {
-                "type": "text/javascript",
-                "source": "(context.caller.external === true || context.current.name === 'selfservice') && (typeof context.privilege === 'undefined' || Object.keys(context.privilege.matchingPrivileges).length === 0)"
+            "pattern" : "repo/internal/user.*",
+            "onRequest" : {
+                "type" : "text/javascript",
+                "source" : "request.content.password = require('crypto').hash(request.content.password);"
             },
-            "onResponse": {
-                "type": "text/javascript",
-                "source": "require('relationshipFilter').filterResponse()"
-            }
+            "methods" : [
+                "create",
+                "update"
+            ]
         }
     ]
 }

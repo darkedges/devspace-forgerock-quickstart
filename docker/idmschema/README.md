@@ -9,17 +9,14 @@ To build the container:
 ```console
 git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/idmschema
-
-# To build
-
-docker build -t devspace-forgerock-quickstart/idmschema:7.2.0 .
+docker build -t devspace-forgerock-quickstart/idmschema:5.5.0 .
 ```
 
 ## Run
 
 ```console
 docker run -it --rm --name dfq-db -e "MYSQL_ROOT_PASSWORD=Passw0rd" -e "MYSQL_DATABASE=frim" -e "MYSQL_USER=frim" -e "MYSQL_PASSWORD=Passw0rd" --publish 3306:3306 mysql:8.0.30-oracle
-docker run -it --rm --link dfq-db:dfq-db --publish 8080:8080  -e "DRIVER=com.mysql.cj.jdbc.Driver" -e "URL=jdbc:mysql://dfq-db:3306/frim"-e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/install_7.2.0-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:7.2.0
+docker run -it --rm --link dfq-db:dfq-db --publish 8080:8080  -e "DRIVER=com.mysql.cj.jdbc.Driver" -e "URL=jdbc:mysql://dfq-db:3306/frim"-e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/install_5.5.0-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
 ```
 
 ## Explore
@@ -113,3 +110,44 @@ Contains the standard configuration folder structure for FRAM.
 | ------------------------ | --------------------------------------------------------------------------------- |
 | [`changelog`](changelog) | Place the necessary SQL Files and Liquibase change log files here.                |
 | [`lib`](lib)             | This contains the JDBC Connector Library. This example includes the one for MySQL |
+
+
+## Oracle Database
+
+### Build
+
+```console
+```
+
+### Start
+```console
+docker run -it --rm \
+    --name oracledb \
+    -p 1521:1521 \
+    -e ORACLE_PWD=Passw0rd \
+    darkedges/oracledb:18.4.0-xe-i
+```
+
+#### create frim user
+
+```console
+CREATE USER frim IDENTIFIED BY Passw0rd;
+GRANT ALL PRIVILEGES to FRIM;
+ALTER USER FRIM quota unlimited on USERS;
+```
+
+```console
+docker commit oracledb darkedges/oracledb:18.4.0-xe-i
+```
+
+### Deploy
+
+```console
+docker run -it --rm --name oracledb -p 1521:1521 -e ORACLE_PWD=Passw0rd darkedges/oracledb:18.4.0-xe-i
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/5.5.0/install-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/5.5.1.3/update-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/6.0.0.7/update-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/6.5.2/update-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/7.0.4/update-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+docker run -it --rm --link oracledb:oracledb -e "DRIVER=oracle.jdbc.OracleDriver" -e "URL=jdbc:oracle:thin:@oracledb:1521/XEPDB1" -e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/oracle/7.1.4/update-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:5.5.0
+```

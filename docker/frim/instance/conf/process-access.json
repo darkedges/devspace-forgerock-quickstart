@@ -1,17 +1,17 @@
 {
-    "workflowAccess": [
+    "workflowAccess" : [
         {
-            "propertiesCheck": {
-                "property": "_id",
-                "matches": ".*",
-                "requiresRole": "internal/role/openidm-authorized"
+            "propertiesCheck" : {
+                "property" : "_id",
+                "matches" : ".*",
+                "requiresRole" : "openidm-authorized"
             }
         },
         {
-            "propertiesCheck": {
-                "property": "_id",
-                "matches": ".*",
-                "requiresRole": "internal/role/openidm-admin"
+            "propertiesCheck" : {
+                "property" : "_id",
+                "matches" : ".*",
+                "requiresRole" : "openidm-admin"
             }
         }
     ]

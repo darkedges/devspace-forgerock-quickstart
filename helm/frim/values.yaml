@@ -16,7 +16,7 @@ podSecurityPolicy:
 frim:
   image:
     repository: devspace-forgerock-quickstart/idm
-    tag: 7.2.0
+    tag: 5.5.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
