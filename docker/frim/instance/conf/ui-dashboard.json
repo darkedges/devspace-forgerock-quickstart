@@ -2,11 +2,8 @@
     "dashboard" : {
         "widgets" : [
             {
-                "type" : "workflow"
-            },
-            {
                 "type" : "quickStart",
-                "size" : "large",
+                "size" : "medium",
                 "cards" : [
                     {
                         "name" : "dashboard.quickStart.viewProfile",
@@ -19,6 +16,10 @@
                         "href" : "#signinandsecurity/password/"
                     }
                 ]
+            },
+            {
+                "type" : "notifications",
+                "size" : "x-small"
             }
         ]
     },

@@ -2,10 +2,12 @@
     "classPathURLs" : [ ],
     "systemProperties" : { },
     "requestAttributes" : { },
-    "initParams" : { },
     "scriptExtensions" : { },
+    "initParams" : {
+        "maxRequestSizeInMegabytes" : "5"
+    },
     "urlPatterns" : [
         "/*"
     ],
-    "filterClass" : "org.eclipse.jetty.servlets.GzipFilter"
+    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"
 }

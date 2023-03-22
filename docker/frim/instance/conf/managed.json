@@ -513,10 +513,7 @@
                         "isPersonal" : true,
                         "policies" : [
                             {
-                                "policyId" : "unique"
-                            },
-                            {
-                                "policyId" : "no-internal-user-conflict"
+                                "policyId" : "valid-username"
                             },
                             {
                                 "policyId" : "cannot-contain-characters",
@@ -957,8 +954,9 @@
                     "_id",
                     "name",
                     "description",
-                    "assignments",
                     "members",
+                    "authzMembers",
+                    "assignments",
                     "condition",
                     "temporalConstraints"
                 ]
@@ -1111,8 +1109,10 @@
                     "_id",
                     "name",
                     "description",
+                    "mapping",
                     "attributes",
-                    "linkQualifiers"
+                    "linkQualifiers",
+                    "roles"
                 ]
             }
         }

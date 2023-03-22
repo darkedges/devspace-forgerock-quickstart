@@ -1849,5 +1849,45 @@
                 "source" : "var helper = require('managedPatchHelper'); content = helper.add(content, 'assignment', 'schema.properties.roles.items.id', 'urn:jsonschema:org:forgerock:openidm:managed:api:Assignment:roles:items')"
             }
         }
+    },
+    {
+         "operation" : "transform",
+         "field" : "/objects",
+         "value" : {
+             "script" : {
+                 "type" : "text/javascript",
+                 "source" : "require('managedPatchHelper').remove(content, 'assignment', 'schema.order');"
+             }
+         }
+    },
+    {
+         "operation" : "transform",
+         "field" : "/objects",
+         "value" : {
+             "script" : {
+                 "type" : "text/javascript",
+                 "source" : "require('managedPatchHelper').add(content, 'assignment', 'schema.order', [\"_id\", \"name\", \"description\", \"mapping\", \"attributes\",\"linkQualifiers\", \"roles\"]);"
+             }
+         }
+    },
+    {
+         "operation" : "transform",
+         "field" : "/objects",
+         "value" : {
+             "script" : {
+                 "type" : "text/javascript",
+                 "source" : "require('managedPatchHelper').remove(content, 'role', 'schema.order');"
+             }
+         }
+    },
+    {
+         "operation" : "transform",
+         "field" : "/objects",
+         "value" : {
+             "script" : {
+                 "type" : "text/javascript",
+                 "source" : "require('managedPatchHelper').add(content, 'role', 'schema.order', [\"_id\", \"name\", \"description\", \"members\", \"authzMembers\", \"assignments\", \"condition\", \"temporalConstraints\"]);"
+             }
+         }
     }
 ]
