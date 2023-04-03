@@ -1,0 +1,53 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "iPlanetAMSessionService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "iPlanetAMSessionService",
+      "name" : "iPlanetAMSessionService",
+      "collection" : false
+    },
+    "quotas" : {
+      "behaviourWhenQuotaExhausted" : "org.forgerock.openam.session.service.DestroyNextExpiringAction",
+      "denyLoginWhenRepoDown" : "NO",
+      "quotaConstraintMaxWaitTime" : 6000,
+      "iplanet-am-session-enable-session-constraint" : "OFF"
+    },
+    "stateless" : {
+      "statelessSigningType" : "HS256",
+      "openam-session-stateless-blacklist-poll-interval" : 60,
+      "statelessCompressionType" : "NONE",
+      "openam-session-stateless-blacklist-cache-size" : 10000,
+      "statelessEncryptionType" : "DIRECT",
+      "statelessSigningHmacSecret" : "&{am.session.stateless.signing.key}",
+      "statelessEncryptionAesKey" : "&{am.session.stateless.encryption.key}",
+      "openam-session-stateless-blacklist-purge-delay" : 1,
+      "openam-session-stateless-enable-session-blacklisting" : false
+    },
+    "search" : {
+      "maxSessionListSize" : 120,
+      "sessionListRetrievalTimeout" : 5
+    },
+    "serviceObjectClasses" : [ "iplanet-am-session-service" ],
+    "general" : {
+      "latestAccessTimeUpdateFrequency" : 60,
+      "timeoutHandlers" : [ ],
+      "dnRestrictionOnly" : false
+    },
+    "notifications" : {
+      "notificationPropertyList" : [ ],
+      "propertyChangeNotifications" : "OFF"
+    },
+    "StatelessSessionSigningValidator" : "org.forgerock.openam.sm.validation.StatelessSessionSigningAlgorithmValidator",
+    "Base64Validator" : "org.forgerock.openam.sm.validation.Base64EncodedBinaryValidator"
+  }
+}

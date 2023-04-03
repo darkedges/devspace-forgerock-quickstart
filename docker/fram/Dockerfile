@@ -34,7 +34,7 @@ RUN set -ex && \
     apk add --no-cache curl openssh-keygen && \
     mkdir -p /opt/fram/instance/data && \
     addgroup -g 11111 -S forgerock && \
-    adduser -h /opt/fram/instance/data -G forgerock -D -u 11111 forgerock && \
+    adduser -G forgerock -D -u 11111 forgerock && \
     chmod 755 /opt/fram/instance/data && \
     chmod g+s /opt/fram/instance/data && \
     chmod 755 /opt/amster && \
@@ -46,11 +46,17 @@ COPY --chown=forgerock:forgerock rootscripts/*.sh /usr/local/tomcat/
 
 COPY --chown=forgerock:forgerock instance/amster /opt/amster/config/
 
+COPY --chown=forgerock:forgerock instance/home/ /home/forgerock/
+
 RUN chmod 755 /usr/local/tomcat/*.sh
 
 VOLUME [ "/opt/fram/instance/data"]
 
 USER 11111
+
+WORKDIR /home/forgerock
+
+ENV CATALINA_OPTS -Dcom.sun.services.debug.mergeall=on     -Dcom.sun.identity.configuration.directory=/home/forgerock/openam     -Dcom.iplanet.services.stats.state=off     -Dcom.sun.identity.sm.sms_object_filebased_enabled=true     -Dorg.forgerock.donotupgrade=true     -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1
 
 ENTRYPOINT  ["/usr/local/tomcat/docker-entrypoint.sh"]
 
