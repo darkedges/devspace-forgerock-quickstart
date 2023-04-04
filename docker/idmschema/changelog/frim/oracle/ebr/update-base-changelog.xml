@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="nirving" id="frim.01.alter_frim5513_user">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="base/frim.01.alter_frim5513_user.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.02.relationships_rename">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="base/frim.02.relationships_rename.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.03.relationships_trigger">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="base/frim.03.relationships_trigger.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="nirving" id="frim.00a.object">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.00a.object.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.00b.function">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.00b.function.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.01.edition_v2">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.01.edition_v2.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.02.alter_session" runAlways="true">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.02.alter_session.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.03.relationship_add_columns">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.03.relationship_add_columns.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.10.view_relationships">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.10.view_relationships.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.04.relationships_forward_trigger">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.04.relationships_forward_trigger.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.05.relationships_enable_forward_trigger">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.05.relationships_enable_forward_trigger.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.06.relationships_wait_on_pending_dml">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.06.relationships_wait_on_pending_dml.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.07.relationships_transform_rows">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.07.relationships_transform_rows.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.08.relationships_reverse_trigger">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.08.relationships_reverse_trigger.sql"
+               relativeToChangelogFile="true" splitStatements="false" stripComments="false"/>
+    </changeSet>
+    <changeSet author="nirving" id="frim.09.relationhsips_enable_reverse_trigger">
+      <sqlFile dbms="oracle" endDelimiter=";"
+               path="v2/frim.09.relationhsips_enable_reverse_trigger.sql"
+               relativeToChangelogFile="true" splitStatements="true" stripComments="false"/>
+    </changeSet>
+</databaseChangeLog>

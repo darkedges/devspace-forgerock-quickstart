@@ -1,0 +1,2 @@
+-- frim.01.edition_v1.sql
+CREATE EDITION V1 AS CHILD OF "ORA$BASE";
