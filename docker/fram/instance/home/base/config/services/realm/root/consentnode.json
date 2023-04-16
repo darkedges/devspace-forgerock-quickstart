@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "ConsentNode",
-    "entityId" : "ConsentNode",
-    "uid" : "ou=ConsentNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "ConsentNode",
+    "entityId": "ConsentNode",
+    "uid": "ou=ConsentNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "ConsentNode",
-    "_type" : {
-      "_id" : "ConsentNode",
-      "name" : "ConsentNode",
-      "collection" : false
+  "data": {
+    "_id": "ConsentNode",
+    "_type": {
+      "_id": "ConsentNode",
+      "name": "ConsentNode",
+      "collection": false
     }
   }
 }

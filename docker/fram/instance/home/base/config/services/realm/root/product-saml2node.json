@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "product-Saml2Node",
-    "entityId" : "product-Saml2Node",
-    "uid" : "ou=product-Saml2Node,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "product-Saml2Node",
+    "entityId": "product-Saml2Node",
+    "uid": "ou=product-Saml2Node,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "product-Saml2Node",
-    "_type" : {
-      "_id" : "product-Saml2Node",
-      "name" : "product-Saml2Node",
-      "collection" : false
+  "data": {
+    "_id": "product-Saml2Node",
+    "_type": {
+      "_id": "product-Saml2Node",
+      "name": "product-Saml2Node",
+      "collection": false
     }
   }
 }

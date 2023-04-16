@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "PollingWaitNode",
-    "entityId" : "PollingWaitNode",
-    "uid" : "ou=PollingWaitNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "PollingWaitNode",
+    "entityId": "PollingWaitNode",
+    "uid": "ou=PollingWaitNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "PollingWaitNode",
-    "_type" : {
-      "_id" : "PollingWaitNode",
-      "name" : "PollingWaitNode",
-      "collection" : false
+  "data": {
+    "_id": "PollingWaitNode",
+    "_type": {
+      "_id": "PollingWaitNode",
+      "name": "PollingWaitNode",
+      "collection": false
     }
   }
 }

@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "dashboardService",
-    "entityId" : "UserConfig",
-    "uid" : "ou=UserConfig,ou=1.0,ou=dashboardService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "dashboardService",
+    "entityId": "UserConfig",
+    "uid": "ou=UserConfig,ou=1.0,ou=dashboardService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "UserConfig",
-    "_type" : {
-      "_id" : "dashboardService",
-      "name" : "dashboardService",
-      "collection" : false
+  "data": {
+    "_id": "UserConfig",
+    "_type": {
+      "_id": "dashboardService",
+      "name": "dashboardService",
+      "collection": false
     }
   }
 }

@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "UmaProvider",
-    "entityId" : "GlobalConfig",
-    "uid" : "ou=GlobalConfig,ou=1.0,ou=UmaProvider,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": null,
+    "entityType": "UmaProvider",
+    "entityId": "GlobalConfig",
+    "uid": "ou=GlobalConfig,ou=1.0,ou=UmaProvider,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "GlobalConfig",
-    "_type" : {
-      "_id" : "UmaProvider",
-      "name" : "UmaProvider",
-      "collection" : false
+  "data": {
+    "_id": "GlobalConfig",
+    "_type": {
+      "_id": "UmaProvider",
+      "name": "UmaProvider",
+      "collection": false
     }
   }
 }

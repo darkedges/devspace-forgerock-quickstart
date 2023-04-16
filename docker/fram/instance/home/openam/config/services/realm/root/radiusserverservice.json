@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "RadiusServerService",
-    "entityId" : "RadiusServerService",
-    "uid" : "ou=RadiusServerService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "RadiusServerService",
+    "entityId": "RadiusServerService",
+    "uid": "ou=RadiusServerService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "RadiusServerService",
-    "_type" : {
-      "_id" : "RadiusServerService",
-      "name" : "RadiusServerService",
-      "collection" : false
+  "data": {
+    "_id": "RadiusServerService",
+    "_type": {
+      "_id": "RadiusServerService",
+      "name": "RadiusServerService",
+      "collection": false
     }
   }
 }

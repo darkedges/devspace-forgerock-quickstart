@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "SetSuccessUrlNode",
-    "entityId" : "SetSuccessUrlNode",
-    "uid" : "ou=SetSuccessUrlNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "SetSuccessUrlNode",
+    "entityId": "SetSuccessUrlNode",
+    "uid": "ou=SetSuccessUrlNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "SetSuccessUrlNode",
-    "_type" : {
-      "_id" : "SetSuccessUrlNode",
-      "name" : "SetSuccessUrlNode",
-      "collection" : false
+  "data": {
+    "_id": "SetSuccessUrlNode",
+    "_type": {
+      "_id": "SetSuccessUrlNode",
+      "name": "SetSuccessUrlNode",
+      "collection": false
     }
   }
 }

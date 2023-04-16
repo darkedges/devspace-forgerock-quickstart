@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "SessionDataNode",
-    "entityId" : "SessionDataNode",
-    "uid" : "ou=SessionDataNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "SessionDataNode",
+    "entityId": "SessionDataNode",
+    "uid": "ou=SessionDataNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "SessionDataNode",
-    "_type" : {
-      "_id" : "SessionDataNode",
-      "name" : "SessionDataNode",
-      "collection" : false
+  "data": {
+    "_id": "SessionDataNode",
+    "_type": {
+      "_id": "SessionDataNode",
+      "name": "SessionDataNode",
+      "collection": false
     }
   }
 }

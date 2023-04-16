@@ -42,7 +42,7 @@ fi
     --set am-identity-store/baseDn:${AMIDENTITYSTORE_BASE_DN:-ou=identities} \
     --set am-identity-store/backendName:${AMIDENTITYSTORE_BACKEND_NAME} \
     --set am-config/amConfigAdminPassword:${AMCONFIG_ADMIN_PASSWORD:-Passw0rd} \
-    --set am-config/baseDn:${AMCONFIG_BASE_DN:-dc=amconfig} \
+    --set am-config/baseDn:${AMCONFIG_BASE_DN:-ou=amconfig} \
     --set am-config/backendName:${AMCONFIG_BACKEND_NAME} \
     --acceptLicense \
     ${EXTRA_OPTIONS}

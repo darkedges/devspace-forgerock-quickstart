@@ -1,25 +1,29 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthMembershipService",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthMembershipService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthMembershipService",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthMembershipService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "iPlanetAMAuthMembershipService",
-      "name" : "iPlanetAMAuthMembershipService",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "iPlanetAMAuthMembershipService",
+      "name": "iPlanetAMAuthMembershipService",
+      "collection": false
     },
-    "defaultUserStatus" : "Active",
-    "minimumPasswordLength" : 8,
-    "defaultUserRoles" : [ ],
-    "authenticationLevel" : 0,
-    "iplanet-am-auth-membership-invalid-chars" : "*|(|)|&|!"
+    "defaultUserStatus": "Active",
+    "minimumPasswordLength": 8,
+    "defaultUserRoles": [],
+    "authenticationLevel": 0,
+    "iplanet-am-auth-membership-invalid-chars": "*|(|)|&|!"
   }
 }

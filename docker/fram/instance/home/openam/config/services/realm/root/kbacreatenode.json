@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "KbaCreateNode",
-    "entityId" : "KbaCreateNode",
-    "uid" : "ou=KbaCreateNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "KbaCreateNode",
+    "entityId": "KbaCreateNode",
+    "uid": "ou=KbaCreateNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "KbaCreateNode",
-    "_type" : {
-      "_id" : "KbaCreateNode",
-      "name" : "KbaCreateNode",
-      "collection" : false
+  "data": {
+    "_id": "KbaCreateNode",
+    "_type": {
+      "_id": "KbaCreateNode",
+      "name": "KbaCreateNode",
+      "collection": false
     }
   }
 }

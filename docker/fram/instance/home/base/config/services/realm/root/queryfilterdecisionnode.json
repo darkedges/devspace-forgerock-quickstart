@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "QueryFilterDecisionNode",
-    "entityId" : "QueryFilterDecisionNode",
-    "uid" : "ou=QueryFilterDecisionNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "QueryFilterDecisionNode",
+    "entityId": "QueryFilterDecisionNode",
+    "uid": "ou=QueryFilterDecisionNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "QueryFilterDecisionNode",
-    "_type" : {
-      "_id" : "QueryFilterDecisionNode",
-      "name" : "QueryFilterDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "QueryFilterDecisionNode",
+    "_type": {
+      "_id": "QueryFilterDecisionNode",
+      "name": "QueryFilterDecisionNode",
+      "collection": false
     }
   }
 }

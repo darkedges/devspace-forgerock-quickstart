@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "RestSecurityTokenService",
-    "entityId" : "RestSecurityTokenService",
-    "uid" : "ou=RestSecurityTokenService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "RestSecurityTokenService",
+    "entityId": "RestSecurityTokenService",
+    "uid": "ou=RestSecurityTokenService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "RestSecurityTokenService",
-    "_type" : {
-      "_id" : "RestSecurityTokenService",
-      "name" : "RestSecurityTokenService",
-      "collection" : false
+  "data": {
+    "_id": "RestSecurityTokenService",
+    "_type": {
+      "_id": "RestSecurityTokenService",
+      "name": "RestSecurityTokenService",
+      "collection": false
     }
   }
 }

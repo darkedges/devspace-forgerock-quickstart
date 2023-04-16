@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "selfService",
-    "entityId" : "selfService",
-    "uid" : "ou=selfService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "selfService",
+    "entityId": "selfService",
+    "uid": "ou=selfService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "selfService",
-    "_type" : {
-      "_id" : "selfService",
-      "name" : "selfService",
-      "collection" : false
+  "data": {
+    "_id": "selfService",
+    "_type": {
+      "_id": "selfService",
+      "name": "selfService",
+      "collection": false
     }
   }
 }

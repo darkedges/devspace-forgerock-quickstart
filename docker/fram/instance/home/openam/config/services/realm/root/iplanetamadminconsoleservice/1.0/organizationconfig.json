@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAdminConsoleService",
-    "entityId" : "OrganizationConfig",
-    "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAdminConsoleService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAdminConsoleService",
+    "entityId": "OrganizationConfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAdminConsoleService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "OrganizationConfig",
-    "_type" : {
-      "_id" : "iPlanetAMAdminConsoleService",
-      "name" : "iPlanetAMAdminConsoleService",
-      "collection" : false
+  "data": {
+    "_id": "OrganizationConfig",
+    "_type": {
+      "_id": "iPlanetAMAdminConsoleService",
+      "name": "iPlanetAMAdminConsoleService",
+      "collection": false
     }
   }
 }

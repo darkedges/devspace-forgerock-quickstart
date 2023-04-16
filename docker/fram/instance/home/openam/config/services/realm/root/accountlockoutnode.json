@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AccountLockoutNode",
-    "entityId" : "AccountLockoutNode",
-    "uid" : "ou=AccountLockoutNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AccountLockoutNode",
+    "entityId": "AccountLockoutNode",
+    "uid": "ou=AccountLockoutNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "AccountLockoutNode",
-    "_type" : {
-      "_id" : "AccountLockoutNode",
-      "name" : "AccountLockoutNode",
-      "collection" : false
+  "data": {
+    "_id": "AccountLockoutNode",
+    "_type": {
+      "_id": "AccountLockoutNode",
+      "name": "AccountLockoutNode",
+      "collection": false
     }
   }
 }

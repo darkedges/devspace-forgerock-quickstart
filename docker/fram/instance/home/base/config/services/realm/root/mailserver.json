@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "MailServer",
-    "entityId" : "MailServer",
-    "uid" : "ou=MailServer,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "MailServer",
+    "entityId": "MailServer",
+    "uid": "ou=MailServer,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "MailServer",
-    "_type" : {
-      "_id" : "MailServer",
-      "name" : "MailServer",
-      "collection" : false
+  "data": {
+    "_id": "MailServer",
+    "_type": {
+      "_id": "MailServer",
+      "name": "MailServer",
+      "collection": false
     }
   }
 }

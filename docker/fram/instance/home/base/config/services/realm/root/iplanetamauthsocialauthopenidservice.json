@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthSocialAuthOpenIDService",
-    "entityId" : "iPlanetAMAuthSocialAuthOpenIDService",
-    "uid" : "ou=iPlanetAMAuthSocialAuthOpenIDService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthSocialAuthOpenIDService",
+    "entityId": "iPlanetAMAuthSocialAuthOpenIDService",
+    "uid": "ou=iPlanetAMAuthSocialAuthOpenIDService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "iPlanetAMAuthSocialAuthOpenIDService",
-    "_type" : {
-      "_id" : "iPlanetAMAuthSocialAuthOpenIDService",
-      "name" : "iPlanetAMAuthSocialAuthOpenIDService",
-      "collection" : false
+  "data": {
+    "_id": "iPlanetAMAuthSocialAuthOpenIDService",
+    "_type": {
+      "_id": "iPlanetAMAuthSocialAuthOpenIDService",
+      "name": "iPlanetAMAuthSocialAuthOpenIDService",
+      "collection": false
     }
   }
 }

@@ -1,21 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthAmsterService",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthAmsterService",
+    "entityId": "default",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "iPlanetAMAuthAmsterService",
-      "name" : "iPlanetAMAuthAmsterService",
-      "collection" : false
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "iPlanetAMAuthAmsterService",
+      "name": "iPlanetAMAuthAmsterService",
+      "collection": false
     },
-    "authorizedKeys" : "&{secrets.path}/amster/authorized_keys"
+    "authorizedKeys": "&{secrets.path}/amster/authorized_keys"
   }
 }

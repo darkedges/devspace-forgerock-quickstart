@@ -1,31 +1,35 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "RestSecurity",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RestSecurity,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "RestSecurity",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RestSecurity,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "RestSecurity",
-      "name" : "RestSecurity",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "RestSecurity",
+      "name": "RestSecurity",
+      "collection": false
     },
-    "forgotPasswordEnabled" : false,
-    "selfRegistrationConfirmationUrl" : "http://am:80/am/XUI/confirm.html",
-    "userRegisteredDestination" : "default",
-    "SigningKeyValidator" : "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
-    "protectedUserAttributes" : [ ],
-    "selfRegistrationTokenLifetime" : 900,
-    "confirmationIdHmacKey" : "&{am.selfservice.legacy.confirmation.email.link.signing.key}",
-    "selfServiceEnabled" : false,
-    "selfRegistrationEnabled" : false,
-    "forgotPasswordTokenLifetime" : 900,
-    "forgotPasswordConfirmationUrl" : "http://am:80/am/XUI/confirm.html"
+    "forgotPasswordEnabled": false,
+    "selfRegistrationConfirmationUrl": "http://am:80/am/XUI/confirm.html",
+    "userRegisteredDestination": "default",
+    "SigningKeyValidator": "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
+    "protectedUserAttributes": [],
+    "selfRegistrationTokenLifetime": 900,
+    "confirmationIdHmacKey": "&{am.selfservice.legacy.confirmation.email.link.signing.key}",
+    "selfServiceEnabled": false,
+    "selfRegistrationEnabled": false,
+    "forgotPasswordTokenLifetime": 900,
+    "forgotPasswordConfirmationUrl": "http://am:80/am/XUI/confirm.html"
   }
 }

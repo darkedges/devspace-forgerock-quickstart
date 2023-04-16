@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
-    "entityType" : "AgentService",
-    "entityId" : "Instances",
-    "uid" : "ou=Instances,ou=1.0,ou=AgentService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/sunamhiddenrealmdelegationservicepermissions",
+    "entityType": "AgentService",
+    "entityId": "Instances",
+    "uid": "ou=Instances,ou=1.0,ou=AgentService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "Instances",
-    "_type" : {
-      "_id" : "AgentService",
-      "name" : "AgentService",
-      "collection" : false
+  "data": {
+    "_id": "Instances",
+    "_type": {
+      "_id": "AgentService",
+      "name": "AgentService",
+      "collection": false
     }
   }
 }

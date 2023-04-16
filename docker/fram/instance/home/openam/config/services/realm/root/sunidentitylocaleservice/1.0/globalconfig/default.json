@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "sunIdentityLocaleService",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityLocaleService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": null,
+    "entityType": "sunIdentityLocaleService",
+    "entityId": "default",
+    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityLocaleService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "sunIdentityLocaleService",
-      "name" : "sunIdentityLocaleService",
-      "collection" : false
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "sunIdentityLocaleService",
+      "name": "sunIdentityLocaleService",
+      "collection": false
     }
   }
 }

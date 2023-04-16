@@ -1,23 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "sunAMDelegationService",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=PolicyConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "sunAMDelegationService",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=PolicyConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "sunAMDelegationService",
-      "name" : "sunAMDelegationService",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "sunAMDelegationService",
+      "name": "sunAMDelegationService",
+      "collection": false
     },
-    "MODIFY" : null,
-    "DELEGATE" : null,
-    "READ" : null
+    "MODIFY": null,
+    "DELEGATE": null,
+    "READ": null
   }
 }

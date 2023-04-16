@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "DeviceGeoFencingNode",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceGeoFencingNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "DeviceGeoFencingNode",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceGeoFencingNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "DeviceGeoFencingNode",
-      "name" : "DeviceGeoFencingNode",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "DeviceGeoFencingNode",
+      "name": "DeviceGeoFencingNode",
+      "collection": false
     }
   }
 }

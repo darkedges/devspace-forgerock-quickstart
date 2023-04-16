@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMPolicyService",
-    "entityId" : "Condition/IPCondition",
-    "uid" : "ou=IPCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMPolicyService",
+    "entityId": "Condition/IPCondition",
+    "uid": "ou=IPCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "Condition/IPCondition",
-    "_type" : {
-      "_id" : "iPlanetAMPolicyService",
-      "name" : "iPlanetAMPolicyService",
-      "collection" : false
+  "data": {
+    "_id": "Condition/IPCondition",
+    "_type": {
+      "_id": "iPlanetAMPolicyService",
+      "name": "iPlanetAMPolicyService",
+      "collection": false
     }
   }
 }

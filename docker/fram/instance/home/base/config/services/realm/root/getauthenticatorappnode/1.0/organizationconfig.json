@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "GetAuthenticatorAppNode",
-    "entityId" : "OrganizationConfig",
-    "uid" : "ou=OrganizationConfig,ou=1.0,ou=GetAuthenticatorAppNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "GetAuthenticatorAppNode",
+    "entityId": "OrganizationConfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=GetAuthenticatorAppNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "OrganizationConfig",
-    "_type" : {
-      "_id" : "GetAuthenticatorAppNode",
-      "name" : "GetAuthenticatorAppNode",
-      "collection" : false
+  "data": {
+    "_id": "OrganizationConfig",
+    "_type": {
+      "_id": "GetAuthenticatorAppNode",
+      "name": "GetAuthenticatorAppNode",
+      "collection": false
     }
   }
 }

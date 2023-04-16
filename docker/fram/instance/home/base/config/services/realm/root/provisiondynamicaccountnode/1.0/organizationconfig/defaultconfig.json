@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "ProvisionDynamicAccountNode",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=ProvisionDynamicAccountNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "ProvisionDynamicAccountNode",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=ProvisionDynamicAccountNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "ProvisionDynamicAccountNode",
-      "name" : "ProvisionDynamicAccountNode",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "ProvisionDynamicAccountNode",
+      "name": "ProvisionDynamicAccountNode",
+      "collection": false
     }
   }
 }

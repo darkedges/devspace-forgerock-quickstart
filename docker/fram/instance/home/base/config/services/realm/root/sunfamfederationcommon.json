@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "sunFAMFederationCommon",
-    "entityId" : "sunFAMFederationCommon",
-    "uid" : "ou=sunFAMFederationCommon,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "sunFAMFederationCommon",
+    "entityId": "sunFAMFederationCommon",
+    "uid": "ou=sunFAMFederationCommon,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "sunFAMFederationCommon",
-    "_type" : {
-      "_id" : "sunFAMFederationCommon",
-      "name" : "sunFAMFederationCommon",
-      "collection" : false
+  "data": {
+    "_id": "sunFAMFederationCommon",
+    "_type": {
+      "_id": "sunFAMFederationCommon",
+      "name": "sunFAMFederationCommon",
+      "collection": false
     }
   }
 }

@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AnonymousSessionUpgradeNode",
-    "entityId" : "AnonymousSessionUpgradeNode",
-    "uid" : "ou=AnonymousSessionUpgradeNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AnonymousSessionUpgradeNode",
+    "entityId": "AnonymousSessionUpgradeNode",
+    "uid": "ou=AnonymousSessionUpgradeNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "AnonymousSessionUpgradeNode",
-    "_type" : {
-      "_id" : "AnonymousSessionUpgradeNode",
-      "name" : "AnonymousSessionUpgradeNode",
-      "collection" : false
+  "data": {
+    "_id": "AnonymousSessionUpgradeNode",
+    "_type": {
+      "_id": "AnonymousSessionUpgradeNode",
+      "name": "AnonymousSessionUpgradeNode",
+      "collection": false
     }
   }
 }

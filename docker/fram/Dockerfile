@@ -1,8 +1,10 @@
 ARG TOMCAT_IMAGE=darkedges/tomcat
 ARG TOMCAT_TAG=9.0.65-11.0.14_9-alpine
 
+FROM gcr.io/forgerock-io/am-base:7.2.0 as fr_am_base
+
 # Binary extract
-FROM alpine:3.15.0
+FROM alpine:3.17.3 as fram_base
 ARG FRAM_WAR_ARCHIVE=AM-7.2.0.zip
 ARG FRAM_AMSTER_ARCHIVE=Amster-7.2.0.zip
 ARG FRAM_ARCHIVE_REPOSITORY_URL=
@@ -27,11 +29,13 @@ RUN set -ex && \
     rm -rf /usr/local/tomcat/webapps/* && \
     mkdir -p /opt/amster/config
 
-COPY --from=0 /var/tmp/bootstrap/webapps /usr/local/tomcat/webapps/
-COPY --from=0 /var/tmp/bootstrap/amster /opt/amster/
+COPY --from=fram_base /var/tmp/bootstrap/webapps /usr/local/tomcat/webapps/
+COPY --from=fram_base /var/tmp/bootstrap/amster /opt/amster/
+COPY --from=fr_am_base /home/forgerock/crypto-tool.jar /home/forgerock/crypto-tool.jar
 
 RUN set -ex && \
-    apk add --no-cache curl openssh-keygen && \
+    apk --no-cache update && \
+    apk add --no-cache curl openssh-keygen openldap-clients && \
     mkdir -p /opt/fram/instance/data && \
     addgroup -g 11111 -S forgerock && \
     adduser -G forgerock -D -u 11111 forgerock && \
@@ -40,7 +44,8 @@ RUN set -ex && \
     chmod 755 /opt/amster && \
     chown -R forgerock:forgerock /usr/local/tomcat && \
     chown -R forgerock:forgerock /opt/amster && \
-    sed -i 's/<\/Host>/<Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto"\/><\/Host>/' /usr/local/tomcat/conf/server.xml
+    sed -i 's/<\/Host>/<Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto"\/><\/Host>/' /usr/local/tomcat/conf/server.xml && \
+    chown forgerock:forgerock /home/forgerock/crypto-tool.jar
 
 COPY --chown=forgerock:forgerock rootscripts/*.sh /usr/local/tomcat/
 
@@ -56,7 +61,8 @@ USER 11111
 
 WORKDIR /home/forgerock
 
-ENV CATALINA_OPTS -Dcom.sun.services.debug.mergeall=on     -Dcom.sun.identity.configuration.directory=/home/forgerock/openam     -Dcom.iplanet.services.stats.state=off     -Dcom.sun.identity.sm.sms_object_filebased_enabled=true     -Dorg.forgerock.donotupgrade=true     -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1
+ENV FRAM_HOME=/home/forgerock/openam
+ENV CATALINA_OPTS -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=true -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1
 
 ENTRYPOINT  ["/usr/local/tomcat/docker-entrypoint.sh"]
 

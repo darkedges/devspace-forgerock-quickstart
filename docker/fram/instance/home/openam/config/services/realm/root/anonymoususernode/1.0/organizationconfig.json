@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AnonymousUserNode",
-    "entityId" : "OrganizationConfig",
-    "uid" : "ou=OrganizationConfig,ou=1.0,ou=AnonymousUserNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AnonymousUserNode",
+    "entityId": "OrganizationConfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=AnonymousUserNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "OrganizationConfig",
-    "_type" : {
-      "_id" : "AnonymousUserNode",
-      "name" : "AnonymousUserNode",
-      "collection" : false
+  "data": {
+    "_id": "OrganizationConfig",
+    "_type": {
+      "_id": "AnonymousUserNode",
+      "name": "AnonymousUserNode",
+      "collection": false
     }
   }
 }

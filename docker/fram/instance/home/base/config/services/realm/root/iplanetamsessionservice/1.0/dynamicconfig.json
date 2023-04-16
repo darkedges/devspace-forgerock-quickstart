@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMSessionService",
-    "entityId" : "DynamicConfig",
-    "uid" : "ou=DynamicConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMSessionService",
+    "entityId": "DynamicConfig",
+    "uid": "ou=DynamicConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "DynamicConfig",
-    "_type" : {
-      "_id" : "iPlanetAMSessionService",
-      "name" : "iPlanetAMSessionService",
-      "collection" : false
+  "data": {
+    "_id": "DynamicConfig",
+    "_type": {
+      "_id": "iPlanetAMSessionService",
+      "name": "iPlanetAMSessionService",
+      "collection": false
     }
   }
 }

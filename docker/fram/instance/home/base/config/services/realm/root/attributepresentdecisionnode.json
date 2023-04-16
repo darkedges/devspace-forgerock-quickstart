@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AttributePresentDecisionNode",
-    "entityId" : "AttributePresentDecisionNode",
-    "uid" : "ou=AttributePresentDecisionNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AttributePresentDecisionNode",
+    "entityId": "AttributePresentDecisionNode",
+    "uid": "ou=AttributePresentDecisionNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "AttributePresentDecisionNode",
-    "_type" : {
-      "_id" : "AttributePresentDecisionNode",
-      "name" : "AttributePresentDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "AttributePresentDecisionNode",
+    "_type": {
+      "_id": "AttributePresentDecisionNode",
+      "name": "AttributePresentDecisionNode",
+      "collection": false
     }
   }
 }

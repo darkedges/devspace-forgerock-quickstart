@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "FileSystemSecretStore",
-    "entityId" : "GlobalConfig",
-    "uid" : "ou=GlobalConfig,ou=1.0,ou=FileSystemSecretStore,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": null,
+    "entityType": "FileSystemSecretStore",
+    "entityId": "GlobalConfig",
+    "uid": "ou=GlobalConfig,ou=1.0,ou=FileSystemSecretStore,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "GlobalConfig",
-    "_type" : {
-      "_id" : "FileSystemSecretStore",
-      "name" : "FileSystemSecretStore",
-      "collection" : false
+  "data": {
+    "_id": "GlobalConfig",
+    "_type": {
+      "_id": "FileSystemSecretStore",
+      "name": "FileSystemSecretStore",
+      "collection": false
     }
   }
 }

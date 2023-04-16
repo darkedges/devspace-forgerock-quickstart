@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AccountActiveDecisionNode",
-    "entityId" : "AccountActiveDecisionNode",
-    "uid" : "ou=AccountActiveDecisionNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AccountActiveDecisionNode",
+    "entityId": "AccountActiveDecisionNode",
+    "uid": "ou=AccountActiveDecisionNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "AccountActiveDecisionNode",
-    "_type" : {
-      "_id" : "AccountActiveDecisionNode",
-      "name" : "AccountActiveDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "AccountActiveDecisionNode",
+    "_type": {
+      "_id": "AccountActiveDecisionNode",
+      "name": "AccountActiveDecisionNode",
+      "collection": false
     }
   }
 }

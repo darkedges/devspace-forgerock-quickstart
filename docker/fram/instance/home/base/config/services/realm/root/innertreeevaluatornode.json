@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "InnerTreeEvaluatorNode",
-    "entityId" : "InnerTreeEvaluatorNode",
-    "uid" : "ou=InnerTreeEvaluatorNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "InnerTreeEvaluatorNode",
+    "entityId": "InnerTreeEvaluatorNode",
+    "uid": "ou=InnerTreeEvaluatorNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "InnerTreeEvaluatorNode",
-    "_type" : {
-      "_id" : "InnerTreeEvaluatorNode",
-      "name" : "InnerTreeEvaluatorNode",
-      "collection" : false
+  "data": {
+    "_id": "InnerTreeEvaluatorNode",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "name": "InnerTreeEvaluatorNode",
+      "collection": false
     }
   }
 }

@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthSocialAuthWeChatService",
-    "entityId" : "iPlanetAMAuthSocialAuthWeChatService",
-    "uid" : "ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthSocialAuthWeChatService",
+    "entityId": "iPlanetAMAuthSocialAuthWeChatService",
+    "uid": "ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "iPlanetAMAuthSocialAuthWeChatService",
-    "_type" : {
-      "_id" : "iPlanetAMAuthSocialAuthWeChatService",
-      "name" : "iPlanetAMAuthSocialAuthWeChatService",
-      "collection" : false
+  "data": {
+    "_id": "iPlanetAMAuthSocialAuthWeChatService",
+    "_type": {
+      "_id": "iPlanetAMAuthSocialAuthWeChatService",
+      "name": "iPlanetAMAuthSocialAuthWeChatService",
+      "collection": false
     }
   }
 }

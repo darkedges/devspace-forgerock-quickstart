@@ -19,14 +19,14 @@ git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/fram
 
 # To build
-docker build -t devspace-forgerock-quickstart/am:7.2.0 .
+docker build -t devspace-forgerock-quickstart/am:7.2.0-fbc .
 ```
 
 ## Run
 
 ```console
 docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.2.0 init_start
-docker run -it --rm --name dfq-am --link dfq-ds:dfq-ds --publish 8080:8080  devspace-forgerock-quickstart/am:7.2.0
+docker run -it --rm --name dfq-am --link dfq-ds:dfq-ds --publish 8080:8080  devspace-forgerock-quickstart/am:7.2.0-fbc
 ```
 
 open a web browser to <http://am.7f000001.nip.io:8080/openam/> and it should return the hostname of the container running.

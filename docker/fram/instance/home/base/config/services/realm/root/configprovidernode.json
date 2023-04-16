@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "ConfigProviderNode",
-    "entityId" : "ConfigProviderNode",
-    "uid" : "ou=ConfigProviderNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "ConfigProviderNode",
+    "entityId": "ConfigProviderNode",
+    "uid": "ou=ConfigProviderNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "ConfigProviderNode",
-    "_type" : {
-      "_id" : "ConfigProviderNode",
-      "name" : "ConfigProviderNode",
-      "collection" : false
+  "data": {
+    "_id": "ConfigProviderNode",
+    "_type": {
+      "_id": "ConfigProviderNode",
+      "name": "ConfigProviderNode",
+      "collection": false
     }
   }
 }

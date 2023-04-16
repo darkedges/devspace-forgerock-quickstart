@@ -1,21 +1,24 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthOATHService",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthOATHService",
+    "entityId": "default",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "iPlanetAMAuthOATHService",
-      "name" : "iPlanetAMAuthOATHService",
-      "collection" : false
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "iPlanetAMAuthOATHService",
+      "name": "iPlanetAMAuthOATHService",
+      "collection": false
     },
-    "authenticationLevel" : 0
+    "authenticationLevel": 0
   }
 }

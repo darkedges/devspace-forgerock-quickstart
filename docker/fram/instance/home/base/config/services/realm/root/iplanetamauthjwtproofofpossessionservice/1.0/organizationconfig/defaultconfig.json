@@ -1,26 +1,30 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMAuthJwtProofOfPossessionService",
-    "entityId" : "defaultconfig",
-    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMAuthJwtProofOfPossessionService",
+    "entityId": "defaultconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "defaultconfig",
-    "_type" : {
-      "_id" : "iPlanetAMAuthJwtProofOfPossessionService",
-      "name" : "iPlanetAMAuthJwtProofOfPossessionService",
-      "collection" : false
+  "data": {
+    "_id": "defaultconfig",
+    "_type": {
+      "_id": "iPlanetAMAuthJwtProofOfPossessionService",
+      "name": "iPlanetAMAuthJwtProofOfPossessionService",
+      "collection": false
     },
-    "responseEncryptionCipher" : "A128GCM",
-    "subjectJwkSetAttr" : null,
-    "challengeSigningKey" : null,
-    "responseEncryptionMethod" : "ECDHE",
-    "enableTlsSessionBinding" : true,
-    "authenticationLevel" : 0
+    "responseEncryptionCipher": "A128GCM",
+    "subjectJwkSetAttr": null,
+    "challengeSigningKey": null,
+    "responseEncryptionMethod": "ECDHE",
+    "enableTlsSessionBinding": true,
+    "authenticationLevel": 0
   }
 }

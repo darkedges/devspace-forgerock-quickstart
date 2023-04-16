@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "sunIdentityAgentService",
-    "entityId" : "sunIdentityAgentService",
-    "uid" : "ou=sunIdentityAgentService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "sunIdentityAgentService",
+    "entityId": "sunIdentityAgentService",
+    "uid": "ou=sunIdentityAgentService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "sunIdentityAgentService",
-    "_type" : {
-      "_id" : "sunIdentityAgentService",
-      "name" : "sunIdentityAgentService",
-      "collection" : false
+  "data": {
+    "_id": "sunIdentityAgentService",
+    "_type": {
+      "_id": "sunIdentityAgentService",
+      "name": "sunIdentityAgentService",
+      "collection": false
     }
   }
 }

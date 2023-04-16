@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "AuditService",
-    "entityId" : "AuditService",
-    "uid" : "ou=AuditService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "AuditService",
+    "entityId": "AuditService",
+    "uid": "ou=AuditService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "AuditService",
-    "_type" : {
-      "_id" : "AuditService",
-      "name" : "AuditService",
-      "collection" : false
+  "data": {
+    "_id": "AuditService",
+    "_type": {
+      "_id": "AuditService",
+      "name": "AuditService",
+      "collection": false
     }
   }
 }

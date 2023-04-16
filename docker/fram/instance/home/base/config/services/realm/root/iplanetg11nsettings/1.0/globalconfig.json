@@ -1,20 +1,24 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "iPlanetG11NSettings",
-    "entityId" : "GlobalConfig",
-    "uid" : "ou=GlobalConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": null,
+    "entityType": "iPlanetG11NSettings",
+    "entityId": "GlobalConfig",
+    "uid": "ou=GlobalConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "organizationalunit",
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "GlobalConfig",
-    "_type" : {
-      "_id" : "iPlanetG11NSettings",
-      "name" : "iPlanetG11NSettings",
-      "collection" : false
+  "data": {
+    "_id": "GlobalConfig",
+    "_type": {
+      "_id": "iPlanetG11NSettings",
+      "name": "iPlanetG11NSettings",
+      "collection": false
     }
   }
 }

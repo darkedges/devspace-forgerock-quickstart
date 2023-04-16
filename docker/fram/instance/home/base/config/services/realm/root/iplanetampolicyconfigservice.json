@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "iPlanetAMPolicyConfigService",
-    "entityId" : "iPlanetAMPolicyConfigService",
-    "uid" : "ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "iPlanetAMPolicyConfigService",
+    "entityId": "iPlanetAMPolicyConfigService",
+    "uid": "ou=iPlanetAMPolicyConfigService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "iPlanetAMPolicyConfigService",
-    "_type" : {
-      "_id" : "iPlanetAMPolicyConfigService",
-      "name" : "iPlanetAMPolicyConfigService",
-      "collection" : false
+  "data": {
+    "_id": "iPlanetAMPolicyConfigService",
+    "_type": {
+      "_id": "iPlanetAMPolicyConfigService",
+      "name": "iPlanetAMPolicyConfigService",
+      "collection": false
     }
   }
 }

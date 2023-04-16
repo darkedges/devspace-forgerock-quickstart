@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "sunAMAuthSAEService",
-    "entityId" : "OrganizationConfig",
-    "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthSAEService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "organizationalunit" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "sunAMAuthSAEService",
+    "entityId": "OrganizationConfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthSAEService,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "organizationalunit"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "OrganizationConfig",
-    "_type" : {
-      "_id" : "sunAMAuthSAEService",
-      "name" : "sunAMAuthSAEService",
-      "collection" : false
+  "data": {
+    "_id": "OrganizationConfig",
+    "_type": {
+      "_id": "sunAMAuthSAEService",
+      "name": "sunAMAuthSAEService",
+      "collection": false
     }
   }
 }

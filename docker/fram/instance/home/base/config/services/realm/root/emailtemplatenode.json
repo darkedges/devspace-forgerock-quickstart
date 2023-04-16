@@ -1,20 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "EmailTemplateNode",
-    "entityId" : "EmailTemplateNode",
-    "uid" : "ou=EmailTemplateNode,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
-    "pathParams" : { },
-    "ou" : null
+  "metadata": {
+    "realm": "/",
+    "entityType": "EmailTemplateNode",
+    "entityId": "EmailTemplateNode",
+    "uid": "ou=EmailTemplateNode,ou=services,dc=amconfig",
+    "sunServiceID": null,
+    "objectClass": [
+      "top",
+      "sunService"
+    ],
+    "pathParams": {},
+    "ou": null
   },
-  "data" : {
-    "_id" : "EmailTemplateNode",
-    "_type" : {
-      "_id" : "EmailTemplateNode",
-      "name" : "EmailTemplateNode",
-      "collection" : false
+  "data": {
+    "_id": "EmailTemplateNode",
+    "_type": {
+      "_id": "EmailTemplateNode",
+      "name": "EmailTemplateNode",
+      "collection": false
     }
   }
 }
