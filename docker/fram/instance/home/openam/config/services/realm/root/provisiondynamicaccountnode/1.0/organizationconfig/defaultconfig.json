@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ProvisionDynamicAccountNode",
     "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=ProvisionDynamicAccountNode,ou=services,dc=amconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=ProvisionDynamicAccountNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

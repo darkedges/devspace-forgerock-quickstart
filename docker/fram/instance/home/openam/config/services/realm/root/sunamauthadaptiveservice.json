@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthAdaptiveService",
     "entityId": "sunAMAuthAdaptiveService",
-    "uid": "ou=sunAMAuthAdaptiveService,ou=services,dc=amconfig",
+    "uid": "ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

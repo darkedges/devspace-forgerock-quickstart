@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RadiusServerService",
     "entityId": "RadiusServerService",
-    "uid": "ou=RadiusServerService,ou=services,dc=amconfig",
+    "uid": "ou=RadiusServerService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushNotificationService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=PushNotificationService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=PushNotificationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

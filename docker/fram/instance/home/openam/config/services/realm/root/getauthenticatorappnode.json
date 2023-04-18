@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "GetAuthenticatorAppNode",
     "entityId": "GetAuthenticatorAppNode",
-    "uid": "ou=GetAuthenticatorAppNode,ou=services,dc=amconfig",
+    "uid": "ou=GetAuthenticatorAppNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

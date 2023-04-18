@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AuditService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=AuditService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=AuditService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

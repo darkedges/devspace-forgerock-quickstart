@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AnonymousUserNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=AnonymousUserNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=AnonymousUserNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

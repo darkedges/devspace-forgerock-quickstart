@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "OathRegistrationNode",
     "entityId": "OathRegistrationNode",
-    "uid": "ou=OathRegistrationNode,ou=services,dc=amconfig",
+    "uid": "ou=OathRegistrationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

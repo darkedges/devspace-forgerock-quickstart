@@ -42,7 +42,7 @@ fi
     --set am-identity-store/baseDn:${AMIDENTITYSTORE_BASE_DN:-ou=identities} \
     --set am-identity-store/backendName:${AMIDENTITYSTORE_BACKEND_NAME} \
     --set am-config/amConfigAdminPassword:${AMCONFIG_ADMIN_PASSWORD:-Passw0rd} \
-    --set am-config/baseDn:${AMCONFIG_BASE_DN:-ou=amconfig} \
+    --set am-config/baseDn:${AMCONFIG_BASE_DN:-ou=am-config} \
     --set am-config/backendName:${AMCONFIG_BACKEND_NAME} \
     --acceptLicense \
     ${EXTRA_OPTIONS}
@@ -56,7 +56,8 @@ set-global-configuration-prop --advanced --set "trust-transaction-ids:&{platform
 set-backend-prop --backend-name ${AMCTS_BACKEND_NAME} --set confidentiality-enabled:false
 set-backend-prop --backend-name ${AMCONFIG_BACKEND_NAME} --set confidentiality-enabled:false
 set-backend-prop --backend-name ${AMIDENTITYSTORE_BACKEND_NAME} --set confidentiality-enabled:false
-set-password-policy-prop --policy-name "Default Password Policy"--set require-secure-authentication:false
+set-password-policy-prop --policy-name "Default Password Policy"--set require-secure-authentication:false --set "require-secure-password-changes:false"
+set-password-policy-prop --policy-name "Root Password Policy"--set require-secure-authentication:false --set "require-secure-password-changes:false"
 EOF
 
 set +u

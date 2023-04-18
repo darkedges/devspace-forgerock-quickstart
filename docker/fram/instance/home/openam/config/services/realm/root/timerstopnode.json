@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "TimerStopNode",
     "entityId": "TimerStopNode",
-    "uid": "ou=TimerStopNode,ou=services,dc=amconfig",
+    "uid": "ou=TimerStopNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

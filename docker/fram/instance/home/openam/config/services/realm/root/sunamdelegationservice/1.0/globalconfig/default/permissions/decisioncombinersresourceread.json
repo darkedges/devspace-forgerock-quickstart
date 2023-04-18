@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunAMDelegationService",
     "entityId": "default/Permissions/DecisionCombinersResourceRead",
-    "uid": "ou=DecisionCombinersResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=DecisionCombinersResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": "Permission",
     "objectClass": [
       "top",
@@ -23,7 +23,7 @@
       "READ"
     ],
     "resource": [
-      "dc=amconfig/rest/1.0/decisioncombiners/read"
+      "ou=am-config/rest/1.0/decisioncombiners/read"
     ]
   }
 }

@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "ScriptingService",
     "entityId": "default/SAML2_IDP_ATTRIBUTE_MAPPER",
-    "uid": "ou=SAML2_IDP_ATTRIBUTE_MAPPER,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,dc=amconfig",
+    "uid": "ou=SAML2_IDP_ATTRIBUTE_MAPPER,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID": "scriptContext",
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunAMDelegationService",
     "entityId": "default/Permissions/LogRead",
-    "uid": "ou=LogRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=LogRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": "Permission",
     "objectClass": [
       "top",
@@ -23,7 +23,7 @@
       "READ"
     ],
     "resource": [
-      "*dc=amconfig/iPlanetAMLoggingService/1.0/application/*"
+      "*ou=am-config/iPlanetAMLoggingService/1.0/application/*"
     ]
   }
 }

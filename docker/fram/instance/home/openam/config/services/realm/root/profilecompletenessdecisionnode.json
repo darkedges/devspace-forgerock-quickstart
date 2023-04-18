@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ProfileCompletenessDecisionNode",
     "entityId": "ProfileCompletenessDecisionNode",
-    "uid": "ou=ProfileCompletenessDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=ProfileCompletenessDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

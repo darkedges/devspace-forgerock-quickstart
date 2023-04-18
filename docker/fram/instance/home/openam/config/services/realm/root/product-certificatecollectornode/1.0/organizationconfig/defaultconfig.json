@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-CertificateCollectorNode",
     "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=product-CertificateCollectorNode,ou=services,dc=amconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=product-CertificateCollectorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

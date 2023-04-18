@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-WriteFederationInformationNode",
     "entityId": "product-WriteFederationInformationNode",
-    "uid": "ou=product-WriteFederationInformationNode,ou=services,dc=amconfig",
+    "uid": "ou=product-WriteFederationInformationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

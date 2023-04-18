@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SetCustomCookieNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=SetCustomCookieNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=SetCustomCookieNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

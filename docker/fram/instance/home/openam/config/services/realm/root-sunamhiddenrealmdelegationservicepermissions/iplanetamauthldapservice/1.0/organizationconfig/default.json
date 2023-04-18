@@ -3,7 +3,7 @@
     "realm": "/sunamhiddenrealmdelegationservicepermissions",
     "entityType": "iPlanetAMAuthLDAPService",
     "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

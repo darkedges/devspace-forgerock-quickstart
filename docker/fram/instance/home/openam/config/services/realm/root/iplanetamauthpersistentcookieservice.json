@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthPersistentCookieService",
     "entityId": "iPlanetAMAuthPersistentCookieService",
-    "uid": "ou=iPlanetAMAuthPersistentCookieService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthPersistentCookieService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

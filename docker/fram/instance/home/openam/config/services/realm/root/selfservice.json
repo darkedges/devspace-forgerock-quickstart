@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "selfService",
     "entityId": "selfService",
-    "uid": "ou=selfService,ou=services,dc=amconfig",
+    "uid": "ou=selfService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@ ARG JRE_TAG=11.0.14_9-jre-alpine
 
 # Binary extract
 FROM alpine:3.15.0 as installFile
-ARG FRDS_ARCHIVE=DS-7.2.1.zip
+ARG FRDS_ARCHIVE=DS-7.2.0.zip
 ARG FRDS_ARCHIVE_REPOSITORY_URL=
 
 ADD ${FRDS_ARCHIVE_REPOSITORY_URL}${FRDS_ARCHIVE}  /var/tmp/frds.zip

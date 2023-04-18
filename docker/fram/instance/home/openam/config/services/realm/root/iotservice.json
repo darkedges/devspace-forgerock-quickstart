@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "IotService",
     "entityId": "IotService",
-    "uid": "ou=IotService,ou=services,dc=amconfig",
+    "uid": "ou=IotService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

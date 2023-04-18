@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "dashboardService",
     "entityId": "default/dashboardApp",
-    "uid": "ou=dashboardApp,ou=default,ou=GlobalConfig,ou=1.0,ou=dashboardService,ou=services,dc=amconfig",
+    "uid": "ou=dashboardApp,ou=default,ou=GlobalConfig,ou=1.0,ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID": "dashboardApp",
     "objectClass": [
       "top",

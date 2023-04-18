@@ -3,7 +3,7 @@
     "realm": "/sunamhiddenrealmdelegationservicepermissions",
     "entityType": "iPlanetAMPolicyService",
     "entityId": "default/Policies/AgentAccessToEvaluatePolicies",
-    "uid": "ou=AgentAccessToEvaluatePolicies,ou=Policies,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "uid": "ou=AgentAccessToEvaluatePolicies,ou=Policies,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID": "NamedPolicy",
     "objectClass": [
       "top",
@@ -19,6 +19,6 @@
       "name": "iPlanetAMPolicyService",
       "collection": false
     },
-    "xmlpolicy": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Policy name=\"AgentAccessToEvaluatePolicies\" createdby=\"uid=dsameuser\" lastmodifiedby=\"uid=dsameuser\" creationdate=\"1656319218298\" lastmodifieddate=\"1656319218298\" referralPolicy=\"false\" active=\"true\" >\n<Rule name=\"agent-read-access-to-evaluate-policies\">\n<ServiceName name=\"sunAMDelegationService\" />\n<ResourceName name=\"sms://*dc=amconfig/rest/1.0/policies/evaluate\" />\n<AttributeValuePair>\n<Attribute name=\"READ\" />\n<Value>allow</Value>\n</AttributeValuePair>\n</Rule>\n<Subjects name=\"Subjects\" description=\"\">\n<Subject name=\"AuthenticatedAgents\" type=\"AuthenticatedAgents\" includeType=\"inclusive\">\n</Subject>\n</Subjects>\n</Policy>"
+    "xmlpolicy": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Policy name=\"AgentAccessToEvaluatePolicies\" createdby=\"uid=dsameuser\" lastmodifiedby=\"uid=dsameuser\" creationdate=\"1656319218298\" lastmodifieddate=\"1656319218298\" referralPolicy=\"false\" active=\"true\" >\n<Rule name=\"agent-read-access-to-evaluate-policies\">\n<ServiceName name=\"sunAMDelegationService\" />\n<ResourceName name=\"sms://*ou=am-config/rest/1.0/policies/evaluate\" />\n<AttributeValuePair>\n<Attribute name=\"READ\" />\n<Value>allow</Value>\n</AttributeValuePair>\n</Rule>\n<Subjects name=\"Subjects\" description=\"\">\n<Subject name=\"AuthenticatedAgents\" type=\"AuthenticatedAgents\" includeType=\"inclusive\">\n</Subject>\n</Subjects>\n</Policy>"
   }
 }

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "validationService",
     "entityId": "validationService",
-    "uid": "ou=validationService,ou=services,dc=amconfig",
+    "uid": "ou=validationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

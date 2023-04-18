@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunFMCOTConfigService",
     "entityId": "sunFMCOTConfigService",
-    "uid": "ou=sunFMCOTConfigService,ou=services,dc=amconfig",
+    "uid": "ou=sunFMCOTConfigService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

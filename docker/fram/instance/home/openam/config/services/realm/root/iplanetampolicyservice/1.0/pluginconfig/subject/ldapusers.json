@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMPolicyService",
     "entityId": "Subject/LDAPUsers",
-    "uid": "ou=LDAPUsers,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,dc=amconfig",
+    "uid": "ou=LDAPUsers,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

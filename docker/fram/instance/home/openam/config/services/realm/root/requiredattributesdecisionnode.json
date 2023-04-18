@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RequiredAttributesDecisionNode",
     "entityId": "RequiredAttributesDecisionNode",
-    "uid": "ou=RequiredAttributesDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=RequiredAttributesDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

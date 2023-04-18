@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-CertificateCollectorNode",
     "entityId": "product-CertificateCollectorNode",
-    "uid": "ou=product-CertificateCollectorNode,ou=services,dc=amconfig",
+    "uid": "ou=product-CertificateCollectorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

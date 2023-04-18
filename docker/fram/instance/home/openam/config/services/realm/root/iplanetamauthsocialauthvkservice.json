@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSocialAuthVKService",
     "entityId": "iPlanetAMAuthSocialAuthVKService",
-    "uid": "ou=iPlanetAMAuthSocialAuthVKService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthSocialAuthVKService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

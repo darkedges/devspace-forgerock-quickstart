@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetG11NSettings",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

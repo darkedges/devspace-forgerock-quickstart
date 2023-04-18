@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ModifyAuthLevelNode",
     "entityId": "ModifyAuthLevelNode",
-    "uid": "ou=ModifyAuthLevelNode,ou=services,dc=amconfig",
+    "uid": "ou=ModifyAuthLevelNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

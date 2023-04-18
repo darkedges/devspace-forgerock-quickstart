@@ -83,6 +83,6 @@
     "pathParams": {},
     "realm": "/",
     "sunServiceID": "tree",
-    "uid": "ou=passkey,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,dc=amconfig"
+    "uid": "ou=passkey,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,ou=am-config"
   }
 }

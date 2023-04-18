@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AccountActiveDecisionNode",
     "entityId": "AccountActiveDecisionNode",
-    "uid": "ou=AccountActiveDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=AccountActiveDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

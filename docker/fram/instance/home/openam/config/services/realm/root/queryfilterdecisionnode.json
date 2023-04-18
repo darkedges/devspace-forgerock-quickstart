@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "QueryFilterDecisionNode",
     "entityId": "QueryFilterDecisionNode",
-    "uid": "ou=QueryFilterDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=QueryFilterDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

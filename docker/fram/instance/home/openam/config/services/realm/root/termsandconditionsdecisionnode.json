@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "TermsAndConditionsDecisionNode",
     "entityId": "TermsAndConditionsDecisionNode",
-    "uid": "ou=TermsAndConditionsDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=TermsAndConditionsDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RestSecurityTokenService",
     "entityId": "RestSecurityTokenService",
-    "uid": "ou=RestSecurityTokenService,ou=services,dc=amconfig",
+    "uid": "ou=RestSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

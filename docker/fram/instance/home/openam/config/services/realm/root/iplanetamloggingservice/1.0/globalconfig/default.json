@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "iPlanetAMLoggingService",
     "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMLoggingService,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMLoggingService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

@@ -3,7 +3,7 @@
     "realm": "/sunamhiddenrealmdelegationservicepermissions",
     "entityType": "sunAMAuthFederationService",
     "entityId": "sunAMAuthFederationService",
-    "uid": "ou=sunAMAuthFederationService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "uid": "ou=sunAMAuthFederationService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

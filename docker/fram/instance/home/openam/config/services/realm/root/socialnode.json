@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SocialNode",
     "entityId": "SocialNode",
-    "uid": "ou=SocialNode,ou=services,dc=amconfig",
+    "uid": "ou=SocialNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "CorsService",
     "entityId": "CorsService",
-    "uid": "ou=CorsService,ou=services,dc=amconfig",
+    "uid": "ou=CorsService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

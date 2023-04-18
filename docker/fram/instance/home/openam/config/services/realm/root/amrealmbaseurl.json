@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "amRealmBaseURL",
     "entityId": "amRealmBaseURL",
-    "uid": "ou=amRealmBaseURL,ou=services,dc=amconfig",
+    "uid": "ou=amRealmBaseURL,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

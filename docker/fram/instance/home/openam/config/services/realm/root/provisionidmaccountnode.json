@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ProvisionIdmAccountNode",
     "entityId": "ProvisionIdmAccountNode",
-    "uid": "ou=ProvisionIdmAccountNode,ou=services,dc=amconfig",
+    "uid": "ou=ProvisionIdmAccountNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

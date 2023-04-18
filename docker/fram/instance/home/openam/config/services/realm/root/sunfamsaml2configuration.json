@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunFAMSAML2Configuration",
     "entityId": "sunFAMSAML2Configuration",
-    "uid": "ou=sunFAMSAML2Configuration,ou=services,dc=amconfig",
+    "uid": "ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "validationService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

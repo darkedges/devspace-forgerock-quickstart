@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DeviceTamperingVerificationNode",
     "entityId": "DeviceTamperingVerificationNode",
-    "uid": "ou=DeviceTamperingVerificationNode,ou=services,dc=amconfig",
+    "uid": "ou=DeviceTamperingVerificationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

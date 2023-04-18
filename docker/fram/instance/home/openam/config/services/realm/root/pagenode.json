@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PageNode",
     "entityId": "PageNode",
-    "uid": "ou=PageNode,ou=services,dc=amconfig",
+    "uid": "ou=PageNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

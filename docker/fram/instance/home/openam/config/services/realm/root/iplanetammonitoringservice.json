@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMMonitoringService",
     "entityId": "iPlanetAMMonitoringService",
-    "uid": "ou=iPlanetAMMonitoringService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

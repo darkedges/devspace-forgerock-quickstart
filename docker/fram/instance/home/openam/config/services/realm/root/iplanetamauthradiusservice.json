@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthRadiusService",
     "entityId": "iPlanetAMAuthRadiusService",
-    "uid": "ou=iPlanetAMAuthRadiusService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthRadiusService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

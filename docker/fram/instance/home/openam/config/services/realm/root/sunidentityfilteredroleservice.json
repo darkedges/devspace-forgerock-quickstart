@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunIdentityFilteredRoleService",
     "entityId": "sunIdentityFilteredRoleService",
-    "uid": "ou=sunIdentityFilteredRoleService,ou=services,dc=amconfig",
+    "uid": "ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

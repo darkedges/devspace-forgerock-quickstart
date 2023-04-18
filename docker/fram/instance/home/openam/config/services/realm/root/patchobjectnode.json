@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PatchObjectNode",
     "entityId": "PatchObjectNode",
-    "uid": "ou=PatchObjectNode,ou=services,dc=amconfig",
+    "uid": "ou=PatchObjectNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

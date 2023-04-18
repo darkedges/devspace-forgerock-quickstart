@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SessionPropertyWhitelistService",
     "entityId": "PluginConfig",
-    "uid": "ou=PluginConfig,ou=1.0,ou=SessionPropertyWhitelistService,ou=services,dc=amconfig",
+    "uid": "ou=PluginConfig,ou=1.0,ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

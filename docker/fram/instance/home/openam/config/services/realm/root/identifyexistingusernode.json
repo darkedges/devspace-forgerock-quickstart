@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "IdentifyExistingUserNode",
     "entityId": "IdentifyExistingUserNode",
-    "uid": "ou=IdentifyExistingUserNode,ou=services,dc=amconfig",
+    "uid": "ou=IdentifyExistingUserNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

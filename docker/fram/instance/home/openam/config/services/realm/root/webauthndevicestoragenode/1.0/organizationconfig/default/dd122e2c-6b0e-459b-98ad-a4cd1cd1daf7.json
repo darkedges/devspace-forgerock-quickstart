@@ -22,6 +22,6 @@
     "pathParams": {},
     "realm": "/",
     "sunServiceID": "instance",
-    "uid": "ou=dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnDeviceStorageNode,ou=services,dc=amconfig"
+    "uid": "ou=dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnDeviceStorageNode,ou=services,ou=am-config"
   }
 }

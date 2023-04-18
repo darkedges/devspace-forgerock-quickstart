@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthOATHService",
     "entityId": "iPlanetAMAuthOATHService",
-    "uid": "ou=iPlanetAMAuthOATHService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthOATHService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

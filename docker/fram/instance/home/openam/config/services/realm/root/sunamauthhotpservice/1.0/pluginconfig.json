@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthHOTPService",
     "entityId": "PluginConfig",
-    "uid": "ou=PluginConfig,ou=1.0,ou=sunAMAuthHOTPService,ou=services,dc=amconfig",
+    "uid": "ou=PluginConfig,ou=1.0,ou=sunAMAuthHOTPService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

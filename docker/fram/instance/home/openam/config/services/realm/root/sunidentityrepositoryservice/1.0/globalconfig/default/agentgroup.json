@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunIdentityRepositoryService",
     "entityId": "default/agentgroup",
-    "uid": "ou=agentgroup,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,dc=amconfig",
+    "uid": "ou=agentgroup,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID": "SupportedIdentities",
     "objectClass": [
       "top",

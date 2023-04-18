@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "OAuth2Provider",
     "entityId": "OAuth2Provider",
-    "uid": "ou=OAuth2Provider,ou=services,dc=amconfig",
+    "uid": "ou=OAuth2Provider,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

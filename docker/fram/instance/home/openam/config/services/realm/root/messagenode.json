@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "MessageNode",
     "entityId": "MessageNode",
-    "uid": "ou=MessageNode,ou=services,dc=amconfig",
+    "uid": "ou=MessageNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

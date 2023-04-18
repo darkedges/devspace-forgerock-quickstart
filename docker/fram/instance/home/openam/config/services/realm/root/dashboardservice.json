@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "dashboardService",
     "entityId": "dashboardService",
-    "uid": "ou=dashboardService,ou=services,dc=amconfig",
+    "uid": "ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

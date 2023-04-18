@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushResultVerifierNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=PushResultVerifierNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=PushResultVerifierNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

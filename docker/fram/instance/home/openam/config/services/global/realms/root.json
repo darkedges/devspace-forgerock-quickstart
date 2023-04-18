@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "",
     "entityId": "Lw",
-    "uid": "ou=services,dc=amconfig",
+    "uid": "ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

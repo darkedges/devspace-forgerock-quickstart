@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushRegistrationNode",
     "entityId": "PushRegistrationNode",
-    "uid": "ou=PushRegistrationNode,ou=services,dc=amconfig",
+    "uid": "ou=PushRegistrationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

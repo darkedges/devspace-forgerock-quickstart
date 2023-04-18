@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PassthroughAuthenticationNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=PassthroughAuthenticationNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=PassthroughAuthenticationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

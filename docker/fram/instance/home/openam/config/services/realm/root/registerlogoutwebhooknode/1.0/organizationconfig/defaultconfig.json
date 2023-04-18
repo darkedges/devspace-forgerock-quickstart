@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RegisterLogoutWebhookNode",
     "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RegisterLogoutWebhookNode,ou=services,dc=amconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RegisterLogoutWebhookNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

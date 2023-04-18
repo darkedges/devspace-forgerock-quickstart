@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthADService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthADService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=sunAMAuthADService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

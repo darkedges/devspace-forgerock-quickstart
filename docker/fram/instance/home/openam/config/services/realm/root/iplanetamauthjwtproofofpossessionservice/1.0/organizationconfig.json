@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthJwtProofOfPossessionService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthJwtProofOfPossessionService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

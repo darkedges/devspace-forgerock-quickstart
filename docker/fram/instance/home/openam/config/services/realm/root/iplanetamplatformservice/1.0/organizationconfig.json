@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMPlatformService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

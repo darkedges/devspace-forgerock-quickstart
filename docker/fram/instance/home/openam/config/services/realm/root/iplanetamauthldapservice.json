@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthLDAPService",
     "entityId": "iPlanetAMAuthLDAPService",
-    "uid": "ou=iPlanetAMAuthLDAPService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

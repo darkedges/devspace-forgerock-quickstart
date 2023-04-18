@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "WebAuthnDeviceStorageNode",
     "entityId": "WebAuthnDeviceStorageNode",
-    "uid": "ou=WebAuthnDeviceStorageNode,ou=services,dc=amconfig",
+    "uid": "ou=WebAuthnDeviceStorageNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

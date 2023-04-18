@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "MailServer",
     "entityId": "MailServer",
-    "uid": "ou=MailServer,ou=services,dc=amconfig",
+    "uid": "ou=MailServer,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

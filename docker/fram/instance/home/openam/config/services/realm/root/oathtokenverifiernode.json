@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "OathTokenVerifierNode",
     "entityId": "OathTokenVerifierNode",
-    "uid": "ou=OathTokenVerifierNode,ou=services,dc=amconfig",
+    "uid": "ou=OathTokenVerifierNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

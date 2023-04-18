@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "amPluginService",
     "entityId": "amPluginService",
-    "uid": "ou=amPluginService,ou=services,dc=amconfig",
+    "uid": "ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

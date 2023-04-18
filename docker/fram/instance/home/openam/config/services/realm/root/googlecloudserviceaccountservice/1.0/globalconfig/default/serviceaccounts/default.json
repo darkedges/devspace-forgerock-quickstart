@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "GoogleCloudServiceAccountService",
     "entityId": "default/serviceAccounts/default",
-    "uid": "ou=default,ou=serviceAccounts,ou=default,ou=GlobalConfig,ou=1.0,ou=GoogleCloudServiceAccountService,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=serviceAccounts,ou=default,ou=GlobalConfig,ou=1.0,ou=GoogleCloudServiceAccountService,ou=services,ou=am-config",
     "sunServiceID": "instance",
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AttributeCollectorNode",
     "entityId": "AttributeCollectorNode",
-    "uid": "ou=AttributeCollectorNode,ou=services,dc=amconfig",
+    "uid": "ou=AttributeCollectorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

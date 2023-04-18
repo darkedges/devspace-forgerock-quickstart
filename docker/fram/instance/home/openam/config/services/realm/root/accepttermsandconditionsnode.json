@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AcceptTermsAndConditionsNode",
     "entityId": "AcceptTermsAndConditionsNode",
-    "uid": "ou=AcceptTermsAndConditionsNode,ou=services,dc=amconfig",
+    "uid": "ou=AcceptTermsAndConditionsNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

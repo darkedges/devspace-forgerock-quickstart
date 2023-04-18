@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RestApisService",
     "entityId": "RestApisService",
-    "uid": "ou=RestApisService,ou=services,dc=amconfig",
+    "uid": "ou=RestApisService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

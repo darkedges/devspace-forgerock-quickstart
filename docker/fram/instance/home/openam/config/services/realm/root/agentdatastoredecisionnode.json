@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AgentDataStoreDecisionNode",
     "entityId": "AgentDataStoreDecisionNode",
-    "uid": "ou=AgentDataStoreDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=AgentDataStoreDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

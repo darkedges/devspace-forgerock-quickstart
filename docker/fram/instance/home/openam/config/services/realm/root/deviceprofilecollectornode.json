@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DeviceProfileCollectorNode",
     "entityId": "DeviceProfileCollectorNode",
-    "uid": "ou=DeviceProfileCollectorNode,ou=services,dc=amconfig",
+    "uid": "ou=DeviceProfileCollectorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

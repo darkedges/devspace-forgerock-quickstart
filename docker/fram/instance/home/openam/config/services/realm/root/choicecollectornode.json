@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ChoiceCollectorNode",
     "entityId": "ChoiceCollectorNode",
-    "uid": "ou=ChoiceCollectorNode,ou=services,dc=amconfig",
+    "uid": "ou=ChoiceCollectorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

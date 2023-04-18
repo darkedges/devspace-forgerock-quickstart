@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "EmailSuspendNode",
     "entityId": "EmailSuspendNode",
-    "uid": "ou=EmailSuspendNode,ou=services,dc=amconfig",
+    "uid": "ou=EmailSuspendNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

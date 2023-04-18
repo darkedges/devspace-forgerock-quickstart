@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SetFailureUrlNode",
     "entityId": "SetFailureUrlNode",
-    "uid": "ou=SetFailureUrlNode,ou=services,dc=amconfig",
+    "uid": "ou=SetFailureUrlNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

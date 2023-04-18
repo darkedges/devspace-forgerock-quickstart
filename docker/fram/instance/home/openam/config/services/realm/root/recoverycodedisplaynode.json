@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RecoveryCodeDisplayNode",
     "entityId": "RecoveryCodeDisplayNode",
-    "uid": "ou=RecoveryCodeDisplayNode,ou=services,dc=amconfig",
+    "uid": "ou=RecoveryCodeDisplayNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

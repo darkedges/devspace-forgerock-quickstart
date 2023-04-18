@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "authenticationTreesService",
     "entityId": "authenticationTreesService",
-    "uid": "ou=authenticationTreesService,ou=services,dc=amconfig",
+    "uid": "ou=authenticationTreesService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

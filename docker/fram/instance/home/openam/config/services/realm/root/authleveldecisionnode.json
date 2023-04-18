@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AuthLevelDecisionNode",
     "entityId": "AuthLevelDecisionNode",
-    "uid": "ou=AuthLevelDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=AuthLevelDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "EmailTemplateNode",
     "entityId": "EmailTemplateNode",
-    "uid": "ou=EmailTemplateNode,ou=services,dc=amconfig",
+    "uid": "ou=EmailTemplateNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

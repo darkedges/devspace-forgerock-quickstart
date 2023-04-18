@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "amTransactionService",
     "entityId": "amTransactionService",
-    "uid": "ou=amTransactionService,ou=services,dc=amconfig",
+    "uid": "ou=amTransactionService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

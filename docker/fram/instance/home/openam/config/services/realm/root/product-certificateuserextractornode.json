@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-CertificateUserExtractorNode",
     "entityId": "product-CertificateUserExtractorNode",
-    "uid": "ou=product-CertificateUserExtractorNode,ou=services,dc=amconfig",
+    "uid": "ou=product-CertificateUserExtractorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

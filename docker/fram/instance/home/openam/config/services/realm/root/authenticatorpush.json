@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AuthenticatorPush",
     "entityId": "AuthenticatorPush",
-    "uid": "ou=AuthenticatorPush,ou=services,dc=amconfig",
+    "uid": "ou=AuthenticatorPush,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

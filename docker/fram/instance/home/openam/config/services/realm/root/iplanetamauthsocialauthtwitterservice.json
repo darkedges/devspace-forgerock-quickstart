@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSocialAuthTwitterService",
     "entityId": "iPlanetAMAuthSocialAuthTwitterService",
-    "uid": "ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

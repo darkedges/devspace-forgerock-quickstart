@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AgentDataStoreDecisionNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=AgentDataStoreDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=AgentDataStoreDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

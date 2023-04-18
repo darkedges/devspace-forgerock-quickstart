@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunMultiFederationProtocol",
     "entityId": "sunMultiFederationProtocol",
-    "uid": "ou=sunMultiFederationProtocol,ou=services,dc=amconfig",
+    "uid": "ou=sunMultiFederationProtocol,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

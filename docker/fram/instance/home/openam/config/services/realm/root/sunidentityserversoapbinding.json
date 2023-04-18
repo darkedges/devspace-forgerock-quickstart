@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunIdentityServerSOAPBinding",
     "entityId": "sunIdentityServerSOAPBinding",
-    "uid": "ou=sunIdentityServerSOAPBinding,ou=services,dc=amconfig",
+    "uid": "ou=sunIdentityServerSOAPBinding,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

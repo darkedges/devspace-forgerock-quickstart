@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RemoveSessionPropertiesNode",
     "entityId": "RemoveSessionPropertiesNode",
-    "uid": "ou=RemoveSessionPropertiesNode,ou=services,dc=amconfig",
+    "uid": "ou=RemoveSessionPropertiesNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "UmaProvider",
     "entityId": "UmaProvider",
-    "uid": "ou=UmaProvider,ou=services,dc=amconfig",
+    "uid": "ou=UmaProvider,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

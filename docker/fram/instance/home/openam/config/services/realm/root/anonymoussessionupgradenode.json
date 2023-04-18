@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AnonymousSessionUpgradeNode",
     "entityId": "AnonymousSessionUpgradeNode",
-    "uid": "ou=AnonymousSessionUpgradeNode,ou=services,dc=amconfig",
+    "uid": "ou=AnonymousSessionUpgradeNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

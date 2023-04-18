@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ScriptedDecisionNode",
     "entityId": "ScriptedDecisionNode",
-    "uid": "ou=ScriptedDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=ScriptedDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

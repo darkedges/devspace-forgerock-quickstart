@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DebugNode",
     "entityId": "DebugNode",
-    "uid": "ou=DebugNode,ou=services,dc=amconfig",
+    "uid": "ou=DebugNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

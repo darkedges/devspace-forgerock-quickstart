@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-Saml2Node",
     "entityId": "product-Saml2Node",
-    "uid": "ou=product-Saml2Node,ou=services,dc=amconfig",
+    "uid": "ou=product-Saml2Node,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

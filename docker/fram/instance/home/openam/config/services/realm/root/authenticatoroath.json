@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AuthenticatorOATH",
     "entityId": "AuthenticatorOATH",
-    "uid": "ou=AuthenticatorOATH,ou=services,dc=amconfig",
+    "uid": "ou=AuthenticatorOATH,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

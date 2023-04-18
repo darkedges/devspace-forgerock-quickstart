@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ScriptingService",
     "entityId": "ScriptingService",
-    "uid": "ou=ScriptingService,ou=services,dc=amconfig",
+    "uid": "ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

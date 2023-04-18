@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SetPersistentCookieNode",
     "entityId": "SetPersistentCookieNode",
-    "uid": "ou=SetPersistentCookieNode,ou=services,dc=amconfig",
+    "uid": "ou=SetPersistentCookieNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

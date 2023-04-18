@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunAMDelegationService",
     "entityId": "default/Permissions/EntitlementRESTEntitlements",
-    "uid": "ou=EntitlementRESTEntitlements,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=EntitlementRESTEntitlements,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": "Permission",
     "objectClass": [
       "top",
@@ -23,7 +23,7 @@
       "READ"
     ],
     "resource": [
-      "dc=amconfig/sunEntitlementService/1.0/application/ws/1/entitlement/entitlements"
+      "ou=am-config/sunEntitlementService/1.0/application/ws/1/entitlement/entitlements"
     ]
   }
 }

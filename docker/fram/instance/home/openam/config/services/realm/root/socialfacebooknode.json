@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SocialFacebookNode",
     "entityId": "SocialFacebookNode",
-    "uid": "ou=SocialFacebookNode,ou=services,dc=amconfig",
+    "uid": "ou=SocialFacebookNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

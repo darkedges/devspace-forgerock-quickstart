@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SetCustomCookieNode",
     "entityId": "SetCustomCookieNode",
-    "uid": "ou=SetCustomCookieNode,ou=services,dc=amconfig",
+    "uid": "ou=SetCustomCookieNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

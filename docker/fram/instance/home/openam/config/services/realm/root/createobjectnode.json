@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "CreateObjectNode",
     "entityId": "CreateObjectNode",
-    "uid": "ou=CreateObjectNode,ou=services,dc=amconfig",
+    "uid": "ou=CreateObjectNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

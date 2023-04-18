@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSocialAuthWeChatService",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

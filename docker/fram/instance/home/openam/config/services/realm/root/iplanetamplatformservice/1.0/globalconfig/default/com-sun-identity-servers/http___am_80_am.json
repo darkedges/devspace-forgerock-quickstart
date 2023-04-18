@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "iPlanetAMPlatformService",
     "entityId": "default/com-sun-identity-servers/http://am:80/am",
-    "uid": "ou=http://am:80/am,ou=com-sun-identity-servers,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,dc=amconfig",
+    "uid": "ou=http://am:80/am,ou=com-sun-identity-servers,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
     "sunServiceID": "server",
     "objectClass": [
       "top",

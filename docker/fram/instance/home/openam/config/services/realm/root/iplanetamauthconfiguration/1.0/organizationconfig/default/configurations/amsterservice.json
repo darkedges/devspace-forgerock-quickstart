@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthConfiguration",
     "entityId": "default/Configurations/amsterService",
-    "uid": "ou=amsterService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,dc=amconfig",
+    "uid": "ou=amsterService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,ou=am-config",
     "sunServiceID": "NamedConfiguration",
     "objectClass": [
       "top",

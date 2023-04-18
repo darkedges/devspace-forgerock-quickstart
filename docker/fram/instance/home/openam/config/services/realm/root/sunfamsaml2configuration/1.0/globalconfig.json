@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunFAMSAML2Configuration",
     "entityId": "GlobalConfig",
-    "uid": "ou=GlobalConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,dc=amconfig",
+    "uid": "ou=GlobalConfig,ou=1.0,ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

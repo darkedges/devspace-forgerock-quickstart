@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "IdmIntegrationService",
     "entityId": "IdmIntegrationService",
-    "uid": "ou=IdmIntegrationService,ou=services,dc=amconfig",
+    "uid": "ou=IdmIntegrationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

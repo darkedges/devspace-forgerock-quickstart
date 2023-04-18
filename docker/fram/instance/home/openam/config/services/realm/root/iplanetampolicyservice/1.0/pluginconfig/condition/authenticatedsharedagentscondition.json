@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMPolicyService",
     "entityId": "Condition/AuthenticatedSharedAgentsCondition",
-    "uid": "ou=AuthenticatedSharedAgentsCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,dc=amconfig",
+    "uid": "ou=AuthenticatedSharedAgentsCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

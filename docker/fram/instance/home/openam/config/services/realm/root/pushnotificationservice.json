@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushNotificationService",
     "entityId": "PushNotificationService",
-    "uid": "ou=PushNotificationService,ou=services,dc=amconfig",
+    "uid": "ou=PushNotificationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

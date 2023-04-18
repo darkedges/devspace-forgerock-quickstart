@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SoapSecurityTokenService",
     "entityId": "SoapSecurityTokenService",
-    "uid": "ou=SoapSecurityTokenService,ou=services,dc=amconfig",
+    "uid": "ou=SoapSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

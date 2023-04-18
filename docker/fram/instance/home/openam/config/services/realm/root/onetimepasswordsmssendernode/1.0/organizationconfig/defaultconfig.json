@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "OneTimePasswordSmsSenderNode",
     "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=OneTimePasswordSmsSenderNode,ou=services,dc=amconfig",
+    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=OneTimePasswordSmsSenderNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

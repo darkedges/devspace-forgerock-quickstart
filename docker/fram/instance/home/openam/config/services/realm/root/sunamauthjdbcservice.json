@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthJDBCService",
     "entityId": "sunAMAuthJDBCService",
-    "uid": "ou=sunAMAuthJDBCService,ou=services,dc=amconfig",
+    "uid": "ou=sunAMAuthJDBCService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

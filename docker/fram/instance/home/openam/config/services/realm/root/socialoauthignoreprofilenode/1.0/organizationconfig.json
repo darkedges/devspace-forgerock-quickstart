@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SocialOAuthIgnoreProfileNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=SocialOAuthIgnoreProfileNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=SocialOAuthIgnoreProfileNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

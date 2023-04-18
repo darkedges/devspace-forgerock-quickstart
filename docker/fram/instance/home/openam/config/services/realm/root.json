@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "",
     "entityId": "am-config",
-    "uid": "dc=amconfig",
+    "uid": "ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "domain",

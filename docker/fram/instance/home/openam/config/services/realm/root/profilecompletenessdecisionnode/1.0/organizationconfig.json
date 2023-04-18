@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ProfileCompletenessDecisionNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=ProfileCompletenessDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=ProfileCompletenessDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMSessionService",
     "entityId": "DynamicConfig",
-    "uid": "ou=DynamicConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,dc=amconfig",
+    "uid": "ou=DynamicConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

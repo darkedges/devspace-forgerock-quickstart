@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "ScriptingService",
     "entityId": "default/SOCIAL_IDP_PROFILE_TRANSFORMATION",
-    "uid": "ou=SOCIAL_IDP_PROFILE_TRANSFORMATION,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,dc=amconfig",
+    "uid": "ou=SOCIAL_IDP_PROFILE_TRANSFORMATION,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID": "scriptContext",
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "dashboardService",
     "entityId": "UserConfig",
-    "uid": "ou=UserConfig,ou=1.0,ou=dashboardService,ou=services,dc=amconfig",
+    "uid": "ou=UserConfig,ou=1.0,ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

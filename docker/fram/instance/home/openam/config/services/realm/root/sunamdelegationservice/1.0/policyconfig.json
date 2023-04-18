@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMDelegationService",
     "entityId": "PolicyConfig",
-    "uid": "ou=PolicyConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=PolicyConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

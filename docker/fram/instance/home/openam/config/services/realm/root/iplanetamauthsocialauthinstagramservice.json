@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSocialAuthInstagramService",
     "entityId": "iPlanetAMAuthSocialAuthInstagramService",
-    "uid": "ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

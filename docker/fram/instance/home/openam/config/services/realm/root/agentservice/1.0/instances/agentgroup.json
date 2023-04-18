@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AgentService",
     "entityId": "agentgroup",
-    "uid": "ou=agentgroup,ou=Instances,ou=1.0,ou=AgentService,ou=services,dc=amconfig",
+    "uid": "ou=agentgroup,ou=Instances,ou=1.0,ou=AgentService,ou=services,ou=am-config",
     "sunServiceID": "agentgroup",
     "objectClass": [
       "top",

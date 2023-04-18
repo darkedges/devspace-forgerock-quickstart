@@ -3,7 +3,7 @@
     "realm": "/sunamhiddenrealmdelegationservicepermissions",
     "entityType": "iPlanetAMAuthOATHService",
     "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

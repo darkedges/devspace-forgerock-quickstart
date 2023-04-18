@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AccountLockoutNode",
     "entityId": "AccountLockoutNode",
-    "uid": "ou=AccountLockoutNode,ou=services,dc=amconfig",
+    "uid": "ou=AccountLockoutNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -1,6 +1,6 @@
 {
   "instance": "http://am:80/am",
-  "dsameUser": "cn=dsameuser,ou=DSAME Users,dc=amconfig",
+  "dsameUser": "cn=dsameuser,ou=DSAME Users,ou=am-config",
   "keystores": {
     "default": {
       "keyStorePasswordFile": "/home/forgerock/openam/security/keystores/boot/.storepass",
@@ -11,7 +11,7 @@
   },
   "configStoreList": [
     {
-      "baseDN": "dc=amconfig",
+      "baseDN": "ou=am-config",
       "dirManagerDN": "cn=UNUSED",
       "ldapHost": "UNUSED",
       "ldapPort": 9999,

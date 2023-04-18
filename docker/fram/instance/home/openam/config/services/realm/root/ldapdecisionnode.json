@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "LdapDecisionNode",
     "entityId": "LdapDecisionNode",
-    "uid": "ou=LdapDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=LdapDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

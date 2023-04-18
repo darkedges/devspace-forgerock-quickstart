@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "ConfigurationVersionService",
     "entityId": "ConfigurationVersionService",
-    "uid": "ou=ConfigurationVersionService,ou=services,dc=amconfig",
+    "uid": "ou=ConfigurationVersionService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

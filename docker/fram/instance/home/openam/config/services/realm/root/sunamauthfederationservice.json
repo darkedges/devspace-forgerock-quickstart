@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthFederationService",
     "entityId": "sunAMAuthFederationService",
-    "uid": "ou=sunAMAuthFederationService,ou=services,dc=amconfig",
+    "uid": "ou=sunAMAuthFederationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

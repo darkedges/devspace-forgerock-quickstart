@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PollingWaitNode",
     "entityId": "PollingWaitNode",
-    "uid": "ou=PollingWaitNode,ou=services,dc=amconfig",
+    "uid": "ou=PollingWaitNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-ReCaptchaNode",
     "entityId": "product-ReCaptchaNode",
-    "uid": "ou=product-ReCaptchaNode,ou=services,dc=amconfig",
+    "uid": "ou=product-ReCaptchaNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

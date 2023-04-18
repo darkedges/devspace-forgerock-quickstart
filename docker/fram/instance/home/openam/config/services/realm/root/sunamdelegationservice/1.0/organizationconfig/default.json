@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMDelegationService",
     "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

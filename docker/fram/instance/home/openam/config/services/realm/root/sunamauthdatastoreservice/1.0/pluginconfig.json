@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunAMAuthDataStoreService",
     "entityId": "PluginConfig",
-    "uid": "ou=PluginConfig,ou=1.0,ou=sunAMAuthDataStoreService,ou=services,dc=amconfig",
+    "uid": "ou=PluginConfig,ou=1.0,ou=sunAMAuthDataStoreService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

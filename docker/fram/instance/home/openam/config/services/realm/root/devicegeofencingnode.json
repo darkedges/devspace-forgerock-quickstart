@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DeviceGeoFencingNode",
     "entityId": "DeviceGeoFencingNode",
-    "uid": "ou=DeviceGeoFencingNode,ou=services,dc=amconfig",
+    "uid": "ou=DeviceGeoFencingNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

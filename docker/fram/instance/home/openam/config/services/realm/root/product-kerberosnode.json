@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-KerberosNode",
     "entityId": "product-KerberosNode",
-    "uid": "ou=product-KerberosNode,ou=services,dc=amconfig",
+    "uid": "ou=product-KerberosNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

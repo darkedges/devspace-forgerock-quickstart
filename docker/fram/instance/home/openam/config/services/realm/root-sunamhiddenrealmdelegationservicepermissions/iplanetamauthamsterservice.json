@@ -3,7 +3,7 @@
     "realm": "/sunamhiddenrealmdelegationservicepermissions",
     "entityType": "iPlanetAMAuthAmsterService",
     "entityId": "iPlanetAMAuthAmsterService",
-    "uid": "ou=iPlanetAMAuthAmsterService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthAmsterService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

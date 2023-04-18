@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "OptOutMultiFactorAuthenticationNode",
     "entityId": "OptOutMultiFactorAuthenticationNode",
-    "uid": "ou=OptOutMultiFactorAuthenticationNode,ou=services,dc=amconfig",
+    "uid": "ou=OptOutMultiFactorAuthenticationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

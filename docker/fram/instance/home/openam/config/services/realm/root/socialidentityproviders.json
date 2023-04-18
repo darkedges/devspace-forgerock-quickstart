@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SocialIdentityProviders",
     "entityId": "SocialIdentityProviders",
-    "uid": "ou=SocialIdentityProviders,ou=services,dc=amconfig",
+    "uid": "ou=SocialIdentityProviders,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "IotRegistrationNode",
     "entityId": "IotRegistrationNode",
-    "uid": "ou=IotRegistrationNode,ou=services,dc=amconfig",
+    "uid": "ou=IotRegistrationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

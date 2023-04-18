@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "socialAuthNService",
     "entityId": "socialAuthNService",
-    "uid": "ou=socialAuthNService,ou=services,dc=amconfig",
+    "uid": "ou=socialAuthNService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

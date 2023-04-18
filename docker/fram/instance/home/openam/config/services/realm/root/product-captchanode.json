@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "product-CaptchaNode",
     "entityId": "product-CaptchaNode",
-    "uid": "ou=product-CaptchaNode,ou=services,dc=amconfig",
+    "uid": "ou=product-CaptchaNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

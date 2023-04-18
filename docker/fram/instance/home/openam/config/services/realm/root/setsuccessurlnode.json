@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SetSuccessUrlNode",
     "entityId": "SetSuccessUrlNode",
-    "uid": "ou=SetSuccessUrlNode,ou=services,dc=amconfig",
+    "uid": "ou=SetSuccessUrlNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

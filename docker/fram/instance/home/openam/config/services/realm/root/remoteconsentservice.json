@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RemoteConsentService",
     "entityId": "RemoteConsentService",
-    "uid": "ou=RemoteConsentService,ou=services,dc=amconfig",
+    "uid": "ou=RemoteConsentService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

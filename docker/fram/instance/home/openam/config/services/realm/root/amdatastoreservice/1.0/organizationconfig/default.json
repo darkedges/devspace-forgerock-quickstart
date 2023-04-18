@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "amDataStoreService",
     "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=amDataStoreService,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=amDataStoreService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

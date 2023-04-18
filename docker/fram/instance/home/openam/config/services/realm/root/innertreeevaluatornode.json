@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "InnerTreeEvaluatorNode",
     "entityId": "InnerTreeEvaluatorNode",
-    "uid": "ou=InnerTreeEvaluatorNode,ou=services,dc=amconfig",
+    "uid": "ou=InnerTreeEvaluatorNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

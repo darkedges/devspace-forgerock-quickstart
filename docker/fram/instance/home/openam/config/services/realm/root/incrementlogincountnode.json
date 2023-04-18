@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "IncrementLoginCountNode",
     "entityId": "IncrementLoginCountNode",
-    "uid": "ou=IncrementLoginCountNode,ou=services,dc=amconfig",
+    "uid": "ou=IncrementLoginCountNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

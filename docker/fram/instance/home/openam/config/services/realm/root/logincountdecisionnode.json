@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "LoginCountDecisionNode",
     "entityId": "LoginCountDecisionNode",
-    "uid": "ou=LoginCountDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=LoginCountDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

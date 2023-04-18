@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunIdentityLocaleService",
     "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityLocaleService,ou=services,dc=amconfig",
+    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityLocaleService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

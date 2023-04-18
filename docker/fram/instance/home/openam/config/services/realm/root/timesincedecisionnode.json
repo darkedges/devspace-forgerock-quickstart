@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "TimeSinceDecisionNode",
     "entityId": "TimeSinceDecisionNode",
-    "uid": "ou=TimeSinceDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=TimeSinceDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

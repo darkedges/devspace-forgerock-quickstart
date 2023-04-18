@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "iPlanetAMMonitoringService",
     "entityId": "default/prometheusContainer",
-    "uid": "ou=prometheusContainer,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,dc=amconfig",
+    "uid": "ou=prometheusContainer,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthWindowsDesktopSSOService",
     "entityId": "iPlanetAMAuthWindowsDesktopSSOService",
-    "uid": "ou=iPlanetAMAuthWindowsDesktopSSOService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthWindowsDesktopSSOService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

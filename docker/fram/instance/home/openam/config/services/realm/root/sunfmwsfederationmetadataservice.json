@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunFMWSFederationMetadataService",
     "entityId": "sunFMWSFederationMetadataService",
-    "uid": "ou=sunFMWSFederationMetadataService,ou=services,dc=amconfig",
+    "uid": "ou=sunFMWSFederationMetadataService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

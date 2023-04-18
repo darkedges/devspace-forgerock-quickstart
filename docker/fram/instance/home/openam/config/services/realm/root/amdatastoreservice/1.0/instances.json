@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "amDataStoreService",
     "entityId": "Instances",
-    "uid": "ou=Instances,ou=1.0,ou=amDataStoreService,ou=services,dc=amconfig",
+    "uid": "ou=Instances,ou=1.0,ou=amDataStoreService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

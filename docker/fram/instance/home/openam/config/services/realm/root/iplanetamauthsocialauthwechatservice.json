@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSocialAuthWeChatService",
     "entityId": "iPlanetAMAuthSocialAuthWeChatService",
-    "uid": "ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

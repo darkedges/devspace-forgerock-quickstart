@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunIdentityFilteredRoleService",
     "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=DynamicConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,dc=amconfig",
+    "uid": "ou=defaultconfig,ou=DynamicConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "SocialGoogleNode",
     "entityId": "SocialGoogleNode",
-    "uid": "ou=SocialGoogleNode,ou=services,dc=amconfig",
+    "uid": "ou=SocialGoogleNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

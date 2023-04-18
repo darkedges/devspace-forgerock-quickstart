@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushWaitNode",
     "entityId": "PushWaitNode",
-    "uid": "ou=PushWaitNode,ou=services,dc=amconfig",
+    "uid": "ou=PushWaitNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

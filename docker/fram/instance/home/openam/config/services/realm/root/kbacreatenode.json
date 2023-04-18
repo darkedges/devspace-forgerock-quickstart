@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "KbaCreateNode",
     "entityId": "KbaCreateNode",
-    "uid": "ou=KbaCreateNode,ou=services,dc=amconfig",
+    "uid": "ou=KbaCreateNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

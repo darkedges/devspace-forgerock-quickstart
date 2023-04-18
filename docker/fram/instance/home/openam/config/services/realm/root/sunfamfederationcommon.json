@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "sunFAMFederationCommon",
     "entityId": "sunFAMFederationCommon",
-    "uid": "ou=sunFAMFederationCommon,ou=services,dc=amconfig",
+    "uid": "ou=sunFAMFederationCommon,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

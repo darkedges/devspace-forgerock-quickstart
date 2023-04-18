@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "ScriptingService",
     "entityId": "default/globalScripts/472534ec-a25f-468d-a606-3fb1935190df",
-    "uid": "ou=472534ec-a25f-468d-a606-3fb1935190df,ou=globalScripts,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,dc=amconfig",
+    "uid": "ou=472534ec-a25f-468d-a606-3fb1935190df,ou=globalScripts,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID": "globalScript",
     "objectClass": [
       "top",

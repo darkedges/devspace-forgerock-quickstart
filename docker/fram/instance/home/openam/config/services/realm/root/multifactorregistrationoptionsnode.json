@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "MultiFactorRegistrationOptionsNode",
     "entityId": "MultiFactorRegistrationOptionsNode",
-    "uid": "ou=MultiFactorRegistrationOptionsNode,ou=services,dc=amconfig",
+    "uid": "ou=MultiFactorRegistrationOptionsNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

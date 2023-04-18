@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthSAML2Service",
     "entityId": "iPlanetAMAuthSAML2Service",
-    "uid": "ou=iPlanetAMAuthSAML2Service,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

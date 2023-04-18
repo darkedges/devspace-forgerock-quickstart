@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunAMDelegationService",
     "entityId": "default/Permissions/ResourceTypeResourceRead",
-    "uid": "ou=ResourceTypeResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,dc=amconfig",
+    "uid": "ou=ResourceTypeResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID": "Permission",
     "objectClass": [
       "top",

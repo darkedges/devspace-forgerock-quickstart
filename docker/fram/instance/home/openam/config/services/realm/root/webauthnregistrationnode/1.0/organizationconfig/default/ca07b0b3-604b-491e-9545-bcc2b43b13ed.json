@@ -1,36 +1,44 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "WebAuthnRegistrationNode",
-    "entityId" : "default/ca07b0b3-604b-491e-9545-bcc2b43b13ed",
-    "uid" : "ou=ca07b0b3-604b-491e-9545-bcc2b43b13ed,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnRegistrationNode,ou=services,dc=amconfig",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : [ "ca07b0b3-604b-491e-9545-bcc2b43b13ed" ]
+  "metadata": {
+    "realm": "/",
+    "entityType": "WebAuthnRegistrationNode",
+    "entityId": "default/ca07b0b3-604b-491e-9545-bcc2b43b13ed",
+    "uid": "ou=ca07b0b3-604b-491e-9545-bcc2b43b13ed,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnRegistrationNode,ou=services,ou=am-config",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": [
+      "ca07b0b3-604b-491e-9545-bcc2b43b13ed"
+    ]
   },
-  "data" : {
-    "_id" : "default/ca07b0b3-604b-491e-9545-bcc2b43b13ed",
-    "_type" : {
-      "_id" : "WebAuthnRegistrationNode",
-      "name" : "WebAuthnRegistrationNode",
-      "collection" : false
+  "data": {
+    "_id": "default/ca07b0b3-604b-491e-9545-bcc2b43b13ed",
+    "_type": {
+      "_id": "WebAuthnRegistrationNode",
+      "name": "WebAuthnRegistrationNode",
+      "collection": false
     },
-    "trustStoreAlias" : "trustalias",
-    "relyingPartyName" : "ForgeRock",
-    "maxSavedDevices" : 0,
-    "generateRecoveryCodes" : true,
-    "storeAttestationDataInTransientState" : false,
-    "origins" : [ ],
-    "userVerificationRequirement" : "PREFERRED",
-    "postponeDeviceProfileStorage" : false,
-    "excludeCredentials" : false,
-    "requiresResidentKey" : false,
-    "authenticatorAttachment" : "UNSPECIFIED",
-    "asScript" : true,
-    "acceptedSigningAlgorithms" : [ "ES256", "RS256" ],
-    "attestationPreference" : "NONE",
-    "enforceRevocationCheck" : false,
-    "timeout" : 60
+    "trustStoreAlias": "trustalias",
+    "relyingPartyName": "ForgeRock",
+    "maxSavedDevices": 0,
+    "generateRecoveryCodes": true,
+    "storeAttestationDataInTransientState": false,
+    "origins": [],
+    "userVerificationRequirement": "PREFERRED",
+    "postponeDeviceProfileStorage": false,
+    "excludeCredentials": false,
+    "requiresResidentKey": false,
+    "authenticatorAttachment": "UNSPECIFIED",
+    "asScript": true,
+    "acceptedSigningAlgorithms": [
+      "ES256",
+      "RS256"
+    ],
+    "attestationPreference": "NONE",
+    "enforceRevocationCheck": false,
+    "timeout": 60
   }
 }

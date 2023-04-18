@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "UmaProvider",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=UmaProvider,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=UmaProvider,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

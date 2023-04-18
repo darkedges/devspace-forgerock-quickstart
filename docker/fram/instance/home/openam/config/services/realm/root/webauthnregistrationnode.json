@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "WebAuthnRegistrationNode",
     "entityId": "WebAuthnRegistrationNode",
-    "uid": "ou=WebAuthnRegistrationNode,ou=services,dc=amconfig",
+    "uid": "ou=WebAuthnRegistrationNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

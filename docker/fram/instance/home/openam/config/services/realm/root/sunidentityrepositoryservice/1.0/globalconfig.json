@@ -3,7 +3,7 @@
     "realm": null,
     "entityType": "sunIdentityRepositoryService",
     "entityId": "GlobalConfig",
-    "uid": "ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,dc=amconfig",
+    "uid": "ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

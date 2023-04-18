@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DeviceSaveNode",
     "entityId": "DeviceSaveNode",
-    "uid": "ou=DeviceSaveNode,ou=services,dc=amconfig",
+    "uid": "ou=DeviceSaveNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

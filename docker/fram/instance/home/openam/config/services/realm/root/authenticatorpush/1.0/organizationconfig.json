@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "AuthenticatorPush",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=AuthenticatorPush,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=AuthenticatorPush,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

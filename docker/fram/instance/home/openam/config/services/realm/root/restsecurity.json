@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "RestSecurity",
     "entityId": "RestSecurity",
-    "uid": "ou=RestSecurity,ou=services,dc=amconfig",
+    "uid": "ou=RestSecurity,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

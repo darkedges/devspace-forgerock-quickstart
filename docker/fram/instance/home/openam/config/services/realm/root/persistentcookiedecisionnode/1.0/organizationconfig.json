@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PersistentCookieDecisionNode",
     "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=PersistentCookieDecisionNode,ou=services,dc=amconfig",
+    "uid": "ou=OrganizationConfig,ou=1.0,ou=PersistentCookieDecisionNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "organizationalunit",

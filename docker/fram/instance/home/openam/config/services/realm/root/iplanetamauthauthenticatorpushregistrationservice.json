@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthAuthenticatorPushRegistrationService",
     "entityId": "iPlanetAMAuthAuthenticatorPushRegistrationService",
-    "uid": "ou=iPlanetAMAuthAuthenticatorPushRegistrationService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthAuthenticatorPushRegistrationService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

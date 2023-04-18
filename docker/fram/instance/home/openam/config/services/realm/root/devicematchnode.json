@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "DeviceMatchNode",
     "entityId": "DeviceMatchNode",
-    "uid": "ou=DeviceMatchNode,ou=services,dc=amconfig",
+    "uid": "ou=DeviceMatchNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

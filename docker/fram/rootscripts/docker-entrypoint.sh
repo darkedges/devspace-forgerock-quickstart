@@ -35,7 +35,7 @@ export AM_SESSION_STATELESS_SIGNING_KEY=${AM_SESSION_STATELESS_SIGNING_KEY:-ck1X
 export AM_STORES_APPLICATION_PASSWORD=${AM_STORES_APPLICATION_PASSWORD:-Passw0rd}
 export AM_STORES_APPLICATION_SERVERS=${AM_STORES_APPLICATION_SERVERS:-dfq-ds:1389}
 export AM_STORES_APPLICATION_SSL_ENABLED=${AM_STORES_APPLICATION_SSL_ENABLED:-false}
-export AM_STORES_APPLICATION_USERNAME=${AM_STORES_APPLICATION_USERNAME:-uid=am-config,ou=admins,dc=amconfig}
+export AM_STORES_APPLICATION_USERNAME=${AM_STORES_APPLICATION_USERNAME:-uid=am-config,ou=admins,ou=am-config}
 export AM_STORES_CTS_PASSWORD=${AM_STORES_CTS_PASSWORD:-Passw0rd}
 export AM_STORES_CTS_SERVERS=${AM_STORES_CTS_SERVERS:-dfq-ds:1389}
 export AM_STORES_CTS_SSL_ENABLED=${AM_STORES_CTS_SSL_ENABLED:-false}
@@ -43,11 +43,11 @@ export AM_STORES_CTS_USERNAME=${AM_STORES_CTS_USERNAME:-uid=openam_cts,ou=admins
 export AM_STORES_POLICY_PASSWORD=${AM_STORES_POLICY_PASSWORD:-Passw0rd}
 export AM_STORES_POLICY_SERVERS=${AM_STORES_POLICY_SERVERS:-dfq-ds:1389}
 export AM_STORES_POLICY_SSL_ENABLED=${AM_STORES_POLICY_SSL_ENABLED:-false}
-export AM_STORES_POLICY_USERNAME=${AM_STORES_POLICY_USERNAME:-uid=am-config,ou=admins,dc=amconfig}
+export AM_STORES_POLICY_USERNAME=${AM_STORES_POLICY_USERNAME:-uid=am-config,ou=admins,ou=am-config}
 export AM_STORES_UMA_PASSWORD=${AM_STORES_UMA_PASSWORD:-Passw0rd}
 export AM_STORES_UMA_SERVERS=${AM_STORES_UMA_SERVERS:-dfq-ds:1389}
 export AM_STORES_UMA_SSL_ENABLED=${AM_STORES_UMA_SSL_ENABLED:-false}
-export AM_STORES_UMA_USERNAME=${AM_STORES_UMA_USERNAME:-uid=am-config,ou=admins,dc=amconfig}
+export AM_STORES_UMA_USERNAME=${AM_STORES_UMA_USERNAME:-uid=am-config,ou=admins,ou=am-config}
 export AM_STORES_USER_CONNECTION_MODE=${AM_STORES_USER_CONNECTION_MODE:-LDAP}
 export AM_STORES_USER_PASSWORD=${AM_STORES_USER_PASSWORD:-Passw0rd}
 export AM_STORES_USER_SERVERS=${AM_STORES_USER_SERVERS:-dfq-ds:1389}
@@ -93,11 +93,11 @@ install-openam \
     --adminPwd ${FRAM_ADMIN_PASSWORD:-Passw0rd} \
     --cfgDir /opt/fram/instance/data \
     --cfgStore dirServer \
-    --cfgStoreDirMgr "${FRAM_CFG_STORE_DIR_MGR:-uid=am-config,ou=admins,dc=amconfig}" \
+    --cfgStoreDirMgr "${FRAM_CFG_STORE_DIR_MGR:-uid=am-config,ou=admins,ou=am-config}" \
     --cfgStoreDirMgrPwd "${FRAM_CFG_STORE_DIR_MGR_PWD:-Passw0rd}" \
     --cfgStoreHost "${FRAM_CFG_STORE_HOST:-dfq-ds:1389}" \
     --cfgStorePort "${FRAM_CFG_STORE_PORT:-1389}" \
-    --cfgStoreRootSuffix ${FRAM_CFG_STORE_ROOT_SUFFIX:-dc=amconfig} \
+    --cfgStoreRootSuffix ${FRAM_CFG_STORE_ROOT_SUFFIX:-ou=am-config} \
     --cfgStoreSsl "${FRAM_CFG_STORE_SSL:-false}" \
     --userStoreDirMgr "${FRAM_USER_STORE_DIR_MGR:-uid=am-identity-bind-account,ou=admins,ou=identities}" \
     --userStoreDirMgrPwd "${FRAM_USER_STORE_DIR_MGR_PWD:-Passw0rd}" \
@@ -120,7 +120,7 @@ install-openam \
     --cfgStoreDirMgrPwd "${FRAM_CFG_STORE_DIR_MGR_PWD:-Passw0rd}" \
     --cfgStoreHost "${FRAM_CFG_STORE_HOST:-dfq-ds:1389}"  \
     --cfgStorePort "${FRAM_CFG_STORE_PORT:-1389}" \
-    --cfgStoreRootSuffix "${FRAM_CFG_STORE_ROOT_SUFFIX:-dc=amconfig}" \
+    --cfgStoreRootSuffix "${FRAM_CFG_STORE_ROOT_SUFFIX:-ou=am-config}" \
     --cfgStoreSsl "${FRAM_CFG_STORE_SSL:-false}" \
     --existingServerId ${SERVER_URL} \
     --pwdEncKey YcVB1NreOTzwK0DNpDWEJ7zpySrOU3RW \

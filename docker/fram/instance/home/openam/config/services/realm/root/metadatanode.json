@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "MetadataNode",
     "entityId": "MetadataNode",
-    "uid": "ou=MetadataNode,ou=services,dc=amconfig",
+    "uid": "ou=MetadataNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

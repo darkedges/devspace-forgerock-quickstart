@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "PushAuthenticationSenderNode",
     "entityId": "PushAuthenticationSenderNode",
-    "uid": "ou=PushAuthenticationSenderNode,ou=services,dc=amconfig",
+    "uid": "ou=PushAuthenticationSenderNode,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",

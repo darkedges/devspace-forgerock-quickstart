@@ -3,7 +3,7 @@
     "realm": "/",
     "entityType": "iPlanetAMAuthAccountActiveCheckService",
     "entityId": "iPlanetAMAuthAccountActiveCheckService",
-    "uid": "ou=iPlanetAMAuthAccountActiveCheckService,ou=services,dc=amconfig",
+    "uid": "ou=iPlanetAMAuthAccountActiveCheckService,ou=services,ou=am-config",
     "sunServiceID": null,
     "objectClass": [
       "top",
