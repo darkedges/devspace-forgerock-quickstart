@@ -269,7 +269,8 @@
       "com.iplanet.security.SecureRandomFactoryImpl=com.iplanet.am.util.SecureRandomFactoryImpl",
       "org.forgerock.services.resourcesets.store.ssl.enabled=&{am.stores.uma.ssl.enabled}",
       "openam.retained.http.headers=X-DSAMEVersion",
-      "com.sun.identity.server.fqdnMap[am]=am"
+      "com.sun.identity.server.fqdnMap[am]=am",
+      "com.sun.identity.server.fqdnMap[am.darkedges.com.au]=am.darkedges.com.au"
     ]
   }
 }
