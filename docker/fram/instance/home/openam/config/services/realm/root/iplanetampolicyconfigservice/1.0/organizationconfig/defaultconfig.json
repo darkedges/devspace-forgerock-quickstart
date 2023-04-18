@@ -66,13 +66,13 @@
       "SubOrgReferral"
     ],
     "sslEnabled": {
-      "$bool": "&{am.stores.policy.ssl.enabled}"
+      "$bool": "&{am.stores.user.ssl.enabled}"
     },
     "ldapServer": {
-      "$list": "&{am.stores.policy.servers}"
+      "$list": "&{am.stores.user.servers}"
     },
-    "bindDn": "&{am.stores.policy.username}",
-    "bindPassword": "&{am.stores.policy.password}",
+    "bindDn": "&{am.stores.user.username}",
+    "bindPassword": "&{am.stores.user.password}",
     "realmSearchFilter": "(objectclass=sunismanagedorganization)",
     "iplanet-am-policy-config-ldap-groups-search-attribute": "cn",
     "usersSearchFilter": "(objectclass=inetorgperson)",
