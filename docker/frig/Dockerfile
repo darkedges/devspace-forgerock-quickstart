@@ -3,7 +3,7 @@ ARG JRE_TAG=11.0.14_9-jre-alpine
 
 # Binary extract
 FROM alpine:3.15.0 as installFile
-ARG FRIG_ARCHIVE=IG-2023.2.0.zip
+ARG FRIG_ARCHIVE=IG-7.2.0.zip
 ARG FRIG_ARCHIVE_REPOSITORY_URL=
 
 ADD ${FRIG_ARCHIVE_REPOSITORY_URL}${FRIG_ARCHIVE}  /var/tmp/frig.zip
