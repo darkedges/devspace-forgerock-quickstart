@@ -65,7 +65,7 @@ if [[ -v "${DS_BOOTSTRAP_REPLICATION_SERVERS}" ]]; then
 ./bin/dsconfig --offline --no-prompt --batch <<EOF
 set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "enabled:true" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers}"
 EOF
+fi
 
 # Start initialization
-./init.sh
-fi
+/opt/frds/default-scripts/development/init.sh

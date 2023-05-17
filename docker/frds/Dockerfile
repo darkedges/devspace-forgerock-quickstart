@@ -12,6 +12,7 @@ RUN unzip /var/tmp/frds.zip -d /var/tmp/
 
 # Runtime deployment
 FROM ${JRE_IMAGE}:${JRE_TAG} as base
+ARG DEPLOYMENT_TYPE=development
 
 COPY --from=0 /var/tmp/opendj /opt/frds/
 
@@ -29,7 +30,7 @@ RUN apk add --no-cache tini bash && \
 
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
 COPY --chown=forgerock:forgerock installedfiles/ /opt/frds/
-COPY --chown=forgerock:forgerock instance/ /opt/frds/instance/init
+COPY --chown=forgerock:forgerock instance/${DEPLOYMENT_TYPE}/init/ /opt/frds/instance/init/
 
 RUN chown -R forgerock:forgerock /opt/frds && \
     chmod 755 /opt/frds/*.sh && \
