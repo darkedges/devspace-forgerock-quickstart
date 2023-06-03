@@ -1,21 +1,19 @@
 {
-  "instance": "http://am:80/am",
-  "dsameUser": "cn=dsameuser,ou=DSAME Users,ou=am-config",
-  "keystores": {
-    "default": {
-      "keyStorePasswordFile": "/home/forgerock/openam/security/keystores/boot/.storepass",
-      "keyPasswordFile": "/home/forgerock/openam/security/keystores/boot/.keypass",
-      "keyStoreType": "JCEKS",
-      "keyStoreFile": "/home/forgerock/openam/security/keystores/boot/boot-keystore.jceks"
+  "instance" : "http://am:80/am",
+  "dsameUser" : "cn=dsameuser,ou=DSAME Users,ou=am-config",
+  "keystores" : {
+    "default" : {
+      "keyStorePasswordFile" : "/home/forgerock/openam/security/secrets/default/.storepass",
+      "keyPasswordFile" : "/home/forgerock/openam/security/secrets/default/.keypass",
+      "keyStoreType" : "JCEKS",
+      "keyStoreFile" : "/home/forgerock/openam/security/keystores/keystore.jceks"
     }
   },
-  "configStoreList": [
-    {
-      "baseDN": "ou=am-config",
-      "dirManagerDN": "cn=UNUSED",
-      "ldapHost": "UNUSED",
-      "ldapPort": 9999,
-      "ldapProtocol": "ldap"
-    }
-  ]
+  "configStoreList" : [ {
+    "baseDN" : "ou=am-config",
+    "dirManagerDN" : "cn=Unused in FBC",
+    "ldapHost" : "UNUSED.IN.FBC",
+    "ldapPort" : 9999,
+    "ldapProtocol" : "ldap"
+  } ]
 }
