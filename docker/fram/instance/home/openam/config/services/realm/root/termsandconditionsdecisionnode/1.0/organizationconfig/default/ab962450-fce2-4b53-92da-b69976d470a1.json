@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "TermsAndConditionsDecisionNode",
+    "entityId" : "default/ab962450-fce2-4b53-92da-b69976d470a1",
+    "uid" : "ou=ab962450-fce2-4b53-92da-b69976d470a1,ou=default,ou=OrganizationConfig,ou=1.0,ou=TermsAndConditionsDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_id" : "default/ab962450-fce2-4b53-92da-b69976d470a1",
+    "_type" : {
+      "_id" : "TermsAndConditionsDecisionNode",
+      "name" : "TermsAndConditionsDecisionNode",
+      "collection" : false
+    },
+    "identityAttribute" : "userName"
+  }
+}

@@ -23,17 +23,17 @@
     "provisioningClientScopes": [
       "fr:idm:*"
     ],
-    "idmProvisioningClient": "idm-provisioning",
     "provisioningEncryptionMethod": null,
+    "idmProvisioningClient": "idm-provisioning",
     "provisioningEncryptionAlgorithm": null,
     "useInternalOAuth2Provider": false,
     "jwtSigningCompatibilityMode": false,
     "provisioningEncryptionKeyAlias": null,
-    "enabled": false,
-    "idmDeploymentPath": null,
+    "enabled": true,
+    "idmDeploymentPath": "openidm",
     "provisioningSigningAlgorithm": null,
-    "idmDeploymentUrl": null,
+    "idmDeploymentUrl": "http://dfq-im:8080",
     "provisioningSigningKeyAlias": null,
-    "provisioningClientSecret": null
+    "provisioningClientSecret": "&{rs.client.secret|Passw0rd}"
   }
 }

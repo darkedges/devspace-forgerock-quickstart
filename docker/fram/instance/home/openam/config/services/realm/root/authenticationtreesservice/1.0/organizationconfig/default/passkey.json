@@ -21,7 +21,7 @@
     "nodes" : {
       "7afb8fc7-8476-4cce-bb3b-37d514c914d2" : {
         "connections" : {
-          "outcome" : "b72fa182-7656-488f-a470-4084ea56066f"
+          "outcome" : "9bebceb7-4eed-46d2-a6cc-be6cf2131c32"
         },
         "displayName" : "Username Collector",
         "nodeType" : "UsernameCollectorNode",
@@ -62,6 +62,45 @@
         "nodeType" : "WebAuthnDeviceStorageNode",
         "x" : 867.125,
         "y" : 50.7109375
+      },
+      "9bebceb7-4eed-46d2-a6cc-be6cf2131c32" : {
+        "displayName" : "Identify Existing User",
+        "nodeType" : "IdentifyExistingUserNode",
+        "x" : 264,
+        "y" : 464.328125,
+        "connections" : {
+          "true" : "b72fa182-7656-488f-a470-4084ea56066f",
+          "false" : "c2ab844c-3d94-43aa-91fd-243bd841f1c8"
+        }
+      },
+      "4ea9e498-aa74-4218-bd3a-acd5a8809359" : {
+        "displayName" : "Create Object",
+        "nodeType" : "CreateObjectNode",
+        "x" : 705,
+        "y" : 457.328125,
+        "connections" : {
+          "CREATED" : "b72fa182-7656-488f-a470-4084ea56066f",
+          "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "c2ab844c-3d94-43aa-91fd-243bd841f1c8" : {
+        "displayName" : "Accept Terms and Conditions",
+        "nodeType" : "AcceptTermsAndConditionsNode",
+        "x" : 444,
+        "y" : 660,
+        "connections" : {
+          "outcome" : "ab962450-fce2-4b53-92da-b69976d470a1"
+        }
+      },
+      "ab962450-fce2-4b53-92da-b69976d470a1" : {
+        "displayName" : "Terms and Conditions Decision",
+        "nodeType" : "TermsAndConditionsDecisionNode",
+        "x" : 726,
+        "y" : 648.328125,
+        "connections" : {
+          "true" : "4ea9e498-aa74-4218-bd3a-acd5a8809359",
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
       }
     },
     "staticNodes" : {

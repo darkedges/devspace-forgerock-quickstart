@@ -1,32 +1,30 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthService",
-    "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "iPlanetAMAuthService",
-      "name": "iPlanetAMAuthService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "iPlanetAMAuthService",
+      "name" : "iPlanetAMAuthService",
+      "collection" : false
     },
-    "userprofile": {
-      "aliasAttributeName": [
-        "uid"
-      ]
+    "userprofile" : {
+      "aliasAttributeName" : [ "uid" ]
     },
-    "core": {
-      "orgConfig": "ldapService",
-      "adminAuthModule": "ldapService"
+    "general" : {
+      "statelessSessionsEnabled" : false
+    },
+    "core" : {
+      "orgConfig" : "ldapService",
+      "adminAuthModule" : "ldapService"
     }
   }
 }

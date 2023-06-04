@@ -1,65 +1,58 @@
 {
-    "serverAuthContext": {
-        "sessionModule": {
-            "name": "JWT_SESSION",
-            "properties": {
-                "maxTokenLifeMinutes": 120,
-                "tokenIdleTimeMinutes": 30,
-                "sessionOnly": true,
-                "isHttpOnly": true,
-                "enableDynamicRoles": false
-            }
+    "rsFilter": {
+        "clientId": "idm-resource-server",
+        "clientSecret": "&{rs.client.secret|Passw0rd}",
+        "tokenIntrospectUrl": "https://am.darkedges.com.au/openam/oauth2/introspect",
+        "scopes": [
+            "fr:idm:*"
+        ],
+        "cache": {
+            "maxTimeout": "300 seconds"
         },
-        "authModules": [
+        "augmentSecurityContext": {
+            "type": "text/javascript",
+            "source": "require('auth/orgPrivileges').assignPrivilegesToUser(resource, security, properties, subjectMapping, privileges, 'privileges', 'privilegeAssignments');"
+        },
+        "subjectMapping": [
             {
-                "name": "STATIC_USER",
-                "properties": {
-                    "queryOnResource": "internal/user",
-                    "username": "anonymous",
-                    "password": "&{darkedeges.authentication.STATIC_USER.password|anonymous}",
-                    "defaultUserRoles": [
-                        "internal/role/openidm-reg"
-                    ]
+                "resourceTypeMapping": {
+                    "usr": "managed/user"
                 },
-                "enabled": true
-            },
-            {
-                "name": "STATIC_USER",
-                "properties": {
-                    "queryOnResource": "internal/user",
-                    "username": "openidm-admin",
-                    "password": "&{openidm.admin.password}",
-                    "defaultUserRoles": [
-                        "internal/role/openidm-authorized",
-                        "internal/role/openidm-admin"
-                    ]
+                "propertyMapping": {
+                    "sub": "_id"
                 },
-                "enabled": true
-            },
-            {
-                "name": "MANAGED_USER",
-                "properties": {
-                    "augmentSecurityContext": {
-                        "type": "text/javascript",
-                        "source": "var augmentYield = require('auth/customAuthz').setProtectedAttributes(security);require('auth/orgPrivileges').assignPrivilegesToUser(resource, security, properties, subjectMapping, privileges, 'privileges', 'privilegeAssignments', augmentYield);"
-                    },
-                    "queryId": "credential-query",
-                    "queryOnResource": "managed/user",
-                    "propertyMapping": {
-                        "authenticationId": "username",
-                        "userCredential": "password",
-                        "userRoles": "authzRoles",
-                        "additionalUserFields": [
-                            "adminOfOrg",
-                            "ownerOfOrg"
-                        ]
-                    },
-                    "defaultUserRoles": [
-                        "internal/role/openidm-authorized"
-                    ]
-                },
-                "enabled": true
+                "userRoles": "authzRoles/*",
+                "additionalUserFields": [
+                    "adminOfOrg",
+                    "ownerOfOrg"
+                ],
+                "defaultRoles": [
+                    "internal/role/openidm-authorized"
+                ]
             }
-        ]
+        ],
+        "staticUserMapping": [
+            {
+                "subject": "(usr!amAdmin)",
+                "localUser": "internal/user/openidm-admin",
+                "roles": [
+                    "internal/role/openidm-authorized",
+                    "internal/role/openidm-admin"
+                ]
+            },
+            {
+                "subject": "(age!idm-provisioning)",
+                "localUser": "internal/user/idm-provisioning",
+                "roles": [
+                    "internal/role/platform-provisioning"
+                ]
+            }
+        ],
+        "anonymousUserMapping": {
+            "localUser": "internal/user/anonymous",
+            "roles": [
+                "internal/role/openidm-reg"
+            ]
+        }
     }
 }

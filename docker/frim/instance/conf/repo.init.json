@@ -43,7 +43,7 @@
             },
             {
                 "id": "idm-provisioning",
-                "password": "&{darkedges.idm.provisioning.password|&{openidm.admin.password}}"
+                "password": "&{darkedges.idm.provisioning.password|idm-provisioning}"
             },
             {
                 "id": "connector-server-client"

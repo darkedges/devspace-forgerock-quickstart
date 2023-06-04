@@ -17,7 +17,7 @@
       "collection" : false
     },
     "requiresResidentKey" : false,
-    "asScript" : false,
+    "asScript" : true,
     "relyingPartyDomain" : "auth.connectid.darkedges.com",
     "origins" : [ ],
     "userVerificationRequirement" : "PREFERRED",
