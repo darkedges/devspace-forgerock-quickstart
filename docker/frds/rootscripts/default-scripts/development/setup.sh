@@ -4,6 +4,7 @@
 AMCTS_BACKEND_NAME=${AMCTS_BACKEND_NAME:-amCts}
 AMCONFIG_BACKEND_NAME=${AMCONFIG_BACKEND_NAME:-cfgStore}
 AMIDENTITYSTORE_BACKEND_NAME=${AMIDENTITYSTORE_BACKEND_NAME:-amIdentityStore}
+IDM_BACKEND_NAME=${IDM_BACKEND_NAME:-idmRepo}
 
 EXTRA_OPTIONS=""
 if [ -f "/var/run/secrets/frds/keystore.jks" ]; then
@@ -34,6 +35,9 @@ fi
     --profile am-identity-store \
     --profile am-config \
     --profile am-cts \
+    --profile idm-repo \
+    --set idm-repo/domain:${IDM_DOMAIN:-darkedges,dc=com,dc=au} \
+    --set idm-repo/backendName:${IDM_BACKEND_NAME} \
     --set am-cts/amCtsAdminPassword:${AMCTS_ADMIN_PASSWORD:-Passw0rd} \
     --set am-cts/baseDn:${AMCTS_BASE_DN:-ou=tokens} \
     --set am-cts/backendName:${AMCTS_BACKEND_NAME} \

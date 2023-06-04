@@ -42,7 +42,8 @@
                 "password": "anonymous"
             },
             {
-                "id": "idm-provisioning"
+                "id": "idm-provisioning",
+                "password": "&{darkedges.idm.provisioning.password|&{openidm.admin.password}}"
             },
             {
                 "id": "connector-server-client"
