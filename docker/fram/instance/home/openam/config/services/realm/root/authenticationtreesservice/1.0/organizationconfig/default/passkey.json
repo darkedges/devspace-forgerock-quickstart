@@ -70,14 +70,14 @@
         "y" : 50.7109375,
         "connections" : {
           "true" : "ab962450-fce2-4b53-92da-b69976d470a1",
-          "false" : "4ea9e498-aa74-4218-bd3a-acd5a8809359"
+          "false" : "d94a10ef-6004-48ad-8890-0efd5557afbe"
         }
       },
       "4ea9e498-aa74-4218-bd3a-acd5a8809359" : {
         "displayName" : "Create Object",
         "nodeType" : "CreateObjectNode",
-        "x" : 536,
-        "y" : 215,
+        "x" : 598,
+        "y" : 333,
         "connections" : {
           "CREATED" : "ab962450-fce2-4b53-92da-b69976d470a1",
           "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
@@ -110,6 +110,15 @@
         "connections" : {
           "PATCHED" : "b72fa182-7656-488f-a470-4084ea56066f",
           "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      },
+      "d94a10ef-6004-48ad-8890-0efd5557afbe" : {
+        "displayName" : "Create Password",
+        "nodeType" : "CreatePasswordNode",
+        "x" : 174,
+        "y" : 596.328125,
+        "connections" : {
+          "outcome" : "4ea9e498-aa74-4218-bd3a-acd5a8809359"
         }
       }
     },

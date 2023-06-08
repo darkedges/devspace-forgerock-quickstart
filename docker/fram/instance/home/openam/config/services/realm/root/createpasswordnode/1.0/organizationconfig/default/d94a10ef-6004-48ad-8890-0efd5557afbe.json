@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "CreatePasswordNode",
+    "entityId" : "default/d94a10ef-6004-48ad-8890-0efd5557afbe",
+    "uid" : "ou=d94a10ef-6004-48ad-8890-0efd5557afbe,ou=default,ou=OrganizationConfig,ou=1.0,ou=CreatePasswordNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_id" : "default/d94a10ef-6004-48ad-8890-0efd5557afbe",
+    "_type" : {
+      "_id" : "CreatePasswordNode",
+      "name" : "CreatePasswordNode",
+      "collection" : false
+    },
+    "minPasswordLength" : 8
+  }
+}
