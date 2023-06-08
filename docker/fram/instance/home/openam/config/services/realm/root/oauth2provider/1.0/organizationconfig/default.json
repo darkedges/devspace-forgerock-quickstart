@@ -67,7 +67,7 @@
       "responseTypeClasses" : [ "code|org.forgerock.oauth2.core.AuthorizationCodeResponseTypeHandler", "id_token|org.forgerock.openidconnect.IdTokenResponseTypeHandler", "token|org.forgerock.oauth2.core.TokenResponseTypeHandler" ],
       "expClaimRequiredInRequestObject" : false,
       "tokenValidatorClasses" : [ "urn:ietf:params:oauth:token-type:id_token|org.forgerock.oauth2.core.tokenexchange.idtoken.OidcIdTokenValidator", "urn:ietf:params:oauth:token-type:access_token|org.forgerock.oauth2.core.tokenexchange.accesstoken.OAuth2AccessTokenValidator" ],
-      "tokenSigningAlgorithm" : "HS256",
+      "tokenSigningAlgorithm" : "RS256",
       "codeVerifierEnforced" : "false",
       "displayNameAttribute" : "cn",
       "customLoginUrlTemplate" : null,
