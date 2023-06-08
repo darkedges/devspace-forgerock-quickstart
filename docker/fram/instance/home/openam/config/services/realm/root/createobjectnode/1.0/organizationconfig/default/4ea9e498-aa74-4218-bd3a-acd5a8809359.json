@@ -7,7 +7,7 @@
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : null
+    "ou" : [ "4ea9e498-aa74-4218-bd3a-acd5a8809359" ]
   },
   "data" : {
     "_id" : "default/4ea9e498-aa74-4218-bd3a-acd5a8809359",
