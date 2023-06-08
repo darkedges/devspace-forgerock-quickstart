@@ -23,6 +23,12 @@
                 "iconPath": "images/notifications/error.png"
             }
         },
-        "defaultNotificationType": "info"
+        "defaultNotificationType": "info",
+        "platformSettings": {
+            "adminOauthClient": "idm-admin-ui",
+            "adminOauthClientScopes": "fr:idm:*",
+            "amUrl": "https://am.darkedges.com.au/openam",
+            "loginUrl": ""
+        }
     }
 }

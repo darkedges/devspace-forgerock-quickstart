@@ -7,7 +7,7 @@
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : null
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -44,11 +44,14 @@
     },
     "advancedOAuth2Config" : {
       "passwordGrantAuthService" : "[Empty]",
+      "modifiedTimestampAttribute" : null,
       "tokenCompressionEnabled" : false,
       "tokenEncryptionEnabled" : false,
       "requirePushedAuthorizationRequests" : false,
       "tlsCertificateBoundAccessTokensEnabled" : true,
+      "tlsOcspResponderUri" : null,
       "defaultScopes" : [ ],
+      "createdTimestampAttribute" : null,
       "moduleMessageEnabledInPasswordGrant" : false,
       "supportedSubjectTypes" : [ "public", "pairwise" ],
       "refreshTokenGracePeriod" : 0,
@@ -57,6 +60,7 @@
       "macaroonTokenFormat" : "V2",
       "maxAgeOfRequestObjectNbfClaim" : 0,
       "tlsCertificateRevocationCheckingEnabled" : false,
+      "tlsOcspResponderCert" : null,
       "nbfClaimRequiredInRequestObject" : false,
       "requestObjectProcessing" : "OIDC",
       "maxDifferenceBetweenRequestObjectNbfAndExp" : 0,
@@ -66,12 +70,14 @@
       "tokenSigningAlgorithm" : "HS256",
       "codeVerifierEnforced" : "false",
       "displayNameAttribute" : "cn",
+      "customLoginUrlTemplate" : null,
       "tokenExchangeClasses" : [ "urn:ietf:params:oauth:token-type:access_token=>urn:ietf:params:oauth:token-type:access_token|org.forgerock.oauth2.core.tokenexchange.accesstoken.AccessTokenToAccessTokenExchanger", "urn:ietf:params:oauth:token-type:id_token=>urn:ietf:params:oauth:token-type:id_token|org.forgerock.oauth2.core.tokenexchange.idtoken.IdTokenToIdTokenExchanger", "urn:ietf:params:oauth:token-type:access_token=>urn:ietf:params:oauth:token-type:id_token|org.forgerock.oauth2.core.tokenexchange.accesstoken.AccessTokenToIdTokenExchanger", "urn:ietf:params:oauth:token-type:id_token=>urn:ietf:params:oauth:token-type:access_token|org.forgerock.oauth2.core.tokenexchange.idtoken.IdTokenToAccessTokenExchanger" ],
       "parRequestUriLifetime" : 90,
       "allowedAudienceValues" : [ ],
       "persistentClaims" : [ ],
-      "supportedScopes" : [ ],
+      "supportedScopes" : [ "am-introspect-all-tokens", "am-introspect-all-tokens-any-realm", "fr:idm:*", "openid" ],
       "authenticationAttributes" : [ "uid" ],
+      "tlsClientCertificateTrustedHeader" : null,
       "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:openid:params:grant-type:ciba", "urn:ietf:params:oauth:grant-type:uma-ticket", "urn:ietf:params:oauth:grant-type:token-exchange", "urn:ietf:params:oauth:grant-type:jwt-bearer" ]
     },
     "clientDynamicRegistrationConfig" : {
@@ -107,9 +113,11 @@
       "supportedRcsRequestSigningAlgorithms" : [ "PS384", "ES384", "RS384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "supportedRcsResponseEncryptionAlgorithms" : [ "ECDH-ES+A256KW", "ECDH-ES+A192KW", "ECDH-ES+A128KW", "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "ECDH-ES", "dir", "A192KW" ],
       "supportedRcsRequestEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+      "savedConsentAttribute" : null,
+      "remoteConsentServiceId" : "[Empty]",
       "enableRemoteConsent" : false,
       "supportedRcsRequestEncryptionAlgorithms" : [ "ECDH-ES+A256KW", "ECDH-ES+A192KW", "RSA-OAEP", "ECDH-ES+A128KW", "RSA-OAEP-256", "A128KW", "A256KW", "ECDH-ES", "dir", "A192KW" ],
-      "clientsCanSkipConsent" : false,
+      "clientsCanSkipConsent" : true,
       "supportedRcsResponseSigningAlgorithms" : [ "PS384", "ES384", "RS384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "supportedRcsResponseEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ]
     },

@@ -40,7 +40,8 @@
     ],
     "acceptedOrigins": [
       "https://auth.connectid.darkedges.com",
-      "https://auth.internal.darkedges.com"
+      "https://auth.internal.darkedges.com",
+      "https://im.darkedges.com.au"
     ],
     "enabled": true
   }
