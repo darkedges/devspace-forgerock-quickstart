@@ -19,6 +19,6 @@
       "name": "iPlanetAMAuthAmsterService",
       "collection": false
     },
-    "authorizedKeys": "&{secrets.path}/amster/authorized_keys"
+    "authorizedKeys": "&{security.path}/secrets/amster/authorized_keys"
   }
 }

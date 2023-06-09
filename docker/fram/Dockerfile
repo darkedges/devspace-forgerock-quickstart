@@ -64,7 +64,12 @@ USER 11111
 WORKDIR /home/forgerock
 
 ENV FRAM_HOME=/home/forgerock/openam
+ENV SECURITY_PATH=${FRAM_HOME}/security
 ENV CATALINA_OPTS -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=true -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1
+
+RUN mkdir -p ${SECURITY_PATH}/secrets/amster && \
+    bash -c "ssh-keygen -N '' -m pem -t rsa -f ${SECURITY_PATH}/secrets/amster/amster_rsa <<< y" && \
+    cat ${SECURITY_PATH}/secrets/amster/amster_rsa.pub > ${SECURITY_PATH}/secrets/amster/authorized_keys
 
 ENTRYPOINT  ["/usr/local/tomcat/docker-entrypoint.sh"]
 

@@ -20,7 +20,7 @@
       "name": "iPlanetAMAuthAmsterService",
       "collection": false
     },
-    "authorizedKeys": "&{secrets.path}/amster/authorized_keys",
+    "authorizedKeys": "&{security.path}/secrets/amster/authorized_keys",
     "authenticationLevel": 0,
     "enabled": true,
     "RequiredValueValidator": "com.sun.identity.sm.RequiredValueValidator"

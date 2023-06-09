@@ -56,7 +56,7 @@ export AM_STORES_USER_SERVERS=${AM_STORES_USER_SERVERS:-dfq-ds:1389}
 export AM_STORES_USER_SSL_ENABLED=${AM_STORES_POLICY_SSL_ENABLED:-false}
 export AM_STORES_USER_TYPE=${AM_STORES_USER_TYPE:-LDAPv3ForOpenDS}
 export AM_STORES_USER_USERNAME=${AM_STORES_USER_USERNAME:-uid=am-identity-bind-account,ou=admins,ou=identities}
-export SECRETS_PATH=${SECRETS_PATH:-Passw0rd}
+export SECURITY_PATH=${SECURITY_PATH:-${FRAM_HOME}/security}
 
 if [ -z "$SERVER_URL" ]; then
     NAMESPACE="$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)"
