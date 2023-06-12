@@ -2,15 +2,15 @@
   "metadata" : {
     "realm" : "/",
     "entityType" : "authenticationTreesService",
-    "entityId" : "default/dynprov",
-    "uid" : "ou=dynprov,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,ou=am-config",
+    "entityId" : "default/dynamicprovision",
+    "uid" : "ou=dynamicprovision,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,ou=am-config",
     "sunServiceID" : "tree",
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : [ "dynprov" ]
+    "ou" : [ "dynamicprovision" ]
   },
   "data" : {
-    "_id" : "default/dynprov",
+    "_id" : "default/dynamicprovision",
     "_type" : {
       "_id" : "authenticationTreesService",
       "name" : "authenticationTreesService",

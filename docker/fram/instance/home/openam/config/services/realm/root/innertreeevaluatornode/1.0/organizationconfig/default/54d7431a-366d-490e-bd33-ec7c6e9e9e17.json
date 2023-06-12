@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "InnerTreeEvaluatorNode",
+    "entityId" : "default/54d7431a-366d-490e-bd33-ec7c6e9e9e17",
+    "uid" : "ou=54d7431a-366d-490e-bd33-ec7c6e9e9e17,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "54d7431a-366d-490e-bd33-ec7c6e9e9e17" ]
+  },
+  "data" : {
+    "_id" : "default/54d7431a-366d-490e-bd33-ec7c6e9e9e17",
+    "_type" : {
+      "_id" : "InnerTreeEvaluatorNode",
+      "name" : "InnerTreeEvaluatorNode",
+      "collection" : false
+    },
+    "tree" : "webauthn"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "authenticationTreesService",
+    "entityId" : "default/webauthn",
+    "uid" : "ou=webauthn,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,ou=am-config",
+    "sunServiceID" : "tree",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "webauthn" ]
+  },
+  "data" : {
+    "_id" : "default/webauthn",
+    "_type" : {
+      "_id" : "authenticationTreesService",
+      "name" : "authenticationTreesService",
+      "collection" : false
+    },
+    "uiConfig" : { },
+    "entryNodeId" : "b72fa182-7656-488f-a470-4084ea56066f",
+    "nodes" : {
+      "b72fa182-7656-488f-a470-4084ea56066f" : {
+        "connections" : {
+          "error" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "failure" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "noDevice" : "ca07b0b3-604b-491e-9545-bcc2b43b13ed",
+          "success" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "unsupported" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName" : "WebAuthn Authentication Node",
+        "nodeType" : "WebAuthnAuthenticationNode",
+        "x" : 152,
+        "y" : 25
+      },
+      "ca07b0b3-604b-491e-9545-bcc2b43b13ed" : {
+        "connections" : {
+          "error" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "failure" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "success" : "dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7",
+          "unsupported" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        },
+        "displayName" : "WebAuthn Registration Node",
+        "nodeType" : "WebAuthnRegistrationNode",
+        "x" : 418.328125,
+        "y" : 33.5703125
+      },
+      "dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7" : {
+        "connections" : {
+          "failure" : "e301438c-0bd0-429c-ab0c-66126501069a",
+          "success" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        },
+        "displayName" : "WebAuthn Device Storage Node",
+        "nodeType" : "WebAuthnDeviceStorageNode",
+        "x" : 671.40625,
+        "y" : 50.7109375
+      }
+    },
+    "staticNodes" : {
+      "startNode" : {
+        "x" : 50,
+        "y" : 73.3515625
+      },
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0" : {
+        "x" : 945.5,
+        "y" : 106.8515625
+      },
+      "e301438c-0bd0-429c-ab0c-66126501069a" : {
+        "x" : 945.5,
+        "y" : 39.8515625
+      }
+    },
+    "enabled" : true
+  }
+}
