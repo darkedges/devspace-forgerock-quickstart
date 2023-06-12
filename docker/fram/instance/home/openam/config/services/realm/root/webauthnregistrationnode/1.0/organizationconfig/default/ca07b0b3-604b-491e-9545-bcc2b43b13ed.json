@@ -25,13 +25,13 @@
     "origins" : [ ],
     "userVerificationRequirement" : "PREFERRED",
     "postponeDeviceProfileStorage" : false,
-    "excludeCredentials" : false,
     "requiresResidentKey" : false,
+    "excludeCredentials" : false,
     "authenticatorAttachment" : "UNSPECIFIED",
-    "asScript" : true,
+    "asScript" : false,
     "acceptedSigningAlgorithms" : [ "ES256", "RS256" ],
-    "timeout" : 60,
     "enforceRevocationCheck" : false,
+    "timeout" : 60,
     "attestationPreference" : "NONE"
   }
 }

@@ -17,11 +17,11 @@
       "collection" : false
     },
     "requiresResidentKey" : false,
-    "asScript" : true,
+    "asScript" : false,
     "relyingPartyDomain" : "auth.connectid.darkedges.com",
     "origins" : [ ],
     "userVerificationRequirement" : "PREFERRED",
-    "isRecoveryCodeAllowed" : false,
-    "timeout" : 60
+    "timeout" : 60,
+    "isRecoveryCodeAllowed" : false
   }
 }
