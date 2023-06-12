@@ -1,39 +1,33 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "IdmIntegrationService",
-    "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "IdmIntegrationService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "IdmIntegrationService",
-      "name": "IdmIntegrationService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "IdmIntegrationService",
+      "name" : "IdmIntegrationService",
+      "collection" : false
     },
-    "provisioningClientScopes": [
-      "fr:idm:*"
-    ],
-    "provisioningEncryptionMethod": null,
-    "idmProvisioningClient": "idm-provisioning",
-    "provisioningEncryptionAlgorithm": null,
-    "useInternalOAuth2Provider": false,
-    "jwtSigningCompatibilityMode": false,
-    "provisioningEncryptionKeyAlias": null,
-    "enabled": true,
-    "idmDeploymentPath": "openidm",
-    "provisioningSigningAlgorithm": null,
-    "idmDeploymentUrl": "http://dfq-im:8080",
-    "provisioningSigningKeyAlias": null,
-    "provisioningClientSecret": "&{rs.client.secret|Passw0rd}"
+    "provisioningClientScopes" : [ "fr:idm:*" ],
+    "provisioningEncryptionMethod" : "A128CBC_HS256",
+    "idmProvisioningClient" : "idm-provisioning",
+    "provisioningEncryptionAlgorithm" : "RSAES_PKCS1_V1_5",
+    "useInternalOAuth2Provider" : false,
+    "jwtSigningCompatibilityMode" : false,
+    "provisioningEncryptionKeyAlias" : "openidm-selfservice-key",
+    "enabled" : true,
+    "idmDeploymentPath" : "openidm",
+    "provisioningSigningAlgorithm" : "HS256",
+    "idmDeploymentUrl" : "http://dfq-im:8080",
+    "provisioningSigningKeyAlias" : "selfservice",
+    "provisioningClientSecret" : "AQICx/+mhKkJqreMSypMsYFojbaAsabcmgg6"
   }
 }
