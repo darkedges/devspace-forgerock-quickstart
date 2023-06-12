@@ -67,7 +67,7 @@
     },
     "PositiveIntegerValidator" : "org.forgerock.openam.audit.validation.PositiveIntegerValidator",
     "userprofile" : {
-      "dynamicProfileCreation" : "true",
+      "dynamicProfileCreation" : "createAlias",
       "defaultRole" : [ ],
       "aliasAttributeName" : [ ]
     },

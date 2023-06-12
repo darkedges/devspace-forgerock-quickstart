@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "IdentifyExistingUserNode",
+    "entityId" : "default/0e59b8dc-f031-4393-9fd7-7517b7e0cc68",
+    "uid" : "ou=0e59b8dc-f031-4393-9fd7-7517b7e0cc68,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_id" : "default/0e59b8dc-f031-4393-9fd7-7517b7e0cc68",
+    "_type" : {
+      "_id" : "IdentifyExistingUserNode",
+      "name" : "IdentifyExistingUserNode",
+      "collection" : false
+    },
+    "identityAttribute" : "mail",
+    "identifier" : "userName"
+  }
+}

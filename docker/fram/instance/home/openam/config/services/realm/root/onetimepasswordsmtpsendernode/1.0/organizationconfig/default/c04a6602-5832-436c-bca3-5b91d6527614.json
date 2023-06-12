@@ -1,0 +1,30 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OneTimePasswordSmtpSenderNode",
+    "entityId" : "default/c04a6602-5832-436c-bca3-5b91d6527614",
+    "uid" : "ou=c04a6602-5832-436c-bca3-5b91d6527614,ou=default,ou=OrganizationConfig,ou=1.0,ou=OneTimePasswordSmtpSenderNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "c04a6602-5832-436c-bca3-5b91d6527614" ]
+  },
+  "data" : {
+    "_id" : "default/c04a6602-5832-436c-bca3-5b91d6527614",
+    "_type" : {
+      "_id" : "OneTimePasswordSmtpSenderNode",
+      "name" : "OneTimePasswordSmtpSenderNode",
+      "collection" : false
+    },
+    "password" : "AQICx/+mhKkJqrdNoja4TQvvh/l5tteVs2Kn",
+    "username" : "nirving",
+    "hostName" : "mail.internode.on.net",
+    "hostPort" : 465,
+    "fromEmailAddress" : "no-reply@darkedges.com.au",
+    "smsGatewayImplementationClass" : "com.sun.identity.authentication.modules.hotp.DefaultSMSGatewayImpl",
+    "emailContent" : { },
+    "emailSubject" : { },
+    "sslOption" : "SSL",
+    "emailAttribute" : "mail"
+  }
+}

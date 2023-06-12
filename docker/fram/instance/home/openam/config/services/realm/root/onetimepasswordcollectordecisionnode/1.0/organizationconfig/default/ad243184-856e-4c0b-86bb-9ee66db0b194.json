@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OneTimePasswordCollectorDecisionNode",
+    "entityId" : "default/ad243184-856e-4c0b-86bb-9ee66db0b194",
+    "uid" : "ou=ad243184-856e-4c0b-86bb-9ee66db0b194,ou=default,ou=OrganizationConfig,ou=1.0,ou=OneTimePasswordCollectorDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "ad243184-856e-4c0b-86bb-9ee66db0b194" ]
+  },
+  "data" : {
+    "_id" : "default/ad243184-856e-4c0b-86bb-9ee66db0b194",
+    "_type" : {
+      "_id" : "OneTimePasswordCollectorDecisionNode",
+      "name" : "OneTimePasswordCollectorDecisionNode",
+      "collection" : false
+    },
+    "passwordExpiryTime" : 5
+  }
+}

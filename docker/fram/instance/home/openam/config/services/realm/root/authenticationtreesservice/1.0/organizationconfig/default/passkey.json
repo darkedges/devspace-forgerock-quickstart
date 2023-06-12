@@ -38,7 +38,7 @@
         },
         "displayName" : "WebAuthn Authentication Node",
         "nodeType" : "WebAuthnAuthenticationNode",
-        "x" : 1380.578125,
+        "x" : 750.078125,
         "y" : 25
       },
       "ca07b0b3-604b-491e-9545-bcc2b43b13ed" : {
@@ -50,7 +50,7 @@
         },
         "displayName" : "WebAuthn Registration Node",
         "nodeType" : "WebAuthnRegistrationNode",
-        "x" : 1646.90625,
+        "x" : 1016.40625,
         "y" : 33.5703125
       },
       "dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7" : {
@@ -60,7 +60,7 @@
         },
         "displayName" : "WebAuthn Device Storage Node",
         "nodeType" : "WebAuthnDeviceStorageNode",
-        "x" : 1899.984375,
+        "x" : 1269.484375,
         "y" : 50.7109375
       },
       "9bebceb7-4eed-46d2-a6cc-be6cf2131c32" : {
@@ -69,56 +69,18 @@
         "x" : 347.71875,
         "y" : 50.7109375,
         "connections" : {
-          "true" : "ab962450-fce2-4b53-92da-b69976d470a1",
-          "false" : "d94a10ef-6004-48ad-8890-0efd5557afbe"
+          "false" : "90014d9a-3e12-4b17-9bbd-54b9279a0775",
+          "true" : "b72fa182-7656-488f-a470-4084ea56066f"
         }
       },
-      "4ea9e498-aa74-4218-bd3a-acd5a8809359" : {
-        "displayName" : "Create Object",
-        "nodeType" : "CreateObjectNode",
-        "x" : 598,
-        "y" : 333,
-        "connections" : {
-          "CREATED" : "ab962450-fce2-4b53-92da-b69976d470a1",
-          "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
-      },
-      "c2ab844c-3d94-43aa-91fd-243bd841f1c8" : {
-        "displayName" : "Accept Terms and Conditions",
-        "nodeType" : "AcceptTermsAndConditionsNode",
-        "x" : 968,
-        "y" : 126,
-        "connections" : {
-          "outcome" : "b4927965-2ef3-4cb6-b910-9e133fee0c6d"
-        }
-      },
-      "ab962450-fce2-4b53-92da-b69976d470a1" : {
-        "displayName" : "Terms and Conditions Decision",
-        "nodeType" : "TermsAndConditionsDecisionNode",
-        "x" : 697,
-        "y" : 49,
+      "90014d9a-3e12-4b17-9bbd-54b9279a0775" : {
+        "displayName" : "Provision Identity",
+        "nodeType" : "InnerTreeEvaluatorNode",
+        "x" : 551,
+        "y" : 51,
         "connections" : {
           "true" : "b72fa182-7656-488f-a470-4084ea56066f",
-          "false" : "c2ab844c-3d94-43aa-91fd-243bd841f1c8"
-        }
-      },
-      "b4927965-2ef3-4cb6-b910-9e133fee0c6d" : {
-        "displayName" : "Patch Object",
-        "nodeType" : "PatchObjectNode",
-        "x" : 1228,
-        "y" : 86,
-        "connections" : {
-          "PATCHED" : "b72fa182-7656-488f-a470-4084ea56066f",
-          "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
-        }
-      },
-      "d94a10ef-6004-48ad-8890-0efd5557afbe" : {
-        "displayName" : "Create Password",
-        "nodeType" : "CreatePasswordNode",
-        "x" : 174,
-        "y" : 596.328125,
-        "connections" : {
-          "outcome" : "4ea9e498-aa74-4218-bd3a-acd5a8809359"
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       }
     },
@@ -128,11 +90,11 @@
         "y" : 73.3515625
       },
       "70e691a5-1e33-4ac3-a356-e7b6d60d92e0" : {
-        "x" : 2174.078125,
+        "x" : 1543.578125,
         "y" : 106.8515625
       },
       "e301438c-0bd0-429c-ab0c-66126501069a" : {
-        "x" : 2174.078125,
+        "x" : 1543.578125,
         "y" : 39.8515625
       }
     },

@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ProvisionDynamicAccountNode",
+    "entityId" : "default/192eb825-afaa-4346-862d-197e77afc315",
+    "uid" : "ou=192eb825-afaa-4346-862d-197e77afc315,ou=default,ou=OrganizationConfig,ou=1.0,ou=ProvisionDynamicAccountNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null
+  },
+  "data" : {
+    "_id" : "default/192eb825-afaa-4346-862d-197e77afc315",
+    "_type" : {
+      "_id" : "ProvisionDynamicAccountNode",
+      "name" : "ProvisionDynamicAccountNode",
+      "collection" : false
+    },
+    "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider"
+  }
+}

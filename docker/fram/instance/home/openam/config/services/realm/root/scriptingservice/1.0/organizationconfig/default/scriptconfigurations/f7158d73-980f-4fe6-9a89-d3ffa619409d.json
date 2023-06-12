@@ -1,0 +1,29 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ScriptingService",
+    "entityId" : "default/scriptConfigurations/f7158d73-980f-4fe6-9a89-d3ffa619409d",
+    "uid" : "ou=f7158d73-980f-4fe6-9a89-d3ffa619409d,ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
+    "sunServiceID" : "scriptConfiguration",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "f7158d73-980f-4fe6-9a89-d3ffa619409d" ]
+  },
+  "data" : {
+    "_id" : "default/scriptConfigurations/f7158d73-980f-4fe6-9a89-d3ffa619409d",
+    "_type" : {
+      "_id" : "ScriptingService",
+      "name" : "ScriptingService",
+      "collection" : false
+    },
+    "createdBy" : "null",
+    "creationDate" : "0",
+    "language" : "JAVASCRIPT",
+    "script" : "var userName = sharedState.get(\"username\");\nsharedState.put(\"userInfo\",{userNames: [userName], \"attributes\": {userName: [userName], mail: [userName], givenName: [userName], sn: [userName], \"iplanet-am-user-alias-list\":[userName]}});\nsharedState.put(\"objectAttributes\", {userName: userName, mail: userName, givenName: userName, sn: userName});\nlogger.error(\"sharedState: \" + JSON.stringify(sharedState))\noutcome=\"true\";",
+    "description" : null,
+    "lastModifiedBy" : "null",
+    "context" : "AUTHENTICATION_TREE_DECISION_NODE",
+    "lastModifiedDate" : "0",
+    "name" : "UserInfo"
+  }
+}

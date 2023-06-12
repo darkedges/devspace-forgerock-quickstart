@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OneTimePasswordGeneratorNode",
+    "entityId" : "default/be2cfec8-5e7a-47db-bc06-29dacedd2db1",
+    "uid" : "ou=be2cfec8-5e7a-47db-bc06-29dacedd2db1,ou=default,ou=OrganizationConfig,ou=1.0,ou=OneTimePasswordGeneratorNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "be2cfec8-5e7a-47db-bc06-29dacedd2db1" ]
+  },
+  "data" : {
+    "_id" : "default/be2cfec8-5e7a-47db-bc06-29dacedd2db1",
+    "_type" : {
+      "_id" : "OneTimePasswordGeneratorNode",
+      "name" : "OneTimePasswordGeneratorNode",
+      "collection" : false
+    },
+    "length" : 8
+  }
+}
