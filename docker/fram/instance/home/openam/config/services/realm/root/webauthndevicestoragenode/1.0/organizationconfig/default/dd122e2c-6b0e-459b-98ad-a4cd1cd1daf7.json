@@ -6,8 +6,12 @@
       "collection": false,
       "name": "WebAuthnDeviceStorageNode"
     },
-    "generateRecoveryCodes": true,
-    "maxSavedDevices": 0
+    "generateRecoveryCodes": {
+      "$bool": "&{am.auth.tree.webauthns.generateRecoveryCodes|true}"
+    },
+    "maxSavedDevices": {
+      "$int": "&{am.auth.tree.webauthn.maxSavedDevices|0}"
+    }
   },
   "metadata": {
     "entityId": "default/dd122e2c-6b0e-459b-98ad-a4cd1cd1daf7",

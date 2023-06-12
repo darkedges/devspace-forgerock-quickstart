@@ -1,27 +1,42 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "WebAuthnAuthenticationNode",
-    "entityId" : "default/b72fa182-7656-488f-a470-4084ea56066f",
-    "uid" : "ou=b72fa182-7656-488f-a470-4084ea56066f,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "top", "sunServiceComponent" ],
-    "pathParams" : { },
-    "ou" : [ "b72fa182-7656-488f-a470-4084ea56066f" ]
+  "metadata": {
+    "realm": "/",
+    "entityType": "WebAuthnAuthenticationNode",
+    "entityId": "default/b72fa182-7656-488f-a470-4084ea56066f",
+    "uid": "ou=b72fa182-7656-488f-a470-4084ea56066f,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "pathParams": {},
+    "ou": [
+      "b72fa182-7656-488f-a470-4084ea56066f"
+    ]
   },
-  "data" : {
-    "_id" : "default/b72fa182-7656-488f-a470-4084ea56066f",
-    "_type" : {
-      "_id" : "WebAuthnAuthenticationNode",
-      "name" : "WebAuthnAuthenticationNode",
-      "collection" : false
+  "data": {
+    "_id": "default/b72fa182-7656-488f-a470-4084ea56066f",
+    "_type": {
+      "_id": "WebAuthnAuthenticationNode",
+      "name": "WebAuthnAuthenticationNode",
+      "collection": false
     },
-    "requiresResidentKey" : false,
-    "asScript" : false,
-    "relyingPartyDomain" : "auth.connectid.darkedges.com",
-    "origins" : [ ],
-    "userVerificationRequirement" : "PREFERRED",
-    "timeout" : 60,
-    "isRecoveryCodeAllowed" : false
+    "requiresResidentKey": {
+      "$bool": "&{am.auth.tree.webauthn.authentication.requiresResidentKey|false}"
+    },
+    "asScript": {
+      "$bool": "&{am.auth.tree.webauthn.asScript|true}"
+    },
+    "relyingPartyDomain": "&{am.auth.tree.webauthn.relyingPartyDomain|}",
+    "origins": {
+      "$array": "&{am.auth.tree.webauthn.origins|[]}"
+    },
+    "userVerificationRequirement": "&{am.auth.tree.webauthn.userVerificationRequirement|PREFERRED}",
+    "timeout": {
+      "$int": "&{am.auth.tree.webauthn.authentication.timeout|60}"
+    },
+    "isRecoveryCodeAllowed": {
+      "$bool": "&{am.auth.tree.webauthn.authentication.isRecoveryCodeAllowed|false}"
+    }
   }
 }
