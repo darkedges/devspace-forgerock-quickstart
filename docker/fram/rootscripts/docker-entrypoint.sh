@@ -78,7 +78,7 @@ init() {
         echo "Starting configuration"
         echo "-> Starting Tomcat"
         ${TOMCAT_HOME}/bin/catalina.sh start
-        until $(curl --output /dev/null --silent --head --fail ${SERVER_SCHEME}://localhost:${SERVER_PORT});
+        until $(curl --output /dev/null --silent --head --fail ${SERVER_SCHEME}://${SERVER_URL}:${SERVER_PORT});
         do
             echo "-->Waiting for OpenAM to be available"
             sleep 10
