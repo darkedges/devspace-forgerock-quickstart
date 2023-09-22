@@ -1,2 +1,3 @@
 .devspace
 docker/frim5.5/
+docker/fram/instance/home/openam/var/debug/debug.out

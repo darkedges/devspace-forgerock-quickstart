@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "WebAuthnAuthenticationNode",
+    "entityId" : "default/ce76d87f-be0a-4a24-8a88-5dfe40f61424",
+    "uid" : "ou=ce76d87f-be0a-4a24-8a88-5dfe40f61424,ou=default,ou=OrganizationConfig,ou=1.0,ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : [ "ce76d87f-be0a-4a24-8a88-5dfe40f61424" ]
+  },
+  "data" : {
+    "_id" : "default/ce76d87f-be0a-4a24-8a88-5dfe40f61424",
+    "_type" : {
+      "_id" : "WebAuthnAuthenticationNode",
+      "name" : "WebAuthnAuthenticationNode",
+      "collection" : false
+    },
+    "requiresResidentKey" : true,
+    "asScript" : false,
+    "relyingPartyDomain" : "de.zkp.au",
+    "origins" : [ ],
+    "userVerificationRequirement" : "DISCOURAGED",
+    "timeout" : 60,
+    "isRecoveryCodeAllowed" : false
+  }
+}
