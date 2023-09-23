@@ -23,7 +23,7 @@
         "displayName" : "WebAuthn Authentication Node",
         "nodeType" : "WebAuthnAuthenticationNode",
         "x" : 152,
-        "y" : 32.7890625,
+        "y" : 33,
         "connections" : {
           "failure" : "e301438c-0bd0-429c-ab0c-66126501069a",
           "unsupported" : "b5fc1ce9-1c5a-4d21-8a77-de968a69596f",
@@ -35,8 +35,8 @@
       "ba5d3572-dcd9-4959-b7f0-77f1f25c2df5" : {
         "displayName" : "WebAuthn Registration Node",
         "nodeType" : "WebAuthnRegistrationNode",
-        "x" : 573.59375,
-        "y" : 41.359375,
+        "x" : 574,
+        "y" : 41,
         "connections" : {
           "unsupported" : "1f1df5e9-ec94-4919-8afe-cfe39881820d",
           "success" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",

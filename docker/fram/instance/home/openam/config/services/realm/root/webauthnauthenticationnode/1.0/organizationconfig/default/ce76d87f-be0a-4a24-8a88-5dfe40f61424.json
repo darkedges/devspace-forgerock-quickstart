@@ -18,8 +18,8 @@
     },
     "requiresResidentKey" : true,
     "asScript" : false,
-    "relyingPartyDomain" : "de.zkp.au",
-    "origins" : [ ],
+    "relyingPartyDomain" : "darkedges.com.au",
+    "origins" : [ "android:apk-key-hash:WpLmDOoZYqbgxGj9M3WpMy8A6K6BP1kJzFMuRu2u_gw" ],
     "userVerificationRequirement" : "DISCOURAGED",
     "timeout" : 60,
     "isRecoveryCodeAllowed" : false
