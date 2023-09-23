@@ -1,136 +1,100 @@
 version: "3.8"
 
 services:
-  # tomcat:
-  #   image: devspace-forgerock-quickstart/tomcat:9.0.65-11.0.14_9-alpine
-  #   build:
-  #     context: ./docker/tomcat
-  frig:
+  dfq-ig:
     container_name: dfq-ig
     image: devspace-forgerock-quickstart/frig:7.2.0-fbc
     build:
       context: ./docker/frig
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 512M
+    env_file:
+      - .env/frig/.env
     ports:
       - "8082:8080/tcp"
+    depends_on:
+      dfq-am:
+        condition: service_healthy
     links:
-      - fram:dfq-am
+      - dfq-am:fram
     networks:
       localdev:
         aliases:
           - frig.darkedges.localdev
-  fram:
+  dfq-am:
     container_name: dfq-am
     image: devspace-forgerock-quickstart/fram:7.2.0-fbc
     build:
       context: ./docker/fram
       args:
         CONFIG_HOME: /opt/amster/config
+    command: start
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2048M
+        reservations:
+          cpus: "1"
+          memory: 2048M
     volumes:
-      - darkedgessecrets:/mnt/secrets:r
-      - darkedgessecrets:/opt/fr/var/config/fram/config/secrets:rw
-      - darkedgesfram:/home/forgerock/openam:rw
+      - secrets:/var/run/secrets:r
     env_file:
-      - ./docker/fram/.env
+      - .env/fram/.env
     ports:
       - "8081:8080/tcp"
-    # links:
-    #   - frdsuser
-    #   - frdsamconfig
-    #   - frdsamcts
+    links:
+      - dfq-ds:frds
     healthcheck:
       test: curl --include --retry 10 --retry-connrefused 'http://localhost:8080/openam/json/health/live' || exit 1
-    # depends_on:
-    #   frdsuser:
-    #     condition: service_healthy
-    #   frdsamconfig:
-    #     condition: service_healthy
-    #   frdsamcts:
-    #     condition: service_healthy
+    depends_on:
+      dfq-ds:
+        condition: service_healthy
     networks:
       localdev:
         aliases:
           - fram.darkedges.localdev
-  # frdsuser:
-  #   container_name: frdsuser
-  #   image: darkedges/frds:7.1.4_user
-  #   build:
-  #     context: ../fre-frds-user-config
-  #     args:
-  #       FRDS_ARCHIVE: DS-7.1.4.zip
-  #       FRDS_ARCHIVE_REPOSITORY_URL: https://artifactory.gcp.darkedges/artifactory/Digitalsecurity/binaries/ForgeRock/frds/7.1.4/
-  #   command: dev_start
-  #   environment:
-  #     INIT_INSTANCE_LDIF: true
-  #     INIT_INSTANCE_PROFILE_VERSION: 6.5.0
-  #   volumes:
-  #     - darkedgessecrets:/mnt/secrets:r
-  #     - darkedgesfrdsuser:/opt/fr/opendj/instance/data:rw
-  #   ports:
-  #     - "11636:1636/tcp"
-  #     - "11389:1389/tcp"
-  #   healthcheck:
-  #     test: [ "CMD", "/opt/fr/opendj/checkHealth.sh" ]
-  #     interval: 10s
-  #     timeout: 10s
-  #     retries: 3
-  #     start_period: 30s
-  #   networks:
-  #     - localdev
-  # frdsamconfig:
-  #   container_name: frdsamconfig
-  #   image: darkedges/frds:7.1.4_amconfig
-  #   build:
-  #     context: ../fre-frds-am-config
-  #     args:
-  #       FRDS_ARCHIVE: DS-7.1.4.zip
-  #       FRDS_ARCHIVE_REPOSITORY_URL: https://artifactory.gcp.darkedges/artifactory/Digitalsecurity/binaries/ForgeRock/frds/7.1.4/
-  #   command: init_start
-  #   environment:
-  #     INIT_INSTANCE_PROFILE_VERSION: 6.5.0
-  #   volumes:
-  #     - darkedgessecrets:/mnt/secrets:r
-  #     - darkedgesfrdsamconfig:/opt/fr/opendj/instance/data:rw
-  #   ports:
-  #     - "21636:1636/tcp"
-  #     - "21389:1389/tcp"
-  #   healthcheck:
-  #     test: [ "CMD", "/opt/fr/opendj/checkHealth.sh" ]
-  #     interval: 10s
-  #     timeout: 10s
-  #     retries: 3
-  #     start_period: 30s
-  #   networks:
-  #     - localdev
-  # frdsamcts:
-  #   container_name: frdsamcts
-  #   image: darkedges/frds:7.1.4_amcts
-  #   build:
-  #     context: ../fre-frds-cts-config
-  #     args:
-  #       FRDS_ARCHIVE: DS-7.1.4.zip
-  #       FRDS_ARCHIVE_REPOSITORY_URL: https://artifactory.gcp.darkedges/artifactory/Digitalsecurity/binaries/ForgeRock/frds/7.1.4/
-  #   command: init_start
-  #   environment:
-  #     INIT_INSTANCE_PROFILE_VERSION: 6.5.0
-  #   volumes:
-  #     - darkedgessecrets:/mnt/secrets:r
-  #     - darkedgesfrdsamcts:/opt/fr/opendj/instance/data:rw
-  #   ports:
-  #     - "31636:1636/tcp"
-  #     - "31389:1389/tcp"
-  #   healthcheck:
-  #     test: [ "CMD", "/opt/fr/opendj/checkHealth.sh" ]
-  #     interval: 10s
-  #     timeout: 10s
-  #     retries: 3
-  #     start_period: 30s
-  #   networks:
-  #     - localdev
+  dfq-ds:
+    container_name: dfq-ds
+    image: devspace-forgerock-quickstart/frds:7.2.0-fbc
+    build:
+      context: docker/frds
+    command: init_start
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 512M
+    environment:
+      INIT_INSTANCE_LDIF: true
+      INIT_INSTANCE_PROFILE_VERSION: 7.1.0
+    env_file:
+      - .env/frds/.env
+    volumes:
+      - secrets:/var/run/secrets:r
+      - frds-development:/opt/frds/instance/data:rw
+    ports:
+      - "11636:1636/tcp"
+      - "11389:1389/tcp"
+    healthcheck:
+      test: [ "CMD", "/opt/frds/healthCheck.sh" ]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - localdev
 volumes:
-  darkedgessecrets:
-  darkedgesfrdsuser:
-  darkedgesfrdsamconfig:
-  darkedgesfrdsamcts:
-  darkedgesfram:
+  secrets:
+  frds-development:
 networks:
   localdev:

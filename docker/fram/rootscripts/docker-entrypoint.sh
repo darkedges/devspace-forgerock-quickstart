@@ -145,7 +145,6 @@ EOF
 }
 
 start() {
-    ${TOMCAT_HOME}/bin/catalina.sh stop -force
     ${TOMCAT_HOME}/bin/catalina.sh run
 }
 
@@ -164,6 +163,9 @@ docker_start)
     init
     start
     ;;
+start)
+    start
+    ;; 
 stop)
     stop
     ;;

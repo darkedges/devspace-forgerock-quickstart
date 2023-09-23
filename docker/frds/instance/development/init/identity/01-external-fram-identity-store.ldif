@@ -26,3 +26,29 @@ mail: demo@demo.com
 uid: demo@demo.com
 userPassword: mlZ5sWM72@6%
 
+dn: uid=nirving,ou=people,ou=identities
+objectclass: devicePrintProfilesContainer
+objectclass: deviceProfilesContainer
+objectclass: forgerock-am-dashboard-service
+objectclass: inetorgperson
+objectclass: inetuser
+objectclass: iplanet-am-auth-configuration-service
+objectclass: iplanet-am-managed-person
+objectclass: iplanet-am-user-service
+objectclass: iPlanetPreferences
+objectclass: kbaInfoContainer
+objectclass: oathDeviceProfilesContainer
+objectclass: organizationalperson
+objectclass: person
+objectclass: pushDeviceProfilesContainer
+objectclass: sunAMAuthAccountLockout
+objectclass: sunFMSAML2NameIdentifier
+objectclass: top
+objectclass: webauthnDeviceProfilesContainer
+cn: Nicholas Irving
+sn: Irving
+inetUserStatus: Active
+mail: nirving@darkedges.com
+uid: nirving
+userPassword: Abcd!234
+

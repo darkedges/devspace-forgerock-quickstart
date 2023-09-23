@@ -28,7 +28,11 @@ init_deploymentkey() {
 init() {
     echo "Initializing with profile: ${INIT_INSTANCE_PROFILE}"
     if [ -d "/opt/frds/instance/data/config" ]; then
-        ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
+         if [ -d "/opt/frds/instance/data/init_complete" ]; then
+             if [ "${INIT_INSTANCE_LDIF}" = true]; then
+                ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
+            fi
+        fi
     else
         rm -rf instance.loc
         ./default-scripts/${INIT_INSTANCE_PROFILE}/setup.sh
@@ -45,6 +49,7 @@ CMD="${1:-run}"
 
 case "$CMD" in
 devspace)
+    init
     start
     ;;
 start)

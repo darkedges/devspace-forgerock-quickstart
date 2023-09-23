@@ -10,4 +10,5 @@ for i in "${ldif[@]}"
 do
    ldapmodify -h localhost -p 1636 -X -Z -Duid=admin -wPassw0rd -f /opt/frds/instance/init/${i}
 done
+touch /opt/frds/instance/data/init_complete
 /opt/frds/bin/stop-ds
