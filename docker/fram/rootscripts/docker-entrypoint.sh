@@ -58,6 +58,8 @@ export AM_STORES_USER_TYPE=${AM_STORES_USER_TYPE:-LDAPv3ForOpenDS}
 export AM_STORES_USER_USERNAME=${AM_STORES_USER_USERNAME:-uid=am-identity-bind-account,ou=admins,ou=identities}
 export SECURITY_PATH=${SECURITY_PATH:-${FRAM_HOME}/security}
 
+env|sort
+
 if [ -z "$SERVER_URL" ]; then
     NAMESPACE="$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace)"
     SERVICE_DOMAIN=${HOSTNAME%-*}
