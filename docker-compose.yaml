@@ -93,8 +93,71 @@ services:
       start_period: 30s
     networks:
       - localdev
+  dfq-vault:
+    container_name: vault
+    image: darkedges/vault:1.15.1
+    build: ./docker/vault
+    environment:
+      VAULT_ADDR: "http://0.0.0.0:8200"
+      VAULT_API_ADDR: "http://0.0.0.0:8200"
+    ports:
+      - "8201:8200/tcp"
+    volumes:
+      - vault:/vault/file:rw
+      - ./docker/vault/config:/vault/config
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -log-level trace -config /vault/config/vault-server.json
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8200 || exit 1
+      interval: 10s
+      retries: 12
+      start_period: 10s
+      timeout: 10s
+    networks:
+      localdev:
+        aliases:
+          - vault.darkedges.localdev
+  dfq-vault-init:
+    image: darkedges/vault:1.13.2
+    volumes:
+      - vault:/vault/file:r
+    environment:
+      VAULT_ADDR: "http://vault.darkedges.localdev:8200"
+    container_name: vault-init
+    entrypoint: /bin/sh -c "source /vault-init.sh"
+    depends_on:
+      dfq-vault:
+        condition: service_healthy
+    networks:
+      - localdev
+  dfq-terraform:
+    container_name: vault-init
+    image: darkedges/terraform:1.6.3
+    build: ./docker/terraform
+    environment:
+      VAULT_ADDR: "http://vault.darkedges.localdev:8200"
+      KUBECONFIG: /kube/config
+    working_dir: /mnt/init
+    volumes:
+      - terraform:/mnt/terraform:rw
+      - vault:/vault/file:r
+      - vaultagent:/vault/agent:rw
+      - secrets:/mnt/secrets:rw
+      - ~/.kube:/root/.kube
+    entrypoint: /bin/sh -c "source /init-vault.sh"
+    depends_on:
+      - dfq-vault-init
+    links:
+      - dfq-vault
+    restart: "no"
+    networks:
+      - localdev
 volumes:
   secrets:
   frds-development:
+  vault:
+  vaultagent:
+  terraform:
 networks:
   localdev:
