@@ -1,30 +1,23 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "sunAMDelegationService",
-    "entityId": "default/Permissions/SAML2RestAdmin",
-    "uid": "ou=SAML2RestAdmin,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
-    "sunServiceID": "Permission",
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "sunAMDelegationService",
+    "entityId" : "default/Permissions/SAML2RestAdmin",
+    "uid" : "ou=SAML2RestAdmin,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
+    "sunServiceID" : "Permission",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default/Permissions/SAML2RestAdmin",
-    "_type": {
-      "_id": "sunAMDelegationService",
-      "name": "sunAMDelegationService",
-      "collection": false
+  "data" : {
+    "_id" : "default/Permissions/SAML2RestAdmin",
+    "_type" : {
+      "_id" : "sunAMDelegationService",
+      "name" : "sunAMDelegationService",
+      "collection" : false
     },
-    "actions": [
-      "READ",
-      "MODIFY"
-    ],
-    "resource": [
-      "REALM/rest/1.0/realm-config/saml2/*"
-    ]
+    "actions" : [ "READ", "MODIFY" ],
+    "resource" : [ "REALM/rest/1.0/realm-config/saml2/*" ]
   }
 }

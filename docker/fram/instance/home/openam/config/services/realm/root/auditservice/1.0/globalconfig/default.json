@@ -1,27 +1,24 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "AuditService",
-    "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=AuditService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "AuditService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=AuditService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "AuditService",
-      "name": "AuditService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "AuditService",
+      "name" : "AuditService",
+      "collection" : false
     },
-    "auditEnabled": true,
-    "whitelistFieldFilters": [],
-    "blacklistFieldFilters": []
+    "auditEnabled" : true,
+    "whitelistFieldFilters" : [ ],
+    "blacklistFieldFilters" : [ ]
   }
 }

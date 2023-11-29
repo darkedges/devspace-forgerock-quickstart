@@ -1,28 +1,25 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthAmsterService",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthAmsterService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "iPlanetAMAuthAmsterService",
-      "name": "iPlanetAMAuthAmsterService",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "iPlanetAMAuthAmsterService",
+      "name" : "iPlanetAMAuthAmsterService",
+      "collection" : false
     },
-    "authorizedKeys": "&{security.path}/secrets/amster/authorized_keys",
-    "authenticationLevel": 0,
-    "enabled": true,
-    "RequiredValueValidator": "com.sun.identity.sm.RequiredValueValidator"
+    "authorizedKeys" : "&{security.path}/secrets/amster/authorized_keys",
+    "authenticationLevel" : 0,
+    "enabled" : true,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "OptOutMultiFactorAuthenticationNode",
-    "entityId": "OptOutMultiFactorAuthenticationNode",
-    "uid": "ou=OptOutMultiFactorAuthenticationNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OptOutMultiFactorAuthenticationNode",
+    "entityId" : "OptOutMultiFactorAuthenticationNode",
+    "uid" : "ou=OptOutMultiFactorAuthenticationNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OptOutMultiFactorAuthenticationNode",
-    "_type": {
-      "_id": "OptOutMultiFactorAuthenticationNode",
-      "name": "OptOutMultiFactorAuthenticationNode",
-      "collection": false
+  "data" : {
+    "_id" : "OptOutMultiFactorAuthenticationNode",
+    "_type" : {
+      "_id" : "OptOutMultiFactorAuthenticationNode",
+      "name" : "OptOutMultiFactorAuthenticationNode",
+      "collection" : false
     }
   }
 }

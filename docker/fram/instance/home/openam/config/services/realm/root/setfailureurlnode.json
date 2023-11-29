@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "SetFailureUrlNode",
-    "entityId": "SetFailureUrlNode",
-    "uid": "ou=SetFailureUrlNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "SetFailureUrlNode",
+    "entityId" : "SetFailureUrlNode",
+    "uid" : "ou=SetFailureUrlNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "SetFailureUrlNode",
-    "_type": {
-      "_id": "SetFailureUrlNode",
-      "name": "SetFailureUrlNode",
-      "collection": false
+  "data" : {
+    "_id" : "SetFailureUrlNode",
+    "_type" : {
+      "_id" : "SetFailureUrlNode",
+      "name" : "SetFailureUrlNode",
+      "collection" : false
     }
   }
 }

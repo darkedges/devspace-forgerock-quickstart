@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMPlatformService",
-    "entityId": "PluginConfig",
-    "uid": "ou=PluginConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMPlatformService",
+    "entityId" : "PluginConfig",
+    "uid" : "ou=PluginConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "PluginConfig",
-    "_type": {
-      "_id": "iPlanetAMPlatformService",
-      "name": "iPlanetAMPlatformService",
-      "collection": false
+  "data" : {
+    "_id" : "PluginConfig",
+    "_type" : {
+      "_id" : "iPlanetAMPlatformService",
+      "name" : "iPlanetAMPlatformService",
+      "collection" : false
     }
   }
 }

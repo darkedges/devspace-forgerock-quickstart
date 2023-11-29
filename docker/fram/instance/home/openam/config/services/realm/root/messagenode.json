@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "MessageNode",
-    "entityId": "MessageNode",
-    "uid": "ou=MessageNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "MessageNode",
+    "entityId" : "MessageNode",
+    "uid" : "ou=MessageNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "MessageNode",
-    "_type": {
-      "_id": "MessageNode",
-      "name": "MessageNode",
-      "collection": false
+  "data" : {
+    "_id" : "MessageNode",
+    "_type" : {
+      "_id" : "MessageNode",
+      "name" : "MessageNode",
+      "collection" : false
     }
   }
 }

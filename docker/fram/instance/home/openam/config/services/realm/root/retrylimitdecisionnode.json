@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "RetryLimitDecisionNode",
-    "entityId": "RetryLimitDecisionNode",
-    "uid": "ou=RetryLimitDecisionNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "RetryLimitDecisionNode",
+    "entityId" : "RetryLimitDecisionNode",
+    "uid" : "ou=RetryLimitDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "RetryLimitDecisionNode",
-    "_type": {
-      "_id": "RetryLimitDecisionNode",
-      "name": "RetryLimitDecisionNode",
-      "collection": false
+  "data" : {
+    "_id" : "RetryLimitDecisionNode",
+    "_type" : {
+      "_id" : "RetryLimitDecisionNode",
+      "name" : "RetryLimitDecisionNode",
+      "collection" : false
     }
   }
 }

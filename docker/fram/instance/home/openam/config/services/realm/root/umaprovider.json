@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "UmaProvider",
-    "entityId": "UmaProvider",
-    "uid": "ou=UmaProvider,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "UmaProvider",
+    "entityId" : "UmaProvider",
+    "uid" : "ou=UmaProvider,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "UmaProvider",
-    "_type": {
-      "_id": "UmaProvider",
-      "name": "UmaProvider",
-      "collection": false
+  "data" : {
+    "_id" : "UmaProvider",
+    "_type" : {
+      "_id" : "UmaProvider",
+      "name" : "UmaProvider",
+      "collection" : false
     }
   }
 }

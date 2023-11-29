@@ -1,29 +1,26 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "RemoteConsentService",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RemoteConsentService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "RemoteConsentService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RemoteConsentService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "RemoteConsentService",
-      "name": "RemoteConsentService",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "RemoteConsentService",
+      "name" : "RemoteConsentService",
+      "collection" : false
     },
-    "clientId": null,
-    "consentResponseTimeLimit": 2,
-    "jwkStoreCacheMissCacheTime": 1,
-    "jwksUriAS": null,
-    "jwkStoreCacheTimeout": 5
+    "clientId" : null,
+    "consentResponseTimeLimit" : 2,
+    "jwkStoreCacheMissCacheTime" : 1,
+    "jwksUriAS" : null,
+    "jwkStoreCacheTimeout" : 5
   }
 }

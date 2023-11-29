@@ -2,7 +2,7 @@
 
 TOMCAT_HOME=/usr/local/tomcat
 FRAM_ADMIN_PASSWORD=${FRAM_ADMIN_PASSWORD:-changeit}
-SERVER_URL=${SERVER_URL:-https://localhost:8443/openam/}
+SERVER_URL=${SERVER_URL:-http://localhost:8080/openam/}
 AM_KEY=${AM_KEY:-changeit}
 export CATALINA_OPTS="${CATALINA_OPTS} -Dcom.sun.identity.sm.filebased_embedded_enabled=true"
 
@@ -18,6 +18,6 @@ done
 echo "->Tomcat started"
 echo "->Configuring OpenAM"
 /opt/amster/config/importConfig.sh install
-/opt/amster/config/importConfig.sh darkedges
+/opt/amster/config/importConfig.sh core
 ${TOMCAT_HOME}/bin/catalina.sh stop -force
 

@@ -1,31 +1,28 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "DeviceId",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceId,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "DeviceId",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceId,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "DeviceId",
-      "name": "DeviceId",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "DeviceId",
+      "name" : "DeviceId",
+      "collection" : false
     },
-    "deviceIdSettingsEncryptionKeystoreType": "JKS",
-    "deviceIdSettingsEncryptionKeystoreKeyPairAlias": null,
-    "deviceIdSettingsEncryptionKeystore": "/home/forgerock/openam/security/keystores/keystore.jks",
-    "deviceIdAttrName": "devicePrintProfiles",
-    "deviceIdSettingsEncryptionScheme": "NONE",
-    "deviceIdSettingsEncryptionKeystorePassword": "&{am.keystore.default.password}",
-    "deviceIdSettingsEncryptionKeystorePrivateKeyPassword": "&{am.keystore.default.entry.password}"
+    "deviceIdSettingsEncryptionKeystoreType" : "JKS",
+    "deviceIdSettingsEncryptionKeystoreKeyPairAlias" : null,
+    "deviceIdSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
+    "deviceIdAttrName" : "devicePrintProfiles",
+    "deviceIdSettingsEncryptionScheme" : "NONE",
+    "deviceIdSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
+    "deviceIdSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}"
   }
 }

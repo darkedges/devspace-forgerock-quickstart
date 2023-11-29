@@ -1,27 +1,22 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "iPlanetAMAuthConfiguration",
-    "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "iPlanetAMAuthConfiguration",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "iPlanetAMAuthConfiguration",
-      "name": "iPlanetAMAuthConfiguration",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "iPlanetAMAuthConfiguration",
+      "name" : "iPlanetAMAuthConfiguration",
+      "collection" : false
     },
-    "serviceObjectClasses": [
-      "iplanet-am-auth-configuration-service"
-    ]
+    "serviceObjectClasses" : [ "iplanet-am-auth-configuration-service" ]
   }
 }

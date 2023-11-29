@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "OathRegistrationNode",
-    "entityId": "OathRegistrationNode",
-    "uid": "ou=OathRegistrationNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OathRegistrationNode",
+    "entityId" : "OathRegistrationNode",
+    "uid" : "ou=OathRegistrationNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OathRegistrationNode",
-    "_type": {
-      "_id": "OathRegistrationNode",
-      "name": "OathRegistrationNode",
-      "collection": false
+  "data" : {
+    "_id" : "OathRegistrationNode",
+    "_type" : {
+      "_id" : "OathRegistrationNode",
+      "name" : "OathRegistrationNode",
+      "collection" : false
     }
   }
 }

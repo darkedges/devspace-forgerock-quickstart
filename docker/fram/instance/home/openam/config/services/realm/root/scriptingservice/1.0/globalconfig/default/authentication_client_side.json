@@ -1,29 +1,24 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "ScriptingService",
-    "entityId": "default/AUTHENTICATION_CLIENT_SIDE",
-    "uid": "ou=AUTHENTICATION_CLIENT_SIDE,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
-    "sunServiceID": "scriptContext",
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "ScriptingService",
+    "entityId" : "default/AUTHENTICATION_CLIENT_SIDE",
+    "uid" : "ou=AUTHENTICATION_CLIENT_SIDE,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
+    "sunServiceID" : "scriptContext",
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default/AUTHENTICATION_CLIENT_SIDE",
-    "_type": {
-      "_id": "ScriptingService",
-      "name": "ScriptingService",
-      "collection": false
+  "data" : {
+    "_id" : "default/AUTHENTICATION_CLIENT_SIDE",
+    "_type" : {
+      "_id" : "ScriptingService",
+      "name" : "ScriptingService",
+      "collection" : false
     },
-    "i18nKey": "script-type-03",
-    "languages": [
-      "JAVASCRIPT",
-      "GROOVY"
-    ],
-    "defaultScript": "[Empty]"
+    "i18nKey" : "script-type-03",
+    "languages" : [ "JAVASCRIPT", "GROOVY" ],
+    "defaultScript" : "[Empty]"
   }
 }

@@ -7,7 +7,8 @@
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : null
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
   "data" : {
     "_id" : "default/192eb825-afaa-4346-862d-197e77afc315",

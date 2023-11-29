@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "CookiePresenceDecisionNode",
-    "entityId": "CookiePresenceDecisionNode",
-    "uid": "ou=CookiePresenceDecisionNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "CookiePresenceDecisionNode",
+    "entityId" : "CookiePresenceDecisionNode",
+    "uid" : "ou=CookiePresenceDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "CookiePresenceDecisionNode",
-    "_type": {
-      "_id": "CookiePresenceDecisionNode",
-      "name": "CookiePresenceDecisionNode",
-      "collection": false
+  "data" : {
+    "_id" : "CookiePresenceDecisionNode",
+    "_type" : {
+      "_id" : "CookiePresenceDecisionNode",
+      "name" : "CookiePresenceDecisionNode",
+      "collection" : false
     }
   }
 }

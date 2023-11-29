@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "RemoteConsentService",
-    "entityId": "RemoteConsentService",
-    "uid": "ou=RemoteConsentService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "RemoteConsentService",
+    "entityId" : "RemoteConsentService",
+    "uid" : "ou=RemoteConsentService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "RemoteConsentService",
-    "_type": {
-      "_id": "RemoteConsentService",
-      "name": "RemoteConsentService",
-      "collection": false
+  "data" : {
+    "_id" : "RemoteConsentService",
+    "_type" : {
+      "_id" : "RemoteConsentService",
+      "name" : "RemoteConsentService",
+      "collection" : false
     }
   }
 }

@@ -7,7 +7,8 @@
     "sunServiceID" : null,
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [ "default" ],
+    "amsterVersion" : "7.4.0"
   },
   "data" : {
     "_id" : "default",
@@ -78,7 +79,9 @@
       "supportedScopes" : [ "am-introspect-all-tokens", "am-introspect-all-tokens-any-realm", "fr:idm:*", "openid" ],
       "authenticationAttributes" : [ "uid" ],
       "tlsClientCertificateTrustedHeader" : null,
-      "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:openid:params:grant-type:ciba", "urn:ietf:params:oauth:grant-type:uma-ticket", "urn:ietf:params:oauth:grant-type:token-exchange", "urn:ietf:params:oauth:grant-type:jwt-bearer" ]
+      "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:openid:params:grant-type:ciba", "urn:ietf:params:oauth:grant-type:uma-ticket", "urn:ietf:params:oauth:grant-type:token-exchange", "urn:ietf:params:oauth:grant-type:jwt-bearer" ],
+      "allowClientCredentialsInTokenRequestQueryParameters" : true,
+      "includeSubnameInTokenClaims" : true
     },
     "clientDynamicRegistrationConfig" : {
       "dynamicClientRegistrationScope" : "dynamic_client_registration",

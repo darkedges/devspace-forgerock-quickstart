@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunFAMSAML2Configuration",
-    "entityId": "sunFAMSAML2Configuration",
-    "uid": "ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunFAMSAML2Configuration",
+    "entityId" : "sunFAMSAML2Configuration",
+    "uid" : "ou=sunFAMSAML2Configuration,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunFAMSAML2Configuration",
-    "_type": {
-      "_id": "sunFAMSAML2Configuration",
-      "name": "sunFAMSAML2Configuration",
-      "collection": false
+  "data" : {
+    "_id" : "sunFAMSAML2Configuration",
+    "_type" : {
+      "_id" : "sunFAMSAML2Configuration",
+      "name" : "sunFAMSAML2Configuration",
+      "collection" : false
     }
   }
 }

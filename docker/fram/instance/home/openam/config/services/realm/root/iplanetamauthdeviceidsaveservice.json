@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthDeviceIdSaveService",
-    "entityId": "iPlanetAMAuthDeviceIdSaveService",
-    "uid": "ou=iPlanetAMAuthDeviceIdSaveService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthDeviceIdSaveService",
+    "entityId" : "iPlanetAMAuthDeviceIdSaveService",
+    "uid" : "ou=iPlanetAMAuthDeviceIdSaveService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "iPlanetAMAuthDeviceIdSaveService",
-    "_type": {
-      "_id": "iPlanetAMAuthDeviceIdSaveService",
-      "name": "iPlanetAMAuthDeviceIdSaveService",
-      "collection": false
+  "data" : {
+    "_id" : "iPlanetAMAuthDeviceIdSaveService",
+    "_type" : {
+      "_id" : "iPlanetAMAuthDeviceIdSaveService",
+      "name" : "iPlanetAMAuthDeviceIdSaveService",
+      "collection" : false
     }
   }
 }

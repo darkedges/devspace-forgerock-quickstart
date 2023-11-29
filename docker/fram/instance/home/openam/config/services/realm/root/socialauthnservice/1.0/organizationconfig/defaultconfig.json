@@ -1,29 +1,26 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "socialAuthNService",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=socialAuthNService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "socialAuthNService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=socialAuthNService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "socialAuthNService",
-      "name": "socialAuthNService",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "socialAuthNService",
+      "name" : "socialAuthNService",
+      "collection" : false
     },
-    "displayNames": {},
-    "enabledKeys": [],
-    "authenticationChains": {},
-    "MapValueValidator": "com.sun.identity.common.configuration.MapValueValidator",
-    "icons": {}
+    "displayNames" : { },
+    "enabledKeys" : [ ],
+    "authenticationChains" : { },
+    "MapValueValidator" : "com.sun.identity.common.configuration.MapValueValidator",
+    "icons" : { }
   }
 }

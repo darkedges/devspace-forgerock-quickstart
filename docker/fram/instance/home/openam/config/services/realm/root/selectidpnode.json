@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "SelectIdPNode",
-    "entityId": "SelectIdPNode",
-    "uid": "ou=SelectIdPNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "SelectIdPNode",
+    "entityId" : "SelectIdPNode",
+    "uid" : "ou=SelectIdPNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "SelectIdPNode",
-    "_type": {
-      "_id": "SelectIdPNode",
-      "name": "SelectIdPNode",
-      "collection": false
+  "data" : {
+    "_id" : "SelectIdPNode",
+    "_type" : {
+      "_id" : "SelectIdPNode",
+      "name" : "SelectIdPNode",
+      "collection" : false
     }
   }
 }

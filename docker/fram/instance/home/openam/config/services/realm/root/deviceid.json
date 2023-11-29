@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "DeviceId",
-    "entityId": "DeviceId",
-    "uid": "ou=DeviceId,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "DeviceId",
+    "entityId" : "DeviceId",
+    "uid" : "ou=DeviceId,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "DeviceId",
-    "_type": {
-      "_id": "DeviceId",
-      "name": "DeviceId",
-      "collection": false
+  "data" : {
+    "_id" : "DeviceId",
+    "_type" : {
+      "_id" : "DeviceId",
+      "name" : "DeviceId",
+      "collection" : false
     }
   }
 }

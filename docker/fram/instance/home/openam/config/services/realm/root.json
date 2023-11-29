@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "",
-    "entityId": "am-config",
-    "uid": "ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "domain",
-      "top"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "",
+    "entityId" : "am-config",
+    "uid" : "ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "domain", "top" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "am-config",
-    "_type": {
-      "_id": "",
-      "name": "",
-      "collection": false
+  "data" : {
+    "_id" : "am-config",
+    "_type" : {
+      "_id" : "",
+      "name" : "",
+      "collection" : false
     }
   }
 }

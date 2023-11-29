@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthAuthenticatorOATHService",
-    "entityId": "iPlanetAMAuthAuthenticatorOATHService",
-    "uid": "ou=iPlanetAMAuthAuthenticatorOATHService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthAuthenticatorOATHService",
+    "entityId" : "iPlanetAMAuthAuthenticatorOATHService",
+    "uid" : "ou=iPlanetAMAuthAuthenticatorOATHService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "iPlanetAMAuthAuthenticatorOATHService",
-    "_type": {
-      "_id": "iPlanetAMAuthAuthenticatorOATHService",
-      "name": "iPlanetAMAuthAuthenticatorOATHService",
-      "collection": false
+  "data" : {
+    "_id" : "iPlanetAMAuthAuthenticatorOATHService",
+    "_type" : {
+      "_id" : "iPlanetAMAuthAuthenticatorOATHService",
+      "name" : "iPlanetAMAuthAuthenticatorOATHService",
+      "collection" : false
     }
   }
 }

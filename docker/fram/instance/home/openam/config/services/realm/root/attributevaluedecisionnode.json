@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "AttributeValueDecisionNode",
-    "entityId": "AttributeValueDecisionNode",
-    "uid": "ou=AttributeValueDecisionNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AttributeValueDecisionNode",
+    "entityId" : "AttributeValueDecisionNode",
+    "uid" : "ou=AttributeValueDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "AttributeValueDecisionNode",
-    "_type": {
-      "_id": "AttributeValueDecisionNode",
-      "name": "AttributeValueDecisionNode",
-      "collection": false
+  "data" : {
+    "_id" : "AttributeValueDecisionNode",
+    "_type" : {
+      "_id" : "AttributeValueDecisionNode",
+      "name" : "AttributeValueDecisionNode",
+      "collection" : false
     }
   }
 }

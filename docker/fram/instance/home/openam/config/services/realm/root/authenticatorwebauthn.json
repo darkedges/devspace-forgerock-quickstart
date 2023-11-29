@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "AuthenticatorWebAuthn",
-    "entityId": "AuthenticatorWebAuthn",
-    "uid": "ou=AuthenticatorWebAuthn,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AuthenticatorWebAuthn",
+    "entityId" : "AuthenticatorWebAuthn",
+    "uid" : "ou=AuthenticatorWebAuthn,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "AuthenticatorWebAuthn",
-    "_type": {
-      "_id": "AuthenticatorWebAuthn",
-      "name": "AuthenticatorWebAuthn",
-      "collection": false
+  "data" : {
+    "_id" : "AuthenticatorWebAuthn",
+    "_type" : {
+      "_id" : "AuthenticatorWebAuthn",
+      "name" : "AuthenticatorWebAuthn",
+      "collection" : false
     }
   }
 }

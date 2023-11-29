@@ -1,24 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthSocialAuthOAuth2Service",
-    "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthOAuth2Service,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthSocialAuthOAuth2Service",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthOAuth2Service,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OrganizationConfig",
-    "_type": {
-      "_id": "iPlanetAMAuthSocialAuthOAuth2Service",
-      "name": "iPlanetAMAuthSocialAuthOAuth2Service",
-      "collection": false
+  "data" : {
+    "_id" : "OrganizationConfig",
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthOAuth2Service",
+      "name" : "iPlanetAMAuthSocialAuthOAuth2Service",
+      "collection" : false
     }
   }
 }

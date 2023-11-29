@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "AcceptTermsAndConditionsNode",
-    "entityId": "AcceptTermsAndConditionsNode",
-    "uid": "ou=AcceptTermsAndConditionsNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AcceptTermsAndConditionsNode",
+    "entityId" : "AcceptTermsAndConditionsNode",
+    "uid" : "ou=AcceptTermsAndConditionsNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "AcceptTermsAndConditionsNode",
-    "_type": {
-      "_id": "AcceptTermsAndConditionsNode",
-      "name": "AcceptTermsAndConditionsNode",
-      "collection": false
+  "data" : {
+    "_id" : "AcceptTermsAndConditionsNode",
+    "_type" : {
+      "_id" : "AcceptTermsAndConditionsNode",
+      "name" : "AcceptTermsAndConditionsNode",
+      "collection" : false
     }
   }
 }

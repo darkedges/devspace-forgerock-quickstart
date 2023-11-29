@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "SocialOpenIdConnectNode",
-    "entityId": "SocialOpenIdConnectNode",
-    "uid": "ou=SocialOpenIdConnectNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "SocialOpenIdConnectNode",
+    "entityId" : "SocialOpenIdConnectNode",
+    "uid" : "ou=SocialOpenIdConnectNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "SocialOpenIdConnectNode",
-    "_type": {
-      "_id": "SocialOpenIdConnectNode",
-      "name": "SocialOpenIdConnectNode",
-      "collection": false
+  "data" : {
+    "_id" : "SocialOpenIdConnectNode",
+    "_type" : {
+      "_id" : "SocialOpenIdConnectNode",
+      "name" : "SocialOpenIdConnectNode",
+      "collection" : false
     }
   }
 }

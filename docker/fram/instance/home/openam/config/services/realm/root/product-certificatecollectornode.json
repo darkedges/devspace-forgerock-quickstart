@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "product-CertificateCollectorNode",
-    "entityId": "product-CertificateCollectorNode",
-    "uid": "ou=product-CertificateCollectorNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "product-CertificateCollectorNode",
+    "entityId" : "product-CertificateCollectorNode",
+    "uid" : "ou=product-CertificateCollectorNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "product-CertificateCollectorNode",
-    "_type": {
-      "_id": "product-CertificateCollectorNode",
-      "name": "product-CertificateCollectorNode",
-      "collection": false
+  "data" : {
+    "_id" : "product-CertificateCollectorNode",
+    "_type" : {
+      "_id" : "product-CertificateCollectorNode",
+      "name" : "product-CertificateCollectorNode",
+      "collection" : false
     }
   }
 }

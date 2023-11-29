@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunAMAuthAdaptiveService",
-    "entityId": "sunAMAuthAdaptiveService",
-    "uid": "ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunAMAuthAdaptiveService",
+    "entityId" : "sunAMAuthAdaptiveService",
+    "uid" : "ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunAMAuthAdaptiveService",
-    "_type": {
-      "_id": "sunAMAuthAdaptiveService",
-      "name": "sunAMAuthAdaptiveService",
-      "collection": false
+  "data" : {
+    "_id" : "sunAMAuthAdaptiveService",
+    "_type" : {
+      "_id" : "sunAMAuthAdaptiveService",
+      "name" : "sunAMAuthAdaptiveService",
+      "collection" : false
     }
   }
 }

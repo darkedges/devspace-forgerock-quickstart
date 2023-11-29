@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "GetAuthenticatorAppNode",
-    "entityId": "GetAuthenticatorAppNode",
-    "uid": "ou=GetAuthenticatorAppNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "GetAuthenticatorAppNode",
+    "entityId" : "GetAuthenticatorAppNode",
+    "uid" : "ou=GetAuthenticatorAppNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "GetAuthenticatorAppNode",
-    "_type": {
-      "_id": "GetAuthenticatorAppNode",
-      "name": "GetAuthenticatorAppNode",
-      "collection": false
+  "data" : {
+    "_id" : "GetAuthenticatorAppNode",
+    "_type" : {
+      "_id" : "GetAuthenticatorAppNode",
+      "name" : "GetAuthenticatorAppNode",
+      "collection" : false
     }
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "CorsService",
-    "entityId": "CorsService",
-    "uid": "ou=CorsService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "CorsService",
+    "entityId" : "CorsService",
+    "uid" : "ou=CorsService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "CorsService",
-    "_type": {
-      "_id": "CorsService",
-      "name": "CorsService",
-      "collection": false
+  "data" : {
+    "_id" : "CorsService",
+    "_type" : {
+      "_id" : "CorsService",
+      "name" : "CorsService",
+      "collection" : false
     }
   }
 }

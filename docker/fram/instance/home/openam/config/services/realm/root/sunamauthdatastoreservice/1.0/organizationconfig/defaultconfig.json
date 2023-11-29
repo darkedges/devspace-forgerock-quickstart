@@ -1,28 +1,23 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunAMAuthDataStoreService",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthDataStoreService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunAMAuthDataStoreService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthDataStoreService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "sunAMAuthDataStoreService",
-      "name": "sunAMAuthDataStoreService",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "sunAMAuthDataStoreService",
+      "name" : "sunAMAuthDataStoreService",
+      "collection" : false
     },
-    "iplanet-am-auth-ldap-invalid-chars": [
-      "*|(|)|&|!"
-    ],
-    "authenticationLevel": 0
+    "iplanet-am-auth-ldap-invalid-chars" : [ "*|(|)|&|!" ],
+    "authenticationLevel" : 0
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMPlatformService",
-    "entityId": "iPlanetAMPlatformService",
-    "uid": "ou=iPlanetAMPlatformService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMPlatformService",
+    "entityId" : "iPlanetAMPlatformService",
+    "uid" : "ou=iPlanetAMPlatformService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "iPlanetAMPlatformService",
-    "_type": {
-      "_id": "iPlanetAMPlatformService",
-      "name": "iPlanetAMPlatformService",
-      "collection": false
+  "data" : {
+    "_id" : "iPlanetAMPlatformService",
+    "_type" : {
+      "_id" : "iPlanetAMPlatformService",
+      "name" : "iPlanetAMPlatformService",
+      "collection" : false
     }
   }
 }

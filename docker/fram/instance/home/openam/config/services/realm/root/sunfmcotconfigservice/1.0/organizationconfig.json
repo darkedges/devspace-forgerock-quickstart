@@ -1,24 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunFMCOTConfigService",
-    "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=sunFMCOTConfigService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunFMCOTConfigService",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=sunFMCOTConfigService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OrganizationConfig",
-    "_type": {
-      "_id": "sunFMCOTConfigService",
-      "name": "sunFMCOTConfigService",
-      "collection": false
+  "data" : {
+    "_id" : "OrganizationConfig",
+    "_type" : {
+      "_id" : "sunFMCOTConfigService",
+      "name" : "sunFMCOTConfigService",
+      "collection" : false
     }
   }
 }

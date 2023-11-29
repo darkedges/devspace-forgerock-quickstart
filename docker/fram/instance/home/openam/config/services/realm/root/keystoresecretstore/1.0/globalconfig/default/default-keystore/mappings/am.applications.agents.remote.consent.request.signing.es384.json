@@ -7,7 +7,8 @@
     "sunServiceID" : "instance",
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : null
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
   "data" : {
     "_id" : "default/default-keystore/mappings/am.applications.agents.remote.consent.request.signing.ES384",

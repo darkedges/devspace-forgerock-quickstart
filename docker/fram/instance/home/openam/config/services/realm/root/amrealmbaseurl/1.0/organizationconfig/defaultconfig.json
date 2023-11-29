@@ -1,28 +1,25 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "amRealmBaseURL",
-    "entityId": "defaultconfig",
-    "uid": "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "amRealmBaseURL",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "defaultconfig",
-    "_type": {
-      "_id": "amRealmBaseURL",
-      "name": "amRealmBaseURL",
-      "collection": false
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "amRealmBaseURL",
+      "name" : "amRealmBaseURL",
+      "collection" : false
     },
-    "source": "FIXED_VALUE",
-    "extensionClassName": null,
-    "fixedValue": "&{am.server.protocol}://&{am.server.fqdn}",
-    "contextPath": "/am"
+    "source" : "FIXED_VALUE",
+    "extensionClassName" : null,
+    "fixedValue" : "&{am.server.protocol}://&{am.server.fqdn}",
+    "contextPath" : "/am"
   }
 }

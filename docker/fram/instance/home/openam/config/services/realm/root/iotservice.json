@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "IotService",
-    "entityId": "IotService",
-    "uid": "ou=IotService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "IotService",
+    "entityId" : "IotService",
+    "uid" : "ou=IotService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "IotService",
-    "_type": {
-      "_id": "IotService",
-      "name": "IotService",
-      "collection": false
+  "data" : {
+    "_id" : "IotService",
+    "_type" : {
+      "_id" : "IotService",
+      "name" : "IotService",
+      "collection" : false
     }
   }
 }

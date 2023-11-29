@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "amDataStoreService",
-    "entityId": "amDataStoreService",
-    "uid": "ou=amDataStoreService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "amDataStoreService",
+    "entityId" : "amDataStoreService",
+    "uid" : "ou=amDataStoreService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "amDataStoreService",
-    "_type": {
-      "_id": "amDataStoreService",
-      "name": "amDataStoreService",
-      "collection": false
+  "data" : {
+    "_id" : "amDataStoreService",
+    "_type" : {
+      "_id" : "amDataStoreService",
+      "name" : "amDataStoreService",
+      "collection" : false
     }
   }
 }

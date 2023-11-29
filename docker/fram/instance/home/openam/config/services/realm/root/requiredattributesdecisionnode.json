@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "RequiredAttributesDecisionNode",
-    "entityId": "RequiredAttributesDecisionNode",
-    "uid": "ou=RequiredAttributesDecisionNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "RequiredAttributesDecisionNode",
+    "entityId" : "RequiredAttributesDecisionNode",
+    "uid" : "ou=RequiredAttributesDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "RequiredAttributesDecisionNode",
-    "_type": {
-      "_id": "RequiredAttributesDecisionNode",
-      "name": "RequiredAttributesDecisionNode",
-      "collection": false
+  "data" : {
+    "_id" : "RequiredAttributesDecisionNode",
+    "_type" : {
+      "_id" : "RequiredAttributesDecisionNode",
+      "name" : "RequiredAttributesDecisionNode",
+      "collection" : false
     }
   }
 }

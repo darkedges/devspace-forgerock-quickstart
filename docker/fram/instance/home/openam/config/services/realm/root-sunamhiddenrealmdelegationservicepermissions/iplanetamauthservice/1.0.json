@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/sunamhiddenrealmdelegationservicepermissions",
-    "entityType": "iPlanetAMAuthService",
-    "entityId": "1.0",
-    "uid": "ou=1.0,ou=iPlanetAMAuthService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
+    "entityType" : "iPlanetAMAuthService",
+    "entityId" : "1.0",
+    "uid" : "ou=1.0,ou=iPlanetAMAuthService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "1.0",
-    "_type": {
-      "_id": "iPlanetAMAuthService",
-      "name": "iPlanetAMAuthService",
-      "collection": false
+  "data" : {
+    "_id" : "1.0",
+    "_type" : {
+      "_id" : "iPlanetAMAuthService",
+      "name" : "iPlanetAMAuthService",
+      "collection" : false
     }
   }
 }

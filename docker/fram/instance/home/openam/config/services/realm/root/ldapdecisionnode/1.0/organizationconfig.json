@@ -1,24 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "LdapDecisionNode",
-    "entityId": "OrganizationConfig",
-    "uid": "ou=OrganizationConfig,ou=1.0,ou=LdapDecisionNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "LdapDecisionNode",
+    "entityId" : "OrganizationConfig",
+    "uid" : "ou=OrganizationConfig,ou=1.0,ou=LdapDecisionNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OrganizationConfig",
-    "_type": {
-      "_id": "LdapDecisionNode",
-      "name": "LdapDecisionNode",
-      "collection": false
+  "data" : {
+    "_id" : "OrganizationConfig",
+    "_type" : {
+      "_id" : "LdapDecisionNode",
+      "name" : "LdapDecisionNode",
+      "collection" : false
     }
   }
 }

@@ -7,7 +7,8 @@
     "sunServiceID" : "tree",
     "objectClass" : [ "top", "sunServiceComponent" ],
     "pathParams" : { },
-    "ou" : [ "dynamicprovision" ]
+    "ou" : [ "dynamicprovision" ],
+    "amsterVersion" : "7.4.0"
   },
   "data" : {
     "_id" : "default/dynamicprovision",

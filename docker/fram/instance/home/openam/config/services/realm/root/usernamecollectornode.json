@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "UsernameCollectorNode",
-    "entityId": "UsernameCollectorNode",
-    "uid": "ou=UsernameCollectorNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "UsernameCollectorNode",
+    "entityId" : "UsernameCollectorNode",
+    "uid" : "ou=UsernameCollectorNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "UsernameCollectorNode",
-    "_type": {
-      "_id": "UsernameCollectorNode",
-      "name": "UsernameCollectorNode",
-      "collection": false
+  "data" : {
+    "_id" : "UsernameCollectorNode",
+    "_type" : {
+      "_id" : "UsernameCollectorNode",
+      "name" : "UsernameCollectorNode",
+      "collection" : false
     }
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunAMAuthADService",
-    "entityId": "sunAMAuthADService",
-    "uid": "ou=sunAMAuthADService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunAMAuthADService",
+    "entityId" : "sunAMAuthADService",
+    "uid" : "ou=sunAMAuthADService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunAMAuthADService",
-    "_type": {
-      "_id": "sunAMAuthADService",
-      "name": "sunAMAuthADService",
-      "collection": false
+  "data" : {
+    "_id" : "sunAMAuthADService",
+    "_type" : {
+      "_id" : "sunAMAuthADService",
+      "name" : "sunAMAuthADService",
+      "collection" : false
     }
   }
 }

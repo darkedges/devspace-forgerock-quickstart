@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunFMCOTConfigService",
-    "entityId": "sunFMCOTConfigService",
-    "uid": "ou=sunFMCOTConfigService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunFMCOTConfigService",
+    "entityId" : "sunFMCOTConfigService",
+    "uid" : "ou=sunFMCOTConfigService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunFMCOTConfigService",
-    "_type": {
-      "_id": "sunFMCOTConfigService",
-      "name": "sunFMCOTConfigService",
-      "collection": false
+  "data" : {
+    "_id" : "sunFMCOTConfigService",
+    "_type" : {
+      "_id" : "sunFMCOTConfigService",
+      "name" : "sunFMCOTConfigService",
+      "collection" : false
     }
   }
 }

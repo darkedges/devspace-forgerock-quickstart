@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "MetadataNode",
-    "entityId": "MetadataNode",
-    "uid": "ou=MetadataNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "MetadataNode",
+    "entityId" : "MetadataNode",
+    "uid" : "ou=MetadataNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "MetadataNode",
-    "_type": {
-      "_id": "MetadataNode",
-      "name": "MetadataNode",
-      "collection": false
+  "data" : {
+    "_id" : "MetadataNode",
+    "_type" : {
+      "_id" : "MetadataNode",
+      "name" : "MetadataNode",
+      "collection" : false
     }
   }
 }

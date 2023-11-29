@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "ValidatedUsernameNode",
-    "entityId": "ValidatedUsernameNode",
-    "uid": "ou=ValidatedUsernameNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ValidatedUsernameNode",
+    "entityId" : "ValidatedUsernameNode",
+    "uid" : "ou=ValidatedUsernameNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "ValidatedUsernameNode",
-    "_type": {
-      "_id": "ValidatedUsernameNode",
-      "name": "ValidatedUsernameNode",
-      "collection": false
+  "data" : {
+    "_id" : "ValidatedUsernameNode",
+    "_type" : {
+      "_id" : "ValidatedUsernameNode",
+      "name" : "ValidatedUsernameNode",
+      "collection" : false
     }
   }
 }

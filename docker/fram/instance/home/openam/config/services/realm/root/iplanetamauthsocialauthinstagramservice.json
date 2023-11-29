@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthSocialAuthInstagramService",
-    "entityId": "iPlanetAMAuthSocialAuthInstagramService",
-    "uid": "ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthSocialAuthInstagramService",
+    "entityId" : "iPlanetAMAuthSocialAuthInstagramService",
+    "uid" : "ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "iPlanetAMAuthSocialAuthInstagramService",
-    "_type": {
-      "_id": "iPlanetAMAuthSocialAuthInstagramService",
-      "name": "iPlanetAMAuthSocialAuthInstagramService",
-      "collection": false
+  "data" : {
+    "_id" : "iPlanetAMAuthSocialAuthInstagramService",
+    "_type" : {
+      "_id" : "iPlanetAMAuthSocialAuthInstagramService",
+      "name" : "iPlanetAMAuthSocialAuthInstagramService",
+      "collection" : false
     }
   }
 }

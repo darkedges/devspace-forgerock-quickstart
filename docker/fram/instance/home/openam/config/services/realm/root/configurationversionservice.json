@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "ConfigurationVersionService",
-    "entityId": "ConfigurationVersionService",
-    "uid": "ou=ConfigurationVersionService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ConfigurationVersionService",
+    "entityId" : "ConfigurationVersionService",
+    "uid" : "ou=ConfigurationVersionService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "ConfigurationVersionService",
-    "_type": {
-      "_id": "ConfigurationVersionService",
-      "name": "ConfigurationVersionService",
-      "collection": false
+  "data" : {
+    "_id" : "ConfigurationVersionService",
+    "_type" : {
+      "_id" : "ConfigurationVersionService",
+      "name" : "ConfigurationVersionService",
+      "collection" : false
     }
   }
 }

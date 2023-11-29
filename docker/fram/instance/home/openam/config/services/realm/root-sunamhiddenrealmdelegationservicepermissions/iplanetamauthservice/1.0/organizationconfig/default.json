@@ -1,32 +1,28 @@
 {
-  "metadata": {
-    "realm": "/sunamhiddenrealmdelegationservicepermissions",
-    "entityType": "iPlanetAMAuthService",
-    "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
+    "entityType" : "iPlanetAMAuthService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "iPlanetAMAuthService",
-      "name": "iPlanetAMAuthService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "iPlanetAMAuthService",
+      "name" : "iPlanetAMAuthService",
+      "collection" : false
     },
-    "userprofile": {
-      "aliasAttributeName": [
-        "uid"
-      ]
+    "userprofile" : {
+      "aliasAttributeName" : [ "uid" ]
     },
-    "core": {
-      "orgConfig": "ldapService",
-      "adminAuthModule": "ldapService"
+    "core" : {
+      "orgConfig" : "ldapService",
+      "adminAuthModule" : "ldapService"
     }
   }
 }

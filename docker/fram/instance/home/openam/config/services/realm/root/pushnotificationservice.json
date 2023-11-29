@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "PushNotificationService",
-    "entityId": "PushNotificationService",
-    "uid": "ou=PushNotificationService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "PushNotificationService",
+    "entityId" : "PushNotificationService",
+    "uid" : "ou=PushNotificationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "PushNotificationService",
-    "_type": {
-      "_id": "PushNotificationService",
-      "name": "PushNotificationService",
-      "collection": false
+  "data" : {
+    "_id" : "PushNotificationService",
+    "_type" : {
+      "_id" : "PushNotificationService",
+      "name" : "PushNotificationService",
+      "collection" : false
     }
   }
 }

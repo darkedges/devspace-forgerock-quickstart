@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "amsterVersion" : "7.4.0",
+    "entityType" : "GlobalScripts",
+    "entityId" : "6c49bebe-3a62-11ed-a261-0242ac120002",
+    "pathParams" : { }
+  },
+  "data" : {
+    "_id" : "6c49bebe-3a62-11ed-a261-0242ac120002",
+    "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "creationDate" : "1663685699666",
+    "language" : "JAVASCRIPT",
+    "script" : "LyoKICogQ29weXJpZ2h0IDIwMjItMjAyMyBGb3JnZVJvY2sgQVMuIEFsbCBSaWdodHMgUmVzZXJ2ZWQKICoKICogVXNlIG9mIHRoaXMgY29kZSByZXF1aXJlcyBhIGNvbW1lcmNpYWwgc29mdHdhcmUgbGljZW5zZSB3aXRoIEZvcmdlUm9jayBBUy4KICogb3Igd2l0aCBvbmUgb2YgaXRzIGFmZmlsaWF0ZXMuIEFsbCB1c2Ugc2hhbGwgYmUgZXhjbHVzaXZlbHkgc3ViamVjdAogKiB0byBzdWNoIGxpY2Vuc2UgYmV0d2VlbiB0aGUgbGljZW5zZWUgYW5kIEZvcmdlUm9jayBBUy4KICovCgovKgogKiBUaGlzIGlzIGFuIGV4YW1wbGUgbGlicmFyeSBzY3JpcHQgd2l0aCBtZXRob2RzIHRoYXQgY2FuIGJlIHVzZWQgaW4gb3RoZXIgc2NyaXB0cy4KICogVG8gcmVmZXJlbmNlIGl0LCB1c2UgdGhlIGZvbGxvd2luZzoKICoKICogdmFyIGxpYnJhcnkgPSByZXF1aXJlKCJMaWJyYXJ5IFNjcmlwdCIpOwogKgogKiBsaWJyYXJ5LmxvZ0Vycm9yKGxvZ2dlciwgIkVycm9yIG1lc3NhZ2UiKTsKICogbGlicmFyeS5sb2dEZWJ1Zyhsb2dnZXIsICJEZWJ1ZyBtZXNzYWdlIik7CiAqLwoKZnVuY3Rpb24gbG9nRXJyb3IobG9nLCBlcnJvck1lc3NhZ2UpIHsKICBsb2cuZXJyb3IoZXJyb3JNZXNzYWdlKTsKfQoKZnVuY3Rpb24gbG9nV2FybmluZyhsb2csIHdhcm5pbmdNZXNzYWdlKSB7CiAgbG9nLndhcm4od2FybmluZ01lc3NhZ2UpOwp9CgpleHBvcnRzLmxvZ0Vycm9yID0gbG9nRXJyb3I7CmV4cG9ydHMubG9nV2FybmluZyA9IGxvZ1dhcm5pbmc7CgovLyBBbHRlcm5hdGl2ZWx5LCBleHBvcnRzIGNhbiBiZSBkZWNsYXJlZCB1c2luZyBhbiBpbmxpbmUgYXJyb3cgZnVuY3Rpb24KCmV4cG9ydHMubG9nSW5mbyA9IChsb2csIGluZm9NZXNzYWdlKSA9PiBsb2cuaW5mbyhpbmZvTWVzc2FnZSk7CmV4cG9ydHMubG9nRGVidWcgPSAobG9nLCBkZWJ1Z01lc3NhZ2UpID0+IGxvZy5kZWJ1ZyhkZWJ1Z01lc3NhZ2UpOw==",
+    "description" : "Default global library script to be referenced from other scripts",
+    "lastModifiedBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "evaluatorVersion" : "V2_0",
+    "context" : "LIBRARY",
+    "lastModifiedDate" : "1663685699666",
+    "name" : "Library Script",
+    "_type" : {
+      "_id" : "globalScript",
+      "name" : "globalScript",
+      "collection" : true
+    }
+  }
+}

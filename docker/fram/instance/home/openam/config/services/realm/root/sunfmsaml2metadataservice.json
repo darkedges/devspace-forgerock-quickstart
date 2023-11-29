@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunFMSAML2MetadataService",
-    "entityId": "sunFMSAML2MetadataService",
-    "uid": "ou=sunFMSAML2MetadataService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunFMSAML2MetadataService",
+    "entityId" : "sunFMSAML2MetadataService",
+    "uid" : "ou=sunFMSAML2MetadataService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunFMSAML2MetadataService",
-    "_type": {
-      "_id": "sunFMSAML2MetadataService",
-      "name": "sunFMSAML2MetadataService",
-      "collection": false
+  "data" : {
+    "_id" : "sunFMSAML2MetadataService",
+    "_type" : {
+      "_id" : "sunFMSAML2MetadataService",
+      "name" : "sunFMSAML2MetadataService",
+      "collection" : false
     }
   }
 }

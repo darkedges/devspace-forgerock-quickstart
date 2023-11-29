@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "ModifyAuthLevelNode",
-    "entityId": "ModifyAuthLevelNode",
-    "uid": "ou=ModifyAuthLevelNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ModifyAuthLevelNode",
+    "entityId" : "ModifyAuthLevelNode",
+    "uid" : "ou=ModifyAuthLevelNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "ModifyAuthLevelNode",
-    "_type": {
-      "_id": "ModifyAuthLevelNode",
-      "name": "ModifyAuthLevelNode",
-      "collection": false
+  "data" : {
+    "_id" : "ModifyAuthLevelNode",
+    "_type" : {
+      "_id" : "ModifyAuthLevelNode",
+      "name" : "ModifyAuthLevelNode",
+      "collection" : false
     }
   }
 }

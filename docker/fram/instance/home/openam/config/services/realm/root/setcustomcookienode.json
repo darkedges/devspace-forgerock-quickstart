@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "SetCustomCookieNode",
-    "entityId": "SetCustomCookieNode",
-    "uid": "ou=SetCustomCookieNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "SetCustomCookieNode",
+    "entityId" : "SetCustomCookieNode",
+    "uid" : "ou=SetCustomCookieNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "SetCustomCookieNode",
-    "_type": {
-      "_id": "SetCustomCookieNode",
-      "name": "SetCustomCookieNode",
-      "collection": false
+  "data" : {
+    "_id" : "SetCustomCookieNode",
+    "_type" : {
+      "_id" : "SetCustomCookieNode",
+      "name" : "SetCustomCookieNode",
+      "collection" : false
     }
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "CreateObjectNode",
-    "entityId": "CreateObjectNode",
-    "uid": "ou=CreateObjectNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "CreateObjectNode",
+    "entityId" : "CreateObjectNode",
+    "uid" : "ou=CreateObjectNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "CreateObjectNode",
-    "_type": {
-      "_id": "CreateObjectNode",
-      "name": "CreateObjectNode",
-      "collection": false
+  "data" : {
+    "_id" : "CreateObjectNode",
+    "_type" : {
+      "_id" : "CreateObjectNode",
+      "name" : "CreateObjectNode",
+      "collection" : false
     }
   }
 }

@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "OathTokenVerifierNode",
-    "entityId": "OathTokenVerifierNode",
-    "uid": "ou=OathTokenVerifierNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "OathTokenVerifierNode",
+    "entityId" : "OathTokenVerifierNode",
+    "uid" : "ou=OathTokenVerifierNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "OathTokenVerifierNode",
-    "_type": {
-      "_id": "OathTokenVerifierNode",
-      "name": "OathTokenVerifierNode",
-      "collection": false
+  "data" : {
+    "_id" : "OathTokenVerifierNode",
+    "_type" : {
+      "_id" : "OathTokenVerifierNode",
+      "name" : "OathTokenVerifierNode",
+      "collection" : false
     }
   }
 }

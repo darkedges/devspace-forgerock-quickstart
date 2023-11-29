@@ -1,24 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunIdentityFilteredRoleService",
-    "entityId": "DynamicConfig",
-    "uid": "ou=DynamicConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "organizationalunit",
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunIdentityFilteredRoleService",
+    "entityId" : "DynamicConfig",
+    "uid" : "ou=DynamicConfig,ou=1.0,ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "DynamicConfig",
-    "_type": {
-      "_id": "sunIdentityFilteredRoleService",
-      "name": "sunIdentityFilteredRoleService",
-      "collection": false
+  "data" : {
+    "_id" : "DynamicConfig",
+    "_type" : {
+      "_id" : "sunIdentityFilteredRoleService",
+      "name" : "sunIdentityFilteredRoleService",
+      "collection" : false
     }
   }
 }

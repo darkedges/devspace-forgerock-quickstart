@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMPolicyService",
-    "entityId": "Subject/LDAPGroups",
-    "uid": "ou=LDAPGroups,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMPolicyService",
+    "entityId" : "Subject/LDAPGroups",
+    "uid" : "ou=LDAPGroups,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "Subject/LDAPGroups",
-    "_type": {
-      "_id": "iPlanetAMPolicyService",
-      "name": "iPlanetAMPolicyService",
-      "collection": false
+  "data" : {
+    "_id" : "Subject/LDAPGroups",
+    "_type" : {
+      "_id" : "iPlanetAMPolicyService",
+      "name" : "iPlanetAMPolicyService",
+      "collection" : false
     }
   }
 }

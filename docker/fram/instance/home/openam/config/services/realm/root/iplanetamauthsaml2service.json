@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "iPlanetAMAuthSAML2Service",
-    "entityId": "iPlanetAMAuthSAML2Service",
-    "uid": "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthSAML2Service",
+    "entityId" : "iPlanetAMAuthSAML2Service",
+    "uid" : "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "iPlanetAMAuthSAML2Service",
-    "_type": {
-      "_id": "iPlanetAMAuthSAML2Service",
-      "name": "iPlanetAMAuthSAML2Service",
-      "collection": false
+  "data" : {
+    "_id" : "iPlanetAMAuthSAML2Service",
+    "_type" : {
+      "_id" : "iPlanetAMAuthSAML2Service",
+      "name" : "iPlanetAMAuthSAML2Service",
+      "collection" : false
     }
   }
 }

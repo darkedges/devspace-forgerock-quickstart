@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "ProvisionIdmAccountNode",
-    "entityId": "ProvisionIdmAccountNode",
-    "uid": "ou=ProvisionIdmAccountNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ProvisionIdmAccountNode",
+    "entityId" : "ProvisionIdmAccountNode",
+    "uid" : "ou=ProvisionIdmAccountNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "ProvisionIdmAccountNode",
-    "_type": {
-      "_id": "ProvisionIdmAccountNode",
-      "name": "ProvisionIdmAccountNode",
-      "collection": false
+  "data" : {
+    "_id" : "ProvisionIdmAccountNode",
+    "_type" : {
+      "_id" : "ProvisionIdmAccountNode",
+      "name" : "ProvisionIdmAccountNode",
+      "collection" : false
     }
   }
 }

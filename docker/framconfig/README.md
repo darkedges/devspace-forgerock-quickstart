@@ -6,10 +6,10 @@
     docker build . -t devspace-forgerock-quickstart/am-config-upgrader:7.4.0
     ```
 
-1. Convert am to 7.4.0
+1. Upgrade am 7.2.0 to 7.4.0
 
     ```console
-    docker run -it --rm --volume ${pwd}:/tmp/fram --volume darkedgessecrets:/mnt/secrets devspace-forgerock-quickstart/am-config-upgrader:7.4.0
+    docker run -it --rm --volume ${PWD}/config:/tmp/fram --volume darkedgessecrets:/mnt/secrets devspace-forgerock-quickstart/am-config-upgrader:7.4.0
     ```
 
 1. Build AM Config image

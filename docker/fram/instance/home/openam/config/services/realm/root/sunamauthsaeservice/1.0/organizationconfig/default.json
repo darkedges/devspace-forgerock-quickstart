@@ -1,24 +1,22 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunAMAuthSAEService",
-    "entityId": "default",
-    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthSAEService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunServiceComponent"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunAMAuthSAEService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthSAEService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunServiceComponent" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "sunAMAuthSAEService",
-      "name": "sunAMAuthSAEService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "sunAMAuthSAEService",
+      "name" : "sunAMAuthSAEService",
+      "collection" : false
     },
-    "authenticationLevel": 0
+    "authenticationLevel" : 0
   }
 }

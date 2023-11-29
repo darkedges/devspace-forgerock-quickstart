@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "MultiFactorRegistrationOptionsNode",
-    "entityId": "MultiFactorRegistrationOptionsNode",
-    "uid": "ou=MultiFactorRegistrationOptionsNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "MultiFactorRegistrationOptionsNode",
+    "entityId" : "MultiFactorRegistrationOptionsNode",
+    "uid" : "ou=MultiFactorRegistrationOptionsNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "MultiFactorRegistrationOptionsNode",
-    "_type": {
-      "_id": "MultiFactorRegistrationOptionsNode",
-      "name": "MultiFactorRegistrationOptionsNode",
-      "collection": false
+  "data" : {
+    "_id" : "MultiFactorRegistrationOptionsNode",
+    "_type" : {
+      "_id" : "MultiFactorRegistrationOptionsNode",
+      "name" : "MultiFactorRegistrationOptionsNode",
+      "collection" : false
     }
   }
 }

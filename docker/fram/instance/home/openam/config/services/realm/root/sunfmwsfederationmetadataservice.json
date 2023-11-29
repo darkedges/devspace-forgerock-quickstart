@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "sunFMWSFederationMetadataService",
-    "entityId": "sunFMWSFederationMetadataService",
-    "uid": "ou=sunFMWSFederationMetadataService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "sunFMWSFederationMetadataService",
+    "entityId" : "sunFMWSFederationMetadataService",
+    "uid" : "ou=sunFMWSFederationMetadataService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "sunFMWSFederationMetadataService",
-    "_type": {
-      "_id": "sunFMWSFederationMetadataService",
-      "name": "sunFMWSFederationMetadataService",
-      "collection": false
+  "data" : {
+    "_id" : "sunFMWSFederationMetadataService",
+    "_type" : {
+      "_id" : "sunFMWSFederationMetadataService",
+      "name" : "sunFMWSFederationMetadataService",
+      "collection" : false
     }
   }
 }

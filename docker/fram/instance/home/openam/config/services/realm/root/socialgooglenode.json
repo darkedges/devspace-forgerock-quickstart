@@ -1,23 +1,21 @@
 {
-  "metadata": {
-    "realm": "/",
-    "entityType": "SocialGoogleNode",
-    "entityId": "SocialGoogleNode",
-    "uid": "ou=SocialGoogleNode,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
-      "top",
-      "sunService"
-    ],
-    "pathParams": {},
-    "ou": null
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "SocialGoogleNode",
+    "entityId" : "SocialGoogleNode",
+    "uid" : "ou=SocialGoogleNode,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "top", "sunService" ],
+    "pathParams" : { },
+    "ou" : null,
+    "amsterVersion" : "7.4.0"
   },
-  "data": {
-    "_id": "SocialGoogleNode",
-    "_type": {
-      "_id": "SocialGoogleNode",
-      "name": "SocialGoogleNode",
-      "collection": false
+  "data" : {
+    "_id" : "SocialGoogleNode",
+    "_type" : {
+      "_id" : "SocialGoogleNode",
+      "name" : "SocialGoogleNode",
+      "collection" : false
     }
   }
 }
