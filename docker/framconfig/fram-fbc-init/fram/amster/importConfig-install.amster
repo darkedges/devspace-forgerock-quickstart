@@ -1,0 +1,23 @@
+install-openam \
+    --acceptLicense \
+    --cfgDir /home/forgerock/fram \
+    --serverUrl "https://localhost:8443/openam/" \
+    --adminPwd "changeit" \
+    --pwdEncKey "changeit" \
+    --cfgStore "embedded" \
+    --cfgStoreAdminPort "4444" \
+    --cfgStoreDirMgr "cn=Directory Manager" \
+    --cfgStoreDirMgrPwd "changeit" \
+    --cfgStoreHost "localhost" \
+    --cfgStoreJmxPort "1689" \
+    --cfgStorePort "50636" \
+    --cfgStoreRootSuffix "ou=am-config" \
+    --cfgStoreSsl "SSL" \
+    --userStoreType "LDAPv3ForOpenDS" \
+    --userStoreHost "localhost" \
+    --userStorePort "50636" \
+    --userStoreDirMgr "cn=Directory Manager" \
+    --userStoreDirMgrPwd "changeit" \
+    --userStoreRootSuffix "dc=darkedges,dc=com" \
+    --userStoreSsl "SSL"
+:exit

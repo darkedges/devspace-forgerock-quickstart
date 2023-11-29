@@ -225,7 +225,7 @@
       "com.sun.identity.authentication.special.users=cn=dsameuser,ou=DSAME Users,%ROOT_SUFFIX%|cn=amService-UrlAccessAgent,ou=DSAME Users,%ROOT_SUFFIX%",
       "org.forgerock.openam.httpclienthandler.system.clients.reuse.connections.enabled=true",
       "com.iplanet.services.debug.level=message",
-      "com.iplanet.am.buildVersion=ForgeRock Access Management 7.2.0",
+      "com.iplanet.am.buildVersion=ForgeRock Access Management 7.4.0",
       "com.sun.identity.plugin.configuration.class=@CONFIGURATION_PROVIDER_CLASS@",
       {
         "$string": "org.forgerock.services.uma.pendingrequests.store.password=&{am.stores.uma.password}"
@@ -258,7 +258,7 @@
       "com.sun.identity.policy.resultsCacheResourceCap=20",
       "org.forgerock.openam.slf4j.enableTraceInMessage=false",
       "com.sun.identity.saml.xmlsig.keystore=%BASE_DIR%/security/keystores/keystore.jceks",
-      "com.iplanet.am.version=ForgeRock Access Management 7.2.0 Build 64ef7ebc01ed3df1a1264d7b0400351bc101361f (2022-June-27 08:15)",
+      "com.iplanet.am.version=ForgeRock Access Management 7.4.0 Build 64ef7ebc01ed3df1a1264d7b0400351bc101361f (2022-June-27 08:15)",
       "org.forgerock.services.umaaudit.store.heartbeat=10",
       "com.sun.identity.policy.resultsCacheMaxSize=10000",
       "com.iplanet.am.notification.threadpool.size=10",

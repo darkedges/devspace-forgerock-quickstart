@@ -19,14 +19,14 @@ git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/fram
 
 # To build
-docker build -t devspace-forgerock-quickstart/am:7.2.0-fbc .
+docker build -t devspace-forgerock-quickstart/am:7.4.0-fbc .
 ```
 
 ## Run
 
 ```console
-docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.2.0 init_start
-docker run -it --rm --name dfq-am --link dfq-ds:dfq-ds --publish 8080:8080  devspace-forgerock-quickstart/am:7.2.0-fbc
+docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.4.0 init_start
+docker run -it --rm --name dfq-am --link dfq-ds:dfq-ds --publish 8080:8080  devspace-forgerock-quickstart/am:7.4.0-fbc
 ```
 
 open a web browser to <http://am.7f000001.nip.io:8080/openam/> and it should return the hostname of the container running.
@@ -37,8 +37,8 @@ open a web browser to <http://am.7f000001.nip.io:8080/openam/> and it should ret
 | ----------------------------- | ------------------------- | ------------------------------------------------------- |
 | `TOMCAT_IMAGE`                | `darkedges/tomcat`        | image name                                              |
 | `TOMCAT_TAG`                  | `9.0.65-11.0.14_9-alpine` | tag value                                               |
-| `FRAM_WAR_ARCHIVE`            | `AM-7.2.0.zip`            | name of archive to deploy                               |
-| `FRAM_AMSTER_ARCHIVE`         | `Amster-7.2.0.zip`        | name of amster archive to deploy                        |
+| `FRAM_WAR_ARCHIVE`            | `AM-7.4.0.zip`            | name of archive to deploy                               |
+| `FRAM_AMSTER_ARCHIVE`         | `Amster-7.4.0.zip`        | name of amster archive to deploy                        |
 | `FRAM_ARCHIVE_REPOSITORY_URL` |                           | URL of Web Server / Nexus Repository / Cloud Bucket URL |
 
 ## Folder Structure

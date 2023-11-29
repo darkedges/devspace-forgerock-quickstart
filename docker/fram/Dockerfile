@@ -1,12 +1,12 @@
 ARG TOMCAT_IMAGE=darkedges/tomcat
 ARG TOMCAT_TAG=9.0.65-11.0.14_9-alpine
 
-FROM gcr.io/forgerock-io/am-base:7.2.0 as fr_am_base
+FROM gcr.io/forgerock-io/am-base:7.4.0 as fr_am_base
 
 # Binary extract
 FROM alpine:3.17.3 as fram_base
-ARG FRAM_WAR_ARCHIVE=AM-7.2.0.zip
-ARG FRAM_AMSTER_ARCHIVE=Amster-7.2.0.zip
+ARG FRAM_WAR_ARCHIVE=AM-7.4.0.zip
+ARG FRAM_AMSTER_ARCHIVE=Amster-7.4.0.zip
 ARG FRAM_ARCHIVE_REPOSITORY_URL=
 
 ADD ${FRAM_ARCHIVE_REPOSITORY_URL}${FRAM_WAR_ARCHIVE} /var/tmp/fram.war

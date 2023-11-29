@@ -1,7 +1,7 @@
 {
     "metadata": {
         "realm": "/",
-        "amsterVersion": "7.2.0",
+        "amsterVersion": "7.4.0",
         "entityType": "OAuth2Clients",
         "entityId": "idm-resource-server",
         "pathParams": {}

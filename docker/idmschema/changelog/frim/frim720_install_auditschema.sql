@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset frim:7.2.0_audit endDelimiter:; splitStatements:true
+--changeset frim:7.4.0_audit endDelimiter:; splitStatements:true
 
 -- -----------------------------------------------------
 -- Table `frim`.`auditauthentication`

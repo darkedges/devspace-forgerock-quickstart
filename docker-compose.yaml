@@ -3,7 +3,7 @@ version: "3.8"
 services:
   dfq-ig:
     container_name: dfq-ig
-    image: devspace-forgerock-quickstart/frig:7.2.0-fbc
+    image: devspace-forgerock-quickstart/frig:7.4.0-fbc
     build:
       context: ./docker/frig
     deploy:
@@ -29,7 +29,7 @@ services:
           - frig.darkedges.localdev
   dfq-am:
     container_name: dfq-am
-    image: devspace-forgerock-quickstart/fram:7.2.0-fbc
+    image: devspace-forgerock-quickstart/fram:7.4.0-fbc
     build:
       context: ./docker/fram
       args:
@@ -62,7 +62,7 @@ services:
           - fram.darkedges.localdev
   dfq-ds:
     container_name: dfq-ds
-    image: devspace-forgerock-quickstart/frds:7.2.0-fbc
+    image: devspace-forgerock-quickstart/frds:7.4.0-fbc
     build:
       context: docker/frds
     command: init_start
@@ -70,13 +70,12 @@ services:
       resources:
         limits:
           cpus: "0.5"
-          memory: 512M
+          memory: 1024M
         reservations:
           cpus: "0.5"
-          memory: 512M
+          memory: 1024M
     environment:
       INIT_INSTANCE_LDIF: true
-      INIT_INSTANCE_PROFILE_VERSION: 7.1.0
     env_file:
       - .env/frds/.env
     volumes:

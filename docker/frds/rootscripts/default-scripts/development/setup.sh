@@ -32,10 +32,10 @@ fi
     --ldapPort ${FRDS_LDAP_PORT:-1389} \
     --ldapsPort ${FRDS_LDAPS_PORT:-1636} \
     --httpsPort ${FRDS_HTTPS_PORT:-8443} \
-    --profile am-identity-store \
-    --profile am-config \
-    --profile am-cts \
-    --profile idm-repo \
+    --profile am-cts:6.5.0 \
+    --profile am-identity-store:7.3.0 \
+    --profile am-config:6.5.0 \
+    --profile idm-repo:7.4.0 \
     --set idm-repo/domain:${IDM_DOMAIN:-darkedges,dc=com,dc=au} \
     --set idm-repo/backendName:${IDM_BACKEND_NAME} \
     --set am-cts/amCtsAdminPassword:${AMCTS_ADMIN_PASSWORD:-Passw0rd} \

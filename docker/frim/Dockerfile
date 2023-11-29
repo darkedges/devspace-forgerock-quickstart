@@ -3,7 +3,7 @@ ARG JRE_TAG=11.0.14_9-jre-alpine
 
 # Initial Configuration
 FROM alpine:3.15.0 as installFile
-ARG FRIM_ARCHIVE=IDM-7.2.0.zip
+ARG FRIM_ARCHIVE=IDM-7.4.0.zip
 ARG FRIM_ARCHIVE_REPOSITORY_URL=
 
 ADD ${FRIM_ARCHIVE_REPOSITORY_URL}${FRIM_ARCHIVE}  /var/tmp/frim.zip
