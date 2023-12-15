@@ -16,7 +16,7 @@ RUN set -ex && \
     mkdir -p /var/tmp/bootstrap/webapps/openam && \
     mkdir -p /var/tmp/bootstrap/amster && \
     unzip /var/tmp/fram.war -d /var/tmp/bootstrap/webapps/openam && \
-    unzip /var/tmp/amster.zip -d /var/tmp/bootstrap/amster
+    unzip /var/tmp/amster.zip -d /var/tmp/bootstrap
 
 COPY webapps/ var/tmp/bootstrap/webapps/
 
