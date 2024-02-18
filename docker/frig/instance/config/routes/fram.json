@@ -1,20 +1,20 @@
 {
-    "name": "fram",
-    "baseURI": "http://dfq-am:8080",
-    "handler": {
-        "type": "Chain",
-        "config": {
-            "filters": [
-                {
-                    "name": "ScriptableFilter-framFilter",
-                    "type": "ScriptableFilter",
-                    "config": {
-                        "type": "application/x-groovy",
-                        "file": "fram.groovy"
-                    }
-                }
-            ],
-            "handler": "ReverseProxyHandler"
+  "baseURI": "&{fram.baseuri}",
+  "handler": {
+    "config": {
+      "filters": [
+        {
+          "config": {
+            "file": "fram.groovy",
+            "type": "application/x-groovy"
+          },
+          "name": "ScriptableFilter-framFilter",
+          "type": "ScriptableFilter"
         }
-    }
+      ],
+      "handler": "ReverseProxyHandler"
+    },
+    "type": "Chain"
+  },
+  "name": "fram"
 }
