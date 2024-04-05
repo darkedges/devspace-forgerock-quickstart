@@ -27,6 +27,10 @@ applyPostPatch7.4.x() {
     echo "Nothing to Patch"
 }
 
+applyPostPatch7.5.x() {
+    echo "Nothing to Patch"
+}
+
 CMD="${1:-upgrade}"
 case "$CMD" in
 upgrade720to730)
@@ -35,9 +39,13 @@ upgrade720to730)
 upgrade730to740)
     upgradeXtoY 7.3.0 7.4.0 
     ;;
+upgrade740to750)
+    upgradeXtoY 7.4.0 7.5.0 
+    ;;
 upgrade)
     upgradeXtoY 7.2.0 7.3.0
     upgradeXtoY 7.3.0 7.4.0
+    upgradeXtoY 7.4.0 7.5.0
     ;;
 *)
     exec "$@"
