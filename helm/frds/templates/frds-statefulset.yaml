@@ -10,7 +10,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  podManagementPolicy: Parallel 
+  podManagementPolicy: {{ .Values.frds.podManagementPolicy }} 
   selector:
     matchLabels:
       {{- include "forgerock.selectorLabels" . | nindent 6 }}
@@ -173,23 +173,9 @@ spec:
             claimName: frdsschemaclaim
         {{- end }}
         {{- if .Values.frds.useKeystore }}
-        - name: {{ template "forgerock.frds.fullname". }}-keystore
-          projected:
-            sources:
-            - secret:
-                name: {{ template "forgerock.frds.fullname". }}-keystore
-                items:
-                - key: truststore.jks
-                  path: truststore.jks
-                - key: keystore.jks
-                  path: keystore.jks
-            - secret:
-                name: {{ template "forgerock.frds.fullname". }}-secrets
-                items:
-                - key: jksPassword
-                  path: truststore.pin
-                - key: jksPassword
-                  path: keystore.pin
+        - name: {{ template "forgerock.frds.fullname" . }}-keystore
+          secret:
+            secretName: {{ template "forgerock.frds.fullname" . }}-keystore
         {{- end }}
   volumeClaimTemplates:
   - metadata:

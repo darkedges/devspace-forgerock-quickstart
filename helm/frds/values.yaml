@@ -13,20 +13,31 @@ revisionHistoryLimit: 10
 podSecurityPolicy:
   enabled: false
 
+genjks:
+  image:
+    repository: devspace-forgerock-quickstart/genjks
+    tag: 7.5.0
+    imagePullPolicy: IfNotPresent
+
 frds:
   image:
-    repository:  devspace-forgerock-quickstart/ds
-    tag: 7.2.0
+    repository: devspace-forgerock-quickstart/ds
+    tag: 7.5.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
 
+  # certificates
+  certificate:
+    # frig.certificate.enabled -- Whether to attach a certificate to ingress
+    enabled: false
+
   # Defines what is being deployed.
   # This chart can only deploy one instance type at a time
   instance:
-    #  frds.instance.type -- should be one of cts, amconfig, development, identity, replication
-    type: development
+    #  frds.instance.type -- should be one of directory, proxy, replication
+    type: directory
     name:
     keystore:
       # frds.instance.keystore.password --  Password for the keystore
@@ -53,26 +64,26 @@ frds:
 
   # These secrets should be in a vault and refenced from there
   secrets:
-      directorymanager:
-        # frds.secrets.directorymanager.password -- uid=admin password
-        password: Passw0rd
-      monitor:
-        # frds.secrets.monitor.password -- uid=minotir password
-        password: Passw0rd
-      deploymentkey:
-        # frds.secrets.deploymentkey.value -- Deployment Key value
-        value: AKtnvIyweZddXIA2jL4hq6F5Bn7C1Q5CBVN1bkVDfvPByQLPrt_1mJw
-        # frds.secrets.deploymentkey.password -- Deployment Key password
-        password: Passw0rd
-      amconfig: 
-        # frds.secrets.amconfig.password -- amconfig admin user password
-        password: Passw0rd
-      identity: 
-        # frds.secrets.identity.password -- ideneity admin user password
-        password: Passw0rd
-      cts: 
-        # frds.secrets.cts.password -- cts admin user password
-        password: Passw0rd
+    directorymanager:
+      # frds.secrets.directorymanager.password -- uid=admin password
+      password: Passw0rd
+    monitor:
+      # frds.secrets.monitor.password -- uid=minotir password
+      password: Passw0rd
+    deploymentkey:
+      # frds.secrets.deploymentkey.value -- Deployment Key value
+      value: AKtnvIyweZddXIA2jL4hq6F5Bn7C1Q5CBVN1bkVDfvPByQLPrt_1mJw
+      # frds.secrets.deploymentkey.password -- Deployment Key password
+      password: Passw0rd
+    amconfig:
+      # frds.secrets.amconfig.password -- amconfig admin user password
+      password: Passw0rd
+    identity:
+      # frds.secrets.identity.password -- ideneity admin user password
+      password: Passw0rd
+    cts:
+      # frds.secrets.cts.password -- cts admin user password
+      password: Passw0rd
 
   # frds.useKeystore -- has a keystore been generated and provided
   useKeystore: false
@@ -95,21 +106,26 @@ frds:
   profiles:
     amconfig:
       # frds.profiles.amconfig.baseDn -- base dn used for amconfig profile
-      baseDn:  dc=amconfig
+      baseDn: ou=am-config
       # frds.profiles.amconfig.backendName -- backend name used for amconfig profile
       backendName: cfgStore
     identity:
       # frds.profiles.identity.baseDn -- base dn used for identity profile
-      baseDn:  ou=identities
+      baseDn: ou=identities
       # frds.profiles.identity.backendName -- backend name used for identity profile
       backendName: amIdentityStore
     cts:
       # frds.profiles.cts.baseDn -- base dn used for cts profile
-      baseDn:  ou=tokens
+      baseDn: ou=tokens
       # frds.profiles.cts.backendName -- backend name used for cts profile
       backendName: amCts
       # frds.profiles.cts.tokenExpirationPolicy -- https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-cts-6.5.0
       tokenExpirationPolicy: ds
+    idm:
+      # frds.profiles.idm.baseDn -- base dn used for idm profile
+      domain: ou=idm
+      # frds.profiles.idm.backendName -- backend name used for idm profile
+      backendName: idmRepo
 
   # frds.terminationGracePeriodSeconds -- used by the statefulset to see how many seconds should be allowed for a graceful termination
   terminationGracePeriodSeconds: 300
@@ -131,7 +147,7 @@ frds:
   labels: {}
   #  keel.sh/policy: patch
   #  keel.sh/trigger: poll
-  
+
   # -- Required for use with CNI based kubernetes installations (such as ones set up by kubeadm),
   # since CNI and hostport don't mix yet. Can be deprecated once https://github.com/kubernetes/kubernetes/issues/23920
   # is merged
@@ -185,7 +201,8 @@ frds:
   # -- Topology spread constraints rely on node labels to identify the topology domain(s) that each Node is in.
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
   ##
-  topologySpreadConstraints: []
+  topologySpreadConstraints:
+    []
     # - maxSkew: 1
     #   topologyKey: topology.kubernetes.io/zone
     #   whenUnsatisfiable: DoNotSchedule
@@ -193,14 +210,15 @@ frds:
     #     matchLabels:
     #       app.kubernetes.io/instance: frig-internal
 
+  podManagementPolicy: OrderedReady
   resources:
-  ##  limits:
-  ##    cpu: 100m
-  ##    memory: 90Mi
+    ##  limits:
+    ##    cpu: 100m
+    ##    memory: 90Mi
     requests:
       cpu: 100m
       memory: 90Mi
- 
+
   ## Liveness and readiness probe values
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   ##
@@ -251,7 +269,7 @@ frds:
     preStop:
       exec:
         command:
-          - /opt/frds/docker-entrypoint.sh 
+          - /opt/frds/docker-entrypoint.sh
           - stop
 
   minAvailable: 1
@@ -262,7 +280,8 @@ frds:
     maxReplicas: 11
     targetCPUUtilizationPercentage: 50
     targetMemoryUtilizationPercentage: 50
-    behavior: {}
+    behavior:
+      {}
       # scaleDown:
       #   stabilizationWindowSeconds: 300
       #  policies:
@@ -305,40 +324,41 @@ frds:
       #  annotations:
       # key: value
     triggers: []
- #     - type: prometheus
- #       metadata:
- #         serverAddress: http://<prometheus-host>:9090
- #         metricName: http_requests_total
- #         threshold: '100'
- #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
+    #     - type: prometheus
+    #       metadata:
+    #         serverAddress: http://<prometheus-host>:9090
+    #         metricName: http_requests_total
+    #         threshold: '100'
+    #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
 
     behavior: {}
- #     scaleDown:
- #       stabilizationWindowSeconds: 300
- #       policies:
- #       - type: Pods
- #         value: 1
- #         periodSeconds: 180
- #     scaleUp:
- #       stabilizationWindowSeconds: 300
- #       policies:
- #       - type: Pods
- #         value: 2
- #         periodSeconds: 60
+  #     scaleDown:
+  #       stabilizationWindowSeconds: 300
+  #       policies:
+  #       - type: Pods
+  #         value: 1
+  #         periodSeconds: 180
+  #     scaleUp:
+  #       stabilizationWindowSeconds: 300
+  #       policies:
+  #       - type: Pods
+  #         value: 2
+  #         periodSeconds: 60
+  ## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
+  # rbac
+  rbac:
+    # frds.rbac.enabled -- whether to create roles and bindings
+    enabled: true
+  # service account
+  serviceAccount:
+    # frds.serviceAccount.create -- whether to create services accounts
+    create: true
+    automountServiceAccountToken: true
+    # frds.serviceAccount.annotations -- list of annotations to attach to a service account
+    annotations: {}
+    name:
 
 # -- Optional array of imagePullSecrets containing private registry credentials
 ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
 # - name: secretName
-
-## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
-rbac:
-  create: true
-  scope: false
-
-serviceAccount:
-  create: true
-  name: ""
-  automountServiceAccountToken: true
-  # -- Annotations for the controller service account
-  annotations: {}

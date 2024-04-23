@@ -1,4 +1,4 @@
-{{- if .Values.rbac.create -}}
+{{- if .Values.frds.rbac.create -}}
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -10,9 +10,9 @@ metadata:
     {{- with .Values.frds.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
-  {{- if .Values.serviceAccount.annotations }}
+  {{- if .Values.frds.serviceAccount.annotations }}
   annotations:
-  {{ toYaml .Values.serviceAccount.annotations | indent 4 }}
+  {{ toYaml .Values.frds.serviceAccount.annotations | indent 4 }}
   {{- end }}
 subjects:
 - kind: ServiceAccount

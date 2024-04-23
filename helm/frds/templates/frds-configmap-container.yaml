@@ -13,11 +13,11 @@ metadata:
   annotations: {{ toYaml .Values.frds.configAnnotations | nindent 4 }}
   {{- end }}
 data:
-  {{- if ne .Values.frds.instance.type "development" }}
+  {{- if ne .Values.frds.instance.type "directory" }}
   DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.bootstrap" (list "replication" 2) }}
   {{- else }}
   {{- if gt .Values.frds.replicaCount 1.0 }}
-  DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.bootstrap" (list "development" .Values.frds.replicaCount) }}
+  DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.bootstrap" (list "directory" .) }}
   {{- end }}
   {{- end }}
   {{- with .Values.frds.env }}

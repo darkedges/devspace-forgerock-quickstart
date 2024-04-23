@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-development}"
+INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-directory}"
+export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx2048M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100}"
 
 start() {
     set -ex

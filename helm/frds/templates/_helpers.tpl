@@ -56,10 +56,12 @@ Create chart name and version as used by the chart label.
 
 {{- define "frds.bootstrap" -}}
 {{- $node := index . 0 }}
-{{- $nodeCount := index . 1 | int }}
+{{- $root := index . 1 }}
+{{- $nodeCount := $root.Values.frds.replicaCount | int }}
+{{- $name := include "forgerock.frds.fullname" $root }}
   {{- range $index0 := until $nodeCount -}}
     {{- $index1 := $index0 | add1 -}}
-frds-ds-{{ $node }}-{{ $index0 }}.frds-ds-{{ $node }}:8989{{ if ne $index1 $nodeCount }},{{ end }}
+{{ $name }}-{{ $index0 }}.{{ $name }}:8989{{ if ne $index1 $nodeCount }},{{ end }}
   {{- end -}}
 {{- end -}}
 
@@ -99,9 +101,9 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Create the name of the service account to use
 */}}
 {{- define "forgerock.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create -}}
-    {{ default (include "forgerock.frds.fullname" .) .Values.serviceAccount.name }}
+{{- if .Values.frds.serviceAccount.enabled -}}
+    {{ default (include "forgerock.frds.fullname" .) .Values.frds.serviceAccount.name }}
 {{- else -}}
-    {{ default "default" .Values.serviceAccount.name }}
+    {{ default "default" .Values.frds.serviceAccount.name }}
 {{- end -}}
 {{- end -}}

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: frds
-version: 1.0.0
+name: helm-frds
+version: 1.0.17
 appVersion: 1.0.0
 home: https://github.com/darkedges/devspace-forgerock-quickstart
 icon: https://www.forgerock.com/themes/custom/forgerock/images/fr-logo-horz-color.svg

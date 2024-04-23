@@ -1,14 +1,10 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=17.0.9_9-jre-ubi9-minimal
+ARG JRE_TAG=17.0.10_7-jre-ubi9-minimal
+
+FROM gcr.io/forgerock-io/ds:7.5.0 as dsbase
 
 # Binary extract
 FROM alpine:3.18.4 as installFile
-ARG FRDS_ARCHIVE=DS-7.4.0.zip
-ARG FRDS_ARCHIVE_REPOSITORY_URL=
-
-ADD ${FRDS_ARCHIVE_REPOSITORY_URL}${FRDS_ARCHIVE}  /var/tmp/frds.zip
-
-RUN unzip /var/tmp/frds.zip -d /var/tmp/ 
 
 RUN apk add --no-cache curl && \
     curl --retry 10 -S -L -O https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64 && \
@@ -19,9 +15,9 @@ RUN apk add --no-cache curl && \
 
 # Runtime deployment
 FROM ${JRE_IMAGE}:${JRE_TAG} as base
-ARG DEPLOYMENT_TYPE=development
+ARG DEPLOYMENT_TYPE=directory
 
-COPY --from=0 /var/tmp/opendj /opt/frds/
+COPY --from=dsbase /opt/opendj /opt/frds/
 
 WORKDIR /opt/frds
 
@@ -34,10 +30,10 @@ RUN groupadd -g 11111 forgerock && \
     chmod 755 /opt/frds/instance && \
     chmod g+s /opt/frds/instance 
 
-COPY --from=installFile /tmp/tini /usr/bin/tini
+COPY --from=installFile --chmod=0755 /tmp/tini /usr/bin/tini
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
 COPY --chown=forgerock:forgerock installedfiles/ /opt/frds/
-COPY --chown=forgerock:forgerock instance/${DEPLOYMENT_TYPE}/init/ /opt/frds/instance/init/
+COPY --chown=forgerock:forgerock instance/${DEPLOYMENT_TYPE}/ /opt/frds/instance/init/
 
 RUN chown -R forgerock:forgerock /opt/frds && \
     chmod 755 /opt/frds/*.sh && \

@@ -5,6 +5,8 @@ AMCTS_BACKEND_NAME=${AMCTS_BACKEND_NAME:-amCts}
 AMCONFIG_BACKEND_NAME=${AMCONFIG_BACKEND_NAME:-cfgStore}
 AMIDENTITYSTORE_BACKEND_NAME=${AMIDENTITYSTORE_BACKEND_NAME:-amIdentityStore}
 IDM_BACKEND_NAME=${IDM_BACKEND_NAME:-idmRepo}
+ROOT_USER_DN=${ROOT_USER_DN:-uid=admin}
+ROOT_USER_PASSWORD=${ROOT_USER_PASSWORD:-Passw0rd}
 
 EXTRA_OPTIONS=""
 if [ -f "/var/run/secrets/frds/keystore.jks" ]; then
@@ -20,23 +22,24 @@ if [ -f "/var/run/secrets/frds/truststore.pin" ]; then
     EXTRA_OPTIONS="--trustStorePassword:file /var/run/secrets/frds/truststore.pin ${EXTRA_OPTIONS}"
 fi
 ./setup \
-    --deploymentKey "${DEPLOYMENT_KEY:-AKtnvIyweZddXIA2jL4hq6F5Bn7C1Q5CBVN1bkVDfvPByQLPrt_1mJw}" \
-    --deploymentKeyPassword "${DEPLOYMENT_KEY_PASSWORD:-Passw0rd}" \
+    --deploymentId "${DEPLOYMENT_KEY:-AeHV0e6uT7eUFASCfG0MWRZKCYY3Zw5CBVN1bkVDDJrPKRD22mygkg}" \
+    --deploymentIdPassword "${DEPLOYMENT_KEY_PASSWORD:-Passw0rd}" \
     --serverId "${HOSTNAME}" \
     --instancePath /opt/frds/instance/data \
-    --rootUserDN "uid=admin" \
-    --rootUserPassword "${ROOT_USER_PASSWORD:-Passw0rd}" \
+    --rootUserDN "${ROOT_USER_DN}" \
+    --rootUserPassword "${ROOT_USER_PASSWORD}" \
     --monitorUserPassword "${MONITOR_USER_PASSWORD:-Passw0rd}" \
     --hostname ${HOSTNAME} \
     --adminConnectorPort 4444 \
     --ldapPort ${FRDS_LDAP_PORT:-1389} \
     --ldapsPort ${FRDS_LDAPS_PORT:-1636} \
     --httpsPort ${FRDS_HTTPS_PORT:-8443} \
+    --replicationPort ${FRDS_REPLICATION_PORT:-8989} \
     --profile am-cts:6.5.0 \
-    --profile am-identity-store:7.3.0 \
+    --profile am-identity-store:7.5.0 \
     --profile am-config:6.5.0 \
-    --profile idm-repo:7.4.0 \
-    --set idm-repo/domain:${IDM_DOMAIN:-darkedges,dc=com,dc=au} \
+    --profile idm-repo:7.5.0 \
+    --set idm-repo/domain:${IDM_DOMAIN:-example,dc=com} \
     --set idm-repo/backendName:${IDM_BACKEND_NAME} \
     --set am-cts/amCtsAdminPassword:${AMCTS_ADMIN_PASSWORD:-Passw0rd} \
     --set am-cts/baseDn:${AMCTS_BASE_DN:-ou=tokens} \
@@ -65,11 +68,12 @@ set-password-policy-prop --policy-name "Root Password Policy"--set require-secur
 EOF
 
 set +u
-if [[ -v "${DS_BOOTSTRAP_REPLICATION_SERVERS}" ]]; then
+if [[ -v "DS_BOOTSTRAP_REPLICATION_SERVERS" ]]; then
 ./bin/dsconfig --offline --no-prompt --batch <<EOF
-set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "enabled:true" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers}"
+create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
+set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "enabled:true" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers}" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12
 EOF
 fi
 
 # Start initialization
-/opt/frds/default-scripts/development/init.sh
+ROOT_USER_DN=${ROOT_USER_DN} ROOT_USER_PASSWORD=${ROOT_USER_PASSWORD} /opt/frds/default-scripts/directory/init.sh
