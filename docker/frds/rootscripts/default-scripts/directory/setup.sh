@@ -1,12 +1,14 @@
 #!/bin/bash -eux
 
 #Initial values
-AMCTS_BACKEND_NAME=${AMCTS_BACKEND_NAME:-amCts}
-AMCONFIG_BACKEND_NAME=${AMCONFIG_BACKEND_NAME:-cfgStore}
-AMIDENTITYSTORE_BACKEND_NAME=${AMIDENTITYSTORE_BACKEND_NAME:-amIdentityStore}
-IDM_BACKEND_NAME=${IDM_BACKEND_NAME:-idmRepo}
-ROOT_USER_DN=${ROOT_USER_DN:-uid=admin}
-ROOT_USER_PASSWORD=${ROOT_USER_PASSWORD:-Passw0rd}
+export AMCTS_BACKEND_NAME=${AMCTS_BACKEND_NAME:-amCts}
+export AMCONFIG_BACKEND_NAME=${AMCONFIG_BACKEND_NAME:-cfgStore}
+export AMIDENTITYSTORE_BACKEND_NAME=${AMIDENTITYSTORE_BACKEND_NAME:-amIdentityStore}
+export IDM_BACKEND_NAME=${IDM_BACKEND_NAME:-idmRepo}
+export ROOT_USER_DN=${ROOT_USER_DN:-uid=admin}
+export ROOT_USER_PASSWORD=${ROOT_USER_PASSWORD:-Passw0rd}
+DSCONFIG_SETUP=""
+DSCONFIG_REPLICATION=""
 
 EXTRA_OPTIONS=""
 if [ -f "/var/run/secrets/frds/keystore.jks" ]; then
@@ -54,24 +56,26 @@ fi
     --acceptLicense \
     ${EXTRA_OPTIONS}
 
+if [[ -f "/opt/frds/instance/init/dsconfig/setup.dsconfig" ]]; then
+    DSCONFIG_SETUP=`envsubst </opt/frds/instance/init/dsconfig/setup.dsconfig`
+fi
+if [[ -f "/opt/frds/instance/init/dsconfig/replication.dsconfig" ]]; then
+    DSCONFIG_REPLICATION=`envsubst </opt/frds/instance/init/dsconfig/replication.dsconfig`
+fi
 ./bin/dsconfig --offline --no-prompt --batch <<EOF
 # Use default values for the following global settings so that it is possible to run tools when building derived images.
 set-global-configuration-prop --set "server-id:&{ds.server.id|docker}"
 set-global-configuration-prop --set "group-id:&{ds.group.id|default}"
 set-global-configuration-prop --set "advertised-listen-address:&{ds.advertised.listen.address|localhost}"
 set-global-configuration-prop --advanced --set "trust-transaction-ids:&{platform.trust.transaction.header|true}"
-set-backend-prop --backend-name ${AMCTS_BACKEND_NAME} --set confidentiality-enabled:false
-set-backend-prop --backend-name ${AMCONFIG_BACKEND_NAME} --set confidentiality-enabled:false
-set-backend-prop --backend-name ${AMIDENTITYSTORE_BACKEND_NAME} --set confidentiality-enabled:false
-set-password-policy-prop --policy-name "Default Password Policy"--set require-secure-authentication:false --set "require-secure-password-changes:false"
-set-password-policy-prop --policy-name "Root Password Policy"--set require-secure-authentication:false --set "require-secure-password-changes:false"
+${DSCONFIG_SETUP}
 EOF
 
 set +u
 if [[ -v "DS_BOOTSTRAP_REPLICATION_SERVERS" ]]; then
 ./bin/dsconfig --offline --no-prompt --batch <<EOF
-create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
-set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "enabled:true" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers}" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12
+${DSCONFIG_REPLICATION}
+set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "enabled:true" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers}"
 EOF
 fi
 

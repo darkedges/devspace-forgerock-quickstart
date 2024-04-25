@@ -1,2 +1,14 @@
 frds:
   replicaCount: 2
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Delete
+  dsconfig:
+    setup: |
+      set-backend-prop --backend-name ${AMCTS_BACKEND_NAME} --set confidentiality-enabled:false
+      set-backend-prop --backend-name ${AMCONFIG_BACKEND_NAME} --set confidentiality-enabled:false
+      set-backend-prop --backend-name ${AMIDENTITYSTORE_BACKEND_NAME} --set confidentiality-enabled:false
+      set-password-policy-prop --policy-name "Default Password Policy" --set require-secure-authentication:false --set "require-secure-password-changes:false"
+      set-password-policy-prop --policy-name "Root Password Policy" --set require-secure-authentication:false --set "require-secure-password-changes:false"
+    replication: |
+      create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
+      set-synchronization-provider-prop --provider-name "Multimaster synchronization" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12

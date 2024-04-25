@@ -25,6 +25,9 @@ spec:
   {{- end }}
   minReadySeconds: {{ .Values.frds.minReadySeconds }}
   serviceName: {{ template "forgerock.frds.fullname". }}
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: {{ .Values.frds.persistentVolumeClaimRetentionPolicy.whenDeleted }}
+    whenScaled: {{ .Values.frds.persistentVolumeClaimRetentionPolicy.whenScaled }}
   template:
     metadata:
       labels:
@@ -115,6 +118,10 @@ spec:
             name: {{ template "forgerock.frds.fullname". }}-keystore
             readOnly: true 
         {{- end }}
+        {{- if .Values.frds.dsconfig }}
+          - mountPath: /opt/frds/instance/init/dsconfig
+            name: {{ template "forgerock.frds.fullname". }}-dsconfig
+        {{- end }}
       containers:
       - name: frds
         image: {{ .Values.frds.image.repository }}:{{ .Values.frds.image.tag }}
@@ -176,6 +183,11 @@ spec:
         - name: {{ template "forgerock.frds.fullname" . }}-keystore
           secret:
             secretName: {{ template "forgerock.frds.fullname" . }}-keystore
+        {{- end }}
+        {{- if .Values.frds.dsconfig }}
+        - name: {{ template "forgerock.frds.fullname". }}-dsconfig
+          configMap:
+            name: {{ template "forgerock.frds.fullname". }}-dsconfig
         {{- end }}
   volumeClaimTemplates:
   - metadata:

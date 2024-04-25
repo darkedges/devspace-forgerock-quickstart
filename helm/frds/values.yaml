@@ -332,18 +332,24 @@ frds:
     #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
 
     behavior: {}
-  #     scaleDown:
-  #       stabilizationWindowSeconds: 300
-  #       policies:
-  #       - type: Pods
-  #         value: 1
-  #         periodSeconds: 180
-  #     scaleUp:
-  #       stabilizationWindowSeconds: 300
-  #       policies:
-  #       - type: Pods
-  #         value: 2
-  #         periodSeconds: 60
+    #     scaleDown:
+    #       stabilizationWindowSeconds: 300
+    #       policies:
+    #       - type: Pods
+    #         value: 1
+    #         periodSeconds: 180
+    #     scaleUp:
+    #       stabilizationWindowSeconds: 300
+    #       policies:
+    #       - type: Pods
+    #         value: 2
+    #         periodSeconds: 60
+
+    # Enabled per https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#persistentvolumeclaim-retention
+    persistentVolumeClaimRetentionPolicy:
+      whenDeleted: Retain
+      whenScaled: Retain
+    dsconfig: {}
   ## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
   # rbac
   rbac:

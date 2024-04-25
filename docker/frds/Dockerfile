@@ -28,7 +28,8 @@ RUN groupadd -g 11111 forgerock && \
     mkdir -p /opt/frds/instance/data && \
     mkdir -p /opt/frds/instance/init && \
     chmod 755 /opt/frds/instance && \
-    chmod g+s /opt/frds/instance 
+    chmod g+s /opt/frds/instance && \
+    microdnf install -y gettext
 
 COPY --from=installFile --chmod=0755 /tmp/tini /usr/bin/tini
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
