@@ -7,6 +7,7 @@ export AMIDENTITYSTORE_BACKEND_NAME=${AMIDENTITYSTORE_BACKEND_NAME:-amIdentitySt
 export IDM_BACKEND_NAME=${IDM_BACKEND_NAME:-idmRepo}
 export ROOT_USER_DN=${ROOT_USER_DN:-uid=admin}
 export ROOT_USER_PASSWORD=${ROOT_USER_PASSWORD:-Passw0rd}
+INIT_REPLICATION_TYPE=${INIT_REPLICATION_TYPE:-}
 DSCONFIG_SETUP=""
 DSCONFIG_REPLICATION=""
 
@@ -23,6 +24,9 @@ fi
 if [ -f "/var/run/secrets/frds/truststore.pin" ]; then
     EXTRA_OPTIONS="--trustStorePassword:file /var/run/secrets/frds/truststore.pin ${EXTRA_OPTIONS}"
 fi
+if [[ "${INIT_REPLICATION_TYPE}" == "embedded" ]]; then
+    EXTRA_OPTIONS="--replicationPort ${FRDS_REPLICATION_PORT:-8989} ${EXTRA_OPTIONS}"
+fi
 ./setup \
     --deploymentId "${DEPLOYMENT_KEY:-AeHV0e6uT7eUFASCfG0MWRZKCYY3Zw5CBVN1bkVDDJrPKRD22mygkg}" \
     --deploymentIdPassword "${DEPLOYMENT_KEY_PASSWORD:-Passw0rd}" \
@@ -36,7 +40,6 @@ fi
     --ldapPort ${FRDS_LDAP_PORT:-1389} \
     --ldapsPort ${FRDS_LDAPS_PORT:-1636} \
     --httpsPort ${FRDS_HTTPS_PORT:-8443} \
-    --replicationPort ${FRDS_REPLICATION_PORT:-8989} \
     --profile am-cts:6.5.0 \
     --profile am-identity-store:7.5.0 \
     --profile am-config:6.5.0 \

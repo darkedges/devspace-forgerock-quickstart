@@ -1,0 +1,35 @@
+{{ if ge .Values.directory.replicas 1.0  }}
+{{- if .Values.directory.certificate.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ template "forgerock.frds.ds.fullname" . }}-internal-tls
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.ds.labels" . | nindent 4 }}
+    app.kubernetes.io/component: fram
+    {{- with .Values.directory.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations:
+    helm.sh/hook: "pre-install"
+    helm.sh/hook-delete-policy: "before-hook-creation"
+    helm.sh/hook-weight: "-15"
+spec:
+  secretName: {{ template "forgerock.frds.ds.fullname". }}-internal-tls
+  issuerRef:
+    name: vault-issuer
+    kind: ClusterIssuer
+  commonName: localhost
+  usages:
+    - any
+  encodeUsagesInRequest: true
+  dnsNames:
+  - localhost
+  - "{{ .Release.Name }}-frds-{{ .Values.directory.instance.type }}"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.directory.instance.type }}"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.directory.instance.type }}.{{ .Release.Namespace }}"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.directory.instance.type }}.{{ .Release.Namespace }}.svc"
+  - "*.{{ .Release.Name }}-frds-{{ .Values.directory.instance.type }}.{{ .Release.Namespace }}.svc.cluster.local"
+{{- end }}
+{{- end }}

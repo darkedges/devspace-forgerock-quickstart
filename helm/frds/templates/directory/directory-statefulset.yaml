@@ -1,0 +1,204 @@
+{{ if ge .Values.directory.replicas 1.0  }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ template "forgerock.frds.ds.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.ds.labels" . | nindent 4 }}
+    app.kubernetes.io/component: {{ template "forgerock.frds.ds.fullname". }}
+    {{- with .Values.directory.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  podManagementPolicy: {{ .Values.directory.podManagementPolicy }} 
+  selector:
+    matchLabels:
+      {{- include "forgerock.ds.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: {{ template "forgerock.frds.ds.fullname". }}
+  {{- if not .Values.directory.autoscaling.enabled }}
+  replicas: {{ .Values.directory.replicas }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- if .Values.directory.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.directory.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.directory.minReadySeconds }}
+  serviceName: {{ template "forgerock.frds.ds.fullname". }}
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: {{ .Values.directory.persistentVolumeClaimRetentionPolicy.whenDeleted }}
+    whenScaled: {{ .Values.directory.persistentVolumeClaimRetentionPolicy.whenScaled }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.ds.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: {{ template "forgerock.frds.ds.fullname". }}
+        {{- with .Values.directory.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.directory.podLabels }}
+        {{- toYaml .Values.directory.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/directory/directory-configmap-container.yaml") . | sha256sum }}
+       {{- if .Values.directory.podAnnotations }}
+      {{- range $key, $value := .Values.directory.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.directory.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.directory.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.hostname }}
+      hostname: {{ toYaml .Values.directory.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.directory.dnsPolicy }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.priorityClassName }}
+      priorityClassName: {{ .Values.directory.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.directory.hostNetwork }}
+      hostNetwork: {{ .Values.directory.hostNetwork }}
+      {{- end }}
+      {{- if .Values.directory.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.directory.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.tolerations }}
+      tolerations: {{ toYaml .Values.directory.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.affinity }}
+      affinity: {{ toYaml .Values.directory.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.directory.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.directory.podSecurityContext .Values.directory.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.directory.podSecurityContext }}
+        {{- toYaml .Values.directory.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.directory.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.directory.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.directory.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.directory.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.ds.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.directory.terminationGracePeriodSeconds }}
+      subdomain: directory
+      initContainers:
+      - name: wait-for-first
+        image: opsfleet/depends-on
+        imagePullPolicy: {{ .Values.directory.image.imagePullPolicy }}
+        {{ template "forgerock.waitfor". }}
+      - name: init
+        image: {{ .Values.directory.image.repository }}:{{ .Values.directory.image.tag }}
+        imagePullPolicy: {{ .Values.directory.image.imagePullPolicy }}
+        envFrom:
+        - secretRef:
+            name: {{ template "forgerock.frds.ds.fullname". }}-secrets
+        - configMapRef:
+            name: {{ template "forgerock.frds.ds.fullname". }}-init-config
+        command:
+          - ./docker-entrypoint.sh
+          - init
+        volumeMounts:
+          - mountPath: /opt/frds/instance/data
+            name: {{ template "forgerock.frds.ds.fullname". }}-data-volume
+        {{- if .Values.directory.useKeystore }}
+          - mountPath: /var/run/secrets/frds
+            name: {{ template "forgerock.frds.ds.fullname". }}-keystore
+            readOnly: true 
+        {{- end }}
+        {{- if .Values.directory.dsconfig }}
+          - mountPath: /opt/frds/instance/init/dsconfig
+            name: {{ template "forgerock.frds.ds.fullname". }}-dsconfig
+        {{- end }}
+      containers:
+      - name: frds
+        image: {{ .Values.directory.image.repository }}:{{ .Values.directory.image.tag }}
+        imagePullPolicy: {{ .Values.directory.image.imagePullPolicy }}
+        {{- if .Values.directory.lifecycle }}
+        lifecycle: {{ toYaml .Values.directory.lifecycle | nindent 12 }}
+        {{- end }}
+        securityContext: {{ include "frds.containerSecurityContext" . | nindent 12 }}
+        env:
+        - name: DS_ADVERTISED_LISTEN_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: DS_SERVER_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        {{- if .Values.directory.env }}
+        envFrom:
+        - configMapRef:
+            name: {{ template "forgerock.frds.ds.fullname". }}-config
+        {{- end}}
+        ports:
+        - containerPort: 4444
+        {{- if eq .Values.directory.replication.type "embedded" }}
+        - containerPort: 8989
+        {{- end }}
+        - containerPort: 1389
+        - containerPort: 1636
+        - containerPort: 8443
+        volumeMounts:
+          - mountPath: /opt/frds/instance/data
+            name: {{ template "forgerock.frds.ds.fullname". }}-data-volume
+          {{- if .Values.directory.proxy.enabled }}
+          - mountPath: "/schema"
+            name: frds-schema-storage
+          {{- end }}
+          {{- if .Values.directory.useKeystore }}
+          - mountPath: /var/run/secrets/frds
+            name: {{ template "forgerock.frds.ds.fullname". }}-keystore
+            readOnly: true
+          {{- end }}
+        {{- if .Values.directory.startupProbe }}
+        startupProbe: {{ toYaml .Values.directory.startupProbe | nindent 12 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.directory.livenessProbe | nindent 12 }}
+        readinessProbe: {{ toYaml .Values.directory.readinessProbe | nindent 12 }}
+        {{- if .Values.directory.resources }}
+        resources: {{ toYaml .Values.directory.resources | nindent 12 }}
+        {{- end }}
+      volumes:
+        {{- if .Values.directory.proxy.enabled }}
+        - name: frds-schema-storage
+          persistentVolumeClaim:
+            claimName: frdsschemaclaim
+        {{- end }}
+        {{- if .Values.directory.useKeystore }}
+        - name: {{ template "forgerock.frds.ds.fullname" . }}-keystore
+          secret:
+            secretName: {{ template "forgerock.frds.ds.fullname" . }}-keystore
+        {{- end }}
+        {{- if .Values.directory.dsconfig }}
+        - name: {{ template "forgerock.frds.ds.fullname". }}-dsconfig
+          configMap:
+            name: {{ template "forgerock.frds.ds.fullname". }}-dsconfig
+        {{- end }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ template "forgerock.frds.ds.fullname". }}-data-volume
+    spec:
+      {{- if .Values.directory.volumeClaimTemplates.data.storageClassName }}
+      storageClassName: {{ .Values.directory.volumeClaimTemplates.data.storageClassName }}
+      {{- end }}
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.directory.volumeClaimTemplates.data.storageSize }}
+{{- end }}

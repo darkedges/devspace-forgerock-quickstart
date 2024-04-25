@@ -1,9 +1,13 @@
 replication:
-  replicas: 2
+  replicas: 0
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Delete
-frds:
-  replicas: 1
+  dsconfig:
+    replication: |
+      create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
+      set-synchronization-provider-prop --provider-name "Multimaster synchronization" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12
+directory:
+  replicas: 2
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Delete
   dsconfig:

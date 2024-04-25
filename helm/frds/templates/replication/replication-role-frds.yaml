@@ -1,17 +1,20 @@
-{{- if .Values.frds.rbac.create -}}
+
+{{ if ge .Values.replication.replicas 1.0  }}
+{{- if .Values.replication.rbac.create -}}
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ template "forgerock.frds.fullname". }}
+  name: {{ template "forgerock.frds.rs.fullname". }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "forgerock.labels" . | nindent 4 }}
+    {{- include "forgerock.rs.labels" . | nindent 4 }}
     app.kubernetes.io/component: frds
-    {{- with .Values.frds.labels }}
+    {{- with .Values.replication.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
 rules:
 - apiGroups: ["batch", "apps", ""]
   resources: ["pods", "services", "jobs"]
   verbs: ["get", "list", "watch"]
+{{- end }}
 {{- end }}

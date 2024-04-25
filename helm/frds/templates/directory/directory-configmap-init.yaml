@@ -1,0 +1,48 @@
+{{ if ge .Values.directory.replicas 1.0  }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "forgerock.frds.ds.fullname". }}-init-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.ds.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.directory.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.directory.configAnnotations }}
+  annotations: {{ toYaml .Values.directory.configAnnotations | nindent 4 }}
+  {{- end }}
+data:
+  {{- with .Values.directory.init.env }}
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
+  {{- if has .Values.directory.instance.type (list "amconfig" "development") }}
+  AMCONFIG_BASE_DN: {{ .Values.directory.profiles.amconfig.baseDn }}
+  AMCONFIG_BACKEND_NAME: {{ .Values.directory.profiles.amconfig.backendName }}
+  {{- end }}
+  {{- if has .Values.directory.instance.type (list "identity" "development") }}
+  AMIDENTITYSTORE_BASE_DN: {{ .Values.directory.profiles.identity.baseDn }}
+  AMIDENTITYSTORE_BACKEND_NAME: {{ .Values.directory.profiles.identity.backendName }}
+  {{- end }}
+  {{- if has .Values.directory.instance.type (list "cts" "development") }}
+  AMCTS_BASE_DN: {{ .Values.directory.profiles.cts.baseDn }}
+  AMCTS_BACKEND_NAME: {{ .Values.directory.profiles.cts.backendName }}
+  AMCTS_BACKEND_TOKEN_EXPIRARTION_POLICY: {{ .Values.directory.profiles.cts.tokenExpirationPolicy }}
+  {{- end }}
+  {{- if has .Values.directory.instance.type (list "idm" "development") }}
+  IDM_DOMAIN: {{ .Values.directory.profiles.idm.domain }}
+  IDM_BACKEND_NAME: {{ .Values.directory.profiles.idm.backendName }}
+  {{- end }}
+  INIT_INSTANCE_PROFILE: directory
+  {{- if ge .Values.replication.replicas 1.0 }}
+  DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.replication.bootstrap" . }}
+  {{- else }}
+  {{- if eq .Values.directory.replication.type "embedded" }}
+  INIT_REPLICATION_TYPE: embedded
+  DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.directory.bootstrap" . }}
+  {{- else }}
+  INIT_REPLICATION_TYPE: none
+  {{- end }}
+  {{- end }}
+{{- end }}

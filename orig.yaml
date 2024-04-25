@@ -1,32 +1,32 @@
 ---
-# Source: helm-frds/templates/frds-serviceaccount-frds.yaml
+# Source: helm-frds/templates/directory/directory-serviceaccount-frds.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: development-frds-frds-directory
+  name: development-frds-frds-ds
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 automountServiceAccountToken: true
 ---
-# Source: helm-frds/templates/frds-secret.yaml
+# Source: helm-frds/templates/directory/directory-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
-  name: development-frds-frds-directory-secrets
+  name: development-frds-frds-ds-secrets
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 type: Opaque
@@ -37,35 +37,36 @@ data:
   DEPLOYMENT_KEY_PASSWORD: UGFzc3cwcmQ=
   jksPassword: Y2hhbmdlaXQ=
 ---
-# Source: helm-frds/templates/frds-configmap-container.yaml
+# Source: helm-frds/templates/directory/directory-configmap-container.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: development-frds-frds-directory-config
+  name: development-frds-frds-ds-config
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 data:
+  DS_BOOTSTRAP_REPLICATION_SERVERS: development-frds-frds-ds-0.development-frds-frds-ds:8989
   DS_GROUP_ID: DE
 ---
-# Source: helm-frds/templates/frds-configmap-dsconfig.yaml
+# Source: helm-frds/templates/directory/directory-configmap-dsconfig.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: development-frds-frds-directory-dsconfig
+  name: development-frds-frds-ds-dsconfig
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 data:
@@ -79,46 +80,49 @@ data:
     create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
     set-synchronization-provider-prop --provider-name "Multimaster synchronization" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12
 ---
-# Source: helm-frds/templates/frds-configmap-init.yaml
+# Source: helm-frds/templates/directory/directory-configmap-init.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: development-frds-frds-directory-init-config
+  name: development-frds-frds-ds-init-config
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 data:
   INIT_INSTANCE_PROFILE: directory
+  DS_BOOTSTRAP_REPLICATION_SERVERS: development-frds-frds-ds-0.development-frds-frds-ds:8989
 ---
-# Source: helm-frds/templates/frds-service.yaml
+# Source: helm-frds/templates/directory/directory-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: development-frds-frds-directory
+  name: development-frds-frds-ds
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: frds
 spec:
   clusterIP: None
   selector:
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
-    app.kubernetes.io/component: development-frds-frds-directory
+    app.kubernetes.io/component: development-frds-frds-ds
   ports:
     - name: tcp-admin
       port: 4444
+    - name: tcp-replication
+      port: 8989
     - name: tcp-ldap
       port: 1389
     - name: tcp-ldaps
@@ -126,42 +130,42 @@ spec:
     - name: tcp-https
       port: 8443
 ---
-# Source: helm-frds/templates/frds-statefulset.yaml
+# Source: helm-frds/templates/directory/directory-statefulset.yaml
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: development-frds-frds-directory
+  name: development-frds-frds-ds
   namespace: dfq
   labels:
     helm.sh/chart: helm-frds-1.0.17
-    app.kubernetes.io/name: development-frds-frds-directory
+    app.kubernetes.io/name: development-frds-frds-ds
     app.kubernetes.io/instance: development-frds
     app.kubernetes.io/version: "1.0.0"
-    app.kubernetes.io/part-of: development-frds-frds-directory
+    app.kubernetes.io/part-of: development-frds-frds-ds
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/component: development-frds-frds-directory
+    app.kubernetes.io/component: development-frds-frds-ds
 spec:
   podManagementPolicy: OrderedReady 
   selector:
     matchLabels:
-      app.kubernetes.io/name: development-frds-frds-directory
+      app.kubernetes.io/name: development-frds-frds-ds
       app.kubernetes.io/instance: development-frds
-      app.kubernetes.io/component: development-frds-frds-directory
+      app.kubernetes.io/component: development-frds-frds-ds
   replicas: 1
   revisionHistoryLimit: 10
   minReadySeconds: 0
-  serviceName: development-frds-frds-directory
+  serviceName: development-frds-frds-ds
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Delete
     whenScaled: 
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: development-frds-frds-directory
+        app.kubernetes.io/name: development-frds-frds-ds
         app.kubernetes.io/instance: development-frds
-        app.kubernetes.io/component: development-frds-frds-directory
+        app.kubernetes.io/component: development-frds-frds-ds
       annotations:
-        checksum/config: efc9a692a65ab2788b7c832116f97a1692819d40d025dd214e2f0eeb1a35a3de
+        checksum/config: f07dc22ac749a7c8ac3f303c456122612b3ec3fef8d6c98baf608fb84d235d98
     spec:
       dnsPolicy: ClusterFirst
       nodeSelector: 
@@ -179,17 +183,17 @@ spec:
         imagePullPolicy: IfNotPresent
         envFrom:
         - secretRef:
-            name: development-frds-frds-directory-secrets
+            name: development-frds-frds-ds-secrets
         - configMapRef:
-            name: development-frds-frds-directory-init-config
+            name: development-frds-frds-ds-init-config
         command:
           - ./docker-entrypoint.sh
           - init
         volumeMounts:
           - mountPath: /opt/frds/instance/data
-            name: development-frds-frds-directory-data-volume
+            name: development-frds-frds-ds-data-volume
           - mountPath: /opt/frds/instance/init/dsconfig
-            name: development-frds-frds-directory-dsconfig
+            name: development-frds-frds-ds-dsconfig
       containers:
       - name: frds
         image: devspace-forgerock-quickstart/ds:7.5.0
@@ -219,15 +223,16 @@ spec:
               fieldPath: metadata.name
         envFrom:
         - configMapRef:
-            name: development-frds-frds-directory-config
+            name: development-frds-frds-ds-config
         ports:
         - containerPort: 4444
+        - containerPort: 8989
         - containerPort: 1389
         - containerPort: 1636
         - containerPort: 8443
         volumeMounts:
           - mountPath: /opt/frds/instance/data
-            name: development-frds-frds-directory-data-volume
+            name: development-frds-frds-ds-data-volume
         livenessProbe: 
             failureThreshold: 5
             initialDelaySeconds: 10
@@ -249,12 +254,12 @@ spec:
               cpu: 100m
               memory: 90Mi
       volumes:
-        - name: development-frds-frds-directory-dsconfig
+        - name: development-frds-frds-ds-dsconfig
           configMap:
-            name: development-frds-frds-directory-dsconfig
+            name: development-frds-frds-ds-dsconfig
   volumeClaimTemplates:
   - metadata:
-      name: development-frds-frds-directory-data-volume
+      name: development-frds-frds-ds-data-volume
     spec:
       accessModes:
         - ReadWriteOnce
