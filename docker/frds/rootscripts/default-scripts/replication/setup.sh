@@ -20,7 +20,6 @@ set-global-configuration-prop --set "group-id:&{ds.group.id|default}"
 set-global-configuration-prop --set "advertised-listen-address:&{ds.advertised.listen.address|localhost}"
 set-global-configuration-prop --advanced --set "trust-transaction-ids:&{platform.trust.transaction.header|false}"
 set-synchronization-provider-prop --provider-name "Multimaster synchronization" --set "bootstrap-replication-server:&{ds.bootstrap.replication.servers|localhost:8989}"
-
 EOF
 
 # Start initialization

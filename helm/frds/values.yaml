@@ -44,7 +44,7 @@ frds:
       password: changeit
 
   # frds.replicaCount -- number of replicas
-  replicaCount: 1
+  replicas: 1
 
   # define what the default values are for a Volume Claim Template
   volumeClaimTemplates:

@@ -57,7 +57,7 @@ Create chart name and version as used by the chart label.
 {{- define "frds.bootstrap" -}}
 {{- $node := index . 0 }}
 {{- $root := index . 1 }}
-{{- $nodeCount := $root.Values.frds.replicaCount | int }}
+{{- $nodeCount := $root.Values.frds.replicas | int }}
 {{- $name := include "forgerock.frds.fullname" $root }}
   {{- range $index0 := until $nodeCount -}}
     {{- $index1 := $index0 | add1 -}}

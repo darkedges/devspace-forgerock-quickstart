@@ -1,5 +1,9 @@
+replication:
+  replicas: 2
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Delete
 frds:
-  replicaCount: 2
+  replicas: 1
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Delete
   dsconfig:

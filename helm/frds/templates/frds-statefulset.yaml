@@ -16,7 +16,7 @@ spec:
       {{- include "forgerock.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: {{ template "forgerock.frds.fullname". }}
   {{- if not .Values.frds.autoscaling.enabled }}
-  replicas: {{ .Values.frds.replicaCount }}
+  replicas: {{ .Values.frds.replicas }}
   {{- end }}
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   {{- if .Values.frds.updateStrategy }}
