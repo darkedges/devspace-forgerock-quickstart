@@ -25,8 +25,8 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 If release name contains chart name it will be used as a full name.
 */}}
 {{- define "forgerock.frds.rs.fullname" -}}
-{{- if .Values.directory.fullnameOverride -}}
-{{- .Values.directory.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- if .Values.replication.fullnameOverride -}}
+{{- .Values.replication.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
 {{- printf "%s-%s-%s" .Release.Name "frds" "rs" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
@@ -93,15 +93,36 @@ Create chart name and version as used by the chart label.
   {{- end -}}
 {{- end -}}
 
-{{- define "forgerock.waitfor" -}}
+{{- define "forgerock.ds.waitfor" -}}
 {{- $releaseName := .Release.Name -}}
+{{- $rs := include "forgerock.frds.rs.fullname" . }}
 {{- $waitfor := list -}}
 {{- range $key, $val := .Values.services -}}
 {{- if $val.waitfor -}}
     {{- $releaseName := default $releaseName $val.releaseNameOverride -}}
     {{- $waitfor = append $waitfor (printf "- -%s=%s-%s" $val.waitfor $releaseName $val.name) -}}
     {{- end -}}
-{{- end -}}   
+{{- end -}}
+{{- if ge .Values.replication.replicas 1.0 -}}
+  {{- $waitfor = append $waitfor (printf "- -%s=%s" "service" $rs) -}}
+{{- end -}}
+{{- $waitfor := uniq $waitfor -}}
+{{ printf "args:" }}
+{{- range $val := $waitfor }}
+    {{ printf "%s" $val | indent 8  }}
+{{- end }} 
+{{- end -}}
+
+{{- define "forgerock.rs.waitfor" -}}
+{{- $releaseName := .Release.Name -}}
+{{- $rs := include "forgerock.frds.rs.fullname" . }}
+{{- $waitfor := list -}}
+{{- range $key, $val := .Values.services -}}
+{{- if $val.waitfor -}}
+    {{- $releaseName := default $releaseName $val.releaseNameOverride -}}
+    {{- $waitfor = append $waitfor (printf "- -%s=%s-%s" $val.waitfor $releaseName $val.name) -}}
+    {{- end -}}
+{{- end -}}
 {{- $waitfor := uniq $waitfor -}}
 {{ printf "args:" }}
 {{- range $val := $waitfor }}
@@ -145,7 +166,7 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Create the name of the service account to use
 */}}
 {{- define "forgerock.rs.serviceAccountName" -}}
-{{- if .Values.directory.serviceAccount.enabled -}}
+{{- if .Values.replication.serviceAccount.create -}}
     {{ default (include "forgerock.frds.rs.fullname" .) .Values.directory.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.directory.serviceAccount.name }}
@@ -156,7 +177,7 @@ Create the name of the service account to use
 Create the name of the service account to use
 */}}
 {{- define "forgerock.ds.serviceAccountName" -}}
-{{- if .Values.directory.serviceAccount.enabled -}}
+{{- if .Values.directory.serviceAccount.create -}}
     {{ default (include "forgerock.frds.ds.fullname" .) .Values.directory.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.directory.serviceAccount.name }}

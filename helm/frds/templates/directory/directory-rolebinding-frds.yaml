@@ -1,5 +1,5 @@
 {{ if ge .Values.directory.replicas 1.0  }}
-{{- if .Values.directory.rbac.create -}}
+{{- if and .Values.rbac.create .Values.directory.rbac.enabled -}}
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:

@@ -13,6 +13,11 @@ revisionHistoryLimit: 10
 podSecurityPolicy:
   enabled: false
 
+## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
+rbac:
+  create: true
+  scope: false
+
 genjks:
   image:
     repository: devspace-forgerock-quickstart/genjks

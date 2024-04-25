@@ -99,7 +99,7 @@ spec:
       - name: wait-for-first
         image: opsfleet/depends-on
         imagePullPolicy: {{ .Values.replication.image.imagePullPolicy }}
-        {{ template "forgerock.waitfor". }}
+        {{ template "forgerock.rs.waitfor". }}
       - name: init
         image: {{ .Values.replication.image.repository }}:{{ .Values.replication.image.tag }}
         imagePullPolicy: {{ .Values.replication.image.imagePullPolicy }}

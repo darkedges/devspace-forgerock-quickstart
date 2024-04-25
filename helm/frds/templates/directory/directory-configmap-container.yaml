@@ -14,12 +14,10 @@ metadata:
   annotations: {{ toYaml .Values.directory.configAnnotations | nindent 4 }}
   {{- end }}
 data:
-  {{- if ne .Values.directory.instance.type "directory" }}
+  {{- if ge .Values.replication.replicas 1.0 }}
   DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.replication.bootstrap" . }}
   {{- else }}
-  {{- if ge .Values.directory.replicas 1.0 }}
   DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.directory.bootstrap" . }}
-  {{- end }}
   {{- end }}
   {{- with .Values.directory.env }}
   {{- toYaml . | nindent 2 }}

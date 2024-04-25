@@ -1,5 +1,5 @@
 replication:
-  replicas: 0
+  replicas: 2
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Delete
   dsconfig:
