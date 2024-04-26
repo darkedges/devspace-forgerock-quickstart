@@ -11,15 +11,21 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
   annotations:
+    {{- if .Values.fram.useKeystore }}
     cert-manager.io/cluster-issuer: "vault-issuer"
+    {{- end }}
     nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.fram.ingress.backend.protocol }}"
     nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
+    {{- if .Values.fram.ingress.configurationsnippet }}
+    nginx.ingress.kubernetes.io/configuration-snippet: 
+    {{- toYaml .Values.fram.ingress.configurationsnippet | indent 4 }}
+    {{- end }}
 spec:
   {{- if .Values.fram.useKeystore }}
   tls:
   - hosts:
     {{- toYaml .Values.fram.ingress.hosts | nindent 4 }}
-    secretName: {{ template "forgerock.fullname". }}-external-tls
+    secretName: {{ template "forgerock.fullname". }}-ingress-tls
   {{- end }}
   rules:
   {{- $root := . -}}
@@ -31,7 +37,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ template "forgerock.fullname" $root }}-lb
+            name: {{ template "forgerock.fullname" $root }}
             port:
               number: {{ $root.Values.fram.ingress.backend.port }}
   {{- end }}

@@ -25,10 +25,7 @@ spec:
   encodeUsagesInRequest: true
   dnsNames:
   - localhost
-  - "*.{{ template "forgerock.fullname". }}-lb"
-  - "*.{{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}"
-  - "*.{{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}.svc"
-  - "*.{{ template "forgerock.fullname". }}-lb.{{ .Release.Namespace }}.svc.cluster.local"
+  - "{{ template "forgerock.fullname". }}"
   - "*.{{ template "forgerock.fullname". }}"
   - "*.{{ template "forgerock.fullname". }}.{{ .Release.Namespace }}"
   - "*.{{ template "forgerock.fullname". }}.{{ .Release.Namespace }}.svc"

@@ -1,3 +1,4 @@
+{{- if not .Values.fram.fbc }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -39,3 +40,4 @@ data:
   {{- toYaml . | nindent 2 }}
   {{- end }}
   {{- end }}
+{{- end }}

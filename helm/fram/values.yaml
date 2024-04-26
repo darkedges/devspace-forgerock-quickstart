@@ -4,27 +4,34 @@ commonLabels: {}
 # scmhash: abc123
 # myLabel: aakkmd
 
-# -- Rollback limit
-##
-revisionHistoryLimit: 10
-
 ## If true, create & use Pod Security Policy resources
 ## https://kubernetes.io/docs/concepts/policy/pod-security-policy/
 podSecurityPolicy:
   enabled: false
 
-fram: 
+genjks:
+  image:
+    repository: devspace-forgerock-quickstart/genjks
+    tag: 7.5.0
+    imagePullPolicy: IfNotPresent
+
+fram:
+  fbc: true
   image:
     repository: devspace-forgerock-quickstart/am
-    tag: 7.2.0
+    tag: 7.5.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
 
+  # -- Rollback limit
+  ##
+  revisionHistoryLimit: 10
+
   # Secrets
   secrets:
-    admin:  
+    admin:
       # fram.secrets.admin.password -- see docker FRAM_ADMIN_PASSWORD
       password: Passw0rd
     cfgStore:
@@ -42,7 +49,7 @@ fram:
       uid: uid=openam_cts,ou=admins,ou=famrecords,ou=openam-session,ou=tokens
       # fram.secrets.ctsStore.password -- password for CTS Store
       password: Passw0rd
-  
+
   # stores
   stores:
     cfgStore:
@@ -66,7 +73,7 @@ fram:
       rootSuffix: dc=cts,ou=identities
       # fram.stores.ctsStore.instance --  ctsStore store type
       instance: development
-  
+
   # define what the default values are for a Volume Claim Template
   volumeClaimTemplates:
     data:
@@ -74,28 +81,25 @@ fram:
       storageClassName:
       # fram.volumeClaimTemplates.data.storageSize -- size to be requested.
       storageSize: 100Mi
-  
+
   init:
     ## fram.init.env -- list of variables to be added for the init container config map
     env: []
-  
+
   # rbac
   rbac:
     # fram.rbac.enabled -- whether to create roles and bindings
     enabled: true
-  
+
   # service account
   serviceAccount:
     # fram.serviceAccount.enabled -- whether to create services accounts
     enabled: true
     automountServiceAccountToken: true
     # fram.serviceAccount.annotations -- list of annotations to attach to a service account
-    annotations:
-      helm.sh/hook: "pre-install"
-      helm.sh/hook-delete-policy: "before-hook-creation"
-      helm.sh/hook-weight: "-10"
+    annotations: {}
     name:
-  
+
   # fram.services --  map of multiple service details that can be connected to
   services: {}
   #  identity:
@@ -116,6 +120,9 @@ fram:
     enabled: false
     # fram.ingress.hosts -- List of hostname to use for ingress
     hosts: []
+    # fram.ingress.configurationsnippet -- Configuration Snippet to add
+    configurationsnippet: {}
+
     backend:
       # fram.ingress.backend.protocol -- scheme being used by the backend application
       protocol: HTTP
@@ -141,7 +148,7 @@ fram:
   labels: {}
   #  keel.sh/policy: patch
   #  keel.sh/trigger: poll
-  
+
   # -- Required for use with CNI based kubernetes installations (such as ones set up by kubeadm),
   # since CNI and hostport don't mix yet. Can be deprecated once https://github.com/kubernetes/kubernetes/issues/23920
   # is merged
@@ -195,7 +202,8 @@ fram:
   # -- Topology spread constraints rely on node labels to identify the topology domain(s) that each Node is in.
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
   ##
-  topologySpreadConstraints: []
+  topologySpreadConstraints:
+    []
     # - maxSkew: 1
     #   topologyKey: topology.kubernetes.io/zone
     #   whenUnsatisfiable: DoNotSchedule
@@ -204,9 +212,9 @@ fram:
     #       app.kubernetes.io/instance: fram-internal
 
   resources:
-  ##  limits:
-  ##    cpu: 100m
-  ##    memory: 90Mi
+    ##  limits:
+    ##    cpu: 100m
+    ##    memory: 90Mi
     requests:
       cpu: 100m
       memory: 90Mi
@@ -265,7 +273,7 @@ fram:
     preStop:
       exec:
         command:
-          - /opt/fram/docker-entrypoint.sh 
+          - /opt/fram/docker-entrypoint.sh
           - stop
 
   minAvailable: 1
@@ -276,7 +284,8 @@ fram:
     maxReplicas: 11
     targetCPUUtilizationPercentage: 50
     targetMemoryUtilizationPercentage: 50
-    behavior: {}
+    behavior:
+      {}
       # scaleDown:
       #   stabilizationWindowSeconds: 300
       #  policies:
@@ -319,12 +328,12 @@ fram:
       #  annotations:
       # key: value
     triggers: []
-  #     - type: prometheus
-  #       metadata:
-  #         serverAddress: http://<prometheus-host>:9090
-  #         metricName: http_requests_total
-  #         threshold: '100'
-  #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
+    #     - type: prometheus
+    #       metadata:
+    #         serverAddress: http://<prometheus-host>:9090
+    #         metricName: http_requests_total
+    #         threshold: '100'
+    #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
 
     behavior: {}
   #     scaleDown:

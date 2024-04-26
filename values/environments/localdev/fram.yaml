@@ -1,37 +1,43 @@
 fram:
+  env:
+    AM_STORES_APPLICATION_SERVERS: "development-frds-frds-ds:1389"
+    AM_STORES_CTS_SERVERS: "development-frds-frds-ds:1389"
+    AM_STORES_POLICY_SERVERS: "development-frds-frds-ds:1389"
+    AM_STORES_UMA_SERVERS: "development-frds-frds-ds:1389"
+    AM_STORES_USER_SERVERS: "development-frds-frds-ds:1389"
   services:
     identity:
       waitfor: service
-      name: frds-development
-      releaseNameOverride: localdev-frds
+      name: frds-ds
+      releaseNameOverride: development-frds
       port: 1389
       ssl: false
     amconfig:
-      waitfor: service 
-      name: frds-development
-      releaseNameOverride: localdev-frds
+      waitfor: service
+      name: frds-ds
+      releaseNameOverride: development-frds
       port: 1389
       ssl: false
     cts:
       waitfor: service
-      name: frds-development
-      releaseNameOverride: localdev-frds
+      name: frds-ds
+      releaseNameOverride: development-frds
       port: 1389
       ssl: false
   livenessProbe:
     httpGet:
-      path: "openam/json/health/live"
+      path: "am/json/health/live"
       port: 8080
       scheme: HTTP
   readinessProbe:
     httpGet:
-      path: "openam/json/health/ready"
+      path: "am/json/health/ready"
       port: 8080
       scheme: HTTP
   ingress:
     enabled: true
     backend:
       protocol: HTTP
-      port: 8080
-    hosts: 
+      targetPort: 8080
+    hosts:
       - am.7f000001.nip.io
