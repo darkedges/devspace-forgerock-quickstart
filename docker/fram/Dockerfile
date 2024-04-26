@@ -17,9 +17,9 @@ COPY --from=tomcat /usr/local/tomcat /var/tmp/bootstrap/tomcat
 
 COPY webapps/ var/tmp/bootstrap/webapps/
 
-COPY patches/ /var/tmp/bootstrap/webapps/openam/
+COPY patches/ /var/tmp/bootstrap/webapps/am/
 
-COPY instance/webapps/ /var/tmp/bootstrap/webapps/openam/
+COPY instance/webapps/ /var/tmp/bootstrap/webapps/am/
 
 # Runtime deployment
 FROM ${JRE_IMAGE}:${JRE_TAG}
