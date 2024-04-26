@@ -1,5 +1,5 @@
 {
-    "context": "endpoint/oauthproxy",
-    "type": "text/javascript",
-    "file": "oauthProxy.js"
+    "context" : "endpoint/oauthproxy",
+    "type" : "text/javascript",
+    "file" : "oauthProxy.js"
 }

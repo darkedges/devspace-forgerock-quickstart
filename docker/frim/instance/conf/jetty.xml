@@ -314,16 +314,4 @@
         </Arg>
     </Call>
 
-    <Set name="requestLog">
-        <New id="RequestLog" class="org.eclipse.jetty.server.CustomRequestLog">
-            <Arg>
-                <New class="org.eclipse.jetty.server.AsyncRequestLogWriter">
-                </New>
-            </Arg>
-            <Arg>
-                <Get class="org.eclipse.jetty.server.CustomRequestLog" name="EXTENDED_NCSA_FORMAT"/>
-            </Arg>
-        </New> 
-    </Set>
-
 </Configure>

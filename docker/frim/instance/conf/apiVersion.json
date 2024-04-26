@@ -1,12 +1,12 @@
 {
-    "warning": {
-        "enabled": {
-            "$bool": "&{openidm.apiVersion.warning.enabled|false}"
+    "warning" : {
+        "enabled" : {
+            "$bool" : "&{openidm.apiVersion.warning.enabled|false}"
         },
-        "includeScripts": {
-            "$bool": "&{openidm.apiVersion.warning.includeScripts|false}"
+        "includeScripts" : {
+            "$bool" : "&{openidm.apiVersion.warning.includeScripts|false}"
         },
-        "logFilterResourcePaths": [
+        "logFilterResourcePaths" : [
             "audit",
             "authentication",
             "cluster",

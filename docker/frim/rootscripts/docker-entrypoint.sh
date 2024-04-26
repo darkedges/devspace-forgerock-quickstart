@@ -58,6 +58,12 @@ init() {
 
 start() {
     echo "Starting IDM"
+
+    if [[ -f "/var/run/secrets/frim/" ]]; then
+      mkdir -p /opt/frim/instance/secrets
+      cp -L /var/run/secrets/frim/* /opt/frim/instance/secrets/
+    fi
+
     # Bundle directory
     BUNDLE_PATH="$OPENIDM_HOME/bundle"
     

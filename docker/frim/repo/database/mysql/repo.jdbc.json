@@ -1,0 +1,723 @@
+{
+    "dbType" : "MYSQL",
+    "useDataSource" : "default",
+    "maxBatchSize" : 100,
+    "maxTxRetry" : 5,
+    "queries" : {
+        "genericTables" : { },
+        "explicitTables" : { },
+        "validInRelationshipQuery" : [ ]
+    },
+    "commands" : {
+        "genericTables" : { },
+        "explicitTables" : {
+            "purge-by-recon-expired" : "DELETE r FROM ${_dbSchema}.${_table} r INNER JOIN (SELECT reconId FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND activitydate < ${timestamp} AND entryType = 'summary') AS x ON x.reconId = r.reconId",
+            "purge-by-recon-number-of" : "set @num := 0, @mapping := ''; DELETE r FROM ${_dbSchema}.${_table} r INNER JOIN ( SELECT reconId, mapping, activitydate, @num := if(@mapping = mapping, @num + 1, 1) AS rowNumber, @mapping := mapping as m FROM ${_dbSchema}.${_table} WHERE mapping LIKE ${includeMapping} AND mapping NOT LIKE ${excludeMapping} AND entryType = 'summary' ORDER BY mapping, activitydate desc ) AS x ON r.reconId = x.reconId WHERE x.rowNumber > ${numberOf}",
+            "delete-mapping-links" : "DELETE FROM ${_dbSchema}.${_table} WHERE linktype = ${mapping}",
+            "delete-target-ids-for-recon" : "DELETE FROM ${_dbSchema}.${_table} WHERE reconid = ${reconId}"
+        }
+    },
+    "resourceMapping" : {
+        "default" : {
+            "mainTable" : "genericobjects",
+            "propertiesTable" : "genericobjectproperties",
+            "searchableDefault" : true
+        },
+        "genericMapping" : {
+            "managed/*" : {
+                "mainTable" : "managedobjects",
+                "propertiesTable" : "managedobjectproperties",
+                "searchableDefault" : true
+            },
+            "managed/user" : {
+                "mainTable" : "managedobjects",
+                "propertiesTable" : "managedobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/userName" : {
+                        "searchable" : true
+                    },
+                    "/givenName" : {
+                        "searchable" : true
+                    },
+                    "/sn" : {
+                        "searchable" : true
+                    },
+                    "/mail" : {
+                        "searchable" : true
+                    },
+                    "/accountStatus" : {
+                        "searchable" : true
+                    },
+                    "/roles" : {
+                        "searchable" : true
+                    },
+                    "/sunset" : {
+                        "searchable" : true
+                    },
+                    "/memberOfOrg" : {
+                        "searchable" : true
+                    },
+                    "/adminOfOrg" : {
+                        "searchable" : true
+                    },
+                    "/ownerOfOrg" : {
+                        "searchable" : true
+                    },
+                    "/memberOfOrgIDs" : {
+                        "searchable" : true
+                    },
+                    "/activeDate" : {
+                        "searchable" : true
+                    },
+                    "/inactiveDate" : {
+                        "searchable" : true
+                    },
+                    "/expireAccount" : {
+                        "searchable" : true
+                    },
+                    "/activateAccount" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "managed/organization" : {
+                "mainTable" : "managedobjects",
+                "propertiesTable" : "managedobjectproperties",
+                "searchableDefault" : true
+            },
+            "scheduler" : {
+                "mainTable" : "schedulerobjects",
+                "propertiesTable" : "schedulerobjectproperties",
+                "searchableDefault" : true,
+                "properties" : {
+                    "/serialized" : {
+                        "searchable" : false
+                    }
+                }
+            },
+            "scheduler/*" : {
+                "mainTable" : "schedulerobjects",
+                "propertiesTable" : "schedulerobjectproperties",
+                "searchableDefault" : true,
+                "properties" : {
+                    "/serialized" : {
+                        "searchable" : false
+                    }
+                }
+            },
+            "cluster" : {
+                "mainTable" : "clusterobjects",
+                "propertiesTable" : "clusterobjectproperties",
+                "searchableDefault" : true
+            },
+            "relationships" : {
+                "mainTable" : "relationships",
+                "propertiesTable" : "relationshipproperties",
+                "searchableDefault" : false,
+                "objectToColumn" : {
+                    "firstResourceCollection" : "firstresourcecollection",
+                    "firstResourceId" : "firstresourceid",
+                    "firstPropertyName" : "firstpropertyname",
+                    "secondResourceCollection" : "secondresourcecollection",
+                    "secondResourceId" : "secondresourceid",
+                    "secondPropertyName" : "secondpropertyname"
+                }
+            },
+            "updates" : {
+                "mainTable" : "updateobjects",
+                "propertiesTable" : "updateobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/startDate" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "import" : {
+                "mainTable" : "importobjects",
+                "propertiesTable" : "importobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/resourcePath" : {
+                        "searchable" : true
+                    },
+                    "/begin" : {
+                        "searchable" : true
+                    },
+                    "/end" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "import/*" : {
+                "mainTable" : "importobjects",
+                "propertiesTable" : "importobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/_importUUID" : {
+                        "searchable" : true
+                    },
+                    "/_importStatus" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "reconprogressstate" : {
+                "mainTable" : "genericobjects",
+                "propertiesTable" : "genericobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/reconId" : {
+                        "searchable" : true
+                    },
+                    "/startTime" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "jsonstorage" : {
+                "mainTable" : "genericobjects",
+                "propertiesTable" : "genericobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/timestamp" : {
+                        "searchable" : true
+                    }
+                }
+            },
+            "internal/usermeta" : {
+                "mainTable" : "metaobjects",
+                "propertiesTable" : "metaobjectproperties",
+                "searchableDefault" : false
+            },
+            "internal/notification" : {
+                "mainTable" : "notificationobjects",
+                "propertiesTable" : "notificationobjectproperties",
+                "searchableDefault" : false,
+                "properties" : {
+                    "/createDate" : {
+                        "searchable" : true
+                    },
+                    "/notificationType" : {
+                        "searchable" : true
+                    }
+                }
+            }
+        },
+        "explicitMapping" : {
+            "link" : {
+                "table" : "links",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "linkType" : {
+                        "column" : "linktype",
+                        "isNotNull" : true
+                    },
+                    "firstId" : {
+                        "column" : "firstid",
+                        "isNotNull" : true
+                    },
+                    "secondId" : {
+                        "column" : "secondid",
+                        "isNotNull" : true
+                    },
+                    "linkQualifier" : {
+                        "column" : "linkqualifier",
+                        "isNotNull" : true
+                    }
+                }
+            },
+            "ui/notification" : {
+                "table" : "uinotification",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "requester" : "requester",
+                    "requesterId" : "requesterId",
+                    "receiverId" : {
+                        "column" : "receiverId",
+                        "isNotNull" : true
+                    },
+                    "createDate" : {
+                        "column" : "createDate",
+                        "isNotNull" : true
+                    },
+                    "notificationType" : {
+                        "column" : "notificationType",
+                        "isNotNull" : true
+                    },
+                    "notificationSubtype" : "notificationSubtype",
+                    "message" : {
+                        "column" : "message",
+                        "isNotNull" : true
+                    }
+                }
+            },
+            "internal/user" : {
+                "table" : "internaluser",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "password" : "pwd"
+                }
+            },
+            "internal/role" : {
+                "table" : "internalrole",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "name" : "name",
+                    "description" : "description",
+                    "temporalConstraints" : {
+                        "column" : "temporalConstraints",
+                        "type" : "JSON_LIST"
+                    },
+                    "condition" : "conditional",
+                    "privileges" : {
+                        "column" : "privs",
+                        "type" : "JSON_LIST"
+                    }
+                }
+            },
+            "audit/authentication" : {
+                "table" : "auditauthentication",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "userId" : "userid",
+                    "eventName" : "eventname",
+                    "provider" : "provider",
+                    "method" : "method",
+                    "result" : "result",
+                    "principal" : {
+                        "column" : "principals",
+                        "type" : "JSON_LIST"
+                    },
+                    "context" : {
+                        "column" : "context",
+                        "type" : "JSON_MAP"
+                    },
+                    "entries" : {
+                        "column" : "entries",
+                        "type" : "JSON_LIST"
+                    },
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    }
+                }
+            },
+            "audit/config" : {
+                "table" : "auditconfig",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "eventName" : "eventname",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "userId" : "userid",
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
+                    "runAs" : "runas",
+                    "objectId" : "configobjectid",
+                    "operation" : "operation",
+                    "before" : "beforeObject",
+                    "after" : "afterObject",
+                    "changedFields" : {
+                        "column" : "changedfields",
+                        "type" : "JSON_LIST"
+                    },
+                    "revision" : "rev"
+                }
+            },
+            "audit/activity" : {
+                "table" : "auditactivity",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "eventName" : "eventname",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "userId" : "userid",
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
+                    "runAs" : "runas",
+                    "objectId" : "activityobjectid",
+                    "operation" : "operation",
+                    "before" : "subjectbefore",
+                    "after" : "subjectafter",
+                    "changedFields" : {
+                        "column" : "changedfields",
+                        "type" : "JSON_LIST"
+                    },
+                    "revision" : "subjectrev",
+                    "passwordChanged" : "passwordchanged",
+                    "message" : "message",
+                    "provider" : "provider",
+                    "context" : "context",
+                    "status" : "status"
+                }
+            },
+            "audit/recon" : {
+                "table" : "auditrecon",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "eventName" : "eventname",
+                    "userId" : "userid",
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
+                    "action" : "activity",
+                    "exception" : "exceptiondetail",
+                    "linkQualifier" : "linkqualifier",
+                    "mapping" : "mapping",
+                    "message" : "message",
+                    "messageDetail" : {
+                        "column" : "messagedetail",
+                        "type" : "JSON_MAP"
+                    },
+                    "situation" : "situation",
+                    "sourceObjectId" : "sourceobjectid",
+                    "status" : "status",
+                    "targetObjectId" : "targetobjectid",
+                    "reconciling" : "reconciling",
+                    "ambiguousTargetObjectIds" : "ambiguoustargetobjectids",
+                    "reconAction" : "reconaction",
+                    "entryType" : "entrytype",
+                    "reconId" : "reconid"
+                }
+            },
+            "audit/sync" : {
+                "table" : "auditsync",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "eventName" : "eventname",
+                    "userId" : "userid",
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
+                    "action" : "activity",
+                    "exception" : "exceptiondetail",
+                    "linkQualifier" : "linkqualifier",
+                    "mapping" : "mapping",
+                    "message" : "message",
+                    "messageDetail" : {
+                        "column" : "messagedetail",
+                        "type" : "JSON_MAP"
+                    },
+                    "situation" : "situation",
+                    "sourceObjectId" : "sourceobjectid",
+                    "status" : "status",
+                    "targetObjectId" : "targetobjectid"
+                }
+            },
+            "audit/access" : {
+                "table" : "auditaccess",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "timestamp" : {
+                        "column" : "activitydate",
+                        "isNotNull" : true
+                    },
+                    "eventName" : "eventname",
+                    "transactionId" : {
+                        "column" : "transactionid",
+                        "isNotNull" : true
+                    },
+                    "userId" : "userid",
+                    "trackingIds" : {
+                        "column" : "trackingids",
+                        "type" : "JSON_LIST"
+                    },
+                    "server/ip" : "server_ip",
+                    "server/port" : "server_port",
+                    "client/ip" : "client_ip",
+                    "client/port" : "client_port",
+                    "request/protocol" : "request_protocol",
+                    "request/operation" : "request_operation",
+                    "request/detail" : {
+                        "column" : "request_detail",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/request/secure" : "http_request_secure",
+                    "http/request/method" : "http_request_method",
+                    "http/request/path" : "http_request_path",
+                    "http/request/queryParameters" : {
+                        "column" : "http_request_queryparameters",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/request/headers" : {
+                        "column" : "http_request_headers",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/request/cookies" : {
+                        "column" : "http_request_cookies",
+                        "type" : "JSON_MAP"
+                    },
+                    "http/response/headers" : {
+                        "column" : "http_response_headers",
+                        "type" : "JSON_MAP"
+                    },
+                    "response/status" : "response_status",
+                    "response/statusCode" : "response_statuscode",
+                    "response/elapsedTime" : "response_elapsedtime",
+                    "response/elapsedTimeUnits" : "response_elapsedtimeunits",
+                    "response/detail" : {
+                        "column" : "response_detail",
+                        "type" : "JSON_MAP"
+                    },
+                    "roles" : "roles"
+                }
+            },
+            "clusteredrecontargetids" : {
+                "table" : "clusteredrecontargetids",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "reconId" : {
+                        "column" : "reconid",
+                        "isNotNull" : true
+                    },
+                    "targetIds" : {
+                        "column" : "targetids",
+                        "type" : "JSON_LIST",
+                        "isNotNull" : true
+                    }
+                }
+            },
+            "locks" : {
+                "table" : "locks",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : "rev",
+                    "nodeId" : "nodeid"
+                }
+            },
+            "sync/queue" : {
+                "table" : "syncqueue",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "syncAction" : {
+                        "column" : "syncAction",
+                        "isNotNull" : true
+                    },
+                    "resourceCollection" : {
+                        "column" : "resourceCollection",
+                        "isNotNull" : true
+                    },
+                    "resourceId" : {
+                        "column" : "resourceId",
+                        "isNotNull" : true
+                    },
+                    "mapping" : {
+                        "column" : "mapping",
+                        "isNotNull" : true
+                    },
+                    "objectRev" : "objectRev",
+                    "oldObject" : {
+                        "column" : "oldObject",
+                        "type" : "JSON_MAP"
+                    },
+                    "newObject" : {
+                        "column" : "newObject",
+                        "type" : "JSON_MAP"
+                    },
+                    "context" : {
+                        "column" : "context",
+                        "type" : "JSON_MAP",
+                        "isNotNull" : true
+                    },
+                    "state" : {
+                        "column" : "state",
+                        "isNotNull" : true
+                    },
+                    "nodeId" : "nodeId",
+                    "createDate" : {
+                        "column" : "createDate",
+                        "isNotNull" : true
+                    }
+                }
+            },
+            "file" : {
+                "table" : "files",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "content" : "content"
+                }
+            },
+            "recon/assoc" : {
+                "table" : "reconassoc",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "mapping" : {
+                        "column" : "mapping",
+                        "isNotNull" : true
+                    },
+                    "sourceResourceCollection" : {
+                        "column" : "sourceResourceCollection",
+                        "isNotNull" : true
+                    },
+                    "targetResourceCollection" : {
+                        "column" : "targetResourceCollection",
+                        "isNotNull" : true
+                    },
+                    "isAnalysis" : {
+                        "column" : "isAnalysis",
+                        "isNotNull" : true
+                    },
+                    "finishTime" : "finishTime"
+                }
+            },
+            "recon/assoc/entry" : {
+                "table" : "reconassocentry",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : {
+                        "column" : "rev",
+                        "isNotNull" : true
+                    },
+                    "reconId" : {
+                        "column" : "reconId",
+                        "isNotNull" : true
+                    },
+                    "situation" : "situation",
+                    "action" : "action",
+                    "phase" : "phase",
+                    "linkQualifier" : {
+                        "column" : "linkQualifier",
+                        "isNotNull" : true
+                    },
+                    "sourceObjectId" : "sourceObjectId",
+                    "targetObjectId" : "targetObjectId",
+                    "status" : {
+                        "column" : "status",
+                        "isNotNull" : true
+                    },
+                    "exception" : "exception",
+                    "message" : "message",
+                    "messageDetail" : {
+                        "column" : "messagedetail",
+                        "type" : "JSON_MAP"
+                    },
+                    "ambiguousTargetObjectIds" : "ambiguousTargetObjectIds"
+                }
+            },
+            "recon/assoc/entry/view" : {
+                "table" : "reconassocentryview",
+                "objectToColumn" : {
+                    "_id" : "objectid",
+                    "_rev" : "rev",
+                    "mapping" : "mapping",
+                    "reconId" : "reconId",
+                    "situation" : "situation",
+                    "action" : "action",
+                    "linkQualifier" : "linkQualifier",
+                    "sourceObjectId" : "sourceObjectId",
+                    "targetObjectId" : "targetObjectId",
+                    "sourceResourceCollection" : "sourceResourceCollection",
+                    "targetResourceCollection" : "targetResourceCollection",
+                    "status" : "status",
+                    "exception" : "exception",
+                    "message" : "message",
+                    "messageDetail" : "messageDetail",
+                    "ambiguousTargetObjectIds" : "ambiguousTargetObjectIds"
+                }
+            },
+            "relationshipresources" : {
+                "table" : "relationshipresources",
+                "objectToColumn" : {
+                    "_id" : {
+                        "column" : "id",
+                        "isNotNull" : true
+                    },
+                    "originResourceCollection" : {
+                        "column" : "originresourcecollection",
+                        "isNotNull" : true
+                    },
+                    "originProperty" : {
+                        "column" : "originproperty",
+                        "isNotNull" : true
+                    },
+                    "refResourceCollection" : {
+                        "column" : "refresourcecollection",
+                        "isNotNull" : true
+                    },
+                    "originFirst" : {
+                        "column" : "originfirst",
+                        "isNotNull" : true,
+                        "type" : "BOOLEAN"
+                    },
+                    "reverseProperty" : "reverseproperty"
+                }
+            }
+        }
+    }
+}

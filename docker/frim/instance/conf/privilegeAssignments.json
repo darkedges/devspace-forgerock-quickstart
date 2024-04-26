@@ -1,9 +1,9 @@
 {
-    "privilegeAssignments": [
+    "privilegeAssignments" : [
         {
-            "name": "ownerPrivileges",
-            "relationshipField": "ownerOfOrg",
-            "privileges": [
+            "name" : "ownerPrivileges",
+            "relationshipField" : "ownerOfOrg",
+            "privileges" : [
                 "owner-view-update-delete-orgs",
                 "owner-create-orgs",
                 "owner-view-update-delete-admins-and-members",
@@ -13,9 +13,9 @@
             ]
         },
         {
-            "name": "adminPrivileges",
-            "relationshipField": "adminOfOrg",
-            "privileges": [
+            "name" : "adminPrivileges",
+            "relationshipField" : "adminOfOrg",
+            "privileges" : [
                 "admin-view-update-delete-orgs",
                 "admin-create-orgs",
                 "admin-view-update-delete-members",
