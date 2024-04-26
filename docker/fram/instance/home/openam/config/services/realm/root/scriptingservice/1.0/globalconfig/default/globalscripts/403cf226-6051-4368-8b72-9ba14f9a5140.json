@@ -5,10 +5,9 @@
     "entityId" : "default/globalScripts/403cf226-6051-4368-8b72-9ba14f9a5140",
     "uid" : "ou=403cf226-6051-4368-8b72-9ba14f9a5140,ou=globalScripts,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "globalScript",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "403cf226-6051-4368-8b72-9ba14f9a5140" ]
   },
   "data" : {
     "_id" : "default/globalScripts/403cf226-6051-4368-8b72-9ba14f9a5140",
@@ -18,6 +17,7 @@
       "collection" : false
     },
     "createdBy" : "id=dsameuser,ou=user,dc=openam,dc=forgerock,dc=org",
+    "evaluatorVersion" : "V1_0",
     "creationDate" : "1433147666269",
     "language" : "GROOVY",
     "script" : "/*\n * Copyright 2020 ForgeRock AS. All Rights Reserved\n *\n * Use of this code requires a commercial software license with ForgeRock AS.\n * or with one of its affiliates. All use shall be exclusively subject\n * to such license between the licensee and ForgeRock AS.\n */\n\nimport static org.forgerock.json.JsonValue.field\nimport static org.forgerock.json.JsonValue.json\nimport static org.forgerock.json.JsonValue.object\n\nreturn json(object(\n        field(\"id\", rawProfile.id),\n        field(\"displayName\", rawProfile.first_name),\n        field(\"givenName\", rawProfile.first_name),\n        field(\"familyName\", rawProfile.last_name),\n        field(\"photoUrl\", rawProfile.photo_50),\n        field(\"email\", rawProfile.email),\n        field(\"username\", rawProfile.email)))",

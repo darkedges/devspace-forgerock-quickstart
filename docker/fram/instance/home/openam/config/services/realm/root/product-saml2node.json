@@ -5,10 +5,9 @@
     "entityId" : "product-Saml2Node",
     "uid" : "ou=product-Saml2Node,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "product-Saml2Node" ]
   },
   "data" : {
     "_id" : "product-Saml2Node",

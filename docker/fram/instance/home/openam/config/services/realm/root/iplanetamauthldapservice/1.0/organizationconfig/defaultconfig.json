@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -24,17 +23,23 @@
     "operationTimeout" : 0,
     "beheraPasswordPolicySupportEnabled" : true,
     "primaryLdapServer" : {
-      "$list" : "&{am.authentication.modules.ldap.servers}"
+      "$list" : "&{am.authentication.modules.ldap.servers|localhost:50636}"
     },
-    "userBindDN" : "&{am.authentication.modules.ldap.username}",
+    "userBindDN" : {
+      "$string" : "&{am.authentication.modules.ldap.username|cn=Directory Manager}"
+    },
     "userSearchStartDN" : [ "ou=identities" ],
     "profileAttributeMappings" : [ ],
     "stopLdapbindAfterInmemoryLockedEnabled" : false,
     "returnUserDN" : true,
     "secondaryLdapServer" : [ ],
-    "userBindPassword" : null,
+    "userBindPassword" : {
+      "$string" : "&{am.authentication.modules.ldap.password|}"
+    },
     "connectionHeartbeatTimeUnit" : "SECONDS",
-    "openam-auth-ldap-connection-mode" : "LDAP",
+    "openam-auth-ldap-connection-mode" : {
+      "$string" : "&{am.authentication.modules.ldap.connection.mode|LDAPS}"
+    },
     "iplanet-am-auth-ldap-invalid-chars" : [ "*|(|)|&|!" ],
     "userSearchFilter" : null,
     "authenticationLevel" : 0,

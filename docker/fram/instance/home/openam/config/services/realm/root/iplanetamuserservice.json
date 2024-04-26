@@ -5,10 +5,9 @@
     "entityId" : "iPlanetAMUserService",
     "uid" : "ou=iPlanetAMUserService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "iPlanetAMUserService" ]
   },
   "data" : {
     "_id" : "iPlanetAMUserService",

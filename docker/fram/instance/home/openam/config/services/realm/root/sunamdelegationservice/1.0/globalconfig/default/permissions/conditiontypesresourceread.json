@@ -5,10 +5,9 @@
     "entityId" : "default/Permissions/ConditionTypesResourceRead",
     "uid" : "ou=ConditionTypesResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "ConditionTypesResourceRead" ]
   },
   "data" : {
     "_id" : "default/Permissions/ConditionTypesResourceRead",

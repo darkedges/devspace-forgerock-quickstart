@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -17,7 +16,9 @@
       "name" : "iPlanetAMAuthAmsterService",
       "collection" : false
     },
-    "authorizedKeys" : "&{security.path}/secrets/amster/authorized_keys",
+    "authorizedKeys" : {
+      "$string" : "&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"
+    },
     "authenticationLevel" : 0,
     "enabled" : true,
     "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"

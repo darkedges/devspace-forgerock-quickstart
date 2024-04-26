@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -17,7 +16,11 @@
       "name" : "iPlanetAMAuthLDAPService",
       "collection" : false
     },
-    "userBindPassword" : "&{am.authentication.modules.ldap.password}",
-    "openam-auth-ldap-connection-mode" : "&{am.authentication.modules.ldap.connection.mode}"
+    "userBindPassword" : {
+      "$string" : "&{am.authentication.modules.ldap.password|password}"
+    },
+    "openam-auth-ldap-connection-mode" : {
+      "$string" : "&{am.authentication.modules.ldap.connection.mode|LDAPS}"
+    }
   }
 }

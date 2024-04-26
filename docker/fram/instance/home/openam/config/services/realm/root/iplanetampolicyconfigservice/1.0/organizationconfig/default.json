@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -17,10 +16,14 @@
       "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     },
-    "bindDn" : "&{am.stores.policy.username}",
-    "bindPassword" : "&{am.stores.policy.password}",
+    "bindDn" : {
+      "$string" : "&{am.stores.policy.username|cn=Directory Manager}"
+    },
+    "bindPassword" : {
+      "$string" : "&{am.stores.policy.password|password}"
+    },
     "sslEnabled" : {
-      "$bool" : "&{am.stores.policy.ssl.enabled}"
+      "$bool" : "&{am.stores.policy.ssl.enabled|false}"
     }
   }
 }

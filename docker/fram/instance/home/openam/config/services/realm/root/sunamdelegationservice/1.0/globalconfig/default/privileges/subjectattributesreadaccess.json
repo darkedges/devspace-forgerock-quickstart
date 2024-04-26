@@ -5,10 +5,9 @@
     "entityId" : "default/Privileges/SubjectAttributesReadAccess",
     "uid" : "ou=SubjectAttributesReadAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "SubjectAttributesReadAccess" ]
   },
   "data" : {
     "_id" : "default/Privileges/SubjectAttributesReadAccess",

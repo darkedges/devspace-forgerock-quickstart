@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -17,6 +16,8 @@
       "name" : "iPlanetAMAuthAmsterService",
       "collection" : false
     },
-    "authorizedKeys" : "&{security.path}/secrets/amster/authorized_keys"
+    "authorizedKeys" : {
+      "$string" : "&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"
+    }
   }
 }

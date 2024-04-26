@@ -5,10 +5,9 @@
     "entityId" : "RestSecurityTokenService",
     "uid" : "ou=RestSecurityTokenService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "RestSecurityTokenService" ]
   },
   "data" : {
     "_id" : "RestSecurityTokenService",

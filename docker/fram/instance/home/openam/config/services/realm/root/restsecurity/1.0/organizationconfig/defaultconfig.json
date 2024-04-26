@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RestSecurity,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -23,7 +22,9 @@
     "SigningKeyValidator" : "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
     "protectedUserAttributes" : [ ],
     "selfRegistrationTokenLifetime" : 900,
-    "confirmationIdHmacKey" : "&{am.selfservice.legacy.confirmation.email.link.signing.key}",
+    "confirmationIdHmacKey" : {
+      "$string" : "&{am.selfservice.legacy.confirmation.email.link.signing.key|jt2Ov9Fa1V+wLiGAmscI1NY/FMOYjKPSHdOsRYkYcZU=}"
+    },
     "selfServiceEnabled" : false,
     "selfRegistrationEnabled" : false,
     "forgotPasswordTokenLifetime" : 900,

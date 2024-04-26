@@ -5,10 +5,9 @@
     "entityId" : "default/Permissions/SAML2Admin",
     "uid" : "ou=SAML2Admin,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "SAML2Admin" ]
   },
   "data" : {
     "_id" : "default/Permissions/SAML2Admin",

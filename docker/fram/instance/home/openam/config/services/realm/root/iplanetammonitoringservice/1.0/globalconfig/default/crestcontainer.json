@@ -4,11 +4,10 @@
     "entityType" : "iPlanetAMMonitoringService",
     "entityId" : "default/crestContainer",
     "uid" : "ou=crestContainer,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "sunServiceID" : "crestContainer",
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "crestContainer" ]
   },
   "data" : {
     "_id" : "default/crestContainer",

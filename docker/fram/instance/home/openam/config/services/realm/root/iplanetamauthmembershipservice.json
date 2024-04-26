@@ -5,10 +5,9 @@
     "entityId" : "iPlanetAMAuthMembershipService",
     "uid" : "ou=iPlanetAMAuthMembershipService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "iPlanetAMAuthMembershipService" ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthMembershipService",

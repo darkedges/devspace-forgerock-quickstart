@@ -5,10 +5,9 @@
     "entityId" : "AttributeCollectorNode",
     "uid" : "ou=AttributeCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "AttributeCollectorNode" ]
   },
   "data" : {
     "_id" : "AttributeCollectorNode",

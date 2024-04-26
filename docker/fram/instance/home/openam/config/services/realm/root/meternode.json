@@ -5,10 +5,9 @@
     "entityId" : "MeterNode",
     "uid" : "ou=MeterNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "MeterNode" ]
   },
   "data" : {
     "_id" : "MeterNode",

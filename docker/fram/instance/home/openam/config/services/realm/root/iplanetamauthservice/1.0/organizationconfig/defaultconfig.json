@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -21,7 +20,7 @@
       "usernameGeneratorClass" : "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
       "usernameGeneratorEnabled" : true,
       "loginPostProcessClass" : [ ],
-      "loginSuccessUrl" : [ "/openam/console" ],
+      "loginSuccessUrl" : [ "/am/console" ],
       "userAttributeSessionMapping" : [ ],
       "loginFailureUrl" : [ ]
     },
@@ -30,14 +29,18 @@
       "zeroPageLoginReferrerWhiteList" : [ ],
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "moduleBasedAuthEnabled" : true,
-      "sharedSecret" : "AQICx/+mhKkJqrc4QIgjd6b8krlPwejY+tIai6gj6/mYENFtxGQW4U457CcekCSf/YY1wzxEK1FYE3Y=",
-      "keyAlias" : "test",
+      "sharedSecret" : {
+        "$string" : "&{am.authentication.shared.secret|AQIChr9uR6s5WN+vRL/TO277rM/DiBHU/xyUE1camLFM9xzX+G+Kb9SkKsI3wPRrHgqpbtBX7RtEwxI=}"
+      },
+      "addClearSiteDataHeader" : true,
+      "keyAlias" : null,
       "iplanet-am-auth-valid-goto-domains" : [ ]
     },
     "trees" : {
       "suspendedAuthenticationTimeout" : 5,
       "authenticationSessionsStateManagement" : "JWT",
       "authenticationSessionsMaxDuration" : 5,
+      "authenticationTreeCookieHttpOnly" : true,
       "authenticationSessionsWhitelist" : false
     },
     "accountlockout" : {
@@ -68,7 +71,7 @@
     },
     "PositiveIntegerValidator" : "org.forgerock.openam.audit.validation.PositiveIntegerValidator",
     "userprofile" : {
-      "dynamicProfileCreation" : "createAlias",
+      "dynamicProfileCreation" : "false",
       "defaultRole" : [ ],
       "aliasAttributeName" : [ ]
     },

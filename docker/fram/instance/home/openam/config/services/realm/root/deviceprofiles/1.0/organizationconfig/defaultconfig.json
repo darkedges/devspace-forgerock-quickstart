@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceProfiles,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -21,7 +20,7 @@
     "deviceProfilesSettingsEncryptionKeystoreType" : "JKS",
     "deviceProfilesAttrName" : "deviceProfiles",
     "deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword" : null,
-    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQICb27nOBGLsojBHt+7zqKlOGZNOh9iPl+yX6rMq4m9gbRWI1N3ne5ThdOumbXfx5e0",
+    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQIChr9uR6s5WN8Bksse+p6VUsbnxTInMmRR",
     "deviceProfilesSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
     "deviceProfilesSettingsEncryptionKeystoreKeyPairAlias" : null
   }

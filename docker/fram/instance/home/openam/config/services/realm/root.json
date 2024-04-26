@@ -7,8 +7,7 @@
     "sunServiceID" : null,
     "objectClass" : [ "domain", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "am-config" ]
   },
   "data" : {
     "_id" : "am-config",

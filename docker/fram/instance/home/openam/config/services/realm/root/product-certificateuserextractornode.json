@@ -5,10 +5,9 @@
     "entityId" : "product-CertificateUserExtractorNode",
     "uid" : "ou=product-CertificateUserExtractorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "product-CertificateUserExtractorNode" ]
   },
   "data" : {
     "_id" : "product-CertificateUserExtractorNode",

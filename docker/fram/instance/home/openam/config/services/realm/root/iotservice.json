@@ -5,10 +5,9 @@
     "entityId" : "IotService",
     "uid" : "ou=IotService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "IotService" ]
   },
   "data" : {
     "_id" : "IotService",

@@ -5,10 +5,9 @@
     "entityId" : "default/POLICY_CONDITION",
     "uid" : "ou=POLICY_CONDITION,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "POLICY_CONDITION" ]
   },
   "data" : {
     "_id" : "default/POLICY_CONDITION",

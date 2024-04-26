@@ -5,10 +5,9 @@
     "entityId" : "default/OAUTH2_MAY_ACT",
     "uid" : "ou=OAUTH2_MAY_ACT,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "OAUTH2_MAY_ACT" ]
   },
   "data" : {
     "_id" : "default/OAUTH2_MAY_ACT",

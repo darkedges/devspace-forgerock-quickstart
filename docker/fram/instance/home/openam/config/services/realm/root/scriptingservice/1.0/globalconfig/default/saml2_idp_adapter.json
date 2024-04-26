@@ -5,10 +5,9 @@
     "entityId" : "default/SAML2_IDP_ADAPTER",
     "uid" : "ou=SAML2_IDP_ADAPTER,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "SAML2_IDP_ADAPTER" ]
   },
   "data" : {
     "_id" : "default/SAML2_IDP_ADAPTER",

@@ -7,8 +7,7 @@
     "sunServiceID" : null,
     "objectClass" : [ "sunRealmService", "top" ],
     "pathParams" : { },
-    "ou" : [ ],
-    "amsterVersion" : "7.4.0"
+    "ou" : [ ]
   },
   "data" : {
     "_id" : "root-sunamhiddenrealmdelegationservicepermissions",

@@ -5,10 +5,9 @@
     "entityId" : "DelegationInterface/DelegationPolicyImpl",
     "uid" : "ou=DelegationPolicyImpl,ou=DelegationInterface,ou=PluginConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "DelegationPolicyImpl" ]
   },
   "data" : {
     "_id" : "DelegationInterface/DelegationPolicyImpl",

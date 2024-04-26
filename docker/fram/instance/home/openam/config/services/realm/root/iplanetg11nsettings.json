@@ -5,10 +5,9 @@
     "entityId" : "iPlanetG11NSettings",
     "uid" : "ou=iPlanetG11NSettings,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "iPlanetG11NSettings" ]
   },
   "data" : {
     "_id" : "iPlanetG11NSettings",

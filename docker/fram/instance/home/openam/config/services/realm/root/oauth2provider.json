@@ -5,10 +5,9 @@
     "entityId" : "OAuth2Provider",
     "uid" : "ou=OAuth2Provider,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "OAuth2Provider" ]
   },
   "data" : {
     "_id" : "OAuth2Provider",

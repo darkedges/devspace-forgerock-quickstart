@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthHOTPService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -24,7 +23,7 @@
     "authenticationLevel" : 0,
     "smtpHostname" : "smtp.gmail.com",
     "mobileCarrierAttribute" : null,
-    "smtpUserPassword" : "AQICb27nOBGLsojHAh1qqlVedjcAvn2qNg6w",
+    "smtpUserPassword" : "AQIChr9uR6s5WN8KAcEki7i1I63mr2iXF2dr",
     "smtpHostPort" : 465,
     "smtpFromAddress" : "no-reply@openam.org",
     "smtpUsername" : "opensso.sun",

@@ -5,10 +5,9 @@
     "entityId" : "SocialIdentityProviders",
     "uid" : "ou=SocialIdentityProviders,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "SocialIdentityProviders" ]
   },
   "data" : {
     "_id" : "SocialIdentityProviders",

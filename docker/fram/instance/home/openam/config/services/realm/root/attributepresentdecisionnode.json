@@ -5,10 +5,9 @@
     "entityId" : "AttributePresentDecisionNode",
     "uid" : "ou=AttributePresentDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "AttributePresentDecisionNode" ]
   },
   "data" : {
     "_id" : "AttributePresentDecisionNode",

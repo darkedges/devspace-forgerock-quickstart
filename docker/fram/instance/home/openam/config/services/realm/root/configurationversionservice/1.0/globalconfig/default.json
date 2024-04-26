@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=ConfigurationVersionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -17,7 +16,8 @@
       "name" : "ConfigurationVersionService",
       "collection" : false
     },
-    "configurationVersion" : "4.0.0.0",
-    "configurationCommit" : "64ef7ebc01ed3df1a1264d7b0400351bc101361f"
+    "appliedRuleIds" : [ "AME-23273", "AME-21032", "AME-21768" ],
+    "configurationVersion" : "8.0.0.0",
+    "configurationCommit" : null
   }
 }

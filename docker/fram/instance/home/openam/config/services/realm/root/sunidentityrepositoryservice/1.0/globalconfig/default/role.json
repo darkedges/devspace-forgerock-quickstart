@@ -5,10 +5,9 @@
     "entityId" : "default/role",
     "uid" : "ou=role,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "SupportedIdentities",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "role" ]
   },
   "data" : {
     "_id" : "default/role",

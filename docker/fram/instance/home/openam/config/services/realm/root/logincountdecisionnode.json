@@ -5,10 +5,9 @@
     "entityId" : "LoginCountDecisionNode",
     "uid" : "ou=LoginCountDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "LoginCountDecisionNode" ]
   },
   "data" : {
     "_id" : "LoginCountDecisionNode",

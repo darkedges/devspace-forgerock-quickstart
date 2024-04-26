@@ -5,10 +5,9 @@
     "entityId" : "default/dashboardApp/Google",
     "uid" : "ou=Google,ou=dashboardApp,ou=default,ou=GlobalConfig,ou=1.0,ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "Google" ]
   },
   "data" : {
     "_id" : "default/dashboardApp/Google",

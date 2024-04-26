@@ -5,10 +5,9 @@
     "entityId" : "Condition/PrivilegeCondition",
     "uid" : "ou=PrivilegeCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "PrivilegeCondition" ]
   },
   "data" : {
     "_id" : "Condition/PrivilegeCondition",

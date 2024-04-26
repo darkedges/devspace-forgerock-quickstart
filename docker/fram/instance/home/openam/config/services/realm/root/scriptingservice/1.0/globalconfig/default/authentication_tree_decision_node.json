@@ -5,10 +5,9 @@
     "entityId" : "default/AUTHENTICATION_TREE_DECISION_NODE",
     "uid" : "ou=AUTHENTICATION_TREE_DECISION_NODE,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "AUTHENTICATION_TREE_DECISION_NODE" ]
   },
   "data" : {
     "_id" : "default/AUTHENTICATION_TREE_DECISION_NODE",

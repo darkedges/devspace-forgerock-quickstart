@@ -4,11 +4,10 @@
     "entityType" : "iPlanetAMMonitoringService",
     "entityId" : "default/prometheusContainer",
     "uid" : "ou=prometheusContainer,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "sunServiceID" : "prometheusContainer",
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "prometheusContainer" ]
   },
   "data" : {
     "_id" : "default/prometheusContainer",

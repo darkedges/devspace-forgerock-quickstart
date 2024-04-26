@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -16,6 +15,18 @@
       "_id" : "iPlanetAMAuthSocialAuthTwitterService",
       "name" : "iPlanetAMAuthSocialAuthTwitterService",
       "collection" : false
+    },
+    "accountProvisioning" : {
+      "accountMapperConfiguration" : [ "id_str=uid" ],
+      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
+      "saveAttributesInSession" : true,
+      "anonymousUserName" : "anonymous",
+      "enableRegistrationService" : false,
+      "mapToAnonymousUser" : false,
+      "attributeMapperConfiguration" : [ "id_str=uid", "username=cn", "full_name=sn", "username=givenName" ],
+      "createAccount" : true,
+      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|twitter-" ],
+      "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|twitter-"
     },
     "core" : {
       "ssoProxyUrl" : "http://am:80/am/oauth2c/OAuthProxy.jsp",
@@ -29,18 +40,6 @@
       "provider" : "Twitter",
       "tokenEndpoint" : "https://api.twitter.com/oauth/access_token",
       "usesBasicAuth" : false
-    },
-    "accountProvisioning" : {
-      "accountMapperConfiguration" : [ "id_str=uid" ],
-      "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
-      "saveAttributesInSession" : true,
-      "anonymousUserName" : "anonymous",
-      "enableRegistrationService" : false,
-      "mapToAnonymousUser" : false,
-      "attributeMapperConfiguration" : [ "id_str=uid", "username=cn", "full_name=sn", "username=givenName" ],
-      "createAccount" : true,
-      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|twitter-" ],
-      "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|twitter-"
     }
   }
 }

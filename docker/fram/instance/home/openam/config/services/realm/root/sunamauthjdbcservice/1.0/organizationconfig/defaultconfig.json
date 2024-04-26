@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthJDBCService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -19,7 +18,7 @@
     },
     "authenticationLevel" : 0,
     "passwordColumn" : "PASSWORD_COLUMN",
-    "password" : "AQICb27nOBGLsoimHxiqW8MLgi+rRXzV1pqw",
+    "password" : "AQIChr9uR6s5WN+EdUv5FJw0B5I32WdTbgEG",
     "jdbcDriver" : "com.mysql.jdbc.Driver",
     "jdbcUrl" : "jdbc:mysql://127.0.0.1:3306/test",
     "username" : "root",

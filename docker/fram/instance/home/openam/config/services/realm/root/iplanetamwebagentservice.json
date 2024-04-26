@@ -5,10 +5,9 @@
     "entityId" : "iPlanetAMWebAgentService",
     "uid" : "ou=iPlanetAMWebAgentService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "iPlanetAMWebAgentService" ]
   },
   "data" : {
     "_id" : "iPlanetAMWebAgentService",

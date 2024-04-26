@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : [ "default" ],
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -20,12 +19,9 @@
     "userprofile" : {
       "aliasAttributeName" : [ "uid" ]
     },
-    "general" : {
-      "statelessSessionsEnabled" : false
-    },
     "core" : {
-      "orgConfig" : "ldapService",
-      "adminAuthModule" : "ldapService"
+      "adminAuthModule" : "ldapService",
+      "orgConfig" : "ldapService"
     }
   }
 }

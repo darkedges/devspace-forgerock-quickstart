@@ -5,10 +5,9 @@
     "entityId" : "default/users/amAdmin",
     "uid" : "ou=amAdmin,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "user",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "amAdmin" ]
   },
   "data" : {
     "_id" : "default/users/amAdmin",
@@ -21,10 +20,12 @@
     "givenName" : "amAdmin",
     "iplanet-am-user-success-url" : null,
     "postalAddress" : null,
-    "userPassword" : "&{am.passwords.amadmin.hashed.encrypted}",
-    "sunIdentityMSISDNNumber" : null,
+    "userPassword" : {
+      "$string" : "&{am.passwords.amadmin.hashed.encrypted|{SSHA-512\\}FN8Ali3L0Dcpy83Y6/auHJrogFPufOh2OW2cZn1tFi3NbbZE39rkzIKr6uwuu38nvknZ8j99V3h81GiZyP2Mp6smSp4fmqmANrVwzz544/CrYRDtXg==}"
+    },
     "employeeNumber" : null,
     "iplanet-am-user-failure-url" : null,
+    "sunIdentityMSISDNNumber" : null,
     "iplanet-am-user-alias-list" : null,
     "sn" : "amAdmin",
     "telephoneNumber" : null,

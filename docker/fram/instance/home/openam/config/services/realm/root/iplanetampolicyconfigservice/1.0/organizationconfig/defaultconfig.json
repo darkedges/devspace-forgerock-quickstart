@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -41,13 +40,18 @@
     "connectionPoolMaximumSize" : 10,
     "iplanet-am-policy-selected-referrals" : [ "PeerOrgReferral", "SubOrgReferral" ],
     "sslEnabled" : {
-      "$bool" : "&{am.stores.user.ssl.enabled}"
+      "$bool" : "&{am.stores.policy.ssl.enabled|false}"
     },
     "ldapServer" : {
-      "$list" : "&{am.stores.user.servers}"
+      "$list" : "&{am.stores.policy.servers|localhost:50636}"
     },
-    "bindDn" : "&{am.stores.user.username}",
-    "bindPassword" : "&{am.stores.user.password}",
+    "mtlsEnabled" : false,
+    "bindDn" : {
+      "$string" : "&{am.stores.policy.username|cn=Directory Manager}"
+    },
+    "bindPassword" : {
+      "$string" : "&{am.stores.policy.password|}"
+    },
     "realmSearchFilter" : "(objectclass=sunismanagedorganization)",
     "iplanet-am-policy-config-ldap-groups-search-attribute" : "cn",
     "usersSearchFilter" : "(objectclass=inetorgperson)",

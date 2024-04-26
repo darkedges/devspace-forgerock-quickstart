@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -19,7 +18,9 @@
     },
     "source" : "FIXED_VALUE",
     "extensionClassName" : null,
-    "fixedValue" : "&{am.server.protocol}://&{am.server.fqdn}",
+    "fixedValue" : {
+      "$string" : "&{am.server.protocol|https}://&{am.server.fqdn|am.localtest.me}"
+    },
     "contextPath" : "/am"
   }
 }

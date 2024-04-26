@@ -5,10 +5,9 @@
     "entityId" : "Lw",
     "uid" : "ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : [ ],
-    "amsterVersion" : "7.4.0"
+    "ou" : [ ]
   },
   "data" : {
     "_id" : "root",

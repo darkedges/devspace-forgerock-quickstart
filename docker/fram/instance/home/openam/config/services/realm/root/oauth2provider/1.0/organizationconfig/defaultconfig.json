@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=OAuth2Provider,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -24,6 +23,7 @@
       "supportedAuthorizationResponseEncryptionEnc" : [ "A192CBC-HS384", "A256CBC-HS512", "A128CBC-HS256", "A256GCM", "A192GCM", "A128GCM" ],
       "supportedTokenIntrospectionResponseEncryptionAlgorithms" : [ "RSA-OAEP-256", "ECDH-ES+A256KW", "A128KW", "A192KW", "RSA-OAEP", "ECDH-ES+A192KW", "A256KW", "ECDH-ES", "ECDH-ES+A128KW", "dir" ],
       "useForceAuthnForPromptLogin" : false,
+      "useForceAuthnForMaxAge" : false,
       "alwaysAddClaimsToToken" : false,
       "supportedTokenIntrospectionResponseSigningAlgorithms" : [ "ES384", "PS384", "ES256", "PS256", "PS512", "EdDSA", "HS512", "RS384", "RS256", "RS512", "HS256", "ES512", "HS384" ],
       "jkwsURI" : null,
@@ -51,14 +51,18 @@
       "tokenEncryptionEnabled" : false,
       "requirePushedAuthorizationRequests" : false,
       "tlsCertificateBoundAccessTokensEnabled" : true,
+      "includeSubnameInTokenClaims" : true,
       "tlsOcspResponderUri" : null,
       "defaultScopes" : [ ],
       "createdTimestampAttribute" : null,
       "moduleMessageEnabledInPasswordGrant" : false,
+      "allowClientCredentialsInTokenRequestQueryParameters" : false,
       "supportedSubjectTypes" : [ "public", "pairwise" ],
       "refreshTokenGracePeriod" : 0,
       "tlsClientCertificateHeaderFormat" : "URLENCODED_PEM",
-      "hashSalt" : "&{am.oidc.client.subject.identifier.hash.salt}",
+      "hashSalt" : {
+        "$string" : "&{am.oidc.client.subject.identifier.hash.salt|changeme}"
+      },
       "macaroonTokenFormat" : "V2",
       "maxAgeOfRequestObjectNbfClaim" : 0,
       "tlsCertificateRevocationCheckingEnabled" : false,
@@ -80,9 +84,7 @@
       "supportedScopes" : [ ],
       "authenticationAttributes" : [ "uid" ],
       "grantTypes" : [ "implicit", "authorization_code", "urn:ietf:params:oauth:grant-type:saml2-bearer", "urn:ietf:params:oauth:grant-type:device_code", "urn:ietf:params:oauth:grant-type:token-exchange", "refresh_token", "urn:ietf:params:oauth:grant-type:jwt-bearer", "password", "client_credentials", "urn:openid:params:grant-type:ciba", "urn:ietf:params:oauth:grant-type:uma-ticket" ],
-      "tlsClientCertificateTrustedHeader" : null,
-      "allowClientCredentialsInTokenRequestQueryParameters" : true,
-      "includeSubnameInTokenClaims" : true
+      "tlsClientCertificateTrustedHeader" : null
     },
     "GracePeriodValidator" : "org.forgerock.openam.oauth2.validation.GracePeriodValidator",
     "clientDynamicRegistrationConfig" : {

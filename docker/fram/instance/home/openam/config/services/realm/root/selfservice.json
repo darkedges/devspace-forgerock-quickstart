@@ -5,10 +5,9 @@
     "entityId" : "selfService",
     "uid" : "ou=selfService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "selfService" ]
   },
   "data" : {
     "_id" : "selfService",

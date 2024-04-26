@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthADService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -30,7 +29,7 @@
     "secondaryLdapServer" : [ ],
     "userBindPassword" : null,
     "connectionHeartbeatTimeUnit" : "MINUTES",
-    "openam-auth-ldap-connection-mode" : "LDAP",
+    "openam-auth-ldap-connection-mode" : "LDAPS",
     "iplanet-am-auth-ldap-invalid-chars" : [ "*|(|)|&|!" ],
     "userSearchFilter" : null,
     "authenticationLevel" : 0,

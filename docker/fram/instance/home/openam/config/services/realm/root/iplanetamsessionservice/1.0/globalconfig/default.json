@@ -5,10 +5,9 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -18,36 +17,43 @@
       "collection" : false
     },
     "quotas" : {
-      "behaviourWhenQuotaExhausted" : "org.forgerock.openam.session.service.DestroyNextExpiringAction",
       "denyLoginWhenRepoDown" : "NO",
-      "quotaConstraintMaxWaitTime" : 6000,
-      "iplanet-am-session-enable-session-constraint" : "OFF"
+      "iplanet-am-session-enable-session-constraint" : "OFF",
+      "behaviourWhenQuotaExhausted" : "org.forgerock.openam.session.service.DestroyNextExpiringAction",
+      "quotaConstraintMaxWaitTime" : 6000
     },
     "stateless" : {
+      "openam-session-stateless-blacklist-cache-size" : 10000,
+      "statelessLogoutByUser" : false,
+      "statelessEncryptionType" : "DIRECT",
+      "openam-session-stateless-logout-poll-interval" : 60,
+      "statelessEncryptionAesKey" : {
+        "$string" : "&{am.session.stateless.encryption.key|AQIChr9uR6s5WN8v+ku8BGRu3Q+xjqCKbcMWwtF97lTTeug7+QdLeVnEhOHuc2Gu9t2K6rngCIUNzsQ=}"
+      },
       "statelessSigningType" : "HS256",
       "openam-session-stateless-blacklist-poll-interval" : 60,
       "statelessCompressionType" : "NONE",
-      "openam-session-stateless-blacklist-cache-size" : 10000,
-      "statelessEncryptionType" : "DIRECT",
-      "statelessSigningHmacSecret" : "&{am.session.stateless.signing.key}",
-      "statelessEncryptionAesKey" : "&{am.session.stateless.encryption.key}",
+      "statelessSigningHmacSecret" : {
+        "$string" : "&{am.session.stateless.signing.key|AQIChr9uR6s5WN8v+ku8BGRu3Q+xjqCKbcMWwtF97lTTeug7+QdLeVnEhOHuc2Gu9t2K6rngCIUNzsQ=}"
+      },
       "openam-session-stateless-blacklist-purge-delay" : 1,
       "openam-session-stateless-enable-session-blacklisting" : false
     },
-    "search" : {
-      "maxSessionListSize" : 120,
-      "sessionListRetrievalTimeout" : 5
-    },
-    "serviceObjectClasses" : [ "iplanet-am-session-service" ],
     "general" : {
       "latestAccessTimeUpdateFrequency" : 60,
       "timeoutHandlers" : [ ],
-      "dnRestrictionOnly" : false
+      "dnRestrictionOnly" : false,
+      "crossUpgradeReferenceFlag" : false
     },
     "notifications" : {
       "notificationPropertyList" : [ ],
       "propertyChangeNotifications" : "OFF"
     },
+    "search" : {
+      "sessionListRetrievalTimeout" : 5,
+      "maxSessionListSize" : 120
+    },
+    "serviceObjectClasses" : [ "iplanet-am-session-service" ],
     "StatelessSessionSigningValidator" : "org.forgerock.openam.sm.validation.StatelessSessionSigningAlgorithmValidator",
     "Base64Validator" : "org.forgerock.openam.sm.validation.Base64EncodedBinaryValidator"
   }

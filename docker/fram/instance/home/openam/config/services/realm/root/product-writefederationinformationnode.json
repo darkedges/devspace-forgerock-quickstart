@@ -5,10 +5,9 @@
     "entityId" : "product-WriteFederationInformationNode",
     "uid" : "ou=product-WriteFederationInformationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "top", "sunService" ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "product-WriteFederationInformationNode" ]
   },
   "data" : {
     "_id" : "product-WriteFederationInformationNode",

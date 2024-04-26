@@ -5,10 +5,9 @@
     "entityId" : "default/OpenDJ",
     "uid" : "ou=OpenDJ,ou=default,ou=OrganizationConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "&{am.stores.user.type}",
-    "objectClass" : [ "top", "sunServiceComponent" ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "OpenDJ" ]
   },
   "data" : {
     "_id" : "default/OpenDJ",
@@ -18,13 +17,19 @@
       "collection" : false
     },
     "ldapsettings" : {
-      "sun-idrepo-ldapv3-config-connection-mode" : "&{am.stores.user.connection.mode}",
-      "sun-idrepo-ldapv3-config-authid" : "&{am.stores.user.username}",
-      "sun-idrepo-ldapv3-config-organization_name" : "ou=identities",
-      "sun-idrepo-ldapv3-config-ldap-server" : {
-        "$list" : "&{am.stores.user.servers}"
+      "sun-idrepo-ldapv3-config-connection-mode" : {
+        "$string" : "&{am.stores.user.connection.mode|LDAPS}"
       },
-      "sun-idrepo-ldapv3-config-authpw" : "&{am.stores.user.password}"
+      "sun-idrepo-ldapv3-config-authid" : {
+        "$string" : "&{am.stores.user.username|cn=Directory Manager}"
+      },
+      "sun-idrepo-ldapv3-config-ldap-server" : {
+        "$list" : "&{am.stores.user.servers|[0]=localhost:50636}"
+      },
+      "sun-idrepo-ldapv3-config-authpw" : {
+        "$string" : "&{am.stores.user.password|password}"
+      },
+      "sun-idrepo-ldapv3-config-organization_name" : "ou=identities"
     },
     "persistentsearch" : {
       "sun-idrepo-ldapv3-config-psearchbase" : "ou=identities"

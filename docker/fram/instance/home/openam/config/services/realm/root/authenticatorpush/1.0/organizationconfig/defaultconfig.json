@@ -5,10 +5,9 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=AuthenticatorPush,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top", "sunServiceComponent" ],
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : null,
-    "amsterVersion" : "7.4.0"
+    "ou" : [ "defaultconfig" ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -17,11 +16,15 @@
       "name" : "AuthenticatorPush",
       "collection" : false
     },
-    "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
+    "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : {
+      "$string" : "&{am.keystore.default.password|changeit}"
+    },
     "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
     "authenticatorPushDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "authenticatorPushDeviceSettingsEncryptionScheme" : "NONE",
-    "authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}",
+    "authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword" : {
+      "$string" : "&{am.keystore.default.entry.password|}"
+    },
     "authenticatorPushDeviceSettingsEncryptionKeystoreType" : "JKS",
     "pushAttrName" : "pushDeviceProfiles",
     "authenticatorPushSkippableName" : "push2faEnabled"
