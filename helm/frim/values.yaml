@@ -16,7 +16,7 @@ podSecurityPolicy:
 frim:
   image:
     repository: devspace-forgerock-quickstart/idm
-    tag: 7.2.0
+    tag: 7.5.0
     imagePullPolicy: IfNotPresent
     chroot: false
     runAsUser: 11111
@@ -24,7 +24,7 @@ frim:
 
   # Secrets
   secrets:
-    repo:  
+    repo:
       # frim.secrets.repo.uid -- see docker FRAM_CFG_STORE_DIR_MGR
       uid: frim
       # frim.secrets.repo.password -- see docker FRAM_CFG_STORE_DIR_MGR_PWD
@@ -45,15 +45,16 @@ frim:
       # frim.volumeClaimTemplates.data.storageSize -- size to be requested.
       storageSize: 100Mi
 
-  isStatefulSet: false
+  isStatefulSet:
+    false
 
-   # Environment Variables
+    # Environment Variables
   env:
     ## frim.env.frim - [] of Environment Variables to be added for the frim container config map
     frim:
       PROJECT_HOME: /opt/frim/instance/data
       JAVA_OPTS: -Djava.awt.headless=true -Duser.home=/opt/frim/instance/data
-      LOGGING_CONFIG: -Djava.util.logging.config.file=/opt/frim/instance/data/conf/logging.properties 
+      LOGGING_CONFIG: -Djava.util.logging.config.file=/opt/frim/instance/data/conf/logging.properties
     ## frim.env.init -- []] of Environment Variables to be added for the init container config map
     init: []
 
@@ -72,7 +73,8 @@ frim:
     name:
 
   # frim.services --  map of multiple service details that can be connected to
-  services: {}
+  services:
+    {}
     #  identity:
     #    waitfor: service
     #    name: frim-development
@@ -176,7 +178,8 @@ frim:
   # -- Topology spread constraints rely on node labels to identify the topology domain(s) that each Node is in.
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
   ##
-  topologySpreadConstraints: []
+  topologySpreadConstraints:
+    []
     # - maxSkew: 1
     #   topologyKey: topology.kubernetes.io/zone
     #   whenUnsatisfiable: DoNotSchedule
@@ -185,9 +188,9 @@ frim:
     #       app.kubernetes.io/instance: frim-internal
 
   resources:
-  ##  limits:
-  ##    cpu: 100m
-  ##    memory: 90Mi
+    ##  limits:
+    ##    cpu: 100m
+    ##    memory: 90Mi
     requests:
       cpu: 100m
       memory: 90Mi
@@ -267,7 +270,8 @@ frim:
     maxReplicas: 11
     targetCPUUtilizationPercentage: 50
     targetMemoryUtilizationPercentage: 50
-    behavior: {}
+    behavior:
+      {}
       # scaleDown:
       #   stabilizationWindowSeconds: 300
       #  policies:
@@ -310,12 +314,12 @@ frim:
       #  annotations:
       # key: value
     triggers: []
-  #     - type: prometheus
-  #       metadata:
-  #         serverAddress: http://<prometheus-host>:9090
-  #         metricName: http_requests_total
-  #         threshold: '100'
-  #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
+    #     - type: prometheus
+    #       metadata:
+    #         serverAddress: http://<prometheus-host>:9090
+    #         metricName: http_requests_total
+    #         threshold: '100'
+    #         query: sum(rate(http_requests_total{deployment="my-deployment"}[2m]))
 
     behavior: {}
   #     scaleDown:
