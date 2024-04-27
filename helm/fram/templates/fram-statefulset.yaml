@@ -10,13 +10,13 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  podManagementPolicy: Parallel 
+  podManagementPolicy:  {{ .Values.fram.podManagementPolicy }}  
   selector:
     matchLabels:
       {{- include "forgerock.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: fram
   {{- if not .Values.fram.autoscaling.enabled }}
-  replicas: {{ .Values.fram.replicaCount }}
+  replicas: {{ .Values.fram.replicas }}
   {{- end }}
   revisionHistoryLimit: {{ .Values.fram.revisionHistoryLimit }}
   {{- if .Values.fram.updateStrategy }}

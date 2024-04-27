@@ -130,7 +130,7 @@ fram:
       port: 8080
   # fram.useKeystore -- has a keystore been generated and provided
   useKeystore: false
-
+  podManagementPolicy: OrderedReady
   keystore:
     # fram.keystore.password --  Password for the keystore
     password: changeit
