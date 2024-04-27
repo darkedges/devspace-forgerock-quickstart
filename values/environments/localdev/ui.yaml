@@ -1,5 +1,13 @@
 platform:
-  endpoint: https://platform.7f000001.nip.io
+  endpoints:
+    amUrl: "https://am.7f000001.nip.io/am"
+    amAdminUrl: "https://am.7f000001.nip.io/am/ui-admin"
+    idmRestUrl: "https://idm.7f000001.nip.io/openidm"
+    idmAdminUrl: "https://idm.7f000001.nip.io/admin"
+    idmUploadUrl: "https://idm.7f000001.nip.io/upload"
+    idmExport: "https://idm.7f000001.nip.io/export"
+    enduserUrl: "https://enduser.7f000001.nip.io"
+    platformUrl: "https://admin.7f000001.nip.io"
   services:
     fram:
       waitfor: service
