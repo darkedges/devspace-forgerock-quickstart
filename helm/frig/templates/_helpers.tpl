@@ -75,9 +75,9 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Create the name of the service account to use
 */}}
 {{- define "forgerock.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create -}}
-    {{ default (include "forgerock.fullname" .) .Values.serviceAccount.name }}
+{{- if .Values.frig.serviceAccount.create -}}
+    {{ default (include "forgerock.fullname" .) .Values.frig.serviceAccount.name }}
 {{- else -}}
-    {{ default "default" .Values.serviceAccount.name }}
+    {{ default "default" .Values.frig.serviceAccount.name }}
 {{- end -}}
 {{- end -}}

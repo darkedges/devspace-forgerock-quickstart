@@ -1,19 +1,18 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=11.0.14_9-jre-alpine
+ARG JRE_TAG=17.0.10_7-jre-alpine
+ARG IG_TAG=2024.3.0
+ARG ALPINE_TAG=3.19
+
+FROM gcr.io/forgerock-io/ig:${IG_TAG} as igbase
 
 # Binary extract
-FROM alpine:3.15.0 as installFile
-ARG FRIG_ARCHIVE=IG-2023.9.0.zip
-ARG FRIG_ARCHIVE_REPOSITORY_URL=
-
-ADD ${FRIG_ARCHIVE_REPOSITORY_URL}${FRIG_ARCHIVE}  /var/tmp/frig.zip
-
-RUN unzip /var/tmp/frig.zip -d /var/tmp/
+FROM alpine:${ALPINE_TAG} as installFile
+COPY --from=igbase /opt/ig /var/tmp/bootstrap/ig
 
 # Runtime deployment
 FROM ${JRE_IMAGE}:${JRE_TAG} as base
 
-COPY --from=0 /var/tmp/identity-gateway /opt/frig/
+COPY --from=installFile /var/tmp/bootstrap/ig /opt/frig/
 
 WORKDIR /opt/frig
 

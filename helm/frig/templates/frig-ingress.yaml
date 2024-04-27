@@ -14,14 +14,17 @@ metadata:
     {{- if .Values.frig.useKeystore }}
     cert-manager.io/cluster-issuer: "vault-issuer"
     {{- end }}
-    nginx.ingress.kubernetes.io/backend-protocol: "{{ .Values.frig.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.frig.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
+    {{- if .Values.frig.ingress.configurationsnippet }}
+    nginx.ingress.kubernetes.io/configuration-snippet: 
+    {{- toYaml .Values.frig.ingress.configurationsnippet | indent 4 }}
+    {{- end }}
 spec:
-  {{- if .Values.frig.useKeystore }}
   tls:
   - hosts:
     {{- toYaml .Values.frig.ingress.hosts | nindent 4 }}
-    secretName: {{ template "forgerock.fullname". }}-tls
-  {{- end }}
+    secretName: {{ template "forgerock.fullname". }}-ingress-tls
   rules:
   {{- $root := . }}
   {{- range .Values.frig.ingress.hosts }}
@@ -32,7 +35,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ template "forgerock.fullname" $root }}-lb
+            name: {{ template "forgerock.fullname" $root }}
             port:
               number: {{ $root.Values.frig.ingress.backend.port }}
   {{- end }}
