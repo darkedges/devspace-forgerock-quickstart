@@ -20,4 +20,4 @@ frig:
       protocol: HTTP
       port: 8080
     hosts:
-      - ig.7f000001.nip.io
+      - platform.7f000001.nip.io

@@ -11,9 +11,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
   annotations: 
-    {{- if .Values.frig.useKeystore }}
     cert-manager.io/cluster-issuer: "vault-issuer"
-    {{- end }}
     nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.frig.ingress.backend.protocol }}"
     nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
     {{- if .Values.frig.ingress.configurationsnippet }}
