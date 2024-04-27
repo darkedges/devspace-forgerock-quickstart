@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "forgerock.fullname" . }}
+  name: {{ template "forgerock.login.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "forgerock.labels" . | nindent 4 }}
+    {{- include "forgerock.login.labels" . | nindent 4 }}
     app.kubernetes.io/component: ui
     {{- with .Values.login.labels }}
     {{- toYaml . | nindent 4 }}
@@ -13,10 +13,10 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    {{- include "forgerock.selectorLabels" . | nindent 4 }}
+    {{- include "forgerock.login.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: ui
   ports:
-    - name: tcp-{{ lower .Values.login.ingress.backend.protocol }}
-      port: {{ .Values.login.ingress.backend.port}}
-      targetPort: {{ .Values.login.ingress.backend.targetPort}}
+    - name: tcp-{{ lower .Values.login.container.protocol }}
+      port: {{ .Values.login.container.port}}
+      targetPort: {{ .Values.login.container.targetPort}}
 {{- end -}}

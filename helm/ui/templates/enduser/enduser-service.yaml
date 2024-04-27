@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "forgerock.fullname" . }}
+  name: {{ template "forgerock.enduser.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "forgerock.labels" . | nindent 4 }}
+    {{- include "forgerock.enduser.labels" . | nindent 4 }}
     app.kubernetes.io/component: ui
     {{- with .Values.enduser.labels }}
     {{- toYaml . | nindent 4 }}
@@ -13,10 +13,10 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    {{- include "forgerock.selectorLabels" . | nindent 4 }}
+    {{- include "forgerock.enduser.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: ui
   ports:
-    - name: tcp-{{ lower .Values.enduser.ingress.backend.protocol }}
-      port: {{ .Values.enduser.ingress.backend.port}}
-      targetPort: {{ .Values.enduser.ingress.backend.targetPort}}
+    - name: tcp-{{ lower .Values.enduser.container.protocol }}
+      port: {{ .Values.enduser.container.port}}
+      targetPort: {{ .Values.enduser.container.targetPort}}
 {{- end -}}

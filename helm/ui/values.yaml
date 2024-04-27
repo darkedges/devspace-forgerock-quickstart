@@ -133,7 +133,7 @@ admin:
   ## startupProbe:
   ##   httpGet:
   ##     # should match container.healthCheckPath
-  ##     path: "/openig/ping"
+  ##     path: "/openig/fping"
   ##     port: 8443
   ##     scheme: HTTP
   ##   initialDelaySeconds: 5
@@ -147,8 +147,8 @@ admin:
       path: "/"
       port: 8080
       scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
@@ -158,8 +158,8 @@ admin:
       path: "/"
       port: 8080
       scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 3
@@ -262,7 +262,7 @@ admin:
   #         periodSeconds: 60
 
 enduser:
-  enabled: false
+  enabled: true
   image:
     repository: gcr.io/forgerock-io/platform-enduser-ui
     tag: 7.5.0
@@ -271,27 +271,10 @@ enduser:
     runAsUser: 11111
     allowPrivilegeEscalation: true
 
-  # Ingress
-  ingress:
-    # frig.ingress.enabled -- Wether to expose the service to ingress
-    enabled: false
-    # frig.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
-    backend:
-      # frig.ingress.backend.protocol -- scheme being used by the backend application
-      protocol: HTTP
-      # frig.ingress.backend.port -- port being used by the backend application
-      port: 8080
-
-  # certificates
-  certificate:
-    # frig.certificate.enabled -- Wether to attach a certificate to ingress
-    enabled: false
-
-  # Keystore
-  keystore:
-    # frig.keystore.password --  Password for the keystore
-    password: changeit
+  container:
+    protocol: http
+    port: 8080
+    targetPort: 8080
 
   # frig.replicas -- number of replicas
   replicas: 1
@@ -397,22 +380,22 @@ enduser:
   livenessProbe:
     httpGet:
       # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
-    initialDelaySeconds: 10
-    periodSeconds: 10
+      path: "/"
+      port: 8080
+      scheme: HTTP
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
   readinessProbe:
     httpGet:
       # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
-    initialDelaySeconds: 10
-    periodSeconds: 10
+      path: "/"
+      port: 8080
+      scheme: HTTP
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 3
@@ -515,7 +498,7 @@ enduser:
   #         periodSeconds: 60
 
 login:
-  enabled: false
+  enabled: true
   endpoint: ""
   image:
     repository: gcr.io/forgerock-io/platform-login-ui
@@ -525,27 +508,10 @@ login:
     runAsUser: 11111
     allowPrivilegeEscalation: true
 
-  # Ingress
-  ingress:
-    # frig.ingress.enabled -- Wether to expose the service to ingress
-    enabled: false
-    # frig.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
-    backend:
-      # frig.ingress.backend.protocol -- scheme being used by the backend application
-      protocol: HTTP
-      # frig.ingress.backend.port -- port being used by the backend application
-      port: 8080
-
-  # certificates
-  certificate:
-    # frig.certificate.enabled -- Wether to attach a certificate to ingress
-    enabled: false
-
-  # Keystore
-  keystore:
-    # frig.keystore.password --  Password for the keystore
-    password: changeit
+  container:
+    protocol: http
+    port: 8080
+    targetPort: 8080
 
   # frig.replicas -- number of replicas
   replicas: 1
@@ -651,22 +617,22 @@ login:
   livenessProbe:
     httpGet:
       # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
-    initialDelaySeconds: 10
-    periodSeconds: 10
+      path: "/"
+      port: 8080
+      scheme: HTTP
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 5
   readinessProbe:
     httpGet:
       # should match container.healthCheckPath
-      path: "/openig/ping"
-      port: 8443
-      scheme: HTTPS
-    initialDelaySeconds: 10
-    periodSeconds: 10
+      path: "/"
+      port: 8080
+      scheme: HTTP
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 3

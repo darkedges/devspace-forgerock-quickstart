@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "forgerock.fullname". }}
+  name: {{ template "forgerock.login.fullname". }}
   namespace: {{ .Release.Namespace }}
   labels:
-    {{- include "forgerock.labels" . | nindent 4 }}
+    {{- include "forgerock.login.labels" . | nindent 4 }}
     app.kubernetes.io/component: ui
     {{- with .Values.login.labels }}
     {{- toYaml . | nindent 4 }}
@@ -13,7 +13,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      {{- include "forgerock.selectorLabels" . | nindent 6 }}
+      {{- include "forgerock.login.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: ui
   {{- if not .Values.login.autoscaling.enabled }}
   replicas: {{ .Values.login.replicas }}
@@ -27,7 +27,7 @@ spec:
   template:
     metadata:
       labels:
-        {{- include "forgerock.selectorLabels" . | nindent 8 }}
+        {{- include "forgerock.login.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: ui
         {{- with .Values.login.labels }}
         {{- toYaml . | nindent 8 }}
@@ -96,30 +96,12 @@ spec:
         {{- if .Values.login.lifecycle }}
         lifecycle: {{ toYaml .Values.login.lifecycle | nindent 12 }}
         {{- end }}
-        securityContext: {{ include "ui.containerSecurityContext" . | nindent 12 }}
-        env:
-          {{- if .Values.login.certificate.enabled }}
-          - name: IG_KEYSTORE_DIRECTORY
-            value: /var/run/secrets/ui
-          - name: IG_KEYSTORE_ALIAS
-            value: certificate
-          - name: IG_KEYSTORE_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ template "forgerock.fullname" . }}-secrets
-                key: jksPassword
-          {{- end }}
-        {{- if .Values.login.env }}
+        securityContext: {{ include "admin.containerSecurityContext" . | nindent 12 }}
         envFrom:
           - configMapRef:
-              name: {{ template "forgerock.fullname". }}-config
-        {{- end }}   
+              name: {{ template "forgerock.fullname". }}-config 
         ports:
-        {{- if .Values.login.certificate.enabled }}
-        - containerPort: 8443
-        {{- else }}
-        - containerPort: {{ .Values.login.ingress.backend.port }}
-        {{- end }}
+        - containerPort: {{ .Values.login.container.port }}
         {{- if .Values.login.startupProbe }}
         startupProbe: {{ toYaml .Values.login.startupProbe | nindent 12 }}
         {{- end }}

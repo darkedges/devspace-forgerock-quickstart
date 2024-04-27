@@ -33,6 +33,32 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 
 {{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
+*/}}
+{{- define "forgerock.enduser.fullname" -}}
+{{- if .Values.platform.fullnameOverride -}}
+{{- .Values.platform.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name "enduser-ui" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
+*/}}
+{{- define "forgerock.login.fullname" -}}
+{{- if .Values.platform.fullnameOverride -}}
+{{- .Values.platform.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name "login-ui" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "forgerock.chart" -}}
@@ -181,6 +207,54 @@ helm.sh/chart: {{ include "forgerock.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/part-of: {{ template "forgerock.admin.fullname" . }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- if .Values.commonLabels}}
+{{ toYaml .Values.commonLabels }}
+{{- end }}
+{{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "forgerock.login.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "forgerock.login.fullname" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "forgerock.login.labels" -}}
+helm.sh/chart: {{ include "forgerock.chart" . }}
+{{ include "forgerock.login.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/part-of: {{ template "forgerock.login.fullname" . }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- if .Values.commonLabels}}
+{{ toYaml .Values.commonLabels }}
+{{- end }}
+{{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "forgerock.enduser.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "forgerock.enduser.fullname" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "forgerock.enduser.labels" -}}
+helm.sh/chart: {{ include "forgerock.chart" . }}
+{{ include "forgerock.enduser.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/part-of: {{ template "forgerock.enduser.fullname" . }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- if .Values.commonLabels}}
 {{ toYaml .Values.commonLabels }}
