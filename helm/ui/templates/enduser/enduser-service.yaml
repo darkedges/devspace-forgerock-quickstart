@@ -1,0 +1,22 @@
+{{- if .Values.enduser.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "forgerock.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.enduser.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "forgerock.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+  ports:
+    - name: tcp-{{ lower .Values.enduser.ingress.backend.protocol }}
+      port: {{ .Values.enduser.ingress.backend.port}}
+      targetPort: {{ .Values.enduser.ingress.backend.targetPort}}
+{{- end -}}

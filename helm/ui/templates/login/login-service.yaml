@@ -1,0 +1,22 @@
+{{- if .Values.login.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "forgerock.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.login.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "forgerock.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+  ports:
+    - name: tcp-{{ lower .Values.login.ingress.backend.protocol }}
+      port: {{ .Values.login.ingress.backend.port}}
+      targetPort: {{ .Values.login.ingress.backend.targetPort}}
+{{- end -}}

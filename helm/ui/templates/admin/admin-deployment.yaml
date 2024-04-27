@@ -1,0 +1,113 @@
+{{- if .Values.admin.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "forgerock.admin.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.admin.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.admin.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "forgerock.admin.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: ui
+  {{- if not .Values.admin.autoscaling.enabled }}
+  replicas: {{ .Values.admin.replicas }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- if .Values.admin.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.admin.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.admin.minReadySeconds }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.admin.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: ui
+        {{- with .Values.admin.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.admin.podLabels }}
+        {{- toYaml .Values.admin.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/platform-configmap.yaml") . | sha256sum }}
+       {{- if .Values.admin.podAnnotations }}
+      {{- range $key, $value := .Values.admin.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.admin.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.admin.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.hostname }}
+      hostname: {{ toYaml .Values.admin.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.admin.dnsPolicy }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.priorityClassName }}
+      priorityClassName: {{ .Values.admin.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.admin.hostNetwork }}
+      hostNetwork: {{ .Values.admin.hostNetwork }}
+      {{- end }}
+      {{- if .Values.admin.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.admin.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.tolerations }}
+      tolerations: {{ toYaml .Values.admin.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.affinity }}
+      affinity: {{ toYaml .Values.admin.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.admin.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.admin.podSecurityContext .Values.admin.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.admin.podSecurityContext }}
+        {{- toYaml .Values.admin.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.admin.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.admin.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.admin.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.admin.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.admin.terminationGracePeriodSeconds }}
+      containers:
+      - name: ui
+        image: {{ .Values.admin.image.repository }}:{{ .Values.admin.image.tag }}
+        imagePullPolicy: {{ .Values.admin.image.imagePullPolicy }}
+        {{- if .Values.admin.lifecycle }}
+        lifecycle: {{ toYaml .Values.admin.lifecycle | nindent 12 }}
+        {{- end }}
+        securityContext: {{ include "admin.containerSecurityContext" . | nindent 12 }}
+        envFrom:
+          - configMapRef:
+              name: {{ template "forgerock.fullname". }}-config 
+        ports:
+        - containerPort: {{ .Values.admin.container.port }}
+        {{- if .Values.admin.startupProbe }}
+        startupProbe: {{ toYaml .Values.admin.startupProbe | nindent 12 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.admin.livenessProbe | nindent 12 }}
+        readinessProbe: {{ toYaml .Values.admin.readinessProbe | nindent 12 }}
+        {{- if .Values.admin.resources }}
+        resources: {{ toYaml .Values.admin.resources | nindent 12 }}
+        {{- end }}
+{{- end -}}

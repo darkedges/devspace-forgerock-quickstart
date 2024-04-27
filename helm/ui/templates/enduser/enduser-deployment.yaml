@@ -1,0 +1,131 @@
+{{- if .Values.enduser.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "forgerock.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.enduser.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "forgerock.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: ui
+  {{- if not .Values.enduser.autoscaling.enabled }}
+  replicas: {{ .Values.enduser.replicas }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- if .Values.enduser.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.enduser.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.enduser.minReadySeconds }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: ui
+        {{- with .Values.enduser.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.enduser.podLabels }}
+        {{- toYaml .Values.enduser.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/platform-configmap.yaml") . | sha256sum }}
+       {{- if .Values.enduser.podAnnotations }}
+      {{- range $key, $value := .Values.enduser.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.enduser.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.enduser.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.hostname }}
+      hostname: {{ toYaml .Values.enduser.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.enduser.dnsPolicy }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.priorityClassName }}
+      priorityClassName: {{ .Values.enduser.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.enduser.hostNetwork }}
+      hostNetwork: {{ .Values.enduser.hostNetwork }}
+      {{- end }}
+      {{- if .Values.enduser.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.enduser.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.tolerations }}
+      tolerations: {{ toYaml .Values.enduser.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.affinity }}
+      affinity: {{ toYaml .Values.enduser.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.enduser.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.enduser.podSecurityContext .Values.enduser.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.enduser.podSecurityContext }}
+        {{- toYaml .Values.enduser.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.enduser.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.enduser.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.enduser.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.enduser.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.enduser.terminationGracePeriodSeconds }}
+      containers:
+      - name: ui
+        image: {{ .Values.enduser.image.repository }}:{{ .Values.enduser.image.tag }}
+        imagePullPolicy: {{ .Values.enduser.image.imagePullPolicy }}
+        {{- if .Values.enduser.lifecycle }}
+        lifecycle: {{ toYaml .Values.enduser.lifecycle | nindent 12 }}
+        {{- end }}
+        securityContext: {{ include "ui.containerSecurityContext" . | nindent 12 }}
+        env:
+          {{- if .Values.enduser.certificate.enabled }}
+          - name: IG_KEYSTORE_DIRECTORY
+            value: /var/run/secrets/ui
+          - name: IG_KEYSTORE_ALIAS
+            value: certificate
+          - name: IG_KEYSTORE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "forgerock.fullname" . }}-secrets
+                key: jksPassword
+          {{- end }}
+        {{- if .Values.enduser.env }}
+        envFrom:
+          - configMapRef:
+              name: {{ template "forgerock.fullname". }}-config
+        {{- end }}   
+        ports:
+        {{- if .Values.enduser.certificate.enabled }}
+        - containerPort: 8443
+        {{- else }}
+        - containerPort: {{ .Values.enduser.ingress.backend.port }}
+        {{- end }}
+        {{- if .Values.enduser.startupProbe }}
+        startupProbe: {{ toYaml .Values.enduser.startupProbe | nindent 12 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.enduser.livenessProbe | nindent 12 }}
+        readinessProbe: {{ toYaml .Values.enduser.readinessProbe | nindent 12 }}
+        {{- if .Values.enduser.resources }}
+        resources: {{ toYaml .Values.enduser.resources | nindent 12 }}
+        {{- end }}
+{{- end -}}
