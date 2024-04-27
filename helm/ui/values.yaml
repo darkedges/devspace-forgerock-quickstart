@@ -14,7 +14,15 @@ podSecurityPolicy:
   enabled: false
 
 platform:
-  endpoint: ""
+  endpoints:
+    amUrl: "http://am.7f000001.nip.io/am"
+    amAdminUrl: "http://am.7f000001.nip.io/am/ui-admin"
+    idmRestUrl: "http://idm.7f000001.nip.io/openidm"
+    idmAdminUrl: "http://idm.7f000001.nip.io/admin"
+    idmUploadUrl: "http://idm.7f000001.nip.io/upload"
+    idmExport: "http://idm.7f000001.nip.io/export"
+    enduserUrl: "http://enduser.7f000001.nip.io"
+    platformUrl: "http://admin.7f000001.nip.io"
   ## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
   # rbac
   rbac:
@@ -43,7 +51,18 @@ admin:
     chroot: false
     runAsUser: 101
     allowPrivilegeEscalation: true
-
+  # Ingress
+  ingress:
+    # frim.ingress.enabled -- Wether to expose the service to ingress
+    enabled: false
+    # frim.ingress.hosts -- List of hostname to use for ingress
+    hosts:
+      - admin.7f000001.nip.io
+    backend:
+      # frim.ingress.backend.protocol -- scheme being used by the backend application
+      protocol: HTTP
+      # frim.ingress.backend.port -- port being used by the backend application
+      port: 8080
   # frig.replicas -- number of replicas
   replicas: 1
 
@@ -267,7 +286,6 @@ admin:
   #       - type: Pods
   #         value: 2
   #         periodSeconds: 60
-
 enduser:
   enabled: true
   image:
@@ -277,7 +295,18 @@ enduser:
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
-
+  # Ingress
+  ingress:
+    # frim.ingress.enabled -- Wether to expose the service to ingress
+    enabled: false
+    # frim.ingress.hosts -- List of hostname to use for ingress
+    hosts:
+      - enduser.7f000001.nip.io
+    backend:
+      # frim.ingress.backend.protocol -- scheme being used by the backend application
+      protocol: HTTP
+      # frim.ingress.backend.port -- port being used by the backend application
+      port: 8080
   container:
     protocol: http
     port: 8080
@@ -503,7 +532,6 @@ enduser:
   #       - type: Pods
   #         value: 2
   #         periodSeconds: 60
-
 login:
   enabled: true
   endpoint: ""
@@ -514,12 +542,18 @@ login:
     chroot: false
     runAsUser: 11111
     allowPrivilegeEscalation: true
-
-  container:
-    protocol: http
-    port: 8080
-    targetPort: 8080
-
+  # Ingress
+  ingress:
+    # frim.ingress.enabled -- Wether to expose the service to ingress
+    enabled: false
+    # frim.ingress.hosts -- List of hostname to use for ingress
+    hosts:
+      - login.7f000001.nip.io
+    backend:
+      # frim.ingress.backend.protocol -- scheme being used by the backend application
+      protocol: HTTP
+      # frim.ingress.backend.port -- port being used by the backend application
+      port: 8080
   # frig.replicas -- number of replicas
   replicas: 1
 

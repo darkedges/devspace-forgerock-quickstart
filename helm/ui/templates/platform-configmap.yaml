@@ -13,14 +13,14 @@ metadata:
   annotations: {{ toYaml .Values.platform.configAnnotations | nindent 4 }}
   {{- end }}
 data:
-  AM_URL: {{ .Values.platform.endpoint }}/am
-  AM_ADMIN_URL: {{ .Values.platform.endpoint }}/am/ui-admin
-  IDM_REST_URL: {{ .Values.platform.endpoint }}/openidm
-  IDM_ADMIN_URL: {{ .Values.platform.endpoint }}/admin
-  IDM_UPLOAD_URL: {{ .Values.platform.endpoint }}/upload
-  IDM_EXPORT_URL: {{ .Values.platform.endpoint }}/export
-  ENDUSER_UI_URL: {{ .Values.platform.endpoint }}/enduser-ui
-  PLATFORM_ADMIN_URL: {{ .Values.platform.endpoint }}/platform-ui/
+  AM_URL: {{ .Values.platform.endpoints.amUrl }}
+  AM_ADMIN_URL: {{ .Values.platform.endpoints.amAdminUrl }}
+  IDM_REST_URL: {{ .Values.platform.endpoints.idmRestUrl }}
+  IDM_ADMIN_URL: {{ .Values.platform.endpoints.idmAdminUrl }}
+  IDM_UPLOAD_URL: {{ .Values.platform.endpoints.idmUploadUrl }}
+  IDM_EXPORT_URL: {{ .Values.platform.endpoints.idmExport }}
+  ENDUSER_UI_URL: {{ .Values.platform.endpoints.enduserUrl }}
+  PLATFORM_ADMIN_URL: {{ .Values.platform.endpoints.platformUrl }}
   ENDUSER_CLIENT_ID: end-user-ui
   ADMIN_CLIENT_ID: idm-admin-ui
   THEME: default

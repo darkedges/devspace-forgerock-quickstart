@@ -10,8 +10,11 @@ platform:
       name: frim
       releaseNameOverride: development-frim
 admin:
-  enabled: true
-enduser:
-  enabled: false
+  ingress:
+    enabled: true
 login:
-  enabled: false
+  ingress:
+    enabled: true
+enduser:
+  ingress:
+    enabled: true

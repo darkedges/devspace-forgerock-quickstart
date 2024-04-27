@@ -1,0 +1,37 @@
+{{- if and .Values.enduser.enabled .Values.enduser.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "forgerock.enduser.fullname". }}-ingress
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.enduser.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frim
+    {{- with .Values.enduser.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations:
+    cert-manager.io/cluster-issuer: "vault-issuer"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.enduser.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
+spec:
+  tls:
+  - hosts:
+    {{- toYaml .Values.enduser.ingress.hosts | nindent 4 }}
+    secretName: {{ template "forgerock.enduser.fullname". }}-external-tls
+  rules:
+  {{- $root := . -}}
+  {{- range .Values.enduser.ingress.hosts }}
+  - host: {{ . }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ template "forgerock.enduser.fullname" $root }}-lb
+            port:
+              number: {{ $root.Values.enduser.ingress.backend.port }}
+  {{- end }}
+  ingressClassName: nginx
+{{- end }}
