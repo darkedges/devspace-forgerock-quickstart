@@ -89,6 +89,13 @@ spec:
       {{- end }}
       serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
       terminationGracePeriodSeconds: {{ .Values.enduser.terminationGracePeriodSeconds }}
+      initContainers:
+        {{- if .Values.platform.services }}
+        - name: wait-for-first
+          image: opsfleet/depends-on
+          imagePullPolicy: {{ .Values.enduser.image.imagePullPolicy }}
+          {{ template "forgerock.waitfor". }}
+        {{- end }}
       containers:
       - name: ui
         image: {{ .Values.enduser.image.repository }}:{{ .Values.enduser.image.tag }}
@@ -99,7 +106,7 @@ spec:
         securityContext: {{ include "admin.containerSecurityContext" . | nindent 12 }}
         envFrom:
           - configMapRef:
-              name: {{ template "forgerock.fullname". }}-config 
+              name: {{ template "forgerock.fullname". }}
         ports:
         - containerPort: {{ .Values.enduser.container.port }}
         {{- if .Values.enduser.startupProbe }}

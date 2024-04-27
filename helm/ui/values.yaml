@@ -19,14 +19,21 @@ platform:
   # rbac
   rbac:
     # fram.rbac.enabled -- whether to create roles and bindings
-    enabled: false
+    enabled: true
   serviceAccount:
-    create: false
+    create: true
     name: ""
     automountServiceAccountToken: true
     # -- Annotations for the controller service account
     annotations: {}
-
+  # fram.services --  map of multiple service details that can be connected to
+  services: {}
+  #  identity:
+  #    waitfor: service
+  #    name: fram-development
+  #    releaseNameOverride: localdev-fram
+  #    port: 1389
+  #    ssl: false
 admin:
   enabled: true
   image:

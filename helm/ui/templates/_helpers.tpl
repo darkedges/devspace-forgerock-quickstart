@@ -69,7 +69,7 @@ Create chart name and version as used by the chart label.
 Create the name of the service account to use
 */}}
 {{- define "forgerock.serviceAccountName" -}}
-{{- if .Values.platform.serviceAccount.enabled -}}
+{{- if .Values.platform.serviceAccount.create -}}
     {{ default (include "forgerock.fullname" .) .Values.platform.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.platform.serviceAccount.name }}

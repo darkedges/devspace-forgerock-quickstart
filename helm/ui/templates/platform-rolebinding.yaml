@@ -1,8 +1,8 @@
-{{- if and (.Values.platform.rbac.enabled) (.Values.platform.useKeystore) -}}
+{{- if .Values.platform.rbac.enabled -}}
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ template "forgerock.serviceAccountName" . }}-genjks-role-binding
+  name: {{ template "forgerock.serviceAccountName" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "forgerock.labels" . | nindent 4 }}
@@ -10,18 +10,11 @@ metadata:
     {{- with .Values.platform.labels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
-  annotations:
-    helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
-    helm.sh/hook-weight: "-10"
-  {{- if .Values.platform.serviceAccount.annotations }}
-    {{ toYaml .Values.platform.serviceAccount.annotations | indent 4 }}
-  {{- end }}
 subjects:
 - kind: ServiceAccount
-  name:  {{ template "forgerock.serviceAccountName" . }}-genjks
+  name:  {{ template "forgerock.serviceAccountName" . }}
 roleRef:
   kind: Role
-  name: {{ template "forgerock.serviceAccountName" . }}-genjks-role
+  name: {{ template "forgerock.serviceAccountName" . }}
   apiGroup: rbac.authorization.k8s.io
 {{- end }}

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "forgerock.fullname". }}-config
+  name: {{ template "forgerock.fullname". }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "forgerock.labels" . | nindent 4 }}

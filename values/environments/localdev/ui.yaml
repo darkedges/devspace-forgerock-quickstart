@@ -1,2 +1,17 @@
 platform:
   endpoint: https://platform.7f000001.nip.io
+  services:
+    fram:
+      waitfor: service
+      name: fram
+      releaseNameOverride: development-fram
+    frim:
+      waitfor: service
+      name: frim
+      releaseNameOverride: development-frim
+admin:
+  enabled: true
+enduser:
+  enabled: false
+login:
+  enabled: false
