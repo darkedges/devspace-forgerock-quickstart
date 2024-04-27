@@ -29,7 +29,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: {{ template "forgerock.fullname" $root }}-lb
+            name: {{ template "forgerock.fullname" $root }}
             port:
               number: {{ $root.Values.frim.ingress.backend.port }}
   {{- end }}
