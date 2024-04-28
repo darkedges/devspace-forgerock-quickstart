@@ -118,11 +118,14 @@ fram:
   ingress:
     # fram.ingress.enabled -- Wether to expose the service to ingress
     enabled: false
+    tls:
+      # fram.ingress.tlsenabled -- Wether to expose TLS
+      enabled: false
     # fram.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
+    hosts:
+      - am.7f000001.nip.io
     # fram.ingress.configurationsnippet -- Configuration Snippet to add
     configurationsnippet: {}
-
     backend:
       # fram.ingress.backend.protocol -- scheme being used by the backend application
       protocol: HTTP
@@ -232,9 +235,9 @@ fram:
   ##   failureThreshold: 5
   livenessProbe:
     httpGet:
-      path: "openam/json/health/live"
-      port: 8443
-      scheme: HTTPS
+      path: "am/json/health/live"
+      port: 8080
+      scheme: HTTP
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1
@@ -242,9 +245,9 @@ fram:
     failureThreshold: 5
   readinessProbe:
     httpGet:
-      path: "openam/json/health/live"
-      port: 8443
-      scheme: HTTPS
+      path: "am/json/health/ready"
+      port: 8080
+      scheme: HTTP
     initialDelaySeconds: 10
     periodSeconds: 10
     timeoutSeconds: 1

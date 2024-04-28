@@ -132,7 +132,7 @@ spec:
         - configMapRef:
             name: {{ template "forgerock.fullname". }}-config 
         ports:
-        - containerPort: {{ .Values.fram.ingress.backend.targetPort}}
+        - containerPort: {{ .Values.fram.ingress.backend.port}}
         volumeMounts:
           - mountPath: /opt/fram/instance/data
             name: {{ template "forgerock.fullname". }}-data-volume

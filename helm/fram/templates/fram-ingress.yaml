@@ -19,10 +19,12 @@ metadata:
     {{- toYaml .Values.fram.ingress.configurationsnippet | indent 4 }}
     {{- end }}
 spec:
+  {{- if .Values.fram.ingress.tls.enabled }}
   tls:
   - hosts:
     {{- toYaml .Values.fram.ingress.hosts | nindent 4 }}
-    secretName: {{ template "forgerock.fullname". }}-ingress-tls
+    secretName: {{ .Values.fram.ingress.tls.secretName | default (printf "%s-ingress-tls" (include "forgerock.fullname" .)) }}
+  {{- end }}
   rules:
   {{- $root := . -}}
   {{- range .Values.fram.ingress.hosts }}

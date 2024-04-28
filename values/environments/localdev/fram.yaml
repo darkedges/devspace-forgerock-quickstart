@@ -39,8 +39,3 @@ fram:
       scheme: HTTP
   ingress:
     enabled: true
-    backend:
-      protocol: HTTP
-      targetPort: 8080
-    hosts:
-      - am.7f000001.nip.io
