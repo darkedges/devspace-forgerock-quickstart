@@ -15,10 +15,12 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.enduser.ingress.backend.protocol }}"
     nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
 spec:
+  {{- if .Values.enduser.ingress.tls.enabled }}
   tls:
   - hosts:
     {{- toYaml .Values.enduser.ingress.hosts | nindent 4 }}
-    secretName: {{ template "forgerock.enduser.fullname". }}-external-tls
+    secretName: {{ .Values.enduser.ingress.tls.secretName | default (printf "%s-ingress-tls" (include "forgerock.fullname" .)) }}
+  {{- end }}
   rules:
   {{- $root := . -}}
   {{- range .Values.enduser.ingress.hosts }}

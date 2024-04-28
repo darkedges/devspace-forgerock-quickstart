@@ -16,7 +16,6 @@ spec:
     {{- include "forgerock.login.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: ui
   ports:
-  ports:
     - name: tcp-{{ lower .Values.login.ingress.backend.protocol }}
       port: {{ .Values.login.ingress.backend.port}}
       targetPort: {{ .Values.login.ingress.backend.port}}

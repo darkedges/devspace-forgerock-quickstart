@@ -24,8 +24,3 @@ frim:
       scheme: HTTP
   ingress:
     enabled: true
-    backend:
-      protocol: HTTP
-      port: 8080
-    hosts:
-      - idm.7f000001.nip.io

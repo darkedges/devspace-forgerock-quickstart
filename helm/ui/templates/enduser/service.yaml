@@ -16,7 +16,7 @@ spec:
     {{- include "forgerock.enduser.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: ui
   ports:
-    - name: tcp-{{ lower .Values.enduser.container.protocol }}
-      port: {{ .Values.enduser.container.port}}
-      targetPort: {{ .Values.enduser.container.targetPort}}
+    - name: tcp-{{ lower .Values.enduser.ingress.backend.protocol }}
+      port: {{ .Values.enduser.ingress.backend.port }}
+      targetPort: {{ .Values.enduser.ingress.backend.port }}
 {{- end -}}

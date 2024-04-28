@@ -108,7 +108,7 @@ spec:
           - configMapRef:
               name: {{ template "forgerock.fullname". }}
         ports:
-        - containerPort: {{ .Values.enduser.container.port }}
+        - containerPort: {{ .Values.enduser.ingress.backend.port }}
         {{- if .Values.enduser.startupProbe }}
         startupProbe: {{ toYaml .Values.enduser.startupProbe | nindent 12 }}
         {{- end }}

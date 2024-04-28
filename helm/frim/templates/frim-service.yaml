@@ -16,5 +16,5 @@ spec:
     app.kubernetes.io/component: frim
   ports:
     - name: tcp-{{ lower .Values.frim.ingress.backend.protocol }}
-      port: {{ .Values.frim.ingress.backend.port}}
-      targetPort: {{ .Values.frim.ingress.backend.port}}
+      port: {{ .Values.frim.ingress.backend.port }}
+      targetPort: {{ .Values.frim.ingress.backend.port }}

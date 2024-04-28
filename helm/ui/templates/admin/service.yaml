@@ -16,7 +16,7 @@ spec:
     {{- include "forgerock.admin.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: ui
   ports:
-    - name: tcp-{{ lower .Values.admin.container.protocol }}
-      port: {{ .Values.admin.container.port}}
-      targetPort: {{ .Values.admin.container.targetPort}}
+    - name: tcp-{{ lower .Values.admin.ingress.backend.protocol }}
+      port: {{ .Values.admin.ingress.backend.port}}
+      targetPort: {{ .Values.admin.ingress.backend.port}}
 {{- end -}}
