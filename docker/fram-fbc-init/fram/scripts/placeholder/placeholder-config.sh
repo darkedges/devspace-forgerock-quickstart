@@ -16,6 +16,7 @@ newHostname="http://am:80/am"
 find . -name '*.json' -type f -exec sed -i "s+$oldHostname+$newHostname+g" {} \;
 
 mv /opt/templates/boot.json $FRAM_HOME/config
+mv /opt/templates/rsa_api.properties $FRAM_HOME/config/auth/ace/data/rsa_api.properties
 
 /opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode --prettyArrays ${FORGEROCK_HOME}/7.0.0-placeholders.groovy
 /opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode ${FORGEROCK_HOME}/serverconfig-modification.groovy

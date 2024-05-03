@@ -20,7 +20,7 @@
     "deviceProfilesSettingsEncryptionKeystoreType" : "&{am.keystore.default.password}",
     "deviceProfilesAttrName" : "deviceProfiles",
     "deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}",
-    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQICcCfoAiWiwDRYs/0e14ujMIGsF/SZmMS4w7f0ODLkdMcKK9ZMQ/eT2fR+D1rZvYkw",
+    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQICcCfoAiWiwDQhtImHMjm1k/EpTsvlcmQnoeG98d5BFKe2FzB4tcMAreAa4DZ1y7k1",
     "deviceProfilesSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks",
     "deviceProfilesSettingsEncryptionKeystoreKeyPairAlias" : null
   }
