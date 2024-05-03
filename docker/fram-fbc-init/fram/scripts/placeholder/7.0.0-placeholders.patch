@@ -1,0 +1,153 @@
+--- /opt/amupgrade/rules/placeholder/7.0.0-placeholders.groovy	2024-03-28 15:21:08.000000000 +0000
++++ 7.0.0-placeholders.new.groovy	2024-05-03 23:03:09.991456600 +0000
+@@ -58,37 +58,73 @@
+ 
+             forRealmService("AuthenticatorOATH",
+                     forRealmDefaults(where(isAnything(),
++                            replace("authenticatorOATHDeviceSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
+                             replace("authenticatorOATHDeviceSettingsEncryptionKeystorePassword")
+                                     .with("&{am.keystore.default.password}"),
+-                            replace("authenticatorOATHDeviceSettingsEncryptionKeystorePrivateKeyPassword")
++                            replace("authenticatorOATHDeviceSettingsEncryptionKeystorePrivateKeyPassword") 
+                                     .with("&{am.keystore.default.entry.password}")))),
+ 
+             forRealmService("AuthenticatorPush",
+                     forRealmDefaults(where(isAnything(),
++                            replace("authenticatorPushDeviceSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
+                             replace("authenticatorPushDeviceSettingsEncryptionKeystorePassword")
+                                     .with("&{am.keystore.default.password}"),
+-                            replace("authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword")
++                            replace("authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword") 
+                                     .with("&{am.keystore.default.entry.password}")))),
+ 
+             forRealmService("AuthenticatorWebAuthn",
+                     forRealmDefaults(where(isAnything(),
+-                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword")
++                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
++                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword")       
+                                     .with("&{am.keystore.default.password}"),
+                             replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword")
+                                     .with("&{am.keystore.default.entry.password}")))),
+ 
++            forRealmService("DeviceBinding",
++                    forRealmDefaults(where(isAnything(),
++                            replace("deviceBindingSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
++                            replace("deviceBindingSettingsEncryptionKeystorePassword")
++                                    .with("&{am.keystore.default.password}"),
++                            replace("deviceBindingSettingsEncryptionKeystorePrivateKeyPassword")
++                                    .with("&{am.keystore.default.entry.password}")))),
++
+             forRealmService("DeviceId",
+                     forRealmDefaults(where(isAnything(),
++                            replace("deviceIdSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
+                             replace("deviceIdSettingsEncryptionKeystorePassword")
+                                     .with("&{am.keystore.default.password}"),
+                             replace("deviceIdSettingsEncryptionKeystorePrivateKeyPassword")
+                                     .with("&{am.keystore.default.entry.password}")))),
+ 
++            forRealmService("DeviceProfiles",
++                    forRealmDefaults(where(isAnything(),
++                            replace("deviceProfilesSettingsEncryptionKeystore") 
++                                    .with("&{secrets.path}/keystores/keystore.jks"),
++                            replace("deviceProfilesSettingsEncryptionKeystorePassword")
++                                    .with("&{am.keystore.default.password}"),
++                            replace("deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword")
++                                    .with("&{am.keystore.default.entry.password}")))),
++
++            forGlobalService("KeyStoreSecretStore",
++                    forDefaultInstanceSettings(forNamedInstanceSettings("default/default-keystore",
++                            replace("file") 
++                                    .with("&{secrets.path}/keystores/keystore.jceks")))),
++
++            forGlobalService("FileSystemSecretStore",
++                    forDefaultInstanceSettings(forNamedInstanceSettings("default/default-passwords-store",
++                            replace("directory") 
++                                    .with("&{secrets.path}/secrets/plain")))),
++
+             forRealmService("iPlanetAMAuthAmsterService",
+                     forRealmDefaults(replace("authorizedKeys")
+-                            .with("&{secrets.path}/amster/authorized_keys")),
++                            .with("&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}")),
+                     forSettings(replace("authorizedKeys")
+-                            .with("&{secrets.path}/amster/authorized_keys"))),
++                            .with("&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"))),
+ 
+             forRealmService("iPlanetAMAuthService",
+                     forRealmDefaults(within("security",
+@@ -126,13 +162,34 @@
+                                             .with("&{am.stores.cts.password}")
+                                             .replaceValueOfKey("org.forgerock.services.cts.store.directory.name")
+                                             .with("&{am.stores.cts.servers}")
+-                                            .replaceValueOfKey("org.forgerock.services.cts.store.loginid")
++                                            .replaceValueOfKey("org.forgerock.services.cts.store.loginid") 
+                                             .with("&{am.stores.cts.username}")
+                                             .replaceValueOfKey("org.forgerock.services.cts.store.ssl.enabled")
+                                             .with("&{am.stores.cts.ssl.enabled}")
+                                             .replaceValueOfKey("org.forgerock.services.cts.store.mtls.enabled")
+                                             .with("&{am.stores.cts.mtls.enabled|false}")
+-
++                                            .replaceValueOfKey("org.forgerock.services.cts.store.root.suffix")
++                                            .with("&{am.stores.cts.root.suffix}")
++                                            .replaceValueOfKey("org.forgerock.services.cts.store.affinity.enabled")
++                                            .with("false")
++                                            .replaceValueOfKey("org.forgerock.services.cts.store.starttls.enabled")
++                                            .with("")
++                                            .replaceValueOfKey("org.forgerock.services.resourcesets.store.location")
++                                            .with("external")
++                                            .replaceValueOfKey("org.forgerock.services.resourcesets.store.root.suffix")
++                                            .with("&{am.stores.uma.root.suffix}")
++                                            .replaceValueOfKey("org.forgerock.services.uma.labels.store.location")
++                                            .with("external")
++                                            .replaceValueOfKey("org.forgerock.services.uma.labels.store.root.suffix")
++                                            .with("&{am.stores.uma.root.suffix}")
++                                            .replaceValueOfKey("org.forgerock.services.uma.pendingrequests.store.location")
++                                            .with("external")
++                                            .replaceValueOfKey("org.forgerock.services.uma.pendingrequests.store.root.suffix")
++                                            .with("&{am.stores.uma.root.suffix}")
++                                            .replaceValueOfKey("org.forgerock.services.umaaudit.store.location")
++                                            .with("external")
++                                            .replaceValueOfKey("org.forgerock.services.umaaudit.store.root.suffix")
++                                            .with("&{am.stores.uma.root.suffix}")
+                                             .replaceValueOfKey("org.forgerock.services.resourcesets.store.password")
+                                             .with("&{am.stores.uma.password}")
+                                             .replaceValueOfKey("org.forgerock.services.resourcesets.store.directory.name")
+@@ -212,7 +269,7 @@
+                     forRealmDefaults(within("advancedOAuth2Config",
+                             where(isAnything(),
+                                     replace("hashSalt")
+-                                            .with("&{am.oidc.client.subject.identifier.hash.salt}"))))),
++                                            .with("&{am.oidc.client.subject.identifier.hash.salt}"))))),   
+ 
+             forRealmService("RestSecurity",
+                     forRealmDefaults(
+@@ -234,7 +291,7 @@
+                                             .with("&{am.passwords.anonymous.hashed.encrypted}")),
+                             forNamedInstanceSettings("dsameuser",
+                                     replace("userPassword")
+-                                            .with("&{am.passwords.dsameuser.hashed.encrypted}")))),
++                                            .with("&{am.passwords.dsameuser.hashed.encrypted}")))),        
+ 
+             forRealmService("sunIdentityRepositoryService",
+                     forDefaultInstanceSettings(
+@@ -249,11 +306,11 @@
+                                                             .with("&{am.stores.user.username}"))),
+                                     within("ldapsettings",
+                                             where(isAnything(),
+-                                                    replace("sun-idrepo-ldapv3-config-connection-mode")
+-                                                            .with("&{am.stores.user.connection.mode}"))),
++                                                    replace("sun-idrepo-ldapv3-config-connection-mode")    
++                                                            .with("&{am.stores.user.connection.mode}"))),  
+                                     within("ldapsettings",
+                                             where(isAnything(),
+-                                                    replace("sun-idrepo-ldapv3-config-ldap-server")
++                                                    replace("sun-idrepo-ldapv3-config-ldap-server")        
+                                                             .with(objectProvider(singletonMap("\$list", "&{am.stores.user.servers}")))))))),
+     ]
+-}
+\ No newline at end of file
++}

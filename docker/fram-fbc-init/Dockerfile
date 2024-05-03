@@ -20,8 +20,8 @@ ENV TOMCAT_KEYSTORE_PASSWORD=changeit
 ENV JAVA_OPTS=""
 ENV FRAM_CONTAINER_JVM_ARGS=-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandoms
 
-# RUN apt-get update && \
-#     apt-get install -y vim moreutils python3
+RUN apt-get update
+RUN apt-get install -y patch
 RUN groupadd -g 11111 forgerock && \
     useradd -c "ForgeRock user" -m -d $FORGEROCK_HOME -u 11111 -g 11111 -G root forgerock -s /usr/bin/bash && \
     chown -R forgerock:root "$CATALINA_HOME" && \ 

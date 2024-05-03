@@ -18,7 +18,8 @@ find . -name '*.json' -type f -exec sed -i "s+$oldHostname+$newHostname+g" {} \;
 mv /opt/templates/boot.json $FRAM_HOME/config
 mv /opt/templates/rsa_api.properties $FRAM_HOME/config/auth/ace/data/rsa_api.properties
 
-/opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode --prettyArrays ${FORGEROCK_HOME}/7.0.0-placeholders.groovy
+patch /opt/amupgrade/rules/placeholders/7.0.0-placeholders.groovy < /home/forgerock/7.0.0-placeholders.patch
+/opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode --prettyArrays /opt/amupgrade/rules/placeholders/7.0.0-placeholders.groovy
 /opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode ${FORGEROCK_HOME}/serverconfig-modification.groovy
 /opt/amupgrade/amupgrade -i ${FRAM_HOME}/config/services -o ${FRAM_HOME}/config/services --fileBasedMode ${FORGEROCK_HOME}/darkedges-modification.groovy
 rawIdRepoValue="LDAPv3ForOpenDS"
