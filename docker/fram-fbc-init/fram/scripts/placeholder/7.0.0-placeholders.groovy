@@ -105,7 +105,7 @@ def getRules() {
                     forRealmDefaults(where(isAnything(),
                             replace("deviceProfilesSettingsEncryptionKeystore") 
                                     .with("&{secrets.path}/keystores/keystore.jks"),
-                            replace("deviceProfilesSettingsEncryptionKeystoreType")
+                            replace("deviceProfilesSettingsEncryptionKeystorePassword")
                                     .with("&{am.keystore.default.password}"),
                             replace("deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword")
                                     .with("&{am.keystore.default.entry.password}")))),
