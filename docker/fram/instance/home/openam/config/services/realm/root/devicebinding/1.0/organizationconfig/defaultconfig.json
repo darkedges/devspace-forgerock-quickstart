@@ -16,12 +16,12 @@
       "name" : "DeviceBinding",
       "collection" : false
     },
-    "deviceBindingSettingsEncryptionKeystorePassword" : "AQICcCfoAiWiwDRYs/0e14ujMIGsF/SZmMS4w7f0ODLkdMcKK9ZMQ/eT2fR+D1rZvYkw",
+    "deviceBindingSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "deviceBindingAttrName" : "boundDevices",
     "deviceBindingSettingsEncryptionKeystoreKeyPairAlias" : null,
     "deviceBindingSettingsEncryptionScheme" : "NONE",
     "deviceBindingSettingsEncryptionKeystoreType" : "JKS",
-    "deviceBindingSettingsEncryptionKeystorePrivateKeyPassword" : null,
-    "deviceBindingSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks"
+    "deviceBindingSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}",
+    "deviceBindingSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks"
   }
 }

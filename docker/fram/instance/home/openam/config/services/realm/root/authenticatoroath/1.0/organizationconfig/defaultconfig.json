@@ -18,7 +18,7 @@
     },
     "oathAttrName" : "oathDeviceProfiles",
     "authenticatorOATHDeviceSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}",
-    "authenticatorOATHDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
+    "authenticatorOATHDeviceSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks",
     "authenticatorOATHDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorOATHDeviceSettingsEncryptionScheme" : "NONE",
     "authenticatorOATHDeviceSettingsEncryptionKeystoreType" : "JKS",

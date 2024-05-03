@@ -16,7 +16,7 @@
       "name" : "AuthenticatorWebAuthn",
       "collection" : false
     },
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jceks",
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
     "webauthnAttrName" : "webauthnDeviceProfiles",

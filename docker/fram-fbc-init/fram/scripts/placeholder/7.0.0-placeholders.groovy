@@ -58,6 +58,8 @@ def getRules() {
 
             forRealmService("AuthenticatorOATH",
                     forRealmDefaults(where(isAnything(),
+                            replace("authenticatorOATHDeviceSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
                             replace("authenticatorOATHDeviceSettingsEncryptionKeystorePassword")
                                     .with("&{am.keystore.default.password}"),
                             replace("authenticatorOATHDeviceSettingsEncryptionKeystorePrivateKeyPassword") 
@@ -65,6 +67,8 @@ def getRules() {
 
             forRealmService("AuthenticatorPush",
                     forRealmDefaults(where(isAnything(),
+                            replace("authenticatorPushDeviceSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
                             replace("authenticatorPushDeviceSettingsEncryptionKeystorePassword")
                                     .with("&{am.keystore.default.password}"),
                             replace("authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword") 
@@ -72,17 +76,49 @@ def getRules() {
 
             forRealmService("AuthenticatorWebAuthn",
                     forRealmDefaults(where(isAnything(),
+                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
                             replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword")       
                                     .with("&{am.keystore.default.password}"),
                             replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword")
                                     .with("&{am.keystore.default.entry.password}")))),
 
+            forRealmService("DeviceBinding",
+                    forRealmDefaults(where(isAnything(),
+                            replace("deviceBindingSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
+                            replace("deviceBindingSettingsEncryptionKeystorePassword")
+                                    .with("&{am.keystore.default.password}"),
+                            replace("deviceBindingSettingsEncryptionKeystorePrivateKeyPassword")
+                                    .with("&{am.keystore.default.entry.password}")))),
+
             forRealmService("DeviceId",
                     forRealmDefaults(where(isAnything(),
+                            replace("deviceIdSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
                             replace("deviceIdSettingsEncryptionKeystorePassword")
                                     .with("&{am.keystore.default.password}"),
                             replace("deviceIdSettingsEncryptionKeystorePrivateKeyPassword")
                                     .with("&{am.keystore.default.entry.password}")))),
+
+            forRealmService("DeviceProfiles",
+                    forRealmDefaults(where(isAnything(),
+                            replace("deviceProfilesSettingsEncryptionKeystore") 
+                                    .with("&{secrets.path}/keystores/keystore.jks"),
+                            replace("deviceProfilesSettingsEncryptionKeystoreType")
+                                    .with("&{am.keystore.default.password}"),
+                            replace("deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword")
+                                    .with("&{am.keystore.default.entry.password}")))),
+
+            forGlobalService("KeyStoreSecretStore",
+                    forDefaultInstanceSettings(forNamedInstanceSettings("default/default-keystore",
+                            replace("file") 
+                                    .with("&{secrets.path}/keystores/keystore.jceks")))),
+
+            forGlobalService("FileSystemSecretStore",
+                    forDefaultInstanceSettings(forNamedInstanceSettings("default/default-passwords-store",
+                            replace("directory") 
+                                    .with("&{secrets.path}/secrets/plain")))),
 
             forRealmService("iPlanetAMAuthAmsterService",
                     forRealmDefaults(replace("authorizedKeys")
