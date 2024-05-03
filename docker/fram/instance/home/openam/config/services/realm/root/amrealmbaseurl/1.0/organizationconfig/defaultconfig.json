@@ -18,9 +18,7 @@
     },
     "source" : "FIXED_VALUE",
     "extensionClassName" : null,
-    "fixedValue" : {
-      "$string" : "&{am.server.protocol|https}://&{am.server.fqdn|am.localtest.me}"
-    },
+    "fixedValue" : "&{am.server.protocol}://&{am.server.fqdn}",
     "contextPath" : "/am"
   }
 }

@@ -27,15 +27,11 @@
       "statelessLogoutByUser" : false,
       "statelessEncryptionType" : "DIRECT",
       "openam-session-stateless-logout-poll-interval" : 60,
-      "statelessEncryptionAesKey" : {
-        "$string" : "&{am.session.stateless.encryption.key|AQIChr9uR6s5WN8v+ku8BGRu3Q+xjqCKbcMWwtF97lTTeug7+QdLeVnEhOHuc2Gu9t2K6rngCIUNzsQ=}"
-      },
+      "statelessEncryptionAesKey" : "&{am.session.stateless.encryption.key}",
       "statelessSigningType" : "HS256",
       "openam-session-stateless-blacklist-poll-interval" : 60,
       "statelessCompressionType" : "NONE",
-      "statelessSigningHmacSecret" : {
-        "$string" : "&{am.session.stateless.signing.key|AQIChr9uR6s5WN8v+ku8BGRu3Q+xjqCKbcMWwtF97lTTeug7+QdLeVnEhOHuc2Gu9t2K6rngCIUNzsQ=}"
-      },
+      "statelessSigningHmacSecret" : "&{am.session.stateless.signing.key}",
       "openam-session-stateless-blacklist-purge-delay" : 1,
       "openam-session-stateless-enable-session-blacklisting" : false
     },

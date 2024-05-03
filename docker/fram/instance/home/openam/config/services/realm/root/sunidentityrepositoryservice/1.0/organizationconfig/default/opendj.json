@@ -17,18 +17,12 @@
       "collection" : false
     },
     "ldapsettings" : {
-      "sun-idrepo-ldapv3-config-connection-mode" : {
-        "$string" : "&{am.stores.user.connection.mode|LDAPS}"
-      },
-      "sun-idrepo-ldapv3-config-authid" : {
-        "$string" : "&{am.stores.user.username|cn=Directory Manager}"
-      },
+      "sun-idrepo-ldapv3-config-connection-mode" : "&{am.stores.user.connection.mode}",
+      "sun-idrepo-ldapv3-config-authid" : "&{am.stores.user.username}",
       "sun-idrepo-ldapv3-config-ldap-server" : {
-        "$list" : "&{am.stores.user.servers|[0]=localhost:50636}"
+        "$list" : "&{am.stores.user.servers}"
       },
-      "sun-idrepo-ldapv3-config-authpw" : {
-        "$string" : "&{am.stores.user.password|password}"
-      },
+      "sun-idrepo-ldapv3-config-authpw" : "&{am.stores.user.password}",
       "sun-idrepo-ldapv3-config-organization_name" : "ou=identities"
     },
     "persistentsearch" : {

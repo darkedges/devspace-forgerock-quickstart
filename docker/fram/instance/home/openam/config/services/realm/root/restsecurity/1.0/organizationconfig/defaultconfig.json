@@ -22,9 +22,7 @@
     "SigningKeyValidator" : "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
     "protectedUserAttributes" : [ ],
     "selfRegistrationTokenLifetime" : 900,
-    "confirmationIdHmacKey" : {
-      "$string" : "&{am.selfservice.legacy.confirmation.email.link.signing.key|jt2Ov9Fa1V+wLiGAmscI1NY/FMOYjKPSHdOsRYkYcZU=}"
-    },
+    "confirmationIdHmacKey" : "&{am.selfservice.legacy.confirmation.email.link.signing.key}",
     "selfServiceEnabled" : false,
     "selfRegistrationEnabled" : false,
     "forgotPasswordTokenLifetime" : 900,

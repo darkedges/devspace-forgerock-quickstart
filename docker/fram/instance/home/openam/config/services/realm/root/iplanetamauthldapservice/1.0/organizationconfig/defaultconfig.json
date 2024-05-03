@@ -23,11 +23,9 @@
     "operationTimeout" : 0,
     "beheraPasswordPolicySupportEnabled" : true,
     "primaryLdapServer" : {
-      "$list" : "&{am.authentication.modules.ldap.servers|localhost:50636}"
+      "$list" : "&{am.authentication.modules.ldap.servers}"
     },
-    "userBindDN" : {
-      "$string" : "&{am.authentication.modules.ldap.username|cn=Directory Manager}"
-    },
+    "userBindDN" : "&{am.authentication.modules.ldap.username}",
     "userSearchStartDN" : [ "ou=identities" ],
     "profileAttributeMappings" : [ ],
     "stopLdapbindAfterInmemoryLockedEnabled" : false,

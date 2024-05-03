@@ -20,9 +20,7 @@
     "givenName" : "anonymous",
     "iplanet-am-user-success-url" : null,
     "postalAddress" : null,
-    "userPassword" : {
-      "$string" : "&{am.passwords.anonymous.hashed.encrypted|CpL6syMBNMym6t2YmDJbmyrmeZg=}"
-    },
+    "userPassword" : "&{am.passwords.anonymous.hashed.encrypted}",
     "employeeNumber" : null,
     "iplanet-am-user-failure-url" : null,
     "sunIdentityMSISDNNumber" : null,

@@ -16,8 +16,6 @@
       "name" : "iPlanetAMAuthAmsterService",
       "collection" : false
     },
-    "authorizedKeys" : {
-      "$string" : "&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"
-    }
+    "authorizedKeys" : "&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"
   }
 }

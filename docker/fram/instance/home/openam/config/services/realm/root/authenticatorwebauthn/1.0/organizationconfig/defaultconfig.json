@@ -17,15 +17,11 @@
       "collection" : false
     },
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jceks",
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : {
-      "$string" : "&{am.keystore.default.password|AQIChr9uR6s5WN8Bksse+p6VUsbnxTInMmRR}"
-    },
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
     "webauthnAttrName" : "webauthnDeviceProfiles",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword" : {
-      "$string" : "&{am.keystore.default.entry.password|}"
-    }
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}"
   }
 }

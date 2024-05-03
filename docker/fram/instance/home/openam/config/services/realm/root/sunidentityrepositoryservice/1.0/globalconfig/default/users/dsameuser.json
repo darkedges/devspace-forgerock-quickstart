@@ -18,8 +18,6 @@
     },
     "inetUserStatus" : "Active",
     "dn" : "cn=dsameuser,ou=DSAME Users,",
-    "userPassword" : {
-      "$string" : "&{am.passwords.dsameuser.hashed.encrypted|{SSHA-512\\}FN8Ali3L0Dcpy83Y6/auHJrogFPufOh2OW2cZn1tFi3NbbZE39rkzIKr6uwuu38nvknZ8j99V3h81GiZyP2Mp6smSp4fmqmANrVwzz544/CrYRDtXg==}"
-    }
+    "userPassword" : "&{am.passwords.dsameuser.hashed.encrypted}"
   }
 }

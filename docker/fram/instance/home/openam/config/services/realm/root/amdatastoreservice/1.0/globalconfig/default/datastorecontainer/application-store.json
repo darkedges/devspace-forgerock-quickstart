@@ -17,6 +17,8 @@
       "collection" : false
     },
     "bindPassword" : "&{am.stores.application.password}",
+    "maximumConnectionPool" : 10,
+    "mtlsEnabled" : false,
     "useStartTLS" : false,
     "dataStoreEnabled" : {
       "$bool" : "&{am.stores.application.enabled}"
@@ -24,6 +26,7 @@
     "serverUrls" : {
       "$list" : "&{am.stores.application.servers}"
     },
+    "minimumConnectionPool" : 1,
     "useSsl" : {
       "$bool" : "&{am.stores.application.ssl.enabled}"
     },

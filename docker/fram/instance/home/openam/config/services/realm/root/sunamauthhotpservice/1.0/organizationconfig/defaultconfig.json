@@ -23,7 +23,7 @@
     "authenticationLevel" : 0,
     "smtpHostname" : "smtp.gmail.com",
     "mobileCarrierAttribute" : null,
-    "smtpUserPassword" : "AQIChr9uR6s5WN8KAcEki7i1I63mr2iXF2dr",
+    "smtpUserPassword" : "AQICcCfoAiWiwDQs6O9Y3ULhztBBXBeCq5T7",
     "smtpHostPort" : 465,
     "smtpFromAddress" : "no-reply@openam.org",
     "smtpUsername" : "opensso.sun",

@@ -16,15 +16,11 @@
       "name" : "AuthenticatorPush",
       "collection" : false
     },
-    "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : {
-      "$string" : "&{am.keystore.default.password|changeit}"
-    },
+    "authenticatorPushDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorPushDeviceSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
     "authenticatorPushDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "authenticatorPushDeviceSettingsEncryptionScheme" : "NONE",
-    "authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword" : {
-      "$string" : "&{am.keystore.default.entry.password|}"
-    },
+    "authenticatorPushDeviceSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}",
     "authenticatorPushDeviceSettingsEncryptionKeystoreType" : "JKS",
     "pushAttrName" : "pushDeviceProfiles",
     "authenticatorPushSkippableName" : "push2faEnabled"

@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "realm": null,
+    "amsterVersion": "7.5.0",
+    "entityType": "DataStoreInstance",
+    "entityId": "application-store",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "application-store",
+    "bindPassword": "changeit",
+    "mtlsEnabled": false,
+    "dataStoreEnabled": true,
+    "serverUrls": [
+      "localhost:50636"
+    ],
+    "minimumConnectionPool": 1,
+    "useSsl": true,
+    "maximumConnectionPool": 10,
+    "useStartTLS": false,
+    "bindDN": "cn=Directory Manager",
+    "affinityEnabled": false,
+    "_type": {
+      "_id": "config",
+      "name": "Configuration Instance",
+      "collection": true
+    }
+  }
+}

@@ -29,9 +29,7 @@
       "zeroPageLoginReferrerWhiteList" : [ ],
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "moduleBasedAuthEnabled" : true,
-      "sharedSecret" : {
-        "$string" : "&{am.authentication.shared.secret|AQIChr9uR6s5WN+vRL/TO277rM/DiBHU/xyUE1camLFM9xzX+G+Kb9SkKsI3wPRrHgqpbtBX7RtEwxI=}"
-      },
+      "sharedSecret" : "&{am.authentication.shared.secret}",
       "addClearSiteDataHeader" : true,
       "keyAlias" : null,
       "iplanet-am-auth-valid-goto-domains" : [ ]

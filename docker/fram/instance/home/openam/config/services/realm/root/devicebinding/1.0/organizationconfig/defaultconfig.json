@@ -16,7 +16,7 @@
       "name" : "DeviceBinding",
       "collection" : false
     },
-    "deviceBindingSettingsEncryptionKeystorePassword" : "AQIChr9uR6s5WN8Bksse+p6VUsbnxTInMmRR",
+    "deviceBindingSettingsEncryptionKeystorePassword" : "AQICcCfoAiWiwDRYs/0e14ujMIGsF/SZmMS4w7f0ODLkdMcKK9ZMQ/eT2fR+D1rZvYkw",
     "deviceBindingAttrName" : "boundDevices",
     "deviceBindingSettingsEncryptionKeystoreKeyPairAlias" : null,
     "deviceBindingSettingsEncryptionScheme" : "NONE",

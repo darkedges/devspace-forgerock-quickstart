@@ -60,9 +60,7 @@
       "supportedSubjectTypes" : [ "public", "pairwise" ],
       "refreshTokenGracePeriod" : 0,
       "tlsClientCertificateHeaderFormat" : "URLENCODED_PEM",
-      "hashSalt" : {
-        "$string" : "&{am.oidc.client.subject.identifier.hash.salt|changeme}"
-      },
+      "hashSalt" : "&{am.oidc.client.subject.identifier.hash.salt}",
       "macaroonTokenFormat" : "V2",
       "maxAgeOfRequestObjectNbfClaim" : 0,
       "tlsCertificateRevocationCheckingEnabled" : false,

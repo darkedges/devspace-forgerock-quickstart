@@ -16,11 +16,7 @@
       "name" : "iPlanetAMAuthLDAPService",
       "collection" : false
     },
-    "userBindPassword" : {
-      "$string" : "&{am.authentication.modules.ldap.password|password}"
-    },
-    "openam-auth-ldap-connection-mode" : {
-      "$string" : "&{am.authentication.modules.ldap.connection.mode|LDAPS}"
-    }
+    "userBindPassword" : "&{am.authentication.modules.ldap.password}",
+    "openam-auth-ldap-connection-mode" : "&{am.authentication.modules.ldap.connection.mode}"
   }
 }

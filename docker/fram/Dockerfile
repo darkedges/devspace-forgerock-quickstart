@@ -69,16 +69,16 @@ ENV FRAM_CONTAINER_JVM_ARGS=-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 
 ENV FRAM_HOME=/home/forgerock/openam
 ENV GPG_KEYS 48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV SECURITY_PATH=${FRAM_HOME}/security
+ENV SECRETS_PATH=${FRAM_HOME}/security
 ENV TOMCAT_MAJOR 9
 ENV TOMCAT_NATIVE_LIBDIR $CATALINA_HOME/native-jni-lib
 ENV TOMCAT_SHA512 b2668f50339afdd266dbdf3ff20a98632a5552910179eda272b65ea0b18be4bef8fa9988e3cfc77e4eae4b74ae1e7abe2483b0e427a07628ed50fed3a13eefb9
 ENV TOMCAT_VERSION 9.0.88
 ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$TOMCAT_NATIVE_LIBDIR
 
-RUN mkdir -p ${SECURITY_PATH}/secrets/amster && \
-    bash -c "ssh-keygen -N '' -m pem -t rsa -f ${SECURITY_PATH}/secrets/amster/amster_rsa <<< y" && \
-    cat ${SECURITY_PATH}/secrets/amster/amster_rsa.pub > ${SECURITY_PATH}/secrets/amster/authorized_keys
+RUN mkdir -p ${SECRETS_PATH}/secrets/amster && \
+    bash -c "ssh-keygen -N '' -m pem -t rsa -f ${SECRETS_PATH}/secrets/amster/amster_rsa <<< y" && \
+    cat ${SECRETS_PATH}/secrets/amster/amster_rsa.pub > ${SECRETS_PATH}/secrets/amster/authorized_keys
 
 ENTRYPOINT  ["/usr/local/tomcat/docker-entrypoint.sh"]
 

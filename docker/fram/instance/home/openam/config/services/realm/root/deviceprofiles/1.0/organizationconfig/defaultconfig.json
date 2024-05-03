@@ -20,7 +20,7 @@
     "deviceProfilesSettingsEncryptionKeystoreType" : "JKS",
     "deviceProfilesAttrName" : "deviceProfiles",
     "deviceProfilesSettingsEncryptionKeystorePrivateKeyPassword" : null,
-    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQIChr9uR6s5WN8Bksse+p6VUsbnxTInMmRR",
+    "deviceProfilesSettingsEncryptionKeystorePassword" : "AQICcCfoAiWiwDRYs/0e14ujMIGsF/SZmMS4w7f0ODLkdMcKK9ZMQ/eT2fR+D1rZvYkw",
     "deviceProfilesSettingsEncryptionKeystore" : "/home/forgerock/openam/security/keystores/keystore.jks",
     "deviceProfilesSettingsEncryptionKeystoreKeyPairAlias" : null
   }

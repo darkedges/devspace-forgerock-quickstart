@@ -1,0 +1,27 @@
+{
+    "data": {
+        "_id": "d60b7a71-1dc6-44a5-8e48-e4b9d92dee8b",
+        "actions": {
+            "GRANT": true
+        },
+        "createdBy": "id=dsameuser,ou=user,ou=am-config",
+        "creationDate": 1517161800564,
+        "description": "The built-in OAuth2 Scope Resource Type for OAuth2policy-provided scope.",
+        "lastModifiedBy": "id=dsameuser,ou=user,ou=am-config",
+        "lastModifiedDate": 1517161800564,
+        "name": "OAuth2 Scope",
+        "patterns": [
+            "*://*:*/*",
+            "*://*:*/*?*",
+            "*"
+        ],
+        "uuid": "d60b7a71-1dc6-44a5-8e48-e4b9d92dee8b"
+    },
+    "metadata": {
+        "amsterVersion": "7.5.0",
+        "entityId": "d60b7a71-1dc6-44a5-8e48-e4b9d92dee8b",
+        "entityType": "ResourceTypes",
+        "pathParams": {},
+        "realm": "/"
+    }
+}
