@@ -23,14 +23,13 @@
     "useInternalOAuth2Provider" : false,
     "jwtSigningCompatibilityMode" : false,
     "provisioningEncryptionKeyAlias" : null,
-    "enabled" : false,
-    "idmDeploymentPath" : null,
+    "enabled" : true,
+    "idmDeploymentPath" : "openidm",
     "provisioningSigningAlgorithm" : null,
-    "idmDeploymentUrl" : null,
+    "idmDeploymentUrl" : "http://development-frim-frim:8080",
     "PositiveIntegerValidator" : "com.sun.identity.shared.validation.PositiveIntegerValidator",
     "provisioningSigningKeyAlias" : null,
     "configurationCacheDuration" : 0,
-    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
-    "provisioningClientSecret" : null
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
   }
 }
