@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "KbaCreateNode",
+    "entityId" : "KbaCreateNode",
+    "uid" : "ou=KbaCreateNode,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunService", "top" ],
+    "pathParams" : { },
+    "ou" : [ "KbaCreateNode" ]
+  },
+  "data" : {
+    "_id" : "KbaCreateNode",
+    "_type" : {
+      "_id" : "KbaCreateNode",
+      "name" : "KbaCreateNode",
+      "collection" : false
+    }
+  }
+}

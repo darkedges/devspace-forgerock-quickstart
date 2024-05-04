@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "AcceptTermsAndConditionsNode",
+    "entityId" : "default/b4a0e915-c15d-4b83-9c9d-18347d645976",
+    "uid" : "ou=b4a0e915-c15d-4b83-9c9d-18347d645976,ou=default,ou=OrganizationConfig,ou=1.0,ou=AcceptTermsAndConditionsNode,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "b4a0e915-c15d-4b83-9c9d-18347d645976" ]
+  },
+  "data" : {
+    "_id" : "default/b4a0e915-c15d-4b83-9c9d-18347d645976",
+    "_type" : {
+      "_id" : "AcceptTermsAndConditionsNode",
+      "name" : "AcceptTermsAndConditionsNode",
+      "collection" : false
+    }
+  }
+}

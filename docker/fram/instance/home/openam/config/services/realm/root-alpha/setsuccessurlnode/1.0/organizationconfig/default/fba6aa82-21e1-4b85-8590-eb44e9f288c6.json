@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "SetSuccessUrlNode",
+    "entityId" : "default/fba6aa82-21e1-4b85-8590-eb44e9f288c6",
+    "uid" : "ou=fba6aa82-21e1-4b85-8590-eb44e9f288c6,ou=default,ou=OrganizationConfig,ou=1.0,ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "fba6aa82-21e1-4b85-8590-eb44e9f288c6" ]
+  },
+  "data" : {
+    "_id" : "default/fba6aa82-21e1-4b85-8590-eb44e9f288c6",
+    "_type" : {
+      "_id" : "SetSuccessUrlNode",
+      "name" : "SetSuccessUrlNode",
+      "collection" : false
+    },
+    "successUrl" : "http://enduser.7f000001.nip.io/?realm=alpha"
+  }
+}

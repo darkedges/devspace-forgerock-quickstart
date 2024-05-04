@@ -1,0 +1,26 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "selfServiceTrees",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=selfServiceTrees,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "selfServiceTrees",
+      "name" : "selfServiceTrees",
+      "collection" : false
+    },
+    "enabled" : true,
+    "treeMapping" : {
+      "login" : "PlatformLogin",
+      "registration" : "PlatformRegistration",
+      "resetPassword" : "PlatformResetPassword"
+    }
+  }
+}

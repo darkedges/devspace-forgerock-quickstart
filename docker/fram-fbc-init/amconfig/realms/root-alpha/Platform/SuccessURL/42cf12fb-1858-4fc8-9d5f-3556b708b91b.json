@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "realm": "/alpha",
+    "amsterVersion": "7.5.0",
+    "entityType": "SuccessURL",
+    "entityId": "42cf12fb-1858-4fc8-9d5f-3556b708b91b",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "42cf12fb-1858-4fc8-9d5f-3556b708b91b",
+    "successUrl": "http://enduser.7f000001.nip.io/?realm=alpha",
+    "_type": {
+      "_id": "SetSuccessUrlNode",
+      "name": "Success URL",
+      "collection": true
+    },
+    "_outcomes": [
+      {
+        "id": "outcome",
+        "displayName": "Outcome"
+      }
+    ]
+  }
+}

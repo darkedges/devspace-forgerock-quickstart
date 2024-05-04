@@ -19,5 +19,4 @@ done
 echo "->Tomcat started"
 echo "->Configuring FRAM"
 /opt/amster/config/importConfig.sh install
-
 /opt/amster/config/importConfig.sh core

@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "IdentifyExistingUserNode",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "IdentifyExistingUserNode",
+      "name" : "IdentifyExistingUserNode",
+      "collection" : false
+    }
+  }
+}

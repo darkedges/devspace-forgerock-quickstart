@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "realm": "/alpha",
+    "amsterVersion": "7.5.0",
+    "entityType": "InnerTreeEvaluator",
+    "entityId": "33b24514-3e50-4180-8f08-ab6f4e51b07e",
+    "pathParams": {}
+  },
+  "data": {
+    "_id": "33b24514-3e50-4180-8f08-ab6f4e51b07e",
+    "tree": "PlatformProgressiveProfile",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "name": "Inner Tree Evaluator",
+      "collection": true
+    },
+    "_outcomes": [
+      {
+        "id": "true",
+        "displayName": "True"
+      },
+      {
+        "id": "false",
+        "displayName": "False"
+      }
+    ]
+  }
+}
