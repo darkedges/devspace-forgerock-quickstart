@@ -44,6 +44,7 @@
       "defaultACR" : [ ]
     },
     "advancedOAuth2Config" : {
+      "passwordGrantAuthService" : "[Empty]",
       "tokenCompressionEnabled" : false,
       "tokenEncryptionEnabled" : false,
       "requirePushedAuthorizationRequests" : false,
@@ -72,7 +73,7 @@
       "parRequestUriLifetime" : 90,
       "allowedAudienceValues" : [ ],
       "persistentClaims" : [ ],
-      "supportedScopes" : [ ],
+      "supportedScopes" : [ "fr:idm:*", "openid" ],
       "authenticationAttributes" : [ "uid" ],
       "grantTypes" : [ "implicit", "urn:ietf:params:oauth:grant-type:saml2-bearer", "refresh_token", "password", "client_credentials", "urn:ietf:params:oauth:grant-type:device_code", "authorization_code", "urn:openid:params:grant-type:ciba", "urn:ietf:params:oauth:grant-type:uma-ticket", "urn:ietf:params:oauth:grant-type:token-exchange", "urn:ietf:params:oauth:grant-type:jwt-bearer" ]
     },
@@ -109,9 +110,10 @@
       "supportedRcsRequestSigningAlgorithms" : [ "PS384", "ES384", "RS384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "supportedRcsResponseEncryptionAlgorithms" : [ "ECDH-ES+A256KW", "ECDH-ES+A192KW", "ECDH-ES+A128KW", "RSA-OAEP", "RSA-OAEP-256", "A128KW", "A256KW", "ECDH-ES", "dir", "A192KW" ],
       "supportedRcsRequestEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+      "remoteConsentServiceId" : "[Empty]",
       "enableRemoteConsent" : false,
       "supportedRcsRequestEncryptionAlgorithms" : [ "ECDH-ES+A256KW", "ECDH-ES+A192KW", "RSA-OAEP", "ECDH-ES+A128KW", "RSA-OAEP-256", "A128KW", "A256KW", "ECDH-ES", "dir", "A192KW" ],
-      "clientsCanSkipConsent" : false,
+      "clientsCanSkipConsent" : true,
       "supportedRcsResponseSigningAlgorithms" : [ "PS384", "ES384", "RS384", "HS256", "HS512", "ES256", "RS256", "HS384", "ES512", "PS256", "PS512", "RS512" ],
       "supportedRcsResponseEncryptionMethods" : [ "A256GCM", "A192GCM", "A128GCM", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ]
     },
