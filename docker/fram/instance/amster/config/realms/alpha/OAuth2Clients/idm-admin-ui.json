@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "realm": "/",
+        "realm": "/alpha",
         "amsterVersion": "7.5.0",
         "entityType": "OAuth2Clients",
         "entityId": "idm-admin-ui",
