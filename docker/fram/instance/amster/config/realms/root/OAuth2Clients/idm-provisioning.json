@@ -3,11 +3,11 @@
         "realm": "/",
         "amsterVersion": "7.5.0",
         "entityType": "OAuth2Clients",
-        "entityId": "idm-admin-ui",
+        "entityId": "idm-provisioning",
         "pathParams": {}
     },
     "data": {
-        "_id": "idm-admin-ui",
+        "_id": "idm-provisioning",
         "overrideOAuth2ClientConfig": {
             "issueRefreshToken": true,
             "validateScopePluginType": "PROVIDER",
@@ -59,13 +59,12 @@
             "softwareVersion": null,
             "sectorIdentifierUri": null,
             "tosURI": [],
-            "tokenEndpointAuthMethod": "none",
-            "isConsentImplied": true,
+            "tokenEndpointAuthMethod": "client_secret_basic",
+            "isConsentImplied": false,
             "refreshTokenGracePeriod": 0,
             "softwareIdentity": null,
             "grantTypes": [
-                "implicit",
-                "authorization_code"
+                "client_credentials"
             ],
             "require_pushed_authorization_requests": false,
             "descriptions": [],
@@ -117,29 +116,18 @@
             "backchannel_logout_session_required": false
         },
         "coreOAuth2ClientConfig": {
+            "userpassword": null,
             "status": "Active",
             "clientName": [],
-            "clientType": "Public",
+            "clientType": "Confidential",
             "loopbackInterfaceRedirection": false,
             "defaultScopes": [],
             "refreshTokenLifetime": 0,
             "scopes": [
-                "fr:idm:*",
-                "openid"
+                "fr:idm:*"
             ],
             "accessTokenLifetime": 0,
-            "redirectionUris": [
-                "https://im.internal.darkedges.com.au/platform/appAuthHelperRedirect.html",
-                "https://im.internal.darkedges.com.au/platform/sessionCheck.html",
-                "https://im.internal.darkedges.com.au/admin/appAuthHelperRedirect.html",
-                "https://im.internal.darkedges.com.au/admin/sessionCheck.html",
-                "https://platform.internal.darkedges.com.au/platform/appAuthHelperRedirect.html",
-                "https://platform.internal.darkedges.com.au/platform/sessionCheck.html",
-                "https://platform.internal.darkedges.com.au/admin/appAuthHelperRedirect.html",
-                "https://platform.internal.darkedges.com.au/admin/sessionCheck.html",
-                "https://platform.internal.darkedges.com.au/platform-ui/appAuthHelperRedirect.html",
-                "https://platform.internal.darkedges.com.au/platform-ui/sessionCheck.html"
-            ],
+            "redirectionUris": [],
             "authorizationCodeLifetime": 0
         },
         "coreUmaClientConfig": {
