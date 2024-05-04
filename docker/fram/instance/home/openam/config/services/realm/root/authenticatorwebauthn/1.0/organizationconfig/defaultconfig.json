@@ -16,10 +16,10 @@
       "name" : "AuthenticatorWebAuthn",
       "collection" : false
     },
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks",
     "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
     "webauthnAttrName" : "webauthnDeviceProfiles",
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreKeyPairAlias" : null,
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}"
