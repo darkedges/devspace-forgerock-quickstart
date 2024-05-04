@@ -5,5 +5,5 @@ import-config --path /mnt/amconfig/global/first/DataStoreInstance/ --failOnError
 import-config --path /mnt/amconfig/global/first/DataStoreService.json --failOnError false
 import-config --path /mnt/amconfig/global/next/ --failOnError false
 import-config --path /mnt/amconfig/global/last/ --failOnError false
-import-config --path /mnt/amconfig/root/ --failOnError false
+import-config --path /mnt/amconfig/realms/ --failOnError false
 :exit
