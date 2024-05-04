@@ -26,7 +26,7 @@
                      forRealmDefaults(where(isAnything(),
 -                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword")
 +                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystore") 
-+                                    .with("&{secrets.path}/keystores/keystore.jks"),
++                                    .with("&{secrets.path}/keystores/keystore.jceks"),
 +                            replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword")       
                                      .with("&{am.keystore.default.password}"),
                              replace("authenticatorWebAuthnDeviceSettingsEncryptionKeystorePrivateKeyPassword")
