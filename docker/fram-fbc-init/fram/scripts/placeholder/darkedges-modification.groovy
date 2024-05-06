@@ -32,6 +32,11 @@ import static org.forgerock.openam.amp.dsl.Conditions.*
  */
 def getRules() {
     return [
+            forGlobalService("iPlanetAMPlatformService",
+                    forDefaultInstanceSettings(
+                            forNamedInstanceSettings("server-default",
+                                    addToSet("serverconfig")
+                                            .with("com.sun.identity.server.fqdnMap[&{am.kubernetes.service.name}]=&{am.kubernetes.service.name}")))),
     ]
 }
 
