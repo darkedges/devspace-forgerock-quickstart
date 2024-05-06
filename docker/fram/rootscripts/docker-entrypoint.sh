@@ -1,9 +1,6 @@
 #!/bin/bash
 
 TOMCAT_HOME=/usr/local/tomcat
-SERVER_PORT=${SERVER_PORT:-8080}
-SERVER_URL=${SERVER_URL:-am.7f000001.nip.io}
-SERVER_SCHEME=${SERVER_SCHEME:-http}
 HOSTNAME=$(hostname)
 
 am-crypto() {

@@ -7,6 +7,7 @@ fram:
     AM_STORES_UMA_SERVERS: "development-frds-frds-ds:1389"
     AM_STORES_USER_SERVERS: "development-frds-frds-ds:1389"
     AM_AUTHENTICATION_MODULES_LDAP_SERVERS: "development-frds-frds-ds:1389"
+    AM_SERVER_HOSTNAMES: "am.7f000001.nip.io,am,am-config,development-fram-fram"
   services:
     identity:
       waitfor: service
