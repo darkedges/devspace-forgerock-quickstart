@@ -117,7 +117,8 @@
             "agentgroup": null,
             "refreshTokenLifetime": 0,
             "scopes": [
-                "fr:idm:*"
+                "fr:idm:*",
+                "openid"
             ],
             "accessTokenLifetime": 0,
             "redirectionUris": [

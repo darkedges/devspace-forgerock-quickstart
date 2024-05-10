@@ -4,7 +4,7 @@ ARG FR_TAG=7.5.0
 ARG ALPINE_TAG=3.19
 ARG LIQUIBASE_TAG=4.27
 ARG FRIM_REPO_KIND=directory
-ARG FRIM_REPO_TYPE=embedded
+ARG FRIM_REPO_TYPE=external
 
 FROM gcr.io/forgerock-io/idm:${FR_TAG} as idmbase
 

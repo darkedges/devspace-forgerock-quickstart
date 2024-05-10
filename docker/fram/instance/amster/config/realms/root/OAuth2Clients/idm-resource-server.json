@@ -116,7 +116,7 @@
             "backchannel_logout_session_required": false
         },
         "coreOAuth2ClientConfig": {
-            "userpassword": null,
+            "userpassword": "Passw0rd",
             "status": "Active",
             "clientName": [],
             "clientType": "Confidential",

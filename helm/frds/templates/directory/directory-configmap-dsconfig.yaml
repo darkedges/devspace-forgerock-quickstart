@@ -18,6 +18,9 @@ data:
   {{- if .Values.directory.dsconfig.setup }}
   setup.dsconfig: {{- toYaml .Values.directory.dsconfig.setup | indent 2 }}
   {{- end }}
+  {{- if .Values.directory.dsconfig.init }}
+  init.dsconfig: {{- toYaml .Values.directory.dsconfig.init | indent 2 }}
+  {{- end }}
   {{- if .Values.directory.dsconfig.replication }}
   replication.dsconfig: {{- toYaml .Values.directory.dsconfig.replication | indent 2 }}
   {{- end }}

@@ -16,8 +16,8 @@
       "name" : "AuthenticatorWebAuthn",
       "collection" : false
     },
-    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jceks",
+    "authenticatorWebAuthnDeviceSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
     "authenticatorWebAuthnDeviceSettingsEncryptionScheme" : "NONE",
     "webauthnAttrName" : "webauthnDeviceProfiles",
     "authenticatorWebAuthnDeviceSettingsEncryptionKeystoreType" : "JCEKS",

@@ -20,3 +20,7 @@ directory:
     replication: |
       create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
       set-synchronization-provider-prop --provider-name "Multimaster synchronization" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12
+    init: |
+      01-external-fram-policy-store.ldif
+      02-external-fram-identity-store.ldif
+      03-external-alpha-fram-policy-store.ldif

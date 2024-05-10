@@ -5,6 +5,9 @@ if [[ $HOSTNAME == *-0 ]]; then
       "01-external-fram-policy-store.ldif"
       "02-external-fram-identity-store.ldif"
    )
+   if [[ -f "/opt/frds/instance/init/dsconfig/init.dsconfig" ]]; then
+      readarray -t ldif < <(envsubst </opt/frds/instance/init/dsconfig/init.dsconfig) 
+   fi
    /opt/frds/bin/start-ds
    # Install the LDIF files
    for i in "${ldif[@]}"
