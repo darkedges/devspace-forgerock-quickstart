@@ -1,7 +1,7 @@
 {
     "name": "am",
     "baseURI": "http://development-fram-fram:8080",
-    "condition": "${find(request.uri.path, '(^/am)')}",
+    "condition": "${find(request.uri.path, '(^/am(?!/XUI))')}",
     "handler": {
         "type": "Chain",
         "config": {
