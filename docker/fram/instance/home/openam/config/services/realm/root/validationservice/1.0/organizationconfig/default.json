@@ -1,9 +1,9 @@
 {
   "metadata" : {
-    "realm" : "/alpha",
+    "realm" : "/",
     "entityType" : "validationService",
     "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,ou=am-config",
     "sunServiceID" : null,
     "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
