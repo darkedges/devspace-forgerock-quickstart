@@ -1,5 +1,5 @@
 apiVersion: v2
-name: frig
+name: helm-frig
 version: 1.0.0
 appVersion: 1.0.0
 home: https://github.com/darkedges/devspace-forgerock-quickstart
