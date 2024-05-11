@@ -5,10 +5,6 @@
             "type": "CaptureDecorator"
         },
         {
-            "type": "Router",
-            "name": "_router"
-        },
-        {
             "name": "DefaultRoute",
             "type": "StaticResponseHandler",
             "config": {
@@ -18,7 +14,14 @@
                         "text/html"
                     ]
                 },
-                "entity": "<html><p><a href='/enduser-login/?realm=/#/service/PlatformLogin'>End user access</a></p><p><a href='/platform-login/?realm=/#/'>Admin access</a></p></html>"
+                "entity": "<html><p><a href='/enduser-login/?realm=/alpha#/service/PlatformLogin'>End user access</a></p><p><a href='/platform-login/?realm=/#/'>Admin access</a></p></html>"
+            }
+        },
+        {
+            "type": "Router",
+            "name": "_router",
+            "config": {
+                "defaultHandler": "DefaultRoute"
             }
         }
     ],

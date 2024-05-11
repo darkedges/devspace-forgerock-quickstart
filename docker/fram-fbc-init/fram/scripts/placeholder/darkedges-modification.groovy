@@ -36,7 +36,9 @@ def getRules() {
                     forDefaultInstanceSettings(
                             forNamedInstanceSettings("server-default",
                                     addToSet("serverconfig")
-                                            .with("com.sun.identity.server.fqdnMap[&{am.kubernetes.service.name}]=&{am.kubernetes.service.name}")))),
+                                            .with("com.sun.identity.server.fqdnMap[&{am.kubernetes.service.name}]=&{am.kubernetes.service.name}"),
+                                    addToSet("serverconfig")
+                                            .with("com.sun.identity.server.fqdnMap[&{am.platform.fqdn}]=&{am.platform.fqdn}")))),
     ]
 }
 
