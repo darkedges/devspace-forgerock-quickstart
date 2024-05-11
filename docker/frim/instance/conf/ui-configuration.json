@@ -26,7 +26,7 @@
         "platformSettings": {
             "adminOauthClient": "idm-admin-ui",
             "adminOauthClientScopes": "fr:idm:*",
-            "amUrl": "http://am.7f000001.nip.io/am",
+            "amUrl": "http://platform.7f000001.nip.io/am",
             "loginUrl": ""
         },
         "defaultNotificationType": "info"

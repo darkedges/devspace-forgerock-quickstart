@@ -1,0 +1,20 @@
+{
+    "data": {
+        "_id": "",
+        "_type": {
+            "_id": "baseurl",
+            "collection": false,
+            "name": "Base URL Source"
+        },
+        "contextPath": "/am",
+        "fixedValue": "http://platform.7f000001.nip.io",
+        "source": "FIXED_VALUE"
+    },
+    "metadata": {
+        "amsterVersion": "7.5.0",
+        "entityId": "BaseUrlSource",
+        "entityType": "BaseUrlSource",
+        "pathParams": {},
+        "realm": "/alpha"
+    }
+}
