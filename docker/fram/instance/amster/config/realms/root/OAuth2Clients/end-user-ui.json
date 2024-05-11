@@ -122,8 +122,8 @@
             ],
             "accessTokenLifetime": 0,
             "redirectionUris": [
-                "http://enduser.7f000001.nip.io/appAuthHelperRedirect.html",
-                "http://enduser.7f000001.nip.io/sessionCheck.html"
+                "http://platform.7f000001.nip.io/enduser-ui/appAuthHelperRedirect.html",
+                "http://platform.7f000001.nip.io/enduser-ui/sessionCheck.html"
             ],
             "authorizationCodeLifetime": 0
         },

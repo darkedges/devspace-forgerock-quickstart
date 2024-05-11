@@ -1,6 +1,6 @@
 {
     "name": "idm",
-    "baseURI": "https://fido-frim-frim/",
+    "baseURI": "http://development-frim-frim:8080/",
     "condition": "${find(request.uri.path, '(^/openidm)|(^/admin)|(^/upload)|(^/export)')}",
     "handler": {
         "type": "Chain",

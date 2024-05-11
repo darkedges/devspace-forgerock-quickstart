@@ -21,10 +21,10 @@ data:
   IDM_EXPORT_URL: {{ .Values.platform.endpoints.idmExport }}
   ENDUSER_UI_URL: {{ .Values.platform.endpoints.enduserUrl }}
   PLATFORM_ADMIN_URL: {{ .Values.platform.endpoints.platformUrl }}
-  ENDUSER_CLIENT_ID: end-user-ui
-  ADMIN_CLIENT_ID: idm-admin-ui
-  THEME: default
-  PLATFORM_UI_LOCALE: en
+  ENDUSER_CLIENT_ID: {{ .Values.platform.config.enduserClientId }}
+  ADMIN_CLIENT_ID: {{ .Values.platform.config.adminClientId }}
+  THEME: {{ .Values.platform.config.theme }}
+  PLATFORM_UI_LOCALE: {{ .Values.platform.config.platformUILocale }}
   {{- if .Values.platform.env }}
   {{- with .Values.platform.env }}
   {{- toYaml . | nindent 2 }}

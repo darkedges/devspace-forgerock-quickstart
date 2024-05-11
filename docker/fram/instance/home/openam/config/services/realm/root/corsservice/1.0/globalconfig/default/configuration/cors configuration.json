@@ -1,56 +1,27 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "CorsService",
-    "entityId": "default/configuration/Cors Configuration",
-    "uid": "ou=Cors Configuration,ou=configuration,ou=default,ou=GlobalConfig,ou=1.0,ou=CorsService,ou=services,ou=am-config",
-    "sunServiceID": "instance",
-    "objectClass": [
-      "sunServiceComponent",
-      "top"
-    ],
-    "pathParams": {},
-    "ou": [
-      "Cors Configuration"
-    ]
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "CorsService",
+    "entityId" : "default/configuration/Cors Configuration",
+    "uid" : "ou=Cors Configuration,ou=configuration,ou=default,ou=GlobalConfig,ou=1.0,ou=CorsService,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "Cors Configuration" ]
   },
-  "data": {
-    "_id": "default/configuration/Cors Configuration",
-    "_type": {
-      "_id": "CorsService",
-      "name": "CorsService",
-      "collection": false
+  "data" : {
+    "_id" : "default/configuration/Cors Configuration",
+    "_type" : {
+      "_id" : "CorsService",
+      "name" : "CorsService",
+      "collection" : false
     },
-    "maxAge": 600,
-    "exposedHeaders": [
-      "WWW-Authenticate"
-    ],
-    "acceptedHeaders": [
-      "accept-api-version",
-      "authorization",
-      "cache-control",
-      "content-type",
-      "if-match",
-      "if-none-match",
-      "user-agent",
-      "x-forgerock-transactionid",
-      "x-openidm-nosession",
-      "x-openidm-password",
-      "x-openidm-username",
-      "x-requested-with"
-    ],
-    "allowCredentials": true,
-    "acceptedMethods": [
-      "DELETE",
-      "GET",
-      "HEAD",
-      "PATCH",
-      "POST",
-      "PUT"
-    ],
-    "acceptedOrigins": [
-      "http://platform.7f000001.nip.io"
-    ],
-    "enabled": true
+    "maxAge" : 600,
+    "exposedHeaders" : [ "WWW-Authenticate" ],
+    "acceptedHeaders" : [ "accept-api-version", "authorization", "cache-control", "content-type", "if-match", "if-none-match", "user-agent", "x-forgerock-transactionid", "x-openidm-nosession", "x-openidm-password", "x-openidm-username", "x-requested-with" ],
+    "allowCredentials" : true,
+    "acceptedMethods" : [ "DELETE", "GET", "HEAD", "PATCH", "POST", "PUT" ],
+    "acceptedOrigins" : [ "http://platform.7f000001.nip.io" ],
+    "enabled" : true
   }
 }

@@ -129,12 +129,12 @@
             ],
             "accessTokenLifetime": 0,
             "redirectionUris": [
-                "http://idm.7f000001.nip.io/platform/appAuthHelperRedirect.html",
-                "http://idm.7f000001.nip.io/platform/sessionCheck.html",
-                "http://idm.7f000001.nip.io/admin/appAuthHelperRedirect.html",
-                "http://idm.7f000001.nip.io/admin/sessionCheck.html",
-                "http://admin.7f000001.nip.io/appAuthHelperRedirect.html",
-                "http://admin.7f000001.nip.io/sessionCheck.html"
+                "http://platform.7f000001.nip.io/platform/appAuthHelperRedirect.html",
+                "http://platform.7f000001.nip.io/platform/sessionCheck.html",
+                "http://platform.7f000001.nip.io/admin/appAuthHelperRedirect.html",
+                "http://platform.7f000001.nip.io/admin/sessionCheck.html",
+                "http://platform.7f000001.nip.io/platform-ui/appAuthHelperRedirect.html",
+                "http://platform.7f000001.nip.io/platform-ui/sessionCheck.html"
             ],
             "authorizationCodeLifetime": 0
         },

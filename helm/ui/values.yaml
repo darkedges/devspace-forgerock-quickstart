@@ -15,14 +15,19 @@ podSecurityPolicy:
 
 platform:
   endpoints:
-    amUrl: "http://am.7f000001.nip.io/am"
-    amAdminUrl: "http://am.7f000001.nip.io/am/ui-admin"
-    idmRestUrl: "http://idm.7f000001.nip.io/openidm"
-    idmAdminUrl: "http://idm.7f000001.nip.io/admin"
-    idmUploadUrl: "http://idm.7f000001.nip.io/upload"
-    idmExport: "http://idm.7f000001.nip.io/export"
-    enduserUrl: "http://enduser.7f000001.nip.io"
-    platformUrl: "http://admin.7f000001.nip.io"
+    amUrl: http://platform.7f000001.nip.io/am
+    amAdminUrl: http://platform.7f000001.nip.io/am/ui-admin
+    idmRestUrl: http://platform.7f000001.nip.io/openidm
+    idmAdminUrl: http://platform.7f000001.nip.io/admin
+    idmUploadUrl: http://platform.7f000001.nip.io/upload
+    idmExport: http://platform.7f000001.nip.io/export
+    enduserUrl: http://platform.7f000001.nip.io/enduser-ui
+    platformUrl: http://platform.7f000001.nip.io/platform-ui/
+  config:
+    enduserClientId: end-user-ui
+    adminClientId: idm-admin-ui
+    theme: default
+    platformUILocale: en
   ## Enable RBAC as per https://github.com/kubernetes/ingress-nginx/blob/main/docs/deploy/rbac.md and https://github.com/kubernetes/ingress-nginx/issues/266
   # rbac
   rbac:

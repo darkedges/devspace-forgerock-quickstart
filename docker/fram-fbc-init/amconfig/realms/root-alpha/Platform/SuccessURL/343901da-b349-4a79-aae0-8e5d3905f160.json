@@ -8,7 +8,7 @@
   },
   "data": {
     "_id": "343901da-b349-4a79-aae0-8e5d3905f160",
-    "successUrl": "http://enduser.7f000001.nip.io/?realm=alpha",
+    "successUrl": "http://platform.7f000001.nip.io/enduser-ui/?realm=alpha",
     "_type": {
       "_id": "SetSuccessUrlNode",
       "name": "Success URL",

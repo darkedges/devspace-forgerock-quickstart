@@ -1,0 +1,21 @@
+{
+    "data": {
+        "_id": "",
+        "_type": {
+            "_id": "validation",
+            "collection": false,
+            "name": "Validation Service"
+        },
+        "validGotoDestinations": [
+            "http://platform.7f000001.nip.io/*",
+            "http://platform.7f000001.nip.io/*?*"
+        ]
+    },
+    "metadata": {
+        "amsterVersion": "7.5.0",
+        "entityId": "ValidationService",
+        "entityType": "ValidationService",
+        "pathParams": {},
+        "realm": "/"
+    }
+}
