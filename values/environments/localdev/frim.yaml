@@ -2,6 +2,8 @@ frim:
   env:
     frim:
       DARKEDGES_IDM_REPO_DS_HOSTNAME: development-frds-frds-ds
+      SMTP_HOST: smtp4dev.smtp4dev
+      SMTP_FROM: noreply@platform.7f000001.nip.io
   services:
     identity:
       waitfor: service

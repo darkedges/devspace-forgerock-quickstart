@@ -1,0 +1,31 @@
+{
+    "host": "&{smtp.host|localhost}",
+    "port": {
+        "$int": "&{smtp.port|25}"
+    },
+    "debug": false,
+    "auth": {
+        "enable": false,
+        "username": "",
+        "password": ""
+    },
+    "from": "&{smtp.from|admin@example.com}",
+    "timeout": 300000,
+    "writetimeout": 300000,
+    "connectiontimeout": 300000,
+    "starttls": {
+        "enable": {
+            "$bool": "&{smtp.starttls|false}"
+        }
+    },
+    "ssl": {
+        "enable": {
+            "$bool": "&{smtp.ssl|false}"
+        }
+    },
+    "smtpProperties": [
+        "mail.smtp.ssl.protocols=TLSv1.2",
+        "mail.smtps.ssl.protocols=TLSv1.2"
+    ],
+    "threadPoolSize": 20
+}
