@@ -16,12 +16,10 @@ frim:
         password: "Passw0rd"
   livenessProbe:
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
   readinessProbe:
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
   ingress:

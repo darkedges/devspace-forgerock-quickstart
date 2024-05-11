@@ -21,7 +21,7 @@ platform:
     idmAdminUrl: http://platform.7f000001.nip.io/admin
     idmUploadUrl: http://platform.7f000001.nip.io/upload
     idmExport: http://platform.7f000001.nip.io/export
-    enduserUrl: http://platform.7f000001.nip.io/enduser-ui
+    enduserUrl: http://platform.7f000001.nip.io/enduser-ui/
     platformUrl: http://platform.7f000001.nip.io/platform-ui/
   config:
     enduserClientId: end-user-ui

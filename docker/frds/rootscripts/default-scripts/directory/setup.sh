@@ -44,7 +44,7 @@ fi
     --profile am-identity-store:7.5.0 \
     --profile am-config:6.5.0 \
     --profile idm-repo:7.5.0 \
-    --set idm-repo/domain:${IDM_DOMAIN:-example,dc=com} \
+    --set idm-repo/domain:${IDM_DOMAIN:-forgerock,dc=io} \
     --set idm-repo/backendName:${IDM_BACKEND_NAME} \
     --set am-cts/amCtsAdminPassword:${AMCTS_ADMIN_PASSWORD:-Passw0rd} \
     --set am-cts/baseDn:${AMCTS_BASE_DN:-ou=tokens} \

@@ -58,11 +58,11 @@
             "javascriptOrigins": [],
             "policyUri": [],
             "softwareVersion": null,
-            "tosURI": [],
             "sectorIdentifierUri": null,
+            "tosURI": [],
             "tokenEndpointAuthMethod": "none",
             "refreshTokenGracePeriod": 0,
-            "isConsentImplied": false,
+            "isConsentImplied": true,
             "softwareIdentity": null,
             "grantTypes": [
                 "authorization_code",
@@ -108,13 +108,11 @@
         },
         "coreOAuth2ClientConfig": {
             "secretLabelIdentifier": null,
-            "userpassword": null,
             "status": "Active",
             "clientName": [],
             "clientType": "Public",
             "loopbackInterfaceRedirection": false,
             "defaultScopes": [],
-            "agentgroup": null,
             "refreshTokenLifetime": 0,
             "scopes": [
                 "fr:idm:*",

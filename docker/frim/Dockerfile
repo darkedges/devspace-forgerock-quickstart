@@ -4,7 +4,7 @@ ARG FR_TAG=7.5.0
 ARG ALPINE_TAG=3.19
 ARG LIQUIBASE_TAG=4.27
 ARG FRIM_REPO_KIND=directory
-ARG FRIM_REPO_TYPE=external
+ARG FRIM_REPO_TYPE=external_shared
 
 FROM gcr.io/forgerock-io/idm:${FR_TAG} as idmbase
 
@@ -47,10 +47,16 @@ ARG FRIM_REPO_TYPE
 COPY repo/${FRIM_REPO_KIND}/${FRIM_REPO_TYPE}/ /var/tmp/instance/conf/
 RUN mkdir -p /tmp/jars
 
-FROM alpine:${ALPINE_TAG} as repo_directory_external
+FROM alpine:${ALPINE_TAG} as repo_directory_external_shared
 ARG FRIM_REPO_KIND
 ARG FRIM_REPO_TYPE
-COPY repo/${FRIM_REPO_KIND}/${FRIM_REPO_TYPE}/ /var/tmp/instance/conf/
+COPY repo/${FRIM_REPO_KIND}/external/shared/ /var/tmp/instance/conf/
+RUN mkdir -p /tmp/jars
+
+FROM alpine:${ALPINE_TAG} as repo_directory_external_seperate
+ARG FRIM_REPO_KIND
+ARG FRIM_REPO_TYPE
+COPY repo/${FRIM_REPO_KIND}/external/seperate/ /var/tmp/instance/conf/
 RUN mkdir -p /tmp/jars
 
 FROM repo_${FRIM_REPO_KIND}_${FRIM_REPO_TYPE} as frim_repo
