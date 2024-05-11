@@ -30,14 +30,20 @@ frig:
 
   # Ingress
   ingress:
-    # frig.ingress.enabled -- Wether to expose the service to ingress
+    # fram.ingress.enabled -- Wether to expose the service to ingress
     enabled: false
-    # frig.ingress.hosts -- List of hostname to use for ingress
-    hosts: []
+    tls:
+      # fram.ingress.tlsenabled -- Wether to expose TLS
+      enabled: false
+    # fram.ingress.hosts -- List of hostname to use for ingress
+    hosts:
+      - platform.7f000001.nip.io
+    # fram.ingress.configurationsnippet -- Configuration Snippet to add
+    configurationsnippet: {}
     backend:
-      # frig.ingress.backend.protocol -- scheme being used by the backend application
+      # fram.ingress.backend.protocol -- scheme being used by the backend application
       protocol: HTTP
-      # frig.ingress.backend.port -- port being used by the backend application
+      # fram.ingress.backend.port -- port being used by the backend application
       port: 8080
 
   # certificates

@@ -8,12 +8,3 @@ platform:
       waitfor: service
       name: frim
       releaseNameOverride: development-frim
-admin:
-  ingress:
-    enabled: true
-login:
-  ingress:
-    enabled: true
-enduser:
-  ingress:
-    enabled: true

@@ -1,0 +1,22 @@
+{
+    "name": "platform-ui",
+    "condition": "${find(request.uri.path, '^/platform-ui')}",
+    "baseURI": "http://development-ui-admin-ui:8080",
+    "handler": {
+        "type": "Chain",
+        "config": {
+            "filters": [
+                {
+                    "type": "UriPathRewriteFilter",
+                    "config": {
+                        "mappings": {
+                            "/platform-ui": "/"
+                        },
+                        "failureHandler": "DefaultRoute"
+                    }
+                }
+            ],
+            "handler": "ReverseProxyHandler"
+        }
+    }
+}

@@ -36,10 +36,7 @@
             "PUT"
         ],
         "acceptedOrigins": [
-            "http://login.7f000001.nip.io",
-            "http://admin.7f000001.nip.io",
-            "http://enduser.7f000001.nip.io",
-            "http://idm.7f000001.nip.io"
+            "http://platform.7f000001.nip.io"
         ],
         "enabled": true,
         "_type": {

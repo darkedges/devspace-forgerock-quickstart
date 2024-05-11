@@ -1,0 +1,23 @@
+{
+    "name": "login",
+    "condition": "${find(request.uri.path, '^/enduser-login|^/platform-login')}",
+    "baseURI": "http://development-ui-login-ui:8080",
+    "handler": {
+        "type": "Chain",
+        "config": {
+            "filters": [
+                {
+                    "type": "UriPathRewriteFilter",
+                    "config": {
+                        "mappings": {
+                            "/enduser-login": "/",
+                            "/platform-login": "/"
+                        },
+                        "failureHandler": "DefaultRoute"
+                    }
+                }
+            ],
+            "handler": "ReverseProxyHandler"
+        }
+    }
+}

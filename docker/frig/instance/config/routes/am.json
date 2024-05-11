@@ -1,0 +1,20 @@
+{
+    "name": "am",
+    "baseURI": "http://fido-fram-fram:8080",
+    "condition": "${find(request.uri.path, '(^/openam(?!/XUI))')}",
+    "handler": {
+        "type": "Chain",
+        "config": {
+            "filters": [
+                {
+                    "comment": "Always redirect to IG rather than AM",
+                    "type": "LocationHeaderFilter",
+                    "config": {
+                        "baseURI": "http://platform.7f000001.nip.io/"
+                    }
+                }
+            ],
+            "handler": "ReverseProxyHandler"
+        }
+    }
+}

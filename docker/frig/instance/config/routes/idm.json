@@ -1,0 +1,20 @@
+{
+    "name": "idm",
+    "baseURI": "https://fido-frim-frim/",
+    "condition": "${find(request.uri.path, '(^/openidm)|(^/admin)|(^/upload)|(^/export)')}",
+    "handler": {
+        "type": "Chain",
+        "config": {
+            "filters": [
+                {
+                    "comment": "Always redirect to IG rather than IDM",
+                    "type": "LocationHeaderFilter",
+                    "config": {
+                        "baseURI": "http://platform.7f000001.nip.io/"
+                    }
+                }
+            ],
+            "handler": "ReverseProxyHandler"
+        }
+    }
+}
