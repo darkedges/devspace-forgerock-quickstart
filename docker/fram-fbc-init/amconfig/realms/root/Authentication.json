@@ -21,7 +21,7 @@
         },
         "general": {
             "defaultAuthLevel": 0,
-            "externalLoginPageUrl": "http://platform.7f000001.nip.io/enduser-login",
+            "externalLoginPageUrl": "http://platform.7f000001.nip.io/platform-login",
             "identityType": [
                 "agent",
                 "user"
@@ -69,6 +69,6 @@
         "entityId": "Authentication",
         "entityType": "Authentication",
         "pathParams": {},
-        "realm": "/alpha"
+        "realm": "/"
     }
 }
