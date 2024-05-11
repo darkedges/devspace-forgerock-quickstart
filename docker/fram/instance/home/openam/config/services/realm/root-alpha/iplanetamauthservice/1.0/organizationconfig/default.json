@@ -55,7 +55,7 @@
       "userStatusCallbackPlugins" : [ ],
       "statelessSessionsEnabled" : false,
       "locale" : "en_US",
-      "externalLoginPageUrl" : "http://login.7f000001.nip.io/",
+      "externalLoginPageUrl" : "http://platform.7f000001.nip.io/enduser-login",
       "twoFactorRequired" : false,
       "identityType" : [ "agent", "user" ],
       "defaultAuthLevel" : 0
