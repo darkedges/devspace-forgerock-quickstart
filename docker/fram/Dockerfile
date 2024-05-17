@@ -62,7 +62,7 @@ USER 11111
 
 WORKDIR /home/forgerock
 
-ENV FRAM_CONTAINER_JVM_ARGS=-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandom
+ENV FRAM_CONTAINER_JVM_ARGS=-Xmx2048M -XX:MetaspaceSize=256M -XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandom
 ENV CATALINA_HOME /usr/local/tomcat
 ENV CATALINA_OPTS -server -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=true -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1 --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED
 ENV FRAM_CONTAINER_JVM_ARGS=-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandoms

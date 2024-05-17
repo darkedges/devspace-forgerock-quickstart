@@ -4,6 +4,7 @@ if [[ $HOSTNAME == *-0 ]]; then
    ldif=(  
       "01-external-fram-policy-store.ldif"
       "02-external-fram-identity-store.ldif"
+      "03-external-alpha-fram-policy-store.ldif"
    )
    if [[ -f "/opt/frds/instance/init/dsconfig/init.dsconfig" ]]; then
       readarray -t ldif < <(envsubst </opt/frds/instance/init/dsconfig/init.dsconfig) 
