@@ -49,9 +49,8 @@ services:
       - secrets:/var/run/secrets:r
     env_file:
       - .env/frim/.env
-    links:
-      - dfq-ds:frds
-      - dfq-am:fram
+    ports:
+      - "8081:8080/tcp"
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:8080/openidm/info/ping || exit 1
     depends_on:
@@ -81,8 +80,8 @@ services:
       - secrets:/var/run/secrets:r
     env_file:
       - .env/fram/.env
-    links:
-      - dfq-ds:frds
+    ports:
+      - "8082:8080/tcp"
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:8080/am/json/health/live || exit 1
     depends_on:
