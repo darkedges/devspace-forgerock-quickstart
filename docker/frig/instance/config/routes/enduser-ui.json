@@ -1,7 +1,7 @@
 {
     "name": "enduser-ui",
     "condition": "${find(request.uri.path, '^/enduser-ui')}",
-    "baseURI": "http://development-ui-enduser-ui:8080",
+    "baseURI": "&{PLATFORM_ENDUSER_URL|http://dfq-enduser-ui:8080}",
     "handler": {
         "type": "Chain",
         "config": {

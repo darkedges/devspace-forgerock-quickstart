@@ -3,7 +3,7 @@ version: "3.8"
 services:
   dfq-ig:
     container_name: dfq-ig
-    image: devspace-forgerock-quickstart/frig:7.5.0
+    image: devspace-forgerock-quickstart/frig:2024.3.0
     build:
       context: ./docker/frig
     deploy:
@@ -17,18 +17,20 @@ services:
     env_file:
       - .env/frig/.env
     ports:
-      - "8083:8080/tcp"
+      - "8080:8080/tcp"
     depends_on:
       dfq-am:
         condition: service_healthy
       dfq-idm:
         condition: service_healthy
-    links:
-      - dfq-am:fram
+      dfq-admin-ui:
+        condition: service_healthy
+      dfq-enduser-ui:
+        condition: service_healthy
+      dfq-login-ui:
+        condition: service_healthy
     networks:
-      localdev:
-        aliases:
-          - frig.darkedges.localdev
+      - localdev
   dfq-idm:
     container_name: dfq-idm
     image: devspace-forgerock-quickstart/frim:7.5.0
@@ -47,8 +49,6 @@ services:
       - secrets:/var/run/secrets:r
     env_file:
       - .env/frim/.env
-    ports:
-      - "8082:8080/tcp"
     links:
       - dfq-ds:frds
       - dfq-am:fram
@@ -60,9 +60,7 @@ services:
       dfq-am:
         condition: service_healthy
     networks:
-      localdev:
-        aliases:
-          - frim.darkedges.localdev
+      - localdev
   dfq-am:
     container_name: dfq-am
     image: devspace-forgerock-quickstart/fram:7.5.0
@@ -83,8 +81,6 @@ services:
       - secrets:/var/run/secrets:r
     env_file:
       - .env/fram/.env
-    ports:
-      - "8081:8080/tcp"
     links:
       - dfq-ds:frds
     healthcheck:
@@ -93,9 +89,58 @@ services:
       dfq-ds:
         condition: service_healthy
     networks:
-      localdev:
-        aliases:
-          - fram.darkedges.localdev
+      - localdev
+  dfq-admin-ui:
+    container_name: dfq-admin-ui
+    image: gcr.io/forgerock-io/platform-admin-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+        reservations:
+          cpus: "1"
+          memory: 512M
+    env_file:
+      - .env/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
+  dfq-login-ui:
+    container_name: dfq-login-ui
+    image: gcr.io/forgerock-io/platform-login-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+        reservations:
+          cpus: "1"
+          memory: 512M
+    env_file:
+      - .env/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
+  dfq-enduser-ui:
+    container_name: dfq-enduser-ui
+    image: gcr.io/forgerock-io/platform-enduser-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+        reservations:
+          cpus: "1"
+          memory: 512M
+    env_file:
+      - .env/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
   dfq-ds:
     container_name: dfq-ds
     image: devspace-forgerock-quickstart/frds:7.5.0
@@ -191,8 +236,8 @@ services:
   #   networks:
   #     - localdev
 volumes:
-  secrets:
-  # vault:
+  secrets: # vault:
+
   # vaultagent:
   # terraform:
   frds-development:

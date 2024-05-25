@@ -1,7 +1,7 @@
 {
     "name": "login",
     "condition": "${find(request.uri.path, '^/enduser-login|^/platform-login')}",
-    "baseURI": "http://development-ui-login-ui:8080",
+    "baseURI": "&{PLATFORM_LOGIN_URL|http://dfq-login-ui:8080}",
     "handler": {
         "type": "Chain",
         "config": {

@@ -1,7 +1,7 @@
 {
     "name": "platform-ui",
     "condition": "${find(request.uri.path, '^/platform-ui')}",
-    "baseURI": "http://development-ui-admin-ui:8080",
+    "baseURI": "&{PLATFORM_ADMIN_URL|http://dfq-admin-ui:8080}",
     "handler": {
         "type": "Chain",
         "config": {
