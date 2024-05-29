@@ -1,21 +1,21 @@
 variable "namespace" {
   type    = string
-  default = "darkedges"
+  default = "dfq"
 }
 
 variable "vaulturl" {
   type    = string
-  default = "http://vault.darkedges.localdev:8200"
+  default = "http://vault.dfq.localdev:8200"
 }
 
 variable "allowed_domains" {
   type    = list(string)
-  default = ["darkedges"]
+  default = ["dfq"]
 }
 
 variable "organisation" {
   type    = string
-  default = "darkedges"
+  default = "dfq"
 }
 
 variable "country" {
@@ -123,7 +123,7 @@ resource "vault_policy" "cert-policy" {
   name = "cert-policy"
 
   policy = <<EOT
-path "darkedges_idam_intermediate/issue*" {
+path "dfq_idam_intermediate/issue*" {
   capabilities = ["create","update"]
 }
 path "auth/token/renew" {
