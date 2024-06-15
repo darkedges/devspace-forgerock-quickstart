@@ -1,4 +1,4 @@
-{{- if .Values.frig.ingress.enabled }}
+{{- if .Values.frig.ingress.tls.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -12,22 +12,22 @@ metadata:
     {{- end }}
   annotations: 
     cert-manager.io/cluster-issuer: "vault-issuer"
-    nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.frig.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.frig.ingress.tls.backend.protocol }}"
     nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
-    {{- if .Values.frig.ingress.configurationsnippet }}
+    {{- if .Values.frig.ingress.tls.configurationsnippet }}
     nginx.ingress.kubernetes.io/configuration-snippet: 
-    {{- toYaml .Values.frig.ingress.configurationsnippet | indent 4 }}
+    {{- toYaml .Values.frig.ingress.tls.configurationsnippet | indent 4 }}
     {{- end }}
 spec:
-  {{- if .Values.frig.ingress.tls.enabled }}
+  {{- if .Values.frig.ingress.tls.tls.enabled }}
   tls:
   - hosts:
-    {{- toYaml .Values.frig.ingress.hosts | nindent 4 }}
+    {{- toYaml .Values.frig.ingress.tls.hosts | nindent 4 }}
     secretName: {{ template "forgerock.fullname". }}-ingress-tls
   {{- end }}
   rules:
   {{- $root := . }}
-  {{- range .Values.frig.ingress.hosts }}
+  {{- range .Values.frig.ingress.tls.hosts }}
   - host: {{ . }}
     http:
       paths:
@@ -37,7 +37,7 @@ spec:
           service:
             name: {{ template "forgerock.fullname" $root }}
             port:
-              number: {{ $root.Values.frig.ingress.backend.port }}
+              number: {{ $root.Values.frig.ingress.tls.backend.port }}
   {{- end }}
   ingressClassName: nginx
 {{- end }}
