@@ -1,16 +1,16 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=17.0.10_7-jre-alpine
+ARG JRE_TAG=17.0.12_7-jre-alpine
 ARG TOMCAT_IMAGE=tomcat
 ARG TOMCAT_TAG=9-jre17
 ARG FR_TAG=7.5.0
 ARG ALPINE_TAG=3.19
 
-FROM gcr.io/forgerock-io/am-base:${FR_TAG} as ambase
-FROM gcr.io/forgerock-io/amster:${FR_TAG} as amster
-FROM ${TOMCAT_IMAGE}:${TOMCAT_TAG} as tomcat
+FROM gcr.io/forgerock-io/am-base:${FR_TAG} AS ambase
+FROM gcr.io/forgerock-io/amster:${FR_TAG} AS amster
+FROM ${TOMCAT_IMAGE}:${TOMCAT_TAG} AS tomcat
 
 # Binary extract
-FROM alpine:${ALPINE_TAG} as installFile
+FROM alpine:${ALPINE_TAG} AS installfile
 COPY --from=ambase /usr/local/tomcat/webapps/am /var/tmp/bootstrap/webapps/am
 COPY --from=amster /opt/amster /var/tmp/bootstrap/amster 
 COPY --from=tomcat /usr/local/tomcat /var/tmp/bootstrap/tomcat 
@@ -24,14 +24,14 @@ COPY instance/webapps/ /var/tmp/bootstrap/webapps/am/
 # Runtime deployment
 FROM ${JRE_IMAGE}:${JRE_TAG}
 
-COPY --from=installFile /var/tmp/bootstrap/tomcat /usr/local/tomcat
+COPY --from=installfile /var/tmp/bootstrap/tomcat /usr/local/tomcat
 
 RUN set -ex && \
     rm -rf /usr/local/tomcat/webapps/* && \
     mkdir -p /opt/amster/config
 
-COPY --from=installFile /var/tmp/bootstrap/webapps /usr/local/tomcat/webapps/
-COPY --from=installFile /var/tmp/bootstrap/amster /opt/amster/
+COPY --from=installfile /var/tmp/bootstrap/webapps /usr/local/tomcat/webapps/
+COPY --from=installfile /var/tmp/bootstrap/amster /opt/amster/
 COPY --from=ambase /home/forgerock/crypto-tool.jar /home/forgerock/crypto-tool.jar
 
 RUN set -ex && \

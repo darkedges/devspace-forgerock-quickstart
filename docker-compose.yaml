@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   dfq-ig:
     container_name: dfq-ig
