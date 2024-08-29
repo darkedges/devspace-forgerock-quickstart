@@ -3,7 +3,7 @@ ARG JRE_TAG=17.0.12_7-jre-alpine
 ARG TOMCAT_IMAGE=tomcat
 ARG TOMCAT_TAG=9-jre17
 ARG FR_TAG=7.5.0
-ARG ALPINE_TAG=3.19
+ARG ALPINE_TAG=3.20.2
 
 FROM gcr.io/forgerock-io/am-base:${FR_TAG} AS ambase
 FROM gcr.io/forgerock-io/amster:${FR_TAG} AS amster
