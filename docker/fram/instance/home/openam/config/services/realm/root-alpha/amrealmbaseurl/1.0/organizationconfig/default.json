@@ -1,23 +1,23 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "amRealmBaseURL",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "default" ]
-  },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "amRealmBaseURL",
-      "name" : "amRealmBaseURL",
-      "collection" : false
+    "metadata": {
+        "realm": "/alpha",
+        "entityType": "amRealmBaseURL",
+        "entityId": "default",
+        "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=amRealmBaseURL,ou=services,o=alpha,ou=services,ou=am-config",
+        "sunServiceID": null,
+        "objectClass": ["sunServiceComponent", "top"],
+        "pathParams": {},
+        "ou": ["default"]
     },
-    "source" : "FIXED_VALUE",
-    "fixedValue" : "http://platform.7f000001.nip.io",
-    "contextPath" : "/am"
-  }
+    "data": {
+        "_id": "default",
+        "_type": {
+            "_id": "amRealmBaseURL",
+            "name": "amRealmBaseURL",
+            "collection": false
+        },
+        "source": "FIXED_VALUE",
+        "fixedValue": "https://platform.7f000001.nip.io:8443",
+        "contextPath": "/am"
+    }
 }

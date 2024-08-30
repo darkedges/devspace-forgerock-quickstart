@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-directory}"
-export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx1024M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.security.egd=file:/dev/urandoms}"
+export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx2048M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.security.egd=file:/dev/urandoms}"
 
 start() {
     set -ex

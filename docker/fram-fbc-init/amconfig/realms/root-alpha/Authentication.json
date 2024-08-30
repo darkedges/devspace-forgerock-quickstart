@@ -21,7 +21,7 @@
         },
         "general": {
             "defaultAuthLevel": 0,
-            "externalLoginPageUrl": "http://platform.7f000001.nip.io/enduser-login",
+            "externalLoginPageUrl": "https://platform.7f000001.nip.io:8443/enduser-login",
             "identityType": [
                 "agent",
                 "user"

@@ -5,15 +5,13 @@
     "handler": {
         "type": "Chain",
         "config": {
-            "filters": [
-                {
-                    "comment": "Always redirect to IG rather than AM",
-                    "type": "LocationHeaderFilter",
-                    "config": {
-                        "baseURI": "&{PLATFORM_URL|http://platform.7f000001.nip.io:8080/}"
-                    }
+            "filters": [{
+                "comment": "Always redirect to IG rather than AM",
+                "type": "LocationHeaderFilter",
+                "config": {
+                    "baseURI": "&{PLATFORM_URL|https://platform.7f000001.nip.io:8443/}"
                 }
-            ],
+            }],
             "handler": "ReverseProxyHandler"
         }
     }
