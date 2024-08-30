@@ -17,7 +17,7 @@
             "collection": false
         },
         "source": "FIXED_VALUE",
-        "fixedValue": "https://platform.7f000001.nip.io:8443",
+        "fixedValue": "&{am.platform.url|https://platform.7f000001.nip.io:8443}",
         "contextPath": "/am"
     }
 }
