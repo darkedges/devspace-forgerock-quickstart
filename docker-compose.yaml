@@ -8,10 +8,10 @@ services:
       resources:
         limits:
           cpus: "0.5"
-          memory: 512M
+          memory: 256M
         reservations:
           cpus: "0.5"
-          memory: 512M
+          memory: 256M
     env_file:
       - .env/frig/.env
     ports:
@@ -51,6 +51,10 @@ services:
       - "8081:8080/tcp"
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:8080/openidm/info/ping || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     depends_on:
       dfq-ds:
         condition: service_healthy
@@ -63,6 +67,7 @@ services:
     image: devspace-forgerock-quickstart/fram:7.5.0
     build:
       context: ./docker/fram
+      dockerfile: Dockerfile.mac
       args:
         CONFIG_HOME: /opt/amster/config
     command: start
@@ -81,7 +86,11 @@ services:
     ports:
       - "8082:8080/tcp"
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:8080/am/json/health/live || exit 1
+      test: curl --fail http://localhost:8080/am/json/health/live
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     depends_on:
       dfq-ds:
         condition: service_healthy
@@ -93,11 +102,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
         reservations:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
     env_file:
       - .env/ui/.env
     healthcheck:
@@ -110,11 +119,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
         reservations:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
     env_file:
       - .env/ui/.env
     healthcheck:
@@ -127,11 +136,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
         reservations:
-          cpus: "1"
-          memory: 512M
+          cpus: "0.5"
+          memory: 256M
     env_file:
       - .env/ui/.env
     healthcheck:
