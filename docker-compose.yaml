@@ -185,6 +185,8 @@ services:
     container_name: dfq-vault
     image: darkedges/vault:1.16.2
     build: ./docker/vault
+    profiles:
+      - donotstart
     environment:
       VAULT_ADDR: "http://0.0.0.0:8200"
       VAULT_API_ADDR: "http://0.0.0.0:8200"
@@ -209,6 +211,8 @@ services:
   dfq-vault-init:
     container_name: dfq-vault-init
     image: darkedges/vault:1.16.2
+    profiles:
+      - donotstart
     volumes:
       - vault:/vault/file:r
     environment:
@@ -222,6 +226,8 @@ services:
   dfq-terraform:
     container_name: dfq-terraform
     image: darkedges/terraform:1.8.4
+    profiles:
+      - donotstart
     build: ./docker/terraform
     environment:
       VAULT_ADDR: "http://vault.dfq.localdev:8200"
