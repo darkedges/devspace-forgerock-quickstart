@@ -38,11 +38,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 2048M
+          cpus: "0.5"
+          memory: 1024M
         reservations:
-          cpus: "1"
-          memory: 2048M
+          cpus: "0.5"
+          memory: 1024M
     volumes:
       - secrets:/var/run/secrets:r
     env_file:
@@ -69,11 +69,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 2048M
+          cpus: "0.5"
+          memory: 1024M
         reservations:
-          cpus: "1"
-          memory: 2048M
+          cpus: "0.5"
+          memory: 1024M
     volumes:
       - secrets:/var/run/secrets:r
     env_file:
