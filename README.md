@@ -41,7 +41,7 @@ and the values will be in the format above as yaml files.
    ```
 1. When it has completed startup the OAuth2 Clients needs to be seeded.
    ```console
-   docker exec -it dfq-am /opt/amster/config/importconfig.sh
+   docker exec -it dfq-am /opt/amster/config/importConfig.sh
    ```
 1. Access via <https://platform.7f000001.nip.io:8443/platform-login/?realm=/#/> and when prompted for credential use `amadmin:Passw0rd`
 
