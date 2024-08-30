@@ -19,19 +19,19 @@ git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/frds
 
 # To build
-docker build -t devspace-forgerock-quickstart/ds:7.2.0 .
+docker build -t devspace-forgerock-quickstart/ds:7.4.0 .
 ```
 
 ## Run
 
 ```console
-docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.2.0 init_start
+docker run -it --rm --name dfq-ds devspace-forgerock-quickstart/ds:7.4.0 init_start
 ```
 
 In another shell start another instance using
 
 ```console
-docker run -it --rm --link dfq-ds:dfq-ds devspace-forgerock-quickstart/ds:7.2.0 bash
+docker run -it --rm --link dfq-ds:dfq-ds devspace-forgerock-quickstart/ds:7.4.0 bash
 ```
 
 When it has started issiue the following to confirm it is working.
@@ -60,7 +60,7 @@ dn: uid=am-identity-bind-account,ou=admins,ou=identities
 | ----------------------------- | ---------------------- | ------------------------------------------------------- |
 | `JRE_IMAGE`                   | `eclipse-temurin`      | image name                                              |
 | `JRE_TAG`                     | `11.0.14_9-jre-alpine` | tag value                                               |
-| `FRDS_ARCHIVE`                | `DS-7.2.0.zip`         | name of archive to deploy                               |
+| `FRDS_ARCHIVE`                | `DS-7.4.0.zip`         | name of archive to deploy                               |
 | `FRDS_ARCHIVE_REPOSITORY_URL` |                        | URL of Web Server / Nexus Repository / Cloud Bucket URL |
 
 ## Folder Structure
@@ -75,12 +75,12 @@ Contains the [`docker-entrypoint.sh`](rootscripts/docker-entrypoint.sh) file tha
 | ---------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | `AMCONFIG_ADMIN_PASSWORD`                | `Passw0rd`                                                | AM Config Password - <https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#default-setup-profiles>                                               | `build`         |
 | `AMCONFIG_BACKEND_NAME`                  | `cfgStore`                                                | AM Config Backend Name                                                                                                                                                    | `build`         |
-| `AMCONFIG_BASE_DN`                       | `dc=amconfig`                                             | AM Config Base DN                                                                                                                                                         | `build`         |
+| `AMCONFIG_BASE_DN`                       | `ou=amconfig`                                             | AM Config Base DN                                                                                                                                                         | `build`         |
 | `AMCTS_ADMIN_PASSWORD`                   | `Passw0rd`                                                | AM CTS Password - <https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-cts-6.5.0>                                                            | `build`         |
 | `AMCTS_BACKEND_NAME`                     | `amCts`                                                   | AM CTS Backend Name                                                                                                                                                       | `build`         |
 | `AMCTS_BACKEND_TOKEN_EXPIRARTION_POLICY` | `ds`                                                      | AM CTS Token Expiration Policy can be `ds` \| `am-sessions-only` \| `am` see <https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-cts-6.5.0> | `build`         |
 | `AMCTS_BASE_DN`                          | `ou=tokens`                                               | AM CTS Base DN                                                                                                                                                            | `build`         |
-| `AMIDENTITYSTORE_ADMIN_PASSWORD`         | `Passw0rd`                                                | AM Identity Store Password - <https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-identity-store-7.2.0>                                      | `build`         |
+| `AMIDENTITYSTORE_ADMIN_PASSWORD`         | `Passw0rd`                                                | AM Identity Store Password - <https://backstage.forgerock.com/docs/ds/7.2/install-guide/setup-profiles.html#am-identity-store-7.4.0>                                      | `build`         |
 | `AMIDENTITYSTORE_BACKEND_NAME`           | `amIdentityStore`                                         | AM Identity Store Backend Name                                                                                                                                            | `build`         |
 | `AMIDENTITYSTORE_BASE_DN`                | `ou=identities`                                           | AM Identity Store Base DN                                                                                                                                                 | `build`         |
 | `DEPLOYMENT_KEY_PASSWORD`                | `Passw0rd`                                                | FRDS Deployment Password                                                                                                                                                  | `build`         |

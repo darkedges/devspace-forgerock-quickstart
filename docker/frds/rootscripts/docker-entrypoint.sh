@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-development}"
+INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-directory}"
+export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx2048M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.security.egd=file:/dev/urandoms}"
 
 start() {
     set -ex
@@ -28,7 +29,11 @@ init_deploymentkey() {
 init() {
     echo "Initializing with profile: ${INIT_INSTANCE_PROFILE}"
     if [ -d "/opt/frds/instance/data/config" ]; then
-        ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
+         if [ -d "/opt/frds/instance/data/init_complete" ]; then
+             if [ "${INIT_INSTANCE_LDIF}" = true]; then
+                ./default-scripts/${INIT_INSTANCE_PROFILE}/init.sh
+            fi
+        fi
     else
         rm -rf instance.loc
         ./default-scripts/${INIT_INSTANCE_PROFILE}/setup.sh
@@ -44,9 +49,6 @@ upgrade() {
 CMD="${1:-run}"
 
 case "$CMD" in
-devspace)
-    start
-    ;;
 start)
     start
     ;;

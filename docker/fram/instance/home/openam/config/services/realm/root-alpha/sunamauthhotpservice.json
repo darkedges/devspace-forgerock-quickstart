@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "sunAMAuthHOTPService",
+    "entityId" : "sunAMAuthHOTPService",
+    "uid" : "ou=sunAMAuthHOTPService,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunService", "top" ],
+    "pathParams" : { },
+    "ou" : [ "sunAMAuthHOTPService" ]
+  },
+  "data" : {
+    "_id" : "sunAMAuthHOTPService",
+    "_type" : {
+      "_id" : "sunAMAuthHOTPService",
+      "name" : "sunAMAuthHOTPService",
+      "collection" : false
+    }
+  }
+}

@@ -1,0 +1,28 @@
+version: 1
+
+dn: uid=demo@demo.com,ou=people,ou=identities
+objectclass: devicePrintProfilesContainer
+objectclass: deviceProfilesContainer
+objectclass: forgerock-am-dashboard-service
+objectclass: inetorgperson
+objectclass: inetuser
+objectclass: iplanet-am-auth-configuration-service
+objectclass: iplanet-am-managed-person
+objectclass: iplanet-am-user-service
+objectclass: iPlanetPreferences
+objectclass: kbaInfoContainer
+objectclass: oathDeviceProfilesContainer
+objectclass: organizationalperson
+objectclass: person
+objectclass: pushDeviceProfilesContainer
+objectclass: sunAMAuthAccountLockout
+objectclass: sunFMSAML2NameIdentifier
+objectclass: top
+objectclass: webauthnDeviceProfilesContainer
+cn: Demo Demo
+sn: Demo
+inetUserStatus: Active
+mail: demo@demo.com
+uid: demo@demo.com
+userPassword: mlZ5sWM72@6%
+

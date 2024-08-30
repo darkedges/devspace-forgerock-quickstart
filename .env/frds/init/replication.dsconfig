@@ -1,0 +1,2 @@
+create-trust-manager-provider --set enabled:true --type blind --provider-name BTM
+set-synchronization-provider-prop --provider-name "Multimaster synchronization" --add trust-manager-provider:BTM --remove trust-manager-provider:PKCS12

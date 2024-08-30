@@ -1,0 +1,39 @@
+{{- if and .Values.login.enabled .Values.login.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "forgerock.login.fullname". }}-ingress
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.login.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frim
+    {{- with .Values.login.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations:
+    cert-manager.io/cluster-issuer: "vault-issuer"
+    nginx.ingress.kubernetes.io/backend-protocol: "{{ upper .Values.login.ingress.backend.protocol }}"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: 256k
+spec:
+  {{- if .Values.login.ingress.tls.enabled }}
+  tls:
+  - hosts:
+    {{- toYaml .Values.login.ingress.hosts | nindent 4 }}
+    secretName: {{ .Values.enduser.login.tls.secretName | default (printf "%s-ingress-tls" (include "forgerock.fullname" .)) }}
+  {{- end }}
+  rules:
+  {{- $root := . -}}
+  {{- range .Values.login.ingress.hosts }}
+  - host: {{ . }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ template "forgerock.login.fullname" $root }}
+            port:
+              number: {{ $root.Values.login.ingress.backend.port }}
+  {{- end }}
+  ingressClassName: nginx
+{{- end }}

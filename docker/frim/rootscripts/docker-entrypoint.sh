@@ -2,7 +2,7 @@
 
 CMD="${1:-run}"
 OPENIDM_HOME="/opt/frim"
-PROJECT_HOME="${PROJECT_HOME:-/opt/frim}"
+PROJECT_HOME="${PROJECT_HOME:-/opt/frim/instance/data}"
 LOGGING_CONFIG="${LOGGING_CONFIG:=}"
 IDM_ENVCONFIG_DIRS="${IDM_ENVCONFIG_DIRS:=}"
 LAUNCHER_CONFIG="${LAUNCHER_CONFIG:=}"
@@ -58,6 +58,12 @@ init() {
 
 start() {
     echo "Starting IDM"
+
+    if [[ -f "/var/run/secrets/frim/" ]]; then
+      mkdir -p /opt/frim/instance/secrets
+      cp -L /var/run/secrets/frim/* /opt/frim/instance/secrets/
+    fi
+
     # Bundle directory
     BUNDLE_PATH="$OPENIDM_HOME/bundle"
     

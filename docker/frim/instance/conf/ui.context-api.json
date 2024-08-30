@@ -1,8 +1,8 @@
 {
-    "enabled": true,
-    "cacheEnabled": false,
-    "authEnabled": true,
-    "urlContextRoot": "/api",
-    "defaultDir": "&{idm.install.dir}/ui/api/default",
-    "extensionDir": "&{idm.install.dir}/ui/api/extension"
+    "enabled" : true,
+    "cacheEnabled" : false,
+    "authEnabled" : true,
+    "urlContextRoot" : "/api",
+    "defaultDir" : "&{idm.install.dir}/ui/api/default",
+    "extensionDir" : "&{idm.install.dir}/ui/api/extension"
 }

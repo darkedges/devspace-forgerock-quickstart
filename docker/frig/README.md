@@ -19,13 +19,13 @@ git clone https://github.com/darkedges/devspace-forgerock-quickstart.git
 cd docker/frig
 
 # To build
-docker build -t devspace-forgerock-quickstart/ig:7.2.0 .
+docker build -t devspace-forgerock-quickstart/ig:7.4.0 .
 ```
 
 ## Run
 
 ```console
-docker run -it --rm --publish 8080:8080  devspace-forgerock-quickstart/ig:7.2.0
+docker run -it --rm --publish 8080:8080  devspace-forgerock-quickstart/ig:7.4.0
 ```
 
 open a web browser to <http://ig.7f000001.nip.io:8080/hello> and it should return the hostname of the container running.
@@ -36,7 +36,7 @@ open a web browser to <http://ig.7f000001.nip.io:8080/hello> and it should retur
 | ----------------------------- | ---------------------- | ------------------------------------------------------- |
 | `JRE_IMAGE`                   | `eclipse-temurin`      | image name                                              |
 | `JRE_TAG`                     | `11.0.14_9-jre-alpine` | tag value                                               |
-| `FRIG_ARCHIVE`                | `IG-7.2.0.zip`         | name of archive to deploy                               |
+| `FRIG_ARCHIVE`                | `IG-7.4.0.zip`         | name of archive to deploy                               |
 | `FRIG_ARCHIVE_REPOSITORY_URL` |                        | URL of Web Server / Nexus Repository / Cloud Bucket URL |
 
 ## Folder Structure

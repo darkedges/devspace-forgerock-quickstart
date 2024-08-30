@@ -120,6 +120,13 @@
             "actions": "submitRequirements"
         },
         {
+            "pattern": "profile/*",
+            "roles": "*",
+            "methods": "read,query",
+            "actions": "",
+            "customAuthz": "isMyProfile()"
+        },
+        {
             "pattern": "policy/*",
             "roles": "*",
             "methods": "action",
@@ -389,14 +396,14 @@
             "roles": "internal/role/openidm-authorized",
             "methods": "read",
             "actions": "*",
-            "customAuthz": "ownRelationship()"
+            "customAuthz": "ownRelationshipProperty('_meta', false)"
         },
         {
             "pattern": "internal/notification/*",
             "roles": "internal/role/openidm-authorized",
             "methods": "read,delete",
             "actions": "*",
-            "customAuthz": "ownRelationship()"
+            "customAuthz": "ownRelationshipProperty('_notifications', true)"
         },
         {
             "pattern": "managed/user/*",
@@ -418,6 +425,12 @@
             "methods": "read",
             "actions": "*",
             "customAuthz": "ownIDP()"
+        },
+        {
+            "pattern": "config/ui/themerealm",
+            "roles": "*",
+            "methods": "read",
+            "actions": "*"
         }
     ]
 }

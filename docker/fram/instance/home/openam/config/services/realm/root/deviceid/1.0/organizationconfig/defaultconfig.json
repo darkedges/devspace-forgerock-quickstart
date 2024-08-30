@@ -1,0 +1,27 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "DeviceId",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=DeviceId,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "defaultconfig" ]
+  },
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "DeviceId",
+      "name" : "DeviceId",
+      "collection" : false
+    },
+    "deviceIdSettingsEncryptionKeystoreType" : "JKS",
+    "deviceIdSettingsEncryptionKeystoreKeyPairAlias" : null,
+    "deviceIdSettingsEncryptionKeystore" : "&{secrets.path}/keystores/keystore.jks",
+    "deviceIdAttrName" : "devicePrintProfiles",
+    "deviceIdSettingsEncryptionScheme" : "NONE",
+    "deviceIdSettingsEncryptionKeystorePassword" : "&{am.keystore.default.password}",
+    "deviceIdSettingsEncryptionKeystorePrivateKeyPassword" : "&{am.keystore.default.entry.password}"
+  }
+}

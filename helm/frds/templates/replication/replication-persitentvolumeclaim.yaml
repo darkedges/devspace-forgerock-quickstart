@@ -1,0 +1,21 @@
+{{ if ge .Values.replication.replicas 1.0  }}
+{{- if .Values.replication.proxy.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "forgerock.frds.rs.fullname". }}-schema-claim
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.rs.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.replication.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  accessModes:
+    - ReadWriteMany 
+  resources:
+    requests:
+      storage: 1Gi
+{{- end }}
+{{- end }}

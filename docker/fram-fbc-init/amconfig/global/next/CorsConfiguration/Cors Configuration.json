@@ -1,0 +1,48 @@
+{
+    "metadata": {
+        "realm": null,
+        "amsterVersion": "7.5.0",
+        "entityType": "CorsConfiguration",
+        "entityId": "Cors Configuration",
+        "pathParams": {}
+    },
+    "data": {
+        "_id": "Cors Configuration",
+        "maxAge": 600,
+        "exposedHeaders": [
+            "WWW-Authenticate"
+        ],
+        "acceptedHeaders": [
+            "accept-api-version",
+            "authorization",
+            "cache-control",
+            "content-type",
+            "if-match",
+            "if-none-match",
+            "user-agent",
+            "x-forgerock-transactionid",
+            "x-openidm-nosession",
+            "x-openidm-password",
+            "x-openidm-username",
+            "x-requested-with"
+        ],
+        "allowCredentials": true,
+        "acceptedMethods": [
+            "DELETE",
+            "GET",
+            "HEAD",
+            "PATCH",
+            "POST",
+            "PUT"
+        ],
+        "acceptedOrigins": [
+            "https://platform.7f000001.nip.io"
+        ],
+        "enabled": true,
+        "_type": {
+            "_id": "configuration",
+            "name": "Cors Configuration",
+            "collection": true
+        }
+    }
+}

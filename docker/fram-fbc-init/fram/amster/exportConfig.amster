@@ -1,0 +1,5 @@
+myAM=System.getenv("AMSTER_URL")
+AMSTERKEY=System.getenv("FRAM_HOME")+'/security/keys/amster/amster_rsa'
+connect -t 30 --private-key AMSTERKEY myAM
+export-config --path /tmp/fram --listPasswords
+:exit

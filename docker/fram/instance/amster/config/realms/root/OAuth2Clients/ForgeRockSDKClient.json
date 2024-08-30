@@ -1,0 +1,149 @@
+{
+    "metadata": {
+        "realm": "/",
+        "amsterVersion": "7.5.0",
+        "entityType": "OAuth2Clients",
+        "entityId": "ForgeRockSDKClient",
+        "pathParams": {}
+    },
+    "data": {
+        "_id": "ForgeRockSDKClient",
+        "overrideOAuth2ClientConfig": {
+            "issueRefreshToken": true,
+            "validateScopePluginType": "PROVIDER",
+            "tokenEncryptionEnabled": false,
+            "evaluateScopePluginType": "PROVIDER",
+            "oidcMayActScript": "[Empty]",
+            "oidcClaimsScript": "[Empty]",
+            "scopesPolicySet": "oauth2Scopes",
+            "accessTokenModificationPluginType": "PROVIDER",
+            "authorizeEndpointDataProviderClass": "org.forgerock.oauth2.core.plugins.registry.DefaultEndpointDataProvider",
+            "oidcClaimsPluginType": "PROVIDER",
+            "providerOverridesEnabled": false,
+            "authorizeEndpointDataProviderScript": "[Empty]",
+            "statelessTokensEnabled": false,
+            "authorizeEndpointDataProviderPluginType": "PROVIDER",
+            "remoteConsentServiceId": null,
+            "enableRemoteConsent": false,
+            "validateScopeClass": "org.forgerock.oauth2.core.plugins.registry.DefaultScopeValidator",
+            "usePolicyEngineForScope": false,
+            "evaluateScopeClass": "org.forgerock.oauth2.core.plugins.registry.DefaultScopeEvaluator",
+            "overrideableOIDCClaims": [],
+            "accessTokenMayActScript": "[Empty]",
+            "evaluateScopeScript": "[Empty]",
+            "clientsCanSkipConsent": false,
+            "accessTokenModificationScript": "[Empty]",
+            "issueRefreshTokenOnRefreshedToken": true,
+            "validateScopeScript": "[Empty]"
+        },
+        "advancedOAuth2ClientConfig": {
+            "logoUri": [],
+            "subjectType": "public",
+            "clientUri": [],
+            "tokenExchangeAuthLevel": 0,
+            "responseTypes": [
+                "code",
+                "token",
+                "id_token",
+                "code token",
+                "token id_token",
+                "code id_token",
+                "code token id_token",
+                "device_code",
+                "device_code id_token"
+            ],
+            "mixUpMitigation": false,
+            "customProperties": [],
+            "javascriptOrigins": [],
+            "policyUri": [],
+            "softwareVersion": null,
+            "sectorIdentifierUri": null,
+            "tosURI": [],
+            "tokenEndpointAuthMethod": "none",
+            "isConsentImplied": true,
+            "refreshTokenGracePeriod": 0,
+            "softwareIdentity": null,
+            "grantTypes": [
+                "authorization_code",
+                "refresh_token"
+            ],
+            "require_pushed_authorization_requests": false,
+            "descriptions": [],
+            "requestUris": [],
+            "name": [],
+            "contacts": [],
+            "updateAccessToken": null
+        },
+        "signEncOAuth2ClientConfig": {
+            "tokenEndpointAuthSigningAlgorithm": "RS256",
+            "idTokenEncryptionEnabled": false,
+            "tokenIntrospectionEncryptedResponseEncryptionAlgorithm": "A128CBC-HS256",
+            "requestParameterSignedAlg": null,
+            "authorizationResponseSigningAlgorithm": "RS256",
+            "clientJwtPublicKey": null,
+            "idTokenPublicEncryptionKey": null,
+            "mTLSSubjectDN": null,
+            "jwkStoreCacheMissCacheTime": 60000,
+            "jwkSet": null,
+            "idTokenEncryptionMethod": "A128CBC-HS256",
+            "jwksUri": null,
+            "tokenIntrospectionEncryptedResponseAlg": "RSA-OAEP-256",
+            "authorizationResponseEncryptionMethod": null,
+            "userinfoResponseFormat": "JSON",
+            "mTLSCertificateBoundAccessTokens": false,
+            "publicKeyLocation": "jwks_uri",
+            "tokenIntrospectionResponseFormat": "JSON",
+            "requestParameterEncryptedEncryptionAlgorithm": "A128CBC-HS256",
+            "userinfoSignedResponseAlg": null,
+            "idTokenEncryptionAlgorithm": "RSA-OAEP-256",
+            "requestParameterEncryptedAlg": null,
+            "authorizationResponseEncryptionAlgorithm": null,
+            "mTLSTrustedCert": null,
+            "jwksCacheTimeout": 3600000,
+            "userinfoEncryptedResponseAlg": null,
+            "idTokenSignedResponseAlg": "RS256",
+            "userinfoEncryptedResponseEncryptionAlgorithm": "A128CBC-HS256",
+            "tokenIntrospectionSignedResponseAlg": "RS256"
+        },
+        "coreOpenIDClientConfig": {
+            "claims": [],
+            "backchannel_logout_uri": null,
+            "defaultAcrValues": [],
+            "jwtTokenLifetime": 0,
+            "defaultMaxAgeEnabled": false,
+            "clientSessionUri": null,
+            "defaultMaxAge": 600,
+            "postLogoutRedirectUri": [],
+            "backchannel_logout_session_required": false
+        },
+        "coreOAuth2ClientConfig": {
+            "status": "Active",
+            "clientName": [],
+            "clientType": "Public",
+            "loopbackInterfaceRedirection": false,
+            "defaultScopes": [],
+            "agentgroup": null,
+            "refreshTokenLifetime": 0,
+            "scopes": [
+                "openid",
+                "profile",
+                "email",
+                "address",
+                "phone"
+            ],
+            "accessTokenLifetime": 0,
+            "redirectionUris": [
+                "org.forgerock.demo:/oauth2redirect"
+            ],
+            "authorizationCodeLifetime": 0
+        },
+        "coreUmaClientConfig": {
+            "claimsRedirectionUris": []
+        },
+        "_type": {
+            "_id": "OAuth2Client",
+            "name": "OAuth2 Clients",
+            "collection": true
+        }
+    }
+}

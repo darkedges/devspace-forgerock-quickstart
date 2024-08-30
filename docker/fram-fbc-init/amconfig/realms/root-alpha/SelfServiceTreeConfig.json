@@ -1,0 +1,23 @@
+{
+    "data": {
+        "_id": "",
+        "_type": {
+            "_id": "selfServiceTrees",
+            "collection": false,
+            "name": "Self Service Trees"
+        },
+        "enabled": true,
+        "treeMapping": {
+            "login": "PlatformLogin",
+            "registration": "PlatformRegistration",
+            "resetPassword": "PlatformResetPassword"
+        }
+    },
+    "metadata": {
+        "amsterVersion": "7.5.0",
+        "entityId": "SelfServiceTreeConfig",
+        "entityType": "SelfServiceTreeConfig",
+        "pathParams": {},
+        "realm": "/alpha"
+    }
+}

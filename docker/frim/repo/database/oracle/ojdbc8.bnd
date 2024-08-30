@@ -1,0 +1,6 @@
+version=12.2.0.1
+Export-Package: *;version=${version}
+Bundle-Name: Oracle Database 12.2.0.1 JDBC Driver
+Bundle-SymbolicName: oracle.jdbc.OracleDriver
+Bundle-Version: ${version}
+Import-Package: *;resolution:=optional

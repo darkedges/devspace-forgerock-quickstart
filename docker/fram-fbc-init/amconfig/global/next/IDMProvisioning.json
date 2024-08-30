@@ -1,0 +1,28 @@
+{
+    "metadata": {
+        "realm": null,
+        "amsterVersion": "7.5.0",
+        "entityType": "IDMProvisioning",
+        "entityId": "IDMProvisioning",
+        "pathParams": {}
+    },
+    "data": {
+        "_id": "",
+        "provisioningClientScopes": [
+            "fr:idm:*"
+        ],
+        "idmProvisioningClient": "idm-provisioning",
+        "useInternalOAuth2Provider": false,
+        "jwtSigningCompatibilityMode": false,
+        "enabled": true,
+        "idmDeploymentPath": "openidm",
+        "idmDeploymentUrl": "http://development-frim-frim:8080",
+        "configurationCacheDuration": 0,
+        "provisioningClientSecret": null,
+        "_type": {
+            "_id": "idm-integration",
+            "name": "IdmIntegrationService",
+            "collection": false
+        }
+    }
+}

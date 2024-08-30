@@ -1,0 +1,19 @@
+{
+    "data": {
+        "_id": "",
+        "_type": {
+            "_id": "DataStoreService",
+            "collection": false,
+            "name": "External Data Stores"
+        },
+        "applicationDataStoreId": "application-store",
+        "policyDataStoreId": "policy-store"
+    },
+    "metadata": {
+        "amsterVersion": "7.5.0",
+        "entityId": "DataStoreService",
+        "entityType": "DataStoreService",
+        "pathParams": {},
+        "realm": "/alpha"
+    }
+}

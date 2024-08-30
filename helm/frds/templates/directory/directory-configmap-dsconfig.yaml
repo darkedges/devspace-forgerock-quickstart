@@ -1,0 +1,28 @@
+{{ if ge .Values.directory.replicas 1.0  }}
+{{- if .Values.directory.dsconfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "forgerock.frds.ds.fullname". }}-dsconfig
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.ds.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.directory.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.directory.configAnnotations }}
+  annotations: {{ toYaml .Values.directory.configAnnotations | nindent 4 }}
+  {{- end }}
+data:
+  {{- if .Values.directory.dsconfig.setup }}
+  setup.dsconfig: {{- toYaml .Values.directory.dsconfig.setup | indent 2 }}
+  {{- end }}
+  {{- if .Values.directory.dsconfig.init }}
+  init.dsconfig: {{- toYaml .Values.directory.dsconfig.init | indent 2 }}
+  {{- end }}
+  {{- if .Values.directory.dsconfig.replication }}
+  replication.dsconfig: {{- toYaml .Values.directory.dsconfig.replication | indent 2 }}
+  {{- end }}
+{{- end }}
+{{- end }}

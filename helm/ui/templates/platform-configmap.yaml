@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "forgerock.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.platform.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.platform.configAnnotations }}
+  annotations: {{ toYaml .Values.platform.configAnnotations | nindent 4 }}
+  {{- end }}
+data:
+  AM_URL: {{ .Values.platform.endpoints.amUrl }}
+  AM_ADMIN_URL: {{ .Values.platform.endpoints.amAdminUrl }}
+  IDM_REST_URL: {{ .Values.platform.endpoints.idmRestUrl }}
+  IDM_ADMIN_URL: {{ .Values.platform.endpoints.idmAdminUrl }}
+  IDM_UPLOAD_URL: {{ .Values.platform.endpoints.idmUploadUrl }}
+  IDM_EXPORT_URL: {{ .Values.platform.endpoints.idmExport }}
+  ENDUSER_UI_URL: {{ .Values.platform.endpoints.enduserUrl }}
+  PLATFORM_ADMIN_URL: {{ .Values.platform.endpoints.platformUrl }}
+  ENDUSER_CLIENT_ID: {{ .Values.platform.config.enduserClientId }}
+  ADMIN_CLIENT_ID: {{ .Values.platform.config.adminClientId }}
+  THEME: {{ .Values.platform.config.theme }}
+  PLATFORM_UI_LOCALE: {{ .Values.platform.config.platformUILocale }}
+  {{- if .Values.platform.env }}
+  {{- with .Values.platform.env }}
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
+  {{- end }}

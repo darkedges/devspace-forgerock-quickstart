@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "iPlanetAMAuthSecurIDService",
+    "entityId" : "defaultconfig",
+    "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSecurIDService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "defaultconfig" ]
+  },
+  "data" : {
+    "_id" : "defaultconfig",
+    "_type" : {
+      "_id" : "iPlanetAMAuthSecurIDService",
+      "name" : "iPlanetAMAuthSecurIDService",
+      "collection" : false
+    },
+    "iplanet-am-auth-securid-helper-port" : 57943,
+    "serverConfigPath" : "/home/forgerock/openam/config/auth/ace/data",
+    "iplanet-am-auth-securid-config-port" : 58943,
+    "authenticationLevel" : 0
+  }
+}

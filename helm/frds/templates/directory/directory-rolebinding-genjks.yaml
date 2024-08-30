@@ -1,0 +1,29 @@
+{{ if ge .Values.directory.replicas 1.0  }}
+{{- if and (.Values.directory.rbac.enabled) (.Values.directory.useKeystore) -}}
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "forgerock.ds.serviceAccountName" . }}-genjks-role-binding
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.ds.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.directory.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook-weight: "-10"
+  {{- if .Values.directory.serviceAccount.annotations }}
+    {{ toYaml .Values.directory.serviceAccount.annotations | indent 4 }}
+  {{- end }}
+subjects:
+- kind: ServiceAccount
+  name:  {{ template "forgerock.ds.serviceAccountName" . }}-genjks
+roleRef:
+  kind: Role
+  name: {{ template "forgerock.ds.serviceAccountName" . }}-genjks-role
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}

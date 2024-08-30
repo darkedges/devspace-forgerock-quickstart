@@ -1,0 +1,26 @@
+{{ if ge .Values.replication.replicas 1.0  }}
+{{- if .Values.replication.rbac.create -}}
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "forgerock.frds.rs.fullname". }}-role-binding
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.rs.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.replication.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.replication.serviceAccount.annotations }}
+  annotations:
+  {{ toYaml .Values.replication.serviceAccount.annotations | indent 4 }}
+  {{- end }}
+subjects:
+- kind: ServiceAccount
+  name:  {{ template "forgerock.frds.rs.fullname". }}
+roleRef:
+  kind: Role
+  name: {{ template "forgerock.frds.rs.fullname". }}
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+{{- end }}

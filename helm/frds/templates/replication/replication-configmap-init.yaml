@@ -1,0 +1,22 @@
+{{ if ge .Values.replication.replicas 1.0  }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "forgerock.frds.rs.fullname". }}-init-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.rs.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frds
+    {{- with .Values.replication.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- if .Values.replication.configAnnotations }}
+  annotations: {{ toYaml .Values.replication.configAnnotations | nindent 4 }}
+  {{- end }}
+data:
+  {{- with .Values.replication.init.env }}
+  {{- toYaml . | nindent 2 }}
+  {{- end }}
+  INIT_INSTANCE_PROFILE: replication
+  DS_BOOTSTRAP_REPLICATION_SERVERS: {{ include  "frds.replication.bootstrap" . }}
+{{- end }}

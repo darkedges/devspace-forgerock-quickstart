@@ -1,44 +1,30 @@
 {
     "heap": [
         {
-            "name": "_router",
-            "type": "Router",
+            "name": "capture",
+            "type": "CaptureDecorator"
+        },
+        {
+            "name": "DefaultRoute",
+            "type": "StaticResponseHandler",
             "config": {
-                "scanInterval": "&{ig.router.scan.interval|10 seconds}",
-                "defaultHandler": {
-                    "type": "DispatchHandler",
-                    "config": {
-                        "bindings": [
-                            {
-                                "condition": "${request.method == 'GET' and request.uri.path == '/'}",
-                                "handler": {
-                                    "type": "WelcomeHandler"
-                                }
-                            },
-                            {
-                                "condition": "${request.uri.path == '/'}",
-                                "handler": {
-                                    "type": "StaticResponseHandler",
-                                    "config": {
-                                        "status": 405,
-                                        "reason": "Method Not Allowed"
-                                    }
-                                }
-                            },
-                            {
-                                "handler": {
-                                    "type": "StaticResponseHandler",
-                                    "config": {
-                                        "status": 404,
-                                        "reason": "Not Found"
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                }
+                "status": 200,
+                "headers": {
+                    "Content-Type": [
+                        "text/html"
+                    ]
+                },
+                "entity": "<html><p><a href='/enduser-login/?realm=/alpha#/service/PlatformLogin'>End user access</a></p><p><a href='/platform-login/?realm=/#/'>Admin access</a></p></html>"
+            }
+        },
+        {
+            "type": "Router",
+            "name": "_router",
+            "config": {
+                "defaultHandler": "DefaultRoute"
             }
         }
     ],
-    "handler": "_router"
+    "handler": "_router",
+    "audit": "global"
 }

@@ -23,6 +23,12 @@
                 "iconPath": "images/notifications/error.png"
             }
         },
+        "platformSettings": {
+            "adminOauthClient": "idm-admin-ui",
+            "adminOauthClientScopes": "fr:idm:*",
+            "amUrl": "https://platform.7f000001.nip.io:8443/am",
+            "loginUrl": ""
+        },
         "defaultNotificationType": "info"
     }
 }

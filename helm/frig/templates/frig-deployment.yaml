@@ -15,7 +15,7 @@ spec:
       {{- include "forgerock.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: frig
   {{- if not .Values.frig.autoscaling.enabled }}
-  replicas: {{ .Values.frig.replicaCount }}
+  replicas: {{ .Values.frig.replicas }}
   {{- end }}
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   {{- if .Values.frig.updateStrategy }}
@@ -98,7 +98,7 @@ spec:
           volumeMounts:
             {{- if .Values.frig.certificate.enabled }}
             - name: keystores
-              mountPath: "/var/frig/secrets"
+              mountPath: "/var/run/secrets/frig"
               readOnly: true  
             {{- end}}
       containers:
@@ -112,7 +112,7 @@ spec:
         env:
           {{- if .Values.frig.certificate.enabled }}
           - name: IG_KEYSTORE_DIRECTORY
-            value: /var/frig/secrets
+            value: /var/run/secrets/frig
           - name: IG_KEYSTORE_ALIAS
             value: certificate
           - name: IG_KEYSTORE_PASSWORD
@@ -129,7 +129,7 @@ spec:
         volumeMounts:
           {{- if .Values.frig.certificate.enabled }}
           - name: keystores
-            mountPath: "/var/frig/secrets"
+            mountPath: "/var/run/secrets/frig"
             readOnly: true  
           {{- end }}
         ports:

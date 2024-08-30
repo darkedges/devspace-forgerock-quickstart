@@ -1,0 +1,199 @@
+{{ if ge .Values.replication.replicas 1.0  }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ template "forgerock.frds.rs.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.rs.labels" . | nindent 4 }}
+    app.kubernetes.io/component: {{ template "forgerock.frds.rs.fullname". }}
+    {{- with .Values.replication.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  podManagementPolicy: {{ .Values.replication.podManagementPolicy }} 
+  selector:
+    matchLabels:
+      {{- include "forgerock.rs.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: {{ template "forgerock.frds.rs.fullname". }}
+  {{- if not .Values.replication.autoscaling.enabled }}
+  replicas: {{ .Values.replication.replicas }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- if .Values.replication.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.replication.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.replication.minReadySeconds }}
+  serviceName: {{ template "forgerock.frds.rs.fullname". }}
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: {{ .Values.replication.persistentVolumeClaimRetentionPolicy.whenDeleted }}
+    whenScaled: {{ .Values.replication.persistentVolumeClaimRetentionPolicy.whenScaled }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.rs.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: {{ template "forgerock.frds.rs.fullname". }}
+        {{- with .Values.replication.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.replication.podLabels }}
+        {{- toYaml .Values.replication.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/replication/replication-configmap-container.yaml") . | sha256sum }}
+       {{- if .Values.replication.podAnnotations }}
+      {{- range $key, $value := .Values.replication.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.replication.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.replication.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.hostname }}
+      hostname: {{ toYaml .Values.replication.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.replication.dnsPolicy }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.priorityClassName }}
+      priorityClassName: {{ .Values.replication.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.replication.hostNetwork }}
+      hostNetwork: {{ .Values.replication.hostNetwork }}
+      {{- end }}
+      {{- if .Values.replication.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.replication.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.tolerations }}
+      tolerations: {{ toYaml .Values.replication.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.affinity }}
+      affinity: {{ toYaml .Values.replication.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.replication.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.replication.podSecurityContext .Values.replication.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.replication.podSecurityContext }}
+        {{- toYaml .Values.replication.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.replication.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.replication.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.replication.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.replication.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.rs.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.replication.terminationGracePeriodSeconds }}
+      subdomain: replication
+      initContainers:
+      - name: wait-for-first
+        image: opsfleet/depends-on
+        imagePullPolicy: {{ .Values.replication.image.imagePullPolicy }}
+        {{ template "forgerock.rs.waitfor". }}
+      - name: init
+        image: {{ .Values.replication.image.repository }}:{{ .Values.replication.image.tag }}
+        imagePullPolicy: {{ .Values.replication.image.imagePullPolicy }}
+        envFrom:
+        - secretRef:
+            name: {{ template "forgerock.frds.rs.fullname". }}-secrets
+        - configMapRef:
+            name: {{ template "forgerock.frds.rs.fullname". }}-init-config
+        command:
+          - ./docker-entrypoint.sh
+          - init
+        volumeMounts:
+          - mountPath: /opt/frds/instance/data
+            name: {{ template "forgerock.frds.rs.fullname". }}-data-volume
+        {{- if .Values.replication.useKeystore }}
+          - mountPath: /var/run/secrets/frds
+            name: {{ template "forgerock.frds.rs.fullname". }}-keystore
+            readOnly: true 
+        {{- end }}
+        {{- if .Values.replication.dsconfig }}
+          - mountPath: /opt/frds/instance/init/dsconfig
+            name: {{ template "forgerock.frds.rs.fullname". }}-dsconfig
+        {{- end }}
+      containers:
+      - name: frds
+        image: {{ .Values.replication.image.repository }}:{{ .Values.replication.image.tag }}
+        imagePullPolicy: {{ .Values.replication.image.imagePullPolicy }}
+        {{- if .Values.replication.lifecycle }}
+        lifecycle: {{ toYaml .Values.replication.lifecycle | nindent 12 }}
+        {{- end }}
+        securityContext: {{ include "frds.containerSecurityContext" . | nindent 12 }}
+        env:
+        - name: DS_ADVERTISED_LISTEN_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: DS_SERVER_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        {{- if .Values.replication.env }}
+        envFrom:
+        - configMapRef:
+            name: {{ template "forgerock.frds.rs.fullname". }}-config
+        {{- end}}
+        ports:
+        - containerPort: 4444
+        - containerPort: 8989
+        volumeMounts:
+          - mountPath: /opt/frds/instance/data
+            name: {{ template "forgerock.frds.rs.fullname". }}-data-volume
+          {{- if .Values.replication.proxy.enabled }}
+          - mountPath: "/schema"
+            name: frds-schema-storage
+          {{- end }}
+          {{- if .Values.replication.useKeystore }}
+          - mountPath: /var/run/secrets/frds
+            name: {{ template "forgerock.frds.rs.fullname". }}-keystore
+            readOnly: true
+          {{- end }}
+        {{- if .Values.replication.startupProbe }}
+        startupProbe: {{ toYaml .Values.replication.startupProbe | nindent 12 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.replication.livenessProbe | nindent 12 }}
+        readinessProbe: {{ toYaml .Values.replication.readinessProbe | nindent 12 }}
+        {{- if .Values.replication.resources }}
+        resources: {{ toYaml .Values.replication.resources | nindent 12 }}
+        {{- end }}
+      volumes:
+        {{- if .Values.replication.proxy.enabled }}
+        - name: frds-schema-storage
+          persistentVolumeClaim:
+            claimName: frdsschemaclaim
+        {{- end }}
+        {{- if .Values.replication.useKeystore }}
+        - name: {{ template "forgerock.frds.rs.fullname" . }}-keystore
+          secret:
+            secretName: {{ template "forgerock.frds.rs.fullname" . }}-keystore
+        {{- end }}
+        {{- if .Values.replication.dsconfig }}
+        - name: {{ template "forgerock.frds.rs.fullname". }}-dsconfig
+          configMap:
+            name: {{ template "forgerock.frds.rs.fullname". }}-dsconfig
+        {{- end }}
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ template "forgerock.frds.rs.fullname". }}-data-volume
+    spec:
+      {{- if .Values.replication.volumeClaimTemplates.data.storageClassName }}
+      storageClassName: {{ .Values.replication.volumeClaimTemplates.data.storageClassName }}
+      {{- end }}
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: {{ .Values.replication.volumeClaimTemplates.data.storageSize }}
+{{- end -}}

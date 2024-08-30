@@ -1,0 +1,120 @@
+{{- if .Values.login.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "forgerock.login.fullname". }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "forgerock.login.labels" . | nindent 4 }}
+    app.kubernetes.io/component: ui
+    {{- with .Values.login.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "forgerock.login.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: ui
+  {{- if not .Values.login.autoscaling.enabled }}
+  replicas: {{ .Values.login.replicas }}
+  {{- end }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- if .Values.login.updateStrategy }}
+  strategy:
+    {{ toYaml .Values.login.updateStrategy | nindent 4 }}
+  {{- end }}
+  minReadySeconds: {{ .Values.login.minReadySeconds }}
+  template:
+    metadata:
+      labels:
+        {{- include "forgerock.login.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: ui
+        {{- with .Values.login.labels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- if .Values.login.podLabels }}
+        {{- toYaml .Values.login.podLabels | nindent 8 }}
+      {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/platform-configmap.yaml") . | sha256sum }}
+       {{- if .Values.login.podAnnotations }}
+      {{- range $key, $value := .Values.login.podAnnotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
+    {{- end }}
+    spec:
+      {{- if .Values.login.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.login.dnsConfig | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.hostname }}
+      hostname: {{ toYaml .Values.login.hostname | nindent 8 }}
+      {{- end }}
+      dnsPolicy: {{ .Values.login.dnsPolicy }}
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.priorityClassName }}
+      priorityClassName: {{ .Values.login.priorityClassName | quote }}
+      {{- end }}
+      {{- if .Values.login.hostNetwork }}
+      hostNetwork: {{ .Values.login.hostNetwork }}
+      {{- end }}
+      {{- if .Values.login.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.login.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.tolerations }}
+      tolerations: {{ toYaml .Values.login.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.affinity }}
+      affinity: {{ toYaml .Values.login.affinity | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml .Values.login.topologySpreadConstraints | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.login.podSecurityContext .Values.login.sysctls }}
+      securityContext:
+      {{- end }}
+      {{- if .Values.login.podSecurityContext }}
+        {{- toYaml .Values.login.podSecurityContext | nindent 8 }}
+      {{- end }}
+      {{- if .Values.login.sysctls }}
+        sysctls:
+      {{- range $sysctl, $value := .Values.login.sysctls }}
+        - name: {{ $sysctl | quote }}
+          value: {{ $value | quote }}
+      {{- end }}
+      {{- end }}
+      {{- if .Values.login.shareProcessNamespace }}
+      shareProcessNamespace: {{ .Values.login.shareProcessNamespace }}
+      {{- end }}
+      serviceAccountName: {{ template "forgerock.serviceAccountName" . }}
+      terminationGracePeriodSeconds: {{ .Values.login.terminationGracePeriodSeconds }}
+      initContainers:
+        {{- if .Values.platform.services }}
+        - name: wait-for-first
+          image: opsfleet/depends-on
+          imagePullPolicy: {{ .Values.login.image.imagePullPolicy }}
+          {{ template "forgerock.waitfor". }}
+        {{- end }}
+      containers:
+      - name: ui
+        image: {{ .Values.login.image.repository }}:{{ .Values.login.image.tag }}
+        imagePullPolicy: {{ .Values.login.image.imagePullPolicy }}
+        {{- if .Values.login.lifecycle }}
+        lifecycle: {{ toYaml .Values.login.lifecycle | nindent 12 }}
+        {{- end }}
+        securityContext: {{ include "admin.containerSecurityContext" . | nindent 12 }}
+        envFrom:
+          - configMapRef:
+              name: {{ template "forgerock.fullname". }}
+        ports:
+        - containerPort:  {{ .Values.login.ingress.backend.port}}
+        {{- if .Values.login.startupProbe }}
+        startupProbe: {{ toYaml .Values.login.startupProbe | nindent 12 }}
+        {{- end }}
+        livenessProbe: {{ toYaml .Values.login.livenessProbe | nindent 12 }}
+        readinessProbe: {{ toYaml .Values.login.readinessProbe | nindent 12 }}
+        {{- if .Values.login.resources }}
+        resources: {{ toYaml .Values.login.resources | nindent 12 }}
+        {{- end }}
+{{- end -}}

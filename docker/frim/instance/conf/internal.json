@@ -1,19 +1,19 @@
 {
-    "objects": [
+    "objects" : [
         {
-            "name": "role",
-            "properties": {
-                "authzMembers": {
-                    "items": {
-                        "resourceCollection": [
+            "name" : "role",
+            "properties" : {
+                "authzMembers" : {
+                    "items" : {
+                        "resourceCollection" : [
                             {
-                                "path": "managed/user",
-                                "conditionalAssociation": true,
-                                "notify": true,
-                                "label": "User",
-                                "query": {
-                                    "queryFilter": "true",
-                                    "fields": [
+                                "path" : "managed/user",
+                                "conditionalAssociation" : true,
+                                "notify" : true,
+                                "label" : "User",
+                                "query" : {
+                                    "queryFilter" : "true",
+                                    "fields" : [
                                         "userName",
                                         "givenName",
                                         "sn"
@@ -26,10 +26,10 @@
             }
         },
         {
-            "name": "notification",
-            "properties": {
-                "target": {
-                    "reversePropertyName": "_notifications"
+            "name" : "notification",
+            "properties" : {
+                "target" : {
+                    "reversePropertyName" : "_notifications"
                 }
             }
         }

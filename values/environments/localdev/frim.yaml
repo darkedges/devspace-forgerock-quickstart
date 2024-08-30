@@ -1,37 +1,26 @@
 frim:
+  env:
+    frim:
+      DARKEDGES_IDM_REPO_DS_HOSTNAME: development-frds-frds-ds
+      SMTP_HOST: smtp4dev.smtp4dev
+      SMTP_FROM: noreply@platform.7f000001.nip.io
   services:
-    db:
-      waitfor: service
-      name: mysqldb
-      releaseNameOverride: darkedges
-      details:
-        port: "3306"
-        databasename: "frim"
-        username: "frim"
-        password: "Passw0rd"
     identity:
       waitfor: service
-      name: frds-development
-      releaseNameOverride: localdev-frds
+      name: frds-ds
+      releaseNameOverride: development-frds
       details:
         port: "1389"
         ssl: "false"
         username: "uid=am-identity-bind-account,ou=admins,ou=identities"
         password: "Passw0rd"
-  livenessProbe: 
+  livenessProbe:
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
-  readinessProbe: 
+  readinessProbe:
     httpGet:
-      path: /openidm/info/ping
       port: 8080
       scheme: HTTP
   ingress:
     enabled: true
-    backend:
-      protocol: HTTP
-      port: 8080
-    hosts: 
-      - idm.7f000001.nip.io

@@ -1,0 +1,10 @@
+platform:
+  services:
+    fram:
+      waitfor: service
+      name: fram
+      releaseNameOverride: development-fram
+    frim:
+      waitfor: service
+      name: frim
+      releaseNameOverride: development-frim

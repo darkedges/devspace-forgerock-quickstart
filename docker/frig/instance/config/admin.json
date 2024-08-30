@@ -1,10 +1,43 @@
 {
-  "mode": "&{IG_RUN_MODE|development}",
-  "prefix": "openig",
-  "connectors": [
-    {
-      "port": 8080
-    }
-  ],
-  "heap": []
+    "mode": "&{IG_RUN_MODE|development}",
+    "prefix": "openig",
+    "connectors": [{
+        "port": 8443,
+        "tls": "ServerTlsOptions-1"
+    }],
+    "heap": [{
+            "name": "ServerTlsOptions-1",
+            "type": "ServerTlsOptions",
+            "config": {
+                "keyManager": {
+                    "type": "SecretsKeyManager",
+                    "config": {
+                        "signingSecretId": "key.manager.secret.id",
+                        "secretsProvider": "ServerIdentityStore"
+                    }
+                }
+            }
+        },
+        {
+            "type": "FileSystemSecretStore",
+            "name": "SecretsPasswords",
+            "config": {
+                "directory": "/var/run/secrets/",
+                "format": "PLAIN"
+            }
+        },
+        {
+            "name": "ServerIdentityStore",
+            "type": "KeyStoreSecretStore",
+            "config": {
+                "file": "/var/run/secrets/keystore.pkcs12",
+                "storePasswordSecretId": "keystore.pass",
+                "secretsProvider": "SecretsPasswords",
+                "mappings": [{
+                    "secretId": "key.manager.secret.id",
+                    "aliases": ["https-connector-key"]
+                }]
+            }
+        }
+    ]
 }

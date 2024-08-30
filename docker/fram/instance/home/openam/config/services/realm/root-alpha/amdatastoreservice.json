@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "amDataStoreService",
+    "entityId" : "amDataStoreService",
+    "uid" : "ou=amDataStoreService,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunService", "top" ],
+    "pathParams" : { },
+    "ou" : [ "amDataStoreService" ]
+  },
+  "data" : {
+    "_id" : "amDataStoreService",
+    "_type" : {
+      "_id" : "amDataStoreService",
+      "name" : "amDataStoreService",
+      "collection" : false
+    }
+  }
+}

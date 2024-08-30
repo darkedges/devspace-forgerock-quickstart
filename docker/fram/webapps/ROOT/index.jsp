@@ -1,3 +1,3 @@
 <%
-    response.sendRedirect("/openam");
+    response.sendRedirect("/am");
 %>

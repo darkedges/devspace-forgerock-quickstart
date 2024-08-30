@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "KeyStoreSecretStore",
+    "entityId" : "default/default-keystore/mappings/am.authn.authid.signing.HMAC",
+    "uid" : "ou=am.authn.authid.signing.HMAC,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "am.authn.authid.signing.HMAC" ]
+  },
+  "data" : {
+    "_id" : "default/default-keystore/mappings/am.authn.authid.signing.HMAC",
+    "_type" : {
+      "_id" : "KeyStoreSecretStore",
+      "name" : "KeyStoreSecretStore",
+      "collection" : false
+    },
+    "secretId" : "am.authn.authid.signing.HMAC",
+    "aliases" : [ "hmacsigningtest" ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "PingOneWorkerService",
+    "entityId" : "PingOneWorkerService",
+    "uid" : "ou=PingOneWorkerService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunService", "top" ],
+    "pathParams" : { },
+    "ou" : [ "PingOneWorkerService" ]
+  },
+  "data" : {
+    "_id" : "PingOneWorkerService",
+    "_type" : {
+      "_id" : "PingOneWorkerService",
+      "name" : "PingOneWorkerService",
+      "collection" : false
+    }
+  }
+}

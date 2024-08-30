@@ -29,6 +29,7 @@
                     "country",
                     "stateProvince",
                     "roles",
+                    "assignments",
                     "manager",
                     "authzRoles",
                     "reports",
@@ -65,16 +66,42 @@
                             }
                         ]
                     },
+                    "cn": {
+                        "title": "Common Name",
+                        "description": "Common Name",
+                        "type": "string",
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": false,
+                        "scope": "private",
+                        "isPersonal": true,
+                        "isVirtual": true,
+                        "onStore": {
+                            "type": "text/javascript",
+                            "source": "object.cn || (object.givenName + ' ' + object.sn)"
+                        }
+                    },
+                    "aliasList": {
+                        "title": "User Alias Names List",
+                        "description": "List of identity aliases used primarily to record social IdP subjects for this user",
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "title": "User Alias Names Items"
+                        },
+                        "viewable": false,
+                        "searchable": false,
+                        "userEditable": true,
+                        "returnByDefault": false,
+                        "isVirtual": false
+                    },
                     "password": {
                         "title": "Password",
                         "description": "Password",
                         "type": "string",
                         "viewable": false,
                         "searchable": false,
-                        "userEditable": true,
-                        "encryption": {
-                            "purpose": "idm.password.encryption"
-                        },
+                        "userEditable": false,
                         "scope": "private",
                         "isProtected": true,
                         "usageDescription": "",
@@ -404,6 +431,61 @@
                             ]
                         }
                     },
+                    "assignments": {
+                        "description": "Assignments",
+                        "title": "Assignments",
+                        "id": "urn:jsonschema:org:forgerock:openidm:managed:api:User:assignments",
+                        "viewable": true,
+                        "userEditable": false,
+                        "returnByDefault": false,
+                        "usageDescription": "",
+                        "isPersonal": false,
+                        "type": "array",
+                        "items": {
+                            "type": "relationship",
+                            "id": "urn:jsonschema:org:forgerock:openidm:managed:api:User:assignments:items",
+                            "title": "Assignments Items",
+                            "reverseRelationship": true,
+                            "reversePropertyName": "members",
+                            "notifySelf": true,
+                            "validate": true,
+                            "properties": {
+                                "_ref": {
+                                    "description": "References a relationship from a managed object",
+                                    "type": "string"
+                                },
+                                "_refProperties": {
+                                    "description": "Supports metadata within the relationship",
+                                    "type": "object",
+                                    "title": "Provisioning Roles Items _refProperties",
+                                    "properties": {
+                                        "_id": {
+                                            "description": "_refProperties object ID",
+                                            "type": "string"
+                                        },
+                                        "_grantType": {
+                                            "description": "Grant Type",
+                                            "type": "string",
+                                            "label": "Grant Type"
+                                        }
+                                    }
+                                }
+                            },
+                            "resourceCollection": [
+                                {
+                                    "path": "managed/assignment",
+                                    "label": "Assignment",
+                                    "conditionalAssociationField": "condition",
+                                    "query": {
+                                        "queryFilter": "true",
+                                        "fields": [
+                                            "name"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
                     "authzRoles": {
                         "description": "Authorization Roles",
                         "title": "Authorization Roles",
@@ -530,8 +612,13 @@
                         "isVirtual": true,
                         "queryConfig": {
                             "referencedRelationshipFields": [
-                                "roles",
-                                "assignments"
+                                [
+                                    "roles",
+                                    "assignments"
+                                ],
+                                [
+                                    "assignments"
+                                ]
                             ],
                             "referencedObjectFields": [
                                 "*"
@@ -1259,7 +1346,8 @@
                             "required": []
                         },
                         "notifyRelationships": [
-                            "roles"
+                            "roles",
+                            "members"
                         ]
                     },
                     "linkQualifiers": {
@@ -1317,6 +1405,81 @@
                                 }
                             ]
                         }
+                    },
+                    "members": {
+                        "description": "Assignment Members",
+                        "title": "Assignment Members",
+                        "viewable": true,
+                        "type": "array",
+                        "returnByDefault": false,
+                        "items": {
+                            "type": "relationship",
+                            "id": "urn:jsonschema:org:forgerock:openidm:managed:api:Assignment:members:items",
+                            "title": "Assignment Members Items",
+                            "reverseRelationship": true,
+                            "reversePropertyName": "assignments",
+                            "validate": true,
+                            "properties": {
+                                "_ref": {
+                                    "description": "References a relationship from a managed object",
+                                    "type": "string"
+                                },
+                                "_refProperties": {
+                                    "description": "Supports metadata within the relationship",
+                                    "type": "object",
+                                    "title": "Assignment Members Items _refProperties",
+                                    "properties": {
+                                        "_id": {
+                                            "description": "_refProperties object ID",
+                                            "type": "string"
+                                        },
+                                        "_grantType": {
+                                            "description": "Grant Type",
+                                            "type": "string",
+                                            "label": "Grant Type"
+                                        }
+                                    }
+                                }
+                            },
+                            "resourceCollection": [
+                                {
+                                    "notify": true,
+                                    "conditionalAssociation": true,
+                                    "path": "managed/user",
+                                    "label": "User",
+                                    "query": {
+                                        "queryFilter": "true",
+                                        "fields": [
+                                            "userName",
+                                            "givenName",
+                                            "sn"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "condition": {
+                        "description": "A conditional filter for this assignment",
+                        "title": "Condition",
+                        "viewable": false,
+                        "searchable": false,
+                        "isConditional": true,
+                        "type": "string"
+                    },
+                    "weight": {
+                        "description": "The weight of the assignment.",
+                        "title": "Weight",
+                        "viewable": true,
+                        "searchable": false,
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "notifyRelationships": [
+                            "roles",
+                            "members"
+                        ]
                     }
                 },
                 "required": [
@@ -1331,9 +1494,13 @@
                     "mapping",
                     "attributes",
                     "linkQualifiers",
-                    "roles"
+                    "roles",
+                    "members",
+                    "condition",
+                    "weight"
                 ]
-            }
+            },
+            "attributeEncryption": {}
         },
         {
             "name": "organization",

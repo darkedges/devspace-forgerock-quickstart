@@ -1,22 +1,12 @@
 frig:
-  replicaCount: 1
-  env:
-    IG_RUN_MODE: DEVELOPMENT
-    INSTANCE_DIR: /opt/frig/instance
+  replicas: 1
   livenessProbe:
     httpGet:
-      path: "/openig/ping"
       port: 8080
       scheme: HTTP
   readinessProbe:
     httpGet:
-      path: "/openig/ping"
       port: 8080
       scheme: HTTP
   ingress:
     enabled: true
-    backend:
-      protocol: HTTP
-      port: 8080
-    hosts: 
-      - ig.7f000001.nip.io

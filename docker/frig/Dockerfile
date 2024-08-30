@@ -1,19 +1,18 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=11.0.14_9-jre-alpine
+ARG JRE_TAG=17.0.12_7-jre-alpine
+ARG IG_TAG=2024.6.0
+ARG ALPINE_TAG=3.19
+
+FROM gcr.io/forgerock-io/ig:${IG_TAG} AS igbase
 
 # Binary extract
-FROM alpine:3.15.0 as installFile
-ARG FRIG_ARCHIVE=IG-2023.2.0.zip
-ARG FRIG_ARCHIVE_REPOSITORY_URL=
-
-ADD ${FRIG_ARCHIVE_REPOSITORY_URL}${FRIG_ARCHIVE}  /var/tmp/frig.zip
-
-RUN unzip /var/tmp/frig.zip -d /var/tmp/
+FROM alpine:${ALPINE_TAG} AS installfile
+COPY --from=igbase /opt/ig /var/tmp/bootstrap/ig
 
 # Runtime deployment
-FROM ${JRE_IMAGE}:${JRE_TAG} as base
+FROM ${JRE_IMAGE}:${JRE_TAG} AS base
 
-COPY --from=0 /var/tmp/identity-gateway /opt/frig/
+COPY --from=installfile /var/tmp/bootstrap/ig /opt/frig/
 
 WORKDIR /opt/frig
 
@@ -24,6 +23,10 @@ RUN apk add --no-cache tini bash curl jq && \
     adduser -h /opt/frig -G forgerock -D -u 11111 forgerock && \
     mkdir -p /opt/frig/instance && \
     chown -R forgerock:forgerock /opt/frig
+
+RUN mkdir /var/run/secrets/ && \
+    echo "changeit" > /var/run/secrets/keystore.pass && \
+    keytool -genkey -alias https-connector-key -keyalg RSA -keystore /var/run/secrets/keystore.pkcs12 -storepass changeit -keypass changeit -dname "CN=platform.7f000001.nip.io,O=Example Corp,C=FR"
 
 COPY --chown=forgerock:forgerock rootscripts/*.sh /opt/frig/
 

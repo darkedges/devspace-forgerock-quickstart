@@ -12,14 +12,14 @@ cd docker/idmschema
 
 # To build
 
-docker build -t devspace-forgerock-quickstart/idmschema:7.2.0 .
+docker build -t devspace-forgerock-quickstart/idmschema:7.4.0 .
 ```
 
 ## Run
 
 ```console
 docker run -it --rm --name dfq-db -e "MYSQL_ROOT_PASSWORD=Passw0rd" -e "MYSQL_DATABASE=frim" -e "MYSQL_USER=frim" -e "MYSQL_PASSWORD=Passw0rd" --publish 3306:3306 mysql:8.0.30-oracle
-docker run -it --rm --link dfq-db:dfq-db --publish 8080:8080  -e "DRIVER=com.mysql.cj.jdbc.Driver" -e "URL=jdbc:mysql://dfq-db:3306/frim"-e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/install_7.2.0-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:7.2.0
+docker run -it --rm --link dfq-db:dfq-db --publish 8080:8080  -e "DRIVER=com.mysql.cj.jdbc.Driver" -e "URL=jdbc:mysql://dfq-db:3306/frim"-e "USERNAME=frim" -e "PASSWORD=Passw0rd" -e "CHANGELOG_FILE=changelog/frim/install_7.4.0-changelog.xml" -e "LOG_LEVEL=INFO" -e "CMD=update" devspace-forgerock-quickstart/idmschema:7.4.0
 ```
 
 ## Explore

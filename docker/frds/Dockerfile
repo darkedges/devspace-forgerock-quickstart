@@ -1,35 +1,34 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=11.0.14_9-jre-alpine
+ARG JRE_TAG=17.0.12_7-jre-alpine
+ARG FR_TAG=7.5.0
+ARG ALPINE_TAG=3.19
+
+FROM gcr.io/forgerock-io/ds:${FR_TAG} AS dsbase
 
 # Binary extract
-FROM alpine:3.15.0 as installFile
-ARG FRDS_ARCHIVE=DS-7.2.1.zip
-ARG FRDS_ARCHIVE_REPOSITORY_URL=
-
-ADD ${FRDS_ARCHIVE_REPOSITORY_URL}${FRDS_ARCHIVE}  /var/tmp/frds.zip
-
-RUN unzip /var/tmp/frds.zip -d /var/tmp/
+FROM alpine:${ALPINE_TAG} AS installfile
+COPY --from=dsbase /opt/opendj /var/tmp/bootstrap/opendj
 
 # Runtime deployment
-FROM ${JRE_IMAGE}:${JRE_TAG} as base
-
-COPY --from=0 /var/tmp/opendj /opt/frds/
+FROM ${JRE_IMAGE}:${JRE_TAG} AS base
+ARG DEPLOYMENT_TYPE=directory
 
 WORKDIR /opt/frds
 
 ENV PATH=$PATH:/opt/frds/scripts:/opt/frds/bin
 
-RUN apk add --no-cache tini bash && \
+RUN apk add --no-cache tini gettext bash && \
     addgroup -g 11111 -S forgerock && \
-    adduser -h /opt/frds -G forgerock -D -u 11111 forgerock && \
+    adduser -h /opt/frim -G forgerock -D -u 11111 forgerock && \
     mkdir -p /opt/frds/instance/data && \
     mkdir -p /opt/frds/instance/init && \
     chmod 755 /opt/frds/instance && \
     chmod g+s /opt/frds/instance 
 
+COPY --from=installfile /var/tmp/bootstrap/opendj /opt/frds/
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
 COPY --chown=forgerock:forgerock installedfiles/ /opt/frds/
-COPY --chown=forgerock:forgerock instance/ /opt/frds/instance/init
+COPY --chown=forgerock:forgerock instance/${DEPLOYMENT_TYPE}/ /opt/frds/instance/init/
 
 RUN chown -R forgerock:forgerock /opt/frds && \
     chmod 755 /opt/frds/*.sh && \

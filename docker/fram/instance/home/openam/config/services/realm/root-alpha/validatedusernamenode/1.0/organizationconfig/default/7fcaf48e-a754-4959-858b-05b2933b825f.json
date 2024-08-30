@@ -1,0 +1,22 @@
+{
+  "metadata" : {
+    "realm" : "/alpha",
+    "entityType" : "ValidatedUsernameNode",
+    "entityId" : "default/7fcaf48e-a754-4959-858b-05b2933b825f",
+    "uid" : "ou=7fcaf48e-a754-4959-858b-05b2933b825f,ou=default,ou=OrganizationConfig,ou=1.0,ou=ValidatedUsernameNode,ou=services,o=alpha,ou=services,ou=am-config",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "7fcaf48e-a754-4959-858b-05b2933b825f" ]
+  },
+  "data" : {
+    "_id" : "default/7fcaf48e-a754-4959-858b-05b2933b825f",
+    "_type" : {
+      "_id" : "ValidatedUsernameNode",
+      "name" : "ValidatedUsernameNode",
+      "collection" : false
+    },
+    "usernameAttribute" : "userName",
+    "validateInput" : true
+  }
+}

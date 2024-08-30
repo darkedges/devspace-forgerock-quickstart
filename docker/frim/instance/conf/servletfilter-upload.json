@@ -1,13 +1,13 @@
 {
-    "classPathURLs": [],
-    "systemProperties": {},
-    "requestAttributes": {},
-    "scriptExtensions": {},
-    "initParams": {
-        "maxRequestSizeInMegabytes": 50
+    "classPathURLs" : [ ],
+    "systemProperties" : { },
+    "requestAttributes" : { },
+    "scriptExtensions" : { },
+    "initParams" : {
+        "maxRequestSizeInMegabytes" : 50
     },
-    "urlPatterns": [
+    "urlPatterns" : [
         "&{openidm.servlet.upload.alias}/*"
     ],
-    "filterClass": "org.forgerock.openidm.jetty.LargePayloadServletFilter"
+    "filterClass" : "org.forgerock.openidm.jetty.LargePayloadServletFilter"
 }
