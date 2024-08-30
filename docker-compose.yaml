@@ -67,7 +67,6 @@ services:
     image: devspace-forgerock-quickstart/fram:7.5.0
     build:
       context: ./docker/fram
-      dockerfile: Dockerfile.mac
       args:
         CONFIG_HOME: /opt/amster/config
     command: start
