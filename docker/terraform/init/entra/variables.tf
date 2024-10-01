@@ -6,7 +6,7 @@ variable "applicationDisplayName" {
 variable "applicationIdentifierUris" {
   type = list(string)
   default = [
-    "https://fram.connectid.darkedges.com/openam/oauth2"
+    "https://example.com/openam/oauth2"
   ]
 }
 
@@ -20,6 +20,6 @@ variable "applicationSPARedirectUris" {
 variable "applicationwebRedirectUris" {
   type = list(string)
   default = [
-    "https://fram.connectid.darkedges.com/openam/XUI"
+    "https://example.com/openam/XUI"
   ]
 }

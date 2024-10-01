@@ -6,3 +6,4 @@ docker/terraform/init/entra/terraform.tfstate.backup
 docker/terraform/init/.terraform/terraform.tfstate
 docker/terraform/init/entra/.terraform.lock.hcl
 docker/terraform/init/entra/.terraform/*
+docker/terraform/init/entra/terraform.tfvars
