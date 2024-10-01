@@ -4,5 +4,5 @@ output "client_secret" {
 }
 output "client_id" {
   sensitive = false
-  value     = azuread_application.dfq.application_id
+  value     = azuread_application.dfq.client_id
 }

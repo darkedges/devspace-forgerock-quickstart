@@ -129,7 +129,7 @@ resource "azuread_application" "dfq" {
 }
 
 resource "azuread_service_principal" "dfq" {
-  client_id = azuread_application.dfq.application_id
+  client_id = azuread_application.dfq.client_id
   owners    = azuread_application.dfq.owners
   feature_tags {
     enterprise = true
