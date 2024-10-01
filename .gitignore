@@ -1,3 +1,8 @@
 .devspace
 docker/frim5.5/
 docker/fram/instance/home/openam/var/debug/debug.out
+docker/terraform/init/entra/terraform.tfstate
+docker/terraform/init/entra/terraform.tfstate.backup
+docker/terraform/init/.terraform/terraform.tfstate
+docker/terraform/init/entra/.terraform.lock.hcl
+docker/terraform/init/entra/.terraform/*
