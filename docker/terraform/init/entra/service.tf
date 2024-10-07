@@ -6,25 +6,25 @@ resource "time_rotating" "example" {
   rotation_days = 180
 }
 resource "azuread_application" "dfq" {
-  display_name = var.applicationDisplayName
+  display_name = var.application_display_name
   logo_image   = filebase64("logo.jpg")
   owners = [
     data.azuread_client_config.current.object_id
   ]
-  identifier_uris = var.applicationIdentifierUris
+  identifier_uris = var.application_identifier_uris
 
   api {
     mapped_claims_enabled          = true
     requested_access_token_version = 1
 
     oauth2_permission_scope {
-      admin_consent_description  = "Allow the application to access ${var.applicationDisplayName} on behalf of the signed-in user."
-      admin_consent_display_name = "Access ${var.applicationDisplayName}"
+      admin_consent_description  = "Allow the application to access ${var.application_display_name} on behalf of the signed-in user."
+      admin_consent_display_name = "Access ${var.application_display_name}"
       enabled                    = true
       id                         = random_uuid.app_access_scope_id.result
       type                       = "User"
-      user_consent_description   = "Allow the application to access ${var.applicationDisplayName} on your behalf."
-      user_consent_display_name  = "Access ${var.applicationDisplayName}"
+      user_consent_description   = "Allow the application to access ${var.application_display_name} on your behalf."
+      user_consent_display_name  = "Access ${var.application_display_name}"
       value                      = "user_impersonation"
     }
 
@@ -69,41 +69,34 @@ resource "azuread_application" "dfq" {
   }
 
   single_page_application {
-    redirect_uris = var.applicationSPARedirectUris
+    redirect_uris = var.application_spa_redirect_uris
   }
 
   web {
-    redirect_uris = var.applicationwebRedirectUris
+    redirect_uris = var.application_web_redirect_uris
     implicit_grant {
       access_token_issuance_enabled = true
       id_token_issuance_enabled     = true
     }
   }
 
-  required_resource_access {
-    resource_app_id = data.azuread_application_published_app_ids.well_known.result["MicrosoftGraph"]
+  dynamic "required_resource_access" {
+    for_each = var.application_required_resource_access
+    iterator = resource
+    content {
+      resource_app_id = data.azuread_application_published_app_ids.well_known.result[resource.value.resource_app_id]
 
-    resource_access {
-      id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids["User.Read"]
-      type = "Scope"
-    }
-    resource_access {
-      id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids["email"]
-      type = "Scope"
-    }
-    resource_access {
-      id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids["offline_access"]
-      type = "Scope"
-    }
-    resource_access {
-      id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids["openid"]
-      type = "Scope"
-    }
-    resource_access {
-      id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids["profile"]
-      type = "Scope"
+      dynamic "resource_access" {
+        for_each = resource.value.resource_access
+        iterator = access
+        content {
+          id   = data.azuread_service_principal.msgraph.oauth2_permission_scope_ids[access.value.id]
+          type = access.value.type
+        }
+      }
     }
   }
+
   optional_claims {
     id_token {
       name      = "email"
