@@ -11,11 +11,12 @@ resource "azuread_application" "dfq" {
   owners = [
     data.azuread_client_config.current.object_id
   ]
-  identifier_uris = var.application_identifier_uris
+  identifier_uris  = var.application_identifier_uris
+  sign_in_audience = "AzureADandPersonalMicrosoftAccount"
 
   api {
     mapped_claims_enabled          = true
-    requested_access_token_version = 1
+    requested_access_token_version = 2
 
     oauth2_permission_scope {
       admin_consent_description  = "Allow the application to access ${var.application_display_name} on behalf of the signed-in user."
