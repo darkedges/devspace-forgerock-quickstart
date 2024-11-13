@@ -155,11 +155,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "1"
-          memory: 1024M
+          cpus: "2"
+          memory: 2048M
         reservations:
-          cpus: "1"
-          memory: 1024M
+          cpus: "2"
+          memory: 2048M
     environment:
       INIT_INSTANCE_LDIF: true
     env_file:
@@ -247,7 +247,7 @@ services:
     networks:
       - localdev
 volumes:
-  secrets: 
+  secrets:
   vault:
   vaultagent:
   terraform:

@@ -1,0 +1,6 @@
+{
+    "type": "text/javascript",
+    "source": "  (function () {\n    var user = openidm.read(\"managed/user/e3592b91-7530-46ec-bb4c-e296c9e159fb\",null,[\"*\"])\n    return {\n      user,\n      \"auth\": context.parent.parent.parent.parent.authorization,\n      \"userInfo\": context.parent.parent.parent.parent.parent.rawInfo\n    }\n  }());",
+    "description": "Third Party Publisher endpoint",
+    "globalsObject": "\"  {\\n    \\\"request\\\": {\\n      \\\"method\\\": \\\"create\\\"\\n    }\\n  }\""
+}

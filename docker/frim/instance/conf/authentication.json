@@ -46,6 +46,13 @@
                 "roles": [
                     "internal/role/platform-provisioning"
                 ]
+            },
+            {
+                "subject": "(age!third-party-publisher)",
+                "localUser": "internal/user/third-party-publisher",
+                "roles": [
+                    "internal/role/third-party-publisher"
+                ]
             }
         ],
         "anonymousUserMapping": {

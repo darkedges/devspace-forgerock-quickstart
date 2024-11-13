@@ -1,6 +1,12 @@
 {
     "configs": [
         {
+            "pattern": "endpoint/thirdPartyPublisher",
+            "roles": "internal/role/third-party-publisher",
+            "methods": "*",
+            "actions": "*"
+        },
+        {
             "pattern": "info/*",
             "roles": "*",
             "methods": "read",
