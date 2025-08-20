@@ -1,24 +1,22 @@
 {
-  "metadata": {
-    "realm": "/alpha",
-    "amsterVersion": "7.5.0",
-    "entityType": "SuccessURL",
-    "entityId": "343901da-b349-4a79-aae0-8e5d3905f160",
-    "pathParams": {}
-  },
-  "data": {
-    "_id": "343901da-b349-4a79-aae0-8e5d3905f160",
-    "successUrl": "http://platform.7f000001.nip.io/enduser-ui/?realm=alpha",
-    "_type": {
-      "_id": "SetSuccessUrlNode",
-      "name": "Success URL",
-      "collection": true
+    "metadata": {
+        "realm": "/alpha",
+        "amsterVersion": "7.5.0",
+        "entityType": "SuccessURL",
+        "entityId": "343901da-b349-4a79-aae0-8e5d3905f160",
+        "pathParams": {}
     },
-    "_outcomes": [
-      {
-        "id": "outcome",
-        "displayName": "Outcome"
-      }
-    ]
-  }
+    "data": {
+        "_id": "343901da-b349-4a79-aae0-8e5d3905f160",
+        "successUrl": "https://platform.7f000001.nip.io:8443/enduser-ui/?realm=alpha",
+        "_type": {
+            "_id": "SetSuccessUrlNode",
+            "name": "Success URL",
+            "collection": true
+        },
+        "_outcomes": [{
+            "id": "outcome",
+            "displayName": "Outcome"
+        }]
+    }
 }

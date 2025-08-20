@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 INIT_INSTANCE_PROFILE="${INIT_INSTANCE_PROFILE:-directory}"
-export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx2048M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100}"
+export OPENDJ_JAVA_ARGS="${OPENDJ_JAVA_ARGS:--Xmx2048M -XX:MaxTenuringThreshold=1 -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.security.egd=file:/dev/urandom}"
 
 start() {
     set -ex
@@ -49,10 +49,6 @@ upgrade() {
 CMD="${1:-run}"
 
 case "$CMD" in
-devspace)
-    init
-    start
-    ;;
 start)
     start
     ;;

@@ -1,17 +1,17 @@
 variable "hostnames" {
   default = {
     "fram" = {
-      "tls" : { "namespace" : "darkedges", "common_name" : "localhost", "alt_names" : ["localhost", "fram", "*.darkedges.localhost", "*.darkedges.localdev"] }
+      "tls" : { "namespace" : "dfq", "common_name" : "localhost", "alt_names" : ["localhost", "fram", "*.dfq.localhost", "*.dfq.localdev"] }
     },
     "frim" = {
-      "tls" : { "namespace" : "darkedges", "common_name" : "localhost", "alt_names" : ["localhost", "frim", "*.darkedges.localhost", "*.darkedges.localdev"] }
+      "tls" : { "namespace" : "dfq", "common_name" : "localhost", "alt_names" : ["localhost", "frim", "*.dfq.localhost", "*.dfq.localdev"] }
       "selfservice" : { "common_name" : "selfservice" }
     },
     "frig" = {
-      "tls" : { "namespace" : "darkedges", "common_name" : "localhost", "alt_names" : ["localhost", "frig", "*.darkedges.localhost", "*.darkedges.localdev"] }
+      "tls" : { "namespace" : "dfq", "common_name" : "localhost", "alt_names" : ["localhost", "frig", "*.dfq.localhost", "*.dfq.localdev"] }
     },
     "frds" = {
-      "tls" : { "namespace" : "darkedges", "common_name" : "localhost", "alt_names" : ["localhost", "frdsamconfig", "frdsuser", "frdsamcts", "frdsidm", "*.darkedges.localhost", "*.darkedges.localdev"] }
+      "tls" : { "namespace" : "dfq", "common_name" : "localhost", "alt_names" : ["localhost", "frdsamconfig", "frdsuser", "frdsamcts", "frdsidm", "*.dfq.localhost", "*.dfq.localdev"] }
     }
   }
 }

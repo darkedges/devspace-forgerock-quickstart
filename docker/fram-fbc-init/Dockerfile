@@ -1,7 +1,7 @@
 ARG FRAM_VERSION=7.5.0
 ARG ALPINE_TAG=3.19
 
-FROM alpine:${ALPINE_TAG} as fr_am_war
+FROM alpine:${ALPINE_TAG} AS fr_am_war
 ARG FRAM_VERSION
 ARG FRAM_WAR_ARCHIVE=AM-${FRAM_VERSION}.zip
 ARG FRAM_ARCHIVE_REPOSITORY_URL=
@@ -9,8 +9,8 @@ ADD ${FRAM_ARCHIVE_REPOSITORY_URL}${FRAM_WAR_ARCHIVE} /tmp/am.war
 COPY fram/libs /tmp
 RUN unzip /tmp/am.war -d /tmp/am
 
-FROM gcr.io/forgerock-io/amster:${FRAM_VERSION} as fr_amster
-FROM gcr.io/forgerock-io/am-config-upgrader:${FRAM_VERSION} as am_config_upgrader
+FROM gcr.io/forgerock-io/amster:${FRAM_VERSION} AS fr_amster
+FROM gcr.io/forgerock-io/am-config-upgrader:${FRAM_VERSION} AS am_config_upgrader
 
 FROM tomcat:9-jre17
 

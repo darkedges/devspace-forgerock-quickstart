@@ -36,7 +36,7 @@
             "PUT"
         ],
         "acceptedOrigins": [
-            "http://platform.7f000001.nip.io"
+            "https://platform.7f000001.nip.io"
         ],
         "enabled": true,
         "_type": {

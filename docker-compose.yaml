@@ -1,35 +1,68 @@
-version: "3.8"
-
 services:
   dfq-ig:
     container_name: dfq-ig
-    image: devspace-forgerock-quickstart/frig:7.4.0-fbc
+    image: devspace-forgerock-quickstart/frig:2024.6.0
     build:
       context: ./docker/frig
     deploy:
       resources:
         limits:
           cpus: "0.5"
-          memory: 512M
+          memory: 256M
         reservations:
           cpus: "0.5"
-          memory: 512M
+          memory: 256M
     env_file:
-      - .env/frig/.env
+      - .env-d/frig/.env
     ports:
-      - "8082:8080/tcp"
+      - "8443:8443/tcp"
     depends_on:
       dfq-am:
         condition: service_healthy
-    links:
-      - dfq-am:fram
+      dfq-idm:
+        condition: service_healthy   
+      dfq-ui-admin:
+        condition: service_healthy
+      dfq-ui-enduser:
+        condition: service_healthy
+      dfq-ui-login:
+        condition: service_healthy
     networks:
-      localdev:
-        aliases:
-          - frig.darkedges.localdev
+      - localdev
+  dfq-idm:
+    container_name: dfq-idm
+    image: devspace-forgerock-quickstart/frim:8.0.0
+    build:
+      context: ./docker/frim
+    command: start
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2048M
+        reservations:
+          cpus: "1"
+          memory: 2048M
+    volumes:
+      - secrets:/var/run/secrets:r
+    env_file:
+      - .env-d/frim/.env
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8080/openidm/info/ping || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    depends_on:
+      dfq-ds:
+        condition: service_healthy
+      dfq-am:
+        condition: service_healthy
+    networks:
+      - localdev
   dfq-am:
     container_name: dfq-am
-    image: devspace-forgerock-quickstart/fram:7.4.0-fbc
+    image: devspace-forgerock-quickstart/fram:8.0.0
     build:
       context: ./docker/fram
       args:
@@ -46,38 +79,87 @@ services:
     volumes:
       - secrets:/var/run/secrets:r
     env_file:
-      - .env/fram/.env
-    ports:
-      - "8081:8080/tcp"
-    links:
-      - dfq-ds:frds
+      - .env-d/fram/.env
     healthcheck:
-      test: curl --include --retry 10 --retry-connrefused 'http://localhost:8080/openam/json/health/live' || exit 1
+      test: curl --fail http://localhost:8080/am/json/health/live
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     depends_on:
       dfq-ds:
         condition: service_healthy
     networks:
-      localdev:
-        aliases:
-          - fram.darkedges.localdev
+      - localdev
+  dfq-ui-admin:
+    container_name: dfq-admin-ui
+    image: gcr.io/forgerock-io/platform-admin-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
+    env_file:
+      - .env-d/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
+  dfq-ui-login:
+    container_name: dfq-login-ui
+    image: gcr.io/forgerock-io/platform-login-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
+    env_file:
+      - .env-d/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
+  dfq-ui-enduser:
+    container_name: dfq-enduser-ui
+    image: gcr.io/forgerock-io/platform-enduser-ui:7.5.0
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
+    env_file:
+      - .env-d/ui/.env
+    healthcheck:
+      test: curl -f http://localhost:8080/ || exit 1
+    networks:
+      - localdev
   dfq-ds:
     container_name: dfq-ds
-    image: devspace-forgerock-quickstart/frds:7.4.0-fbc
+    image: devspace-forgerock-quickstart/frds:8.0.0
     build:
       context: docker/frds
     command: init_start
     deploy:
       resources:
         limits:
-          cpus: "0.5"
+          cpus: "1"
           memory: 1024M
         reservations:
-          cpus: "0.5"
+          cpus: "1"
           memory: 1024M
     environment:
       INIT_INSTANCE_LDIF: true
     env_file:
-      - .env/frds/.env
+      - .env-d/frds/.env
     volumes:
       - secrets:/var/run/secrets:r
       - frds-development:/opt/frds/instance/data:rw
@@ -90,17 +172,20 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
+    hostname: dfq-ds-0
     networks:
       - localdev
   dfq-vault:
-    container_name: vault
-    image: darkedges/vault:1.15.1
+    container_name: dfq-vault
+    image: darkedges/vault:1.16.2
     build: ./docker/vault
+    profiles:
+      - donotstart
     environment:
       VAULT_ADDR: "http://0.0.0.0:8200"
       VAULT_API_ADDR: "http://0.0.0.0:8200"
     ports:
-      - "8201:8200/tcp"
+      - "8200:8200/tcp"
     volumes:
       - vault:/vault/file:rw
       - ./docker/vault/config:/vault/config
@@ -108,7 +193,7 @@ services:
       - IPC_LOCK
     entrypoint: vault server -log-level trace -config /vault/config/vault-server.json
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:8200 || exit 1
+      test: wget --no-verbose --tries=1 --spider http://0.0.0.0:8200 || exit 1
       interval: 10s
       retries: 12
       start_period: 10s
@@ -116,14 +201,16 @@ services:
     networks:
       localdev:
         aliases:
-          - vault.darkedges.localdev
+          - vault.dfq.localdev
   dfq-vault-init:
-    image: darkedges/vault:1.15.1
+    container_name: dfq-vault-init
+    image: darkedges/vault:1.16.2
+    profiles:
+      - donotstart
     volumes:
       - vault:/vault/file:r
     environment:
-      VAULT_ADDR: "http://vault.darkedges.localdev:8200"
-    container_name: vault-init
+      VAULT_ADDR: "http://vault.dfq.localdev:8200"
     entrypoint: /bin/sh -c "source /vault-init.sh"
     depends_on:
       dfq-vault:
@@ -131,11 +218,13 @@ services:
     networks:
       - localdev
   dfq-terraform:
-    container_name: vault-init
-    image: darkedges/terraform:1.6.3
+    container_name: dfq-terraform
+    image: darkedges/terraform:1.8.4
+    profiles:
+      - donotstart
     build: ./docker/terraform
     environment:
-      VAULT_ADDR: "http://vault.darkedges.localdev:8200"
+      VAULT_ADDR: "http://vault.dfq.localdev:8200"
       KUBECONFIG: /kube/config
     working_dir: /mnt/init
     volumes:
@@ -153,10 +242,10 @@ services:
     networks:
       - localdev
 volumes:
-  secrets:
-  frds-development:
+  secrets: 
   vault:
   vaultagent:
   terraform:
+  frds-development:
 networks:
   localdev:
