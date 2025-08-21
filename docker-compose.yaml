@@ -31,7 +31,7 @@ services:
       - localdev
   dfq-idm:
     container_name: dfq-idm
-    image: devspace-forgerock-quickstart/frim:8.0.0
+    image: devspace-forgerock-quickstart/frim:7.5.0
     build:
       context: ./docker/frim
     command: start
@@ -62,7 +62,7 @@ services:
       - localdev
   dfq-am:
     container_name: dfq-am
-    image: devspace-forgerock-quickstart/fram:8.0.0
+    image: devspace-forgerock-quickstart/fram:7.5.0
     build:
       context: ./docker/fram
       args:
@@ -144,7 +144,7 @@ services:
       - localdev
   dfq-ds:
     container_name: dfq-ds
-    image: devspace-forgerock-quickstart/frds:8.0.0
+    image: devspace-forgerock-quickstart/frds:7.5.0
     build:
       context: docker/frds
     command: init_start
