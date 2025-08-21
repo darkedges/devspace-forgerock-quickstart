@@ -8,15 +8,17 @@
     },
     "data": {
         "_id": "fba6aa82-21e1-4b85-8590-eb44e9f288c6",
-        "successUrl": "https://platform.7f000001.nip.io:8443/enduser-ui/?realm=alpha",
+        "successUrl": "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-ui/?realm=alpha",
         "_type": {
             "_id": "SetSuccessUrlNode",
             "name": "Success URL",
             "collection": true
         },
-        "_outcomes": [{
-            "id": "outcome",
-            "displayName": "Outcome"
-        }]
+        "_outcomes": [
+            {
+                "id": "outcome",
+                "displayName": "Outcome"
+            }
+        ]
     }
 }

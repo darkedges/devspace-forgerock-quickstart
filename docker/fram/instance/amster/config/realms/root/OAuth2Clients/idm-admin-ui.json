@@ -129,12 +129,12 @@
             ],
             "accessTokenLifetime": 0,
             "redirectionUris": [
-                "https://platform.7f000001.nip.io:8443/platform/appAuthHelperRedirect.html",
-                "https://platform.7f000001.nip.io:8443/platform/sessionCheck.html",
-                "https://platform.7f000001.nip.io:8443/admin/appAuthHelperRedirect.html",
-                "https://platform.7f000001.nip.io:8443/admin/sessionCheck.html",
-                "https://platform.7f000001.nip.io:8443/platform-ui/appAuthHelperRedirect.html",
-                "https://platform.7f000001.nip.io:8443/platform-ui/sessionCheck.html"
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/platform/appAuthHelperRedirect.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/platform/sessionCheck.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/admin/appAuthHelperRedirect.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/admin/sessionCheck.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/platform-ui/appAuthHelperRedirect.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/platform-ui/sessionCheck.html"
             ],
             "authorizationCodeLifetime": 0
         },

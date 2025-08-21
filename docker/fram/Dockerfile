@@ -41,6 +41,7 @@ RUN set -ex && \
     chmod 755 /opt/amster && \
     chown -R forgerock:forgerock /usr/local/tomcat && \
     chown -R forgerock:forgerock /opt/amster && \
+    chown -R forgerock:forgerock /home/forgerock && \
     sed -i 's/<\/Host>/<Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto"\/><\/Host>/' /usr/local/tomcat/conf/server.xml && \
     chown forgerock:forgerock /home/forgerock/crypto-tool.jar
 
