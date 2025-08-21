@@ -1,48 +1,38 @@
 {
-  "auto_auth": [
-    {
-      "method": [
-        {
-          "config": [
-            {
-              "remove_secret_id_file_after_reading": false,
-              "role_id_file_path": "/vault/agent/certs/role_id",
-              "secret_id_file_path": "/vault/agent/certs/secret_id"
+    "auto_auth": [{
+        "method": [{
+            "config": [{
+                "remove_secret_id_file_after_reading": false,
+                "role_id_file_path": "/vault/agent/certs/role_id",
+                "secret_id_file_path": "/vault/agent/certs/secret_id"
+            }],
+            "type": "approle"
+        }],
+        "sink": {
+            "type": "file",
+            "config": {
+                "path": "/vault/agent/sink_file"
             }
-          ],
-          "type": "approle"
         }
-      ],
-      "sink": {
-        "type": "file",
-        "config": {
-          "path": "/vault/agent/sink_file"
+    }],
+    "api_proxy": {
+        "use_auto_auth_token": true
+    },
+    "listener": {
+        "tcp": {
+            "address": "0.0.0.0:8200",
+            "tls_disable": true
         }
-      }
-    }
-  ],
-  "api_proxy": {
-    "use_auto_auth_token": true
-  },
-  "listener": {
-    "tcp": {
-      "address": "0.0.0.0:8200",
-      "tls_disable": true
-    }
-  },
-  "pid_file": "./pidfile",
-  "vault": {
-    "address": "http://vault.darkedges.localhost:8200",
-    "retry": [
-      {
-        "num_retries": 5
-      }
-    ]
-  },
-  "template": [
-    {
-      "contents": "{{ with pkiCert \"darkedges_idam_intermediate/issue/darkedges_idam\" \"common_name=localhost\" \"alt_names=localhost,vault,fram,frig,frds,*.7f000001.nip.io\" \"ttl=365d\" }}{{ .Data.Cert }}\n{{ .Data.CA }}\n{{ if .Key }}\n{{ .Key | writeToFile \"/mnt/secrets/localhost.key\" \"\" \"\" \"0644\" }}\n{{ end }}\n{{ end }}",
-      "destination": "/mnt/secrets/localhost.crt"
-    }
-  ]
+    },
+    "pid_file": "./pidfile",
+    "vault": {
+        "address": "http://vault.dfq.localdev:8200",
+        "retry": [{
+            "num_retries": 5
+        }]
+    },
+    "template": [{
+        "contents": "{{ with pkiCert \"darkedges_idam_intermediate/issue/darkedges_idam\" \"common_name=localhost\" \"alt_names=localhost,vault,fram,frig,frds,*.7f000001.nip.io\" \"ttl=365d\" }}{{ .Data.Cert }}\n{{ .Data.CA }}\n{{ if .Key }}\n{{ .Key | writeToFile \"/mnt/secrets/localhost.key\" \"\" \"\" \"0644\" }}\n{{ end }}\n{{ end }}",
+        "destination": "/mnt/secrets/localhost.crt"
+    }]
 }

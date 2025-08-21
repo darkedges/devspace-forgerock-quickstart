@@ -6,7 +6,7 @@ terraform plan
 terraform apply --auto-approve
 
 # Install the HashiCorp vault Root and Intermediate CA
-NAMESPACE=${NAMESPACE:-darkedges}
+NAMESPACE=${NAMESPACE:-dfq}
 VAULT_ADDR=${VAULT_ADDR:-http://vault:8201}
 curl -o /mnt/secrets/${NAMESPACE}_idam_intermediate.pem ${VAULT_ADDR}/v1/${NAMESPACE}_idam_intermediate/ca/pem
 curl -o /mnt/secrets/${NAMESPACE}_idam_root.pem ${VAULT_ADDR}/v1/${NAMESPACE}_idam_root/ca/pem

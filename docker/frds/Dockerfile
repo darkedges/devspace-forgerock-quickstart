@@ -1,16 +1,16 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=17.0.10_7-jre-alpine
+ARG JRE_TAG=17.0.12_7-jre-alpine
 ARG FR_TAG=7.5.0
 ARG ALPINE_TAG=3.19
 
-FROM gcr.io/forgerock-io/ds:${FR_TAG} as dsbase
+FROM gcr.io/forgerock-io/ds:${FR_TAG} AS dsbase
 
 # Binary extract
-FROM alpine:${ALPINE_TAG} as installFile
+FROM alpine:${ALPINE_TAG} AS installfile
 COPY --from=dsbase /opt/opendj /var/tmp/bootstrap/opendj
 
 # Runtime deployment
-FROM ${JRE_IMAGE}:${JRE_TAG} as base
+FROM ${JRE_IMAGE}:${JRE_TAG} AS base
 ARG DEPLOYMENT_TYPE=directory
 
 WORKDIR /opt/frds
@@ -25,7 +25,7 @@ RUN apk add --no-cache tini gettext bash && \
     chmod 755 /opt/frds/instance && \
     chmod g+s /opt/frds/instance 
 
-COPY --from=installFile /var/tmp/bootstrap/opendj /opt/frds/
+COPY --from=installfile /var/tmp/bootstrap/opendj /opt/frds/
 COPY --chown=forgerock:forgerock rootscripts/ /opt/frds/
 COPY --chown=forgerock:forgerock installedfiles/ /opt/frds/
 COPY --chown=forgerock:forgerock instance/${DEPLOYMENT_TYPE}/ /opt/frds/instance/init/

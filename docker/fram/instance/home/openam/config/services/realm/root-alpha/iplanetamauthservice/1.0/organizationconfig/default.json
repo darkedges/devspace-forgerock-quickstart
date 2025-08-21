@@ -1,69 +1,69 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "iPlanetAMAuthService",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "default" ]
-  },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "iPlanetAMAuthService",
-      "name" : "iPlanetAMAuthService",
-      "collection" : false
+    "metadata": {
+        "realm": "/alpha",
+        "entityType": "iPlanetAMAuthService",
+        "entityId": "default",
+        "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,o=alpha,ou=services,ou=am-config",
+        "sunServiceID": null,
+        "objectClass": ["sunServiceComponent", "top"],
+        "pathParams": {},
+        "ou": ["default"]
     },
-    "postauthprocess" : {
-      "usernameGeneratorClass" : "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
-      "usernameGeneratorEnabled" : true,
-      "loginPostProcessClass" : [ ],
-      "loginSuccessUrl" : [ "/am/console" ],
-      "userAttributeSessionMapping" : [ ],
-      "loginFailureUrl" : [ ]
-    },
-    "security" : {
-      "zeroPageLoginEnabled" : false,
-      "zeroPageLoginReferrerWhiteList" : [ ],
-      "zeroPageLoginAllowedWithoutReferrer" : true,
-      "moduleBasedAuthEnabled" : true,
-      "addClearSiteDataHeader" : true
-    },
-    "trees" : {
-      "suspendedAuthenticationTimeout" : 5,
-      "authenticationSessionsStateManagement" : "JWT",
-      "authenticationSessionsMaxDuration" : 5,
-      "authenticationTreeCookieHttpOnly" : true,
-      "authenticationSessionsWhitelist" : false
-    },
-    "accountlockout" : {
-      "loginFailureLockoutMode" : false,
-      "storeInvalidAttemptsInDataStore" : true,
-      "lockoutDuration" : 0,
-      "lockoutDurationMultiplier" : 1,
-      "lockoutWarnUserCount" : 0,
-      "loginFailureCount" : 5,
-      "loginFailureDuration" : 300
-    },
-    "core" : {
-      "adminAuthModule" : "ldapService",
-      "orgConfig" : "ldapService"
-    },
-    "general" : {
-      "userStatusCallbackPlugins" : [ ],
-      "statelessSessionsEnabled" : false,
-      "locale" : "en_US",
-      "externalLoginPageUrl" : "http://platform.7f000001.nip.io/enduser-login",
-      "twoFactorRequired" : false,
-      "identityType" : [ "agent", "user" ],
-      "defaultAuthLevel" : 0
-    },
-    "userprofile" : {
-      "dynamicProfileCreation" : "false",
-      "defaultRole" : [ ],
-      "aliasAttributeName" : [ "uid" ]
+    "data": {
+        "_id": "default",
+        "_type": {
+            "_id": "iPlanetAMAuthService",
+            "name": "iPlanetAMAuthService",
+            "collection": false
+        },
+        "postauthprocess": {
+            "usernameGeneratorClass": "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
+            "usernameGeneratorEnabled": true,
+            "loginPostProcessClass": [],
+            "loginSuccessUrl": ["/am/console"],
+            "userAttributeSessionMapping": [],
+            "loginFailureUrl": []
+        },
+        "security": {
+            "zeroPageLoginEnabled": false,
+            "zeroPageLoginReferrerWhiteList": [],
+            "zeroPageLoginAllowedWithoutReferrer": true,
+            "moduleBasedAuthEnabled": true,
+            "addClearSiteDataHeader": true
+        },
+        "trees": {
+            "suspendedAuthenticationTimeout": 5,
+            "authenticationSessionsStateManagement": "JWT",
+            "authenticationSessionsMaxDuration": 5,
+            "authenticationTreeCookieHttpOnly": true,
+            "authenticationSessionsWhitelist": false
+        },
+        "accountlockout": {
+            "loginFailureLockoutMode": false,
+            "storeInvalidAttemptsInDataStore": true,
+            "lockoutDuration": 0,
+            "lockoutDurationMultiplier": 1,
+            "lockoutWarnUserCount": 0,
+            "loginFailureCount": 5,
+            "loginFailureDuration": 300
+        },
+        "core": {
+            "adminAuthModule": "ldapService",
+            "orgConfig": "ldapService"
+        },
+        "general": {
+            "userStatusCallbackPlugins": [],
+            "statelessSessionsEnabled": false,
+            "locale": "en_US",
+            "externalLoginPageUrl": "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-login",
+            "twoFactorRequired": false,
+            "identityType": ["agent", "user"],
+            "defaultAuthLevel": 0
+        },
+        "userprofile": {
+            "dynamicProfileCreation": "false",
+            "defaultRole": [],
+            "aliasAttributeName": ["uid"]
+        }
     }
-  }
 }

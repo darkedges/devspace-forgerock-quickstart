@@ -15,7 +15,7 @@ metadata:
     helm.sh/hook-delete-policy: "before-hook-creation"
     helm.sh/hook-weight: "-15"
 spec:
-  secretName: {{ template "forgerock.fullname" . }}-ingress-tls
+  secretName: {{ template "forgerock.fullname" . }}-internal-tls
   issuerRef:
     name: vault-issuer
     kind: ClusterIssuer

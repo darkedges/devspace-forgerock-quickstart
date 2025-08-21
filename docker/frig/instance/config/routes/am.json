@@ -1,20 +1,20 @@
 {
-    "name": "am",
-    "baseURI": "http://development-fram-fram:8080",
-    "condition": "${find(request.uri.path, '(^/am(?!/XUI))')}",
-    "handler": {
-        "type": "Chain",
-        "config": {
-            "filters": [
-                {
-                    "comment": "Always redirect to IG rather than AM",
-                    "type": "LocationHeaderFilter",
-                    "config": {
-                        "baseURI": "http://platform.7f000001.nip.io/"
-                    }
-                }
-            ],
-            "handler": "ReverseProxyHandler"
+  "baseURI": "&{PLATFORM_AM_URL|http://dfq-am:8080}",
+  "condition": "${find(request.uri.path, '(^/am(?!/XUI))')}",
+  "handler": {
+    "config": {
+      "filters": [
+        {
+          "comment": "Always redirect to IG rather than AM",
+          "config": {
+            "baseURI": "&{am.platform.url|https://platform.7f000001.nip.io:8443/}"
+          },
+          "type": "LocationHeaderFilter"
         }
-    }
+      ],
+      "handler": "ReverseProxyHandler"
+    },
+    "type": "Chain"
+  },
+  "name": "am"
 }

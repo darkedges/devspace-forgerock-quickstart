@@ -2,7 +2,7 @@
     "rsFilter": {
         "clientId": "idm-resource-server",
         "clientSecret": "&{rs.client.secret|Passw0rd}",
-        "tokenIntrospectUrl": "http://development-fram-fram:8080/am/oauth2/introspect",
+        "tokenIntrospectUrl": "&{platform.am.internal.url|http://dfq-am:8080/am/oauth2/introspect}",
         "scopes": [
             "fr:idm:*"
         ],
