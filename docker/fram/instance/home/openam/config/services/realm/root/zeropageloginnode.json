@@ -5,9 +5,14 @@
     "entityId" : "ZeroPageLoginNode",
     "uid" : "ou=ZeroPageLoginNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ZeroPageLoginNode" ]
+    "ou" : [
+      "ZeroPageLoginNode"
+    ]
   },
   "data" : {
     "_id" : "ZeroPageLoginNode",

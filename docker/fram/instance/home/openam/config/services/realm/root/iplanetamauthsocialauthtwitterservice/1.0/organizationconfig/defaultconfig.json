@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -30,15 +36,24 @@
       "usesBasicAuth" : false
     },
     "accountProvisioning" : {
-      "accountMapperConfiguration" : [ "id_str=uid" ],
+      "accountMapperConfiguration" : [
+        "id_str=uid"
+      ],
       "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
       "saveAttributesInSession" : true,
       "anonymousUserName" : "anonymous",
       "enableRegistrationService" : false,
       "mapToAnonymousUser" : false,
-      "attributeMapperConfiguration" : [ "id_str=uid", "username=cn", "full_name=sn", "username=givenName" ],
+      "attributeMapperConfiguration" : [
+        "id_str=uid",
+        "username=cn",
+        "full_name=sn",
+        "username=givenName"
+      ],
       "createAccount" : true,
-      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|twitter-" ],
+      "attributeMappingClasses" : [
+        "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|twitter-"
+      ],
       "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|twitter-"
     }
   }

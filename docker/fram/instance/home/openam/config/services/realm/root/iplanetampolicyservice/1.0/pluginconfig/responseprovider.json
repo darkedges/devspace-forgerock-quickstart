@@ -5,9 +5,14 @@
     "entityId" : "ResponseProvider",
     "uid" : "ou=ResponseProvider,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ResponseProvider" ]
+    "ou" : [
+      "ResponseProvider"
+    ]
   },
   "data" : {
     "_id" : "ResponseProvider",

@@ -5,9 +5,14 @@
     "entityId" : "SetCustomCookieNode",
     "uid" : "ou=SetCustomCookieNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SetCustomCookieNode" ]
+    "ou" : [
+      "SetCustomCookieNode"
+    ]
   },
   "data" : {
     "_id" : "SetCustomCookieNode",

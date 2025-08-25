@@ -1,4 +1,4 @@
 FROM busybox
-ARG FRAM_VERSION=7.3.0
+ARG FRAM_VERSION=7.5.0
 
 COPY $FRAM_VERSION /mnt/amconfig

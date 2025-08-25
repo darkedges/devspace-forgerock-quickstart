@@ -1,0 +1,30 @@
+{
+  "data": {
+    "_id": "default/SAML2_NAMEID_MAPPER",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "defaultScript": "[Empty]",
+    "i18nKey": "script-type-19",
+    "languages": [
+      "JAVASCRIPT"
+    ]
+  },
+  "metadata": {
+    "entityId": "default/SAML2_NAMEID_MAPPER",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "ou": [
+      "SAML2_NAMEID_MAPPER"
+    ],
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "scriptContext",
+    "uid": "ou=SAML2_NAMEID_MAPPER,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config"
+  }
+}

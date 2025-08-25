@@ -5,9 +5,14 @@
     "entityId" : "default/Configurations/ldapService",
     "uid" : "ou=ldapService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "NamedConfiguration",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ldapService" ]
+    "ou" : [
+      "ldapService"
+    ]
   },
   "data" : {
     "_id" : "default/Configurations/ldapService",

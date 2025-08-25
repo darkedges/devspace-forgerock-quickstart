@@ -5,9 +5,14 @@
     "entityId" : "ModifyAuthLevelNode",
     "uid" : "ou=ModifyAuthLevelNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ModifyAuthLevelNode" ]
+    "ou" : [
+      "ModifyAuthLevelNode"
+    ]
   },
   "data" : {
     "_id" : "ModifyAuthLevelNode",

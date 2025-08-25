@@ -5,9 +5,14 @@
     "entityId" : "default/prometheusContainer/prometheus",
     "uid" : "ou=prometheus,ou=prometheusContainer,ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID" : "prometheus",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "prometheus" ]
+    "ou" : [
+      "prometheus"
+    ]
   },
   "data" : {
     "_id" : "default/prometheusContainer/prometheus",

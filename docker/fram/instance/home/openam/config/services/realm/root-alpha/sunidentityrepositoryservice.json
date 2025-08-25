@@ -5,9 +5,14 @@
     "entityId" : "sunIdentityRepositoryService",
     "uid" : "ou=sunIdentityRepositoryService,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunIdentityRepositoryService" ]
+    "ou" : [
+      "sunIdentityRepositoryService"
+    ]
   },
   "data" : {
     "_id" : "sunIdentityRepositoryService",

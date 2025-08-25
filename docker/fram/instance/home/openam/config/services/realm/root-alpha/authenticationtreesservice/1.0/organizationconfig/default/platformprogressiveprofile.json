@@ -5,9 +5,14 @@
     "entityId" : "default/PlatformProgressiveProfile",
     "uid" : "ou=PlatformProgressiveProfile,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "tree",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PlatformProgressiveProfile" ]
+    "ou" : [
+      "PlatformProgressiveProfile"
+    ]
   },
   "data" : {
     "_id" : "default/PlatformProgressiveProfile",

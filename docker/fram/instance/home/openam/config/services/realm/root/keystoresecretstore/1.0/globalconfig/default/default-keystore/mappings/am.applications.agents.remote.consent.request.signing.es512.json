@@ -5,9 +5,14 @@
     "entityId" : "default/default-keystore/mappings/am.applications.agents.remote.consent.request.signing.ES512",
     "uid" : "ou=am.applications.agents.remote.consent.request.signing.ES512,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "am.applications.agents.remote.consent.request.signing.ES512" ]
+    "ou" : [
+      "am.applications.agents.remote.consent.request.signing.ES512"
+    ]
   },
   "data" : {
     "_id" : "default/default-keystore/mappings/am.applications.agents.remote.consent.request.signing.ES512",
@@ -17,6 +22,8 @@
       "collection" : false
     },
     "secretId" : "am.applications.agents.remote.consent.request.signing.ES512",
-    "aliases" : [ "es512test" ]
+    "aliases" : [
+      "es512test"
+    ]
   }
 }

@@ -5,9 +5,14 @@
     "entityId" : "AuditService",
     "uid" : "ou=AuditService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AuditService" ]
+    "ou" : [
+      "AuditService"
+    ]
   },
   "data" : {
     "_id" : "AuditService",

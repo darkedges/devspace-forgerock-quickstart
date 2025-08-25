@@ -5,9 +5,14 @@
     "entityId" : "SessionPropertyWhitelistService",
     "uid" : "ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SessionPropertyWhitelistService" ]
+    "ou" : [
+      "SessionPropertyWhitelistService"
+    ]
   },
   "data" : {
     "_id" : "SessionPropertyWhitelistService",

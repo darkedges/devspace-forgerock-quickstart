@@ -5,9 +5,14 @@
     "entityId" : "sunMultiFederationProtocol",
     "uid" : "ou=sunMultiFederationProtocol,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunMultiFederationProtocol" ]
+    "ou" : [
+      "sunMultiFederationProtocol"
+    ]
   },
   "data" : {
     "_id" : "sunMultiFederationProtocol",

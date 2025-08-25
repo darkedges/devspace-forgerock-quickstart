@@ -5,9 +5,14 @@
     "entityId" : "dashboardService",
     "uid" : "ou=dashboardService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "dashboardService" ]
+    "ou" : [
+      "dashboardService"
+    ]
   },
   "data" : {
     "_id" : "dashboardService",

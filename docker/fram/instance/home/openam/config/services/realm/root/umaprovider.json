@@ -5,9 +5,14 @@
     "entityId" : "UmaProvider",
     "uid" : "ou=UmaProvider,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "UmaProvider" ]
+    "ou" : [
+      "UmaProvider"
+    ]
   },
   "data" : {
     "_id" : "UmaProvider",

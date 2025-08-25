@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=sunMultiFederationProtocol,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,6 +22,9 @@
       "name" : "sunMultiFederationProtocol",
       "collection" : false
     },
-    "singleLogoutHandlerList" : [ "key=SAML2|class=com.sun.identity.multiprotocol.SAML2SingleLogoutHandler", "key=WSFED|class=com.sun.identity.multiprotocol.WSFederationSingleLogoutHandler" ]
+    "singleLogoutHandlerList" : [
+      "key=SAML2|class=com.sun.identity.multiprotocol.SAML2SingleLogoutHandler",
+      "key=WSFED|class=com.sun.identity.multiprotocol.WSFederationSingleLogoutHandler"
+    ]
   }
 }

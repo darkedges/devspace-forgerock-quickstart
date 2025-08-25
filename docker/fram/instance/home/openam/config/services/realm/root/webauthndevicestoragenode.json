@@ -5,9 +5,14 @@
     "entityId" : "WebAuthnDeviceStorageNode",
     "uid" : "ou=WebAuthnDeviceStorageNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "WebAuthnDeviceStorageNode" ]
+    "ou" : [
+      "WebAuthnDeviceStorageNode"
+    ]
   },
   "data" : {
     "_id" : "WebAuthnDeviceStorageNode",

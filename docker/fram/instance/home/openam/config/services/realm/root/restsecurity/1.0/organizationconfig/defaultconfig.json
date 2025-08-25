@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=RestSecurity,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -20,7 +26,9 @@
     "selfRegistrationConfirmationUrl" : "http://am:80/am/XUI/confirm.html",
     "userRegisteredDestination" : "default",
     "SigningKeyValidator" : "org.forgerock.openam.authentication.modules.persistentcookie.validation.SigningKeyValidator",
-    "protectedUserAttributes" : [ ],
+    "protectedUserAttributes" : [
+      
+    ],
     "selfRegistrationTokenLifetime" : 900,
     "confirmationIdHmacKey" : "&{am.selfservice.legacy.confirmation.email.link.signing.key}",
     "selfServiceEnabled" : false,

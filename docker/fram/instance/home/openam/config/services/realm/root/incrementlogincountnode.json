@@ -5,9 +5,14 @@
     "entityId" : "IncrementLoginCountNode",
     "uid" : "ou=IncrementLoginCountNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IncrementLoginCountNode" ]
+    "ou" : [
+      "IncrementLoginCountNode"
+    ]
   },
   "data" : {
     "_id" : "IncrementLoginCountNode",

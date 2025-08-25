@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthAuthenticatorPushRegistrationService",
     "uid" : "ou=iPlanetAMAuthAuthenticatorPushRegistrationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthAuthenticatorPushRegistrationService" ]
+    "ou" : [
+      "iPlanetAMAuthAuthenticatorPushRegistrationService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthAuthenticatorPushRegistrationService",

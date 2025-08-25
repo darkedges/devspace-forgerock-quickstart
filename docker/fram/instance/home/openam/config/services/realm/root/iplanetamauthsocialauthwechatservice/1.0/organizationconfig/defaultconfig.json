@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -17,12 +23,21 @@
       "collection" : false
     },
     "accountProvisioning" : {
-      "accountMapperConfiguration" : [ "openid=uid" ],
+      "accountMapperConfiguration" : [
+        "openid=uid"
+      ],
       "saveAttributesInSession" : true,
       "anonymousUserName" : "anonymous",
       "enableRegistrationService" : false,
-      "attributeMapperConfiguration" : [ "nickname=givenName", "openid=uid", "nickname=cn", "nickname=sn" ],
-      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|wechat-" ],
+      "attributeMapperConfiguration" : [
+        "nickname=givenName",
+        "openid=uid",
+        "nickname=cn",
+        "nickname=sn"
+      ],
+      "attributeMappingClasses" : [
+        "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|wechat-"
+      ],
       "promptPasswordFlag" : false,
       "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
       "mapToAnonymousUser" : false,
@@ -30,7 +45,9 @@
       "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|wechat-"
     },
     "core" : {
-      "scope" : [ "snsapi_login" ],
+      "scope" : [
+        "snsapi_login"
+      ],
       "subjectProperty" : "openid",
       "clientId" : null,
       "clientSecret" : null,

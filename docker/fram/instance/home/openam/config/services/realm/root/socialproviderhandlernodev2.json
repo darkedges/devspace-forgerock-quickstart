@@ -5,9 +5,14 @@
     "entityId" : "SocialProviderHandlerNodeV2",
     "uid" : "ou=SocialProviderHandlerNodeV2,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SocialProviderHandlerNodeV2" ]
+    "ou" : [
+      "SocialProviderHandlerNodeV2"
+    ]
   },
   "data" : {
     "_id" : "SocialProviderHandlerNodeV2",

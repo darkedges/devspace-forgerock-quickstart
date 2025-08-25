@@ -50,6 +50,7 @@ CMD="${1:-run}"
 
 case "$CMD" in
 start)
+    upgrade
     start
     ;;
 stop)
@@ -60,6 +61,7 @@ init_deploymentkey)
     ;;
 init_start)
     init
+    upgrade
     start
     ;;
 upgrade)

@@ -5,9 +5,14 @@
     "entityId" : "DeviceProfileCollectorNode",
     "uid" : "ou=DeviceProfileCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceProfileCollectorNode" ]
+    "ou" : [
+      "DeviceProfileCollectorNode"
+    ]
   },
   "data" : {
     "_id" : "DeviceProfileCollectorNode",

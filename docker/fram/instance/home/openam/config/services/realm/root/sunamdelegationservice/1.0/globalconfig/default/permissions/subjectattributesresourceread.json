@@ -5,9 +5,14 @@
     "entityId" : "default/Permissions/SubjectAttributesResourceRead",
     "uid" : "ou=SubjectAttributesResourceRead,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SubjectAttributesResourceRead" ]
+    "ou" : [
+      "SubjectAttributesResourceRead"
+    ]
   },
   "data" : {
     "_id" : "default/Permissions/SubjectAttributesResourceRead",
@@ -16,7 +21,11 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "actions" : [ "READ" ],
-    "resource" : [ "ou=am-config/rest/1.0/subjectattributes/read" ]
+    "actions" : [
+      "READ"
+    ],
+    "resource" : [
+      "ou=am-config/rest/1.0/subjectattributes/read"
+    ]
   }
 }

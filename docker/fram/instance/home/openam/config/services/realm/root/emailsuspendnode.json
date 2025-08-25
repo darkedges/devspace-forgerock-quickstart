@@ -5,9 +5,14 @@
     "entityId" : "EmailSuspendNode",
     "uid" : "ou=EmailSuspendNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "EmailSuspendNode" ]
+    "ou" : [
+      "EmailSuspendNode"
+    ]
   },
   "data" : {
     "_id" : "EmailSuspendNode",

@@ -5,9 +5,14 @@
     "entityId" : "product-PingOneProtectEvaluationNode",
     "uid" : "ou=product-PingOneProtectEvaluationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-PingOneProtectEvaluationNode" ]
+    "ou" : [
+      "product-PingOneProtectEvaluationNode"
+    ]
   },
   "data" : {
     "_id" : "product-PingOneProtectEvaluationNode",

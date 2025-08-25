@@ -5,9 +5,14 @@
     "entityId" : "PushWaitNode",
     "uid" : "ou=PushWaitNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PushWaitNode" ]
+    "ou" : [
+      "PushWaitNode"
+    ]
   },
   "data" : {
     "_id" : "PushWaitNode",

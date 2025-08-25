@@ -1,43 +1,43 @@
 {
-  "metadata": {
-    "realm": null,
-    "entityType": "IdmIntegrationService",
-    "entityId": "default",
-    "uid": "ou=default,ou=GlobalConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
-    "sunServiceID": null,
-    "objectClass": [
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "IdmIntegrationService",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=IdmIntegrationService,ou=services,ou=am-config",
+    "sunServiceID" : null,
+    "objectClass" : [
       "organizationalunit",
       "sunServiceComponent",
       "top"
     ],
-    "pathParams": {},
-    "ou": [
+    "pathParams" : { },
+    "ou" : [
       "default"
     ]
   },
-  "data": {
-    "_id": "default",
-    "_type": {
-      "_id": "IdmIntegrationService",
-      "name": "IdmIntegrationService",
-      "collection": false
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "IdmIntegrationService",
+      "name" : "IdmIntegrationService",
+      "collection" : false
     },
-    "provisioningClientScopes": [
+    "provisioningClientScopes" : [
       "fr:idm:*"
     ],
-    "idmProvisioningClient": "idm-provisioning",
-    "provisioningEncryptionMethod": null,
-    "provisioningEncryptionAlgorithm": null,
-    "useInternalOAuth2Provider": false,
-    "jwtSigningCompatibilityMode": false,
-    "provisioningEncryptionKeyAlias": null,
-    "enabled": true,
-    "idmDeploymentPath": "openidm",
-    "provisioningSigningAlgorithm": null,
-    "idmDeploymentUrl": "&{platform.idm.internal.url|http://dfq-idm:8080}",
-    "PositiveIntegerValidator": "com.sun.identity.shared.validation.PositiveIntegerValidator",
-    "provisioningSigningKeyAlias": null,
-    "configurationCacheDuration": 0,
-    "RequiredValueValidator": "com.sun.identity.sm.RequiredValueValidator"
+    "idmProvisioningClient" : "idm-provisioning",
+    "provisioningEncryptionMethod" : null,
+    "provisioningEncryptionAlgorithm" : null,
+    "useInternalOAuth2Provider" : false,
+    "jwtSigningCompatibilityMode" : false,
+    "provisioningEncryptionKeyAlias" : null,
+    "enabled" : true,
+    "idmDeploymentPath" : "openidm",
+    "provisioningSigningAlgorithm" : null,
+    "idmDeploymentUrl" : "&{platform.idm.internal.url|http://dfq-idm:8080}",
+    "PositiveIntegerValidator" : "com.sun.identity.shared.validation.PositiveIntegerValidator",
+    "provisioningSigningKeyAlias" : null,
+    "configurationCacheDuration" : 0,
+    "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator"
   }
 }

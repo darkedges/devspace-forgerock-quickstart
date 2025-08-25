@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthOAuth2Service,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -17,12 +23,18 @@
       "collection" : false
     },
     "accountProvisioning" : {
-      "accountMapperConfiguration" : [ ],
+      "accountMapperConfiguration" : [
+        
+      ],
       "saveAttributesInSession" : true,
       "anonymousUserName" : "anonymous",
       "enableRegistrationService" : false,
-      "attributeMapperConfiguration" : [ ],
-      "attributeMappingClasses" : [ ],
+      "attributeMapperConfiguration" : [
+        
+      ],
+      "attributeMappingClasses" : [
+        
+      ],
       "promptPasswordFlag" : false,
       "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
       "mapToAnonymousUser" : false,
@@ -30,7 +42,9 @@
       "accountMapperClass" : null
     },
     "core" : {
-      "scope" : [ ],
+      "scope" : [
+        
+      ],
       "subjectProperty" : null,
       "clientId" : null,
       "authenticationLevel" : 0,

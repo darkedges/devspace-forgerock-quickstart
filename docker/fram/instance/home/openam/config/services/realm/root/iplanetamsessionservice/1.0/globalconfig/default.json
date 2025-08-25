@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -37,19 +43,25 @@
     },
     "general" : {
       "latestAccessTimeUpdateFrequency" : 60,
-      "timeoutHandlers" : [ ],
+      "timeoutHandlers" : [
+        
+      ],
       "dnRestrictionOnly" : false,
       "crossUpgradeReferenceFlag" : false
     },
     "notifications" : {
-      "notificationPropertyList" : [ ],
+      "notificationPropertyList" : [
+        
+      ],
       "propertyChangeNotifications" : "OFF"
     },
     "search" : {
       "sessionListRetrievalTimeout" : 5,
       "maxSessionListSize" : 120
     },
-    "serviceObjectClasses" : [ "iplanet-am-session-service" ],
+    "serviceObjectClasses" : [
+      "iplanet-am-session-service"
+    ],
     "StatelessSessionSigningValidator" : "org.forgerock.openam.sm.validation.StatelessSessionSigningAlgorithmValidator",
     "Base64Validator" : "org.forgerock.openam.sm.validation.Base64EncodedBinaryValidator"
   }

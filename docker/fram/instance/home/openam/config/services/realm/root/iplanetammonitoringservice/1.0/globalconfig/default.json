@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -21,7 +27,9 @@
     "rmiEnabled" : false,
     "httpPort" : 8082,
     "sessionHistoryWindowSize" : 10000,
-    "serviceObjectClasses" : [ "iplanet-am-monitoring-service" ],
+    "serviceObjectClasses" : [
+      "iplanet-am-monitoring-service"
+    ],
     "policyHistoryWindowSize" : 10000,
     "snmpPort" : 8085,
     "httpEnabled" : false,

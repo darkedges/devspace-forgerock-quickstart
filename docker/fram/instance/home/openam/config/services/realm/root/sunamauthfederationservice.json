@@ -5,9 +5,14 @@
     "entityId" : "sunAMAuthFederationService",
     "uid" : "ou=sunAMAuthFederationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunAMAuthFederationService" ]
+    "ou" : [
+      "sunAMAuthFederationService"
+    ]
   },
   "data" : {
     "_id" : "sunAMAuthFederationService",

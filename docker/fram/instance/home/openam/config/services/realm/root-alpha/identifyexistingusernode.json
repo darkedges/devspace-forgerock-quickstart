@@ -5,9 +5,14 @@
     "entityId" : "IdentifyExistingUserNode",
     "uid" : "ou=IdentifyExistingUserNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IdentifyExistingUserNode" ]
+    "ou" : [
+      "IdentifyExistingUserNode"
+    ]
   },
   "data" : {
     "_id" : "IdentifyExistingUserNode",

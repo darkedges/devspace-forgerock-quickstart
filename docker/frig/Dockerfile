@@ -1,6 +1,6 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=17.0.12_7-jre-alpine
-ARG IG_TAG=2024.6.0
+ARG JRE_TAG=21.0.8_9-jre-alpine
+ARG IG_TAG=2025.3.0
 ARG ALPINE_TAG=3.19
 
 FROM gcr.io/forgerock-io/ig:${IG_TAG} AS igbase

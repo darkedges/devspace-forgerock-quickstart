@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthSocialAuthOpenIDService",
     "uid" : "ou=iPlanetAMAuthSocialAuthOpenIDService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthSocialAuthOpenIDService" ]
+    "ou" : [
+      "iPlanetAMAuthSocialAuthOpenIDService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthSocialAuthOpenIDService",

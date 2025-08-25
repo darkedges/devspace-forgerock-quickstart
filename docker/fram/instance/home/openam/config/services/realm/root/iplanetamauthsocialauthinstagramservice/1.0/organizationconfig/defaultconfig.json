@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthSocialAuthInstagramService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -17,19 +23,30 @@
       "collection" : false
     },
     "accountProvisioning" : {
-      "accountMapperConfiguration" : [ "id=uid" ],
+      "accountMapperConfiguration" : [
+        "id=uid"
+      ],
       "saveAttributesInSession" : true,
       "anonymousUserName" : "anonymous",
       "enableRegistrationService" : false,
-      "attributeMapperConfiguration" : [ "full_name=sn", "username=givenName", "username=cn", "id=uid" ],
-      "attributeMappingClasses" : [ "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|instagram-" ],
+      "attributeMapperConfiguration" : [
+        "full_name=sn",
+        "username=givenName",
+        "username=cn",
+        "id=uid"
+      ],
+      "attributeMappingClasses" : [
+        "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|uid|instagram-"
+      ],
       "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
       "mapToAnonymousUser" : false,
       "createAccount" : true,
       "accountMapperClass" : "org.forgerock.openam.authentication.modules.common.mapping.JsonAttributeMapper|*|instagram-"
     },
     "core" : {
-      "scope" : [ "basic" ],
+      "scope" : [
+        "basic"
+      ],
       "subjectProperty" : "id",
       "clientId" : null,
       "authenticationLevel" : 0,

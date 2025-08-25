@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthDeviceIdSaveService",
     "uid" : "ou=iPlanetAMAuthDeviceIdSaveService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthDeviceIdSaveService" ]
+    "ou" : [
+      "iPlanetAMAuthDeviceIdSaveService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthDeviceIdSaveService",

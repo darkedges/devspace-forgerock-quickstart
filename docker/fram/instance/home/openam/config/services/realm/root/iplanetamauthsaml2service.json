@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthSAML2Service",
     "uid" : "ou=iPlanetAMAuthSAML2Service,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthSAML2Service" ]
+    "ou" : [
+      "iPlanetAMAuthSAML2Service"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthSAML2Service",

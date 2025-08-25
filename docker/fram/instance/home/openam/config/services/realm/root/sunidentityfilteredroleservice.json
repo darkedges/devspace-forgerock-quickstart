@@ -5,9 +5,14 @@
     "entityId" : "sunIdentityFilteredRoleService",
     "uid" : "ou=sunIdentityFilteredRoleService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunIdentityFilteredRoleService" ]
+    "ou" : [
+      "sunIdentityFilteredRoleService"
+    ]
   },
   "data" : {
     "_id" : "sunIdentityFilteredRoleService",

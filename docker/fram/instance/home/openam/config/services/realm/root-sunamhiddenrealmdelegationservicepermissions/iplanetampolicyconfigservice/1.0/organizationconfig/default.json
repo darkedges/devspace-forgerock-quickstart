@@ -1,25 +1,34 @@
 {
-  "metadata" : {
-    "realm" : "/sunamhiddenrealmdelegationservicepermissions",
-    "entityType" : "iPlanetAMPolicyConfigService",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "default" ]
-  },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "iPlanetAMPolicyConfigService",
-      "name" : "iPlanetAMPolicyConfigService",
-      "collection" : false
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "iPlanetAMPolicyConfigService",
+      "collection": false,
+      "name": "iPlanetAMPolicyConfigService"
     },
-    "bindDn" : "&{am.stores.policy.username}",
-    "bindPassword" : "&{am.stores.policy.password}",
-    "sslEnabled" : {
-      "$bool" : "&{am.stores.policy.ssl.enabled}"
+    "bindDn": {
+      "$string": "&{am.stores.policy.username|uid=am-config,ou=admins,ou=am-config}"
+    },
+    "bindPassword": {
+      "$string": "&{am.stores.policy.password|&{am.stores.application.password}}"
+    },
+    "sslEnabled": {
+      "$bool": "&{am.stores.policy.ssl.enabled|&{am.stores.application.ssl.enabled|true}}"
     }
+  },
+  "metadata": {
+    "entityId": "default",
+    "entityType": "iPlanetAMPolicyConfigService",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [
+      "default"
+    ],
+    "pathParams": {},
+    "realm": "/sunamhiddenrealmdelegationservicepermissions",
+    "sunServiceID": null,
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config"
   }
 }

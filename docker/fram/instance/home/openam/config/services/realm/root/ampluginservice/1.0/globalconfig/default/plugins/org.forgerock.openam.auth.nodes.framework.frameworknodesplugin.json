@@ -5,9 +5,14 @@
     "entityId" : "default/plugins/org.forgerock.openam.auth.nodes.framework.FrameworkNodesPlugin",
     "uid" : "ou=org.forgerock.openam.auth.nodes.framework.FrameworkNodesPlugin,ou=plugins,ou=default,ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID" : "plugin",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "org.forgerock.openam.auth.nodes.framework.FrameworkNodesPlugin" ]
+    "ou" : [
+      "org.forgerock.openam.auth.nodes.framework.FrameworkNodesPlugin"
+    ]
   },
   "data" : {
     "_id" : "default/plugins/org.forgerock.openam.auth.nodes.framework.FrameworkNodesPlugin",

@@ -5,9 +5,14 @@
     "entityId" : "ProfileCompletenessDecisionNode",
     "uid" : "ou=ProfileCompletenessDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ProfileCompletenessDecisionNode" ]
+    "ou" : [
+      "ProfileCompletenessDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "ProfileCompletenessDecisionNode",

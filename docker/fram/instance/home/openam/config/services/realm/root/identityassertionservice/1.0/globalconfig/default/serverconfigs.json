@@ -5,9 +5,14 @@
     "entityId" : "default/serverConfigs",
     "uid" : "ou=serverConfigs,ou=default,ou=GlobalConfig,ou=1.0,ou=IdentityAssertionService,ou=services,ou=am-config",
     "sunServiceID" : "serverConfigs",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "serverConfigs" ]
+    "ou" : [
+      "serverConfigs"
+    ]
   },
   "data" : {
     "_id" : "default/serverConfigs",

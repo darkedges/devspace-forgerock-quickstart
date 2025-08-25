@@ -1,5 +1,5 @@
 myAM=System.getenv("AMSTER_URL")
-framHome=System.getenv("FRAM_HOME")+"/security/keys/amster/amster_rsa"
+framHome=System.getenv("AM_HOME")+"/security/keys/amster/amster_rsa"
 connect --private-key framHome myAM
 import-config --path /opt/amster/config/config --failOnError true
 :exit

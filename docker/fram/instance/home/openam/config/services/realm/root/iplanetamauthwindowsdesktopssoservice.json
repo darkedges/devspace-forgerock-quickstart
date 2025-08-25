@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthWindowsDesktopSSOService",
     "uid" : "ou=iPlanetAMAuthWindowsDesktopSSOService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthWindowsDesktopSSOService" ]
+    "ou" : [
+      "iPlanetAMAuthWindowsDesktopSSOService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthWindowsDesktopSSOService",

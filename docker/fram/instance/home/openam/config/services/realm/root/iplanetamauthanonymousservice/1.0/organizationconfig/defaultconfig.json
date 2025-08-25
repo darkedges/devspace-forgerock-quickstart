@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAnonymousService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -16,7 +22,9 @@
       "name" : "iPlanetAMAuthAnonymousService",
       "collection" : false
     },
-    "validAnonymousUsers" : [ ],
+    "validAnonymousUsers" : [
+      
+    ],
     "defaultAnonymousUsername" : "anonymous",
     "authenticationLevel" : 0,
     "caseSensitiveUsernameMatchingEnabled" : false

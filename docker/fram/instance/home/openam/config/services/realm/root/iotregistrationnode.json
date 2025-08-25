@@ -5,9 +5,14 @@
     "entityId" : "IotRegistrationNode",
     "uid" : "ou=IotRegistrationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IotRegistrationNode" ]
+    "ou" : [
+      "IotRegistrationNode"
+    ]
   },
   "data" : {
     "_id" : "IotRegistrationNode",

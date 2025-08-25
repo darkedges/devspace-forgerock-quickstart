@@ -67,43 +67,43 @@ Further it is recommended to download the necessary artefacts for each product.
 
 | Product                     | Link                                                                                                                                                                                                                                                                                                                         | Artefact Location and Name                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| ForgeRock Identity Gateway  | [IG-7.5.0.zip](https://backstage.forgerock.com/downloads/get/familyId:ig/productId:ig/minorVersion:7.5/version:7.5.0/releaseType:full/distribution:zip)                                                                                                                                                                      | `docker/frig/IG-7.5.0.zip`                                    |
-| ForgeRock Identity Manager  | [IDM-7.5.0.zip](https://backstage.forgerock.com/downloads/get/familyId:idm/productId:idm/minorVersion:7.5/version:7.5.0/releaseType:full/distribution:zip)                                                                                                                                                                   | `docker/frim/IDM-7.5.0.zip`                                   |
-| ForgeRock Access Manager    | [AM-7.5.0.war](https://backstage.forgerock.com/downloads/get/familyId:am/productId:am/minorVersion:7.5/version:7.5.0/releaseType:full/distribution:war) <br/>[Amster-7.5.0.zip](https://backstage.forgerock.com/downloads/get/familyId:am/productId:amster/minorVersion:7.5/version:7.5.0/releaseType:full/distribution:zip) | `docker/fram/AM-7.5.0.war`<br/>`docker/fram/Amster-7.5.0.zip` |
-| ForgeRock Directory Service | [DS-7.5.0.zip](https://backstage.forgerock.com/downloads/get/familyId:ds/productId:ds/minorVersion:7.5/version:7.5.0/releaseType:full/distribution:zip)                                                                                                                                                                      | `docker/frds/DS-7.5.0.zip`                                    |
+| ForgeRock Identity Gateway  | [IG-8.0.0.zip](https://backstage.forgerock.com/downloads/get/familyId:ig/productId:ig/minorVersion:8.0/version:8.0.0/releaseType:full/distribution:zip)                                                                                                                                                                      | `docker/frig/IG-8.0.0.zip`                                    |
+| ForgeRock Identity Manager  | [IDM-8.0.0.zip](https://backstage.forgerock.com/downloads/get/familyId:idm/productId:idm/minorVersion:8.0/version:8.0.0/releaseType:full/distribution:zip)                                                                                                                                                                   | `docker/frim/IDM-8.0.0.zip`                                   |
+| ForgeRock Access Manager    | [AM-8.0.0.war](https://backstage.forgerock.com/downloads/get/familyId:am/productId:am/minorVersion:8.0/version:8.0.0/releaseType:full/distribution:war) <br/>[Amster-8.0.0.zip](https://backstage.forgerock.com/downloads/get/familyId:am/productId:amster/minorVersion:8.0/version:8.0.0/releaseType:full/distribution:zip) | `docker/fram/AM-8.0.0.war`<br/>`docker/fram/Amster-8.0.0.zip` |
+| ForgeRock Directory Service | [DS-8.0.0.zip](https://backstage.forgerock.com/downloads/get/familyId:ds/productId:ds/minorVersion:8.0/version:8.0.0/releaseType:full/distribution:zip)                                                                                                                                                                      | `docker/frds/DS-8.0.0.zip`                                    |
 
 ## FRAM
 
 ```console
-docker build . -t devspace-forgerock-quickstart/am:7.5.0-fbc
-docker run -it  --rm --name dfq-am --link dfq-ds --link dfq-im --publish 8081:8080  --env-file=.env devspace-forgerock-quickstart/am:7.5.0-fbc
+docker build . -t devspace-forgerock-quickstart/am:8.0.0-fbc
+docker run -it  --rm --name dfq-am --link dfq-ds --link dfq-im --publish 8081:8080  --env-file=.env devspace-forgerock-quickstart/am:8.0.0-fbc
 ```
 
 ## FRDS
 
 ```console
-docker build . -t devspace-forgerock-quickstart/frds:7.5.0-fbc
-docker run -it --rm -p 1389:1389 -p 1636:1636 --name dfq-ds devspace-forgerock-quickstart/frds:7.5.0-fbc init_start
+docker build . -t devspace-forgerock-quickstart/frds:8.0.0-fbc
+docker run -it --rm -p 1389:1389 -p 1636:1636 --name dfq-ds devspace-forgerock-quickstart/frds:8.0.0-fbc init_start
 ```
 
 ## FRIM
 
 ```console
-docker build . -t devspace-forgerock-quickstart/idm:7.5.0-fbc
-docker run -it  --rm --name dfq-im --link dfq-ds --link dfq-am --publish 8084:8080  devspace-forgerock-quickstart/idm:7.5.0-fbc
+docker build . -t devspace-forgerock-quickstart/idm:8.0.0-fbc
+docker run -it  --rm --name dfq-im --link dfq-ds --link dfq-am --publish 8084:8080  devspace-forgerock-quickstart/idm:8.0.0-fbc
 ```
 
 ## FRIG
 
 ```console
-docker build . -t devspace-forgerock-quickstart/ig:7.5.0-fbc
-docker run -it --rm --name dfq-ig --link dfq-am:dfq-am --publish 8082:8080  devspace-forgerock-quickstart/ig:7.5.0-fbc
+docker build . -t devspace-forgerock-quickstart/ig:8.0.0-fbc
+docker run -it --rm --name dfq-ig --link dfq-am:dfq-am --publish 8082:8080  devspace-forgerock-quickstart/ig:8.0.0-fbc
 ```
 
-docker run -it --rm --name dfq-ig --link dfq-am:dfq-am --publish 8082:8080  devspace-forgerock-quickstart/ig:7.5.0-fbc
-docker run -it  --rm --name dfq-am --link dfq-ds --link dfq-im --publish 8081:8080  --env-file=.env devspace-forgerock-quickstart/am:7.5.0-fbc
-docker run -it  --rm --name dfq-im --link dfq-ds --link dfq-am --publish 8084:8080  devspace-forgerock-quickstart/idm:7.5.0_fbc
-docker run -it --rm -p 1389:1389 -p 1636:1636 --name dfq-ds devspace-forgerock-quickstart/frds:7.5.0-fbc init_start
+docker run -it --rm --name dfq-ig --link dfq-am:dfq-am --publish 8082:8080  devspace-forgerock-quickstart/ig:8.0.0-fbc
+docker run -it  --rm --name dfq-am --link dfq-ds --link dfq-im --publish 8081:8080  --env-file=.env devspace-forgerock-quickstart/am:8.0.0-fbc
+docker run -it  --rm --name dfq-im --link dfq-ds --link dfq-am --publish 8084:8080  devspace-forgerock-quickstart/idm:8.0.0_fbc
+docker run -it --rm -p 1389:1389 -p 1636:1636 --name dfq-ds devspace-forgerock-quickstart/frds:8.0.0-fbc init_start
 
 ## Helm
 

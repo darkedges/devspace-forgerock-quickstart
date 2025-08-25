@@ -5,9 +5,14 @@
     "entityId" : "DeviceMatchNode",
     "uid" : "ou=DeviceMatchNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceMatchNode" ]
+    "ou" : [
+      "DeviceMatchNode"
+    ]
   },
   "data" : {
     "_id" : "DeviceMatchNode",

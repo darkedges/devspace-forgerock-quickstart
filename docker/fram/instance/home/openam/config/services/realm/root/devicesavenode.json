@@ -5,9 +5,14 @@
     "entityId" : "DeviceSaveNode",
     "uid" : "ou=DeviceSaveNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceSaveNode" ]
+    "ou" : [
+      "DeviceSaveNode"
+    ]
   },
   "data" : {
     "_id" : "DeviceSaveNode",

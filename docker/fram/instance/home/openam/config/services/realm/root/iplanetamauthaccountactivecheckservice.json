@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthAccountActiveCheckService",
     "uid" : "ou=iPlanetAMAuthAccountActiveCheckService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthAccountActiveCheckService" ]
+    "ou" : [
+      "iPlanetAMAuthAccountActiveCheckService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthAccountActiveCheckService",

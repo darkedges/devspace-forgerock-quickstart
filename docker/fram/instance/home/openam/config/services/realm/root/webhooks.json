@@ -5,9 +5,14 @@
     "entityId" : "webhooks",
     "uid" : "ou=webhooks,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "webhooks" ]
+    "ou" : [
+      "webhooks"
+    ]
   },
   "data" : {
     "_id" : "webhooks",

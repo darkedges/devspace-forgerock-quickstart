@@ -5,9 +5,14 @@
     "entityId" : "WebAuthnRegistrationNode",
     "uid" : "ou=WebAuthnRegistrationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "WebAuthnRegistrationNode" ]
+    "ou" : [
+      "WebAuthnRegistrationNode"
+    ]
   },
   "data" : {
     "_id" : "WebAuthnRegistrationNode",

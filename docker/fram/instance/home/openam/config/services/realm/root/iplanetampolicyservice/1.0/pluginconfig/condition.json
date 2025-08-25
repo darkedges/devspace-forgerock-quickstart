@@ -5,9 +5,14 @@
     "entityId" : "Condition",
     "uid" : "ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "Condition" ]
+    "ou" : [
+      "Condition"
+    ]
   },
   "data" : {
     "_id" : "Condition",

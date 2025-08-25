@@ -5,9 +5,14 @@
     "entityId" : "DeviceTamperingVerificationNode",
     "uid" : "ou=DeviceTamperingVerificationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceTamperingVerificationNode" ]
+    "ou" : [
+      "DeviceTamperingVerificationNode"
+    ]
   },
   "data" : {
     "_id" : "DeviceTamperingVerificationNode",

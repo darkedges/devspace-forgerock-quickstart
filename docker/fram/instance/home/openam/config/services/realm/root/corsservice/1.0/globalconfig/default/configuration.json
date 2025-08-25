@@ -5,9 +5,14 @@
     "entityId" : "default/configuration",
     "uid" : "ou=configuration,ou=default,ou=GlobalConfig,ou=1.0,ou=CorsService,ou=services,ou=am-config",
     "sunServiceID" : "configuration",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "configuration" ]
+    "ou" : [
+      "configuration"
+    ]
   },
   "data" : {
     "_id" : "default/configuration",

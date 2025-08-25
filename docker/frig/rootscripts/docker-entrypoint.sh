@@ -21,7 +21,7 @@ start() {
     if [[ "${CMD}" = "start" ]]; then
       CMD_RUN="exec tini -v -- "
     fi
-    ${CMD_RUN}${JAVA_HOME}/bin/java -classpath "classes:lib/*:${INSTANCE_DIR}/extra/*" ${JAVA_OPTS} org.forgerock.openig.launcher.Main ${INSTANCE_DIR}
+    ${CMD_RUN}${JAVA_HOME}/bin/java -classpath "classes:lib/*:${INSTANCE_DIR}/extra/*" ${JAVA_OPTS} org.forgerock.openig.standalone.Start ${INSTANCE_DIR}
 }
 
 stop() {

@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/DecisionCombinersReadAccess",
     "uid" : "ou=DecisionCombinersReadAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DecisionCombinersReadAccess" ]
+    "ou" : [
+      "DecisionCombinersReadAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/DecisionCombinersReadAccess",
@@ -16,6 +21,8 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "DecisionCombinersResourceRead" ]
+    "listOfPermissions" : [
+      "DecisionCombinersResourceRead"
+    ]
   }
 }

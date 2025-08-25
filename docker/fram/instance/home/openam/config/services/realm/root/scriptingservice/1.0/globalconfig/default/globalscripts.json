@@ -5,9 +5,14 @@
     "entityId" : "default/globalScripts",
     "uid" : "ou=globalScripts,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "globalScripts",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "globalScripts" ]
+    "ou" : [
+      "globalScripts"
+    ]
   },
   "data" : {
     "_id" : "default/globalScripts",

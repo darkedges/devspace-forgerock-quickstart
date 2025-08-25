@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMLoggingService",
     "uid" : "ou=iPlanetAMLoggingService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMLoggingService" ]
+    "ou" : [
+      "iPlanetAMLoggingService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMLoggingService",

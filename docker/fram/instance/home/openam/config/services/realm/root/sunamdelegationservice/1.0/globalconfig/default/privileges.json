@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges",
     "uid" : "ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "Privileges" ]
+    "ou" : [
+      "Privileges"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges",

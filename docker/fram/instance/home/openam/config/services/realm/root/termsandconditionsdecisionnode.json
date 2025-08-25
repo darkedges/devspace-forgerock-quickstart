@@ -5,9 +5,14 @@
     "entityId" : "TermsAndConditionsDecisionNode",
     "uid" : "ou=TermsAndConditionsDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "TermsAndConditionsDecisionNode" ]
+    "ou" : [
+      "TermsAndConditionsDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "TermsAndConditionsDecisionNode",

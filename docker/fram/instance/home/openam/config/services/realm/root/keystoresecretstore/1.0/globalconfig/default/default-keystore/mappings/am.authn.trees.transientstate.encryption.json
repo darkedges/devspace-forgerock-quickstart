@@ -5,9 +5,14 @@
     "entityId" : "default/default-keystore/mappings/am.authn.trees.transientstate.encryption",
     "uid" : "ou=am.authn.trees.transientstate.encryption,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "am.authn.trees.transientstate.encryption" ]
+    "ou" : [
+      "am.authn.trees.transientstate.encryption"
+    ]
   },
   "data" : {
     "_id" : "default/default-keystore/mappings/am.authn.trees.transientstate.encryption",
@@ -17,6 +22,8 @@
       "collection" : false
     },
     "secretId" : "am.authn.trees.transientstate.encryption",
-    "aliases" : [ "directenctest" ]
+    "aliases" : [
+      "directenctest"
+    ]
   }
 }

@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/LogRead",
     "uid" : "ou=LogRead,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "LogRead" ]
+    "ou" : [
+      "LogRead"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/LogRead",
@@ -16,6 +21,8 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "LogRead" ]
+    "listOfPermissions" : [
+      "LogRead"
+    ]
   }
 }

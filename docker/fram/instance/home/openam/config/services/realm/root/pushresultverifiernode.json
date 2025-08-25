@@ -5,9 +5,14 @@
     "entityId" : "PushResultVerifierNode",
     "uid" : "ou=PushResultVerifierNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PushResultVerifierNode" ]
+    "ou" : [
+      "PushResultVerifierNode"
+    ]
   },
   "data" : {
     "_id" : "PushResultVerifierNode",

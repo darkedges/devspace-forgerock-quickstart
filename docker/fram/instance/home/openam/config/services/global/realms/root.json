@@ -1,26 +1,30 @@
 {
-  "metadata" : {
-    "realm" : "/",
-    "entityType" : "",
-    "entityId" : "Lw",
-    "uid" : "ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ ]
-  },
-  "data" : {
-    "_id" : "root",
-    "_type" : {
-      "_id" : "",
-      "name" : "",
-      "collection" : false
+  "data": {
+    "_id": "root",
+    "_type": {
+      "_id": "",
+      "collection": false,
+      "name": ""
     },
-    "parentPath" : "",
-    "active" : true,
-    "name" : "/",
-    "aliases" : {
-      "$list" : "&{am.server.hostnames|&{am.server.fqdn},am,am-config}"
-    }
+    "active": true,
+    "aliases": {
+      "$list": "&{am.server.hostnames|&{am.server.fqdn},am,am-config}"
+    },
+    "name": "/",
+    "parentPath": ""
+  },
+  "metadata": {
+    "entityId": "Lw",
+    "entityType": "",
+    "objectClass": [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
+    "ou": [],
+    "pathParams": {},
+    "realm": "/",
+    "sunServiceID": null,
+    "uid": "ou=services,ou=am-config"
   }
 }

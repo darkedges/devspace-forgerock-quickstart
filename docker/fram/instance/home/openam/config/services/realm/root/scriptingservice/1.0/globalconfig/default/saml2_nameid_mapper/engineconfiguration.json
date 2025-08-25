@@ -1,0 +1,25 @@
+{
+  "data": {
+    "_id": "default/SAML2_NAMEID_MAPPER/engineConfiguration",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    }
+  },
+  "metadata": {
+    "entityId": "default/SAML2_NAMEID_MAPPER/engineConfiguration",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "ou": [
+      "engineConfiguration"
+    ],
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "engineConfiguration",
+    "uid": "ou=engineConfiguration,ou=SAML2_NAMEID_MAPPER,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config"
+  }
+}

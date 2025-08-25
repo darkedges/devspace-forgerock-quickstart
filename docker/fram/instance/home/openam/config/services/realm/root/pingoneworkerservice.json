@@ -5,9 +5,14 @@
     "entityId" : "PingOneWorkerService",
     "uid" : "ou=PingOneWorkerService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PingOneWorkerService" ]
+    "ou" : [
+      "PingOneWorkerService"
+    ]
   },
   "data" : {
     "_id" : "PingOneWorkerService",

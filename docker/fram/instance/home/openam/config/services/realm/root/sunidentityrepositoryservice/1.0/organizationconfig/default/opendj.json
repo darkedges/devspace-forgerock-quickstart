@@ -5,9 +5,14 @@
     "entityId" : "default/OpenDJ",
     "uid" : "ou=OpenDJ,ou=default,ou=OrganizationConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "&{am.stores.user.type}",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "OpenDJ" ]
+    "ou" : [
+      "OpenDJ"
+    ]
   },
   "data" : {
     "_id" : "default/OpenDJ",

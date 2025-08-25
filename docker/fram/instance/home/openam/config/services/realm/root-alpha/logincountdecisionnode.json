@@ -5,9 +5,14 @@
     "entityId" : "LoginCountDecisionNode",
     "uid" : "ou=LoginCountDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "LoginCountDecisionNode" ]
+    "ou" : [
+      "LoginCountDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "LoginCountDecisionNode",

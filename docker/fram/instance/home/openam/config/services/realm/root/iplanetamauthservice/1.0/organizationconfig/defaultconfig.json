@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -19,20 +25,32 @@
     "postauthprocess" : {
       "usernameGeneratorClass" : "com.sun.identity.authentication.spi.DefaultUserIDGenerator",
       "usernameGeneratorEnabled" : true,
-      "loginPostProcessClass" : [ ],
-      "loginSuccessUrl" : [ "/am/console" ],
-      "userAttributeSessionMapping" : [ ],
-      "loginFailureUrl" : [ ]
+      "loginPostProcessClass" : [
+        
+      ],
+      "loginSuccessUrl" : [
+        "/am/console"
+      ],
+      "userAttributeSessionMapping" : [
+        
+      ],
+      "loginFailureUrl" : [
+        
+      ]
     },
     "security" : {
       "zeroPageLoginEnabled" : false,
-      "zeroPageLoginReferrerWhiteList" : [ ],
+      "zeroPageLoginReferrerWhiteList" : [
+        
+      ],
       "zeroPageLoginAllowedWithoutReferrer" : true,
       "moduleBasedAuthEnabled" : true,
       "sharedSecret" : "&{am.authentication.shared.secret}",
       "addClearSiteDataHeader" : true,
       "keyAlias" : null,
-      "iplanet-am-auth-valid-goto-domains" : [ ]
+      "iplanet-am-auth-valid-goto-domains" : [
+        
+      ]
     },
     "trees" : {
       "suspendedAuthenticationTimeout" : 5,
@@ -55,12 +73,17 @@
       "lockoutEmailAddress" : null
     },
     "general" : {
-      "userStatusCallbackPlugins" : [ ],
+      "userStatusCallbackPlugins" : [
+        
+      ],
       "statelessSessionsEnabled" : false,
       "locale" : "en_US",
       "externalLoginPageUrl" : null,
       "twoFactorRequired" : false,
-      "identityType" : [ "user", "agent" ],
+      "identityType" : [
+        "user",
+        "agent"
+      ],
       "defaultAuthLevel" : 0
     },
     "core" : {
@@ -70,12 +93,20 @@
     "PositiveIntegerValidator" : "org.forgerock.openam.audit.validation.PositiveIntegerValidator",
     "userprofile" : {
       "dynamicProfileCreation" : "false",
-      "defaultRole" : [ ],
-      "aliasAttributeName" : [ ]
+      "defaultRole" : [
+        
+      ],
+      "aliasAttributeName" : [
+        
+      ]
     },
-    "iplanet-am-auth-user-container" : [ "ou=People" ],
+    "iplanet-am-auth-user-container" : [
+      "ou=People"
+    ],
     "Base64Validator" : "org.forgerock.openam.sm.validation.Base64EncodedBinaryValidator",
     "iplanet-am-auth-user-naming-attr" : "uid",
-    "iplanet-am-auth-allowed-modules" : [ ]
+    "iplanet-am-auth-allowed-modules" : [
+      
+    ]
   }
 }

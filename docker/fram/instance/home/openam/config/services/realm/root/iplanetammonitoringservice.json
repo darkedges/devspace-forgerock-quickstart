@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMMonitoringService",
     "uid" : "ou=iPlanetAMMonitoringService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMMonitoringService" ]
+    "ou" : [
+      "iPlanetAMMonitoringService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMMonitoringService",

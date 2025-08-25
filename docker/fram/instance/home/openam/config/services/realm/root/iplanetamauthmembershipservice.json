@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthMembershipService",
     "uid" : "ou=iPlanetAMAuthMembershipService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthMembershipService" ]
+    "ou" : [
+      "iPlanetAMAuthMembershipService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthMembershipService",

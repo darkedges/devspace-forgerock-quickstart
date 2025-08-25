@@ -5,9 +5,14 @@
     "entityId" : "authenticationTreesService",
     "uid" : "ou=authenticationTreesService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "authenticationTreesService" ]
+    "ou" : [
+      "authenticationTreesService"
+    ]
   },
   "data" : {
     "_id" : "authenticationTreesService",

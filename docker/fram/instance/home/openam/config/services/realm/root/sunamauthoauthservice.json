@@ -5,9 +5,14 @@
     "entityId" : "sunAMAuthOAuthService",
     "uid" : "ou=sunAMAuthOAuthService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunAMAuthOAuthService" ]
+    "ou" : [
+      "sunAMAuthOAuthService"
+    ]
   },
   "data" : {
     "_id" : "sunAMAuthOAuthService",

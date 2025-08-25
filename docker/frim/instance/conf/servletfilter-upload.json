@@ -1,8 +1,4 @@
 {
-    "classPathURLs" : [ ],
-    "systemProperties" : { },
-    "requestAttributes" : { },
-    "scriptExtensions" : { },
     "initParams" : {
         "maxRequestSizeInMegabytes" : 50
     },

@@ -5,9 +5,14 @@
     "entityId" : "AuthLevelDecisionNode",
     "uid" : "ou=AuthLevelDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AuthLevelDecisionNode" ]
+    "ou" : [
+      "AuthLevelDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "AuthLevelDecisionNode",

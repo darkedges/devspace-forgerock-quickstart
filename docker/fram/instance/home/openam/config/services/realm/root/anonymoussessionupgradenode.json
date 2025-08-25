@@ -5,9 +5,14 @@
     "entityId" : "AnonymousSessionUpgradeNode",
     "uid" : "ou=AnonymousSessionUpgradeNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AnonymousSessionUpgradeNode" ]
+    "ou" : [
+      "AnonymousSessionUpgradeNode"
+    ]
   },
   "data" : {
     "_id" : "AnonymousSessionUpgradeNode",

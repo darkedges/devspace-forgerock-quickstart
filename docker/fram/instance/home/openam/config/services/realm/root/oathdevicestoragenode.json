@@ -5,9 +5,14 @@
     "entityId" : "OathDeviceStorageNode",
     "uid" : "ou=OathDeviceStorageNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "OathDeviceStorageNode" ]
+    "ou" : [
+      "OathDeviceStorageNode"
+    ]
   },
   "data" : {
     "_id" : "OathDeviceStorageNode",

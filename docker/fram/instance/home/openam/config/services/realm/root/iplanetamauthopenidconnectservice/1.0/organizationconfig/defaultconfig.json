@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOpenIdConnectService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -16,7 +22,10 @@
       "name" : "iPlanetAMAuthOpenIdConnectService",
       "collection" : false
     },
-    "jwtToLdapAttributeMappings" : [ "email=mail", "sub=uid" ],
+    "jwtToLdapAttributeMappings" : [
+      "email=mail",
+      "sub=uid"
+    ],
     "useSubClaimIfNoMatch" : false,
     "cryptoContextType" : ".well-known/openid-configuration_url",
     "idTokenIssuer" : "accounts.google.com",
@@ -24,7 +33,10 @@
     "idTokenHeaderName" : "oidc_id_token",
     "clientSecret" : null,
     "audienceName" : "example",
-    "acceptedAuthorizedParties" : [ "http://www.example.com/authorized/party", "AuthorizedPartyExample" ],
+    "acceptedAuthorizedParties" : [
+      "http://www.example.com/authorized/party",
+      "AuthorizedPartyExample"
+    ],
     "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",
     "accountProviderClass" : "org.forgerock.openam.authentication.modules.common.mapping.DefaultAccountProvider",
     "principalMapperClass" : "org.forgerock.openam.authentication.modules.oidc.JwtAttributeMapper"

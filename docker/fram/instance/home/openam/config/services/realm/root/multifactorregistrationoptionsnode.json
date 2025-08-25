@@ -5,9 +5,14 @@
     "entityId" : "MultiFactorRegistrationOptionsNode",
     "uid" : "ou=MultiFactorRegistrationOptionsNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "MultiFactorRegistrationOptionsNode" ]
+    "ou" : [
+      "MultiFactorRegistrationOptionsNode"
+    ]
   },
   "data" : {
     "_id" : "MultiFactorRegistrationOptionsNode",

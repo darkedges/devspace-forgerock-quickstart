@@ -5,9 +5,14 @@
     "entityId" : "Subject/IdentityServerRoles",
     "uid" : "ou=IdentityServerRoles,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IdentityServerRoles" ]
+    "ou" : [
+      "IdentityServerRoles"
+    ]
   },
   "data" : {
     "_id" : "Subject/IdentityServerRoles",

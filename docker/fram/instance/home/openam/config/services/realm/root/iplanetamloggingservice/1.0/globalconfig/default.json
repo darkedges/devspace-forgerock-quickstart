@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMLoggingService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -18,7 +24,18 @@
     },
     "general" : {
       "filesPerKeystore" : 5,
-      "fields" : [ "ModuleName", "LoginID", "IPAddr", "NameID", "Domain", "LogLevel", "ContextID", "HostName", "LoggedBy", "MessageID" ],
+      "fields" : [
+        "ModuleName",
+        "LoginID",
+        "IPAddr",
+        "NameID",
+        "Domain",
+        "LogLevel",
+        "ContextID",
+        "HostName",
+        "LoggedBy",
+        "MessageID"
+      ],
       "bufferSize" : 25,
       "buffering" : "ON",
       "bufferTime" : 60,
@@ -66,7 +83,9 @@
       "facility" : "local5"
     },
     "iplanet-am-logging-remote-formatter" : "com.sun.identity.log.handlers.RemoteFormatter",
-    "iplanet-am-logging-log-list" : [ ],
+    "iplanet-am-logging-log-list" : [
+      
+    ],
     "iplanet-am-logging-secure-timestamp-generator" : "com.sun.identity.log.spi.SecureTimestampGenerator",
     "iplanet-am-logging-syslog-handler" : "org.forgerock.openam.log.handlers.syslog.SyslogHandler",
     "iplanet-am-logging-db-formatter" : "com.sun.identity.log.handlers.DBFormatter",
@@ -76,9 +95,22 @@
     "iplanet-am-logging-syslog-formatter" : "org.forgerock.openam.log.handlers.syslog.SyslogFormatter",
     "sun-am-logging-db-read-handler" : "com.sun.identity.log.handlers.LogReadDBHandler",
     "iplanet-am-logging-debug-class" : "com.sun.identity.log.spi.ISDebug",
-    "serviceObjectClasses" : [ "iplanet-am-logging-service" ],
+    "serviceObjectClasses" : [
+      "iplanet-am-logging-service"
+    ],
     "iplanet-am-logging-remote-handler" : "com.sun.identity.log.handlers.RemoteHandler",
-    "iplanet-am-logging-allfields" : [ "LoggedBy", "MessageID", "HostName", "LoginID", "LogLevel", "ModuleName", "IPAddr", "NameID", "Domain", "ContextID" ],
+    "iplanet-am-logging-allfields" : [
+      "LoggedBy",
+      "MessageID",
+      "HostName",
+      "LoginID",
+      "LogLevel",
+      "ModuleName",
+      "IPAddr",
+      "NameID",
+      "Domain",
+      "ContextID"
+    ],
     "iplanet-am-logging-security-module-name" : "secmod.db",
     "sun-am-logging-mysqldbdata-fieldtype" : "LONGTEXT",
     "resolveHostName" : false

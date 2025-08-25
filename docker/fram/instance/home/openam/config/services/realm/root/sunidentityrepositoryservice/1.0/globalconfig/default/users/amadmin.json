@@ -5,9 +5,14 @@
     "entityId" : "default/users/amAdmin",
     "uid" : "ou=amAdmin,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "user",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "amAdmin" ]
+    "ou" : [
+      "amAdmin"
+    ]
   },
   "data" : {
     "_id" : "default/users/amAdmin",

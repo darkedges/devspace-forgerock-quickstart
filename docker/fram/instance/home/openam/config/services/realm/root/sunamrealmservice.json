@@ -5,9 +5,14 @@
     "entityId" : "sunAMRealmService",
     "uid" : "ou=sunAMRealmService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunAMRealmService" ]
+    "ou" : [
+      "sunAMRealmService"
+    ]
   },
   "data" : {
     "_id" : "sunAMRealmService",

@@ -5,9 +5,14 @@
     "entityId" : "agentgroup",
     "uid" : "ou=agentgroup,ou=Instances,ou=1.0,ou=AgentService,ou=services,ou=am-config",
     "sunServiceID" : "agentgroup",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "agentgroup" ]
+    "ou" : [
+      "agentgroup"
+    ]
   },
   "data" : {
     "_id" : "agentgroup",

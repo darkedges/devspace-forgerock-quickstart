@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthSocialAuthWeChatService",
     "uid" : "ou=iPlanetAMAuthSocialAuthWeChatService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthSocialAuthWeChatService" ]
+    "ou" : [
+      "iPlanetAMAuthSocialAuthWeChatService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthSocialAuthWeChatService",

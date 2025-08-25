@@ -5,9 +5,14 @@
     "entityId" : "sunIdentityServerSOAPBinding",
     "uid" : "ou=sunIdentityServerSOAPBinding,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunIdentityServerSOAPBinding" ]
+    "ou" : [
+      "sunIdentityServerSOAPBinding"
+    ]
   },
   "data" : {
     "_id" : "sunIdentityServerSOAPBinding",

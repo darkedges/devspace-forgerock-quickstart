@@ -5,9 +5,14 @@
     "entityId" : "IdentityAssertionDecisionNode",
     "uid" : "ou=IdentityAssertionDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IdentityAssertionDecisionNode" ]
+    "ou" : [
+      "IdentityAssertionDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "IdentityAssertionDecisionNode",

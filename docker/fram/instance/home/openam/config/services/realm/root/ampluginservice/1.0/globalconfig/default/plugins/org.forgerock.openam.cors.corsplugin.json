@@ -5,9 +5,14 @@
     "entityId" : "default/plugins/org.forgerock.openam.cors.CorsPlugin",
     "uid" : "ou=org.forgerock.openam.cors.CorsPlugin,ou=plugins,ou=default,ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID" : "plugin",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "org.forgerock.openam.cors.CorsPlugin" ]
+    "ou" : [
+      "org.forgerock.openam.cors.CorsPlugin"
+    ]
   },
   "data" : {
     "_id" : "default/plugins/org.forgerock.openam.cors.CorsPlugin",

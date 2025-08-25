@@ -5,9 +5,14 @@
     "entityId" : "sunAMAuthHOTPService",
     "uid" : "ou=sunAMAuthHOTPService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunAMAuthHOTPService" ]
+    "ou" : [
+      "sunAMAuthHOTPService"
+    ]
   },
   "data" : {
     "_id" : "sunAMAuthHOTPService",

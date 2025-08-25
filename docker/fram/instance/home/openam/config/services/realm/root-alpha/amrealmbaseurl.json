@@ -5,9 +5,14 @@
     "entityId" : "amRealmBaseURL",
     "uid" : "ou=amRealmBaseURL,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "amRealmBaseURL" ]
+    "ou" : [
+      "amRealmBaseURL"
+    ]
   },
   "data" : {
     "_id" : "amRealmBaseURL",

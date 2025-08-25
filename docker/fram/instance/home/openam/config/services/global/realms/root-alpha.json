@@ -5,9 +5,14 @@
     "entityId" : "L2FscGhh",
     "uid" : "o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunRealmService", "top" ],
+    "objectClass" : [
+      "sunRealmService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ ]
+    "ou" : [
+      
+    ]
   },
   "data" : {
     "_id" : "root-alpha",
@@ -19,6 +24,8 @@
     "parentPath" : "/",
     "active" : true,
     "name" : "alpha",
-    "aliases" : [ "" ]
+    "aliases" : [
+      ""
+    ]
   }
 }

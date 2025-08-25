@@ -5,9 +5,14 @@
     "entityId" : "SocialOAuthIgnoreProfileNode",
     "uid" : "ou=SocialOAuthIgnoreProfileNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SocialOAuthIgnoreProfileNode" ]
+    "ou" : [
+      "SocialOAuthIgnoreProfileNode"
+    ]
   },
   "data" : {
     "_id" : "SocialOAuthIgnoreProfileNode",

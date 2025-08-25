@@ -5,9 +5,14 @@
     "entityId" : "Subject/AMIdentitySubject",
     "uid" : "ou=AMIdentitySubject,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AMIdentitySubject" ]
+    "ou" : [
+      "AMIdentitySubject"
+    ]
   },
   "data" : {
     "_id" : "Subject/AMIdentitySubject",

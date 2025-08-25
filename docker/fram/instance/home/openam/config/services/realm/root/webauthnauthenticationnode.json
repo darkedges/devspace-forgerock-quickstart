@@ -5,9 +5,14 @@
     "entityId" : "WebAuthnAuthenticationNode",
     "uid" : "ou=WebAuthnAuthenticationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "WebAuthnAuthenticationNode" ]
+    "ou" : [
+      "WebAuthnAuthenticationNode"
+    ]
   },
   "data" : {
     "_id" : "WebAuthnAuthenticationNode",

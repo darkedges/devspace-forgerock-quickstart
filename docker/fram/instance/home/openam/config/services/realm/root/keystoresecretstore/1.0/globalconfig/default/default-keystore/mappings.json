@@ -5,9 +5,14 @@
     "entityId" : "default/default-keystore/mappings",
     "uid" : "ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
     "sunServiceID" : "mappings",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "mappings" ]
+    "ou" : [
+      "mappings"
+    ]
   },
   "data" : {
     "_id" : "default/default-keystore/mappings",

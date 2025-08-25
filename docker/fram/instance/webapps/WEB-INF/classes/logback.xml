@@ -1,25 +1,25 @@
-<!--
-  ~ Copyright 2019-2023 ForgeRock AS. All Rights Reserved
+<!-- ~ Copyright 2019-2025 Ping Identity Corporation. All Rights Reserved
   ~
-  ~ Use of this code requires a commercial software license with ForgeRock AS.
-  ~ or with one of its affiliates. All use shall be exclusively subject
-  ~ to such license between the licensee and ForgeRock AS.
-  -->
-
+ ! This code is to be used exclusively in connection with Ping Identity
+ ! Corporation software or services. Ping Identity Corporation only offers
+ ! such software or services to legal entities who have entered into a
+ ! binding license agreement with Ping Identity Corporation. -->
 <configuration>
-
-    <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="JSON"
+              class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="org.forgerock.openam.logback.JsonLayout">
+                <throwableProxyConverter class="org.forgerock.openam.logback.AmThrowableProxyConverter">
+                    <length>full</length>
+                </throwableProxyConverter>
                 <timestampFormat>yyyy-MM-dd'T'HH:mm:ss.SSSX</timestampFormat>
                 <timestampFormatTimezoneId>Etc/UTC</timestampFormatTimezoneId>
-                <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter"/>
+                <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter" />
                 <appendLineSeparator>true</appendLineSeparator>
             </layout>
         </encoder>
     </appender>
-
-    <root level="WARN">
+    <root level="INFO">
         <appender-ref ref="JSON" />
     </root>
 </configuration>

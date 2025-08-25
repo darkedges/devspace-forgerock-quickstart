@@ -5,9 +5,14 @@
     "entityId" : "ResponseProvider/IDRepoResponseProvider",
     "uid" : "ou=IDRepoResponseProvider,ou=ResponseProvider,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IDRepoResponseProvider" ]
+    "ou" : [
+      "IDRepoResponseProvider"
+    ]
   },
   "data" : {
     "_id" : "ResponseProvider/IDRepoResponseProvider",

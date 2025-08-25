@@ -5,9 +5,14 @@
     "entityId" : "socialAuthNService",
     "uid" : "ou=socialAuthNService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "socialAuthNService" ]
+    "ou" : [
+      "socialAuthNService"
+    ]
   },
   "data" : {
     "_id" : "socialAuthNService",

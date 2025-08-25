@@ -5,9 +5,14 @@
     "entityId" : "sunFMCOTConfigService",
     "uid" : "ou=sunFMCOTConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunFMCOTConfigService" ]
+    "ou" : [
+      "sunFMCOTConfigService"
+    ]
   },
   "data" : {
     "_id" : "sunFMCOTConfigService",

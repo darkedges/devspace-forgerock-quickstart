@@ -5,9 +5,14 @@
     "entityId" : "DeviceBinding",
     "uid" : "ou=DeviceBinding,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceBinding" ]
+    "ou" : [
+      "DeviceBinding"
+    ]
   },
   "data" : {
     "_id" : "DeviceBinding",

@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMSessionService",
     "uid" : "ou=iPlanetAMSessionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMSessionService" ]
+    "ou" : [
+      "iPlanetAMSessionService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMSessionService",

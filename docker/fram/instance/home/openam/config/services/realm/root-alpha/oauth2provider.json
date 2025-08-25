@@ -5,9 +5,14 @@
     "entityId" : "OAuth2Provider",
     "uid" : "ou=OAuth2Provider,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "OAuth2Provider" ]
+    "ou" : [
+      "OAuth2Provider"
+    ]
   },
   "data" : {
     "_id" : "OAuth2Provider",

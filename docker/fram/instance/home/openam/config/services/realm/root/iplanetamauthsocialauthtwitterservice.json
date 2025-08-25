@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthSocialAuthTwitterService",
     "uid" : "ou=iPlanetAMAuthSocialAuthTwitterService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthSocialAuthTwitterService" ]
+    "ou" : [
+      "iPlanetAMAuthSocialAuthTwitterService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthSocialAuthTwitterService",

@@ -5,9 +5,14 @@
     "entityId" : "QueryFilterDecisionNode",
     "uid" : "ou=QueryFilterDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "QueryFilterDecisionNode" ]
+    "ou" : [
+      "QueryFilterDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "QueryFilterDecisionNode",

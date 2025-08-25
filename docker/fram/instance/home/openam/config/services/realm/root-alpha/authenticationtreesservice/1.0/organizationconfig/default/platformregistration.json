@@ -5,9 +5,14 @@
     "entityId" : "default/PlatformRegistration",
     "uid" : "ou=PlatformRegistration,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "tree",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PlatformRegistration" ]
+    "ou" : [
+      "PlatformRegistration"
+    ]
   },
   "data" : {
     "_id" : "default/PlatformRegistration",

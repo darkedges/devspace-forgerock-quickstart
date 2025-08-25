@@ -5,9 +5,14 @@
     "entityId" : "MessageNode",
     "uid" : "ou=MessageNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "MessageNode" ]
+    "ou" : [
+      "MessageNode"
+    ]
   },
   "data" : {
     "_id" : "MessageNode",

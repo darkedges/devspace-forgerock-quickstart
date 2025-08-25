@@ -5,9 +5,14 @@
     "entityId" : "TimerStartNode",
     "uid" : "ou=TimerStartNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "TimerStartNode" ]
+    "ou" : [
+      "TimerStartNode"
+    ]
   },
   "data" : {
     "_id" : "TimerStartNode",

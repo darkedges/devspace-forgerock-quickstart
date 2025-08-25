@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMNamingService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -36,7 +42,9 @@
       "jaxwsUrl" : "%protocol://%host:%port%uri/identityservices/",
       "stsMexUrl" : "%protocol://%host:%port%uri/sts/mex"
     },
-    "serviceObjectClasses" : [ "iplanet-am-naming-service" ],
+    "serviceObjectClasses" : [
+      "iplanet-am-naming-service"
+    ],
     "iplanet-am-naming-profile-class" : "com.iplanet.dpro.profile.agent.ProfileService",
     "iplanet-am-naming-session-class" : "com.iplanet.dpro.session.service.SessionRequestHandler",
     "iplanet-am-naming-logging-class" : "com.sun.identity.log.service.LogService",

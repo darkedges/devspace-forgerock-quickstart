@@ -5,9 +5,14 @@
     "entityId" : "DebugNode",
     "uid" : "ou=DebugNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DebugNode" ]
+    "ou" : [
+      "DebugNode"
+    ]
   },
   "data" : {
     "_id" : "DebugNode",

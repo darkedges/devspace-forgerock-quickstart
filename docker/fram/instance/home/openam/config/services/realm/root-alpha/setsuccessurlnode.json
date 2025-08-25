@@ -5,9 +5,14 @@
     "entityId" : "SetSuccessUrlNode",
     "uid" : "ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SetSuccessUrlNode" ]
+    "ou" : [
+      "SetSuccessUrlNode"
+    ]
   },
   "data" : {
     "_id" : "SetSuccessUrlNode",

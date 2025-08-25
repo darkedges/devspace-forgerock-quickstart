@@ -5,9 +5,14 @@
     "entityId" : "PollingWaitNode",
     "uid" : "ou=PollingWaitNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PollingWaitNode" ]
+    "ou" : [
+      "PollingWaitNode"
+    ]
   },
   "data" : {
     "_id" : "PollingWaitNode",

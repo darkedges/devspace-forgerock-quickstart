@@ -5,9 +5,14 @@
     "entityId" : "MailServer",
     "uid" : "ou=MailServer,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "MailServer" ]
+    "ou" : [
+      "MailServer"
+    ]
   },
   "data" : {
     "_id" : "MailServer",

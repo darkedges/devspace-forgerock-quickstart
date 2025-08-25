@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthRadiusService",
     "uid" : "ou=iPlanetAMAuthRadiusService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthRadiusService" ]
+    "ou" : [
+      "iPlanetAMAuthRadiusService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthRadiusService",

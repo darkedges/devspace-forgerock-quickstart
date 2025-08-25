@@ -5,9 +5,14 @@
     "entityId" : "SetPersistentCookieNode",
     "uid" : "ou=SetPersistentCookieNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SetPersistentCookieNode" ]
+    "ou" : [
+      "SetPersistentCookieNode"
+    ]
   },
   "data" : {
     "_id" : "SetPersistentCookieNode",

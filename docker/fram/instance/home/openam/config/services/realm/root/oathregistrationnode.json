@@ -5,9 +5,14 @@
     "entityId" : "OathRegistrationNode",
     "uid" : "ou=OathRegistrationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "OathRegistrationNode" ]
+    "ou" : [
+      "OathRegistrationNode"
+    ]
   },
   "data" : {
     "_id" : "OathRegistrationNode",

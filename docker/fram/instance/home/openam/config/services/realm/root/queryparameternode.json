@@ -5,9 +5,14 @@
     "entityId" : "QueryParameterNode",
     "uid" : "ou=QueryParameterNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "QueryParameterNode" ]
+    "ou" : [
+      "QueryParameterNode"
+    ]
   },
   "data" : {
     "_id" : "QueryParameterNode",

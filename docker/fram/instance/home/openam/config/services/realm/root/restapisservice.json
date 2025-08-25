@@ -5,9 +5,14 @@
     "entityId" : "RestApisService",
     "uid" : "ou=RestApisService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RestApisService" ]
+    "ou" : [
+      "RestApisService"
+    ]
   },
   "data" : {
     "_id" : "RestApisService",

@@ -5,9 +5,14 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=SessionPropertyWhitelistService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,7 +21,11 @@
       "name" : "SessionPropertyWhitelistService",
       "collection" : false
     },
-    "sessionPropertyWhitelist" : [ "AMCtxId" ],
-    "whitelistedQueryProperties" : [ ]
+    "sessionPropertyWhitelist" : [
+      "AMCtxId"
+    ],
+    "whitelistedQueryProperties" : [
+      
+    ]
   }
 }

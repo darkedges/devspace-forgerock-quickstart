@@ -5,9 +5,14 @@
     "entityId" : "SetSessionPropertiesNode",
     "uid" : "ou=SetSessionPropertiesNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SetSessionPropertiesNode" ]
+    "ou" : [
+      "SetSessionPropertiesNode"
+    ]
   },
   "data" : {
     "_id" : "SetSessionPropertiesNode",

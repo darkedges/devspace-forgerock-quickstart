@@ -5,9 +5,14 @@
     "entityId" : "RadiusServerService",
     "uid" : "ou=RadiusServerService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RadiusServerService" ]
+    "ou" : [
+      "RadiusServerService"
+    ]
   },
   "data" : {
     "_id" : "RadiusServerService",

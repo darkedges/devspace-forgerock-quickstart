@@ -5,9 +5,14 @@
     "entityId" : "product-KerberosNode",
     "uid" : "ou=product-KerberosNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-KerberosNode" ]
+    "ou" : [
+      "product-KerberosNode"
+    ]
   },
   "data" : {
     "_id" : "product-KerberosNode",

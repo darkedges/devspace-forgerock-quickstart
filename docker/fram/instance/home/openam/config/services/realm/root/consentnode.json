@@ -5,9 +5,14 @@
     "entityId" : "ConsentNode",
     "uid" : "ou=ConsentNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ConsentNode" ]
+    "ou" : [
+      "ConsentNode"
+    ]
   },
   "data" : {
     "_id" : "ConsentNode",

@@ -5,9 +5,14 @@
     "entityId" : "EmailTemplateNode",
     "uid" : "ou=EmailTemplateNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "EmailTemplateNode" ]
+    "ou" : [
+      "EmailTemplateNode"
+    ]
   },
   "data" : {
     "_id" : "EmailTemplateNode",

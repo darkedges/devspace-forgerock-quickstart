@@ -5,9 +5,14 @@
     "entityId" : "default/Configurations/amsterService",
     "uid" : "ou=amsterService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "NamedConfiguration",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "amsterService" ]
+    "ou" : [
+      "amsterService"
+    ]
   },
   "data" : {
     "_id" : "default/Configurations/amsterService",

@@ -5,9 +5,14 @@
     "entityId" : "UsernameCollectorNode",
     "uid" : "ou=UsernameCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "UsernameCollectorNode" ]
+    "ou" : [
+      "UsernameCollectorNode"
+    ]
   },
   "data" : {
     "_id" : "UsernameCollectorNode",

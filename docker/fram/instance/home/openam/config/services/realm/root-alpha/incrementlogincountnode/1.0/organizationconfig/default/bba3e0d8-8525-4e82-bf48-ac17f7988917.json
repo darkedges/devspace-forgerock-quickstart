@@ -5,9 +5,14 @@
     "entityId" : "default/bba3e0d8-8525-4e82-bf48-ac17f7988917",
     "uid" : "ou=bba3e0d8-8525-4e82-bf48-ac17f7988917,ou=default,ou=OrganizationConfig,ou=1.0,ou=IncrementLoginCountNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "bba3e0d8-8525-4e82-bf48-ac17f7988917" ]
+    "ou" : [
+      "bba3e0d8-8525-4e82-bf48-ac17f7988917"
+    ]
   },
   "data" : {
     "_id" : "default/bba3e0d8-8525-4e82-bf48-ac17f7988917",

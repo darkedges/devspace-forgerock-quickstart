@@ -5,9 +5,14 @@
     "entityId" : "SetFailureUrlNode",
     "uid" : "ou=SetFailureUrlNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SetFailureUrlNode" ]
+    "ou" : [
+      "SetFailureUrlNode"
+    ]
   },
   "data" : {
     "_id" : "SetFailureUrlNode",

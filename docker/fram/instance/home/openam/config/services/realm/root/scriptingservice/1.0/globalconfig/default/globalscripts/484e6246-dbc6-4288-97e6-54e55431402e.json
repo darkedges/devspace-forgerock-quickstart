@@ -5,9 +5,14 @@
     "entityId" : "default/globalScripts/484e6246-dbc6-4288-97e6-54e55431402e",
     "uid" : "ou=484e6246-dbc6-4288-97e6-54e55431402e,ou=globalScripts,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "globalScript",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "484e6246-dbc6-4288-97e6-54e55431402e" ]
+    "ou" : [
+      "484e6246-dbc6-4288-97e6-54e55431402e"
+    ]
   },
   "data" : {
     "_id" : "default/globalScripts/484e6246-dbc6-4288-97e6-54e55431402e",

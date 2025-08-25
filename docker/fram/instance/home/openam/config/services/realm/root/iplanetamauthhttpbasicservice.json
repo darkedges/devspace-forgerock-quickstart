@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthHTTPBasicService",
     "uid" : "ou=iPlanetAMAuthHTTPBasicService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthHTTPBasicService" ]
+    "ou" : [
+      "iPlanetAMAuthHTTPBasicService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthHTTPBasicService",

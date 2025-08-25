@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthOpenIdConnectService",
     "uid" : "ou=iPlanetAMAuthOpenIdConnectService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthOpenIdConnectService" ]
+    "ou" : [
+      "iPlanetAMAuthOpenIdConnectService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthOpenIdConnectService",

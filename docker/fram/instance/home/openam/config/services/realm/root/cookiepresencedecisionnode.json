@@ -5,9 +5,14 @@
     "entityId" : "CookiePresenceDecisionNode",
     "uid" : "ou=CookiePresenceDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "CookiePresenceDecisionNode" ]
+    "ou" : [
+      "CookiePresenceDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "CookiePresenceDecisionNode",

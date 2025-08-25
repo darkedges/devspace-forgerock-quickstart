@@ -5,9 +5,14 @@
     "entityId" : "SocialIdentityProviders",
     "uid" : "ou=SocialIdentityProviders,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SocialIdentityProviders" ]
+    "ou" : [
+      "SocialIdentityProviders"
+    ]
   },
   "data" : {
     "_id" : "SocialIdentityProviders",

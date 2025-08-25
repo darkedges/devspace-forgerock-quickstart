@@ -5,9 +5,14 @@
     "entityId" : "GetAuthenticatorAppNode",
     "uid" : "ou=GetAuthenticatorAppNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "GetAuthenticatorAppNode" ]
+    "ou" : [
+      "GetAuthenticatorAppNode"
+    ]
   },
   "data" : {
     "_id" : "GetAuthenticatorAppNode",

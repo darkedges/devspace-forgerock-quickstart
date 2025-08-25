@@ -5,9 +5,14 @@
     "entityId" : "sunIdentityLocaleService",
     "uid" : "ou=sunIdentityLocaleService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunIdentityLocaleService" ]
+    "ou" : [
+      "sunIdentityLocaleService"
+    ]
   },
   "data" : {
     "_id" : "sunIdentityLocaleService",

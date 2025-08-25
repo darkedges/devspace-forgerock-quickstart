@@ -1,0 +1,30 @@
+{
+  "data": {
+    "_id": "default/SCRIPTED_DECISION_NODE",
+    "_type": {
+      "_id": "ScriptingService",
+      "collection": false,
+      "name": "ScriptingService"
+    },
+    "defaultScript": "11e1a3c0-038b-4c16-956a-6c9d89328cff",
+    "i18nKey": "next-gen-script-type-01",
+    "languages": [
+      "JAVASCRIPT"
+    ]
+  },
+  "metadata": {
+    "entityId": "default/SCRIPTED_DECISION_NODE",
+    "entityType": "ScriptingService",
+    "objectClass": [
+      "top",
+      "sunServiceComponent"
+    ],
+    "ou": [
+      "SCRIPTED_DECISION_NODE"
+    ],
+    "pathParams": {},
+    "realm": null,
+    "sunServiceID": "scriptContext",
+    "uid": "ou=SCRIPTED_DECISION_NODE,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config"
+  }
+}

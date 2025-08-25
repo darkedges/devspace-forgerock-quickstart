@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/SessionPropertyModifyAccess",
     "uid" : "ou=SessionPropertyModifyAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SessionPropertyModifyAccess" ]
+    "ou" : [
+      "SessionPropertyModifyAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/SessionPropertyModifyAccess",
@@ -16,6 +21,13 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "SessionPropertiesGetProperty", "SessionPropertiesGetPropertyNames", "SessionPropertiesDeleteProperty", "SessionPropertiesSetProperty", "SessionPropertiesGetSessionProperties", "SessionPropertiesUpdateSessionProperties" ]
+    "listOfPermissions" : [
+      "SessionPropertiesGetProperty",
+      "SessionPropertiesGetPropertyNames",
+      "SessionPropertiesDeleteProperty",
+      "SessionPropertiesSetProperty",
+      "SessionPropertiesGetSessionProperties",
+      "SessionPropertiesUpdateSessionProperties"
+    ]
   }
 }

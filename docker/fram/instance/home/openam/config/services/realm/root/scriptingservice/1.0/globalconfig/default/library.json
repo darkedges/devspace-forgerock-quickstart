@@ -5,9 +5,14 @@
     "entityId" : "default/LIBRARY",
     "uid" : "ou=LIBRARY,ou=default,ou=GlobalConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
     "sunServiceID" : "scriptContext",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "LIBRARY" ]
+    "ou" : [
+      "LIBRARY"
+    ]
   },
   "data" : {
     "_id" : "default/LIBRARY",
@@ -17,7 +22,9 @@
       "collection" : false
     },
     "i18nKey" : "script-type-16",
-    "languages" : [ "JAVASCRIPT" ],
+    "languages" : [
+      "JAVASCRIPT"
+    ],
     "defaultScript" : "6c49bebe-3a62-11ed-a261-0242ac120002"
   }
 }

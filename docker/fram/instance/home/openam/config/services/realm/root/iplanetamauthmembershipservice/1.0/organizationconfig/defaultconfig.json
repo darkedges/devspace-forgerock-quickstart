@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthMembershipService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -18,7 +24,9 @@
     },
     "defaultUserStatus" : "Active",
     "minimumPasswordLength" : 8,
-    "defaultUserRoles" : [ ],
+    "defaultUserRoles" : [
+      
+    ],
     "authenticationLevel" : 0,
     "iplanet-am-auth-membership-invalid-chars" : "*|(|)|&|!"
   }

@@ -5,9 +5,14 @@
     "entityId" : "MetadataNode",
     "uid" : "ou=MetadataNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "MetadataNode" ]
+    "ou" : [
+      "MetadataNode"
+    ]
   },
   "data" : {
     "_id" : "MetadataNode",

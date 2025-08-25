@@ -5,9 +5,14 @@
     "entityId" : "default/276afa7c-a680-4cf4-a5f6-d6c78191f5c9",
     "uid" : "ou=276afa7c-a680-4cf4-a5f6-d6c78191f5c9,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributeCollectorNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "276afa7c-a680-4cf4-a5f6-d6c78191f5c9" ]
+    "ou" : [
+      "276afa7c-a680-4cf4-a5f6-d6c78191f5c9"
+    ]
   },
   "data" : {
     "_id" : "default/276afa7c-a680-4cf4-a5f6-d6c78191f5c9",
@@ -16,7 +21,9 @@
       "name" : "AttributeCollectorNode",
       "collection" : false
     },
-    "attributesToCollect" : [ "mail" ],
+    "attributesToCollect" : [
+      "mail"
+    ],
     "identityAttribute" : "mail",
     "validateInputs" : false,
     "required" : true

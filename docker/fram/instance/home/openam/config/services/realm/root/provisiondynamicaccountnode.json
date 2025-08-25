@@ -5,9 +5,14 @@
     "entityId" : "ProvisionDynamicAccountNode",
     "uid" : "ou=ProvisionDynamicAccountNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ProvisionDynamicAccountNode" ]
+    "ou" : [
+      "ProvisionDynamicAccountNode"
+    ]
   },
   "data" : {
     "_id" : "ProvisionDynamicAccountNode",

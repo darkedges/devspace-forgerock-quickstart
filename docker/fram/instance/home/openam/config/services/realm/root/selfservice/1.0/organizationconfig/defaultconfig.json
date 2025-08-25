@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=selfService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -29,18 +35,34 @@
       "forgottenUsernameTokenTTL" : 300,
       "forgottenUsernameKbaEnabled" : false,
       "forgottenUsernameEmailUsernameEnabled" : true,
-      "forgottenUsernameEmailBody" : [ "en|<h2>Your username is <span style=\"color:blue\">%username%</span>.</h2>" ],
-      "forgottenUsernameEmailSubject" : [ "en|Forgotten username email" ],
+      "forgottenUsernameEmailBody" : [
+        "en|<h2>Your username is <span style=\"color:blue\">%username%</span>.</h2>"
+      ],
+      "forgottenUsernameEmailSubject" : [
+        "en|Forgotten username email"
+      ],
       "forgottenUsernameShowUsernameEnabled" : false
     },
     "userRegistration" : {
       "userRegistrationTokenTTL" : 300,
-      "userRegistrationValidUserAttributes" : [ "sn", "mail", "userPassword", "givenName", "kbaInfo", "username", "inetUserStatus" ],
+      "userRegistrationValidUserAttributes" : [
+        "sn",
+        "mail",
+        "userPassword",
+        "givenName",
+        "kbaInfo",
+        "username",
+        "inetUserStatus"
+      ],
       "userRegistrationEnabled" : false,
       "userRegistrationEmailVerificationEnabled" : true,
-      "userRegistrationEmailBody" : [ "en|<h2>Click on this <a href=\"%link%\">link</a> to register.</h2>" ],
+      "userRegistrationEmailBody" : [
+        "en|<h2>Click on this <a href=\"%link%\">link</a> to register.</h2>"
+      ],
       "userRegistrationEmailVerificationFirstEnabled" : false,
-      "userRegistrationEmailSubject" : [ "en|Registration email" ],
+      "userRegistrationEmailSubject" : [
+        "en|Registration email"
+      ],
       "userRegisteredDestination" : "default",
       "userRegistrationCaptchaEnabled" : false,
       "userRegistrationKbaEnabled" : false
@@ -51,16 +73,30 @@
       "signingSecretKeyAlias" : null,
       "minimumAnswersToVerify" : 1,
       "captchaSiteKey" : null,
-      "kbaQuestions" : [ "4|en|What is your mother's maiden name?", "3|en|What was the name of your childhood pet?", "1|en|What is the name of your favourite restaurant?", "2|en|What was the model of your first car?" ],
+      "kbaQuestions" : [
+        "4|en|What is your mother's maiden name?",
+        "3|en|What was the name of your childhood pet?",
+        "1|en|What is the name of your favourite restaurant?",
+        "2|en|What was the model of your first car?"
+      ],
       "captchaSecretKey" : null,
-      "validQueryAttributes" : [ "givenName", "mail", "sn", "uid" ],
+      "validQueryAttributes" : [
+        "givenName",
+        "mail",
+        "sn",
+        "uid"
+      ],
       "captchaVerificationUrl" : "https://www.google.com/recaptcha/api/siteverify"
     },
     "forgottenPassword" : {
-      "forgottenPasswordEmailSubject" : [ "en|Forgotten password email" ],
+      "forgottenPasswordEmailSubject" : [
+        "en|Forgotten password email"
+      ],
       "forgottenPasswordTokenTTL" : 300,
       "forgottenPasswordEnabled" : false,
-      "forgottenPasswordEmailBody" : [ "en|<h2>Click on this <a href=\"%link%\">link</a> to reset your password.</h2>" ],
+      "forgottenPasswordEmailBody" : [
+        "en|<h2>Click on this <a href=\"%link%\">link</a> to reset your password.</h2>"
+      ],
       "forgottenPasswordTokenPaddingLength" : 450,
       "forgottenPasswordEmailVerificationEnabled" : true,
       "numberOfAllowedAttempts" : 1,
@@ -70,8 +106,19 @@
     },
     "KeyAliasValidator" : "org.forgerock.openam.selfservice.config.KeyAliasValidator",
     "profileManagement" : {
-      "profileAttributeWhitelist" : [ "mail", "sn", "telephoneNumber", "cn", "kbaInfo", "uid", "givenName" ],
-      "profileProtectedUserAttributes" : [ "telephoneNumber", "mail" ]
+      "profileAttributeWhitelist" : [
+        "mail",
+        "sn",
+        "telephoneNumber",
+        "cn",
+        "kbaInfo",
+        "uid",
+        "givenName"
+      ],
+      "profileProtectedUserAttributes" : [
+        "telephoneNumber",
+        "mail"
+      ]
     }
   }
 }

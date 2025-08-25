@@ -5,9 +5,14 @@
     "entityId" : "SocialOpenIdConnectNode",
     "uid" : "ou=SocialOpenIdConnectNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SocialOpenIdConnectNode" ]
+    "ou" : [
+      "SocialOpenIdConnectNode"
+    ]
   },
   "data" : {
     "_id" : "SocialOpenIdConnectNode",

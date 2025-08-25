@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthPersistentCookieService",
     "uid" : "ou=iPlanetAMAuthPersistentCookieService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthPersistentCookieService" ]
+    "ou" : [
+      "iPlanetAMAuthPersistentCookieService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthPersistentCookieService",

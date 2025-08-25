@@ -5,9 +5,14 @@
     "entityId" : "InnerTreeEvaluatorNode",
     "uid" : "ou=InnerTreeEvaluatorNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "InnerTreeEvaluatorNode" ]
+    "ou" : [
+      "InnerTreeEvaluatorNode"
+    ]
   },
   "data" : {
     "_id" : "InnerTreeEvaluatorNode",

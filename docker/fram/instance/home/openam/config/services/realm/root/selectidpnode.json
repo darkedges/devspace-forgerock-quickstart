@@ -5,9 +5,14 @@
     "entityId" : "SelectIdPNode",
     "uid" : "ou=SelectIdPNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SelectIdPNode" ]
+    "ou" : [
+      "SelectIdPNode"
+    ]
   },
   "data" : {
     "_id" : "SelectIdPNode",

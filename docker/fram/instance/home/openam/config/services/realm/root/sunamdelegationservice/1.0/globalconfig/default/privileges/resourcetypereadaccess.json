@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/ResourceTypeReadAccess",
     "uid" : "ou=ResourceTypeReadAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ResourceTypeReadAccess" ]
+    "ou" : [
+      "ResourceTypeReadAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/ResourceTypeReadAccess",
@@ -16,6 +21,8 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "ResourceTypeResourceRead" ]
+    "listOfPermissions" : [
+      "ResourceTypeResourceRead"
+    ]
   }
 }

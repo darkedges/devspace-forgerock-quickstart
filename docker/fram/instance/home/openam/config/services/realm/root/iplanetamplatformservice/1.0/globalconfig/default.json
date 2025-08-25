@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPlatformService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,8 +22,12 @@
       "name" : "iPlanetAMPlatformService",
       "collection" : false
     },
-    "cookieDomains" : [ ],
-    "serviceObjectClasses" : [ "iplanet-am-platform-service" ],
+    "cookieDomains" : [
+      
+    ],
+    "serviceObjectClasses" : [
+      "iplanet-am-platform-service"
+    ],
     "locale" : "en_US"
   }
 }

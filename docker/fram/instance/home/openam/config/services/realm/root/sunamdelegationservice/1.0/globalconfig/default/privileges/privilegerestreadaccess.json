@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/PrivilegeRestReadAccess",
     "uid" : "ou=PrivilegeRestReadAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PrivilegeRestReadAccess" ]
+    "ou" : [
+      "PrivilegeRestReadAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/PrivilegeRestReadAccess",
@@ -16,6 +21,9 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "EntitlementRESTPrivilegeRead", "PolicyResourceRead" ]
+    "listOfPermissions" : [
+      "EntitlementRESTPrivilegeRead",
+      "PolicyResourceRead"
+    ]
   }
 }

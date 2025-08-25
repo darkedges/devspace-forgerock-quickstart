@@ -5,9 +5,14 @@
     "entityId" : "default/Permissions/EntitlementRESTDecisions",
     "uid" : "ou=EntitlementRESTDecisions,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "EntitlementRESTDecisions" ]
+    "ou" : [
+      "EntitlementRESTDecisions"
+    ]
   },
   "data" : {
     "_id" : "default/Permissions/EntitlementRESTDecisions",
@@ -16,7 +21,11 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "actions" : [ "READ" ],
-    "resource" : [ "ou=am-config/sunEntitlementService/1.0/application/ws/1/entitlement/decisions" ]
+    "actions" : [
+      "READ"
+    ],
+    "resource" : [
+      "ou=am-config/sunEntitlementService/1.0/application/ws/1/entitlement/decisions"
+    ]
   }
 }

@@ -5,9 +5,14 @@
     "entityId" : "CreateObjectNode",
     "uid" : "ou=CreateObjectNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "CreateObjectNode" ]
+    "ou" : [
+      "CreateObjectNode"
+    ]
   },
   "data" : {
     "_id" : "CreateObjectNode",

@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=ConfigurationVersionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,8 +22,32 @@
       "name" : "ConfigurationVersionService",
       "collection" : false
     },
-    "appliedRuleIds" : [ "AME-23273", "AME-21032", "AME-21768" ],
+    "appliedRuleIds" : [
+      "AME-23273",
+      "AME-21032",
+      "AME-21768",
+      "AME-27353",
+      "OPENAM-15410",
+      "AME-25921",
+      "OPENAM-22404",
+      "OPENAM-20383",
+      "OPENAM-20942",
+      "AME-27976",
+      "OPENAM-22725",
+      "AME-28469",
+      "AME-29015",
+      "AME-29153",
+      "OPENAM-23219",
+      "AME-29702",
+      "AME-30141",
+      "OPENAM-23218",
+      "AME-30227",
+      "AME-30061",
+      "AME-30238",
+      "AME-30543",
+      "AME-30762"
+    ],
     "configurationVersion" : "8.0.0.0",
-    "configurationCommit" : "89116d59a1ebe73ed1931dd3649adb7f217cd06b"
+    "configurationCommit" : "b59bc0908346197b0c33afcb9e733d0400feeea1"
   }
 }

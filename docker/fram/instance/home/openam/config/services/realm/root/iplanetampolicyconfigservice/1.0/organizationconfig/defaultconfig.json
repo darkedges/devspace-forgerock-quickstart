@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -16,11 +22,28 @@
       "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     },
-    "sun-am-policy-selected-responseproviders" : [ "IDRepoResponseProvider" ],
-    "sun-am-policy-dynamic-response-attributes" : [ ],
+    "sun-am-policy-selected-responseproviders" : [
+      "IDRepoResponseProvider"
+    ],
+    "sun-am-policy-dynamic-response-attributes" : [
+      
+    ],
     "userAliasEnabled" : false,
     "connectionPoolMinimumSize" : 1,
-    "iplanet-am-policy-selected-conditions" : [ "AuthenticateToServiceCondition", "AuthenticateToRealmCondition", "LDAPFilterCondition", "ResourceEnvIPCondition", "IPCondition", "SimpleTimeCondition", "AMIdentityMembershipCondition", "AuthLevelCondition", "SessionPropertyCondition", "AuthSchemeCondition", "SessionCondition", "LEAuthLevelCondition" ],
+    "iplanet-am-policy-selected-conditions" : [
+      "AuthenticateToServiceCondition",
+      "AuthenticateToRealmCondition",
+      "LDAPFilterCondition",
+      "ResourceEnvIPCondition",
+      "IPCondition",
+      "SimpleTimeCondition",
+      "AMIdentityMembershipCondition",
+      "AuthLevelCondition",
+      "SessionPropertyCondition",
+      "AuthSchemeCondition",
+      "SessionCondition",
+      "LEAuthLevelCondition"
+    ],
     "iplanet-am-policy-config-ldap-organizations-search-scope" : "SCOPE_SUB",
     "iplanet-am-policy-config-ldap-organizations-search-attribute" : "o",
     "maximumSearchResults" : 100,
@@ -30,7 +53,11 @@
     "iplanet-am-policy-config-ldap-groups-search-filter" : "(objectclass=groupOfUniqueNames)",
     "searchTimeout" : 5,
     "usersSearchAttribute" : "uid",
-    "iplanet-am-policy-selected-subjects" : [ "AuthenticatedUsers", "WebServicesClients", "AMIdentitySubject" ],
+    "iplanet-am-policy-selected-subjects" : [
+      "AuthenticatedUsers",
+      "WebServicesClients",
+      "AMIdentitySubject"
+    ],
     "iplanet-am-policy-config-ldap-roles-search-attribute" : "cn",
     "policyHeartbeatInterval" : 10,
     "usersSearchScope" : "SCOPE_SUB",
@@ -38,7 +65,10 @@
     "checkIfResourceTypeExists" : true,
     "iplanet-am-policy-config-ldap-roles-search-filter" : "(&(objectclass=ldapsubentry)(objectclass=nsroledefinition))",
     "connectionPoolMaximumSize" : 10,
-    "iplanet-am-policy-selected-referrals" : [ "PeerOrgReferral", "SubOrgReferral" ],
+    "iplanet-am-policy-selected-referrals" : [
+      "PeerOrgReferral",
+      "SubOrgReferral"
+    ],
     "sslEnabled" : {
       "$bool" : "&{am.stores.policy.ssl.enabled}"
     },

@@ -5,9 +5,14 @@
     "entityId" : "Subject/LDAPGroups",
     "uid" : "ou=LDAPGroups,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "LDAPGroups" ]
+    "ou" : [
+      "LDAPGroups"
+    ]
   },
   "data" : {
     "_id" : "Subject/LDAPGroups",

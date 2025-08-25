@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/ResourceTypeModifyAccess",
     "uid" : "ou=ResourceTypeModifyAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ResourceTypeModifyAccess" ]
+    "ou" : [
+      "ResourceTypeModifyAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/ResourceTypeModifyAccess",
@@ -16,6 +21,8 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "ResourceTypeResourceModify" ]
+    "listOfPermissions" : [
+      "ResourceTypeResourceModify"
+    ]
   }
 }

@@ -5,9 +5,14 @@
     "entityId" : "L3N1bmFtaGlkZGVucmVhbG1kZWxlZ2F0aW9uc2VydmljZXBlcm1pc3Npb25z",
     "uid" : "o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunRealmService", "top" ],
+    "objectClass" : [
+      "sunRealmService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ ]
+    "ou" : [
+      
+    ]
   },
   "data" : {
     "_id" : "root-sunamhiddenrealmdelegationservicepermissions",
@@ -19,6 +24,8 @@
     "parentPath" : "/",
     "active" : true,
     "name" : "sunamhiddenrealmdelegationservicepermissions",
-    "aliases" : [ ]
+    "aliases" : [
+      
+    ]
   }
 }

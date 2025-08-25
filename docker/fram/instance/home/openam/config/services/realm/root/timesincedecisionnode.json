@@ -5,9 +5,14 @@
     "entityId" : "TimeSinceDecisionNode",
     "uid" : "ou=TimeSinceDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "TimeSinceDecisionNode" ]
+    "ou" : [
+      "TimeSinceDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "TimeSinceDecisionNode",

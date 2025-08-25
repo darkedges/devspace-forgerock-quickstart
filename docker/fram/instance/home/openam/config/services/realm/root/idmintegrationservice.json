@@ -5,9 +5,14 @@
     "entityId" : "IdmIntegrationService",
     "uid" : "ou=IdmIntegrationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "IdmIntegrationService" ]
+    "ou" : [
+      "IdmIntegrationService"
+    ]
   },
   "data" : {
     "_id" : "IdmIntegrationService",

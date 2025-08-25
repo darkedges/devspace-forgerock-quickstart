@@ -5,9 +5,14 @@
     "entityId" : "amTransactionService",
     "uid" : "ou=amTransactionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "amTransactionService" ]
+    "ou" : [
+      "amTransactionService"
+    ]
   },
   "data" : {
     "_id" : "amTransactionService",

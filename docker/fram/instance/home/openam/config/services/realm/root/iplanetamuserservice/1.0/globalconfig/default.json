@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMUserService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,6 +22,8 @@
       "name" : "iPlanetAMUserService",
       "collection" : false
     },
-    "serviceObjectClasses" : [ "iplanet-am-user-service" ]
+    "serviceObjectClasses" : [
+      "iplanet-am-user-service"
+    ]
   }
 }

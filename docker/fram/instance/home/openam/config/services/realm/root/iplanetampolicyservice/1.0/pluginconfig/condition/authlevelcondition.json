@@ -5,9 +5,14 @@
     "entityId" : "Condition/AuthLevelCondition",
     "uid" : "ou=AuthLevelCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AuthLevelCondition" ]
+    "ou" : [
+      "AuthLevelCondition"
+    ]
   },
   "data" : {
     "_id" : "Condition/AuthLevelCondition",

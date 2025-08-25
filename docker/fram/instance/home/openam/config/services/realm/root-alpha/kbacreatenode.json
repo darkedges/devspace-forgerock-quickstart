@@ -5,9 +5,14 @@
     "entityId" : "KbaCreateNode",
     "uid" : "ou=KbaCreateNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "KbaCreateNode" ]
+    "ou" : [
+      "KbaCreateNode"
+    ]
   },
   "data" : {
     "_id" : "KbaCreateNode",

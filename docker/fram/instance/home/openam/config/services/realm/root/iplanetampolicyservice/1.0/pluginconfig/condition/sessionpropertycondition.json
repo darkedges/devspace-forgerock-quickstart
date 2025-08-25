@@ -5,9 +5,14 @@
     "entityId" : "Condition/SessionPropertyCondition",
     "uid" : "ou=SessionPropertyCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SessionPropertyCondition" ]
+    "ou" : [
+      "SessionPropertyCondition"
+    ]
   },
   "data" : {
     "_id" : "Condition/SessionPropertyCondition",

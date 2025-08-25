@@ -5,9 +5,14 @@
     "entityId" : "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
     "uid" : "ou=am.global.services.session.clientbased.encryption.AES,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "am.global.services.session.clientbased.encryption.AES" ]
+    "ou" : [
+      "am.global.services.session.clientbased.encryption.AES"
+    ]
   },
   "data" : {
     "_id" : "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
@@ -17,6 +22,8 @@
       "collection" : false
     },
     "secretId" : "am.global.services.session.clientbased.encryption.AES",
-    "aliases" : [ "aestest" ]
+    "aliases" : [
+      "aestest"
+    ]
   }
 }

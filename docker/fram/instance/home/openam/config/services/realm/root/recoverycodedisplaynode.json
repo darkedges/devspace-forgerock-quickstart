@@ -5,9 +5,14 @@
     "entityId" : "RecoveryCodeDisplayNode",
     "uid" : "ou=RecoveryCodeDisplayNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RecoveryCodeDisplayNode" ]
+    "ou" : [
+      "RecoveryCodeDisplayNode"
+    ]
   },
   "data" : {
     "_id" : "RecoveryCodeDisplayNode",

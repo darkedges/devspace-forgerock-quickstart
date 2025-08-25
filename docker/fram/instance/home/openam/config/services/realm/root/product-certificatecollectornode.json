@@ -5,9 +5,14 @@
     "entityId" : "product-CertificateCollectorNode",
     "uid" : "ou=product-CertificateCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-CertificateCollectorNode" ]
+    "ou" : [
+      "product-CertificateCollectorNode"
+    ]
   },
   "data" : {
     "_id" : "product-CertificateCollectorNode",

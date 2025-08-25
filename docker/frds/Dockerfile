@@ -1,6 +1,6 @@
 ARG JRE_IMAGE=eclipse-temurin
-ARG JRE_TAG=17.0.12_7-jre-alpine
-ARG FR_TAG=7.5.0
+ARG JRE_TAG=21.0.8_9-jre-alpine
+ARG FR_TAG=8.0.0
 ARG ALPINE_TAG=3.19
 
 FROM gcr.io/forgerock-io/ds:${FR_TAG} AS dsbase
@@ -19,7 +19,7 @@ ENV PATH=$PATH:/opt/frds/scripts:/opt/frds/bin
 
 RUN apk add --no-cache tini gettext bash && \
     addgroup -g 11111 -S forgerock && \
-    adduser -h /opt/frim -G forgerock -D -u 11111 forgerock && \
+    adduser -h /opt/frds -G forgerock -D -u 11111 forgerock && \
     mkdir -p /opt/frds/instance/data && \
     mkdir -p /opt/frds/instance/init && \
     chmod 755 /opt/frds/instance && \

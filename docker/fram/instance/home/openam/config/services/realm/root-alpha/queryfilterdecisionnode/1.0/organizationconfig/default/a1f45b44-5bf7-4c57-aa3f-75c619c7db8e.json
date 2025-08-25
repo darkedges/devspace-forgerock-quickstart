@@ -5,9 +5,14 @@
     "entityId" : "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",
     "uid" : "ou=a1f45b44-5bf7-4c57-aa3f-75c619c7db8e,ou=default,ou=OrganizationConfig,ou=1.0,ou=QueryFilterDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e" ]
+    "ou" : [
+      "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e"
+    ]
   },
   "data" : {
     "_id" : "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",

@@ -5,9 +5,14 @@
     "entityId" : "AuthenticatorWebAuthn",
     "uid" : "ou=AuthenticatorWebAuthn,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AuthenticatorWebAuthn" ]
+    "ou" : [
+      "AuthenticatorWebAuthn"
+    ]
   },
   "data" : {
     "_id" : "AuthenticatorWebAuthn",

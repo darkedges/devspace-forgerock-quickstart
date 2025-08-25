@@ -5,9 +5,14 @@
     "entityId" : "default/scriptConfigurations",
     "uid" : "ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "scriptConfigurations",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "scriptConfigurations" ]
+    "ou" : [
+      "scriptConfigurations"
+    ]
   },
   "data" : {
     "_id" : "default/scriptConfigurations",

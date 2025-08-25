@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMAuthAnonymousService",
     "uid" : "ou=iPlanetAMAuthAnonymousService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMAuthAnonymousService" ]
+    "ou" : [
+      "iPlanetAMAuthAnonymousService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthAnonymousService",

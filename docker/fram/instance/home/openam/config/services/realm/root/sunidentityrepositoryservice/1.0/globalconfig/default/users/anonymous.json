@@ -5,9 +5,14 @@
     "entityId" : "default/users/anonymous",
     "uid" : "ou=anonymous,ou=users,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "user",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "anonymous" ]
+    "ou" : [
+      "anonymous"
+    ]
   },
   "data" : {
     "_id" : "default/users/anonymous",

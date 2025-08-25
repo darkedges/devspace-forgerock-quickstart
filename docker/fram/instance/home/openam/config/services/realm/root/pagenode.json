@@ -5,9 +5,14 @@
     "entityId" : "PageNode",
     "uid" : "ou=PageNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PageNode" ]
+    "ou" : [
+      "PageNode"
+    ]
   },
   "data" : {
     "_id" : "PageNode",

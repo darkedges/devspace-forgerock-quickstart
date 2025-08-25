@@ -12,10 +12,10 @@ OPENIDM_OPTS="${OPENIDM_OPTS:=}"
 JAVA_ENDORSED_DIRS="${JAVA_ENDORSED_DIRS:=}"
 
 if [ -z "$LOGGING_CONFIG" ]; then
-  if [ -n "$PROJECT_HOME" -a -r "$PROJECT_HOME/conf/logging.properties" ]; then
-    LOGGING_CONFIG="-Djava.util.logging.config.file=$PROJECT_HOME/conf/logging.properties"
-  elif [ -r "$OPENIDM_HOME/conf/logging.properties" ]; then
-    LOGGING_CONFIG="-Djava.util.logging.config.file=$OPENIDM_HOME/conf/logging.properties"
+  if [ -n "$PROJECT_HOME" -a -r "$PROJECT_HOME"/conf/logback.xml ]; then
+    LOGGING_CONFIG="-Dlogback.configurationFile=$PROJECT_HOME/conf/logback.xml"
+  elif [ -r "$OPENIDM_HOME"/conf/logback.xml ]; then
+    LOGGING_CONFIG="-Dlogback.configurationFile=$OPENIDM_HOME/conf/logback.xml"
   else
     LOGGING_CONFIG="-Dnop"
   fi
@@ -68,21 +68,29 @@ start() {
     BUNDLE_PATH="$OPENIDM_HOME/bundle"
     
     SLF4J_API=$(find_bundle_file "slf4j-api-[0-9]*.jar")
-    SLF4J_JDK14=$(find_bundle_file "slf4j-jdk14-[0-9]*.jar")
+    JUL_TO_SLF4J=$(find_bundle_file "jul-to-slf4j-[0-9]*.jar")
+    SLF4J_LOGBACK_CLASSIC=$(find_bundle_file "logback-classic-*.jar")
+    SLF4J_LOGBACK_CORE=$(find_bundle_file "logback-core-*.jar")
     JACKSON_CORE=$(find_bundle_file "jackson-core-[0-9]*.jar")
     JACKSON_DATABIND=$(find_bundle_file "jackson-databind-[0-9]*.jar")
     JACKSON_ANNOTATIONS=$(find_bundle_file "jackson-annotations-[0-9]*.jar")
+    BC_FIPS=$(find_bundle_file "bc-fips-[0-9]*.jar")
+    BC_PKIX=$(find_bundle_file "bcpkix-fips-[0-9]*.jar")
+    BC_TLS=$(find_bundle_file "bctls-fips-[0-9]*.jar")
+    BC_MAIL=$(find_bundle_file "bcmail-fips-[0-9]*.jar")
+    BC_UTIL=$(find_bundle_file "bcutil-fips-[0-9]*.jar")
 
-    SLF4J_PATHS="$SLF4J_API:$SLF4J_JDK14"
+    BC_PATHS="$BC_FIPS:$BC_PKIX:$BC_TLS:$BC_MAIL:$BC_UTIL"
+    SLF4J_PATHS="$SLF4J_API:$SLF4J_LOGBACK_CLASSIC:$SLF4J_LOGBACK_CORE:$JUL_TO_SLF4J"
     JACKSON_PATHS="$JACKSON_CORE:$JACKSON_DATABIND:$JACKSON_ANNOTATIONS"
-    OPENIDM_SYSTEM_PATH=$(find_bundle_file "openidm-system-[0-9]*.jar")
-    OPENIDM_UTIL_PATH=$(find_bundle_file "openidm-util-[0-9]*.jar")
+    OPENIDM_SYSTEM_PATH="$BUNDLE_PATH/openidm-system-8.0.0.jar"
+    OPENIDM_UTIL_PATH="$BUNDLE_PATH/openidm-util-8.0.0.jar"
 
     # Optional IDM_CLASSPATH provides additional classpath rules
-    CLASSPATH="$OPENIDM_HOME/bin/*:$OPENIDM_HOME/framework/*:$SLF4J_PATHS:$JACKSON_PATHS:$OPENIDM_SYSTEM_PATH:$OPENIDM_UTIL_PATH:${IDM_CLASSPATH}"
+    CLASSPATH="$OPENIDM_HOME/bin/*:$OPENIDM_HOME/framework/*:$SLF4J_PATHS:$JACKSON_PATHS:$BC_PATHS:$OPENIDM_SYSTEM_PATH:$OPENIDM_UTIL_PATH:${IDM_CLASSPATH}"
 
     # Enable OpenIDM to run on Java 9 and up
-    JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED $JAVA_OPTS"
+    JAVA_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-opens=java.base/jdk.internal.loader=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED $JAVA_OPTS"
 
     CMD_RUN=
     if [[ "${CMD}" = "start" ]]; then
@@ -93,7 +101,9 @@ start() {
         -classpath "$CLASSPATH" \
         -Dopenidm.system.server.root="$OPENIDM_HOME" \
         -Djava.awt.headless=true \
-        -Djava.security.properties="$PROJECT_HOME/conf/java.security" \
+        -Djava.security.properties="${PROJECT_HOME}/conf/java.security" \
+        -Dorg.bouncycastle.fips.approved_only=true \
+        -Dorg.bouncycastle.jca.enable_jks=false \
         -Dopenidm.node.id="${NODE_ID}" \
         -Didm.envconfig.dirs="${IDM_ENVCONFIG_DIRS}" \
         org.forgerock.openidm.launcher.Main \

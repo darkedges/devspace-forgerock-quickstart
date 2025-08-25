@@ -1,7 +1,7 @@
 services:
   dfq-ig:
     container_name: dfq-ig
-    image: devspace-forgerock-quickstart/frig:2024.6.0
+    image: devspace-forgerock-quickstart/frig:2025.3.0
     build:
       context: ./docker/frig
     deploy:
@@ -31,7 +31,7 @@ services:
       - localdev
   dfq-idm:
     container_name: dfq-idm
-    image: devspace-forgerock-quickstart/frim:7.5.0
+    image: devspace-forgerock-quickstart/frim:8.0.0
     build:
       context: ./docker/frim
     command: start
@@ -62,7 +62,9 @@ services:
       - localdev
   dfq-am:
     container_name: dfq-am
-    image: devspace-forgerock-quickstart/fram:7.5.0
+    image: devspace-forgerock-quickstart/fram:8.0.0
+    ports:
+      - 8081:8080
     build:
       context: ./docker/fram
       args:
@@ -93,7 +95,7 @@ services:
       - localdev
   dfq-ui-admin:
     container_name: dfq-admin-ui
-    image: gcr.io/forgerock-io/platform-admin-ui:7.5.0
+    image: gcr.io/forgerock-io/platform-admin-ui:8.0.1
     deploy:
       resources:
         limits:
@@ -105,12 +107,12 @@ services:
     env_file:
       - .env-d/ui/.env
     healthcheck:
-      test: curl -f http://localhost:8080/ || exit 1
+      test: wget --no-verbose --tries=1 --spider http://127.0.0.1:8080/ || exit 1
     networks:
       - localdev
   dfq-ui-login:
     container_name: dfq-login-ui
-    image: gcr.io/forgerock-io/platform-login-ui:7.5.0
+    image: gcr.io/forgerock-io/platform-login-ui:8.0.1
     deploy:
       resources:
         limits:
@@ -122,12 +124,12 @@ services:
     env_file:
       - .env-d/ui/.env
     healthcheck:
-      test: curl -f http://localhost:8080/ || exit 1
+      test: wget --no-verbose --tries=1 --spider http://127.0.0.1:8080/ || exit 1
     networks:
       - localdev
   dfq-ui-enduser:
     container_name: dfq-enduser-ui
-    image: gcr.io/forgerock-io/platform-enduser-ui:7.5.0
+    image: gcr.io/forgerock-io/platform-enduser-ui:8.0.1
     deploy:
       resources:
         limits:
@@ -139,12 +141,12 @@ services:
     env_file:
       - .env-d/ui/.env
     healthcheck:
-      test: curl -f http://localhost:8080/ || exit 1
+      test: wget --no-verbose --tries=1 --spider http://127.0.0.1:8080/ || exit 1
     networks:
       - localdev
   dfq-ds:
     container_name: dfq-ds
-    image: devspace-forgerock-quickstart/frds:7.5.0
+    image: devspace-forgerock-quickstart/frds:8.0.0
     build:
       context: docker/frds
     command: init_start

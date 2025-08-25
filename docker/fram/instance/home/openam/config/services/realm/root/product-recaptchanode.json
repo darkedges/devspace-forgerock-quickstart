@@ -5,9 +5,14 @@
     "entityId" : "product-ReCaptchaNode",
     "uid" : "ou=product-ReCaptchaNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-ReCaptchaNode" ]
+    "ou" : [
+      "product-ReCaptchaNode"
+    ]
   },
   "data" : {
     "_id" : "product-ReCaptchaNode",

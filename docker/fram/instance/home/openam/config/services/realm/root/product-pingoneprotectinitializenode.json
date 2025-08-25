@@ -5,9 +5,14 @@
     "entityId" : "product-PingOneProtectInitializeNode",
     "uid" : "ou=product-PingOneProtectInitializeNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-PingOneProtectInitializeNode" ]
+    "ou" : [
+      "product-PingOneProtectInitializeNode"
+    ]
   },
   "data" : {
     "_id" : "product-PingOneProtectInitializeNode",

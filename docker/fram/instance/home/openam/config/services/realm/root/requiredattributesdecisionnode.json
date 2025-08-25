@@ -5,9 +5,14 @@
     "entityId" : "RequiredAttributesDecisionNode",
     "uid" : "ou=RequiredAttributesDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RequiredAttributesDecisionNode" ]
+    "ou" : [
+      "RequiredAttributesDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "RequiredAttributesDecisionNode",

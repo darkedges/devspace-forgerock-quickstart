@@ -5,9 +5,14 @@
     "entityId" : "selfService",
     "uid" : "ou=selfService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "selfService" ]
+    "ou" : [
+      "selfService"
+    ]
   },
   "data" : {
     "_id" : "selfService",

@@ -5,9 +5,14 @@
     "entityId" : "RetryLimitDecisionNode",
     "uid" : "ou=RetryLimitDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RetryLimitDecisionNode" ]
+    "ou" : [
+      "RetryLimitDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "RetryLimitDecisionNode",

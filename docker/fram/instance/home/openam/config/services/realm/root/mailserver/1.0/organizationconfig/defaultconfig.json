@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=MailServer,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -18,15 +24,12 @@
     },
     "emailAddressAttribute" : "mail",
     "transportType" : null,
-    "password" : null,
     "emailRateLimitSeconds" : 1,
-    "username" : null,
-    "port" : 465,
-    "emailImplClassName" : "org.forgerock.openam.services.email.MailServerImpl",
+    "port" : null,
+    "emailImplClassName" : null,
     "message" : null,
     "subject" : null,
-    "sslState" : "SSL",
-    "from" : null,
-    "hostname" : null
+    "sslState" : null,
+    "from" : null
   }
 }

@@ -5,9 +5,14 @@
     "entityId" : "Subject/Organization",
     "uid" : "ou=Organization,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "Organization" ]
+    "ou" : [
+      "Organization"
+    ]
   },
   "data" : {
     "_id" : "Subject/Organization",

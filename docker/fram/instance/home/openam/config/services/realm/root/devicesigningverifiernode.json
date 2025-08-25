@@ -5,9 +5,14 @@
     "entityId" : "DeviceSigningVerifierNode",
     "uid" : "ou=DeviceSigningVerifierNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceSigningVerifierNode" ]
+    "ou" : [
+      "DeviceSigningVerifierNode"
+    ]
   },
   "data" : {
     "_id" : "DeviceSigningVerifierNode",

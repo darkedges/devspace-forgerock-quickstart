@@ -5,9 +5,14 @@
     "entityId" : "sunAMAuthDataStoreService",
     "uid" : "ou=sunAMAuthDataStoreService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunAMAuthDataStoreService" ]
+    "ou" : [
+      "sunAMAuthDataStoreService"
+    ]
   },
   "data" : {
     "_id" : "sunAMAuthDataStoreService",

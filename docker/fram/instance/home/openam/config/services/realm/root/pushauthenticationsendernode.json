@@ -5,9 +5,14 @@
     "entityId" : "PushAuthenticationSenderNode",
     "uid" : "ou=PushAuthenticationSenderNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PushAuthenticationSenderNode" ]
+    "ou" : [
+      "PushAuthenticationSenderNode"
+    ]
   },
   "data" : {
     "_id" : "PushAuthenticationSenderNode",

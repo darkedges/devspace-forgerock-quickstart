@@ -5,9 +5,14 @@
     "entityId" : "default/2cb66100-57b3-496e-a807-2b8a5bbb9349",
     "uid" : "ou=2cb66100-57b3-496e-a807-2b8a5bbb9349,ou=default,ou=OrganizationConfig,ou=1.0,ou=DataStoreDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "2cb66100-57b3-496e-a807-2b8a5bbb9349" ]
+    "ou" : [
+      "2cb66100-57b3-496e-a807-2b8a5bbb9349"
+    ]
   },
   "data" : {
     "_id" : "default/2cb66100-57b3-496e-a807-2b8a5bbb9349",

@@ -5,9 +5,14 @@
     "entityId" : "RemoveSessionPropertiesNode",
     "uid" : "ou=RemoveSessionPropertiesNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RemoveSessionPropertiesNode" ]
+    "ou" : [
+      "RemoveSessionPropertiesNode"
+    ]
   },
   "data" : {
     "_id" : "RemoveSessionPropertiesNode",

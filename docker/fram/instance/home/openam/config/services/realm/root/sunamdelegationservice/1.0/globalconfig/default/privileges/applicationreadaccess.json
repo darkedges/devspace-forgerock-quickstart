@@ -5,9 +5,14 @@
     "entityId" : "default/Privileges/ApplicationReadAccess",
     "uid" : "ou=ApplicationReadAccess,ou=Privileges,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Privilege",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ApplicationReadAccess" ]
+    "ou" : [
+      "ApplicationReadAccess"
+    ]
   },
   "data" : {
     "_id" : "default/Privileges/ApplicationReadAccess",
@@ -16,6 +21,8 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "listOfPermissions" : [ "ApplicationResourceRead" ]
+    "listOfPermissions" : [
+      "ApplicationResourceRead"
+    ]
   }
 }

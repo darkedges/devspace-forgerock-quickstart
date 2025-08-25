@@ -5,9 +5,14 @@
     "entityId" : "ConfigProviderNode",
     "uid" : "ou=ConfigProviderNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ConfigProviderNode" ]
+    "ou" : [
+      "ConfigProviderNode"
+    ]
   },
   "data" : {
     "_id" : "ConfigProviderNode",

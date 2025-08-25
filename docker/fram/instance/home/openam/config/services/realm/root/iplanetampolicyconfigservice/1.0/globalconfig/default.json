@@ -5,9 +5,15 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=GlobalConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",
@@ -16,10 +22,19 @@
       "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     },
-    "resourceComparators" : [ "serviceType=iPlanetAMWebAgentService|class=com.sun.identity.policy.plugins.HttpURLResourceName|wildcard=*|oneLevelWildcard=-*-|delimiter=/|caseSensitive=false" ],
-    "sun-am-policy-config-advices-handleable-by-am" : [ "AuthLevelConditionAdvice", "AuthSchemeConditionAdvice", "AuthenticateToRealmConditionAdvice", "AuthenticateToServiceConditionAdvice" ],
+    "resourceComparators" : [
+      "serviceType=iPlanetAMWebAgentService|class=com.sun.identity.policy.plugins.HttpURLResourceName|wildcard=*|oneLevelWildcard=-*-|delimiter=/|caseSensitive=false"
+    ],
+    "sun-am-policy-config-advices-handleable-by-am" : [
+      "AuthLevelConditionAdvice",
+      "AuthSchemeConditionAdvice",
+      "AuthenticateToRealmConditionAdvice",
+      "AuthenticateToServiceConditionAdvice"
+    ],
     "ResourceComparatorValidator" : "com.sun.identity.policy.ResourceComparatorValidator",
-    "serviceObjectClasses" : [ "iplanet-am-policy-config-service" ],
+    "serviceObjectClasses" : [
+      "iplanet-am-policy-config-service"
+    ],
     "continueEvaluationOnDeny" : false,
     "realmAliasReferrals" : false
   }

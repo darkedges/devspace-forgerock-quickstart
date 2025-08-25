@@ -5,9 +5,14 @@
     "entityId" : "ChoiceCollectorNode",
     "uid" : "ou=ChoiceCollectorNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ChoiceCollectorNode" ]
+    "ou" : [
+      "ChoiceCollectorNode"
+    ]
   },
   "data" : {
     "_id" : "ChoiceCollectorNode",

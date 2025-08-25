@@ -5,9 +5,14 @@
     "entityId" : "ConfigurationVersionService",
     "uid" : "ou=ConfigurationVersionService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ConfigurationVersionService" ]
+    "ou" : [
+      "ConfigurationVersionService"
+    ]
   },
   "data" : {
     "_id" : "ConfigurationVersionService",

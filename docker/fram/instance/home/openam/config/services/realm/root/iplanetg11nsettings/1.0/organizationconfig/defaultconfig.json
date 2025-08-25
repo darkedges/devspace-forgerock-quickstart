@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=iPlanetG11NSettings,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -16,6 +22,8 @@
       "name" : "iPlanetG11NSettings",
       "collection" : false
     },
-    "commonNameFormats" : [ "zh={sn}{givenname}" ]
+    "commonNameFormats" : [
+      "zh={sn}{givenname}"
+    ]
   }
 }

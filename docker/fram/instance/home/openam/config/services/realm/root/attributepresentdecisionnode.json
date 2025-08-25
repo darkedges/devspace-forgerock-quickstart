@@ -5,9 +5,14 @@
     "entityId" : "AttributePresentDecisionNode",
     "uid" : "ou=AttributePresentDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AttributePresentDecisionNode" ]
+    "ou" : [
+      "AttributePresentDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "AttributePresentDecisionNode",

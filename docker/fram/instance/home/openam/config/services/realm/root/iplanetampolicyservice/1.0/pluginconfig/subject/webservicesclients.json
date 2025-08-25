@@ -5,9 +5,14 @@
     "entityId" : "Subject/WebServicesClients",
     "uid" : "ou=WebServicesClients,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "WebServicesClients" ]
+    "ou" : [
+      "WebServicesClients"
+    ]
   },
   "data" : {
     "_id" : "Subject/WebServicesClients",

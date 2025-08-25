@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMPlatformService",
     "uid" : "ou=iPlanetAMPlatformService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMPlatformService" ]
+    "ou" : [
+      "iPlanetAMPlatformService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMPlatformService",

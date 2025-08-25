@@ -5,9 +5,14 @@
     "entityId" : "product-WriteFederationInformationNode",
     "uid" : "ou=product-WriteFederationInformationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "product-WriteFederationInformationNode" ]
+    "ou" : [
+      "product-WriteFederationInformationNode"
+    ]
   },
   "data" : {
     "_id" : "product-WriteFederationInformationNode",

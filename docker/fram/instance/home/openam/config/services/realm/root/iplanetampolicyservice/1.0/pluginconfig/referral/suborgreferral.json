@@ -5,9 +5,14 @@
     "entityId" : "Referral/SubOrgReferral",
     "uid" : "ou=SubOrgReferral,ou=Referral,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SubOrgReferral" ]
+    "ou" : [
+      "SubOrgReferral"
+    ]
   },
   "data" : {
     "_id" : "Referral/SubOrgReferral",

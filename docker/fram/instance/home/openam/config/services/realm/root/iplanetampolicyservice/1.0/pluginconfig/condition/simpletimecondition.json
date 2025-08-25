@@ -5,9 +5,14 @@
     "entityId" : "Condition/SimpleTimeCondition",
     "uid" : "ou=SimpleTimeCondition,ou=Condition,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SimpleTimeCondition" ]
+    "ou" : [
+      "SimpleTimeCondition"
+    ]
   },
   "data" : {
     "_id" : "Condition/SimpleTimeCondition",

@@ -5,9 +5,14 @@
     "entityId" : "ValidatedUsernameNode",
     "uid" : "ou=ValidatedUsernameNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "ValidatedUsernameNode" ]
+    "ou" : [
+      "ValidatedUsernameNode"
+    ]
   },
   "data" : {
     "_id" : "ValidatedUsernameNode",

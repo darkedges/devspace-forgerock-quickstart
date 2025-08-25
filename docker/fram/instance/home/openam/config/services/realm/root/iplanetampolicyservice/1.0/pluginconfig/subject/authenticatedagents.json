@@ -5,9 +5,14 @@
     "entityId" : "Subject/AuthenticatedAgents",
     "uid" : "ou=AuthenticatedAgents,ou=Subject,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AuthenticatedAgents" ]
+    "ou" : [
+      "AuthenticatedAgents"
+    ]
   },
   "data" : {
     "_id" : "Subject/AuthenticatedAgents",

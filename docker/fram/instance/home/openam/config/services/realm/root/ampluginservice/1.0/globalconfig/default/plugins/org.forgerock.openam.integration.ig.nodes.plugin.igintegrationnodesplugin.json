@@ -5,9 +5,14 @@
     "entityId" : "default/plugins/org.forgerock.openam.integration.ig.nodes.plugin.IgIntegrationNodesPlugin",
     "uid" : "ou=org.forgerock.openam.integration.ig.nodes.plugin.IgIntegrationNodesPlugin,ou=plugins,ou=default,ou=GlobalConfig,ou=1.0,ou=amPluginService,ou=services,ou=am-config",
     "sunServiceID" : "plugin",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "org.forgerock.openam.integration.ig.nodes.plugin.IgIntegrationNodesPlugin" ]
+    "ou" : [
+      "org.forgerock.openam.integration.ig.nodes.plugin.IgIntegrationNodesPlugin"
+    ]
   },
   "data" : {
     "_id" : "default/plugins/org.forgerock.openam.integration.ig.nodes.plugin.IgIntegrationNodesPlugin",

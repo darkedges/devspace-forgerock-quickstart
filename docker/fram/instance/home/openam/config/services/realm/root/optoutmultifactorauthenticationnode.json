@@ -5,9 +5,14 @@
     "entityId" : "OptOutMultiFactorAuthenticationNode",
     "uid" : "ou=OptOutMultiFactorAuthenticationNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "OptOutMultiFactorAuthenticationNode" ]
+    "ou" : [
+      "OptOutMultiFactorAuthenticationNode"
+    ]
   },
   "data" : {
     "_id" : "OptOutMultiFactorAuthenticationNode",

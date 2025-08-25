@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthAdaptiveService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -26,7 +32,9 @@
     "iprange" : {
       "ipRangeScore" : 1,
       "ipRangeCheckEnabled" : false,
-      "ipRange" : [ "10.0.0.0/24" ],
+      "ipRange" : [
+        "10.0.0.0/24"
+      ],
       "invertIPRangeScoreEnabled" : false
     },
     "knowncookie" : {

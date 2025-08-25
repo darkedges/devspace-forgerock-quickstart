@@ -5,9 +5,14 @@
     "entityId" : "PatchObjectNode",
     "uid" : "ou=PatchObjectNode,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PatchObjectNode" ]
+    "ou" : [
+      "PatchObjectNode"
+    ]
   },
   "data" : {
     "_id" : "PatchObjectNode",

@@ -5,9 +5,14 @@
     "entityId" : "Referral/PeerOrgReferral",
     "uid" : "ou=PeerOrgReferral,ou=Referral,ou=PluginConfig,ou=1.0,ou=iPlanetAMPolicyService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "PeerOrgReferral" ]
+    "ou" : [
+      "PeerOrgReferral"
+    ]
   },
   "data" : {
     "_id" : "Referral/PeerOrgReferral",

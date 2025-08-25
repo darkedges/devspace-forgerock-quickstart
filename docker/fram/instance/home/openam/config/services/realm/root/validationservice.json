@@ -5,9 +5,14 @@
     "entityId" : "validationService",
     "uid" : "ou=validationService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "validationService" ]
+    "ou" : [
+      "validationService"
+    ]
   },
   "data" : {
     "_id" : "validationService",

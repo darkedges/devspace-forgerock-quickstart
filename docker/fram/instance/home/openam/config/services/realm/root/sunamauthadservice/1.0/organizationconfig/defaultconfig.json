@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthADService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -18,19 +24,31 @@
     },
     "trustAllServerCertificates" : false,
     "connectionHeartbeatInterval" : 1,
-    "userSearchAttributes" : [ "uid" ],
+    "userSearchAttributes" : [
+      "uid"
+    ],
     "operationTimeout" : 0,
-    "primaryLdapServer" : [ "localhost:50636" ],
+    "primaryLdapServer" : [
+      "localhost:50636"
+    ],
     "userBindDN" : "cn=Directory Manager",
-    "userSearchStartDN" : [ "ou=identities" ],
-    "profileAttributeMappings" : [ ],
+    "userSearchStartDN" : [
+      "ou=identities"
+    ],
+    "profileAttributeMappings" : [
+      
+    ],
     "stopLdapbindAfterInmemoryLockedEnabled" : false,
     "returnUserDN" : true,
-    "secondaryLdapServer" : [ ],
+    "secondaryLdapServer" : [
+      
+    ],
     "userBindPassword" : null,
     "connectionHeartbeatTimeUnit" : "MINUTES",
     "openam-auth-ldap-connection-mode" : "LDAPS",
-    "iplanet-am-auth-ldap-invalid-chars" : [ "*|(|)|&|!" ],
+    "iplanet-am-auth-ldap-invalid-chars" : [
+      "*|(|)|&|!"
+    ],
     "userSearchFilter" : null,
     "authenticationLevel" : 0,
     "searchScope" : "SUBTREE",

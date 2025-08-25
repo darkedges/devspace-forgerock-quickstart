@@ -5,9 +5,14 @@
     "entityId" : "CorsService",
     "uid" : "ou=CorsService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "CorsService" ]
+    "ou" : [
+      "CorsService"
+    ]
   },
   "data" : {
     "_id" : "CorsService",

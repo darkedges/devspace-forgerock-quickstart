@@ -5,9 +5,14 @@
     "entityId" : "DeviceId",
     "uid" : "ou=DeviceId,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "DeviceId" ]
+    "ou" : [
+      "DeviceId"
+    ]
   },
   "data" : {
     "_id" : "DeviceId",

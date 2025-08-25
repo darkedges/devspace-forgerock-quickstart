@@ -5,9 +5,14 @@
     "entityId" : "default/Permissions/COTRestAdmin",
     "uid" : "ou=COTRestAdmin,ou=Permissions,ou=default,ou=GlobalConfig,ou=1.0,ou=sunAMDelegationService,ou=services,ou=am-config",
     "sunServiceID" : "Permission",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "COTRestAdmin" ]
+    "ou" : [
+      "COTRestAdmin"
+    ]
   },
   "data" : {
     "_id" : "default/Permissions/COTRestAdmin",
@@ -16,7 +21,12 @@
       "name" : "sunAMDelegationService",
       "collection" : false
     },
-    "actions" : [ "READ", "MODIFY" ],
-    "resource" : [ "REALM/rest/1.0/circlesoftrust/*" ]
+    "actions" : [
+      "READ",
+      "MODIFY"
+    ],
+    "resource" : [
+      "REALM/rest/1.0/circlesoftrust/*"
+    ]
   }
 }

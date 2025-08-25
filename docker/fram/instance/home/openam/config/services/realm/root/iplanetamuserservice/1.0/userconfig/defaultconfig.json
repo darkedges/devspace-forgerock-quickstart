@@ -5,9 +5,15 @@
     "entityId" : "defaultconfig",
     "uid" : "ou=defaultconfig,ou=UserConfig,ou=1.0,ou=iPlanetAMUserService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "organizationalunit", "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "organizationalunit",
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "defaultconfig" ]
+    "ou" : [
+      "defaultconfig"
+    ]
   },
   "data" : {
     "_id" : "defaultconfig",
@@ -18,17 +24,27 @@
     },
     "givenName" : null,
     "inetUserStatus" : "Active",
-    "iplanet-am-user-success-url" : [ ],
+    "iplanet-am-user-success-url" : [
+      
+    ],
     "uid" : null,
     "iplanet-am-user-auth-config" : "[Empty]",
     "postalAddress" : null,
     "userPassword" : null,
-    "retryLimitNodeCount" : [ ],
-    "sunIdentityMSISDNNumber" : [ ],
+    "retryLimitNodeCount" : [
+      
+    ],
+    "sunIdentityMSISDNNumber" : [
+      
+    ],
     "employeeNumber" : null,
     "lastEmailSent" : null,
-    "iplanet-am-user-failure-url" : [ ],
-    "iplanet-am-user-alias-list" : [ ],
+    "iplanet-am-user-failure-url" : [
+      
+    ],
+    "iplanet-am-user-alias-list" : [
+      
+    ],
     "sn" : null,
     "telephoneNumber" : null,
     "RequiredValueValidator" : "com.sun.identity.sm.RequiredValueValidator",

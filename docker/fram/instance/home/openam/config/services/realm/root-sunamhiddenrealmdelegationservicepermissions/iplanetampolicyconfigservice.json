@@ -5,9 +5,14 @@
     "entityId" : "iPlanetAMPolicyConfigService",
     "uid" : "ou=iPlanetAMPolicyConfigService,ou=services,o=sunamhiddenrealmdelegationservicepermissions,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "iPlanetAMPolicyConfigService" ]
+    "ou" : [
+      "iPlanetAMPolicyConfigService"
+    ]
   },
   "data" : {
     "_id" : "iPlanetAMPolicyConfigService",

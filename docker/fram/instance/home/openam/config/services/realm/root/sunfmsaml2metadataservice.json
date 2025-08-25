@@ -5,9 +5,14 @@
     "entityId" : "sunFMSAML2MetadataService",
     "uid" : "ou=sunFMSAML2MetadataService,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "sunFMSAML2MetadataService" ]
+    "ou" : [
+      "sunFMSAML2MetadataService"
+    ]
   },
   "data" : {
     "_id" : "sunFMSAML2MetadataService",

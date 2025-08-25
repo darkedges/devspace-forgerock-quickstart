@@ -5,9 +5,14 @@
     "entityId" : "default",
     "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=sunAMAuthHOTPService,ou=services,o=alpha,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "default" ]
+    "ou" : [
+      "default"
+    ]
   },
   "data" : {
     "_id" : "default",

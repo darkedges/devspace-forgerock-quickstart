@@ -5,9 +5,14 @@
     "entityId" : "default/group",
     "uid" : "ou=group,ou=default,ou=GlobalConfig,ou=1.0,ou=sunIdentityRepositoryService,ou=services,ou=am-config",
     "sunServiceID" : "SupportedIdentities",
-    "objectClass" : [ "sunServiceComponent", "top" ],
+    "objectClass" : [
+      "sunServiceComponent",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "group" ]
+    "ou" : [
+      "group"
+    ]
   },
   "data" : {
     "_id" : "default/group",
@@ -16,7 +21,11 @@
       "name" : "sunIdentityRepositoryService",
       "collection" : false
     },
-    "canHaveMembers" : [ "user" ],
-    "canAddMembers" : [ "user" ]
+    "canHaveMembers" : [
+      "user"
+    ],
+    "canAddMembers" : [
+      "user"
+    ]
   }
 }

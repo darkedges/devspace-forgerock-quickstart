@@ -5,9 +5,14 @@
     "entityId" : "RequestHeaderNode",
     "uid" : "ou=RequestHeaderNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "RequestHeaderNode" ]
+    "ou" : [
+      "RequestHeaderNode"
+    ]
   },
   "data" : {
     "_id" : "RequestHeaderNode",

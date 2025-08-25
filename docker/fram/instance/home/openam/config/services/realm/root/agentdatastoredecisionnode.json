@@ -5,9 +5,14 @@
     "entityId" : "AgentDataStoreDecisionNode",
     "uid" : "ou=AgentDataStoreDecisionNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "AgentDataStoreDecisionNode" ]
+    "ou" : [
+      "AgentDataStoreDecisionNode"
+    ]
   },
   "data" : {
     "_id" : "AgentDataStoreDecisionNode",

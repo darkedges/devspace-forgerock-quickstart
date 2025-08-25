@@ -5,9 +5,14 @@
     "entityId" : "SessionDataNode",
     "uid" : "ou=SessionDataNode,ou=services,ou=am-config",
     "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
+    "objectClass" : [
+      "sunService",
+      "top"
+    ],
     "pathParams" : { },
-    "ou" : [ "SessionDataNode" ]
+    "ou" : [
+      "SessionDataNode"
+    ]
   },
   "data" : {
     "_id" : "SessionDataNode",
