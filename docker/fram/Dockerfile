@@ -47,7 +47,7 @@ COPY --chown=forgerock:forgerock --chmod=0755 rootscripts/*.sh /usr/local/tomcat
 
 COPY --chown=forgerock:forgerock --chmod=0755 instance/amster /opt/amster/config/
 
-COPY --chown=forgerock:forgerock instance/home/openam/security /home/forgerock/openam/security/
+COPY --chown=forgerock:forgerock instance/home/openam /home/forgerock/openam/
 
 RUN chmod 755 /usr/local/tomcat/*.sh
 

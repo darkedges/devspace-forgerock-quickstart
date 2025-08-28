@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMAuthAmsterService",
     "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthAmsterService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunServiceComponent",
-      "top"
-    ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "default"
-    ]
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -21,6 +16,8 @@
       "name" : "iPlanetAMAuthAmsterService",
       "collection" : false
     },
-    "authorizedKeys" : "&{amster.secrets.keys.path|/home/forgerock/openam/security/keys/amster/authorized_keys}"
+    "authorizedKeys" : {
+      "$string" : "&{amster.secrets.keys.path|&{am.server.config.dir}/security/keys/amster/authorized_keys}"
+    }
   }
 }

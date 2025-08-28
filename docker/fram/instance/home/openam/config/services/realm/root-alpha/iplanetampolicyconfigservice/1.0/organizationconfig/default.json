@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMPolicyConfigService",
     "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMPolicyConfigService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunServiceComponent",
-      "top"
-    ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "default"
-    ]
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -21,10 +16,14 @@
       "name" : "iPlanetAMPolicyConfigService",
       "collection" : false
     },
-    "bindDn" : "&{am.stores.policy.username}",
-    "bindPassword" : "&{am.stores.policy.password}",
+    "bindDn" : {
+      "$string" : "&{am.stores.policy.username|uid=am-config,ou=admins,ou=am-config}"
+    },
+    "bindPassword" : {
+      "$string" : "&{am.stores.policy.password|&{am.stores.application.password}}"
+    },
     "sslEnabled" : {
-      "$bool" : "&{am.stores.policy.ssl.enabled}"
+      "$bool" : "&{am.stores.policy.ssl.enabled|&{am.stores.application.ssl.enabled|true}}"
     }
   }
 }

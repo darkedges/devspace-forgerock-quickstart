@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMAuthLDAPService",
     "entityId" : "iPlanetAMAuthLDAPService",
-    "uid" : "ou=iPlanetAMAuthLDAPService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=iPlanetAMAuthLDAPService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "iPlanetAMAuthLDAPService"
-    ]
+    "ou" : [ "iPlanetAMAuthLDAPService" ]
   },
   "data" : {
     "_id" : "iPlanetAMAuthLDAPService",

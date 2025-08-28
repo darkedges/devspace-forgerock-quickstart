@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "sunAMAuthHOTPService",
     "entityId" : "sunAMAuthHOTPService",
-    "uid" : "ou=sunAMAuthHOTPService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=sunAMAuthHOTPService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "sunAMAuthHOTPService"
-    ]
+    "ou" : [ "sunAMAuthHOTPService" ]
   },
   "data" : {
     "_id" : "sunAMAuthHOTPService",

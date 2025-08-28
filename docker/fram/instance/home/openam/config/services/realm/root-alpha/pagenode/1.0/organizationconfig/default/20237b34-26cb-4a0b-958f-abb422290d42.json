@@ -1,34 +1,34 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "PageNode",
-    "entityId" : "default/20237b34-26cb-4a0b-958f-abb422290d42",
-    "uid" : "ou=20237b34-26cb-4a0b-958f-abb422290d42,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "PageNode",
+    "entityId": "default/20237b34-26cb-4a0b-958f-abb422290d42",
+    "uid": "ou=20237b34-26cb-4a0b-958f-abb422290d42,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "20237b34-26cb-4a0b-958f-abb422290d42"
     ]
   },
-  "data" : {
-    "_id" : "default/20237b34-26cb-4a0b-958f-abb422290d42",
-    "_type" : {
-      "_id" : "PageNode",
-      "name" : "PageNode",
-      "collection" : false
+  "data": {
+    "_id": "default/20237b34-26cb-4a0b-958f-abb422290d42",
+    "_type": {
+      "_id": "PageNode",
+      "name": "PageNode",
+      "collection": false
     },
-    "nodes" : [
+    "nodes": [
       "e43b0af6-1c4c-472f-9641-6be5319e62b4:ValidatedPasswordNode:Platform Password"
     ],
-    "pageDescription" : {
-      "en" : "Enter current password"
+    "pageDescription": {
+      "en": "Enter current password"
     },
-    "pageHeader" : {
-      "en" : "Verify Existing Password"
+    "pageHeader": {
+      "en": "Verify Existing Password"
     }
   }
 }

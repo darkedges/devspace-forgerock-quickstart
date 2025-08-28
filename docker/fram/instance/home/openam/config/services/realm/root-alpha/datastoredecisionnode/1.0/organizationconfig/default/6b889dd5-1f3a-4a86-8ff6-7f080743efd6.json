@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "DataStoreDecisionNode",
-    "entityId" : "default/6b889dd5-1f3a-4a86-8ff6-7f080743efd6",
-    "uid" : "ou=6b889dd5-1f3a-4a86-8ff6-7f080743efd6,ou=default,ou=OrganizationConfig,ou=1.0,ou=DataStoreDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "DataStoreDecisionNode",
+    "entityId": "default/6b889dd5-1f3a-4a86-8ff6-7f080743efd6",
+    "uid": "ou=6b889dd5-1f3a-4a86-8ff6-7f080743efd6,ou=default,ou=OrganizationConfig,ou=1.0,ou=DataStoreDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "6b889dd5-1f3a-4a86-8ff6-7f080743efd6"
     ]
   },
-  "data" : {
-    "_id" : "default/6b889dd5-1f3a-4a86-8ff6-7f080743efd6",
-    "_type" : {
-      "_id" : "DataStoreDecisionNode",
-      "name" : "DataStoreDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "default/6b889dd5-1f3a-4a86-8ff6-7f080743efd6",
+    "_type": {
+      "_id": "DataStoreDecisionNode",
+      "name": "DataStoreDecisionNode",
+      "collection": false
     }
   }
 }

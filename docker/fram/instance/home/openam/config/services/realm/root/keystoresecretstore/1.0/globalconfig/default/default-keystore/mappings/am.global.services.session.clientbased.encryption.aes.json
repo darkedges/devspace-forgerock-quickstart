@@ -1,28 +1,28 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "KeyStoreSecretStore",
-    "entityId" : "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
-    "uid" : "ou=am.global.services.session.clientbased.encryption.AES,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": null,
+    "entityType": "KeyStoreSecretStore",
+    "entityId": "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
+    "uid": "ou=am.global.services.session.clientbased.encryption.AES,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "am.global.services.session.clientbased.encryption.AES"
     ]
   },
-  "data" : {
-    "_id" : "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
-    "_type" : {
-      "_id" : "KeyStoreSecretStore",
-      "name" : "KeyStoreSecretStore",
-      "collection" : false
+  "data": {
+    "_id": "default/default-keystore/mappings/am.global.services.session.clientbased.encryption.AES",
+    "_type": {
+      "_id": "KeyStoreSecretStore",
+      "name": "KeyStoreSecretStore",
+      "collection": false
     },
-    "secretId" : "am.global.services.session.clientbased.encryption.AES",
-    "aliases" : [
+    "secretId": "am.global.services.session.clientbased.encryption.AES",
+    "aliases": [
       "aestest"
     ]
   }

@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "authenticationTreesService",
     "entityId" : "authenticationTreesService",
-    "uid" : "ou=authenticationTreesService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=authenticationTreesService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "authenticationTreesService"
-    ]
+    "ou" : [ "authenticationTreesService" ]
   },
   "data" : {
     "_id" : "authenticationTreesService",

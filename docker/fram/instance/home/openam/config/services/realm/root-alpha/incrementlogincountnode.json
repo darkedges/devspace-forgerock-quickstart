@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "IncrementLoginCountNode",
-    "entityId" : "IncrementLoginCountNode",
-    "uid" : "ou=IncrementLoginCountNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "IncrementLoginCountNode",
+    "entityId": "IncrementLoginCountNode",
+    "uid": "ou=IncrementLoginCountNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunService",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "IncrementLoginCountNode"
     ]
   },
-  "data" : {
-    "_id" : "IncrementLoginCountNode",
-    "_type" : {
-      "_id" : "IncrementLoginCountNode",
-      "name" : "IncrementLoginCountNode",
-      "collection" : false
+  "data": {
+    "_id": "IncrementLoginCountNode",
+    "_type": {
+      "_id": "IncrementLoginCountNode",
+      "name": "IncrementLoginCountNode",
+      "collection": false
     }
   }
 }

@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "EmailSuspendNode",
-    "entityId" : "EmailSuspendNode",
-    "uid" : "ou=EmailSuspendNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "EmailSuspendNode",
+    "entityId": "EmailSuspendNode",
+    "uid": "ou=EmailSuspendNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunService",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "EmailSuspendNode"
     ]
   },
-  "data" : {
-    "_id" : "EmailSuspendNode",
-    "_type" : {
-      "_id" : "EmailSuspendNode",
-      "name" : "EmailSuspendNode",
-      "collection" : false
+  "data": {
+    "_id": "EmailSuspendNode",
+    "_type": {
+      "_id": "EmailSuspendNode",
+      "name": "EmailSuspendNode",
+      "collection": false
     }
   }
 }

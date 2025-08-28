@@ -75,7 +75,7 @@
             ],
             "searchable": false,
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": false
           },
@@ -94,7 +94,7 @@
             "searchable": true,
             "title": "Status",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -110,7 +110,7 @@
             "searchable": false,
             "title": "Active Date",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -224,7 +224,7 @@
             "returnByDefault": false,
             "title": "Assignments",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -273,7 +273,7 @@
             "returnByDefault": false,
             "title": "Authorization Roles",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -296,7 +296,7 @@
             ],
             "title": "City",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -359,7 +359,7 @@
             "searchable": false,
             "title": "Consented Mappings",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": false
           },
@@ -382,7 +382,7 @@
             ],
             "title": "Country",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -406,7 +406,7 @@
             "searchable": true,
             "title": "Description",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -435,7 +435,7 @@
             "returnByDefault": true,
             "title": "Effective Assignments",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "viewable": false
           },
           "effectiveRoles": {
@@ -454,7 +454,7 @@
             "returnByDefault": true,
             "title": "Effective Roles",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "viewable": false
           },
           "givenName": {
@@ -477,7 +477,7 @@
             "searchable": true,
             "title": "First Name",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -493,7 +493,7 @@
             "searchable": false,
             "title": "Inactive Date",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -525,7 +525,7 @@
               "type": "object"
             },
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": false
           },
@@ -561,7 +561,7 @@
             "searchable": false,
             "title": "Last Sync timestamp",
             "type": "object",
-            "usageDescription": "",
+            "usageDescription": null,
             "viewable": false
           },
           "mail": {
@@ -581,7 +581,7 @@
             "searchable": true,
             "title": "Email Address",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -624,7 +624,7 @@
             "searchable": false,
             "title": "Manager",
             "type": "relationship",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "validate": true,
             "viewable": true
@@ -744,9 +744,6 @@
           },
           "password": {
             "description": "Password",
-            "encryption": {
-              "purpose": "idm.password.encryption"
-            },
             "isPersonal": false,
             "isProtected": true,
             "policies": [
@@ -783,9 +780,11 @@
             "searchable": false,
             "title": "Password",
             "type": "string",
-            "usageDescription": "",
-            "userEditable": true,
-            "viewable": false
+            "usageDescription": null,
+            "userEditable": false,
+            "viewable": false,
+            "format": null,
+            "isVirtual": false
           },
           "postalAddress": {
             "description": "Address 1",
@@ -806,7 +805,7 @@
             ],
             "title": "Address 1",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -829,7 +828,7 @@
             ],
             "title": "Postal Code",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -854,7 +853,7 @@
             "searchable": false,
             "title": "Preferences",
             "type": "object",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -903,7 +902,7 @@
             "returnByDefault": false,
             "title": "Direct Reports",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -959,7 +958,7 @@
             "returnByDefault": false,
             "title": "Provisioning Roles",
             "type": "array",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": false,
             "viewable": true
           },
@@ -983,7 +982,7 @@
             "searchable": true,
             "title": "Last Name",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -1006,7 +1005,7 @@
             ],
             "title": "State/Province",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -1030,7 +1029,7 @@
             ],
             "title": "Telephone Number",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           },
@@ -1065,7 +1064,7 @@
             "searchable": true,
             "title": "Username",
             "type": "string",
-            "usageDescription": "",
+            "usageDescription": null,
             "userEditable": true,
             "viewable": true
           }

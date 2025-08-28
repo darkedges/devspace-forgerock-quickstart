@@ -1,27 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "IdentifyExistingUserNode",
-    "entityId" : "default/21b8ddf3-0203-4ae1-ab05-51cf3a3a707a",
-    "uid" : "ou=21b8ddf3-0203-4ae1-ab05-51cf3a3a707a,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "IdentifyExistingUserNode",
+    "entityId": "default/21b8ddf3-0203-4ae1-ab05-51cf3a3a707a",
+    "uid": "ou=21b8ddf3-0203-4ae1-ab05-51cf3a3a707a,ou=default,ou=OrganizationConfig,ou=1.0,ou=IdentifyExistingUserNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "21b8ddf3-0203-4ae1-ab05-51cf3a3a707a"
     ]
   },
-  "data" : {
-    "_id" : "default/21b8ddf3-0203-4ae1-ab05-51cf3a3a707a",
-    "_type" : {
-      "_id" : "IdentifyExistingUserNode",
-      "name" : "IdentifyExistingUserNode",
-      "collection" : false
+  "data": {
+    "_id": "default/21b8ddf3-0203-4ae1-ab05-51cf3a3a707a",
+    "_type": {
+      "_id": "IdentifyExistingUserNode",
+      "name": "IdentifyExistingUserNode",
+      "collection": false
     },
-    "identityAttribute" : "mail",
-    "identifier" : "userName"
+    "identityAttribute": "mail",
+    "identifier": "userName"
   }
 }

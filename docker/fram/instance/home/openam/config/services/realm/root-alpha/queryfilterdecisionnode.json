@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "QueryFilterDecisionNode",
-    "entityId" : "QueryFilterDecisionNode",
-    "uid" : "ou=QueryFilterDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "QueryFilterDecisionNode",
+    "entityId": "QueryFilterDecisionNode",
+    "uid": "ou=QueryFilterDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunService",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "QueryFilterDecisionNode"
     ]
   },
-  "data" : {
-    "_id" : "QueryFilterDecisionNode",
-    "_type" : {
-      "_id" : "QueryFilterDecisionNode",
-      "name" : "QueryFilterDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "QueryFilterDecisionNode",
+    "_type": {
+      "_id": "QueryFilterDecisionNode",
+      "name": "QueryFilterDecisionNode",
+      "collection": false
     }
   }
 }

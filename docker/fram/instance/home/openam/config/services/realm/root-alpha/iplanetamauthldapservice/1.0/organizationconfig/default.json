@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMAuthLDAPService",
     "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthLDAPService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunServiceComponent",
-      "top"
-    ],
+    "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "default"
-    ]
+    "ou" : [ "default" ]
   },
   "data" : {
     "_id" : "default",
@@ -21,7 +16,11 @@
       "name" : "iPlanetAMAuthLDAPService",
       "collection" : false
     },
-    "userBindPassword" : "&{am.authentication.modules.ldap.password}",
-    "openam-auth-ldap-connection-mode" : "&{am.authentication.modules.ldap.connection.mode}"
+    "userBindPassword" : {
+      "$string" : "&{am.authentication.modules.ldap.password|&{am.stores.user.password}}"
+    },
+    "openam-auth-ldap-connection-mode" : {
+      "$string" : "&{am.authentication.modules.ldap.connection.mode|LDAPS}"
+    }
   }
 }

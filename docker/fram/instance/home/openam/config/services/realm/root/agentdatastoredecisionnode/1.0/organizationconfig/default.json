@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AgentDataStoreDecisionNode",
+    "entityId" : "default",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=AgentDataStoreDecisionNode,ou=services,%BASE_DN%",
+    "sunServiceID" : null,
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "default" ]
+  },
+  "data" : {
+    "_id" : "default",
+    "_type" : {
+      "_id" : "AgentDataStoreDecisionNode",
+      "name" : "AgentDataStoreDecisionNode",
+      "collection" : false
+    }
+  }
+}

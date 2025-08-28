@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "DataStoreDecisionNode",
+    "entityId" : "default/c81e728d-9d4c-3f63-af06-7f89cc14862d",
+    "uid" : "ou=c81e728d-9d4c-3f63-af06-7f89cc14862d,ou=default,ou=OrganizationConfig,ou=1.0,ou=DataStoreDecisionNode,ou=services,%BASE_DN%",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "c81e728d-9d4c-3f63-af06-7f89cc14862d" ]
+  },
+  "data" : {
+    "_id" : "default/c81e728d-9d4c-3f63-af06-7f89cc14862d",
+    "_type" : {
+      "_id" : "DataStoreDecisionNode",
+      "name" : "DataStoreDecisionNode",
+      "collection" : false
+    }
+  }
+}

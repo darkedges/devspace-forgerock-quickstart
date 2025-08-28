@@ -172,7 +172,7 @@ services:
       test: [ "CMD", "/opt/frds/healthCheck.sh" ]
       interval: 10s
       timeout: 10s
-      retries: 3
+      retries: 30
       start_period: 30s
     hostname: dfq-ds-0
     networks:

@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "sunAMAuthSAEService",
     "entityId" : "sunAMAuthSAEService",
-    "uid" : "ou=sunAMAuthSAEService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=sunAMAuthSAEService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "sunAMAuthSAEService"
-    ]
+    "ou" : [ "sunAMAuthSAEService" ]
   },
   "data" : {
     "_id" : "sunAMAuthSAEService",

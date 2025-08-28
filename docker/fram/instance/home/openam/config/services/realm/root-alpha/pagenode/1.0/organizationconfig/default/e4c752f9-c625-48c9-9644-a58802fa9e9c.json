@@ -1,34 +1,34 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "PageNode",
-    "entityId" : "default/e4c752f9-c625-48c9-9644-a58802fa9e9c",
-    "uid" : "ou=e4c752f9-c625-48c9-9644-a58802fa9e9c,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "PageNode",
+    "entityId": "default/e4c752f9-c625-48c9-9644-a58802fa9e9c",
+    "uid": "ou=e4c752f9-c625-48c9-9644-a58802fa9e9c,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "e4c752f9-c625-48c9-9644-a58802fa9e9c"
     ]
   },
-  "data" : {
-    "_id" : "default/e4c752f9-c625-48c9-9644-a58802fa9e9c",
-    "_type" : {
-      "_id" : "PageNode",
-      "name" : "PageNode",
-      "collection" : false
+  "data": {
+    "_id": "default/e4c752f9-c625-48c9-9644-a58802fa9e9c",
+    "_type": {
+      "_id": "PageNode",
+      "name": "PageNode",
+      "collection": false
     },
-    "nodes" : [
+    "nodes": [
       "009c19c8-9572-47bb-adb2-1f092c559a43:ValidatedPasswordNode:Platform Password"
     ],
-    "pageDescription" : {
-      "en" : "Change password"
+    "pageDescription": {
+      "en": "Change password"
     },
-    "pageHeader" : {
-      "en" : "Reset Password"
+    "pageHeader": {
+      "en": "Reset Password"
     }
   }
 }

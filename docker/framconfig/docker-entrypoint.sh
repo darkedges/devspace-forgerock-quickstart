@@ -11,6 +11,7 @@ upgradeXtoY() {
         --inputConfig /tmp/fram/${CURRENTVERSION} \
         --output /tmp/fram/${NEXTVERSION} \
         --amsterVersion ${NEXTVERSION} \
+        --ignoreNoRuleTracking \
         /home/forgerock/amupgrade/rules/amster/${CURRENTVERSION_C}-to-${NEXTVERSION_C}.groovy
     applyPostPatch${NEXTVERSION_C}
 }

@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "SetSuccessUrlNode",
-    "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "SetSuccessUrlNode",
+    "entityId": "default",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "default"
     ]
   },
-  "data" : {
-    "_id" : "default",
-    "_type" : {
-      "_id" : "SetSuccessUrlNode",
-      "name" : "SetSuccessUrlNode",
-      "collection" : false
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "SetSuccessUrlNode",
+      "name": "SetSuccessUrlNode",
+      "collection": false
     }
   }
 }

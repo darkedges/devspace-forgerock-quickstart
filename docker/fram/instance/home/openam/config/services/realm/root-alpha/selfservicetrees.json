@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "selfServiceTrees",
-    "entityId" : "selfServiceTrees",
-    "uid" : "ou=selfServiceTrees,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "selfServiceTrees",
+    "entityId": "selfServiceTrees",
+    "uid": "ou=selfServiceTrees,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunService",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "selfServiceTrees"
     ]
   },
-  "data" : {
-    "_id" : "selfServiceTrees",
-    "_type" : {
-      "_id" : "selfServiceTrees",
-      "name" : "selfServiceTrees",
-      "collection" : false
+  "data": {
+    "_id": "selfServiceTrees",
+    "_type": {
+      "_id": "selfServiceTrees",
+      "name": "selfServiceTrees",
+      "collection": false
     }
   }
 }

@@ -1,25 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "DataStoreDecisionNode",
-    "entityId" : "DataStoreDecisionNode",
-    "uid" : "ou=DataStoreDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "DataStoreDecisionNode",
+    "entityId": "DataStoreDecisionNode",
+    "uid": "ou=DataStoreDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
       "sunService",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "DataStoreDecisionNode"
     ]
   },
-  "data" : {
-    "_id" : "DataStoreDecisionNode",
-    "_type" : {
-      "_id" : "DataStoreDecisionNode",
-      "name" : "DataStoreDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "DataStoreDecisionNode",
+    "_type": {
+      "_id": "DataStoreDecisionNode",
+      "name": "DataStoreDecisionNode",
+      "collection": false
     }
   }
 }

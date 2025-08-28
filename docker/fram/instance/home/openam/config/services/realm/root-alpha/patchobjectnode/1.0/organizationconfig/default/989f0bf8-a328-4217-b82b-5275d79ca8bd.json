@@ -1,27 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "PatchObjectNode",
-    "entityId" : "default/989f0bf8-a328-4217-b82b-5275d79ca8bd",
-    "uid" : "ou=989f0bf8-a328-4217-b82b-5275d79ca8bd,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "PatchObjectNode",
+    "entityId": "default/989f0bf8-a328-4217-b82b-5275d79ca8bd",
+    "uid": "ou=989f0bf8-a328-4217-b82b-5275d79ca8bd,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "989f0bf8-a328-4217-b82b-5275d79ca8bd"
     ]
   },
-  "data" : {
-    "_id" : "default/989f0bf8-a328-4217-b82b-5275d79ca8bd",
-    "_type" : {
-      "_id" : "PatchObjectNode",
-      "name" : "PatchObjectNode",
-      "collection" : false
+  "data": {
+    "_id": "default/989f0bf8-a328-4217-b82b-5275d79ca8bd",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "name": "PatchObjectNode",
+      "collection": false
     },
-    "identityResource" : "managed/user",
-    "identityAttribute" : "mail"
+    "identityResource": "managed/user",
+    "identityAttribute": "mail"
   }
 }

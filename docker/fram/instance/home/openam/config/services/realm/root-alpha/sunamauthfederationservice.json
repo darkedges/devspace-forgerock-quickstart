@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "sunAMAuthFederationService",
     "entityId" : "sunAMAuthFederationService",
-    "uid" : "ou=sunAMAuthFederationService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=sunAMAuthFederationService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "sunAMAuthFederationService"
-    ]
+    "ou" : [ "sunAMAuthFederationService" ]
   },
   "data" : {
     "_id" : "sunAMAuthFederationService",

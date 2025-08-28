@@ -3,16 +3,11 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMPolicyConfigService",
     "entityId" : "iPlanetAMPolicyConfigService",
-    "uid" : "ou=iPlanetAMPolicyConfigService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=iPlanetAMPolicyConfigService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
-    "objectClass" : [
-      "sunService",
-      "top"
-    ],
+    "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },
-    "ou" : [
-      "iPlanetAMPolicyConfigService"
-    ]
+    "ou" : [ "iPlanetAMPolicyConfigService" ]
   },
   "data" : {
     "_id" : "iPlanetAMPolicyConfigService",

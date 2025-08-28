@@ -1,3 +1,7 @@
+dn: ou=am-config
+changetype: modify
+add: aci
+aci: (targetcontrol="1.2.840.113556.1.4.473")(version 3.0; acl "Allow server-side sorting"; allow (read)(userdn = "ldap:///uid=am-config,ou=admins,ou=am-config");)
 
 dn: ou=services,ou=am-config
 objectclass: organizationalunit

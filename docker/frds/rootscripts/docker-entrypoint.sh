@@ -60,8 +60,8 @@ init_deploymentkey)
     init_deploymentkey
     ;;
 init_start)
-    init
     upgrade
+    init
     start
     ;;
 upgrade)

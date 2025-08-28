@@ -1,34 +1,34 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "PageNode",
-    "entityId" : "default/cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b",
-    "uid" : "ou=cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "PageNode",
+    "entityId": "default/cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b",
+    "uid": "ou=cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
       "sunServiceComponent",
       "top"
     ],
-    "pathParams" : { },
-    "ou" : [
+    "pathParams": {},
+    "ou": [
       "cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b"
     ]
   },
-  "data" : {
-    "_id" : "default/cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b",
-    "_type" : {
-      "_id" : "PageNode",
-      "name" : "PageNode",
-      "collection" : false
+  "data": {
+    "_id": "default/cc3e1ed2-25f1-47bf-83c6-17084f8b2b2b",
+    "_type": {
+      "_id": "PageNode",
+      "name": "PageNode",
+      "collection": false
     },
-    "nodes" : [
+    "nodes": [
       "276afa7c-a680-4cf4-a5f6-d6c78191f5c9:AttributeCollectorNode:Attribute Collector"
     ],
-    "pageDescription" : {
-      "en" : "Enter your email address or <a href=\"#/service/PlatformLogin\">Sign in</a>"
+    "pageDescription": {
+      "en": "Enter your email address or <a href=\"#/service/PlatformLogin\">Sign in</a>"
     },
-    "pageHeader" : {
-      "en" : "Reset Password"
+    "pageHeader": {
+      "en": "Reset Password"
     }
   }
 }
