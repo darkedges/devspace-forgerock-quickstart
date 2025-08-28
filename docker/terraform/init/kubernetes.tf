@@ -3,9 +3,9 @@ provider "kubernetes" {
   config_context = "docker-desktop"
 }
 
-resource "kubernetes_namespace" "darkedges" {
+resource "kubernetes_namespace" "dfq" {
   metadata {
-    name = "darkedges"
+    name = "dfq"
   }
 }
 
