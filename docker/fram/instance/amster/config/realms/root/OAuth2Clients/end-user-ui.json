@@ -1,7 +1,7 @@
 {
     "metadata": {
         "realm": "/",
-        "amsterVersion": "7.5.0",
+        "amsterVersion": "8.0.1",
         "entityType": "OAuth2Clients",
         "entityId": "end-user-ui",
         "pathParams": {}
@@ -120,8 +120,8 @@
             ],
             "accessTokenLifetime": 0,
             "redirectionUris": [
-                "https://platform.7f000001.nip.io:8443/enduser-ui/appAuthHelperRedirect.html",
-                "https://platform.7f000001.nip.io:8443/enduser-ui/sessionCheck.html"
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-ui/appAuthHelperRedirect.html",
+                "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-ui/sessionCheck.html"
             ],
             "authorizationCodeLifetime": 0
         },

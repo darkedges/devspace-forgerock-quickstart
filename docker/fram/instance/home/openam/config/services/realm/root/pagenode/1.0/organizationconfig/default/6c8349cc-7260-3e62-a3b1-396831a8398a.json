@@ -1,0 +1,28 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "PageNode",
+    "entityId" : "default/6c8349cc-7260-3e62-a3b1-396831a8398a",
+    "uid" : "ou=6c8349cc-7260-3e62-a3b1-396831a8398a,ou=default,ou=OrganizationConfig,ou=1.0,ou=PageNode,ou=services,%BASE_DN%",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "6c8349cc-7260-3e62-a3b1-396831a8398a" ]
+  },
+  "data" : {
+    "_id" : "default/6c8349cc-7260-3e62-a3b1-396831a8398a",
+    "_type" : {
+      "_id" : "PageNode",
+      "name" : "PageNode",
+      "collection" : false
+    },
+    "nodes" : [ "cfcd2084-95d5-35ef-a6e7-dff9f98764db:UsernameCollectorNode:User Name Collector", "c4ca4238-a0b9-3382-8dcc-509a6f75849c:PasswordCollectorNode:Password Collector" ],
+    "stage" : "null",
+    "pageDescription" : {
+      "en" : ""
+    },
+    "pageHeader" : {
+      "en" : "Sign In"
+    }
+  }
+}

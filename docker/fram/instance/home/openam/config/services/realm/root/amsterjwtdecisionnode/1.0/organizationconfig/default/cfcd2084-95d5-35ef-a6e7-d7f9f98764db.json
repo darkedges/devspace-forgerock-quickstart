@@ -1,0 +1,21 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AmsterJwtDecisionNode",
+    "entityId" : "default/cfcd2084-95d5-35ef-a6e7-d7f9f98764db",
+    "uid" : "ou=cfcd2084-95d5-35ef-a6e7-d7f9f98764db,ou=default,ou=OrganizationConfig,ou=1.0,ou=AmsterJwtDecisionNode,ou=services,%BASE_DN%",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "cfcd2084-95d5-35ef-a6e7-d7f9f98764db" ]
+  },
+  "data" : {
+    "_id" : "default/cfcd2084-95d5-35ef-a6e7-d7f9f98764db",
+    "_type" : {
+      "_id" : "AmsterJwtDecisionNode",
+      "name" : "AmsterJwtDecisionNode",
+      "collection" : false
+    },
+    "authorizedKeys" : "/home/forgerock/openam/security/keys/amster/authorized_keys"
+  }
+}

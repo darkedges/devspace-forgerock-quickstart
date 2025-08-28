@@ -1,0 +1,24 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "ZeroPageLoginNode",
+    "entityId" : "default/e4da3b7f-bbce-3345-9777-2b0674a318d5",
+    "uid" : "ou=e4da3b7f-bbce-3345-9777-2b0674a318d5,ou=default,ou=OrganizationConfig,ou=1.0,ou=ZeroPageLoginNode,ou=services,%BASE_DN%",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "e4da3b7f-bbce-3345-9777-2b0674a318d5" ]
+  },
+  "data" : {
+    "_id" : "default/e4da3b7f-bbce-3345-9777-2b0674a318d5",
+    "_type" : {
+      "_id" : "ZeroPageLoginNode",
+      "name" : "ZeroPageLoginNode",
+      "collection" : false
+    },
+    "passwordHeader" : "X-OpenAM-Password",
+    "referrerWhiteList" : [ ],
+    "allowWithoutReferer" : true,
+    "usernameHeader" : "X-OpenAM-Username"
+  }
+}

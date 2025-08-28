@@ -1,21 +1,26 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "IncrementLoginCountNode",
-    "entityId" : "default/97a15eb2-a015-4b6d-81a0-be78c3aa1a3b",
-    "uid" : "ou=97a15eb2-a015-4b6d-81a0-be78c3aa1a3b,ou=default,ou=OrganizationConfig,ou=1.0,ou=IncrementLoginCountNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "97a15eb2-a015-4b6d-81a0-be78c3aa1a3b" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "IncrementLoginCountNode",
+    "entityId": "default/97a15eb2-a015-4b6d-81a0-be78c3aa1a3b",
+    "uid": "ou=97a15eb2-a015-4b6d-81a0-be78c3aa1a3b,ou=default,ou=OrganizationConfig,ou=1.0,ou=IncrementLoginCountNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "97a15eb2-a015-4b6d-81a0-be78c3aa1a3b"
+    ]
   },
-  "data" : {
-    "_id" : "default/97a15eb2-a015-4b6d-81a0-be78c3aa1a3b",
-    "_type" : {
-      "_id" : "IncrementLoginCountNode",
-      "name" : "IncrementLoginCountNode",
-      "collection" : false
+  "data": {
+    "_id": "default/97a15eb2-a015-4b6d-81a0-be78c3aa1a3b",
+    "_type": {
+      "_id": "IncrementLoginCountNode",
+      "name": "IncrementLoginCountNode",
+      "collection": false
     },
-    "identityAttribute" : "userName"
+    "identityAttribute": "userName"
   }
 }

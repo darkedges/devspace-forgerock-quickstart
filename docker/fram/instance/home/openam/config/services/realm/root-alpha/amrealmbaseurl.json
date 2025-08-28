@@ -1,20 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "amRealmBaseURL",
-    "entityId" : "amRealmBaseURL",
-    "uid" : "ou=amRealmBaseURL,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
-    "pathParams" : { },
-    "ou" : [ "amRealmBaseURL" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "amRealmBaseURL",
+    "entityId": "amRealmBaseURL",
+    "uid": "ou=amRealmBaseURL,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "amRealmBaseURL"
+    ]
   },
-  "data" : {
-    "_id" : "amRealmBaseURL",
-    "_type" : {
-      "_id" : "amRealmBaseURL",
-      "name" : "amRealmBaseURL",
-      "collection" : false
+  "data": {
+    "_id": "amRealmBaseURL",
+    "_type": {
+      "_id": "amRealmBaseURL",
+      "name": "amRealmBaseURL",
+      "collection": false
     }
   }
 }

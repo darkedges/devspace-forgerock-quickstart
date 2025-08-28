@@ -1,20 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "AcceptTermsAndConditionsNode",
-    "entityId" : "AcceptTermsAndConditionsNode",
-    "uid" : "ou=AcceptTermsAndConditionsNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
-    "pathParams" : { },
-    "ou" : [ "AcceptTermsAndConditionsNode" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "AcceptTermsAndConditionsNode",
+    "entityId": "AcceptTermsAndConditionsNode",
+    "uid": "ou=AcceptTermsAndConditionsNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "AcceptTermsAndConditionsNode"
+    ]
   },
-  "data" : {
-    "_id" : "AcceptTermsAndConditionsNode",
-    "_type" : {
-      "_id" : "AcceptTermsAndConditionsNode",
-      "name" : "AcceptTermsAndConditionsNode",
-      "collection" : false
+  "data": {
+    "_id": "AcceptTermsAndConditionsNode",
+    "_type": {
+      "_id": "AcceptTermsAndConditionsNode",
+      "name": "AcceptTermsAndConditionsNode",
+      "collection": false
     }
   }
 }

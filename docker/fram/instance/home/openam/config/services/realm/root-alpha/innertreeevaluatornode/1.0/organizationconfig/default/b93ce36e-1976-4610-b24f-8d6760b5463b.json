@@ -1,21 +1,26 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "InnerTreeEvaluatorNode",
-    "entityId" : "default/b93ce36e-1976-4610-b24f-8d6760b5463b",
-    "uid" : "ou=b93ce36e-1976-4610-b24f-8d6760b5463b,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "b93ce36e-1976-4610-b24f-8d6760b5463b" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "InnerTreeEvaluatorNode",
+    "entityId": "default/b93ce36e-1976-4610-b24f-8d6760b5463b",
+    "uid": "ou=b93ce36e-1976-4610-b24f-8d6760b5463b,ou=default,ou=OrganizationConfig,ou=1.0,ou=InnerTreeEvaluatorNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "b93ce36e-1976-4610-b24f-8d6760b5463b"
+    ]
   },
-  "data" : {
-    "_id" : "default/b93ce36e-1976-4610-b24f-8d6760b5463b",
-    "_type" : {
-      "_id" : "InnerTreeEvaluatorNode",
-      "name" : "InnerTreeEvaluatorNode",
-      "collection" : false
+  "data": {
+    "_id": "default/b93ce36e-1976-4610-b24f-8d6760b5463b",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "name": "InnerTreeEvaluatorNode",
+      "collection": false
     },
-    "tree" : "PlatformLogin"
+    "tree": "PlatformLogin"
   }
 }

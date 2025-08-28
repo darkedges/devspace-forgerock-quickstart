@@ -3,7 +3,7 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMAuthOATHService",
     "entityId" : "default",
-    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthOATHService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
     "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },

@@ -1,23 +1,23 @@
 {
-    "name": "login",
-    "condition": "${find(request.uri.path, '^/enduser-login|^/platform-login')}",
-    "baseURI": "&{PLATFORM_LOGIN_URL|http://dfq-login-ui:8080}",
-    "handler": {
-        "type": "Chain",
-        "config": {
-            "filters": [
-                {
-                    "type": "UriPathRewriteFilter",
-                    "config": {
-                        "mappings": {
-                            "/enduser-login": "/",
-                            "/platform-login": "/"
-                        },
-                        "failureHandler": "DefaultRoute"
-                    }
-                }
-            ],
-            "handler": "ReverseProxyHandler"
+  "baseURI": "&{PLATFORM_LOGIN_URL|http://dfq-ui-login:8080}",
+  "condition": "${find(request.uri.path, '^/enduser-login|^/platform-login')}",
+  "handler": {
+    "config": {
+      "filters": [
+        {
+          "config": {
+            "failureHandler": "DefaultRoute",
+            "mappings": {
+              "/enduser-login": "/",
+              "/platform-login": "/"
+            }
+          },
+          "type": "UriPathRewriteFilter"
         }
-    }
+      ],
+      "handler": "ReverseProxyHandler"
+    },
+    "type": "Chain"
+  },
+  "name": "login"
 }

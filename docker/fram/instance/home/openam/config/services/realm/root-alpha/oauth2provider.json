@@ -3,7 +3,7 @@
     "realm" : "/alpha",
     "entityType" : "OAuth2Provider",
     "entityId" : "OAuth2Provider",
-    "uid" : "ou=OAuth2Provider,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=OAuth2Provider,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
     "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },

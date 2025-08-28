@@ -1,21 +1,26 @@
 {
-    "metadata": {
-        "realm": "/alpha",
-        "entityType": "SetSuccessUrlNode",
-        "entityId": "default/42cf12fb-1858-4fc8-9d5f-3556b708b91b",
-        "uid": "ou=42cf12fb-1858-4fc8-9d5f-3556b708b91b,ou=default,ou=OrganizationConfig,ou=1.0,ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,ou=am-config",
-        "sunServiceID": "instance",
-        "objectClass": ["sunServiceComponent", "top"],
-        "pathParams": {},
-        "ou": ["42cf12fb-1858-4fc8-9d5f-3556b708b91b"]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "SetSuccessUrlNode",
+    "entityId": "default/42cf12fb-1858-4fc8-9d5f-3556b708b91b",
+    "uid": "ou=42cf12fb-1858-4fc8-9d5f-3556b708b91b,ou=default,ou=OrganizationConfig,ou=1.0,ou=SetSuccessUrlNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "42cf12fb-1858-4fc8-9d5f-3556b708b91b"
+    ]
+  },
+  "data": {
+    "_id": "default/42cf12fb-1858-4fc8-9d5f-3556b708b91b",
+    "_type": {
+      "_id": "SetSuccessUrlNode",
+      "name": "SetSuccessUrlNode",
+      "collection": false
     },
-    "data": {
-        "_id": "default/42cf12fb-1858-4fc8-9d5f-3556b708b91b",
-        "_type": {
-            "_id": "SetSuccessUrlNode",
-            "name": "SetSuccessUrlNode",
-            "collection": false
-        },
-        "successUrl": "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-ui/?realm=alpha"
-    }
+    "successUrl": "&{am.platform.url|https://platform.7f000001.nip.io:8443}/enduser-ui/?realm=alpha"
+  }
 }

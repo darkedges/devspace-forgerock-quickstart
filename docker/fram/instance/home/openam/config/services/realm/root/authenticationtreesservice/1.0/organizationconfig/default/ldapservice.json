@@ -1,0 +1,60 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "authenticationTreesService",
+    "entityId" : "default/ldapService",
+    "uid" : "ou=ldapService,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,%BASE_DN%",
+    "sunServiceID" : "tree",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "ldapService" ]
+  },
+  "data" : {
+    "_id" : "default/ldapService",
+    "_type" : {
+      "_id" : "authenticationTreesService",
+      "name" : "authenticationTreesService",
+      "collection" : false
+    },
+    "identityResource" : "null",
+    "innerTreeOnly" : false,
+    "entryNodeId" : "eccbc87e-4b5c-32fe-a830-8fd9f2a7baf5",
+    "maximumSessionTime" : null,
+    "maximumIdleTime" : null,
+    "description" : "null",
+    "noSession" : false,
+    "mustRun" : false,
+    "treeTimeout" : null,
+    "enabled" : true,
+    "uiConfig" : { },
+    "nodes" : {
+      "eccbc87e-4b5c-32fe-a830-8fd9f2a7baf5" : {
+        "displayName" : "Zero Page Login Collector",
+        "nodeType" : "ZeroPageLoginNode",
+        "version" : 1,
+        "connections" : {
+          "true" : "c81e728d-9d4c-3f63-af06-7f89cc14862d",
+          "false" : "6c8349cc-7260-3e62-a3b1-396831a8398a"
+        }
+      },
+      "6c8349cc-7260-3e62-a3b1-396831a8398a" : {
+        "displayName" : "Page Node",
+        "nodeType" : "PageNode",
+        "version" : 1,
+        "connections" : {
+          "outcome" : "c81e728d-9d4c-3f63-af06-7f89cc14862d"
+        }
+      },
+      "c81e728d-9d4c-3f63-af06-7f89cc14862d" : {
+        "displayName" : "Data Store Decision",
+        "nodeType" : "DataStoreDecisionNode",
+        "version" : 1,
+        "connections" : {
+          "true" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+        }
+      }
+    },
+    "staticNodes" : { }
+  }
+}

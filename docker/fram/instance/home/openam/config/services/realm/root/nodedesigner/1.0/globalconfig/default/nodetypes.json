@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : null,
+    "entityType" : "NodeDesigner",
+    "entityId" : "default/NodeTypes",
+    "uid" : "ou=NodeTypes,ou=default,ou=GlobalConfig,ou=1.0,ou=NodeDesigner,ou=services,%BASE_DN%",
+    "sunServiceID" : "NodeTypes",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "NodeTypes" ]
+  },
+  "data" : {
+    "_id" : "default/NodeTypes",
+    "_type" : {
+      "_id" : "NodeDesigner",
+      "name" : "NodeDesigner",
+      "collection" : false
+    }
+  }
+}

@@ -1,18 +1,18 @@
-ARG FRAM_VERSION=7.5.0
+ARG FRAM_VERSION=8.0.1
 ARG ALPINE_TAG=3.19
 
 FROM alpine:${ALPINE_TAG} AS fr_am_war
 ARG FRAM_VERSION
 ARG FRAM_WAR_ARCHIVE=AM-${FRAM_VERSION}.zip
 ARG FRAM_ARCHIVE_REPOSITORY_URL=
-ADD ${FRAM_ARCHIVE_REPOSITORY_URL}${FRAM_WAR_ARCHIVE} /tmp/am.war
-COPY fram/libs /tmp
-RUN unzip /tmp/am.war -d /tmp/am
+ADD ${FRAM_ARCHIVE_REPOSITORY_URL}${FRAM_WAR_ARCHIVE} /tmp/am.zip
+RUN unzip /tmp/am.zip -d /tmp && \
+    unzip -d /tmp/am_war /tmp/openam/AM-8.0.1.war 
 
 FROM gcr.io/forgerock-io/amster:${FRAM_VERSION} AS fr_amster
 FROM gcr.io/forgerock-io/am-config-upgrader:${FRAM_VERSION} AS am_config_upgrader
 
-FROM tomcat:9-jre17
+FROM tomcat:10-jre21
 
 ENV FORGEROCK_HOME=/home/forgerock
 ENV FRAM_HOME=$FORGEROCK_HOME/openam
@@ -27,7 +27,7 @@ RUN groupadd -g 11111 forgerock && \
     chown -R forgerock:root "$CATALINA_HOME" && \ 
     mkdir -p $FRAM_HOME && \ 
     chmod -R g+wx $FRAM_HOME
-COPY --chown=forgerock:root --from=fr_am_war /tmp/am /usr/local/tomcat/webapps/am/
+COPY --chown=forgerock:root --from=fr_am_war /tmp/am_war /usr/local/tomcat/webapps/am/
 COPY --chown=forgerock:root --from=fr_amster /opt/amster /opt/amster
 COPY --chown=forgerock:root --from=am_config_upgrader /home/forgerock/amupgrade /opt/amupgrade
 COPY --chown=forgerock:root fram/amster/ /opt/amster/config/
@@ -38,15 +38,10 @@ USER 11111
 COPY fram/scripts/install $FORGEROCK_HOME
 COPY amconfig/ /mnt/amconfig/
 WORKDIR $FORGEROCK_HOME
-RUN ./install.sh
 COPY fram/scripts/placeholder $FORGEROCK_HOME
-RUN ./placeholder-config.sh
 WORKDIR $FRAM_HOME
-RUN rm -rf opends && \
-    rm -rf security && \
-    rm -rf var
 EXPOSE 8080
 VOLUME /mnt/amconfig
-ENV CATALINA_OPTS="-server -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=true -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1 --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED"
+ENV CATALINA_OPTS="-server -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dam.server.fqdn=am.7f000001.nip.io -Dam.stores.user.servers=fbc-ds:1389 -Dam.stores.user.username=uid=am-identity-bind-account,ou=admins,ou=identities -Dam.stores.user.password=Passw0rd -Dam.stores.user.ssl.enabled -Dam.stores.application.servers=fbc-ds:1389 -Dam.stores.application.password=Passw0rd -Dam.stores.application.ssl.enabled=false"
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 CMD ["catalina.sh", "run"]

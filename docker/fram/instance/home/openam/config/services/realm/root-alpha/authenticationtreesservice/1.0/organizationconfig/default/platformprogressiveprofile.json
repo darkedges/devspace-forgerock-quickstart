@@ -1,80 +1,85 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "authenticationTreesService",
-    "entityId" : "default/PlatformProgressiveProfile",
-    "uid" : "ou=PlatformProgressiveProfile,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "tree",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "PlatformProgressiveProfile" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "authenticationTreesService",
+    "entityId": "default/PlatformProgressiveProfile",
+    "uid": "ou=PlatformProgressiveProfile,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "tree",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "PlatformProgressiveProfile"
+    ]
   },
-  "data" : {
-    "_id" : "default/PlatformProgressiveProfile",
-    "_type" : {
-      "_id" : "authenticationTreesService",
-      "name" : "authenticationTreesService",
-      "collection" : false
+  "data": {
+    "_id": "default/PlatformProgressiveProfile",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "name": "authenticationTreesService",
+      "collection": false
     },
-    "uiConfig" : { },
-    "entryNodeId" : "8afdaec3-275e-4301-bb53-34f03e6a4b29",
-    "innerTreeOnly" : false,
-    "nodes" : {
-      "8afdaec3-275e-4301-bb53-34f03e6a4b29" : {
-        "displayName" : "Login Count Decision",
-        "nodeType" : "LoginCountDecisionNode",
-        "x" : 152,
-        "y" : 35.859375,
-        "connections" : {
-          "false" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "true" : "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e"
+    "uiConfig": {},
+    "entryNodeId": "8afdaec3-275e-4301-bb53-34f03e6a4b29",
+    "innerTreeOnly": false,
+    "nodes": {
+      "8afdaec3-275e-4301-bb53-34f03e6a4b29": {
+        "displayName": "Login Count Decision",
+        "nodeType": "LoginCountDecisionNode",
+        "x": 152,
+        "y": 35.859375,
+        "connections": {
+          "false": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "true": "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e"
         }
       },
-      "423a959a-a1b9-498a-b0f7-596b6b6e775a" : {
-        "displayName" : "Patch Object",
-        "nodeType" : "PatchObjectNode",
-        "x" : 755.078125,
-        "y" : 35.859375,
-        "connections" : {
-          "PATCHED" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
-          "FAILURE" : "e301438c-0bd0-429c-ab0c-66126501069a"
+      "423a959a-a1b9-498a-b0f7-596b6b6e775a": {
+        "displayName": "Patch Object",
+        "nodeType": "PatchObjectNode",
+        "x": 755.078125,
+        "y": 35.859375,
+        "connections": {
+          "PATCHED": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0",
+          "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e" : {
-        "displayName" : "Query Filter Decision",
-        "nodeType" : "QueryFilterDecisionNode",
-        "x" : 357.09375,
-        "y" : 35.859375,
-        "connections" : {
-          "true" : "a5aecad8-854a-4ed5-b719-ff6c90e858c0",
-          "false" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+      "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e": {
+        "displayName": "Query Filter Decision",
+        "nodeType": "QueryFilterDecisionNode",
+        "x": 357.09375,
+        "y": 35.859375,
+        "connections": {
+          "true": "a5aecad8-854a-4ed5-b719-ff6c90e858c0",
+          "false": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       },
-      "a5aecad8-854a-4ed5-b719-ff6c90e858c0" : {
-        "displayName" : "Page Node",
-        "nodeType" : "PageNode",
-        "x" : 559.796875,
-        "y" : 32,
-        "connections" : {
-          "outcome" : "423a959a-a1b9-498a-b0f7-596b6b6e775a"
+      "a5aecad8-854a-4ed5-b719-ff6c90e858c0": {
+        "displayName": "Page Node",
+        "nodeType": "PageNode",
+        "x": 559.796875,
+        "y": 32,
+        "connections": {
+          "outcome": "423a959a-a1b9-498a-b0f7-596b6b6e775a"
         }
       }
     },
-    "description" : "Prompt for missing preferences on 3rd login",
-    "staticNodes" : {
-      "startNode" : {
-        "x" : 50,
-        "y" : 58.5
+    "description": "Prompt for missing preferences on 3rd login",
+    "staticNodes": {
+      "startNode": {
+        "x": 50,
+        "y": 58.5
       },
-      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0" : {
-        "x" : 907.234375,
-        "y" : 92
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 907.234375,
+        "y": 92
       },
-      "e301438c-0bd0-429c-ab0c-66126501069a" : {
-        "x" : 907.234375,
-        "y" : 25
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 907.234375,
+        "y": 25
       }
     },
-    "enabled" : true
+    "enabled": true
   }
 }

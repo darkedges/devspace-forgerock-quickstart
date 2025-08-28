@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "realm" : "/",
+    "entityType" : "AgentDataStoreDecisionNode",
+    "entityId" : "default/a87ff679-a2f3-371d-9181-a67b7542122c",
+    "uid" : "ou=a87ff679-a2f3-371d-9181-a67b7542122c,ou=default,ou=OrganizationConfig,ou=1.0,ou=AgentDataStoreDecisionNode,ou=services,%BASE_DN%",
+    "sunServiceID" : "instance",
+    "objectClass" : [ "sunServiceComponent", "top" ],
+    "pathParams" : { },
+    "ou" : [ "a87ff679-a2f3-371d-9181-a67b7542122c" ]
+  },
+  "data" : {
+    "_id" : "default/a87ff679-a2f3-371d-9181-a67b7542122c",
+    "_type" : {
+      "_id" : "AgentDataStoreDecisionNode",
+      "name" : "AgentDataStoreDecisionNode",
+      "collection" : false
+    }
+  }
+}

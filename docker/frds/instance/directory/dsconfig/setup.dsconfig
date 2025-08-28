@@ -1,0 +1,5 @@
+set-backend-prop --backend-name ${AMCTS_BACKEND_NAME} --set confidentiality-enabled:false
+set-backend-prop --backend-name ${AMCONFIG_BACKEND_NAME} --set confidentiality-enabled:false
+set-backend-prop --backend-name ${AMIDENTITYSTORE_BACKEND_NAME} --set confidentiality-enabled:false
+set-password-policy-prop --policy-name "Default Password Policy" --set require-secure-authentication:false --set "require-secure-password-changes:false" --set allow-pre-encoded-passwords:true 
+set-password-policy-prop --policy-name "Root Password Policy" --set require-secure-authentication:false --set "require-secure-password-changes:false"

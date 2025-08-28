@@ -1,21 +1,29 @@
 {
-    "metadata": {
-        "realm": "/",
-        "entityType": "validationService",
-        "entityId": "default",
-        "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,ou=am-config",
-        "sunServiceID": null,
-        "objectClass": ["sunServiceComponent", "top"],
-        "pathParams": {},
-        "ou": ["default"]
+  "metadata": {
+    "realm": "/",
+    "entityType": "validationService",
+    "entityId": "default",
+    "uid": "ou=default,ou=OrganizationConfig,ou=1.0,ou=validationService,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "default"
+    ]
+  },
+  "data": {
+    "_id": "default",
+    "_type": {
+      "_id": "validationService",
+      "name": "validationService",
+      "collection": false
     },
-    "data": {
-        "_id": "default",
-        "_type": {
-            "_id": "validationService",
-            "name": "validationService",
-            "collection": false
-        },
-        "validGotoDestinations": ["&{am.platform.url|https://platform.7f000001.nip.io:8443}/*", "&{am.platform.url|https://platform.7f000001.nip.io:8443}/*?*"]
-    }
+    "validGotoDestinations": [
+      "&{am.platform.url|https://platform.7f000001.nip.io:8443}/*",
+      "&{am.platform.url|https://platform.7f000001.nip.io:8443}/*?*"
+    ]
+  }
 }

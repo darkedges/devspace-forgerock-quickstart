@@ -1,22 +1,22 @@
 {
-    "name": "enduser-ui",
-    "condition": "${find(request.uri.path, '^/enduser-ui')}",
-    "baseURI": "&{PLATFORM_ENDUSER_URL|http://dfq-enduser-ui:8080}",
-    "handler": {
-        "type": "Chain",
-        "config": {
-            "filters": [
-                {
-                    "type": "UriPathRewriteFilter",
-                    "config": {
-                        "mappings": {
-                            "/enduser-ui": "/"
-                        },
-                        "failureHandler": "DefaultRoute"
-                    }
-                }
-            ],
-            "handler": "ReverseProxyHandler"
+  "baseURI": "&{PLATFORM_ENDUSER_URL|http://dfq-ui-enduser:8080}",
+  "condition": "${find(request.uri.path, '^/enduser-ui')}",
+  "handler": {
+    "config": {
+      "filters": [
+        {
+          "config": {
+            "failureHandler": "DefaultRoute",
+            "mappings": {
+              "/enduser-ui": "/"
+            }
+          },
+          "type": "UriPathRewriteFilter"
         }
-    }
+      ],
+      "handler": "ReverseProxyHandler"
+    },
+    "type": "Chain"
+  },
+  "name": "enduser-ui"
 }

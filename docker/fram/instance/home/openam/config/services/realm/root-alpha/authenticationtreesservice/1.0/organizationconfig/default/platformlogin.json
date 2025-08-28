@@ -1,88 +1,93 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "authenticationTreesService",
-    "entityId" : "default/PlatformLogin",
-    "uid" : "ou=PlatformLogin,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "tree",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "PlatformLogin" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "authenticationTreesService",
+    "entityId": "default/PlatformLogin",
+    "uid": "ou=PlatformLogin,ou=default,ou=OrganizationConfig,ou=1.0,ou=authenticationTreesService,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "tree",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "PlatformLogin"
+    ]
   },
-  "data" : {
-    "_id" : "default/PlatformLogin",
-    "_type" : {
-      "_id" : "authenticationTreesService",
-      "name" : "authenticationTreesService",
-      "collection" : false
+  "data": {
+    "_id": "default/PlatformLogin",
+    "_type": {
+      "_id": "authenticationTreesService",
+      "name": "authenticationTreesService",
+      "collection": false
     },
-    "uiConfig" : { },
-    "entryNodeId" : "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8",
-    "innerTreeOnly" : false,
-    "nodes" : {
-      "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8" : {
-        "displayName" : "Page Node",
-        "nodeType" : "PageNode",
-        "x" : 152,
-        "y" : 25,
-        "connections" : {
-          "outcome" : "2998c1c9-f4c8-4a00-b2c6-3426783ee49d"
+    "uiConfig": {},
+    "entryNodeId": "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8",
+    "innerTreeOnly": false,
+    "nodes": {
+      "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8": {
+        "displayName": "Page Node",
+        "nodeType": "PageNode",
+        "x": 152,
+        "y": 25,
+        "connections": {
+          "outcome": "2998c1c9-f4c8-4a00-b2c6-3426783ee49d"
         }
       },
-      "2998c1c9-f4c8-4a00-b2c6-3426783ee49d" : {
-        "displayName" : "Data Store Decision",
-        "nodeType" : "DataStoreDecisionNode",
-        "x" : 356.59375,
-        "y" : 52.359375,
-        "connections" : {
-          "true" : "bba3e0d8-8525-4e82-bf48-ac17f7988917",
-          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+      "2998c1c9-f4c8-4a00-b2c6-3426783ee49d": {
+        "displayName": "Data Store Decision",
+        "nodeType": "DataStoreDecisionNode",
+        "x": 356.59375,
+        "y": 52.359375,
+        "connections": {
+          "true": "bba3e0d8-8525-4e82-bf48-ac17f7988917",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "bba3e0d8-8525-4e82-bf48-ac17f7988917" : {
-        "displayName" : "Increment Login Count",
-        "nodeType" : "IncrementLoginCountNode",
-        "x" : 553.109375,
-        "y" : 75,
-        "connections" : {
-          "outcome" : "33b24514-3e50-4180-8f08-ab6f4e51b07e"
+      "bba3e0d8-8525-4e82-bf48-ac17f7988917": {
+        "displayName": "Increment Login Count",
+        "nodeType": "IncrementLoginCountNode",
+        "x": 553.109375,
+        "y": 75,
+        "connections": {
+          "outcome": "33b24514-3e50-4180-8f08-ab6f4e51b07e"
         }
       },
-      "33b24514-3e50-4180-8f08-ab6f4e51b07e" : {
-        "displayName" : "Inner Tree Evaluator",
-        "nodeType" : "InnerTreeEvaluatorNode",
-        "x" : 766.75,
-        "y" : 52.359375,
-        "connections" : {
-          "true" : "42cf12fb-1858-4fc8-9d5f-3556b708b91b",
-          "false" : "e301438c-0bd0-429c-ab0c-66126501069a"
+      "33b24514-3e50-4180-8f08-ab6f4e51b07e": {
+        "displayName": "Inner Tree Evaluator",
+        "nodeType": "InnerTreeEvaluatorNode",
+        "x": 766.75,
+        "y": 52.359375,
+        "connections": {
+          "true": "42cf12fb-1858-4fc8-9d5f-3556b708b91b",
+          "false": "e301438c-0bd0-429c-ab0c-66126501069a"
         }
       },
-      "42cf12fb-1858-4fc8-9d5f-3556b708b91b" : {
-        "displayName" : "Success URL",
-        "nodeType" : "SetSuccessUrlNode",
-        "x" : 966,
-        "y" : 42,
-        "connections" : {
-          "outcome" : "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+      "42cf12fb-1858-4fc8-9d5f-3556b708b91b": {
+        "displayName": "Success URL",
+        "nodeType": "SetSuccessUrlNode",
+        "x": 966,
+        "y": 42,
+        "connections": {
+          "outcome": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
         }
       }
     },
-    "description" : "Platform Login Tree",
-    "staticNodes" : {
-      "startNode" : {
-        "x" : 50,
-        "y" : 75
+    "description": "Platform Login Tree",
+    "staticNodes": {
+      "startNode": {
+        "x": 50,
+        "y": 75
       },
-      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0" : {
-        "x" : 1122.421875,
-        "y" : 75
+      "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+        "x": 1122.421875,
+        "y": 75
       },
-      "e301438c-0bd0-429c-ab0c-66126501069a" : {
-        "x" : 965.609375,
-        "y" : 108.5
+      "e301438c-0bd0-429c-ab0c-66126501069a": {
+        "x": 965.609375,
+        "y": 108.5
       }
     },
-    "enabled" : true
+    "enabled": true
   }
 }

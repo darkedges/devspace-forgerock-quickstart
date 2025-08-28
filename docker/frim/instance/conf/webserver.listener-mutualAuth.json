@@ -1,0 +1,11 @@
+{
+    "enabled" : {
+        "$bool" : "&{openidm.mutualauth.enabled|true}"
+    },
+    "port" : {
+        "$int" : "&{openidm.port.mutualauth|8444}"
+    },
+    "secure" : true,
+    "mutualAuth" : true,
+    "sslCertAlias" : "&{openidm.https.keystore.cert.alias|openidm-localhost}"
+}

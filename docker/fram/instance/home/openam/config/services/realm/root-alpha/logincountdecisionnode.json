@@ -1,20 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "LoginCountDecisionNode",
-    "entityId" : "LoginCountDecisionNode",
-    "uid" : "ou=LoginCountDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
-    "pathParams" : { },
-    "ou" : [ "LoginCountDecisionNode" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "LoginCountDecisionNode",
+    "entityId": "LoginCountDecisionNode",
+    "uid": "ou=LoginCountDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "LoginCountDecisionNode"
+    ]
   },
-  "data" : {
-    "_id" : "LoginCountDecisionNode",
-    "_type" : {
-      "_id" : "LoginCountDecisionNode",
-      "name" : "LoginCountDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "LoginCountDecisionNode",
+    "_type": {
+      "_id": "LoginCountDecisionNode",
+      "name": "LoginCountDecisionNode",
+      "collection": false
     }
   }
 }

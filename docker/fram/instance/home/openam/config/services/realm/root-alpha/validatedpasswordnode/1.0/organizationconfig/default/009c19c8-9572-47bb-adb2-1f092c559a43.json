@@ -1,22 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "ValidatedPasswordNode",
-    "entityId" : "default/009c19c8-9572-47bb-adb2-1f092c559a43",
-    "uid" : "ou=009c19c8-9572-47bb-adb2-1f092c559a43,ou=default,ou=OrganizationConfig,ou=1.0,ou=ValidatedPasswordNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "009c19c8-9572-47bb-adb2-1f092c559a43" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "ValidatedPasswordNode",
+    "entityId": "default/009c19c8-9572-47bb-adb2-1f092c559a43",
+    "uid": "ou=009c19c8-9572-47bb-adb2-1f092c559a43,ou=default,ou=OrganizationConfig,ou=1.0,ou=ValidatedPasswordNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "009c19c8-9572-47bb-adb2-1f092c559a43"
+    ]
   },
-  "data" : {
-    "_id" : "default/009c19c8-9572-47bb-adb2-1f092c559a43",
-    "_type" : {
-      "_id" : "ValidatedPasswordNode",
-      "name" : "ValidatedPasswordNode",
-      "collection" : false
+  "data": {
+    "_id": "default/009c19c8-9572-47bb-adb2-1f092c559a43",
+    "_type": {
+      "_id": "ValidatedPasswordNode",
+      "name": "ValidatedPasswordNode",
+      "collection": false
     },
-    "passwordAttribute" : "password",
-    "validateInput" : true
+    "passwordAttribute": "password",
+    "validateInput": true
   }
 }

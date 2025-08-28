@@ -1,22 +1,29 @@
 {
-  "metadata" : {
-    "realm" : null,
-    "entityType" : "KeyStoreSecretStore",
-    "entityId" : "default/default-keystore/mappings/am.services.oauth2.stateless.token.encryption",
-    "uid" : "ou=am.services.oauth2.stateless.token.encryption,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "am.services.oauth2.stateless.token.encryption" ]
+  "metadata": {
+    "realm": null,
+    "entityType": "KeyStoreSecretStore",
+    "entityId": "default/default-keystore/mappings/am.services.oauth2.stateless.token.encryption",
+    "uid": "ou=am.services.oauth2.stateless.token.encryption,ou=mappings,ou=default-keystore,ou=default,ou=GlobalConfig,ou=1.0,ou=KeyStoreSecretStore,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "am.services.oauth2.stateless.token.encryption"
+    ]
   },
-  "data" : {
-    "_id" : "default/default-keystore/mappings/am.services.oauth2.stateless.token.encryption",
-    "_type" : {
-      "_id" : "KeyStoreSecretStore",
-      "name" : "KeyStoreSecretStore",
-      "collection" : false
+  "data": {
+    "_id": "default/default-keystore/mappings/am.services.oauth2.stateless.token.encryption",
+    "_type": {
+      "_id": "KeyStoreSecretStore",
+      "name": "KeyStoreSecretStore",
+      "collection": false
     },
-    "secretId" : "am.services.oauth2.stateless.token.encryption",
-    "aliases" : [ "directenctest" ]
+    "secretId": "am.services.oauth2.stateless.token.encryption",
+    "aliases": [
+      "directenctest"
+    ]
   }
 }

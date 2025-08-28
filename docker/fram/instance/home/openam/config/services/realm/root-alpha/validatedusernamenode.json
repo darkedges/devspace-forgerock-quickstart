@@ -1,20 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "ValidatedUsernameNode",
-    "entityId" : "ValidatedUsernameNode",
-    "uid" : "ou=ValidatedUsernameNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
-    "pathParams" : { },
-    "ou" : [ "ValidatedUsernameNode" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "ValidatedUsernameNode",
+    "entityId": "ValidatedUsernameNode",
+    "uid": "ou=ValidatedUsernameNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "ValidatedUsernameNode"
+    ]
   },
-  "data" : {
-    "_id" : "ValidatedUsernameNode",
-    "_type" : {
-      "_id" : "ValidatedUsernameNode",
-      "name" : "ValidatedUsernameNode",
-      "collection" : false
+  "data": {
+    "_id": "ValidatedUsernameNode",
+    "_type": {
+      "_id": "ValidatedUsernameNode",
+      "name": "ValidatedUsernameNode",
+      "collection": false
     }
   }
 }

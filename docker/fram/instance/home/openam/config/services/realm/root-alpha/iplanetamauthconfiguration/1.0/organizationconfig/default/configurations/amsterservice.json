@@ -3,7 +3,7 @@
     "realm" : "/alpha",
     "entityType" : "iPlanetAMAuthConfiguration",
     "entityId" : "default/Configurations/amsterService",
-    "uid" : "ou=amsterService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=amsterService,ou=Configurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=iPlanetAMAuthConfiguration,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : "NamedConfiguration",
     "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },

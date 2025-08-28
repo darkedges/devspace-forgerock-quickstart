@@ -1,24 +1,31 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "AttributeCollectorNode",
-    "entityId" : "default/9f1e8d94-4922-481b-9e14-212b66548900",
-    "uid" : "ou=9f1e8d94-4922-481b-9e14-212b66548900,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributeCollectorNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "9f1e8d94-4922-481b-9e14-212b66548900" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "AttributeCollectorNode",
+    "entityId": "default/9f1e8d94-4922-481b-9e14-212b66548900",
+    "uid": "ou=9f1e8d94-4922-481b-9e14-212b66548900,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributeCollectorNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "9f1e8d94-4922-481b-9e14-212b66548900"
+    ]
   },
-  "data" : {
-    "_id" : "default/9f1e8d94-4922-481b-9e14-212b66548900",
-    "_type" : {
-      "_id" : "AttributeCollectorNode",
-      "name" : "AttributeCollectorNode",
-      "collection" : false
+  "data": {
+    "_id": "default/9f1e8d94-4922-481b-9e14-212b66548900",
+    "_type": {
+      "_id": "AttributeCollectorNode",
+      "name": "AttributeCollectorNode",
+      "collection": false
     },
-    "attributesToCollect" : [ "mail" ],
-    "identityAttribute" : "mail",
-    "validateInputs" : false,
-    "required" : true
+    "attributesToCollect": [
+      "mail"
+    ],
+    "identityAttribute": "mail",
+    "validateInputs": false,
+    "required": true
   }
 }

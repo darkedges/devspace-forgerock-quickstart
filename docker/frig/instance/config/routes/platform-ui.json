@@ -1,22 +1,22 @@
 {
-    "name": "platform-ui",
-    "condition": "${find(request.uri.path, '^/platform-ui')}",
-    "baseURI": "&{PLATFORM_ADMIN_URL|http://dfq-admin-ui:8080}",
-    "handler": {
-        "type": "Chain",
-        "config": {
-            "filters": [
-                {
-                    "type": "UriPathRewriteFilter",
-                    "config": {
-                        "mappings": {
-                            "/platform-ui": "/"
-                        },
-                        "failureHandler": "DefaultRoute"
-                    }
-                }
-            ],
-            "handler": "ReverseProxyHandler"
+  "baseURI": "&{PLATFORM_ADMIN_URL|http://dfq-ui-admin:8080}",
+  "condition": "${find(request.uri.path, '^/platform-ui')}",
+  "handler": {
+    "config": {
+      "filters": [
+        {
+          "config": {
+            "failureHandler": "DefaultRoute",
+            "mappings": {
+              "/platform-ui": "/"
+            }
+          },
+          "type": "UriPathRewriteFilter"
         }
-    }
+      ],
+      "handler": "ReverseProxyHandler"
+    },
+    "type": "Chain"
+  },
+  "name": "platform-ui"
 }

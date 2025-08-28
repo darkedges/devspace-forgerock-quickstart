@@ -1,26 +1,26 @@
 {
-    "icon" : "favicon.ico",
-    "path" : "",
-    "stylesheets" : [
-        "css/bootstrap-3.4.1-custom.css",
-        "css/structure.css",
-        "css/theme.css"
-    ],
-    "settings" : {
-        "logo" : {
-            "src" : "images/logo-horizontal-white.png",
-            "title" : "ForgeRock",
-            "alt" : "ForgeRock"
-        },
-        "loginLogo" : {
-            "src" : "images/login-logo-dark.png",
-            "title" : "ForgeRock",
-            "alt" : "ForgeRock",
-            "height" : "104px",
-            "width" : "210px"
-        },
-        "footer" : {
-            "mailto" : "info@forgerock.com"
-        }
+  "icon": "favicon.ico",
+  "path": "",
+  "settings": {
+    "footer": {
+      "mailto": "info@pingidentity.com"
+    },
+    "loginLogo": {
+      "alt": "Ping Identity",
+      "height": "120px",
+      "src": "images/login-logo-dark.png",
+      "title": "Ping Identity",
+      "width": "120px"
+    },
+    "logo": {
+      "alt": "Ping Identity",
+      "src": "images/logo-horizontal-white.png",
+      "title": "Ping Identity"
     }
+  },
+  "stylesheets": [
+    "css/bootstrap-3.4.1-custom.css",
+    "css/structure.css",
+    "css/theme.css"
+  ]
 }

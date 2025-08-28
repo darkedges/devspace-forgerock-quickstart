@@ -1,22 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "AttributePresentDecisionNode",
-    "entityId" : "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
-    "uid" : "ou=0f0904e6-1da3-4cdb-9abf-0d2545016fab,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributePresentDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "0f0904e6-1da3-4cdb-9abf-0d2545016fab" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "AttributePresentDecisionNode",
+    "entityId": "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
+    "uid": "ou=0f0904e6-1da3-4cdb-9abf-0d2545016fab,ou=default,ou=OrganizationConfig,ou=1.0,ou=AttributePresentDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "0f0904e6-1da3-4cdb-9abf-0d2545016fab"
+    ]
   },
-  "data" : {
-    "_id" : "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
-    "_type" : {
-      "_id" : "AttributePresentDecisionNode",
-      "name" : "AttributePresentDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "default/0f0904e6-1da3-4cdb-9abf-0d2545016fab",
+    "_type": {
+      "_id": "AttributePresentDecisionNode",
+      "name": "AttributePresentDecisionNode",
+      "collection": false
     },
-    "presentAttribute" : "password",
-    "identityAttribute" : "userName"
+    "presentAttribute": "password",
+    "identityAttribute": "userName"
   }
 }

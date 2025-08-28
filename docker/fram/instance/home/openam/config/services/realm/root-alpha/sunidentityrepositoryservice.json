@@ -3,7 +3,7 @@
     "realm" : "/alpha",
     "entityType" : "sunIdentityRepositoryService",
     "entityId" : "sunIdentityRepositoryService",
-    "uid" : "ou=sunIdentityRepositoryService,ou=services,o=alpha,ou=services,ou=am-config",
+    "uid" : "ou=sunIdentityRepositoryService,ou=services,o=alpha,ou=services,%BASE_DN%",
     "sunServiceID" : null,
     "objectClass" : [ "sunService", "top" ],
     "pathParams" : { },

@@ -3,7 +3,7 @@
     "realm" : "/",
     "entityType" : "ScriptingService",
     "entityId" : "default/scriptConfigurations",
-    "uid" : "ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,ou=am-config",
+    "uid" : "ou=scriptConfigurations,ou=default,ou=OrganizationConfig,ou=1.0,ou=ScriptingService,ou=services,%BASE_DN%",
     "sunServiceID" : "scriptConfigurations",
     "objectClass" : [ "sunServiceComponent", "top" ],
     "pathParams" : { },

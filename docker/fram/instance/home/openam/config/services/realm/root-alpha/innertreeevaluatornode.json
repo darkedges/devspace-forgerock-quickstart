@@ -1,20 +1,25 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "InnerTreeEvaluatorNode",
-    "entityId" : "InnerTreeEvaluatorNode",
-    "uid" : "ou=InnerTreeEvaluatorNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : null,
-    "objectClass" : [ "sunService", "top" ],
-    "pathParams" : { },
-    "ou" : [ "InnerTreeEvaluatorNode" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "InnerTreeEvaluatorNode",
+    "entityId": "InnerTreeEvaluatorNode",
+    "uid": "ou=InnerTreeEvaluatorNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": null,
+    "objectClass": [
+      "sunService",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "InnerTreeEvaluatorNode"
+    ]
   },
-  "data" : {
-    "_id" : "InnerTreeEvaluatorNode",
-    "_type" : {
-      "_id" : "InnerTreeEvaluatorNode",
-      "name" : "InnerTreeEvaluatorNode",
-      "collection" : false
+  "data": {
+    "_id": "InnerTreeEvaluatorNode",
+    "_type": {
+      "_id": "InnerTreeEvaluatorNode",
+      "name": "InnerTreeEvaluatorNode",
+      "collection": false
     }
   }
 }

@@ -1,8 +1,6 @@
-# ARG JRE_IMAGE=eclipse-temurin
-# ARG JRE_TAG=17.0.12_7-jre-alpine
 ARG TOMCAT_IMAGE=tomcat
-ARG TOMCAT_TAG=9-jre17
-ARG FR_TAG=7.5.0
+ARG TOMCAT_TAG=10-jre17
+ARG FR_TAG=8.0.1
 ARG ALPINE_TAG=3.20.2
 
 FROM gcr.io/forgerock-io/am-base:${FR_TAG} AS ambase
@@ -41,6 +39,7 @@ RUN set -ex && \
     chmod 755 /opt/amster && \
     chown -R forgerock:forgerock /usr/local/tomcat && \
     chown -R forgerock:forgerock /opt/amster && \
+    chown -R forgerock:forgerock /home/forgerock && \
     sed -i 's/<\/Host>/<Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto"\/><\/Host>/' /usr/local/tomcat/conf/server.xml && \
     chown forgerock:forgerock /home/forgerock/crypto-tool.jar
 
@@ -48,7 +47,7 @@ COPY --chown=forgerock:forgerock --chmod=0755 rootscripts/*.sh /usr/local/tomcat
 
 COPY --chown=forgerock:forgerock --chmod=0755 instance/amster /opt/amster/config/
 
-COPY --chown=forgerock:forgerock instance/home/ /home/forgerock/
+COPY --chown=forgerock:forgerock instance/home/openam /home/forgerock/openam/
 
 RUN chmod 755 /usr/local/tomcat/*.sh
 
@@ -58,12 +57,11 @@ USER 11111
 
 WORKDIR /home/forgerock
 
-ENV FRAM_CONTAINER_JVM_ARGS=-Xmx2048M -XX:MetaspaceSize=256M -XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandom
-ENV CATALINA_HOME /usr/local/tomcat
-ENV CATALINA_OPTS -server -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=true -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1 --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED
-ENV FRAM_CONTAINER_JVM_ARGS=-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandoms
-ENV FRAM_HOME=/home/forgerock/openam
-ENV SECRETS_PATH=${FRAM_HOME}/security
+ENV CATALINA_HOME="/usr/local/tomcat"
+ENV CATALINA_OPTS="-server -Dcom.sun.services.debug.mergeall=on -Dcom.sun.identity.configuration.directory=/home/forgerock/openam -Dcom.iplanet.services.stats.state=off -Dcom.sun.identity.sm.sms_object_filebased_enabled=true -Dorg.forgerock.donotupgrade=false -DtomcatAccessLogDir=/proc/self/fd -DtomcatAccessLogFile=1 --add-opens java.xml/com.sun.org.apache.xerces.internal.dom=ALL-UNNAMED --add-exports java.xml/com.sun.org.apache.xerces.internal.jaxp=ALL-UNNAMED --add-exports java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED" 
+ENV FRAM_CONTAINER_JVM_ARGS="-XX:MaxRAMPercentage=75 -XX:InitialRAMPercentage=75 -XX:MaxTenuringThreshold=1 -Djava.security.egd=file:/dev/urandom"
+ENV AM_HOME="/home/forgerock/openam"
+ENV SECRETS_PATH="${AM_HOME}/security"
 
 RUN mkdir -p ${SECRETS_PATH}/secrets/amster && \
     bash -c "ssh-keygen -N '' -m pem -t rsa -f ${SECRETS_PATH}/secrets/amster/amster_rsa <<< y" && \

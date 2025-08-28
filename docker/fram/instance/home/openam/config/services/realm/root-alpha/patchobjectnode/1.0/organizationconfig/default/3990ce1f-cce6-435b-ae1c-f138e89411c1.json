@@ -1,24 +1,31 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "PatchObjectNode",
-    "entityId" : "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
-    "uid" : "ou=3990ce1f-cce6-435b-ae1c-f138e89411c1,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "3990ce1f-cce6-435b-ae1c-f138e89411c1" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "PatchObjectNode",
+    "entityId": "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
+    "uid": "ou=3990ce1f-cce6-435b-ae1c-f138e89411c1,ou=default,ou=OrganizationConfig,ou=1.0,ou=PatchObjectNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "3990ce1f-cce6-435b-ae1c-f138e89411c1"
+    ]
   },
-  "data" : {
-    "_id" : "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
-    "_type" : {
-      "_id" : "PatchObjectNode",
-      "name" : "PatchObjectNode",
-      "collection" : false
+  "data": {
+    "_id": "default/3990ce1f-cce6-435b-ae1c-f138e89411c1",
+    "_type": {
+      "_id": "PatchObjectNode",
+      "name": "PatchObjectNode",
+      "collection": false
     },
-    "identityResource" : "managed/user",
-    "patchAsObject" : false,
-    "ignoredFields" : [ "userName" ],
-    "identityAttribute" : "userName"
+    "identityResource": "managed/user",
+    "patchAsObject": false,
+    "ignoredFields": [
+      "userName"
+    ],
+    "identityAttribute": "userName"
   }
 }

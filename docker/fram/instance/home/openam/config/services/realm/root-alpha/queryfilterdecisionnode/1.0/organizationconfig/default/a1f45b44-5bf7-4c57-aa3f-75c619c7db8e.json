@@ -1,22 +1,27 @@
 {
-  "metadata" : {
-    "realm" : "/alpha",
-    "entityType" : "QueryFilterDecisionNode",
-    "entityId" : "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",
-    "uid" : "ou=a1f45b44-5bf7-4c57-aa3f-75c619c7db8e,ou=default,ou=OrganizationConfig,ou=1.0,ou=QueryFilterDecisionNode,ou=services,o=alpha,ou=services,ou=am-config",
-    "sunServiceID" : "instance",
-    "objectClass" : [ "sunServiceComponent", "top" ],
-    "pathParams" : { },
-    "ou" : [ "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e" ]
+  "metadata": {
+    "realm": "/alpha",
+    "entityType": "QueryFilterDecisionNode",
+    "entityId": "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",
+    "uid": "ou=a1f45b44-5bf7-4c57-aa3f-75c619c7db8e,ou=default,ou=OrganizationConfig,ou=1.0,ou=QueryFilterDecisionNode,ou=services,o=alpha,ou=services,%BASE_DN%",
+    "sunServiceID": "instance",
+    "objectClass": [
+      "sunServiceComponent",
+      "top"
+    ],
+    "pathParams": {},
+    "ou": [
+      "a1f45b44-5bf7-4c57-aa3f-75c619c7db8e"
+    ]
   },
-  "data" : {
-    "_id" : "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",
-    "_type" : {
-      "_id" : "QueryFilterDecisionNode",
-      "name" : "QueryFilterDecisionNode",
-      "collection" : false
+  "data": {
+    "_id": "default/a1f45b44-5bf7-4c57-aa3f-75c619c7db8e",
+    "_type": {
+      "_id": "QueryFilterDecisionNode",
+      "name": "QueryFilterDecisionNode",
+      "collection": false
     },
-    "identityAttribute" : "userName",
-    "queryFilter" : "!(/preferences pr) or /preferences/marketing eq false or /preferences/updates eq false"
+    "identityAttribute": "userName",
+    "queryFilter": "!(/preferences pr) or /preferences/marketing eq false or /preferences/updates eq false"
   }
 }
